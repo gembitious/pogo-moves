@@ -1,0 +1,36 @@
+{
+  "editor.formatOnSave": true,
+  "prettier.semi": false,
+  "workbench.iconTheme": "vscode-icons",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "editor.codeActionsOnSave": [
+    "source.organizeImports",
+    "source.fixAll.eslint"
+  ],
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/node_modules/**": true,
+    "**/.next/**": true,
+    "**/.vscode/**": true
+  },
+  "scss.validate": false,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.autoClosingQuotes": "always",
+  "tailwindCSS.includeLanguages": {
+    "typescript": "javascript",
+    "typescriptreact": "javascript"
+  },
+  "files.exclude": {
+    "node_modules/": true
+  },
+  "stylelint.validate": ["css", "scss", ".module.scss"]
+}

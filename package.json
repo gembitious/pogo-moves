@@ -9,17 +9,32 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@types/node": "20.5.1",
-    "@types/react": "18.2.20",
-    "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.15",
-    "eslint": "8.47.0",
-    "eslint-config-next": "13.4.19",
     "next": "13.4.19",
     "postcss": "8.4.28",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tailwindcss": "3.3.3",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "@types/node": "20.5.1",
+    "@types/react": "18.2.20",
+    "@types/react-dom": "18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.5.0",
+    "@typescript-eslint/parser": "^6.5.0",
+    "eslint": "8.47.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-next": "13.4.19",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.0.3",
+    "stylelint": "^15.10.3",
+    "stylelint-config-clean-order": "^5.2.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-order": "^6.0.3",
+    "tailwindcss": "3.3.3"
   }
 }
