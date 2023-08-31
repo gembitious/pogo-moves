@@ -32,5 +32,7 @@
   "files.exclude": {
     "node_modules/": true
   },
-  "stylelint.validate": ["css", "scss", ".module.scss"]
+  "stylelint.validate": ["css", "scss", ".module.scss"],
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore"
 }
