@@ -1,8 +1,40 @@
-import Table from '@/components/Table'
+import Table, { TableHeadCell } from '@components/Table'
 import { TextField } from '@mui/material'
 import Image from 'next/image'
 import { FC, useState } from 'react'
 
+const headCells: TableHeadCell[] = [
+  {
+    id: 'name',
+    numeric: false,
+    disablePadding: false,
+    label: 'Dessert (100g serving)',
+  },
+  {
+    id: 'calories',
+    numeric: true,
+    disablePadding: false,
+    label: 'Calories',
+  },
+  {
+    id: 'fat',
+    numeric: true,
+    disablePadding: false,
+    label: 'Fat (g)',
+  },
+  {
+    id: 'carbs',
+    numeric: true,
+    disablePadding: false,
+    label: 'Carbs (g)',
+  },
+  {
+    id: 'protein',
+    numeric: true,
+    disablePadding: false,
+    label: 'Protein (g)',
+  },
+]
 const FastMovesPage: FC = () => {
   const [dexNum, setDexNum] = useState(0)
   return (
@@ -24,7 +56,7 @@ const FastMovesPage: FC = () => {
           height={128}
         />
       )}
-      <Table />
+      <Table headCells={headCells} />
     </div>
   )
 }

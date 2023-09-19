@@ -1,24 +1,26 @@
-import DeleteIcon from '@mui/icons-material/Delete'
-import FilterListIcon from '@mui/icons-material/FilterList'
-import Box from '@mui/material/Box'
-import Checkbox from '@mui/material/Checkbox'
-import FormControlLabel from '@mui/material/FormControlLabel'
-import IconButton from '@mui/material/IconButton'
-import Paper from '@mui/material/Paper'
-import Switch from '@mui/material/Switch'
-import { default as MUITable } from '@mui/material/Table'
-import TableBody from '@mui/material/TableBody'
-import TableCell from '@mui/material/TableCell'
-import TableContainer from '@mui/material/TableContainer'
-import TableHead from '@mui/material/TableHead'
-import TablePagination from '@mui/material/TablePagination'
-import TableRow from '@mui/material/TableRow'
-import TableSortLabel from '@mui/material/TableSortLabel'
-import Toolbar from '@mui/material/Toolbar'
-import Tooltip from '@mui/material/Tooltip'
-import Typography from '@mui/material/Typography'
-import { alpha } from '@mui/material/styles'
-import { visuallyHidden } from '@mui/utils'
+import { Delete } from '@mui/icons-material'
+import {
+  Box,
+  Checkbox,
+  FormControlLabel,
+  IconButton,
+  Table as MUITable,
+  TableHead as MUITableHead,
+  Paper,
+  Switch,
+  TableBody,
+  TableCell,
+  TableCellProps,
+  TableContainer,
+  TableHeadProps,
+  TablePagination,
+  TableRow,
+  TableSortLabel,
+  Toolbar,
+  Tooltip,
+  Typography,
+  alpha,
+} from '@mui/material'
 import { ChangeEvent, FC, MouseEvent, useMemo, useState } from 'react'
 
 interface Data {
@@ -35,7 +37,7 @@ function createData(
   fat: number,
   carbs: number,
   protein: number,
-): Data {
+) {
   return {
     name,
     calories,
@@ -85,135 +87,90 @@ function getComparator<Key extends keyof any>(
     : (a, b) => -descendingComparator(a, b, orderBy)
 }
 
-// Since 2020 all major browsers ensure sort stability with Array.prototype.sort().
-// stableSort() brings sort stability to non-modern browsers (notably IE11). If you
-// only support modern browsers you can replace stableSort(exampleArray, exampleComparator)
-// with exampleArray.slice().sort(exampleComparator)
-function stableSort<T>(
-  array: readonly T[],
-  comparator: (a: T, b: T) => number,
-) {
-  const stabilizedThis = array.map((el, index) => [el, index] as [T, number])
-  stabilizedThis.sort((a, b) => {
-    const order = comparator(a[0], b[0])
-    if (order !== 0) {
-      return order
-    }
-    return a[1] - b[1]
-  })
-  return stabilizedThis.map((el) => el[0])
-}
-
-interface HeadCell {
-  disablePadding: boolean
-  id: keyof Data
+export interface TableHeadCell extends TableCellProps {
+  id: string
   label: string
-  numeric: boolean
+  numeric?: boolean
+  disablePadding?: boolean
 }
 
-const headCells: readonly HeadCell[] = [
-  {
-    id: 'name',
-    numeric: false,
-    disablePadding: true,
-    label: 'Dessert (100g serving)',
-  },
-  {
-    id: 'calories',
-    numeric: true,
-    disablePadding: false,
-    label: 'Calories',
-  },
-  {
-    id: 'fat',
-    numeric: true,
-    disablePadding: false,
-    label: 'Fat (g)',
-  },
-  {
-    id: 'carbs',
-    numeric: true,
-    disablePadding: false,
-    label: 'Carbs (g)',
-  },
-  {
-    id: 'protein',
-    numeric: true,
-    disablePadding: false,
-    label: 'Protein (g)',
-  },
-]
-
-interface EnhancedTableProps {
+interface EnhancedTableHeadProps extends TableHeadProps {
+  headCells: TableHeadCell[]
   numSelected: number
-  onRequestSort: (event: MouseEvent<unknown>, property: keyof Data) => void
+  onRequestSort: (event: MouseEvent<unknown>, property: string) => void
   onSelectAllClick: (event: ChangeEvent<HTMLInputElement>) => void
   order: Order
   orderBy: string
   rowCount: number
+  enableSelection?: boolean
 }
 
-function EnhancedTableHead(props: EnhancedTableProps) {
-  const {
-    onSelectAllClick,
-    order,
-    orderBy,
-    numSelected,
-    rowCount,
-    onRequestSort,
-  } = props
+const TableHead: FC<EnhancedTableHeadProps> = ({
+  headCells,
+  onSelectAllClick,
+  order,
+  orderBy,
+  numSelected,
+  rowCount,
+  onRequestSort,
+  enableSelection,
+  ...others
+}) => {
   const createSortHandler =
-    (property: keyof Data) => (event: MouseEvent<unknown>) => {
+    (property: string) => (event: MouseEvent<unknown>) => {
       onRequestSort(event, property)
     }
 
   return (
-    <TableHead>
+    <MUITableHead {...others}>
       <TableRow>
-        <TableCell padding="checkbox">
-          <Checkbox
-            color="primary"
-            indeterminate={numSelected > 0 && numSelected < rowCount}
-            checked={rowCount > 0 && numSelected === rowCount}
-            onChange={onSelectAllClick}
-            inputProps={{
-              'aria-label': 'select all desserts',
-            }}
-          />
-        </TableCell>
-        {headCells.map((headCell) => (
-          <TableCell
-            key={headCell.id}
-            align={headCell.numeric ? 'right' : 'left'}
-            padding={headCell.disablePadding ? 'none' : 'normal'}
-            sortDirection={orderBy === headCell.id ? order : false}
-          >
-            <TableSortLabel
-              active={orderBy === headCell.id}
-              direction={orderBy === headCell.id ? order : 'asc'}
-              onClick={createSortHandler(headCell.id)}
-            >
-              {headCell.label}
-              {orderBy === headCell.id ? (
-                <Box component="span" sx={visuallyHidden}>
-                  {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
-                </Box>
-              ) : null}
-            </TableSortLabel>
+        {enableSelection && (
+          <TableCell padding="checkbox">
+            <Checkbox
+              color="primary"
+              indeterminate={numSelected > 0 && numSelected < rowCount}
+              checked={rowCount > 0 && numSelected === rowCount}
+              onChange={onSelectAllClick}
+            />
           </TableCell>
-        ))}
+        )}
+        {headCells.map((headCell) => {
+          const { id, label, disablePadding, ...others } = headCell
+          return (
+            <TableCell
+              {...others}
+              key={id}
+              padding={disablePadding ? 'none' : 'normal'}
+              sortDirection={orderBy === id ? order : false}
+            >
+              <TableSortLabel
+                active={orderBy === id}
+                direction={orderBy === id ? order : 'asc'}
+                onClick={createSortHandler(id)}
+                hideSortIcon
+              >
+                {label}
+              </TableSortLabel>
+            </TableCell>
+          )
+        })}
       </TableRow>
-    </TableHead>
+    </MUITableHead>
   )
 }
 
-interface EnhancedTableToolbarProps {
-  numSelected: number
+interface TableToolbarProps {
+  title: string
+  numSelected?: number
+  enableSelection?: boolean
 }
 
-function EnhancedTableToolbar(props: EnhancedTableToolbarProps) {
-  const { numSelected } = props
-
+const TableToolbar: FC<TableToolbarProps> = ({
+  numSelected: numSelectedProps,
+  title,
+  enableSelection,
+}) => {
+  const numSelected = numSelectedProps ?? 0
   return (
     <Toolbar
       sx={{
@@ -228,54 +185,56 @@ function EnhancedTableToolbar(props: EnhancedTableToolbarProps) {
         }),
       }}
     >
-      {numSelected > 0 ? (
-        <Typography
-          sx={{ flex: '1 1 100%' }}
-          color="inherit"
-          variant="subtitle1"
-          component="div"
-        >
-          {numSelected} selected
-        </Typography>
-      ) : (
-        <Typography
-          sx={{ flex: '1 1 100%' }}
-          variant="h6"
-          id="tableTitle"
-          component="div"
-        >
-          Nutrition
-        </Typography>
-      )}
-      {numSelected > 0 ? (
-        <Tooltip title="Delete">
-          <IconButton>
-            <DeleteIcon />
-          </IconButton>
-        </Tooltip>
-      ) : (
-        <Tooltip title="Filter list">
-          <IconButton>
-            <FilterListIcon />
-          </IconButton>
-        </Tooltip>
+      <Typography
+        sx={{ flex: '1 1 100%' }}
+        variant="h6"
+        id="tableTitle"
+        component="div"
+      >
+        {title}
+      </Typography>
+      {enableSelection && numSelected > 0 && (
+        <>
+          <Typography
+            sx={{ flex: '1 1 20%' }}
+            color="inherit"
+            variant="subtitle1"
+            component="div"
+          >
+            {numSelected} selected
+          </Typography>
+          <Tooltip title="Delete">
+            <IconButton>
+              <Delete />
+            </IconButton>
+          </Tooltip>
+        </>
       )}
     </Toolbar>
   )
 }
 
-const Table: FC = () => {
+interface TableProps {
+  headCells: TableHeadCell[]
+  title?: string
+  enableSelection?: boolean
+  enabledOrdering?: boolean
+}
+
+const Table: FC<TableProps> = ({
+  headCells,
+  title,
+  enableSelection,
+  enabledOrdering,
+}) => {
   const [order, setOrder] = useState<Order>('asc')
-  const [orderBy, setOrderBy] = useState<keyof Data>('calories')
+  const [orderBy, setOrderBy] = useState<string>('calories')
   const [selected, setSelected] = useState<readonly string[]>([])
   const [page, setPage] = useState(0)
   const [dense, setDense] = useState(false)
   const [rowsPerPage, setRowsPerPage] = useState(5)
 
-  const handleRequestSort = (
-    event: MouseEvent<unknown>,
-    property: keyof Data,
-  ) => {
+  const handleRequestSort = (event: MouseEvent<unknown>, property: string) => {
     const isAsc = orderBy === property && order === 'asc'
     setOrder(isAsc ? 'desc' : 'asc')
     setOrderBy(property)
@@ -331,24 +290,29 @@ const Table: FC = () => {
 
   const visibleRows = useMemo(
     () =>
-      stableSort(rows, getComparator(order, orderBy)).slice(
-        page * rowsPerPage,
-        page * rowsPerPage + rowsPerPage,
-      ),
+      rows
+        .slice()
+        .sort(getComparator(order, orderBy))
+        .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage),
     [order, orderBy, page, rowsPerPage],
   )
 
   return (
     <Box sx={{ width: '100%' }}>
       <Paper sx={{ width: '100%', mb: 2 }}>
-        <EnhancedTableToolbar numSelected={selected.length} />
+        <TableToolbar
+          title={'test'}
+          numSelected={selected.length}
+          enableSelection={enableSelection}
+        />
         <TableContainer>
           <MUITable
             sx={{ minWidth: 750 }}
             aria-labelledby="tableTitle"
             size={dense ? 'small' : 'medium'}
           >
-            <EnhancedTableHead
+            <TableHead
+              headCells={headCells}
               numSelected={selected.length}
               order={order}
               orderBy={orderBy}
@@ -359,40 +323,32 @@ const Table: FC = () => {
             <TableBody>
               {visibleRows.map((row, index) => {
                 const isItemSelected = isSelected(row.name)
-                const labelId = `enhanced-table-checkbox-${index}`
+                const labelId = `-table-checkbox-${index}`
 
                 return (
                   <TableRow
                     hover
                     onClick={(event) => handleClick(event, row.name)}
-                    role="checkbox"
-                    aria-checked={isItemSelected}
-                    tabIndex={-1}
                     key={row.name}
                     selected={isItemSelected}
                     sx={{ cursor: 'pointer' }}
                   >
-                    <TableCell padding="checkbox">
-                      <Checkbox
-                        color="primary"
-                        checked={isItemSelected}
-                        inputProps={{
-                          'aria-labelledby': labelId,
-                        }}
-                      />
-                    </TableCell>
-                    <TableCell
-                      component="th"
-                      id={labelId}
-                      scope="row"
-                      padding="none"
-                    >
-                      {row.name}
-                    </TableCell>
-                    <TableCell align="right">{row.calories}</TableCell>
-                    <TableCell align="right">{row.fat}</TableCell>
-                    <TableCell align="right">{row.carbs}</TableCell>
-                    <TableCell align="right">{row.protein}</TableCell>
+                    {enableSelection && (
+                      <TableCell padding="checkbox">
+                        <Checkbox
+                          color="primary"
+                          checked={isItemSelected}
+                          inputProps={{
+                            'aria-labelledby': labelId,
+                          }}
+                        />
+                      </TableCell>
+                    )}
+                    <TableCell>{row.name}</TableCell>
+                    <TableCell>{row.calories}</TableCell>
+                    <TableCell>{row.fat}</TableCell>
+                    <TableCell>{row.carbs}</TableCell>
+                    <TableCell>{row.protein}</TableCell>
                   </TableRow>
                 )
               })}
