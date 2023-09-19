@@ -1,4 +1,4 @@
-import { pokemonType } from '@/constants'
+import { pokemonType } from '@constants'
 
 interface BasicMove {
   id: string

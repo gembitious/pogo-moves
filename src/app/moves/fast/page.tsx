@@ -1,10 +1,31 @@
-import { FC } from 'react'
+import Table from '@/components/Table'
+import { TextField } from '@mui/material'
+import Image from 'next/image'
+import { FC, useState } from 'react'
 
 const FastMovesPage: FC = () => {
+  const [dexNum, setDexNum] = useState(0)
   return (
-    <main className="">
-      <div className="">fast</div>
-    </main>
+    <div className="flex flex-col justify-center m-auto">
+      <TextField
+        variant="outlined"
+        onChange={(e) => {
+          const value = Number(e.target.value)
+          if (Number(e.target.value) > 0) {
+            setDexNum(value)
+          }
+        }}
+      />
+      {dexNum > 0 && (
+        <Image
+          src={`/images/pokemon/${dexNum}.png`}
+          alt={'pokemon sprite'}
+          width={128}
+          height={128}
+        />
+      )}
+      <Table />
+    </div>
   )
 }
 
