@@ -1,3 +1,5 @@
+'use client'
+
 import { Delete } from '@mui/icons-material'
 import {
   Box,

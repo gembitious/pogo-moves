@@ -1,3 +1,5 @@
+'use client'
+
 import { Dialog as MUIDialog } from '@mui/material'
 import { FC, useState } from 'react'
 
