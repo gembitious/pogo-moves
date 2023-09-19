@@ -1,3 +1,6 @@
+import moves from '@data/moves.json'
+import { ChargedMove, FastMove } from '@types'
+
 export const pokemonType = {
   normal: '노말',
   fire: '불꽃',
@@ -18,3 +21,31 @@ export const pokemonType = {
   steel: '강철',
   fairy: '페어리',
 }
+
+const isFastMove = (target: any): target is FastMove =>
+  typeof target == 'object' &&
+  target.turn !== undefined &&
+  target.energyGain !== undefined &&
+  (target.power > 0 || target.energyGain > 0)
+
+const isChargedMove = (target: any): target is ChargedMove =>
+  typeof target == 'object' && target.energy !== undefined
+
+const getFastMoveData = () => {
+  const result: FastMove[] = []
+  moves.map((move) => {
+    if (isFastMove(move)) result.push(move)
+  })
+  return result
+}
+
+const getChargedMoveData = () => {
+  const result: ChargedMove[] = []
+  moves.map((move) => {
+    if (isChargedMove(move)) result.push(move)
+  })
+  return result
+}
+
+export const FastMoveData: FastMove[] = getFastMoveData()
+export const ChargedMoveData: ChargedMove[] = getChargedMoveData()

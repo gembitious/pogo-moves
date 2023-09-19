@@ -8,20 +8,21 @@ interface BasicMove {
   power: number
 }
 
-interface FastMove extends BasicMove {
+export interface FastMove extends BasicMove {
   energyGain: number
   turn: number
 }
-interface ChargedMove extends BasicMove {
+
+export interface ChargedMove extends BasicMove {
   energy: number
   buffs?: number[] // [attack, defense]
   buffTarget?: 'self' | 'opponent'
   buffApplyChance?: number
 }
 
-type PokemonType = keyof typeof pokemonType
+export type PokemonType = keyof typeof pokemonType | string
 
-interface Pokemon {
+export interface Pokemon {
   dex: number
   id: string
   name: string

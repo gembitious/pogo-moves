@@ -4,18 +4,17 @@ import { Delete } from '@mui/icons-material'
 import {
   Box,
   Checkbox,
-  FormControlLabel,
   IconButton,
   Table as MUITable,
   TableHead as MUITableHead,
   Paper,
-  Switch,
   TableBody,
   TableCell,
   TableCellProps,
   TableContainer,
   TableHeadProps,
   TablePagination,
+  TableProps,
   TableRow,
   TableSortLabel,
   Toolbar,
@@ -23,47 +22,15 @@ import {
   Typography,
   alpha,
 } from '@mui/material'
-import { ChangeEvent, FC, MouseEvent, useMemo, useState } from 'react'
-
-interface Data {
-  calories: number
-  carbs: number
-  fat: number
-  name: string
-  protein: number
-}
-
-function createData(
-  name: string,
-  calories: number,
-  fat: number,
-  carbs: number,
-  protein: number,
-) {
-  return {
-    name,
-    calories,
-    fat,
-    carbs,
-    protein,
-  }
-}
-
-const rows = [
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Donut', 452, 25.0, 51, 4.9),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Honeycomb', 408, 3.2, 87, 6.5),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Jelly Bean', 375, 0.0, 94, 0.0),
-  createData('KitKat', 518, 26.0, 65, 7.0),
-  createData('Lollipop', 392, 0.2, 98, 0.0),
-  createData('Marshmallow', 318, 0, 81, 2.0),
-  createData('Nougat', 360, 19.0, 9, 37.0),
-  createData('Oreo', 437, 18.0, 63, 4.0),
-]
+import {
+  BaseSyntheticEvent,
+  ChangeEvent,
+  FC,
+  MouseEvent,
+  ReactNode,
+  useMemo,
+  useState,
+} from 'react'
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
   if (b[orderBy] < a[orderBy]) {
@@ -92,18 +59,18 @@ function getComparator<Key extends keyof any>(
 export interface TableHeadCell extends TableCellProps {
   id: string
   label: string
-  numeric?: boolean
+  cell?: (data: any) => ReactNode
   disablePadding?: boolean
 }
 
 interface EnhancedTableHeadProps extends TableHeadProps {
   headCells: TableHeadCell[]
   numSelected: number
-  onRequestSort: (event: MouseEvent<unknown>, property: string) => void
+  onRequestSort: (event: MouseEvent<HTMLSpanElement>, property: string) => void
   onSelectAllClick: (event: ChangeEvent<HTMLInputElement>) => void
-  order: Order
-  orderBy: string
   rowCount: number
+  order?: Order
+  orderBy?: string
   enableSelection?: boolean
 }
 
@@ -119,7 +86,7 @@ const TableHead: FC<EnhancedTableHeadProps> = ({
   ...others
 }) => {
   const createSortHandler =
-    (property: string) => (event: MouseEvent<unknown>) => {
+    (property: string) => (event: MouseEvent<HTMLSpanElement>) => {
       onRequestSort(event, property)
     }
 
@@ -143,11 +110,11 @@ const TableHead: FC<EnhancedTableHeadProps> = ({
               {...others}
               key={id}
               padding={disablePadding ? 'none' : 'normal'}
-              sortDirection={orderBy === id ? order : false}
+              sortDirection={orderBy === id ? order ?? 'asc' : false}
             >
               <TableSortLabel
                 active={orderBy === id}
-                direction={orderBy === id ? order : 'asc'}
+                direction={orderBy === id ? order ?? 'asc' : 'asc'}
                 onClick={createSortHandler(id)}
                 hideSortIcon
               >
@@ -216,85 +183,118 @@ const TableToolbar: FC<TableToolbarProps> = ({
   )
 }
 
-interface TableProps {
+interface EnhancedTableProps extends TableProps {
+  dataSource: { [key: string]: any }[]
   headCells: TableHeadCell[]
   title?: string
   enableSelection?: boolean
   enabledOrdering?: boolean
+  enablePagnation?: boolean
+  defaultOrderBy?: string
+  onSort?: (event: MouseEvent<HTMLSpanElement>, property: string) => void
+  onSelectAllClick?: (event: ChangeEvent<HTMLInputElement>) => void
+  onRowClick?: (event: MouseEvent<HTMLTableRowElement>) => void
+  onChangePage?: (
+    event: BaseSyntheticEvent | MouseEvent<HTMLButtonElement> | null,
+    page: number,
+  ) => void
+  onChangeRowsPerPage?: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
-const Table: FC<TableProps> = ({
+const Table: FC<EnhancedTableProps> = ({
+  dataSource,
   headCells,
   title,
   enableSelection,
   enabledOrdering,
+  enablePagnation,
+  defaultOrderBy,
+  onSort,
+  onSelectAllClick,
+  onRowClick,
+  onChangePage,
+  onChangeRowsPerPage,
+  ...others
 }) => {
   const [order, setOrder] = useState<Order>('asc')
-  const [orderBy, setOrderBy] = useState<string>('calories')
+  const [orderBy, setOrderBy] = useState<string | undefined>(defaultOrderBy)
   const [selected, setSelected] = useState<readonly string[]>([])
   const [page, setPage] = useState(0)
-  const [dense, setDense] = useState(false)
-  const [rowsPerPage, setRowsPerPage] = useState(5)
+  const [rowsPerPage, setRowsPerPage] = useState(
+    enablePagnation ? 5 : dataSource.length,
+  )
 
-  const handleRequestSort = (event: MouseEvent<unknown>, property: string) => {
+  const handleRequestSort = (
+    event: MouseEvent<HTMLSpanElement>,
+    property: string,
+  ) => {
     const isAsc = orderBy === property && order === 'asc'
     setOrder(isAsc ? 'desc' : 'asc')
     setOrderBy(property)
+    if (onSort) onSort(event, property)
   }
 
+  // 모두 선택 checkbox 클릭 시
   const handleSelectAllClick = (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
-      const newSelected = rows.map((n) => n.name)
+      const newSelected = dataSource.map((n) => n.id)
       setSelected(newSelected)
       return
     }
     setSelected([])
+    if (onSelectAllClick) onSelectAllClick(event)
   }
 
-  const handleClick = (event: MouseEvent<unknown>, name: string) => {
-    const selectedIndex = selected.indexOf(name)
-    let newSelected: readonly string[] = []
-
-    if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, name)
-    } else if (selectedIndex === 0) {
-      newSelected = newSelected.concat(selected.slice(1))
-    } else if (selectedIndex === selected.length - 1) {
-      newSelected = newSelected.concat(selected.slice(0, -1))
-    } else if (selectedIndex > 0) {
-      newSelected = newSelected.concat(
-        selected.slice(0, selectedIndex),
-        selected.slice(selectedIndex + 1),
-      )
+  // row 클릭 시
+  const handleRowClick = (
+    event: MouseEvent<HTMLTableRowElement>,
+    name: string,
+  ) => {
+    if (enableSelection) {
+      const selectedIndex = selected.indexOf(name)
+      let newSelected: readonly string[] = []
+      if (selectedIndex === -1) {
+        newSelected = newSelected.concat(selected, name)
+      } else if (selectedIndex === 0) {
+        newSelected = newSelected.concat(selected.slice(1))
+      } else if (selectedIndex === selected.length - 1) {
+        newSelected = newSelected.concat(selected.slice(0, -1))
+      } else if (selectedIndex > 0) {
+        newSelected = newSelected.concat(
+          selected.slice(0, selectedIndex),
+          selected.slice(selectedIndex + 1),
+        )
+      }
+      setSelected(newSelected)
     }
-
-    setSelected(newSelected)
+    if (onRowClick) onRowClick(event)
   }
 
-  const handleChangePage = (event: unknown, newPage: number) => {
+  const handleChangePage = (
+    event: BaseSyntheticEvent | MouseEvent<HTMLButtonElement> | null,
+    newPage: number,
+  ) => {
     setPage(newPage)
+    if (onChangePage) onChangePage(event, newPage)
   }
 
   const handleChangeRowsPerPage = (event: ChangeEvent<HTMLInputElement>) => {
     setRowsPerPage(parseInt(event.target.value, 10))
     setPage(0)
-  }
-
-  const handleChangeDense = (event: ChangeEvent<HTMLInputElement>) => {
-    setDense(event.target.checked)
+    if (onChangeRowsPerPage) onChangeRowsPerPage(event)
   }
 
   const isSelected = (name: string) => selected.indexOf(name) !== -1
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - dataSource.length) : 0
 
   const visibleRows = useMemo(
     () =>
-      rows
+      dataSource
         .slice()
-        .sort(getComparator(order, orderBy))
+        .sort(getComparator(order, orderBy ?? ''))
         .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage),
     [order, orderBy, page, rowsPerPage],
   )
@@ -302,17 +302,16 @@ const Table: FC<TableProps> = ({
   return (
     <Box sx={{ width: '100%' }}>
       <Paper sx={{ width: '100%', mb: 2 }}>
-        <TableToolbar
-          title={'test'}
-          numSelected={selected.length}
-          enableSelection={enableSelection}
-        />
+        {(title || enableSelection) && (
+          <TableToolbar
+            title={title ?? ''}
+            numSelected={selected.length}
+            enableSelection={enableSelection}
+          />
+        )}
+
         <TableContainer>
-          <MUITable
-            sx={{ minWidth: 750 }}
-            aria-labelledby="tableTitle"
-            size={dense ? 'small' : 'medium'}
-          >
+          <MUITable sx={{ minWidth: 750 }} {...others}>
             <TableHead
               headCells={headCells}
               numSelected={selected.length}
@@ -320,44 +319,42 @@ const Table: FC<TableProps> = ({
               orderBy={orderBy}
               onSelectAllClick={handleSelectAllClick}
               onRequestSort={handleRequestSort}
-              rowCount={rows.length}
+              rowCount={dataSource.length}
             />
             <TableBody>
-              {visibleRows.map((row, index) => {
-                const isItemSelected = isSelected(row.name)
-                const labelId = `-table-checkbox-${index}`
-
+              {visibleRows.map((row) => {
+                const isItemSelected = isSelected(row.id)
                 return (
                   <TableRow
                     hover
-                    onClick={(event) => handleClick(event, row.name)}
-                    key={row.name}
+                    onClick={(event) => handleRowClick(event, row.id)}
+                    key={row.id}
                     selected={isItemSelected}
                     sx={{ cursor: 'pointer' }}
                   >
                     {enableSelection && (
                       <TableCell padding="checkbox">
-                        <Checkbox
-                          color="primary"
-                          checked={isItemSelected}
-                          inputProps={{
-                            'aria-labelledby': labelId,
-                          }}
-                        />
+                        <Checkbox color="primary" checked={isItemSelected} />
                       </TableCell>
                     )}
-                    <TableCell>{row.name}</TableCell>
-                    <TableCell>{row.calories}</TableCell>
-                    <TableCell>{row.fat}</TableCell>
-                    <TableCell>{row.carbs}</TableCell>
-                    <TableCell>{row.protein}</TableCell>
+                    {headCells.map((headCell) => {
+                      let cell = row[headCell.id]
+                      if (headCell.cell) cell = headCell.cell(row)
+                      return (
+                        <TableCell
+                          padding={headCell.disablePadding ? 'none' : 'normal'}
+                        >
+                          {cell}
+                        </TableCell>
+                      )
+                    })}
                   </TableRow>
                 )
               })}
               {emptyRows > 0 && (
                 <TableRow
                   style={{
-                    height: (dense ? 33 : 53) * emptyRows,
+                    height: (others.size == 'small' ? 33 : 53) * emptyRows,
                   }}
                 >
                   <TableCell colSpan={6} />
@@ -366,20 +363,18 @@ const Table: FC<TableProps> = ({
             </TableBody>
           </MUITable>
         </TableContainer>
-        <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
-          component="div"
-          count={rows.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          onPageChange={handleChangePage}
-          onRowsPerPageChange={handleChangeRowsPerPage}
-        />
+        {enablePagnation && (
+          <TablePagination
+            rowsPerPageOptions={[5, 10, 25]}
+            component="div"
+            count={dataSource.length}
+            rowsPerPage={rowsPerPage}
+            page={page}
+            onPageChange={handleChangePage}
+            onRowsPerPageChange={handleChangeRowsPerPage}
+          />
+        )}
       </Paper>
-      <FormControlLabel
-        control={<Switch checked={dense} onChange={handleChangeDense} />}
-        label="Dense padding"
-      />
     </Box>
   )
 }
