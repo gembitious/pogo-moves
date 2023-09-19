@@ -1,3 +1,5 @@
+'use client'
+
 import Table, { TableHeadCell } from '@components/Table'
 import { TextField } from '@mui/material'
 import Image from 'next/image'
