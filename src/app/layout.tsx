@@ -16,7 +16,7 @@ const RootLayout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <html lang="ko">
       <body className={inter.className}>
-        <div className="max-w-[1920px] px-2 md:px-4 lg:px-8 m-auto flex flex-col">
+        <div className="max-w-[1920px] m-auto flex flex-col">
           <NavigationBar />
           {children}
         </div>

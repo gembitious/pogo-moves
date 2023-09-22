@@ -2,7 +2,6 @@
 
 import Table, { TableHeadCell } from '@components/Table'
 import { FastMoveData } from '@constants'
-import { TextField } from '@mui/material'
 import Image from 'next/image'
 import { FC, useState } from 'react'
 
@@ -19,8 +18,8 @@ const headCells: TableHeadCell[] = [
       <Image
         src={`/images/types/${data.type}.png`}
         alt={'type'}
-        width={32}
-        height={32}
+        width={24}
+        height={24}
       />
     ),
   },
@@ -51,8 +50,9 @@ const defaultImageSrc = '/images/pokemon_background.png'
 const FastMovesPage: FC = () => {
   const [dexImageSrc, setDexImageSrc] = useState(defaultImageSrc)
   const moveList = FastMoveData.map((move) => {
-    const { power, energyGain, type, turn, name } = move
+    const { id, power, energyGain, type, turn, name } = move
     return {
+      id,
       name,
       type,
       damage: power,
@@ -63,9 +63,8 @@ const FastMovesPage: FC = () => {
     }
   })
   return (
-    <div className="flex flex-col justify-center items-center m-auto">
-      <div className="flex items-center">
-        <TextField
+    <div className="flex flex-col justify-center items-center w-full m-auto px-4 md:px-6 lg:px-8">
+      {/* <TextField
           variant="outlined"
           placeholder="도감번호 입력"
           type="number"
@@ -77,18 +76,14 @@ const FastMovesPage: FC = () => {
               setDexImageSrc(defaultImageSrc)
             }
           }}
-        />
-        <Image
-          src={dexImageSrc}
-          alt={'pokemon sprite'}
-          onErrorCapture={() => {
-            setDexImageSrc(defaultImageSrc)
-          }}
-          width={128}
-          height={128}
-        />
-      </div>
-      <Table headCells={headCells} dataSource={moveList} title="Fast Moves" />
+        /> */}
+      <Table
+        headCells={headCells}
+        dataSource={moveList}
+        title="Fast Moves"
+        wrapperClassName="w-full"
+        size="small"
+      />
     </div>
   )
 }

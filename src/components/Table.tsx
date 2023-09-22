@@ -2,7 +2,6 @@
 
 import { Delete } from '@mui/icons-material'
 import {
-  Box,
   Checkbox,
   IconButton,
   Table as MUITable,
@@ -116,7 +115,7 @@ const TableHead: FC<EnhancedTableHeadProps> = ({
                 active={orderBy === id}
                 direction={orderBy === id ? order ?? 'asc' : 'asc'}
                 onClick={createSortHandler(id)}
-                hideSortIcon
+                hideSortIcon={true}
               >
                 {label}
               </TableSortLabel>
@@ -186,6 +185,7 @@ const TableToolbar: FC<TableToolbarProps> = ({
 interface EnhancedTableProps extends TableProps {
   dataSource: { [key: string]: any }[]
   headCells: TableHeadCell[]
+  wrapperClassName?: string
   title?: string
   enableSelection?: boolean
   enabledOrdering?: boolean
@@ -204,6 +204,7 @@ interface EnhancedTableProps extends TableProps {
 const Table: FC<EnhancedTableProps> = ({
   dataSource,
   headCells,
+  wrapperClassName,
   title,
   enableSelection,
   enabledOrdering,
@@ -300,82 +301,80 @@ const Table: FC<EnhancedTableProps> = ({
   )
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <Paper sx={{ width: '100%', mb: 2 }}>
-        {(title || enableSelection) && (
-          <TableToolbar
-            title={title ?? ''}
-            numSelected={selected.length}
-            enableSelection={enableSelection}
-          />
-        )}
+    <Paper className={wrapperClassName}>
+      {(title || enableSelection) && (
+        <TableToolbar
+          title={title ?? ''}
+          numSelected={selected.length}
+          enableSelection={enableSelection}
+        />
+      )}
 
-        <TableContainer>
-          <MUITable sx={{ minWidth: 750 }} {...others}>
-            <TableHead
-              headCells={headCells}
-              numSelected={selected.length}
-              order={order}
-              orderBy={orderBy}
-              onSelectAllClick={handleSelectAllClick}
-              onRequestSort={handleRequestSort}
-              rowCount={dataSource.length}
-            />
-            <TableBody>
-              {visibleRows.map((row) => {
-                const isItemSelected = isSelected(row.id)
-                return (
-                  <TableRow
-                    hover
-                    onClick={(event) => handleRowClick(event, row.id)}
-                    key={row.id}
-                    selected={isItemSelected}
-                    sx={{ cursor: 'pointer' }}
-                  >
-                    {enableSelection && (
-                      <TableCell padding="checkbox">
-                        <Checkbox color="primary" checked={isItemSelected} />
-                      </TableCell>
-                    )}
-                    {headCells.map((headCell) => {
-                      let cell = row[headCell.id]
-                      if (headCell.cell) cell = headCell.cell(row)
-                      return (
-                        <TableCell
-                          padding={headCell.disablePadding ? 'none' : 'normal'}
-                        >
-                          {cell}
-                        </TableCell>
-                      )
-                    })}
-                  </TableRow>
-                )
-              })}
-              {emptyRows > 0 && (
-                <TableRow
-                  style={{
-                    height: (others.size == 'small' ? 33 : 53) * emptyRows,
-                  }}
-                >
-                  <TableCell colSpan={6} />
-                </TableRow>
-              )}
-            </TableBody>
-          </MUITable>
-        </TableContainer>
-        {enablePagnation && (
-          <TablePagination
-            rowsPerPageOptions={[5, 10, 25]}
-            component="div"
-            count={dataSource.length}
-            rowsPerPage={rowsPerPage}
-            page={page}
-            onPageChange={handleChangePage}
-            onRowsPerPageChange={handleChangeRowsPerPage}
+      <TableContainer>
+        <MUITable {...others}>
+          <TableHead
+            headCells={headCells}
+            numSelected={selected.length}
+            order={order}
+            orderBy={orderBy}
+            onSelectAllClick={handleSelectAllClick}
+            onRequestSort={handleRequestSort}
+            rowCount={dataSource.length}
           />
-        )}
-      </Paper>
-    </Box>
+          <TableBody>
+            {visibleRows.map((row, index) => {
+              const isItemSelected = isSelected(row.id)
+              return (
+                <TableRow
+                  hover
+                  onClick={(event) => handleRowClick(event, row.id)}
+                  key={row.id}
+                  selected={isItemSelected}
+                  sx={{ cursor: 'pointer' }}
+                >
+                  {enableSelection && (
+                    <TableCell padding="checkbox">
+                      <Checkbox color="primary" checked={isItemSelected} />
+                    </TableCell>
+                  )}
+                  {headCells.map((headCell) => {
+                    let cell = row[headCell.id]
+                    return (
+                      <TableCell
+                        key={`${row.id}-${headCell.id}`}
+                        padding={headCell.disablePadding ? 'none' : 'normal'}
+                      >
+                        {headCell.cell ? headCell.cell(row) : cell}
+                      </TableCell>
+                    )
+                  })}
+                </TableRow>
+              )
+            })}
+            {emptyRows > 0 && (
+              <TableRow
+                style={{
+                  height: (others.size == 'small' ? 33 : 45) * emptyRows,
+                }}
+              >
+                <TableCell colSpan={6} />
+              </TableRow>
+            )}
+          </TableBody>
+        </MUITable>
+      </TableContainer>
+      {enablePagnation && (
+        <TablePagination
+          rowsPerPageOptions={[5, 10, 25]}
+          component="div"
+          count={dataSource.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
+      )}
+    </Paper>
   )
 }
 
