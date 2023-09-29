@@ -103,7 +103,7 @@ const TableHead: FC<EnhancedTableHeadProps> = ({
           </TableCell>
         )}
         {headCells.map((headCell) => {
-          const { id, label, disablePadding, ...others } = headCell
+          const { id, label, disablePadding, cell, ...others } = headCell
           return (
             <TableCell
               {...others}
