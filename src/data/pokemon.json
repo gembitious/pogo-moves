@@ -3070,6 +3070,16 @@
     "released": true
   },
   {
+    "dex": 194,
+    "id": "wooper_paldean",
+    "types": ["poison", "ground"],
+    "nameEn": "Wooper (Paldean)",
+    "name": "Wooper (Paldean)",
+    "fastMoves": ["mud_shot", "poison_jab"],
+    "chargedMoves": ["body_slam", "dig", "sludge_wave"],
+    "released": true
+  },
+  {
     "dex": 195,
     "id": "quagsire",
     "types": ["water", "ground"],
@@ -3081,8 +3091,10 @@
       "sludge_bomb",
       "stone_edge",
       "acid_spray",
-      "mud_bomb"
+      "mud_bomb",
+      "aqua_tail"
     ],
+    "eliteMoves": ["aqua_tail"],
     "released": true
   },
   {
@@ -7826,7 +7838,13 @@
     "nameEn": "Conkeldurr",
     "name": "노보청",
     "fastMoves": ["counter", "poison_jab"],
-    "chargedMoves": ["dynamic_punch", "focus_blast", "stone_edge"],
+    "chargedMoves": [
+      "dynamic_punch",
+      "focus_blast",
+      "stone_edge",
+      "brutal_swing"
+    ],
+    "eliteMoves": ["brutal_swing"],
     "released": true
   },
   {
@@ -9660,7 +9678,7 @@
     "name": "메이클",
     "fastMoves": ["zen_headbutt", "rock_smash"],
     "chargedMoves": ["brick_break", "rock_slide", "seed_bomb"],
-    "released": false
+    "released": true
   },
   {
     "dex": 673,
@@ -9669,8 +9687,8 @@
     "nameEn": "Gogoat",
     "name": "고고트",
     "fastMoves": ["zen_headbutt", "rock_smash", "vine_whip"],
-    "chargedMoves": ["brick_break", "rock_slide", "leaf_blade", "seed_bomb"],
-    "released": false
+    "chargedMoves": ["brick_break", "leaf_blade", "seed_bomb"],
+    "released": true
   },
   {
     "dex": 674,
@@ -13019,7 +13037,7 @@
   },
   {
     "dex": 922,
-    "id": "true",
+    "id": "pawmo",
     "types": ["electric", "fighting"],
     "nameEn": "Pawmo",
     "name": "빠모트",
@@ -13105,7 +13123,7 @@
     "name": "미니브",
     "fastMoves": ["razor_leaf", "tackle"],
     "chargedMoves": ["seed_bomb", "energy_ball", "earth_power"],
-    "released": false
+    "released": true
   },
   {
     "dex": 929,
@@ -13115,7 +13133,7 @@
     "name": "올리뇨",
     "fastMoves": ["razor_leaf", "tackle", "magical_leaf"],
     "chargedMoves": ["seed_bomb", "energy_ball", "earth_power"],
-    "released": false
+    "released": true
   },
   {
     "dex": 930,
@@ -13125,7 +13143,7 @@
     "name": "올리르바",
     "fastMoves": ["razor_leaf", "tackle", "magical_leaf"],
     "chargedMoves": ["seed_bomb", "energy_ball", "earth_power"],
-    "released": false
+    "released": true
   },
   {
     "dex": 931,
@@ -13250,7 +13268,7 @@
     "name": "빈나두",
     "fastMoves": ["thunder_shock", "water_gun"],
     "chargedMoves": ["parabolic_charge", "discharge", "zap_cannon"],
-    "released": false
+    "released": true
   },
   {
     "dex": 939,
@@ -13260,7 +13278,7 @@
     "name": "찌리배리",
     "fastMoves": ["thunder_shock", "water_gun"],
     "chargedMoves": ["parabolic_charge", "discharge", "zap_cannon"],
-    "released": false
+    "released": true
   },
   {
     "dex": 940,
@@ -13623,7 +13641,7 @@
     "name": "망망이",
     "fastMoves": ["lick", "bite"],
     "chargedMoves": ["shadow_ball", "dig", "psychic_fangs"],
-    "released": false
+    "released": true
   },
   {
     "dex": 972,
@@ -13633,7 +13651,7 @@
     "name": "묘두기",
     "fastMoves": ["lick", "bite"],
     "chargedMoves": ["shadow_ball", "dig", "psychic_fangs"],
-    "released": false
+    "released": true
   },
   {
     "dex": 973,
@@ -13741,15 +13759,17 @@
     "types": ["poison", "ground"],
     "nameEn": "Clodsire",
     "name": "토오",
-    "fastMoves": ["poison_jab", "mud_shot"],
+    "fastMoves": ["poison_sting", "mud_shot"],
     "chargedMoves": [
       "sludge_bomb",
       "earthquake",
       "stone_edge",
       "acid_spray",
-      "surf"
+      "water_pulse",
+      "megahorn"
     ],
-    "released": false
+    "eliteMoves": ["megahorn"],
+    "released": true
   },
   {
     "dex": 981,
