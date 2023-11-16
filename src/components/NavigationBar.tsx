@@ -67,7 +67,7 @@ export const NavigationBar: FC = () => {
       </TitleBannerWrapper>
       <div>
         <Button
-          variant="outlined"
+          variant="contained"
           onClick={() => {
             router.push('/moves/fast')
           }}
@@ -75,7 +75,7 @@ export const NavigationBar: FC = () => {
           Fast Moves
         </Button>
         <Button
-          variant="outlined"
+          variant="contained"
           onClick={() => {
             router.push('/moves/charge')
           }}

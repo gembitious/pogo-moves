@@ -1,11 +1,9 @@
 import { NavigationBar } from '@components/NavigationBar'
 import '@styles/globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 // import Script from 'next/script'
 import { FC, ReactNode } from 'react'
-
-const inter = Inter({ subsets: ['latin'] })
+import ThemeRegistry from './ThemeRegistry'
 
 export const metadata: Metadata = {
   title: 'POGO-MOVES',
@@ -15,11 +13,13 @@ export const metadata: Metadata = {
 const RootLayout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <html lang="ko">
-      <body className={inter.className}>
-        <div className="max-w-[1920px] m-auto flex flex-col">
-          <NavigationBar />
-          {children}
-        </div>
+      <body>
+        <ThemeRegistry options={{ key: 'mui' }}>
+          <div className="max-w-[1920px] m-auto flex flex-col">
+            <NavigationBar />
+            {children}
+          </div>
+        </ThemeRegistry>
       </body>
       {/* <Script
         async
