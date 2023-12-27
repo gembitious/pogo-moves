@@ -12941,6 +12941,16 @@
     "released": false
   },
   {
+    "dex": 899,
+    "id": "wyrdeer",
+    "types": ["normal", "psychic"],
+    "nameEn": "Wyrdeer",
+    "name": "신비록",
+    "fastMoves": ["tackle", "zen_headbutt", "confusion"],
+    "chargedMoves": ["megahorn", "stomp", "wild_charge", "psychic"],
+    "released": true
+  },
+  {
     "dex": 900,
     "id": "kleavor",
     "types": ["bug", "rock"],
@@ -13805,7 +13815,7 @@
     "name": "터벅고래",
     "fastMoves": ["ice_shard", "tackle"],
     "chargedMoves": ["body_slam", "avalanche", "heavy_slam"],
-    "released": false
+    "released": true
   },
   {
     "dex": 975,
@@ -13815,7 +13825,7 @@
     "name": "우락고래",
     "fastMoves": ["ice_shard", "tackle"],
     "chargedMoves": ["body_slam", "avalanche", "heavy_slam"],
-    "released": false
+    "released": true
   },
   {
     "dex": 976,
