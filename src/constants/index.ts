@@ -1,4 +1,5 @@
-import moves from '@data/moves.json'
+import chargedMoves from '@data/charged_moves.json'
+import fastMoves from '@data/fast_moves.json'
 import { ChargedMove, FastMove } from '@types'
 
 export const pokemonType = {
@@ -33,7 +34,7 @@ const isChargedMove = (target: any): target is ChargedMove =>
 
 const getFastMoveData = () => {
   const result: FastMove[] = []
-  moves.map((move) => {
+  fastMoves.map((move) => {
     if (isFastMove(move)) result.push(move)
   })
   return result
@@ -41,7 +42,7 @@ const getFastMoveData = () => {
 
 const getChargedMoveData = () => {
   const result: ChargedMove[] = []
-  moves.map((move) => {
+  chargedMoves.map((move) => {
     if (isChargedMove(move)) result.push(move)
   })
   return result

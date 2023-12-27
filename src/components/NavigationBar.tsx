@@ -1,9 +1,10 @@
 'use client'
 
-import { Button, styled } from '@mui/material'
+import { styled } from '@mui/material'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { FC } from 'react'
+import Button from './Button'
 
 const NavigationBarContainer = styled('div')`
   display: flex;

@@ -1,9 +1,11 @@
 import { NavigationBar } from '@components/NavigationBar'
-import '@styles/globals.css'
-import type { Metadata } from 'next'
-// import Script from 'next/script'
+import { ThemeProvider } from '@mui/material'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
+import '@styles/globals.css'
+import theme from '@styles/theme'
+import type { Metadata } from 'next'
 import { FC, ReactNode } from 'react'
+// import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'POGO-MOVES',
@@ -14,11 +16,13 @@ const RootLayout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <html lang="ko">
       <body>
-        <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-          <div className="max-w-[1920px] m-auto flex flex-col">
-            <NavigationBar />
-            {children}
-          </div>
+        <AppRouterCacheProvider>
+          <ThemeProvider theme={theme}>
+            <div className="max-w-[1920px] m-auto flex flex-col">
+              <NavigationBar />
+              {children}
+            </div>
+          </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
       {/* <Script

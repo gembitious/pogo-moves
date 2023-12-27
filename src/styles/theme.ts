@@ -1,3 +1,5 @@
+'use client'
+
 import { createTheme } from '@mui/material'
 import { POGO_MOVES_COLORS } from './colors'
 
@@ -15,7 +17,13 @@ const theme = createTheme({
     },
   },
   components: {
-    MuiButton: {},
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'unset',
+        },
+      },
+    },
   },
 })
 
