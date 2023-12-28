@@ -1,10 +1,10 @@
 'use client'
 
-import FastMovesPage from '@app/moves/fast/page'
 import { FC } from 'react'
+import ChargedMovesPage from './moves/charged/page'
 
 const HomePage: FC = () => {
-  return <FastMovesPage />
+  return <ChargedMovesPage />
 }
 
 export default HomePage

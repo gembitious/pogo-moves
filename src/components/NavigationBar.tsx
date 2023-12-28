@@ -60,15 +60,20 @@ export const NavigationBar: FC = () => {
     <NavigationBarContainer>
       <TitleBannerWrapper>
         <Image
-          className="object-contain"
+          className="object-contain cursor-pointer"
           src={'/images/title_banner.png'}
           alt={'Title banner'}
+          priority
           fill
+          onClick={() => {
+            router.push('/')
+          }}
         />
       </TitleBannerWrapper>
       <div>
         <Button
           variant="contained"
+          color="secondary"
           onClick={() => {
             router.push('/moves/fast')
           }}
@@ -78,7 +83,7 @@ export const NavigationBar: FC = () => {
         <Button
           variant="contained"
           onClick={() => {
-            router.push('/moves/charge')
+            router.push('/moves/charged')
           }}
         >
           Charge Moves

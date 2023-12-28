@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-const ChargeMovesPage: FC = () => {
+const ChargedMovesPage: FC = () => {
   return (
     <main className="">
       <div className="">charge</div>
@@ -8,4 +8,4 @@ const ChargeMovesPage: FC = () => {
   )
 }
 
-export default ChargeMovesPage
+export default ChargedMovesPage
