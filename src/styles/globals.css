@@ -9,12 +9,12 @@ body {
   background: #023047;
 }
 
-body::-webkit-scrollbar {
+main::-webkit-scrollbar {
   width: 4px;
   background-color: transparent;
 }
 
-body::-webkit-scrollbar-thumb {
+main::-webkit-scrollbar-thumb {
   border-radius: 2px;
   background-color: #8ecae640;
 }

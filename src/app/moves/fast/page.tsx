@@ -2,6 +2,7 @@
 
 import Table, { TableHeadCell } from '@components/Table'
 import { FastMoveData } from '@constants'
+import { FastMove } from '@types'
 import Image from 'next/image'
 import { FC, useState } from 'react'
 
@@ -14,10 +15,10 @@ const headCells: TableHeadCell[] = [
     id: 'type',
     label: 'Type',
     disablePadding: true,
-    cell: (data) => (
+    cell: (data: FastMove) => (
       <Image
         src={`/images/types/${data.type}.png`}
-        alt={'type'}
+        alt={data.type}
         width={24}
         height={24}
       />

@@ -11,21 +11,21 @@ const NavigationBarContainer = styled('div')`
   justify-content: space-between;
   align-items: center;
   height: 44px;
-  padding: 6px 0;
+  padding: 6px 2px;
 
   @media (min-width: 360px) {
     height: 64px;
-    padding: 8px 0;
+    padding: 8px 4px;
   }
 
   @media (min-width: 768px) {
     height: 96px;
-    padding: 12px 0;
+    padding: 12px 8px;
   }
 
   @media (min-width: 1024px) {
     height: 128px;
-    padding: 16px 0;
+    padding: 16px 8px;
   }
 `
 

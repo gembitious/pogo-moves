@@ -1,11 +1,7 @@
 import { FC } from 'react'
 
 const ChargedMovesPage: FC = () => {
-  return (
-    <main className="">
-      <div className="">charge</div>
-    </main>
-  )
+  return <div className="">charge</div>
 }
 
 export default ChargedMovesPage

@@ -20,7 +20,7 @@ export interface ChargedMove extends BasicMove {
   buffApplyChance?: number
 }
 
-export type PokemonType = keyof typeof pokemonType | string
+export type PokemonType = keyof typeof pokemonType
 
 export interface Pokemon {
   dex: number
