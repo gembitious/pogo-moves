@@ -46,10 +46,7 @@ type Order = 'asc' | 'desc'
 function getComparator<Key extends keyof any>(
   order: Order,
   orderBy: Key,
-): (
-  a: { [key in Key]: number | string },
-  b: { [key in Key]: number | string },
-) => number {
+): (a: { [key in Key]: number | string }, b: { [key in Key]: number | string }) => number {
   return order === 'desc'
     ? (a, b) => descendingComparator(a, b, orderBy)
     : (a, b) => -descendingComparator(a, b, orderBy)
@@ -84,10 +81,9 @@ const TableHead: FC<EnhancedTableHeadProps> = ({
   enableSelection,
   ...others
 }) => {
-  const createSortHandler =
-    (property: string) => (event: MouseEvent<HTMLSpanElement>) => {
-      onRequestSort(event, property)
-    }
+  const createSortHandler = (property: string) => (event: MouseEvent<HTMLSpanElement>) => {
+    onRequestSort(event, property)
+  }
 
   return (
     <MUITableHead {...others}>
@@ -146,29 +142,16 @@ const TableToolbar: FC<TableToolbarProps> = ({
         pr: { xs: 1, sm: 1 },
         ...(numSelected > 0 && {
           bgcolor: (theme) =>
-            alpha(
-              theme.palette.primary.main,
-              theme.palette.action.activatedOpacity,
-            ),
+            alpha(theme.palette.primary.main, theme.palette.action.activatedOpacity),
         }),
       }}
     >
-      <Typography
-        sx={{ flex: '1 1 100%' }}
-        variant="h6"
-        id="tableTitle"
-        component="div"
-      >
+      <Typography sx={{ flex: '1 1 100%' }} variant="h6" id="tableTitle" component="div">
         {title}
       </Typography>
       {enableSelection && numSelected > 0 && (
         <>
-          <Typography
-            sx={{ flex: '1 1 20%' }}
-            color="inherit"
-            variant="subtitle1"
-            component="div"
-          >
+          <Typography sx={{ flex: '1 1 20%' }} color="inherit" variant="subtitle1" component="div">
             {numSelected} selected
           </Typography>
           <Tooltip title="Delete">
@@ -221,14 +204,9 @@ const Table: FC<EnhancedTableProps> = ({
   const [orderBy, setOrderBy] = useState<string | undefined>(defaultOrderBy)
   const [selected, setSelected] = useState<readonly string[]>([])
   const [page, setPage] = useState(0)
-  const [rowsPerPage, setRowsPerPage] = useState(
-    enablePagnation ? 5 : dataSource.length,
-  )
+  const [rowsPerPage, setRowsPerPage] = useState(enablePagnation ? 5 : dataSource.length)
 
-  const handleRequestSort = (
-    event: MouseEvent<HTMLSpanElement>,
-    property: string,
-  ) => {
+  const handleRequestSort = (event: MouseEvent<HTMLSpanElement>, property: string) => {
     const isAsc = orderBy === property && order === 'asc'
     setOrder(isAsc ? 'desc' : 'asc')
     setOrderBy(property)
@@ -247,10 +225,7 @@ const Table: FC<EnhancedTableProps> = ({
   }
 
   // row 클릭 시
-  const handleRowClick = (
-    event: MouseEvent<HTMLTableRowElement>,
-    name: string,
-  ) => {
+  const handleRowClick = (event: MouseEvent<HTMLTableRowElement>, name: string) => {
     if (enableSelection) {
       const selectedIndex = selected.indexOf(name)
       let newSelected: readonly string[] = []
@@ -288,8 +263,7 @@ const Table: FC<EnhancedTableProps> = ({
   const isSelected = (name: string) => selected.indexOf(name) !== -1
 
   // Avoid a layout jump when reaching the last page with empty rows.
-  const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - dataSource.length) : 0
+  const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - dataSource.length) : 0
 
   const visibleRows = useMemo(
     () =>

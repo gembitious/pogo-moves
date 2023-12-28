@@ -16,12 +16,7 @@ const headCells: TableHeadCell[] = [
     label: 'Type',
     disablePadding: true,
     cell: (data: FastMove) => (
-      <Image
-        src={`/images/types/${data.type}.png`}
-        alt={data.type}
-        width={24}
-        height={24}
-      />
+      <Image src={`/images/types/${data.type}.png`} alt={data.type} width={24} height={24} />
     ),
   },
   {

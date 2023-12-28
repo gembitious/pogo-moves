@@ -26,12 +26,7 @@
     "nameEn": "Venusaur",
     "name": "이상해꽃",
     "fastMoves": ["razor_leaf", "vine_whip"],
-    "chargedMoves": [
-      "frenzy_plant",
-      "petal_blizzard",
-      "sludge_bomb",
-      "solar_beam"
-    ],
+    "chargedMoves": ["frenzy_plant", "petal_blizzard", "sludge_bomb", "solar_beam"],
     "eliteMoves": ["frenzy_plant"],
     "released": true
   },
@@ -62,27 +57,9 @@
     "types": ["fire", "flying"],
     "nameEn": "Charizard",
     "name": "리자몽",
-    "fastMoves": [
-      "air_slash",
-      "ember",
-      "fire_spin",
-      "wing_attack",
-      "dragon_breath"
-    ],
-    "chargedMoves": [
-      "blast_burn",
-      "dragon_claw",
-      "fire_blast",
-      "flamethrower",
-      "overheat"
-    ],
-    "eliteMoves": [
-      "ember",
-      "wing_attack",
-      "blast_burn",
-      "flamethrower",
-      "dragon_breath"
-    ],
+    "fastMoves": ["air_slash", "ember", "fire_spin", "wing_attack", "dragon_breath"],
+    "chargedMoves": ["blast_burn", "dragon_claw", "fire_blast", "flamethrower", "overheat"],
+    "eliteMoves": ["ember", "wing_attack", "blast_burn", "flamethrower", "dragon_breath"],
     "released": true
   },
   {
@@ -112,13 +89,7 @@
     "nameEn": "Blastoise",
     "name": "거북왕",
     "fastMoves": ["bite", "water_gun"],
-    "chargedMoves": [
-      "flash_cannon",
-      "hydro_cannon",
-      "hydro_pump",
-      "ice_beam",
-      "skull_bash"
-    ],
+    "chargedMoves": ["flash_cannon", "hydro_cannon", "hydro_pump", "ice_beam", "skull_bash"],
     "eliteMoves": ["hydro_cannon"],
     "released": true
   },
@@ -180,13 +151,7 @@
     "nameEn": "Beedrill",
     "name": "독침붕",
     "fastMoves": ["bug_bite", "infestation", "poison_jab"],
-    "chargedMoves": [
-      "aerial_ace",
-      "sludge_bomb",
-      "x_scissor",
-      "fell_stinger",
-      "drill_run"
-    ],
+    "chargedMoves": ["aerial_ace", "sludge_bomb", "x_scissor", "fell_stinger", "drill_run"],
     "eliteMoves": ["bug_bite", "drill_run"],
     "released": true
   },
@@ -217,13 +182,7 @@
     "nameEn": "Pidgeot",
     "name": "피죤투",
     "fastMoves": ["air_slash", "steel_wing", "wing_attack", "gust"],
-    "chargedMoves": [
-      "aerial_ace",
-      "air_cutter",
-      "brave_bird",
-      "hurricane",
-      "feather_dance"
-    ],
+    "chargedMoves": ["aerial_ace", "air_cutter", "brave_bird", "hurricane", "feather_dance"],
     "eliteMoves": ["wing_attack", "air_cutter", "gust"],
     "released": true
   },
@@ -317,13 +276,7 @@
     "nameEn": "Pikachu",
     "name": "피카츄",
     "fastMoves": ["present", "quick_attack", "thunder_shock"],
-    "chargedMoves": [
-      "discharge",
-      "surf",
-      "thunder",
-      "thunderbolt",
-      "wild_charge"
-    ],
+    "chargedMoves": ["discharge", "surf", "thunder", "thunderbolt", "wild_charge"],
     "eliteMoves": ["present", "surf", "thunder"],
     "released": true
   },
@@ -395,14 +348,7 @@
     "nameEn": "Pikachu (Shaymin Scarf)",
     "name": "피카츄 (shaymin scarf)",
     "fastMoves": ["present", "quick_attack", "thunder_shock"],
-    "chargedMoves": [
-      "discharge",
-      "surf",
-      "thunder",
-      "thunderbolt",
-      "wild_charge",
-      "grass_knot"
-    ],
+    "chargedMoves": ["discharge", "surf", "thunder", "thunderbolt", "wild_charge", "grass_knot"],
     "eliteMoves": ["present", "surf", "thunder"],
     "released": true
   },
@@ -431,13 +377,7 @@
     "nameEn": "Raichu (Alolan)",
     "name": "라이츄 (알로라)",
     "fastMoves": ["spark", "volt_switch", "thunder_shock"],
-    "chargedMoves": [
-      "psychic",
-      "thunder_punch",
-      "wild_charge",
-      "grass_knot",
-      "trailblaze"
-    ],
+    "chargedMoves": ["psychic", "thunder_punch", "wild_charge", "grass_knot", "trailblaze"],
     "released": true
   },
   {
@@ -468,13 +408,7 @@
     "nameEn": "Sandslash",
     "name": "고지",
     "fastMoves": ["metal_claw", "mud_shot"],
-    "chargedMoves": [
-      "bulldoze",
-      "earthquake",
-      "rock_tomb",
-      "night_slash",
-      "scorching_sands"
-    ],
+    "chargedMoves": ["bulldoze", "earthquake", "rock_tomb", "night_slash", "scorching_sands"],
     "eliteMoves": ["night_slash"],
     "released": true
   },
@@ -485,14 +419,7 @@
     "nameEn": "Sandslash (Alolan)",
     "name": "고지 (알로라)",
     "fastMoves": ["metal_claw", "powder_snow", "shadow_claw"],
-    "chargedMoves": [
-      "blizzard",
-      "bulldoze",
-      "gyro_ball",
-      "ice_punch",
-      "drill_run",
-      "aerial_ace"
-    ],
+    "chargedMoves": ["blizzard", "bulldoze", "gyro_ball", "ice_punch", "drill_run", "aerial_ace"],
     "eliteMoves": ["shadow_claw"],
     "released": true
   },
@@ -523,13 +450,7 @@
     "nameEn": "Nidoqueen",
     "name": "니드퀸",
     "fastMoves": ["bite", "poison_jab"],
-    "chargedMoves": [
-      "earthquake",
-      "sludge_wave",
-      "stone_edge",
-      "earth_power",
-      "poison_fang"
-    ],
+    "chargedMoves": ["earthquake", "sludge_wave", "stone_edge", "earth_power", "poison_fang"],
     "released": true
   },
   {
@@ -559,13 +480,7 @@
     "nameEn": "Nidoking",
     "name": "니드킹",
     "fastMoves": ["fury_cutter", "iron_tail", "poison_jab", "double_kick"],
-    "chargedMoves": [
-      "earthquake",
-      "megahorn",
-      "sludge_wave",
-      "earth_power",
-      "sand_tomb"
-    ],
+    "chargedMoves": ["earthquake", "megahorn", "sludge_wave", "earth_power", "sand_tomb"],
     "eliteMoves": ["fury_cutter"],
     "released": true
   },
@@ -585,13 +500,7 @@
     "types": ["fairy", "none"],
     "nameEn": "Clefable",
     "name": "픽시",
-    "fastMoves": [
-      "charge_beam",
-      "pound",
-      "zen_headbutt",
-      "charm",
-      "fairy_wind"
-    ],
+    "fastMoves": ["charge_beam", "pound", "zen_headbutt", "charm", "fairy_wind"],
     "chargedMoves": ["dazzling_gleam", "meteor_mash", "moonblast", "psychic"],
     "eliteMoves": ["pound"],
     "released": true
@@ -603,12 +512,7 @@
     "nameEn": "Vulpix",
     "name": "식스테일",
     "fastMoves": ["ember", "quick_attack"],
-    "chargedMoves": [
-      "body_slam",
-      "flame_charge",
-      "flamethrower",
-      "weather_ball_fire"
-    ],
+    "chargedMoves": ["body_slam", "flame_charge", "flamethrower", "weather_ball_fire"],
     "released": true
   },
   {
@@ -648,13 +552,7 @@
     "nameEn": "Ninetales (Alolan)",
     "name": "나인테일 (알로라)",
     "fastMoves": ["feint_attack", "powder_snow", "charm"],
-    "chargedMoves": [
-      "blizzard",
-      "dazzling_gleam",
-      "ice_beam",
-      "psyshock",
-      "weather_ball_ice"
-    ],
+    "chargedMoves": ["blizzard", "dazzling_gleam", "ice_beam", "psyshock", "weather_ball_ice"],
     "released": true
   },
   {
@@ -664,13 +562,7 @@
     "nameEn": "Jigglypuff",
     "name": "푸린",
     "fastMoves": ["feint_attack", "pound"],
-    "chargedMoves": [
-      "body_slam",
-      "dazzling_gleam",
-      "disarming_voice",
-      "gyro_ball",
-      "play_rough"
-    ],
+    "chargedMoves": ["body_slam", "dazzling_gleam", "disarming_voice", "gyro_ball", "play_rough"],
     "eliteMoves": ["play_rough", "body_slam"],
     "released": true
   },
@@ -709,12 +601,7 @@
     "nameEn": "Golbat",
     "name": "골뱃",
     "fastMoves": ["bite", "wing_attack"],
-    "chargedMoves": [
-      "air_cutter",
-      "ominous_wind",
-      "poison_fang",
-      "shadow_ball"
-    ],
+    "chargedMoves": ["air_cutter", "ominous_wind", "poison_fang", "shadow_ball"],
     "eliteMoves": ["ominous_wind"],
     "released": true
   },
@@ -745,12 +632,7 @@
     "nameEn": "Vileplume",
     "name": "라플레시아",
     "fastMoves": ["acid", "razor_leaf"],
-    "chargedMoves": [
-      "moonblast",
-      "petal_blizzard",
-      "solar_beam",
-      "sludge_bomb"
-    ],
+    "chargedMoves": ["moonblast", "petal_blizzard", "solar_beam", "sludge_bomb"],
     "released": true
   },
   {
@@ -873,13 +755,7 @@
     "nameEn": "Persian",
     "name": "페르시온",
     "fastMoves": ["feint_attack", "scratch"],
-    "chargedMoves": [
-      "foul_play",
-      "night_slash",
-      "play_rough",
-      "power_gem",
-      "payback"
-    ],
+    "chargedMoves": ["foul_play", "night_slash", "play_rough", "power_gem", "payback"],
     "eliteMoves": ["night_slash"],
     "released": true
   },
@@ -890,13 +766,7 @@
     "nameEn": "Persian (Alolan)",
     "name": "페르시온 (알로라)",
     "fastMoves": ["feint_attack", "scratch"],
-    "chargedMoves": [
-      "dark_pulse",
-      "foul_play",
-      "play_rough",
-      "payback",
-      "trailblaze"
-    ],
+    "chargedMoves": ["dark_pulse", "foul_play", "play_rough", "payback", "trailblaze"],
     "released": true
   },
   {
@@ -944,13 +814,7 @@
     "nameEn": "Primeape",
     "name": "성원숭",
     "fastMoves": ["counter", "karate_chop", "low_kick"],
-    "chargedMoves": [
-      "close_combat",
-      "cross_chop",
-      "low_sweep",
-      "night_slash",
-      "ice_punch"
-    ],
+    "chargedMoves": ["close_combat", "cross_chop", "low_sweep", "night_slash", "ice_punch"],
     "eliteMoves": ["karate_chop", "cross_chop"],
     "released": true
   },
@@ -1099,12 +963,7 @@
     "nameEn": "Machoke",
     "name": "근육몬",
     "fastMoves": ["karate_chop", "low_kick"],
-    "chargedMoves": [
-      "brick_break",
-      "cross_chop",
-      "dynamic_punch",
-      "submission"
-    ],
+    "chargedMoves": ["brick_break", "cross_chop", "dynamic_punch", "submission"],
     "eliteMoves": ["cross_chop"],
     "released": true
   },
@@ -1156,13 +1015,7 @@
     "nameEn": "Victreebel",
     "name": "우츠보트",
     "fastMoves": ["acid", "razor_leaf"],
-    "chargedMoves": [
-      "leaf_blade",
-      "sludge_bomb",
-      "solar_beam",
-      "acid_spray",
-      "leaf_tornado"
-    ],
+    "chargedMoves": ["leaf_blade", "sludge_bomb", "solar_beam", "acid_spray", "leaf_tornado"],
     "released": true
   },
   {
@@ -1182,13 +1035,7 @@
     "nameEn": "Tentacruel",
     "name": "독파리",
     "fastMoves": ["acid", "poison_jab"],
-    "chargedMoves": [
-      "blizzard",
-      "hydro_pump",
-      "sludge_wave",
-      "acid_spray",
-      "scald"
-    ],
+    "chargedMoves": ["blizzard", "hydro_pump", "sludge_wave", "acid_spray", "scald"],
     "released": true
   },
   {
@@ -1281,13 +1128,7 @@
     "nameEn": "Rapidash",
     "name": "날쌩마",
     "fastMoves": ["ember", "fire_spin", "low_kick", "incinerate"],
-    "chargedMoves": [
-      "drill_run",
-      "fire_blast",
-      "heat_wave",
-      "flame_charge",
-      "scorching_sands"
-    ],
+    "chargedMoves": ["drill_run", "fire_blast", "heat_wave", "flame_charge", "scorching_sands"],
     "eliteMoves": ["ember"],
     "released": true
   },
@@ -1298,13 +1139,7 @@
     "nameEn": "Rapidash (Galarian)",
     "name": "날쌩마 (가라르)",
     "fastMoves": ["low_kick", "psycho_cut", "fairy_wind"],
-    "chargedMoves": [
-      "play_rough",
-      "psychic",
-      "body_slam",
-      "megahorn",
-      "high_horsepower"
-    ],
+    "chargedMoves": ["play_rough", "psychic", "body_slam", "megahorn", "high_horsepower"],
     "released": true
   },
   {
@@ -1469,13 +1304,7 @@
     "nameEn": "Muk",
     "name": "질뻐기",
     "fastMoves": ["acid", "infestation", "lick", "poison_jab"],
-    "chargedMoves": [
-      "dark_pulse",
-      "gunk_shot",
-      "sludge_wave",
-      "thunder_punch",
-      "acid_spray"
-    ],
+    "chargedMoves": ["dark_pulse", "gunk_shot", "sludge_wave", "thunder_punch", "acid_spray"],
     "eliteMoves": ["lick"],
     "released": true
   },
@@ -1525,12 +1354,7 @@
     "nameEn": "Gastly",
     "name": "고오스",
     "fastMoves": ["astonish", "lick", "sucker_punch"],
-    "chargedMoves": [
-      "dark_pulse",
-      "night_shade",
-      "ominous_wind",
-      "sludge_bomb"
-    ],
+    "chargedMoves": ["dark_pulse", "night_shade", "ominous_wind", "sludge_bomb"],
     "eliteMoves": ["sucker_punch", "ominous_wind"],
     "released": true
   },
@@ -1541,13 +1365,7 @@
     "nameEn": "Haunter",
     "name": "고우스트",
     "fastMoves": ["astonish", "lick", "shadow_claw"],
-    "chargedMoves": [
-      "dark_pulse",
-      "shadow_ball",
-      "shadow_punch",
-      "sludge_bomb",
-      "ice_punch"
-    ],
+    "chargedMoves": ["dark_pulse", "shadow_ball", "shadow_punch", "sludge_bomb", "ice_punch"],
     "eliteMoves": ["lick"],
     "released": true
   },
@@ -1567,13 +1385,7 @@
       "sludge_wave",
       "shadow_punch"
     ],
-    "eliteMoves": [
-      "lick",
-      "sludge_wave",
-      "dark_pulse",
-      "psychic",
-      "shadow_punch"
-    ],
+    "eliteMoves": ["lick", "sludge_wave", "dark_pulse", "psychic", "shadow_punch"],
     "released": true
   },
   {
@@ -1641,13 +1453,7 @@
     "nameEn": "Kingler",
     "name": "킹크랩",
     "fastMoves": ["bubble", "metal_claw", "mud_shot"],
-    "chargedMoves": [
-      "vice_grip",
-      "water_pulse",
-      "x_scissor",
-      "crabhammer",
-      "razor_shell"
-    ],
+    "chargedMoves": ["vice_grip", "water_pulse", "x_scissor", "crabhammer", "razor_shell"],
     "eliteMoves": ["mud_shot"],
     "released": true
   },
@@ -1752,13 +1558,7 @@
     "nameEn": "Marowak (Alolan)",
     "name": "텅구리 (알로라)",
     "fastMoves": ["hex", "rock_smash", "fire_spin"],
-    "chargedMoves": [
-      "bone_club",
-      "fire_blast",
-      "shadow_ball",
-      "flame_wheel",
-      "shadow_bone"
-    ],
+    "chargedMoves": ["bone_club", "fire_blast", "shadow_ball", "flame_wheel", "shadow_bone"],
     "eliteMoves": ["shadow_bone"],
     "released": true
   },
@@ -1836,13 +1636,7 @@
     "nameEn": "Weezing (Galarian)",
     "name": "또도가스 (가라르)",
     "fastMoves": ["tackle", "fairy_wind"],
-    "chargedMoves": [
-      "sludge",
-      "hyper_beam",
-      "play_rough",
-      "overheat",
-      "brutal_swing"
-    ],
+    "chargedMoves": ["sludge", "hyper_beam", "play_rough", "overheat", "brutal_swing"],
     "released": true
   },
   {
@@ -1862,13 +1656,7 @@
     "nameEn": "Rhydon",
     "name": "코뿌리",
     "fastMoves": ["mud_slap", "rock_smash"],
-    "chargedMoves": [
-      "earthquake",
-      "megahorn",
-      "stone_edge",
-      "surf",
-      "breaking_swipe"
-    ],
+    "chargedMoves": ["earthquake", "megahorn", "stone_edge", "surf", "breaking_swipe"],
     "eliteMoves": ["megahorn"],
     "released": true
   },
@@ -1900,14 +1688,7 @@
     "nameEn": "Kangaskhan",
     "name": "캥카",
     "fastMoves": ["low_kick", "mud_slap"],
-    "chargedMoves": [
-      "brick_break",
-      "crunch",
-      "earthquake",
-      "outrage",
-      "stomp",
-      "power_up_punch"
-    ],
+    "chargedMoves": ["brick_break", "crunch", "earthquake", "outrage", "stomp", "power_up_punch"],
     "eliteMoves": ["brick_break", "stomp"],
     "released": true
   },
@@ -1949,13 +1730,7 @@
     "nameEn": "Seaking",
     "name": "왕콘치",
     "fastMoves": ["peck", "poison_jab", "waterfall"],
-    "chargedMoves": [
-      "drill_run",
-      "ice_beam",
-      "icy_wind",
-      "megahorn",
-      "water_pulse"
-    ],
+    "chargedMoves": ["drill_run", "ice_beam", "icy_wind", "megahorn", "water_pulse"],
     "eliteMoves": ["poison_jab", "icy_wind", "drill_run"],
     "released": true
   },
@@ -1996,14 +1771,7 @@
       "tackle",
       "water_gun"
     ],
-    "chargedMoves": [
-      "hydro_pump",
-      "ice_beam",
-      "power_gem",
-      "psybeam",
-      "psychic",
-      "thunder"
-    ],
+    "chargedMoves": ["hydro_pump", "ice_beam", "power_gem", "psybeam", "psychic", "thunder"],
     "eliteMoves": ["tackle"],
     "released": true
   },
@@ -2034,13 +1802,7 @@
     "nameEn": "Scyther",
     "name": "스라크",
     "fastMoves": ["air_slash", "fury_cutter", "steel_wing"],
-    "chargedMoves": [
-      "aerial_ace",
-      "bug_buzz",
-      "night_slash",
-      "x_scissor",
-      "trailblaze"
-    ],
+    "chargedMoves": ["aerial_ace", "bug_buzz", "night_slash", "x_scissor", "trailblaze"],
     "eliteMoves": ["steel_wing", "bug_buzz"],
     "released": true
   },
@@ -2051,13 +1813,7 @@
     "nameEn": "Jynx",
     "name": "루주라",
     "fastMoves": ["confusion", "frost_breath", "pound"],
-    "chargedMoves": [
-      "avalanche",
-      "draining_kiss",
-      "focus_blast",
-      "ice_punch",
-      "psyshock"
-    ],
+    "chargedMoves": ["avalanche", "draining_kiss", "focus_blast", "ice_punch", "psyshock"],
     "eliteMoves": ["pound", "ice_punch"],
     "released": true
   },
@@ -2078,12 +1834,7 @@
     "nameEn": "Magmar",
     "name": "마그마",
     "fastMoves": ["ember", "karate_chop"],
-    "chargedMoves": [
-      "fire_blast",
-      "fire_punch",
-      "flamethrower",
-      "scorching_sands"
-    ],
+    "chargedMoves": ["fire_blast", "fire_punch", "flamethrower", "scorching_sands"],
     "released": true
   },
   {
@@ -2093,13 +1844,7 @@
     "nameEn": "Pinsir",
     "name": "쁘사이저",
     "fastMoves": ["bug_bite", "fury_cutter", "rock_smash"],
-    "chargedMoves": [
-      "close_combat",
-      "submission",
-      "vice_grip",
-      "x_scissor",
-      "super_power"
-    ],
+    "chargedMoves": ["close_combat", "submission", "vice_grip", "x_scissor", "super_power"],
     "eliteMoves": ["submission"],
     "released": true
   },
@@ -2130,14 +1875,7 @@
     "nameEn": "Gyarados",
     "name": "갸라도스",
     "fastMoves": ["bite", "dragon_breath", "dragon_tail", "waterfall"],
-    "chargedMoves": [
-      "crunch",
-      "dragon_pulse",
-      "hydro_pump",
-      "outrage",
-      "twister",
-      "aqua_tail"
-    ],
+    "chargedMoves": ["crunch", "dragon_pulse", "hydro_pump", "outrage", "twister", "aqua_tail"],
     "eliteMoves": ["dragon_tail", "dragon_pulse", "aqua_tail"],
     "released": true
   },
@@ -2148,14 +1886,7 @@
     "nameEn": "Lapras",
     "name": "라프라스",
     "fastMoves": ["frost_breath", "ice_shard", "water_gun"],
-    "chargedMoves": [
-      "blizzard",
-      "dragon_pulse",
-      "hydro_pump",
-      "ice_beam",
-      "surf",
-      "skull_bash"
-    ],
+    "chargedMoves": ["blizzard", "dragon_pulse", "hydro_pump", "ice_beam", "surf", "skull_bash"],
     "eliteMoves": ["ice_shard", "dragon_pulse", "ice_beam"],
     "released": true
   },
@@ -2205,13 +1936,7 @@
     "nameEn": "Jolteon",
     "name": "쥬피썬더",
     "fastMoves": ["thunder_shock", "volt_switch"],
-    "chargedMoves": [
-      "discharge",
-      "last_resort",
-      "thunder",
-      "thunderbolt",
-      "zap_cannon"
-    ],
+    "chargedMoves": ["discharge", "last_resort", "thunder", "thunderbolt", "zap_cannon"],
     "eliteMoves": ["last_resort", "zap_cannon"],
     "released": true
   },
@@ -2269,13 +1994,7 @@
       "solar_beam",
       "zap_cannon"
     ],
-    "eliteMoves": [
-      "tackle",
-      "zen_headbutt",
-      "signal_beam",
-      "psybeam",
-      "discharge"
-    ],
+    "eliteMoves": ["tackle", "zen_headbutt", "signal_beam", "psybeam", "discharge"],
     "released": true
   },
   {
@@ -2285,13 +2004,7 @@
     "nameEn": "Omanyte",
     "name": "암나이트",
     "fastMoves": ["mud_shot", "water_gun"],
-    "chargedMoves": [
-      "ancient_power",
-      "brine",
-      "bubble_beam",
-      "rock_blast",
-      "rock_tomb"
-    ],
+    "chargedMoves": ["ancient_power", "brine", "bubble_beam", "rock_blast", "rock_tomb"],
     "eliteMoves": ["rock_tomb", "brine"],
     "released": true
   },
@@ -2334,13 +2047,7 @@
     "nameEn": "Aerodactyl",
     "name": "프테라",
     "fastMoves": ["bite", "steel_wing", "rock_throw"],
-    "chargedMoves": [
-      "ancient_power",
-      "hyper_beam",
-      "iron_head",
-      "rock_slide",
-      "earth_power"
-    ],
+    "chargedMoves": ["ancient_power", "hyper_beam", "iron_head", "rock_slide", "earth_power"],
     "released": true
   },
   {
@@ -2397,13 +2104,7 @@
     "nameEn": "Zapdos",
     "name": "썬더",
     "fastMoves": ["charge_beam", "thunder_shock"],
-    "chargedMoves": [
-      "thunder",
-      "thunderbolt",
-      "zap_cannon",
-      "ancient_power",
-      "drill_peck"
-    ],
+    "chargedMoves": ["thunder", "thunderbolt", "zap_cannon", "ancient_power", "drill_peck"],
     "eliteMoves": ["thunder_shock"],
     "released": true
   },
@@ -2424,13 +2125,7 @@
     "nameEn": "Moltres",
     "name": "파이어",
     "fastMoves": ["fire_spin", "wing_attack"],
-    "chargedMoves": [
-      "fire_blast",
-      "heat_wave",
-      "overheat",
-      "sky_attack",
-      "ancient_power"
-    ],
+    "chargedMoves": ["fire_blast", "heat_wave", "overheat", "sky_attack", "ancient_power"],
     "eliteMoves": ["sky_attack"],
     "released": true
   },
@@ -2510,13 +2205,7 @@
     "nameEn": "Mewtwo (Armored)",
     "name": "아머드 뮤츠",
     "fastMoves": ["confusion", "iron_tail"],
-    "chargedMoves": [
-      "dynamic_punch",
-      "rock_slide",
-      "earthquake",
-      "future_sight",
-      "psystrike"
-    ],
+    "chargedMoves": ["dynamic_punch", "rock_slide", "earthquake", "future_sight", "psystrike"],
     "eliteMoves": ["psystrike"],
     "released": true
   },
@@ -2740,13 +2429,7 @@
     "nameEn": "Ariados",
     "name": "아리아도스",
     "fastMoves": ["infestation", "poison_sting"],
-    "chargedMoves": [
-      "cross_poison",
-      "megahorn",
-      "shadow_sneak",
-      "lunge",
-      "trailblaze"
-    ],
+    "chargedMoves": ["cross_poison", "megahorn", "shadow_sneak", "lunge", "trailblaze"],
     "released": true
   },
   {
@@ -2756,13 +2439,7 @@
     "nameEn": "Crobat",
     "name": "크로뱃",
     "fastMoves": ["air_slash", "bite"],
-    "chargedMoves": [
-      "air_cutter",
-      "shadow_ball",
-      "sludge_bomb",
-      "cross_poison",
-      "poison_fang"
-    ],
+    "chargedMoves": ["air_cutter", "shadow_ball", "sludge_bomb", "cross_poison", "poison_fang"],
     "released": true
   },
   {
@@ -2812,13 +2489,7 @@
     "nameEn": "Cleffa",
     "name": "삐",
     "fastMoves": ["pound", "zen_headbutt"],
-    "chargedMoves": [
-      "body_slam",
-      "grass_knot",
-      "psychic",
-      "psyshock",
-      "signal_beam"
-    ],
+    "chargedMoves": ["body_slam", "grass_knot", "psychic", "psyshock", "signal_beam"],
     "eliteMoves": ["psychic", "body_slam"],
     "released": true
   },
@@ -3048,13 +2719,7 @@
     "nameEn": "Jumpluff",
     "name": "솜솜코",
     "fastMoves": ["bullet_seed", "infestation", "fairy_wind"],
-    "chargedMoves": [
-      "dazzling_gleam",
-      "energy_ball",
-      "aerial_ace",
-      "solar_beam",
-      "acrobatics"
-    ],
+    "chargedMoves": ["dazzling_gleam", "energy_ball", "aerial_ace", "solar_beam", "acrobatics"],
     "eliteMoves": ["acrobatics"],
     "released": true
   },
@@ -3085,12 +2750,7 @@
     "nameEn": "Sunflora",
     "name": "해루미",
     "fastMoves": ["bullet_seed", "razor_leaf"],
-    "chargedMoves": [
-      "petal_blizzard",
-      "sludge_bomb",
-      "solar_beam",
-      "leaf_storm"
-    ],
+    "chargedMoves": ["petal_blizzard", "sludge_bomb", "solar_beam", "leaf_storm"],
     "released": true
   },
   {
@@ -3198,13 +2858,7 @@
     "nameEn": "Slowking (Galarian)",
     "name": "야도킹 (가라르)",
     "fastMoves": ["hex", "confusion", "acid"],
-    "chargedMoves": [
-      "future_sight",
-      "shadow_ball",
-      "sludge_wave",
-      "surf",
-      "scald"
-    ],
+    "chargedMoves": ["future_sight", "shadow_ball", "sludge_wave", "surf", "scald"],
     "eliteMoves": ["surf"],
     "released": true
   },
@@ -3262,13 +2916,7 @@
     "nameEn": "Girafarig",
     "name": "키링키",
     "fastMoves": ["confusion", "tackle", "double_kick"],
-    "chargedMoves": [
-      "mirror_coat",
-      "psychic",
-      "thunderbolt",
-      "psychic_fangs",
-      "trailblaze"
-    ],
+    "chargedMoves": ["mirror_coat", "psychic", "thunderbolt", "psychic_fangs", "trailblaze"],
     "released": true
   },
   {
@@ -3288,13 +2936,7 @@
     "nameEn": "Forretress",
     "name": "쏘콘",
     "fastMoves": ["bug_bite", "struggle_bug"],
-    "chargedMoves": [
-      "earthquake",
-      "heavy_slam",
-      "rock_tomb",
-      "sand_tomb",
-      "mirror_shot"
-    ],
+    "chargedMoves": ["earthquake", "heavy_slam", "rock_tomb", "sand_tomb", "mirror_shot"],
     "released": true
   },
   {
@@ -3324,13 +2966,7 @@
     "nameEn": "Steelix",
     "name": "강철톤",
     "fastMoves": ["dragon_tail", "iron_tail", "thunder_fang"],
-    "chargedMoves": [
-      "crunch",
-      "earthquake",
-      "heavy_slam",
-      "psychic_fangs",
-      "breaking_swipe"
-    ],
+    "chargedMoves": ["crunch", "earthquake", "heavy_slam", "psychic_fangs", "breaking_swipe"],
     "released": true
   },
   {
@@ -3360,14 +2996,7 @@
     "nameEn": "Qwilfish",
     "name": "침바루",
     "fastMoves": ["poison_sting", "water_gun"],
-    "chargedMoves": [
-      "aqua_tail",
-      "ice_beam",
-      "sludge_wave",
-      "acid_spray",
-      "fell_stinger",
-      "scald"
-    ],
+    "chargedMoves": ["aqua_tail", "ice_beam", "sludge_wave", "acid_spray", "fell_stinger", "scald"],
     "released": true
   },
   {
@@ -3377,13 +3006,7 @@
     "nameEn": "Qwilfish (Hisuian)",
     "name": "침바루 (히스이)",
     "fastMoves": ["poison_sting", "poison_jab"],
-    "chargedMoves": [
-      "aqua_tail",
-      "ice_beam",
-      "sludge_bomb",
-      "dark_pulse",
-      "shadow_ball"
-    ],
+    "chargedMoves": ["aqua_tail", "ice_beam", "sludge_bomb", "dark_pulse", "shadow_ball"],
     "released": true
   },
   {
@@ -3523,13 +3146,7 @@
     "nameEn": "Octillery",
     "name": "대포무노",
     "fastMoves": ["mud_shot", "water_gun", "lock_on"],
-    "chargedMoves": [
-      "aurora_beam",
-      "gunk_shot",
-      "water_pulse",
-      "acid_spray",
-      "octazooka"
-    ],
+    "chargedMoves": ["aurora_beam", "gunk_shot", "water_pulse", "acid_spray", "octazooka"],
     "released": true
   },
   {
@@ -3539,13 +3156,7 @@
     "nameEn": "Delibird",
     "name": "딜리버드",
     "fastMoves": ["present", "quick_attack"],
-    "chargedMoves": [
-      "aerial_ace",
-      "ice_punch",
-      "icy_wind",
-      "fly",
-      "triple_axel"
-    ],
+    "chargedMoves": ["aerial_ace", "ice_punch", "icy_wind", "fly", "triple_axel"],
     "released": true
   },
   {
@@ -3616,13 +3227,7 @@
     "nameEn": "Donphan",
     "name": "코리갑",
     "fastMoves": ["counter", "mud_slap", "tackle", "charm"],
-    "chargedMoves": [
-      "earthquake",
-      "heavy_slam",
-      "play_rough",
-      "body_slam",
-      "trailblaze"
-    ],
+    "chargedMoves": ["earthquake", "heavy_slam", "play_rough", "body_slam", "trailblaze"],
     "released": true
   },
   {
@@ -3948,12 +3553,7 @@
     "nameEn": "Elekid",
     "name": "에레키드",
     "fastMoves": ["low_kick", "thunder_shock"],
-    "chargedMoves": [
-      "brick_break",
-      "discharge",
-      "thunder_punch",
-      "thunderbolt"
-    ],
+    "chargedMoves": ["brick_break", "discharge", "thunder_punch", "thunderbolt"],
     "eliteMoves": ["thunderbolt"],
     "released": true
   },
@@ -3964,12 +3564,7 @@
     "nameEn": "Magby",
     "name": "마그비",
     "fastMoves": ["ember", "karate_chop"],
-    "chargedMoves": [
-      "brick_break",
-      "fire_punch",
-      "flame_burst",
-      "flamethrower"
-    ],
+    "chargedMoves": ["brick_break", "fire_punch", "flame_burst", "flamethrower"],
     "eliteMoves": ["flamethrower"],
     "released": true
   },
@@ -3980,13 +3575,7 @@
     "nameEn": "Miltank",
     "name": "밀탱크",
     "fastMoves": ["tackle", "zen_headbutt", "rollout"],
-    "chargedMoves": [
-      "body_slam",
-      "gyro_ball",
-      "ice_beam",
-      "stomp",
-      "thunderbolt"
-    ],
+    "chargedMoves": ["body_slam", "gyro_ball", "ice_beam", "stomp", "thunderbolt"],
     "released": true
   },
   {
@@ -4053,13 +3642,7 @@
       "ice_fang",
       "snarl"
     ],
-    "chargedMoves": [
-      "bubble_beam",
-      "hydro_pump",
-      "ice_beam",
-      "water_pulse",
-      "scald"
-    ],
+    "chargedMoves": ["bubble_beam", "hydro_pump", "ice_beam", "water_pulse", "scald"],
     "eliteMoves": [
       "hidden_power_bug",
       "hidden_power_dark",
@@ -4149,13 +3732,7 @@
       "steel_wing",
       "incinerate"
     ],
-    "chargedMoves": [
-      "brave_bird",
-      "fire_blast",
-      "solar_beam",
-      "earthquake",
-      "sacred_fire"
-    ],
+    "chargedMoves": ["brave_bird", "fire_blast", "solar_beam", "earthquake", "sacred_fire"],
     "eliteMoves": ["earthquake", "sacred_fire"],
     "released": true
   },
@@ -4166,13 +3743,7 @@
     "nameEn": "Celebi",
     "name": "세레비",
     "fastMoves": ["charge_beam", "confusion", "magical_leaf"],
-    "chargedMoves": [
-      "dazzling_gleam",
-      "hyper_beam",
-      "psychic",
-      "seed_bomb",
-      "leaf_storm"
-    ],
+    "chargedMoves": ["dazzling_gleam", "hyper_beam", "psychic", "seed_bomb", "leaf_storm"],
     "eliteMoves": ["magical_leaf"],
     "released": true
   },
@@ -4279,13 +3850,7 @@
     "nameEn": "Swampert",
     "name": "대짱이",
     "fastMoves": ["mud_shot", "water_gun"],
-    "chargedMoves": [
-      "earthquake",
-      "sludge_wave",
-      "surf",
-      "hydro_cannon",
-      "muddy_water"
-    ],
+    "chargedMoves": ["earthquake", "sludge_wave", "surf", "hydro_cannon", "muddy_water"],
     "eliteMoves": ["hydro_cannon"],
     "released": true
   },
@@ -4505,12 +4070,7 @@
     "nameEn": "Pelipper",
     "name": "패리퍼",
     "fastMoves": ["water_gun", "wing_attack"],
-    "chargedMoves": [
-      "blizzard",
-      "hurricane",
-      "hydro_pump",
-      "weather_ball_water"
-    ],
+    "chargedMoves": ["blizzard", "hurricane", "hydro_pump", "weather_ball_water"],
     "released": true
   },
   {
@@ -4530,13 +4090,7 @@
     "nameEn": "Kirlia",
     "name": "킬리아",
     "fastMoves": ["charge_beam", "confusion", "magical_leaf"],
-    "chargedMoves": [
-      "disarming_voice",
-      "psychic",
-      "shadow_sneak",
-      "draining_kiss",
-      "triple_axel"
-    ],
+    "chargedMoves": ["disarming_voice", "psychic", "shadow_sneak", "draining_kiss", "triple_axel"],
     "released": true
   },
   {
@@ -4546,13 +4100,7 @@
     "nameEn": "Gardevoir",
     "name": "가디안",
     "fastMoves": ["charge_beam", "confusion", "charm", "magical_leaf"],
-    "chargedMoves": [
-      "dazzling_gleam",
-      "psychic",
-      "shadow_ball",
-      "synchronoise",
-      "triple_axel"
-    ],
+    "chargedMoves": ["dazzling_gleam", "psychic", "shadow_ball", "synchronoise", "triple_axel"],
     "eliteMoves": ["synchronoise"],
     "released": true
   },
@@ -4573,13 +4121,7 @@
     "nameEn": "Masquerain",
     "name": "비나방",
     "fastMoves": ["air_slash", "infestation"],
-    "chargedMoves": [
-      "air_cutter",
-      "ominous_wind",
-      "silver_wind",
-      "bubble_beam",
-      "lunge"
-    ],
+    "chargedMoves": ["air_cutter", "ominous_wind", "silver_wind", "bubble_beam", "lunge"],
     "released": true
   },
   {
@@ -4712,12 +4254,7 @@
     "nameEn": "Hariyama",
     "name": "하리뭉",
     "fastMoves": ["bullet_punch", "counter"],
-    "chargedMoves": [
-      "close_combat",
-      "dynamic_punch",
-      "heavy_slam",
-      "super_power"
-    ],
+    "chargedMoves": ["close_combat", "dynamic_punch", "heavy_slam", "super_power"],
     "released": true
   },
   {
@@ -4807,13 +4344,7 @@
     "nameEn": "Aggron",
     "name": "보스로라",
     "fastMoves": ["dragon_tail", "iron_tail", "smack_down"],
-    "chargedMoves": [
-      "heavy_slam",
-      "stone_edge",
-      "thunder",
-      "rock_tomb",
-      "meteor_beam"
-    ],
+    "chargedMoves": ["heavy_slam", "stone_edge", "thunder", "rock_tomb", "meteor_beam"],
     "released": true
   },
   {
@@ -4853,13 +4384,7 @@
     "nameEn": "Manectric",
     "name": "썬더볼트",
     "fastMoves": ["charge_beam", "snarl", "thunder_fang"],
-    "chargedMoves": [
-      "flame_burst",
-      "thunder",
-      "wild_charge",
-      "overheat",
-      "psychic_fangs"
-    ],
+    "chargedMoves": ["flame_burst", "thunder", "wild_charge", "overheat", "psychic_fangs"],
     "released": true
   },
   {
@@ -5077,13 +4602,7 @@
     "nameEn": "Cacnea",
     "name": "선인왕",
     "fastMoves": ["poison_sting", "sucker_punch"],
-    "chargedMoves": [
-      "brick_break",
-      "grass_knot",
-      "seed_bomb",
-      "payback",
-      "trailblaze"
-    ],
+    "chargedMoves": ["brick_break", "grass_knot", "seed_bomb", "payback", "trailblaze"],
     "released": true
   },
   {
@@ -5093,13 +4612,7 @@
     "nameEn": "Cacturne",
     "name": "밤선인",
     "fastMoves": ["poison_jab", "sucker_punch"],
-    "chargedMoves": [
-      "dark_pulse",
-      "dynamic_punch",
-      "grass_knot",
-      "payback",
-      "trailblaze"
-    ],
+    "chargedMoves": ["dark_pulse", "dynamic_punch", "grass_knot", "payback", "trailblaze"],
     "released": true
   },
   {
@@ -5119,12 +4632,7 @@
     "nameEn": "Altaria",
     "name": "파비코리",
     "fastMoves": ["dragon_breath", "peck"],
-    "chargedMoves": [
-      "dazzling_gleam",
-      "dragon_pulse",
-      "sky_attack",
-      "moonblast"
-    ],
+    "chargedMoves": ["dazzling_gleam", "dragon_pulse", "sky_attack", "moonblast"],
     "eliteMoves": ["moonblast"],
     "released": true
   },
@@ -5195,13 +4703,7 @@
     "nameEn": "Corphish",
     "name": "가재군",
     "fastMoves": ["bubble", "rock_smash"],
-    "chargedMoves": [
-      "aqua_jet",
-      "bubble_beam",
-      "vice_grip",
-      "razor_shell",
-      "scald"
-    ],
+    "chargedMoves": ["aqua_jet", "bubble_beam", "vice_grip", "razor_shell", "scald"],
     "released": true
   },
   {
@@ -5287,12 +4789,7 @@
     "nameEn": "Armaldo",
     "name": "아말도",
     "fastMoves": ["fury_cutter", "struggle_bug"],
-    "chargedMoves": [
-      "cross_poison",
-      "rock_blast",
-      "water_pulse",
-      "liquidation"
-    ],
+    "chargedMoves": ["cross_poison", "rock_blast", "water_pulse", "liquidation"],
     "released": true
   },
   {
@@ -5322,12 +4819,7 @@
     "nameEn": "Castform",
     "name": "캐스퐁",
     "fastMoves": ["hex", "tackle"],
-    "chargedMoves": [
-      "energy_ball",
-      "hurricane",
-      "weather_ball_rock",
-      "weather_ball_normal"
-    ],
+    "chargedMoves": ["energy_ball", "hurricane", "weather_ball_rock", "weather_ball_normal"],
     "released": true
   },
   {
@@ -5682,13 +5174,7 @@
     "nameEn": "Kyogre",
     "name": "가이오가",
     "fastMoves": ["waterfall"],
-    "chargedMoves": [
-      "blizzard",
-      "hydro_pump",
-      "thunder",
-      "surf",
-      "origin_pulse"
-    ],
+    "chargedMoves": ["blizzard", "hydro_pump", "thunder", "surf", "origin_pulse"],
     "eliteMoves": ["origin_pulse"],
     "released": true
   },
@@ -5699,13 +5185,7 @@
     "nameEn": "Groudon",
     "name": "그란돈",
     "fastMoves": ["dragon_tail", "mud_shot"],
-    "chargedMoves": [
-      "earthquake",
-      "fire_blast",
-      "solar_beam",
-      "fire_punch",
-      "precipice_blades"
-    ],
+    "chargedMoves": ["earthquake", "fire_blast", "solar_beam", "fire_punch", "precipice_blades"],
     "eliteMoves": ["precipice_blades", "fire_punch"],
     "released": true
   },
@@ -5804,13 +5284,7 @@
     "nameEn": "Torterra",
     "name": "토대부기",
     "fastMoves": ["bite", "razor_leaf"],
-    "chargedMoves": [
-      "earthquake",
-      "solar_beam",
-      "sand_tomb",
-      "stone_edge",
-      "frenzy_plant"
-    ],
+    "chargedMoves": ["earthquake", "solar_beam", "sand_tomb", "stone_edge", "frenzy_plant"],
     "eliteMoves": ["frenzy_plant"],
     "released": true
   },
@@ -5841,12 +5315,7 @@
     "nameEn": "Infernape",
     "name": "초염몽",
     "fastMoves": ["fire_spin", "rock_smash"],
-    "chargedMoves": [
-      "close_combat",
-      "flamethrower",
-      "solar_beam",
-      "blast_burn"
-    ],
+    "chargedMoves": ["close_combat", "flamethrower", "solar_beam", "blast_burn"],
     "eliteMoves": ["blast_burn"],
     "released": true
   },
@@ -5877,13 +5346,7 @@
     "nameEn": "Empoleon",
     "name": "엠페르트",
     "fastMoves": ["metal_claw", "waterfall"],
-    "chargedMoves": [
-      "blizzard",
-      "flash_cannon",
-      "hydro_pump",
-      "hydro_cannon",
-      "drill_peck"
-    ],
+    "chargedMoves": ["blizzard", "flash_cannon", "hydro_pump", "hydro_cannon", "drill_peck"],
     "eliteMoves": ["hydro_cannon"],
     "released": true
   },
@@ -6190,13 +5653,7 @@
     "nameEn": "Vespiquen",
     "name": "비퀸",
     "fastMoves": ["bug_bite", "poison_sting", "fury_cutter", "air_slash"],
-    "chargedMoves": [
-      "bug_buzz",
-      "power_gem",
-      "x_scissor",
-      "fell_stinger",
-      "signal_beam"
-    ],
+    "chargedMoves": ["bug_buzz", "power_gem", "x_scissor", "fell_stinger", "signal_beam"],
     "released": true
   },
   {
@@ -6256,12 +5713,7 @@
     "nameEn": "Cherrim (Sunshine)",
     "name": "체리꼬 (sunshine)",
     "fastMoves": ["bullet_seed", "razor_leaf"],
-    "chargedMoves": [
-      "dazzling_gleam",
-      "hyper_beam",
-      "solar_beam",
-      "weather_ball_fire"
-    ],
+    "chargedMoves": ["dazzling_gleam", "hyper_beam", "solar_beam", "weather_ball_fire"],
     "released": true
   },
   {
@@ -6347,12 +5799,7 @@
     "nameEn": "Drifblim",
     "name": "둥실라이드",
     "fastMoves": ["astonish", "hex"],
-    "chargedMoves": [
-      "icy_wind",
-      "ominous_wind",
-      "shadow_ball",
-      "mystical_fire"
-    ],
+    "chargedMoves": ["icy_wind", "ominous_wind", "shadow_ball", "mystical_fire"],
     "released": true
   },
   {
@@ -6462,14 +5909,7 @@
     "nameEn": "Bronzong",
     "name": "동탁군",
     "fastMoves": ["confusion", "feint_attack"],
-    "chargedMoves": [
-      "flash_cannon",
-      "heavy_slam",
-      "psychic",
-      "bulldoze",
-      "psyshock",
-      "payback"
-    ],
+    "chargedMoves": ["flash_cannon", "heavy_slam", "psychic", "bulldoze", "psyshock", "payback"],
     "released": true
   },
   {
@@ -6549,13 +5989,7 @@
     "nameEn": "Garchomp",
     "name": "한카리아스",
     "fastMoves": ["dragon_tail", "mud_shot"],
-    "chargedMoves": [
-      "earthquake",
-      "fire_blast",
-      "outrage",
-      "sand_tomb",
-      "earth_power"
-    ],
+    "chargedMoves": ["earthquake", "fire_blast", "outrage", "sand_tomb", "earth_power"],
     "eliteMoves": ["earth_power"],
     "released": true
   },
@@ -6720,13 +6154,7 @@
     "nameEn": "Abomasnow",
     "name": "눈설왕",
     "fastMoves": ["powder_snow", "razor_leaf", "leafage"],
-    "chargedMoves": [
-      "blizzard",
-      "energy_ball",
-      "outrage",
-      "weather_ball_ice",
-      "icy_wind"
-    ],
+    "chargedMoves": ["blizzard", "energy_ball", "outrage", "weather_ball_ice", "icy_wind"],
     "released": true
   },
   {
@@ -6746,12 +6174,7 @@
     "nameEn": "Magnezone",
     "name": "자포코일",
     "fastMoves": ["charge_beam", "spark", "volt_switch"],
-    "chargedMoves": [
-      "flash_cannon",
-      "wild_charge",
-      "zap_cannon",
-      "mirror_shot"
-    ],
+    "chargedMoves": ["flash_cannon", "wild_charge", "zap_cannon", "mirror_shot"],
     "released": true
   },
   {
@@ -6761,13 +6184,7 @@
     "nameEn": "Lickilicky",
     "name": "내룸벨트",
     "fastMoves": ["lick", "zen_headbutt"],
-    "chargedMoves": [
-      "earthquake",
-      "hyper_beam",
-      "solar_beam",
-      "shadow_ball",
-      "body_slam"
-    ],
+    "chargedMoves": ["earthquake", "hyper_beam", "solar_beam", "shadow_ball", "body_slam"],
     "eliteMoves": ["body_slam"],
     "released": true
   },
@@ -6797,13 +6214,7 @@
     "nameEn": "Tangrowth",
     "name": "덩쿠림보",
     "fastMoves": ["infestation", "vine_whip"],
-    "chargedMoves": [
-      "ancient_power",
-      "rock_slide",
-      "sludge_bomb",
-      "solar_beam",
-      "power_whip"
-    ],
+    "chargedMoves": ["ancient_power", "rock_slide", "sludge_bomb", "solar_beam", "power_whip"],
     "released": true
   },
   {
@@ -6813,13 +6224,7 @@
     "nameEn": "Electivire",
     "name": "에레키블",
     "fastMoves": ["low_kick", "thunder_shock"],
-    "chargedMoves": [
-      "thunder",
-      "thunder_punch",
-      "wild_charge",
-      "ice_punch",
-      "flamethrower"
-    ],
+    "chargedMoves": ["thunder", "thunder_punch", "wild_charge", "ice_punch", "flamethrower"],
     "eliteMoves": ["flamethrower"],
     "released": true
   },
@@ -6895,13 +6300,7 @@
     "nameEn": "Glaceon",
     "name": "글레이시아",
     "fastMoves": ["frost_breath", "ice_shard"],
-    "chargedMoves": [
-      "avalanche",
-      "ice_beam",
-      "icy_wind",
-      "last_resort",
-      "water_pulse"
-    ],
+    "chargedMoves": ["avalanche", "ice_beam", "icy_wind", "last_resort", "water_pulse"],
     "eliteMoves": ["last_resort", "water_pulse"],
     "released": true
   },
@@ -6922,13 +6321,7 @@
     "nameEn": "Mamoswine",
     "name": "맘모꾸리",
     "fastMoves": ["mud_slap", "powder_snow"],
-    "chargedMoves": [
-      "avalanche",
-      "bulldoze",
-      "stone_edge",
-      "ancient_power",
-      "high_horsepower"
-    ],
+    "chargedMoves": ["avalanche", "bulldoze", "stone_edge", "ancient_power", "high_horsepower"],
     "eliteMoves": ["ancient_power"],
     "released": true
   },
@@ -6958,13 +6351,7 @@
       "hidden_power_steel",
       "hidden_power_water"
     ],
-    "chargedMoves": [
-      "blizzard",
-      "hyper_beam",
-      "solar_beam",
-      "zap_cannon",
-      "tri_attack"
-    ],
+    "chargedMoves": ["blizzard", "hyper_beam", "solar_beam", "zap_cannon", "tri_attack"],
     "eliteMoves": ["tri_attack"],
     "released": true
   },
@@ -6996,13 +6383,7 @@
     "nameEn": "Dusknoir",
     "name": "야느와르몽",
     "fastMoves": ["astonish", "hex"],
-    "chargedMoves": [
-      "dark_pulse",
-      "ominous_wind",
-      "psychic",
-      "shadow_ball",
-      "poltergeist"
-    ],
+    "chargedMoves": ["dark_pulse", "ominous_wind", "psychic", "shadow_ball", "poltergeist"],
     "eliteMoves": ["shadow_ball"],
     "released": true
   },
@@ -7179,12 +6560,7 @@
     "nameEn": "Giratina (Altered)",
     "name": "기라티나 (altered)",
     "fastMoves": ["dragon_breath", "shadow_claw"],
-    "chargedMoves": [
-      "ancient_power",
-      "dragon_claw",
-      "shadow_sneak",
-      "shadow_force"
-    ],
+    "chargedMoves": ["ancient_power", "dragon_claw", "shadow_sneak", "shadow_force"],
     "eliteMoves": ["shadow_force"],
     "released": true
   },
@@ -7195,12 +6571,7 @@
     "nameEn": "Giratina (Origin)",
     "name": "기라티나 (origin)",
     "fastMoves": ["dragon_tail", "shadow_claw"],
-    "chargedMoves": [
-      "ominous_wind",
-      "dragon_pulse",
-      "shadow_ball",
-      "shadow_force"
-    ],
+    "chargedMoves": ["ominous_wind", "dragon_pulse", "shadow_ball", "shadow_force"],
     "eliteMoves": ["shadow_force"],
     "released": true
   },
@@ -7523,12 +6894,7 @@
     "nameEn": "Serperior",
     "name": "샤로다",
     "fastMoves": ["iron_tail", "vine_whip"],
-    "chargedMoves": [
-      "grass_knot",
-      "leaf_tornado",
-      "aerial_ace",
-      "frenzy_plant"
-    ],
+    "chargedMoves": ["grass_knot", "leaf_tornado", "aerial_ace", "frenzy_plant"],
     "eliteMoves": ["frenzy_plant"],
     "released": true
   },
@@ -7559,13 +6925,7 @@
     "nameEn": "Emboar",
     "name": "염무왕",
     "fastMoves": ["low_kick", "ember"],
-    "chargedMoves": [
-      "heat_wave",
-      "rock_slide",
-      "focus_blast",
-      "flame_charge",
-      "blast_burn"
-    ],
+    "chargedMoves": ["heat_wave", "rock_slide", "focus_blast", "flame_charge", "blast_burn"],
     "eliteMoves": ["blast_burn"],
     "released": true
   },
@@ -7844,13 +7204,7 @@
     "nameEn": "Gigalith",
     "name": "기가이어스",
     "fastMoves": ["mud_slap", "smack_down"],
-    "chargedMoves": [
-      "rock_slide",
-      "solar_beam",
-      "super_power",
-      "heavy_slam",
-      "meteor_beam"
-    ],
+    "chargedMoves": ["rock_slide", "solar_beam", "super_power", "heavy_slam", "meteor_beam"],
     "eliteMoves": ["meteor_beam"],
     "released": true
   },
@@ -7891,13 +7245,7 @@
     "nameEn": "Excadrill",
     "name": "몰드류",
     "fastMoves": ["metal_claw", "mud_slap", "mud_shot"],
-    "chargedMoves": [
-      "rock_slide",
-      "earthquake",
-      "drill_run",
-      "iron_head",
-      "scorching_sands"
-    ],
+    "chargedMoves": ["rock_slide", "earthquake", "drill_run", "iron_head", "scorching_sands"],
     "released": true
   },
   {
@@ -7937,12 +7285,7 @@
     "nameEn": "Conkeldurr",
     "name": "노보청",
     "fastMoves": ["counter", "poison_jab"],
-    "chargedMoves": [
-      "dynamic_punch",
-      "focus_blast",
-      "stone_edge",
-      "brutal_swing"
-    ],
+    "chargedMoves": ["dynamic_punch", "focus_blast", "stone_edge", "brutal_swing"],
     "eliteMoves": ["brutal_swing"],
     "released": true
   },
@@ -8604,13 +7947,7 @@
     "nameEn": "Sawsbuck",
     "name": "바라철록",
     "fastMoves": ["feint_attack", "take_down"],
-    "chargedMoves": [
-      "megahorn",
-      "solar_beam",
-      "wild_charge",
-      "hyper_beam",
-      "trailblaze"
-    ],
+    "chargedMoves": ["megahorn", "solar_beam", "wild_charge", "hyper_beam", "trailblaze"],
     "released": true
   },
   {
@@ -8728,13 +8065,7 @@
     "nameEn": "Galvantula",
     "name": "전툴라",
     "fastMoves": ["volt_switch", "fury_cutter"],
-    "chargedMoves": [
-      "cross_poison",
-      "bug_buzz",
-      "discharge",
-      "energy_ball",
-      "lunge"
-    ],
+    "chargedMoves": ["cross_poison", "bug_buzz", "discharge", "energy_ball", "lunge"],
     "released": true
   },
   {
@@ -8754,13 +8085,7 @@
     "nameEn": "Ferrothorn",
     "name": "너트령",
     "fastMoves": ["bullet_seed", "metal_claw"],
-    "chargedMoves": [
-      "power_whip",
-      "flash_cannon",
-      "acid_spray",
-      "thunder",
-      "mirror_shot"
-    ],
+    "chargedMoves": ["power_whip", "flash_cannon", "acid_spray", "thunder", "mirror_shot"],
     "released": true
   },
   {
@@ -8820,13 +8145,7 @@
     "nameEn": "Eelektross",
     "name": "저리더프",
     "fastMoves": ["acid", "spark"],
-    "chargedMoves": [
-      "crunch",
-      "thunderbolt",
-      "acid_spray",
-      "dragon_claw",
-      "liquidation"
-    ],
+    "chargedMoves": ["crunch", "thunderbolt", "acid_spray", "dragon_claw", "liquidation"],
     "released": true
   },
   {
@@ -8856,12 +8175,7 @@
     "nameEn": "Litwick",
     "name": "불켜미",
     "fastMoves": ["astonish", "ember"],
-    "chargedMoves": [
-      "flame_charge",
-      "flame_burst",
-      "heat_wave",
-      "mystical_fire"
-    ],
+    "chargedMoves": ["flame_charge", "flame_burst", "heat_wave", "mystical_fire"],
     "released": true
   },
   {
@@ -8881,13 +8195,7 @@
     "nameEn": "Chandelure",
     "name": "샹델라",
     "fastMoves": ["hex", "fire_spin", "incinerate"],
-    "chargedMoves": [
-      "energy_ball",
-      "shadow_ball",
-      "overheat",
-      "flame_charge",
-      "poltergeist"
-    ],
+    "chargedMoves": ["energy_ball", "shadow_ball", "overheat", "flame_charge", "poltergeist"],
     "eliteMoves": ["poltergeist"],
     "released": true
   },
@@ -8918,13 +8226,7 @@
     "nameEn": "Haxorus",
     "name": "액스라이즈",
     "fastMoves": ["dragon_tail", "counter"],
-    "chargedMoves": [
-      "dragon_claw",
-      "surf",
-      "night_slash",
-      "earthquake",
-      "breaking_swipe"
-    ],
+    "chargedMoves": ["dragon_claw", "surf", "night_slash", "earthquake", "breaking_swipe"],
     "eliteMoves": ["breaking_swipe"],
     "released": true
   },
@@ -8955,13 +8257,7 @@
     "nameEn": "Cryogonal",
     "name": "프리지오",
     "fastMoves": ["ice_shard", "frost_breath"],
-    "chargedMoves": [
-      "aurora_beam",
-      "night_slash",
-      "solar_beam",
-      "water_pulse",
-      "triple_axel"
-    ],
+    "chargedMoves": ["aurora_beam", "night_slash", "solar_beam", "water_pulse", "triple_axel"],
     "released": true
   },
   {
@@ -9051,12 +8347,7 @@
     "nameEn": "Golurk",
     "name": "골루그",
     "fastMoves": ["astonish", "mud_slap"],
-    "chargedMoves": [
-      "shadow_punch",
-      "dynamic_punch",
-      "earth_power",
-      "poltergeist"
-    ],
+    "chargedMoves": ["shadow_punch", "dynamic_punch", "earth_power", "poltergeist"],
     "released": true
   },
   {
@@ -9106,13 +8397,7 @@
     "nameEn": "Braviary",
     "name": "워글",
     "fastMoves": ["steel_wing", "air_slash"],
-    "chargedMoves": [
-      "heat_wave",
-      "brave_bird",
-      "rock_slide",
-      "close_combat",
-      "fly"
-    ],
+    "chargedMoves": ["heat_wave", "brave_bird", "rock_slide", "close_combat", "fly"],
     "released": true
   },
   {
@@ -9122,13 +8407,7 @@
     "nameEn": "Braviary (Hisuian)",
     "name": "워글 (히스이)",
     "fastMoves": ["zen_headbutt", "air_slash"],
-    "chargedMoves": [
-      "dazzling_gleam",
-      "brave_bird",
-      "psychic",
-      "ominous_wind",
-      "fly"
-    ],
+    "chargedMoves": ["dazzling_gleam", "brave_bird", "psychic", "ominous_wind", "fly"],
     "released": true
   },
   {
@@ -9198,12 +8477,7 @@
     "nameEn": "Hydreigon",
     "name": "삼삼드래",
     "fastMoves": ["bite", "dragon_breath"],
-    "chargedMoves": [
-      "dragon_pulse",
-      "dark_pulse",
-      "flash_cannon",
-      "brutal_swing"
-    ],
+    "chargedMoves": ["dragon_pulse", "dark_pulse", "flash_cannon", "brutal_swing"],
     "eliteMoves": ["brutal_swing"],
     "released": true
   },
@@ -9245,12 +8519,7 @@
     "nameEn": "Terrakion",
     "name": "테라키온",
     "fastMoves": ["smack_down", "zen_headbutt", "double_kick"],
-    "chargedMoves": [
-      "close_combat",
-      "earthquake",
-      "rock_slide",
-      "sacred_sword"
-    ],
+    "chargedMoves": ["close_combat", "earthquake", "rock_slide", "sacred_sword"],
     "eliteMoves": ["sacred_sword"],
     "released": true
   },
@@ -9261,12 +8530,7 @@
     "nameEn": "Virizion",
     "name": "비리디온",
     "fastMoves": ["quick_attack", "zen_headbutt", "double_kick"],
-    "chargedMoves": [
-      "close_combat",
-      "leaf_blade",
-      "stone_edge",
-      "sacred_sword"
-    ],
+    "chargedMoves": ["close_combat", "leaf_blade", "stone_edge", "sacred_sword"],
     "eliteMoves": ["sacred_sword"],
     "released": true
   },
@@ -9317,13 +8581,7 @@
     "nameEn": "Reshiram",
     "name": "레시라무",
     "fastMoves": ["dragon_breath", "fire_fang"],
-    "chargedMoves": [
-      "crunch",
-      "overheat",
-      "draco_meteor",
-      "stone_edge",
-      "fusion_flare"
-    ],
+    "chargedMoves": ["crunch", "overheat", "draco_meteor", "stone_edge", "fusion_flare"],
     "eliteMoves": ["fusion_flare"],
     "released": true
   },
@@ -9334,13 +8592,7 @@
     "nameEn": "Zekrom",
     "name": "제크로무",
     "fastMoves": ["dragon_breath", "charge_beam"],
-    "chargedMoves": [
-      "outrage",
-      "wild_charge",
-      "flash_cannon",
-      "crunch",
-      "fusion_bolt"
-    ],
+    "chargedMoves": ["outrage", "wild_charge", "flash_cannon", "crunch", "fusion_bolt"],
     "eliteMoves": ["fusion_bolt"],
     "released": true
   },
@@ -9392,12 +8644,7 @@
     "nameEn": "Kyurem (White)",
     "name": "큐레무 (white)",
     "fastMoves": ["dragon_breath", "steel_wing"],
-    "chargedMoves": [
-      "dragon_pulse",
-      "blizzard",
-      "ancient_power",
-      "focus_blast"
-    ],
+    "chargedMoves": ["dragon_pulse", "blizzard", "ancient_power", "focus_blast"],
     "released": false
   },
   {
@@ -9407,13 +8654,7 @@
     "nameEn": "Keldeo (Ordinary)",
     "name": "케르디오 (ordinary)",
     "fastMoves": ["poison_jab", "low_kick"],
-    "chargedMoves": [
-      "aqua_jet",
-      "close_combat",
-      "hydro_pump",
-      "x_scissor",
-      "sacred_sword"
-    ],
+    "chargedMoves": ["aqua_jet", "close_combat", "hydro_pump", "x_scissor", "sacred_sword"],
     "eliteMoves": ["sacred_sword"],
     "released": true
   },
@@ -9424,13 +8665,7 @@
     "nameEn": "Keldeo (Resolute)",
     "name": "케르디오 (resolute)",
     "fastMoves": ["poison_jab", "low_kick"],
-    "chargedMoves": [
-      "aqua_jet",
-      "close_combat",
-      "hydro_pump",
-      "x_scissor",
-      "sacred_sword"
-    ],
+    "chargedMoves": ["aqua_jet", "close_combat", "hydro_pump", "x_scissor", "sacred_sword"],
     "eliteMoves": ["sacred_sword"],
     "released": false
   },
@@ -9461,12 +8696,7 @@
     "nameEn": "Genesect",
     "name": "게노세크트",
     "fastMoves": ["metal_claw", "fury_cutter"],
-    "chargedMoves": [
-      "x_scissor",
-      "magnet_bomb",
-      "hyper_beam",
-      "techno_blast_normal"
-    ],
+    "chargedMoves": ["x_scissor", "magnet_bomb", "hyper_beam", "techno_blast_normal"],
     "eliteMoves": ["techno_blast_normal"],
     "released": true
   },
@@ -9477,12 +8707,7 @@
     "nameEn": "Genesect (Burn)",
     "name": "게노세크트 (burn)",
     "fastMoves": ["metal_claw", "fury_cutter"],
-    "chargedMoves": [
-      "x_scissor",
-      "magnet_bomb",
-      "flamethrower",
-      "techno_blast_burn"
-    ],
+    "chargedMoves": ["x_scissor", "magnet_bomb", "flamethrower", "techno_blast_burn"],
     "eliteMoves": ["techno_blast_burn"],
     "released": true
   },
@@ -9493,12 +8718,7 @@
     "nameEn": "Genesect (Chill)",
     "name": "게노세크트 (chill)",
     "fastMoves": ["metal_claw", "fury_cutter"],
-    "chargedMoves": [
-      "x_scissor",
-      "magnet_bomb",
-      "ice_beam",
-      "techno_blast_chill"
-    ],
+    "chargedMoves": ["x_scissor", "magnet_bomb", "ice_beam", "techno_blast_chill"],
     "eliteMoves": ["techno_blast_chill"],
     "released": true
   },
@@ -9509,12 +8729,7 @@
     "nameEn": "Genesect (Douse)",
     "name": "게노세크트 (douse)",
     "fastMoves": ["metal_claw", "fury_cutter"],
-    "chargedMoves": [
-      "x_scissor",
-      "magnet_bomb",
-      "gunk_shot",
-      "techno_blast_douse"
-    ],
+    "chargedMoves": ["x_scissor", "magnet_bomb", "gunk_shot", "techno_blast_douse"],
     "eliteMoves": ["techno_blast_douse"],
     "released": true
   },
@@ -9525,12 +8740,7 @@
     "nameEn": "Genesect (Shock)",
     "name": "게노세크트 (shock)",
     "fastMoves": ["metal_claw", "fury_cutter"],
-    "chargedMoves": [
-      "x_scissor",
-      "magnet_bomb",
-      "zap_cannon",
-      "techno_blast_shock"
-    ],
+    "chargedMoves": ["x_scissor", "magnet_bomb", "zap_cannon", "techno_blast_shock"],
     "released": true
   },
   {
@@ -9560,13 +8770,7 @@
     "nameEn": "Chesnaught",
     "name": "브리가론",
     "fastMoves": ["low_kick", "smack_down", "vine_whip"],
-    "chargedMoves": [
-      "gyro_ball",
-      "energy_ball",
-      "super_power",
-      "solar_beam",
-      "frenzy_plant"
-    ],
+    "chargedMoves": ["gyro_ball", "energy_ball", "super_power", "solar_beam", "frenzy_plant"],
     "eliteMoves": ["frenzy_plant"],
     "released": true
   },
@@ -9635,13 +8839,7 @@
     "nameEn": "Greninja",
     "name": "개굴닌자",
     "fastMoves": ["feint_attack", "bubble", "water_shuriken"],
-    "chargedMoves": [
-      "night_slash",
-      "aerial_ace",
-      "surf",
-      "hydro_pump",
-      "hydro_cannon"
-    ],
+    "chargedMoves": ["night_slash", "aerial_ace", "surf", "hydro_pump", "hydro_cannon"],
     "eliteMoves": ["hydro_cannon"],
     "released": true
   },
@@ -9662,13 +8860,7 @@
     "nameEn": "Diggersby",
     "name": "파르토",
     "fastMoves": ["mud_shot", "quick_attack"],
-    "chargedMoves": [
-      "dig",
-      "hyper_beam",
-      "earthquake",
-      "fire_punch",
-      "scorching_sands"
-    ],
+    "chargedMoves": ["dig", "hyper_beam", "earthquake", "fire_punch", "scorching_sands"],
     "released": true
   },
   {
@@ -9698,13 +8890,7 @@
     "nameEn": "Talonflame",
     "name": "파이어로",
     "fastMoves": ["peck", "fire_spin", "steel_wing", "incinerate"],
-    "chargedMoves": [
-      "brave_bird",
-      "fire_blast",
-      "flame_charge",
-      "hurricane",
-      "fly"
-    ],
+    "chargedMoves": ["brave_bird", "fire_blast", "flame_charge", "hurricane", "fly"],
     "eliteMoves": ["incinerate"],
     "released": true
   },
@@ -9785,12 +8971,7 @@
     "nameEn": "Florges",
     "name": "플라제스",
     "fastMoves": ["vine_whip", "tackle", "razor_leaf", "fairy_wind"],
-    "chargedMoves": [
-      "moonblast",
-      "petal_blizzard",
-      "psychic",
-      "disarming_voice"
-    ],
+    "chargedMoves": ["moonblast", "petal_blizzard", "psychic", "disarming_voice"],
     "released": true
   },
   {
@@ -9940,12 +9121,7 @@
     "nameEn": "Slurpuff",
     "name": "나루림",
     "fastMoves": ["tackle", "charm", "fairy_wind"],
-    "chargedMoves": [
-      "play_rough",
-      "energy_ball",
-      "flamethrower",
-      "draining_kiss"
-    ],
+    "chargedMoves": ["play_rough", "energy_ball", "flamethrower", "draining_kiss"],
     "released": true
   },
   {
@@ -9985,13 +9161,7 @@
     "nameEn": "Barbaracle",
     "name": "거북손데스",
     "fastMoves": ["water_gun", "mud_slap", "fury_cutter"],
-    "chargedMoves": [
-      "skull_bash",
-      "cross_chop",
-      "stone_edge",
-      "grass_knot",
-      "razor_shell"
-    ],
+    "chargedMoves": ["skull_bash", "cross_chop", "stone_edge", "grass_knot", "razor_shell"],
     "released": true
   },
   {
@@ -10051,13 +9221,7 @@
     "nameEn": "Heliolisk",
     "name": "일레도리자드",
     "fastMoves": ["quick_attack", "volt_switch", "mud_slap"],
-    "chargedMoves": [
-      "parabolic_charge",
-      "bulldoze",
-      "thunderbolt",
-      "grass_knot",
-      "breaking_swipe"
-    ],
+    "chargedMoves": ["parabolic_charge", "bulldoze", "thunderbolt", "grass_knot", "breaking_swipe"],
     "released": true
   },
   {
@@ -10077,13 +9241,7 @@
     "nameEn": "Tyrantrum",
     "name": "견고라스",
     "fastMoves": ["dragon_tail", "charm", "rock_throw"],
-    "chargedMoves": [
-      "crunch",
-      "stone_edge",
-      "outrage",
-      "earthquake",
-      "meteor_beam"
-    ],
+    "chargedMoves": ["crunch", "stone_edge", "outrage", "earthquake", "meteor_beam"],
     "released": true
   },
   {
@@ -10093,12 +9251,7 @@
     "nameEn": "Amaura",
     "name": "아마루스",
     "fastMoves": ["powder_snow", "frost_breath"],
-    "chargedMoves": [
-      "weather_ball_ice",
-      "ancient_power",
-      "aurora_beam",
-      "thunderbolt"
-    ],
+    "chargedMoves": ["weather_ball_ice", "ancient_power", "aurora_beam", "thunderbolt"],
     "released": true
   },
   {
@@ -10125,13 +9278,7 @@
     "nameEn": "Sylveon",
     "name": "님피아",
     "fastMoves": ["charm", "quick_attack"],
-    "chargedMoves": [
-      "moonblast",
-      "dazzling_gleam",
-      "draining_kiss",
-      "last_resort",
-      "psyshock"
-    ],
+    "chargedMoves": ["moonblast", "dazzling_gleam", "draining_kiss", "last_resort", "psyshock"],
     "eliteMoves": ["last_resort", "psyshock"],
     "released": true
   },
@@ -10142,12 +9289,7 @@
     "nameEn": "Hawlucha",
     "name": "루차불",
     "fastMoves": ["low_kick", "poison_jab"],
-    "chargedMoves": [
-      "flying_press",
-      "aerial_ace",
-      "x_scissor",
-      "power_up_punch"
-    ],
+    "chargedMoves": ["flying_press", "aerial_ace", "x_scissor", "power_up_punch"],
     "released": true
   },
   {
@@ -10187,12 +9329,7 @@
     "nameEn": "Sliggoo",
     "name": "미끄네일",
     "fastMoves": ["water_gun", "tackle"],
-    "chargedMoves": [
-      "dragon_pulse",
-      "sludge_wave",
-      "muddy_water",
-      "water_pulse"
-    ],
+    "chargedMoves": ["dragon_pulse", "sludge_wave", "muddy_water", "water_pulse"],
     "released": true
   },
   {
@@ -10202,12 +9339,7 @@
     "nameEn": "Goodra",
     "name": "미끄래곤",
     "fastMoves": ["water_gun", "dragon_breath"],
-    "chargedMoves": [
-      "draco_meteor",
-      "sludge_wave",
-      "muddy_water",
-      "power_whip"
-    ],
+    "chargedMoves": ["draco_meteor", "sludge_wave", "muddy_water", "power_whip"],
     "released": true
   },
   {
@@ -10217,12 +9349,7 @@
     "nameEn": "Klefki",
     "name": "클레피",
     "fastMoves": ["astonish", "tackle"],
-    "chargedMoves": [
-      "flash_cannon",
-      "play_rough",
-      "draining_kiss",
-      "foul_play"
-    ],
+    "chargedMoves": ["flash_cannon", "play_rough", "draining_kiss", "foul_play"],
     "released": true
   },
   {
@@ -10292,13 +9419,7 @@
     "nameEn": "Gourgeist (Average)",
     "name": "펌킨인 (average)",
     "fastMoves": ["hex", "razor_leaf"],
-    "chargedMoves": [
-      "seed_bomb",
-      "shadow_ball",
-      "foul_play",
-      "fire_blast",
-      "poltergeist"
-    ],
+    "chargedMoves": ["seed_bomb", "shadow_ball", "foul_play", "fire_blast", "poltergeist"],
     "released": true
   },
   {
@@ -10308,13 +9429,7 @@
     "nameEn": "Gourgeist (Large)",
     "name": "펌킨인 (large)",
     "fastMoves": ["hex", "razor_leaf"],
-    "chargedMoves": [
-      "seed_bomb",
-      "shadow_ball",
-      "foul_play",
-      "fire_blast",
-      "poltergeist"
-    ],
+    "chargedMoves": ["seed_bomb", "shadow_ball", "foul_play", "fire_blast", "poltergeist"],
     "released": true
   },
   {
@@ -10324,13 +9439,7 @@
     "nameEn": "Gourgeist (Small)",
     "name": "펌킨인 (small)",
     "fastMoves": ["hex", "razor_leaf"],
-    "chargedMoves": [
-      "seed_bomb",
-      "shadow_ball",
-      "foul_play",
-      "fire_blast",
-      "poltergeist"
-    ],
+    "chargedMoves": ["seed_bomb", "shadow_ball", "foul_play", "fire_blast", "poltergeist"],
     "released": true
   },
   {
@@ -10340,13 +9449,7 @@
     "nameEn": "Gourgeist (Super)",
     "name": "펌킨인 (super)",
     "fastMoves": ["hex", "razor_leaf"],
-    "chargedMoves": [
-      "seed_bomb",
-      "shadow_ball",
-      "foul_play",
-      "fire_blast",
-      "poltergeist"
-    ],
+    "chargedMoves": ["seed_bomb", "shadow_ball", "foul_play", "fire_blast", "poltergeist"],
     "released": true
   },
   {
@@ -10366,14 +9469,7 @@
     "nameEn": "Avalugg",
     "name": "크레베이스",
     "fastMoves": ["bite", "ice_fang"],
-    "chargedMoves": [
-      "crunch",
-      "avalanche",
-      "earthquake",
-      "body_slam",
-      "mirror_coat",
-      "icy_wind"
-    ],
+    "chargedMoves": ["crunch", "avalanche", "earthquake", "body_slam", "mirror_coat", "icy_wind"],
     "released": true
   },
   {
@@ -10403,13 +9499,7 @@
     "nameEn": "Noivern",
     "name": "음번",
     "fastMoves": ["air_slash", "bite"],
-    "chargedMoves": [
-      "draco_meteor",
-      "hurricane",
-      "heat_wave",
-      "psychic",
-      "boomburst"
-    ],
+    "chargedMoves": ["draco_meteor", "hurricane", "heat_wave", "psychic", "boomburst"],
     "eliteMoves": ["boomburst"],
     "released": true
   },
@@ -10420,13 +9510,7 @@
     "nameEn": "Xerneas",
     "name": "제르네아스",
     "fastMoves": ["tackle", "zen_headbutt", "geomancy"],
-    "chargedMoves": [
-      "moonblast",
-      "megahorn",
-      "close_combat",
-      "giga_impact",
-      "thunder"
-    ],
+    "chargedMoves": ["moonblast", "megahorn", "close_combat", "giga_impact", "thunder"],
     "eliteMoves": ["geomancy"],
     "released": true
   },
@@ -10455,13 +9539,7 @@
     "nameEn": "Zygarde (10% Forme)",
     "name": "지가르데 (10% forme)",
     "fastMoves": ["dragon_tail", "bite", "zen_headbutt"],
-    "chargedMoves": [
-      "outrage",
-      "earthquake",
-      "crunch",
-      "hyper_beam",
-      "bulldoze"
-    ],
+    "chargedMoves": ["outrage", "earthquake", "crunch", "hyper_beam", "bulldoze"],
     "released": true
   },
   {
@@ -10471,13 +9549,7 @@
     "nameEn": "Zygarde (50% Forme)",
     "name": "지가르데 (50% forme)",
     "fastMoves": ["dragon_tail", "bite", "zen_headbutt"],
-    "chargedMoves": [
-      "outrage",
-      "earthquake",
-      "crunch",
-      "hyper_beam",
-      "bulldoze"
-    ],
+    "chargedMoves": ["outrage", "earthquake", "crunch", "hyper_beam", "bulldoze"],
     "released": true
   },
   {
@@ -10487,13 +9559,7 @@
     "nameEn": "Zygarde (Complete Forme)",
     "name": "지가르데 (complete forme)",
     "fastMoves": ["dragon_tail", "bite", "zen_headbutt"],
-    "chargedMoves": [
-      "outrage",
-      "earthquake",
-      "crunch",
-      "hyper_beam",
-      "bulldoze"
-    ],
+    "chargedMoves": ["outrage", "earthquake", "crunch", "hyper_beam", "bulldoze"],
     "released": true
   },
   {
@@ -10955,13 +10021,7 @@
     "nameEn": "Lurantis",
     "name": "라란티스",
     "fastMoves": ["razor_leaf", "fury_cutter", "leafage"],
-    "chargedMoves": [
-      "leaf_blade",
-      "leaf_storm",
-      "super_power",
-      "x_scissor",
-      "trailblaze"
-    ],
+    "chargedMoves": ["leaf_blade", "leaf_storm", "super_power", "x_scissor", "trailblaze"],
     "released": true
   },
   {
@@ -11001,12 +10061,7 @@
     "nameEn": "Salazzle",
     "name": "염뉴트",
     "fastMoves": ["incinerate", "poison_jab"],
-    "chargedMoves": [
-      "poison_fang",
-      "fire_blast",
-      "dragon_pulse",
-      "sludge_wave"
-    ],
+    "chargedMoves": ["poison_fang", "fire_blast", "dragon_pulse", "sludge_wave"],
     "released": true
   },
   {
@@ -11047,12 +10102,7 @@
     "nameEn": "Steenee",
     "name": "달무리나",
     "fastMoves": ["razor_leaf", "charm"],
-    "chargedMoves": [
-      "energy_ball",
-      "draining_kiss",
-      "grass_knot",
-      "triple_axel"
-    ],
+    "chargedMoves": ["energy_ball", "draining_kiss", "grass_knot", "triple_axel"],
     "released": true
   },
   {
@@ -11062,13 +10112,7 @@
     "nameEn": "Tsareena",
     "name": "달코퀸",
     "fastMoves": ["razor_leaf", "charm", "magical_leaf"],
-    "chargedMoves": [
-      "energy_ball",
-      "draining_kiss",
-      "grass_knot",
-      "stomp",
-      "triple_axel"
-    ],
+    "chargedMoves": ["energy_ball", "draining_kiss", "grass_knot", "stomp", "triple_axel"],
     "released": true
   },
   {
@@ -11136,13 +10180,7 @@
     "nameEn": "Golisopod",
     "name": "갑주무사",
     "fastMoves": ["fury_cutter", "metal_claw", "waterfall", "shadow_claw"],
-    "chargedMoves": [
-      "x_scissor",
-      "aqua_jet",
-      "aerial_ace",
-      "liquidation",
-      "razor_shell"
-    ],
+    "chargedMoves": ["x_scissor", "aqua_jet", "aerial_ace", "liquidation", "razor_shell"],
     "released": true
   },
   {
@@ -11152,12 +10190,7 @@
     "nameEn": "Sandygast",
     "name": "모래꿍",
     "fastMoves": ["astonish", "mud_shot"],
-    "chargedMoves": [
-      "sand_tomb",
-      "shadow_ball",
-      "earth_power",
-      "scorching_sands"
-    ],
+    "chargedMoves": ["sand_tomb", "shadow_ball", "earth_power", "scorching_sands"],
     "released": true
   },
   {
@@ -11167,12 +10200,7 @@
     "nameEn": "Palossand",
     "name": "모래성이당",
     "fastMoves": ["astonish", "mud_shot"],
-    "chargedMoves": [
-      "sand_tomb",
-      "shadow_ball",
-      "earth_power",
-      "scorching_sands"
-    ],
+    "chargedMoves": ["sand_tomb", "shadow_ball", "earth_power", "scorching_sands"],
     "released": true
   },
   {
@@ -11412,12 +10440,7 @@
     "nameEn": "Turtonator",
     "name": "폭거북스",
     "fastMoves": ["ember", "fire_spin", "incinerate"],
-    "chargedMoves": [
-      "overheat",
-      "flamethrower",
-      "dragon_pulse",
-      "flash_cannon"
-    ],
+    "chargedMoves": ["overheat", "flamethrower", "dragon_pulse", "flash_cannon"],
     "released": true
   },
   {
@@ -11497,12 +10520,7 @@
     "nameEn": "Kommo-o",
     "name": "짜랑고우거",
     "fastMoves": ["poison_jab", "dragon_tail"],
-    "chargedMoves": [
-      "dragon_claw",
-      "close_combat",
-      "flamethrower",
-      "boomburst"
-    ],
+    "chargedMoves": ["dragon_claw", "close_combat", "flamethrower", "boomburst"],
     "released": true
   },
   {
@@ -11590,12 +10608,7 @@
     "nameEn": "Solgaleo",
     "name": "솔가레오",
     "fastMoves": ["zen_headbutt", "fire_spin"],
-    "chargedMoves": [
-      "iron_head",
-      "psychic_fangs",
-      "solar_beam",
-      "flamethrower"
-    ],
+    "chargedMoves": ["iron_head", "psychic_fangs", "solar_beam", "flamethrower"],
     "released": true
   },
   {
@@ -12203,12 +11216,7 @@
     "nameEn": "Toxtricity",
     "name": "스트린더",
     "fastMoves": ["acid", "spark", "poison_jab"],
-    "chargedMoves": [
-      "acid_spray",
-      "discharge",
-      "wild_charge",
-      "power_up_punch"
-    ],
+    "chargedMoves": ["acid_spray", "discharge", "wild_charge", "power_up_punch"],
     "released": false
   },
   {
@@ -12218,12 +11226,7 @@
     "nameEn": "Toxtricity (Amped)",
     "name": "스트린더 (amped)",
     "fastMoves": ["acid", "spark", "poison_jab"],
-    "chargedMoves": [
-      "acid_spray",
-      "discharge",
-      "wild_charge",
-      "power_up_punch"
-    ],
+    "chargedMoves": ["acid_spray", "discharge", "wild_charge", "power_up_punch"],
     "released": false
   },
   {
@@ -12233,12 +11236,7 @@
     "nameEn": "Toxtricity (Low Key)",
     "name": "스트린더 (low key)",
     "fastMoves": ["acid", "spark", "poison_jab"],
-    "chargedMoves": [
-      "acid_spray",
-      "discharge",
-      "wild_charge",
-      "power_up_punch"
-    ],
+    "chargedMoves": ["acid_spray", "discharge", "wild_charge", "power_up_punch"],
     "released": false
   },
   {
@@ -12408,13 +11406,7 @@
     "nameEn": "Obstagoon",
     "name": "가로막구리",
     "fastMoves": ["counter", "lick"],
-    "chargedMoves": [
-      "cross_chop",
-      "night_slash",
-      "hyper_beam",
-      "gunk_shot",
-      "obstruct"
-    ],
+    "chargedMoves": ["cross_chop", "night_slash", "hyper_beam", "gunk_shot", "obstruct"],
     "eliteMoves": ["obstruct"],
     "released": true
   },
@@ -12425,13 +11417,7 @@
     "nameEn": "Perrserker",
     "name": "나이킹",
     "fastMoves": ["metal_claw", "shadow_claw"],
-    "chargedMoves": [
-      "iron_head",
-      "close_combat",
-      "play_rough",
-      "foul_play",
-      "trailblaze"
-    ],
+    "chargedMoves": ["iron_head", "close_combat", "play_rough", "foul_play", "trailblaze"],
     "released": true
   },
   {
@@ -12461,13 +11447,7 @@
     "nameEn": "Mr. Rime",
     "name": "마임꽁꽁",
     "fastMoves": ["confusion", "zen_headbutt", "ice_shard"],
-    "chargedMoves": [
-      "psybeam",
-      "psychic",
-      "ice_punch",
-      "icy_wind",
-      "triple_axel"
-    ],
+    "chargedMoves": ["psybeam", "psychic", "ice_punch", "icy_wind", "triple_axel"],
     "released": true
   },
   {
@@ -12817,12 +11797,7 @@
     "nameEn": "Eternatus (Eternamax)",
     "name": "무한다이노 (eternamax)",
     "fastMoves": ["dragon_tail", "poison_jab"],
-    "chargedMoves": [
-      "cross_poison",
-      "dragon_pulse",
-      "flamethrower",
-      "hyper_beam"
-    ],
+    "chargedMoves": ["cross_poison", "dragon_pulse", "flamethrower", "hyper_beam"],
     "released": false
   },
   {
@@ -12852,12 +11827,7 @@
     "nameEn": "Urshifu (Rapid Strike)",
     "name": "우라오스 (rapid strike)",
     "fastMoves": ["rock_smash", "counter", "waterfall"],
-    "chargedMoves": [
-      "brick_break",
-      "dynamic_punch",
-      "close_combat",
-      "aqua_jet"
-    ],
+    "chargedMoves": ["brick_break", "dynamic_punch", "close_combat", "aqua_jet"],
     "released": false
   },
   {
@@ -12995,13 +11965,7 @@
     "nameEn": "Overqwil",
     "name": "장침바루",
     "fastMoves": ["poison_sting", "poison_jab"],
-    "chargedMoves": [
-      "aqua_tail",
-      "ice_beam",
-      "sludge_bomb",
-      "dark_pulse",
-      "shadow_ball"
-    ],
+    "chargedMoves": ["aqua_tail", "ice_beam", "sludge_bomb", "dark_pulse", "shadow_ball"],
     "released": true
   },
   {
@@ -13061,12 +12025,7 @@
     "nameEn": "Skeledirge",
     "name": "라우드본",
     "fastMoves": ["incinerate", "bite"],
-    "chargedMoves": [
-      "flamethrower",
-      "disarming_voice",
-      "crunch",
-      "shadow_ball"
-    ],
+    "chargedMoves": ["flamethrower", "disarming_voice", "crunch", "shadow_ball"],
     "released": true
   },
   {
@@ -13396,12 +12355,7 @@
     "nameEn": "Ceruledge",
     "name": "파라블레이즈",
     "fastMoves": ["ember", "incinerate"],
-    "chargedMoves": [
-      "flame_charge",
-      "heat_wave",
-      "flamethrower",
-      "shadow_ball"
-    ],
+    "chargedMoves": ["flame_charge", "heat_wave", "flamethrower", "shadow_ball"],
     "released": false
   },
   {
@@ -13621,12 +12575,7 @@
     "nameEn": "Tinkaton",
     "name": "두드리짱",
     "fastMoves": ["fairy_wind", "rock_smash"],
-    "chargedMoves": [
-      "play_rough",
-      "brutal_swing",
-      "flash_cannon",
-      "heavy_slam"
-    ],
+    "chargedMoves": ["play_rough", "brutal_swing", "flash_cannon", "heavy_slam"],
     "released": false
   },
   {
@@ -13676,13 +12625,7 @@
     "nameEn": "Palafin",
     "name": "돌핀맨",
     "fastMoves": ["waterfall", "charm", "counter"],
-    "chargedMoves": [
-      "aqua_jet",
-      "water_pulse",
-      "icy_wind",
-      "drain_punch",
-      "acrobatics"
-    ],
+    "chargedMoves": ["aqua_jet", "water_pulse", "icy_wind", "drain_punch", "acrobatics"],
     "released": false
   },
   {
@@ -13692,13 +12635,7 @@
     "nameEn": "Palafin_hero",
     "name": "돌핀맨",
     "fastMoves": ["waterfall", "charm", "counter"],
-    "chargedMoves": [
-      "aqua_jet",
-      "water_pulse",
-      "icy_wind",
-      "drain_punch",
-      "acrobatics"
-    ],
+    "chargedMoves": ["aqua_jet", "water_pulse", "icy_wind", "drain_punch", "acrobatics"],
     "released": false
   },
   {
@@ -13708,13 +12645,7 @@
     "nameEn": "Palafin_zero",
     "name": "돌핀맨",
     "fastMoves": ["waterfall", "charm", "counter"],
-    "chargedMoves": [
-      "aqua_jet",
-      "water_pulse",
-      "icy_wind",
-      "drain_punch",
-      "acrobatics"
-    ],
+    "chargedMoves": ["aqua_jet", "water_pulse", "icy_wind", "drain_punch", "acrobatics"],
     "released": false
   },
   {
@@ -14112,13 +13043,7 @@
     "nameEn": "Baxcalibur",
     "name": "드닐레이브",
     "fastMoves": ["dragon_breath", "ice_fang"],
-    "chargedMoves": [
-      "dragon_claw",
-      "avalanche",
-      "outrage",
-      "blizzard",
-      "icy_wind"
-    ],
+    "chargedMoves": ["dragon_claw", "avalanche", "outrage", "blizzard", "icy_wind"],
     "released": true
   },
   {

@@ -50,8 +50,7 @@ export const Graph: FC<GraphProps> = ({ xAxisProps, yAxisProps }) => {
         for (let j = 1; j < subDivisionCountY; j++) {
           ctx.strokeStyle = POGO_MOVES_COLORS.gray[7]
           const subPositionY =
-            positionY -
-            (1 / divisionCountY) * (j / subDivisionCountY) * yAxisHeight
+            positionY - (1 / divisionCountY) * (j / subDivisionCountY) * yAxisHeight
           ctx.beginPath()
           ctx.moveTo(yAxisLabelWidth, subPositionY)
           ctx.lineTo(canvasSize.width, subPositionY)
@@ -72,8 +71,7 @@ export const Graph: FC<GraphProps> = ({ xAxisProps, yAxisProps }) => {
         for (let j = 1; j < subDivisionCountX; j++) {
           ctx.strokeStyle = POGO_MOVES_COLORS.gray[7]
           const subPositionX =
-            positionX +
-            (1 / divisionCountX) * (j / subDivisionCountX) * xAxisWidth
+            positionX + (1 / divisionCountX) * (j / subDivisionCountX) * xAxisWidth
           ctx.beginPath()
           ctx.moveTo(subPositionX, 0)
           ctx.lineTo(subPositionX, yAxisHeight)
