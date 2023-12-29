@@ -59,7 +59,7 @@ const FastMovesPage: FC = () => {
     }
   })
   return (
-    <div className="flex flex-col justify-center items-center w-full m-auto px-4 md:px-6 lg:px-8">
+    <div>
       {/* <TextField
           variant="outlined"
           placeholder="도감번호 입력"

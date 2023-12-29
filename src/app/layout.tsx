@@ -1,4 +1,4 @@
-import { MainContainer } from '@components/GlobalLayout'
+import { Header, MainContainer, MainWrapper } from '@components/GlobalLayout'
 import { NavigationBar } from '@components/NavigationBar'
 import { ThemeProvider } from '@mui/material'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
@@ -21,7 +21,12 @@ const RootLayout: FC<{ children: ReactNode }> = ({ children }) => {
           <ThemeProvider theme={theme}>
             <div className="w-full h-full">
               <NavigationBar />
-              <MainContainer>{children}</MainContainer>
+              <div className="h-full">
+                <Header />
+                <MainWrapper>
+                  <MainContainer>{children}</MainContainer>
+                </MainWrapper>
+              </div>
             </div>
           </ThemeProvider>
         </AppRouterCacheProvider>

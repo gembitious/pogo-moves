@@ -7,9 +7,14 @@ import { FC } from 'react'
 import Button from './Button'
 
 const NavigationBarContainer = styled('div')`
+  position: fixed;
+  top: 0;
+  left: auto;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   height: 44px;
   padding: 6px 2px;
 

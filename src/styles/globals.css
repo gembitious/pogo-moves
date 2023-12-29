@@ -7,16 +7,28 @@
 
 body {
   background: #023047;
+  margin: 0;
+  overflow-y: hidden;
 }
 
-main::-webkit-scrollbar {
+*::-webkit-scrollbar {
   width: 4px;
+  height: 4px;
   background-color: transparent;
 }
 
-main::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   border-radius: 2px;
   background-color: #8ecae640;
+}
+
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 input::-webkit-inner-spin-button {

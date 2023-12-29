@@ -36,7 +36,7 @@ export const Graph: FC<GraphProps> = ({ xAxisProps, yAxisProps }) => {
     const canvas2 = canvasSecondLayerRef.current
     const ctx1 = canvas1?.getContext('2d')
     const ctx2 = canvas2?.getContext('2d')
-    if (ctx1 && ctx2) {
+    if (typeof window !== 'undefined' && ctx1 && ctx2) {
       ctx1.strokeStyle = POGO_MOVES_COLORS.gray[2]
       ctx2.strokeStyle = POGO_MOVES_COLORS.gray[7]
       const yAxisHeight = canvasSize.height - xAxisLabelHeight
@@ -83,16 +83,18 @@ export const Graph: FC<GraphProps> = ({ xAxisProps, yAxisProps }) => {
   }, [canvasSize])
 
   const handleResize = () => {
-    if (typeof window !== 'undefined' && canvasFirstLayerRef?.current?.parentElement) {
-      const windowWidth = window.innerWidth
-      const parentWidth = canvasFirstLayerRef.current.parentElement.clientWidth
-      const parentHeight =
-        windowWidth > 1024
-          ? (parentWidth * 9) / 16
-          : windowWidth > 768
-            ? parentWidth
-            : parentWidth * 2
-
+    if (canvasFirstLayerRef?.current?.parentElement) {
+      const parentElement = canvasFirstLayerRef.current.parentElement
+      const isParentVideoRatio = parentElement.clientWidth > (parentElement.clientHeight * 16) / 9
+      let parentWidth = canvasSize.width
+      let parentHeight = canvasSize.height
+      if (isParentVideoRatio) {
+        parentWidth = parentElement.clientWidth
+        parentHeight = (parentWidth * 9) / 16
+      } else {
+        parentHeight = parentElement.clientHeight
+        parentWidth = (parentHeight * 16) / 9
+      }
       setCanvasSize({ width: parentWidth, height: parentHeight })
     }
   }
