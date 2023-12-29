@@ -3,7 +3,7 @@
 import Button from '@components/Button'
 import { Graph } from '@components/Graph'
 import { MoveChip } from '@components/MoveChip'
-import { ChargedMoveData, pokemonType, pokemonTypeText } from '@constants'
+import { ChargedMoveData, pokemonTypeText } from '@constants'
 import useGlobalLoadingPanel from '@hooks/useGlobalLoadingPanel'
 import { POGO_MOVES_COLORS } from '@styles/colors'
 import { PokemonType } from '@types'
@@ -71,28 +71,35 @@ const ChargedMovesPage: FC = () => {
             setSelectedType({})
           }}
         >
-          {'SHOW ALL'}
+          {'타입 전체'}
         </Button>
-        {Object.entries(pokemonTypeText).map(([type, text]) => (
-          <Button
-            key={type}
-            variant="contained"
-            className="!py-[2px]"
-            style={{ backgroundColor: POGO_MOVES_COLORS.type[type as PokemonType] }}
-            onClick={() =>
-              setSelectedType((prev) => {
-                if (prev[type as PokemonType]) {
-                  delete prev[type as PokemonType]
-                  return { ...prev }
-                } else {
-                  return { ...prev, [type]: type }
-                }
-              })
-            }
-          >
-            {text}
-          </Button>
-        ))}
+        {Object.entries(pokemonTypeText).map(([key, text]) => {
+          const type = key as PokemonType
+          const isSelected = Object.values(selectedType).length === 0 || selectedType[type]
+          return (
+            <Button
+              key={type}
+              variant="contained"
+              className="!py-[2px]"
+              style={{
+                opacity: isSelected ? '' : ' 30%',
+                backgroundColor: POGO_MOVES_COLORS.type[type],
+              }}
+              onClick={() =>
+                setSelectedType((prev) => {
+                  if (prev[type]) {
+                    delete prev[type]
+                    return { ...prev }
+                  } else {
+                    return { ...prev, [type]: type }
+                  }
+                })
+              }
+            >
+              {text}
+            </Button>
+          )
+        })}
       </div>
       <div ref={graphWrapperRef} className="relative w-full h-full">
         {!isLoading &&
