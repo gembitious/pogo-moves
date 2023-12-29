@@ -9,12 +9,12 @@ interface MoveChipProps extends HTMLAttributes<HTMLDivElement> {
 export const MoveChip: FC<MoveChipProps> = ({ data, style, ...others }) => {
   return (
     <div
-      className="h-6 px-2 flex items-center rounded relative"
+      className="move-chip h-6 px-2 flex items-center rounded relative"
       style={{ ...style, backgroundColor: POGO_MOVES_COLORS.type[data.type] }}
       {...others}
     >
       <div
-        className="move-chip absolute -top-1 -left-1 w-2 h-2 border-solid border-[1px] rounded-full"
+        className="move-chip-point absolute z-[10] -top-1 -left-1 w-2 h-2 border-solid border-[1px] rounded-full"
         style={{ backgroundColor: POGO_MOVES_COLORS.type[data.type] }}
       />
       <span className="text-sm overflow-hidden text-ellipsis whitespace-nowrap">{data.name}</span>

@@ -35,6 +35,7 @@ const ChargedMovesPage: FC = () => {
     setGlobalLoadingPanelVisible(isLoading)
   }, [isLoading])
 
+  // graph size handler
   const handleResize = () => {
     if (graphWrapperRef.current) {
       const { clientWidth, clientHeight } = graphWrapperRef.current
@@ -53,29 +54,41 @@ const ChargedMovesPage: FC = () => {
     }
   }
 
-  const spreadMove = (move: HTMLDivElement, index: number) => {
-    const { top } = move.getBoundingClientRect()
-    console.log(top + index * 32)
-    move.style.top = `${top + index * 32}px`
+  // moves spread handler
+  const spreadMove = (move: HTMLDivElement, offset: number) => {
+    if (!move.classList.contains('move-chip-spread')) {
+      move.classList.add('move-chip-spread')
+      move.style.zIndex = '5'
+      move.style.top = `${Number(move.style.top.split('px')[0]) + offset}px`
+      if (move.firstChild instanceof HTMLDivElement) {
+        move.firstChild.style.top = `${Number(move.firstChild.style.top.split('px')[0]) - offset}px`
+      }
+      setTimeout(() => rollbackMove(move, offset), 2000)
+    }
   }
 
-  const rollbackMove = (move: HTMLDivElement, index: number) => {
-    const { top } = move.getBoundingClientRect()
-    move.style.top = `${top - index * 32}px`
+  // spread moves rollback handler
+  const rollbackMove = (move: HTMLDivElement, offset: number) => {
+    if (move.classList.contains('move-chip-spread')) {
+      move.classList.remove('move-chip-spread')
+      move.style.zIndex = '1'
+      move.style.top = `${Number(move.style.top.split('px')[0]) - offset}px`
+      if (move.firstChild instanceof HTMLDivElement) {
+        move.firstChild.style.top = `${Number(move.firstChild.style.top.split('px')[0]) + offset}px`
+      }
+    }
   }
 
+  // mouse move event handler
   const handleMouse = (e: MouseEvent) => {
-    var x = e.clientX
-    var y = e.clientY
-    let elementUnderMouse = document.elementsFromPoint(x, y)
-    const ee = elementUnderMouse.filter((e) => e.className.includes('move-chip'))
-    if (ee.length > 1) {
-      ee.map((move, index) => {
+    let elements = document.elementsFromPoint(e.clientX, e.clientY)
+    const moves = elements.filter((e) => e.classList.contains('move-chip-point'))
+    if (moves.length > 1) {
+      moves.map((move, index) => {
         const moveElement = move.parentElement
         if (moveElement instanceof HTMLDivElement) {
-          moveElement.addEventListener('mouseout', () => rollbackMove(moveElement, index))
-          spreadMove(moveElement, index)
-          return () => move.removeEventListener('mouseout', () => rollbackMove(moveElement, index))
+          const offset = (index - (moves.length - 1) / 2) * 24
+          spreadMove(moveElement, offset)
         }
       })
     }
@@ -84,19 +97,19 @@ const ChargedMovesPage: FC = () => {
   useEffect(() => {
     handleResize()
     window.addEventListener('resize', handleResize)
-    // document.addEventListener('mousemove', handleMouse)
+    document.addEventListener('mousemove', handleMouse)
     return () => {
       window.removeEventListener('resize', handleResize)
-      // document.removeEventListener('mousemove', handleMouse)
+      document.removeEventListener('mousemove', handleMouse)
     }
   }, [])
 
   return (
-    <div className="w-full h-full flex flex-col gap-8">
-      <div className="flex justify-center flex-wrap gap-2">
+    <>
+      <div className="w-full h-8 mb-8 flex gap-2 overflow-x-scroll scroll-hidden">
         <Button
           variant="contained"
-          className="!py-[2px]"
+          className="static-text !py-[2px]"
           style={{ backgroundColor: POGO_MOVES_COLORS.white }}
           onClick={() => {
             setChargedMoveList(ChargedMoveData)
@@ -112,7 +125,7 @@ const ChargedMovesPage: FC = () => {
             <Button
               key={type}
               variant="contained"
-              className="!py-[2px]"
+              className="static-text !py-[2px]"
               style={{
                 opacity: isSelected ? '' : ' 30%',
                 backgroundColor: POGO_MOVES_COLORS.type[type],
@@ -133,7 +146,7 @@ const ChargedMovesPage: FC = () => {
           )
         })}
       </div>
-      <div ref={graphWrapperRef} className="relative w-full h-full">
+      <div ref={graphWrapperRef} className="relative w-full h-[calc(100%-64px)] overflow-scroll">
         {!isLoading &&
           graphSize.width > 0 &&
           graphSize.height > 0 &&
@@ -172,7 +185,7 @@ const ChargedMovesPage: FC = () => {
           }}
         />
       </div>
-    </div>
+    </>
   )
 }
 

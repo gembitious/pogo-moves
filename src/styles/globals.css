@@ -59,3 +59,22 @@ input::-webkit-inner-spin-button {
 .MuiTableCell-root.MuiTableCell-paddingCheckbox {
   padding: 4px !important;
 }
+
+.move-chip {
+  height: 1.5rem;
+  padding: 0 0.5rem;
+  display: flex;
+  position: relative;
+  align-items: center;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.move-chip:hover {
+  color: white;
+}
+
+.move-chip-point {
+  transition: none;
+}
