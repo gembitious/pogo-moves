@@ -75,10 +75,11 @@ export const NavigationBar: FC = () => {
           }}
         />
       </TitleBannerWrapper>
-      <div className="flex gap-2">
+      <div className="max-w-[480px] flex gap-2 scroll-hidden overflow-scroll">
         <Button
           variant="contained"
           color="secondary"
+          className="static-text"
           onClick={() => {
             router.push('/moves/fast')
           }}
@@ -87,6 +88,7 @@ export const NavigationBar: FC = () => {
         </Button>
         <Button
           variant="contained"
+          className="static-text"
           onClick={() => {
             router.push('/moves/charged')
           }}

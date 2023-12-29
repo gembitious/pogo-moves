@@ -33,6 +33,12 @@ body {
   scrollbar-width: none;
 }
 
+.static-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 input::-webkit-inner-spin-button {
   appearance: none;
   -moz-appearance: none;
