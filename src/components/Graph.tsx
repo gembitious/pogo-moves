@@ -1,6 +1,5 @@
 'use client'
 
-import { debounce } from '@mui/material'
 import { POGO_MOVES_COLORS } from '@styles/colors'
 import { Dispatch, FC, SetStateAction, useEffect, useRef, useState } from 'react'
 
@@ -151,23 +150,23 @@ export const Graph: FC<GraphProps> = ({ xAxisProps, yAxisProps, setIsLoading }) 
   }, [canvasSize])
 
   // window resize handler
-  const handleResize = debounce(() => {
+  const handleResize = () => {
     if (canvasFirstLayerRef?.current?.parentElement) {
-      const parentElement = canvasFirstLayerRef.current.parentElement
-      const isParentVideoRatio = parentElement.clientWidth > (parentElement.clientHeight * 16) / 9
+      const { clientWidth, clientHeight } = canvasFirstLayerRef.current.parentElement
+      const isParentVideoRatio = clientWidth > (clientHeight * 16) / 9
       let parentWidth = canvasSize.width
       let parentHeight = canvasSize.height
       if (isParentVideoRatio) {
-        parentWidth = parentElement.clientWidth
+        parentWidth = clientWidth
         parentHeight = (parentWidth * 9) / 16
       } else {
-        parentHeight = parentElement.clientHeight
+        parentHeight = clientHeight
         parentWidth = (parentHeight * 16) / 9
       }
       setCanvasSize({ width: parentWidth, height: parentHeight })
       setIsLoading?.(false)
     }
-  }, 500)
+  }
 
   useEffect(() => {
     // init

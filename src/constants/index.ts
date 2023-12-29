@@ -3,6 +3,27 @@ import fastMoves from '@data/fast_moves.json'
 import { ChargedMove, FastMove } from '@types'
 
 export const pokemonType = {
+  normal: 'normal',
+  fire: 'fire',
+  water: 'water',
+  grass: 'grass',
+  electric: 'electric',
+  ice: 'ice',
+  fighting: 'fighting',
+  poison: 'poison',
+  ground: 'ground',
+  flying: 'flying',
+  psychic: 'psychic',
+  bug: 'bug',
+  rock: 'rock',
+  ghost: 'ghost',
+  dragon: 'dragon',
+  dark: 'dark',
+  steel: 'steel',
+  fairy: 'fairy',
+}
+
+export const pokemonTypeText = {
   normal: '노말',
   fire: '불꽃',
   water: '물',
