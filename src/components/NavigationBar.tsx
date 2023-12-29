@@ -75,7 +75,7 @@ export const NavigationBar: FC = () => {
           }}
         />
       </TitleBannerWrapper>
-      <div>
+      <div className="flex gap-2">
         <Button
           variant="contained"
           color="secondary"
@@ -83,7 +83,7 @@ export const NavigationBar: FC = () => {
             router.push('/moves/fast')
           }}
         >
-          Fast Moves
+          {'노말 기술'}
         </Button>
         <Button
           variant="contained"
@@ -91,7 +91,7 @@ export const NavigationBar: FC = () => {
             router.push('/moves/charged')
           }}
         >
-          Charge Moves
+          {'스페셜 기술'}
         </Button>
       </div>
     </NavigationBarContainer>

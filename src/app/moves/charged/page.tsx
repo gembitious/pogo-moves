@@ -60,7 +60,7 @@ const ChargedMovesPage: FC = () => {
   }, [])
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="w-full h-full flex flex-col gap-8">
       <div className="flex justify-center flex-wrap gap-2">
         <Button
           variant="contained"
@@ -120,7 +120,7 @@ const ChargedMovesPage: FC = () => {
                   left:
                     labelWidthY +
                     (graphSize.width * (energy - minEnergy)) / (maxEnergy - minEnergy),
-                  top: graphSize.height * (1 - (dpe - minDpe) / (maxDpe - minDpe)) - labelHeightX,
+                  top: graphSize.height * (1 - (dpe - minDpe) / (maxDpe - minDpe)),
                 }}
               />
             )
