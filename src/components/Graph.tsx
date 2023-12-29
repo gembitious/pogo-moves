@@ -19,7 +19,8 @@ interface GraphProps {
 }
 
 export const Graph: FC<GraphProps> = ({ xAxisProps, yAxisProps }) => {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const canvasFirstLayerRef = useRef<HTMLCanvasElement>(null)
+  const canvasSecondLayerRef = useRef<HTMLCanvasElement>(null)
   const [canvasSize, setCanvasSize] = useState({ width: 1920, height: 1920 })
 
   const xAxisLabelHeight = xAxisProps?.labelHeight ?? 48
@@ -31,60 +32,60 @@ export const Graph: FC<GraphProps> = ({ xAxisProps, yAxisProps }) => {
   const subDivisionCountY = yAxisProps?.subDivisionCount ?? 5
 
   useEffect(() => {
-    const canvas = canvasRef.current
-    const ctx = canvas?.getContext('2d')
-    if (ctx) {
+    const canvas1 = canvasFirstLayerRef.current
+    const canvas2 = canvasSecondLayerRef.current
+    const ctx1 = canvas1?.getContext('2d')
+    const ctx2 = canvas2?.getContext('2d')
+    if (ctx1 && ctx2) {
+      ctx1.strokeStyle = POGO_MOVES_COLORS.gray[2]
+      ctx2.strokeStyle = POGO_MOVES_COLORS.gray[7]
       const yAxisHeight = canvasSize.height - xAxisLabelHeight
       const xAxisWidth = canvasSize.width - yAxisLabelWidth
 
       // x axis stroke
       for (let i = 0; i < divisionCountY; i++) {
-        ctx.strokeStyle = POGO_MOVES_COLORS.gray[2]
         const positionY = (1 - i / divisionCountY) * yAxisHeight
-        ctx.beginPath()
-        ctx.moveTo(yAxisLabelWidth, positionY)
-        ctx.lineTo(canvasSize.width, positionY)
-        ctx.stroke()
+        ctx1.beginPath()
+        ctx1.moveTo(yAxisLabelWidth, positionY)
+        ctx1.lineTo(canvasSize.width, positionY)
+        ctx1.stroke()
 
         // x axis sub stroke
         for (let j = 1; j < subDivisionCountY; j++) {
-          ctx.strokeStyle = POGO_MOVES_COLORS.gray[7]
           const subPositionY =
             positionY - (1 / divisionCountY) * (j / subDivisionCountY) * yAxisHeight
-          ctx.beginPath()
-          ctx.moveTo(yAxisLabelWidth, subPositionY)
-          ctx.lineTo(canvasSize.width, subPositionY)
-          ctx.stroke()
+          ctx2.beginPath()
+          ctx2.moveTo(yAxisLabelWidth, subPositionY)
+          ctx2.lineTo(canvasSize.width, subPositionY)
+          ctx2.stroke()
         }
       }
 
       // y axis stroke
       for (let i = 0; i < divisionCountX; i++) {
-        ctx.strokeStyle = POGO_MOVES_COLORS.gray[2]
         const positionX = yAxisLabelWidth + (xAxisWidth * i) / divisionCountX
-        ctx.beginPath()
-        ctx.moveTo(positionX, 0)
-        ctx.lineTo(positionX, yAxisHeight)
-        ctx.stroke()
+        ctx1.beginPath()
+        ctx1.moveTo(positionX, 0)
+        ctx1.lineTo(positionX, yAxisHeight)
+        ctx1.stroke()
 
         // y axis sub stroke
         for (let j = 1; j < subDivisionCountX; j++) {
-          ctx.strokeStyle = POGO_MOVES_COLORS.gray[7]
           const subPositionX =
             positionX + (1 / divisionCountX) * (j / subDivisionCountX) * xAxisWidth
-          ctx.beginPath()
-          ctx.moveTo(subPositionX, 0)
-          ctx.lineTo(subPositionX, yAxisHeight)
-          ctx.stroke()
+          ctx2.beginPath()
+          ctx2.moveTo(subPositionX, 0)
+          ctx2.lineTo(subPositionX, yAxisHeight)
+          ctx2.stroke()
         }
       }
     }
   }, [canvasSize])
 
   const handleResize = () => {
-    if (typeof window !== 'undefined' && canvasRef?.current?.parentElement) {
+    if (typeof window !== 'undefined' && canvasFirstLayerRef?.current?.parentElement) {
       const windowWidth = window.innerWidth
-      const parentWidth = canvasRef.current.parentElement.clientWidth
+      const parentWidth = canvasFirstLayerRef.current.parentElement.clientWidth
       const parentHeight =
         windowWidth > 1024
           ? (parentWidth * 9) / 16
@@ -105,11 +106,19 @@ export const Graph: FC<GraphProps> = ({ xAxisProps, yAxisProps }) => {
   }, [])
 
   return (
-    <canvas
-      className="absolute"
-      ref={canvasRef}
-      width={canvasSize.width}
-      height={canvasSize.height}
-    />
+    <>
+      <canvas
+        className="absolute z-0"
+        ref={canvasFirstLayerRef}
+        width={canvasSize.width}
+        height={canvasSize.height}
+      />
+      <canvas
+        className="absolute z-[-1]"
+        ref={canvasSecondLayerRef}
+        width={canvasSize.width}
+        height={canvasSize.height}
+      />
+    </>
   )
 }
