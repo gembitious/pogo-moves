@@ -1,3 +1,4 @@
+/* stylelint-disable font-family-name-quotes */
 /* stylelint-disable property-no-vendor-prefix */
 @import 'font.css';
 
@@ -6,6 +7,7 @@
 @tailwind utilities;
 
 body {
+  font-family: 'pretendard', 'Noto Sans KR', sans-serif;
   background: #023047;
   margin: 0;
   overflow-y: hidden;

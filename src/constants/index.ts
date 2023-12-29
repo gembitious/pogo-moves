@@ -64,10 +64,12 @@ const getFastMoveData = () => {
 const getChargedMoveData = () => {
   const result: ChargedMove[] = []
   chargedMoves.map((move) => {
-    if (isChargedMove(move)) result.push(move)
+    if (isChargedMove(move) && !unreleasedMove.includes(move.id)) result.push(move)
   })
   return result
 }
+
+const unreleasedMove = ['roar_of_time', 'spacial_rend']
 
 export const FastMoveData: FastMove[] = getFastMoveData()
 export const ChargedMoveData: ChargedMove[] = getChargedMoveData()

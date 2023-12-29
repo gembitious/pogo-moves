@@ -53,10 +53,42 @@ const ChargedMovesPage: FC = () => {
     }
   }
 
+  const spreadMove = (move: HTMLDivElement, index: number) => {
+    const { top } = move.getBoundingClientRect()
+    console.log(top + index * 32)
+    move.style.top = `${top + index * 32}px`
+  }
+
+  const rollbackMove = (move: HTMLDivElement, index: number) => {
+    const { top } = move.getBoundingClientRect()
+    move.style.top = `${top - index * 32}px`
+  }
+
+  const handleMouse = (e: MouseEvent) => {
+    var x = e.clientX
+    var y = e.clientY
+    let elementUnderMouse = document.elementsFromPoint(x, y)
+    const ee = elementUnderMouse.filter((e) => e.className.includes('move-chip'))
+    if (ee.length > 1) {
+      ee.map((move, index) => {
+        const moveElement = move.parentElement
+        if (moveElement instanceof HTMLDivElement) {
+          moveElement.addEventListener('mouseout', () => rollbackMove(moveElement, index))
+          spreadMove(moveElement, index)
+          return () => move.removeEventListener('mouseout', () => rollbackMove(moveElement, index))
+        }
+      })
+    }
+  }
+
   useEffect(() => {
     handleResize()
     window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
+    // document.addEventListener('mousemove', handleMouse)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      // document.removeEventListener('mousemove', handleMouse)
+    }
   }, [])
 
   return (
@@ -111,12 +143,9 @@ const ChargedMovesPage: FC = () => {
             return (
               <MoveChip
                 key={id}
-                variant="filled"
-                size="small"
                 data={move}
                 style={{
                   position: 'absolute',
-                  backgroundColor: POGO_MOVES_COLORS.type[type],
                   left:
                     labelWidthY +
                     (graphSize.width * (energy - minEnergy)) / (maxEnergy - minEnergy),
