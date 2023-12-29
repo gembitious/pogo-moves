@@ -572,14 +572,6 @@
     "energy": 45
   },
   {
-    "id": "frustration",
-    "nameEn": "Frustration",
-    "name": "화풀이",
-    "type": "normal",
-    "power": 10,
-    "energy": 70
-  },
-  {
     "id": "fusion_bolt",
     "nameEn": "Fusion Bolt",
     "name": "크로스썬더",

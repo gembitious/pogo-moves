@@ -2,7 +2,7 @@
 
 import { debounce } from '@mui/material'
 import { POGO_MOVES_COLORS } from '@styles/colors'
-import { FC, useEffect, useRef, useState } from 'react'
+import { Dispatch, FC, SetStateAction, useEffect, useRef, useState } from 'react'
 
 interface GraphAxisProps {
   labelName?: string
@@ -20,12 +20,13 @@ interface GraphAxisProps {
 interface GraphProps {
   xAxisProps?: GraphAxisProps
   yAxisProps?: GraphAxisProps
+  setIsLoading?: Dispatch<SetStateAction<boolean>> // canvas drawing 이후 외부 isLoading 변수 false 전환
 }
 
-export const Graph: FC<GraphProps> = ({ xAxisProps, yAxisProps }) => {
+export const Graph: FC<GraphProps> = ({ xAxisProps, yAxisProps, setIsLoading }) => {
   const canvasFirstLayerRef = useRef<HTMLCanvasElement>(null)
   const canvasSecondLayerRef = useRef<HTMLCanvasElement>(null)
-  const [canvasSize, setCanvasSize] = useState({ width: 1920, height: 1920 })
+  const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 })
 
   const xAxisLabelHeight = xAxisProps?.labelHeight ?? 48
   const yAxisLabelWidth = yAxisProps?.labelWidth ?? 48
@@ -53,7 +54,14 @@ export const Graph: FC<GraphProps> = ({ xAxisProps, yAxisProps }) => {
     const canvas2 = canvasSecondLayerRef.current
     const ctx1 = canvas1?.getContext('2d')
     const ctx2 = canvas2?.getContext('2d')
-    if (typeof window !== 'undefined' && ctx1 && ctx2) {
+    if (
+      canvasSize.width > 0 &&
+      canvasSize.height > 0 &&
+      typeof window !== 'undefined' &&
+      ctx1 &&
+      ctx2
+    ) {
+      setIsLoading?.(true)
       ctx1.clearRect(0, 0, canvasSize.width, canvasSize.height)
       ctx1.strokeStyle = POGO_MOVES_COLORS.gray[2]
       ctx2.strokeStyle = POGO_MOVES_COLORS.gray[7]
@@ -137,10 +145,8 @@ export const Graph: FC<GraphProps> = ({ xAxisProps, yAxisProps }) => {
           ctx2.lineTo(subPositionX, yAxisHeight)
           ctx2.stroke()
         }
+        setIsLoading?.(false)
       }
-
-      ctx1.textBaseline = 'middle'
-      ctx1.textAlign = 'center'
     }
   }, [canvasSize])
 
@@ -159,6 +165,7 @@ export const Graph: FC<GraphProps> = ({ xAxisProps, yAxisProps }) => {
         parentWidth = (parentHeight * 16) / 9
       }
       setCanvasSize({ width: parentWidth, height: parentHeight })
+      setIsLoading?.(false)
     }
   }, 500)
 
@@ -173,13 +180,13 @@ export const Graph: FC<GraphProps> = ({ xAxisProps, yAxisProps }) => {
   return (
     <>
       <canvas
-        className="absolute z-0"
+        className="absolute z-[-1]"
         ref={canvasFirstLayerRef}
         width={canvasSize.width}
         height={canvasSize.height}
       />
       <canvas
-        className="absolute z-[-1]"
+        className="absolute z-[-2]"
         ref={canvasSecondLayerRef}
         width={canvasSize.width}
         height={canvasSize.height}
