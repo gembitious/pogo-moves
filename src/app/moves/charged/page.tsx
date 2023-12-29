@@ -6,7 +6,10 @@ import { FC } from 'react'
 const ChargedMovesPage: FC = () => {
   return (
     <div className="relative w-full h-full">
-      <Graph />
+      <Graph
+        xAxisProps={{ labelName: 'DPT', divisionCount: 6 }}
+        yAxisProps={{ labelName: 'EPT*1.4', divisionCount: 6 }}
+      />
     </div>
   )
 }
