@@ -7,5 +7,5 @@ interface MoveChipProps extends ChipProps {
 }
 
 export const MoveChip: FC<MoveChipProps> = ({ data, ...others }) => {
-  return <Chip label={data.nameEn} {...others} />
+  return <Chip label={data.name} {...others} />
 }

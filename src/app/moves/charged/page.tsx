@@ -3,7 +3,7 @@
 import Button from '@components/Button'
 import { Graph } from '@components/Graph'
 import { MoveChip } from '@components/MoveChip'
-import { ChargedMoveData, pokemonType } from '@constants'
+import { ChargedMoveData, pokemonType, pokemonTypeText } from '@constants'
 import useGlobalLoadingPanel from '@hooks/useGlobalLoadingPanel'
 import { POGO_MOVES_COLORS } from '@styles/colors'
 import { PokemonType } from '@types'
@@ -73,7 +73,7 @@ const ChargedMovesPage: FC = () => {
         >
           {'SHOW ALL'}
         </Button>
-        {Object.values(pokemonType).map((type) => (
+        {Object.entries(pokemonTypeText).map(([type, text]) => (
           <Button
             key={type}
             variant="contained"
@@ -90,7 +90,7 @@ const ChargedMovesPage: FC = () => {
               })
             }
           >
-            {type.toUpperCase()}
+            {text}
           </Button>
         ))}
       </div>
