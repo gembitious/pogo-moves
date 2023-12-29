@@ -1,6 +1,20 @@
 'use client'
 
+import useGlobalLoadingPanel from '@hooks/useGlobalLoadingPanel'
 import { styled } from '@mui/material'
+import { portalToBody } from '@utils'
+import { FC, PropsWithChildren } from 'react'
+import GlobalLoadingPanel from './GlobalLoadingPanel'
+
+export const AppWrapper: FC<PropsWithChildren> = ({ children }) => {
+  const { globalLoadingPanelVisible } = useGlobalLoadingPanel()
+  return (
+    <>
+      {portalToBody(<GlobalLoadingPanel visible={globalLoadingPanelVisible} />)}
+      {children}
+    </>
+  )
+}
 
 export const MainContainer = styled('main')`
   max-width: 1920px;
