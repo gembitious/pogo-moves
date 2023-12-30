@@ -77,4 +77,5 @@ input::-webkit-inner-spin-button {
 
 .move-chip-point {
   transition: none;
+  cursor: pointer;
 }

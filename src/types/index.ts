@@ -11,6 +11,8 @@ interface BasicMove {
 export interface FastMove extends BasicMove {
   energyGain: number
   turn: number
+  ept: number
+  dpt: number
 }
 
 export interface ChargedMove extends BasicMove {

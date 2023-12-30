@@ -14,6 +14,7 @@ const minDpe = 0
 const minEnergy = 30
 const maxEnergy = 95
 const energyInterval = 5
+const damageInterval = 0.5
 const labelHeightX = 48
 const labelWidthY = 48
 
@@ -60,9 +61,6 @@ const ChargedMovesPage: FC = () => {
       move.classList.add('move-chip-spread')
       move.style.zIndex = '5'
       move.style.top = `${Number(move.style.top.split('px')[0]) + offset}px`
-      if (move.firstChild instanceof HTMLDivElement) {
-        move.firstChild.style.top = `${Number(move.firstChild.style.top.split('px')[0]) - offset}px`
-      }
       setTimeout(() => rollbackMove(move, offset), 2000)
     }
   }
@@ -73,9 +71,6 @@ const ChargedMovesPage: FC = () => {
       move.classList.remove('move-chip-spread')
       move.style.zIndex = '1'
       move.style.top = `${Number(move.style.top.split('px')[0]) - offset}px`
-      if (move.firstChild instanceof HTMLDivElement) {
-        move.firstChild.style.top = `${Number(move.firstChild.style.top.split('px')[0]) + offset}px`
-      }
     }
   }
 
@@ -151,7 +146,7 @@ const ChargedMovesPage: FC = () => {
           graphSize.width > 0 &&
           graphSize.height > 0 &&
           chargedMoveList.map((move) => {
-            const { id, type, power, energy } = move
+            const { id, power, energy } = move
             const dpe = power / energy
             return (
               <MoveChip
@@ -175,13 +170,12 @@ const ChargedMovesPage: FC = () => {
             initialValue: minEnergy,
             divisionCount: 13,
             interval: energyInterval,
-            subInterval: 5,
           }}
           yAxisProps={{
             labelName: 'DPE (Damage Per Energy)',
             labelWidth: 48,
             divisionCount: 5,
-            interval: 0.5,
+            interval: damageInterval,
           }}
         />
       </div>

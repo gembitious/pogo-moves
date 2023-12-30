@@ -56,7 +56,14 @@ const isChargedMove = (target: any): target is ChargedMove =>
 const getFastMoveData = () => {
   const result: FastMove[] = []
   fastMoves.map((move) => {
-    if (isFastMove(move)) result.push(move)
+    if (isFastMove(move)) {
+      const { energyGain, power, turn } = move
+      result.push({
+        ...move,
+        dpt: Math.round((power / turn) * 100) / 100,
+        ept: Math.round((energyGain / turn) * 100) / 100,
+      })
+    }
   })
   return result
 }
