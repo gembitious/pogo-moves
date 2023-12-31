@@ -24,12 +24,18 @@ export const MoveChip: FC<MoveChipProps> = ({ data, style, ...others }) => {
 export const MoveChipPoint: FC<MoveChipProps> = ({ data, style }) => {
   return (
     <div
-      className="move-chip-point absolute z-[10] -top-1 -left-1 w-2 h-2 border-solid border-[1px] rounded-full"
+      className="move-chip-point absolute z-[10] -top-1 -left-1 w-4 h-4"
       style={{
-        backgroundColor: POGO_MOVES_COLORS.type[data.type],
-        left: Number(style?.left ?? 0) - 4,
-        top: Number(style?.top ?? 0) - 4,
+        left: Number(style?.left ?? 0) - 8,
+        top: Number(style?.top ?? 0) - 8,
       }}
-    />
+    >
+      <div
+        className="w-2 h-2 m-1 border-solid border-[1px] rounded-full"
+        style={{
+          backgroundColor: POGO_MOVES_COLORS.type[data.type],
+        }}
+      />
+    </div>
   )
 }
