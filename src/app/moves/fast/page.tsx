@@ -79,11 +79,11 @@ const FastMovesPage: FC = () => {
   const handleMouse = (e: MouseEvent) => {
     let elements = document.elementsFromPoint(e.clientX, e.clientY)
     const moves = elements.filter((e) => e.classList.contains('move-chip-point'))
-    if (moves.length > 1) {
+    if (moves.length > 0) {
       moves.map((move, index) => {
-        const moveElement = move.parentElement
+        const moveElement = move.nextElementSibling
         if (moveElement instanceof HTMLDivElement) {
-          const offset = (index - (moves.length - 1) / 2) * 24
+          const offset = moves.length > 1 ? (index - (moves.length - 1) / 2) * 24 : 0
           spreadMove(moveElement, offset)
         }
       })
@@ -103,10 +103,10 @@ const FastMovesPage: FC = () => {
 
   return (
     <>
-      <div className="w-full h-8 mb-8 flex gap-2 overflow-x-scroll scroll-hidden">
+      <div className="w-full h-[70px] pb-1 flex flex-wrap justify-center gap-1 overflow-x-scroll scroll-hidden">
         <Button
           variant="contained"
-          className="static-text !py-[2px]"
+          className="static-text h-8 !min-w-[32px] !py-[2px]"
           style={{ backgroundColor: POGO_MOVES_COLORS.white }}
           onClick={() => {
             setFastMoveList(FastMoveData)
@@ -122,7 +122,7 @@ const FastMovesPage: FC = () => {
             <Button
               key={type}
               variant="contained"
-              className="static-text !py-[2px]"
+              className="static-text h-8 !min-w-[32px] !py-[2px]"
               style={{
                 opacity: isSelected ? '' : ' 30%',
                 backgroundColor: POGO_MOVES_COLORS.type[type],
@@ -143,7 +143,7 @@ const FastMovesPage: FC = () => {
           )
         })}
       </div>
-      <div ref={graphWrapperRef} className="relative w-full h-[calc(100%-64px)] overflow-scroll">
+      <div ref={graphWrapperRef} className="relative w-full h-[calc(100%-70px)] overflow-scroll">
         {!isLoading &&
           graphSize.width > 0 &&
           graphSize.height > 0 &&
