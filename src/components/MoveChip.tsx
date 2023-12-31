@@ -2,13 +2,14 @@ import { Tooltip } from '@mui/material'
 import { POGO_MOVES_COLORS } from '@styles/colors'
 import { ChargedMove, FastMove } from '@types'
 import { isChargedMove, isFastMove } from '@utils'
-import { FC, HTMLAttributes } from 'react'
+import { FC, HTMLAttributes, useState } from 'react'
 
 interface MoveChipProps extends HTMLAttributes<HTMLDivElement> {
   data: FastMove | ChargedMove
 }
 
 export const MoveChip: FC<MoveChipProps> = ({ data, style, ...others }) => {
+  const [open, setOpen] = useState(false)
   let tooltipText = ''
   if (isFastMove(data)) {
     tooltipText = `DPT: ${data.dpt} EPT: ${data.ept}`
@@ -18,7 +19,7 @@ export const MoveChip: FC<MoveChipProps> = ({ data, style, ...others }) => {
   return (
     <>
       <MoveChipPoint data={data} style={style} />
-      <Tooltip title={tooltipText}>
+      <Tooltip open={open} title={tooltipText} onClick={() => setOpen((prev) => !prev)}>
         <div
           className="move-chip h-6 px-2 flex items-center rounded relative"
           style={{ ...style, backgroundColor: POGO_MOVES_COLORS.type[data.type] }}
