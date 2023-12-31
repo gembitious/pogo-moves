@@ -7,6 +7,7 @@ import { FastMoveData, pokemonTypeText } from '@constants'
 import useGlobalLoadingPanel from '@hooks/useGlobalLoadingPanel'
 import { POGO_MOVES_COLORS } from '@styles/colors'
 import { PokemonType } from '@types'
+import Image from 'next/image'
 import { FC, useEffect, useRef, useState } from 'react'
 
 const maxDpt = 6
@@ -122,7 +123,7 @@ const FastMovesPage: FC = () => {
             <Button
               key={type}
               variant="contained"
-              className="static-text h-8 !min-w-[32px] !py-[2px]"
+              className="flex gap-0.5 static-text h-8 !min-w-[32px] !py-[2px]"
               style={{
                 opacity: isSelected ? '' : ' 30%',
                 backgroundColor: POGO_MOVES_COLORS.type[type],
@@ -138,6 +139,7 @@ const FastMovesPage: FC = () => {
                 })
               }
             >
+              <Image src={`/images/types/${type}.png`} alt={type} width={16} height={16} />
               {text}
             </Button>
           )

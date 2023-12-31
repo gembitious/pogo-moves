@@ -1,6 +1,7 @@
 import chargedMoves from '@data/charged_moves.json'
 import fastMoves from '@data/fast_moves.json'
 import { ChargedMove, FastMove } from '@types'
+import { isChargedMove, isFastMove } from '@utils'
 
 export const pokemonType = {
   normal: 'normal',
@@ -44,18 +45,11 @@ export const pokemonTypeText = {
   fairy: '페어리',
 }
 
-const isFastMove = (target: any): target is FastMove =>
-  typeof target == 'object' &&
-  target.turn !== undefined &&
-  target.energyGain !== undefined &&
-  (target.power > 0 || target.energyGain > 0)
+export const unreleasedMove = ['roar_of_time', 'spacial_rend']
 
-const isChargedMove = (target: any): target is ChargedMove =>
-  typeof target == 'object' && target.energy !== undefined
-
-const getFastMoveData = () => {
+export const getFastMoveData = (moves: object[]) => {
   const result: FastMove[] = []
-  fastMoves.map((move) => {
+  moves.map((move) => {
     if (isFastMove(move)) {
       const { energyGain, power, turn } = move
       result.push({
@@ -68,15 +62,13 @@ const getFastMoveData = () => {
   return result
 }
 
-const getChargedMoveData = () => {
+export const getChargedMoveData = (moves: object[]) => {
   const result: ChargedMove[] = []
-  chargedMoves.map((move) => {
+  moves.map((move) => {
     if (isChargedMove(move) && !unreleasedMove.includes(move.id)) result.push(move)
   })
   return result
 }
 
-const unreleasedMove = ['roar_of_time', 'spacial_rend']
-
-export const FastMoveData: FastMove[] = getFastMoveData()
-export const ChargedMoveData: ChargedMove[] = getChargedMoveData()
+export const FastMoveData: FastMove[] = getFastMoveData(fastMoves)
+export const ChargedMoveData: ChargedMove[] = getChargedMoveData(chargedMoves)
