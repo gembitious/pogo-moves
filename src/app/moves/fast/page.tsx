@@ -12,9 +12,9 @@ import { FC, useEffect, useRef, useState } from 'react'
 
 const maxDpt = 6
 const minDpt = 0
-const eptWeight = 1.5
-const minEpt = 2
-const maxEpt = 8
+const eptWeight = 1
+const minEpt = 1
+const maxEpt = 6
 const dptInterval = 1
 const eptInterval = 1
 const labelHeightX = 48
@@ -176,7 +176,7 @@ const FastMovesPage: FC = () => {
             labelName: `EPT*${eptWeight}`,
             labelWidth: 48,
             initialValue: minEpt,
-            divisionCount: 6,
+            divisionCount: 5,
             interval: eptInterval,
           }}
         />

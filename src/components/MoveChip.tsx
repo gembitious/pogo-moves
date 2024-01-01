@@ -19,7 +19,18 @@ export const MoveChip: FC<MoveChipProps> = ({ data, style, ...others }) => {
   return (
     <>
       <MoveChipPoint data={data} style={style} />
-      <Tooltip open={open} title={tooltipText} onClick={() => setOpen((prev) => !prev)}>
+      <Tooltip
+        open={open}
+        title={tooltipText}
+        onClick={() => {
+          if (open) {
+            setOpen(false)
+          } else {
+            setOpen(true)
+            setTimeout(() => setOpen(false), 2000)
+          }
+        }}
+      >
         <div
           className="move-chip h-6 px-2 flex items-center rounded relative"
           style={{ ...style, backgroundColor: POGO_MOVES_COLORS.type[data.type] }}
