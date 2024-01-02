@@ -1,7 +1,7 @@
 'use client'
 
 import Button from '@components/Button'
-import { Graph } from '@components/Graph'
+import { Chart, ChartComponentProps } from '@components/Chart'
 import { MoveChip } from '@components/MoveChip'
 import { ChargedMoveData, pokemonTypeText } from '@constants'
 import useGlobalLoadingPanel from '@hooks/useGlobalLoadingPanel'
@@ -19,13 +19,22 @@ const damageInterval = 0.5
 const labelHeightX = 48
 const labelWidthY = 48
 
+const graphProps: ChartComponentProps['graphProps'] = [
+  {
+    label: 'DPE/Energy = 1/35',
+    yOfX: (x) => x / 35,
+    lineWidth: 1,
+    strokeStyle: POGO_MOVES_COLORS.secondary,
+  },
+]
+
 const ChargedMovesPage: FC = () => {
   const { setGlobalLoadingPanelVisible } = useGlobalLoadingPanel()
   const [selectedType, setSelectedType] = useState<{ [key in PokemonType]?: string }>({})
   const [chargedMoveList, setChargedMoveList] = useState(ChargedMoveData)
   const [isLoading, setIsLoading] = useState(true)
-  const graphWrapperRef = useRef<HTMLDivElement>(null)
-  const [graphSize, setGraphSize] = useState({ width: 0, height: 0 })
+  const chartWrapperRef = useRef<HTMLDivElement>(null)
+  const [chartSize, setChartSize] = useState({ width: 0, height: 0 })
 
   useEffect(() => {
     if (Object.values(selectedType).length > 0)
@@ -37,18 +46,18 @@ const ChargedMovesPage: FC = () => {
     setGlobalLoadingPanelVisible(isLoading)
   }, [isLoading])
 
-  // graph size handler
+  // chart size handler
   const handleResize = () => {
-    if (graphWrapperRef.current) {
-      const { clientWidth, clientHeight } = graphWrapperRef.current
+    if (chartWrapperRef.current) {
+      const { clientWidth, clientHeight } = chartWrapperRef.current
       const isVideoRatio = clientWidth > (clientHeight * 16) / 9
       if (isVideoRatio) {
-        setGraphSize({
+        setChartSize({
           width: clientWidth - labelWidthY,
           height: (clientWidth * 9) / 16 - labelHeightX,
         })
       } else {
-        setGraphSize({
+        setChartSize({
           width: (clientHeight * 16) / 9 - labelWidthY,
           height: clientHeight - labelHeightX,
         })
@@ -143,10 +152,10 @@ const ChargedMovesPage: FC = () => {
           )
         })}
       </div>
-      <div ref={graphWrapperRef} className="relative w-full h-[calc(100%-70px)] overflow-scroll">
+      <div ref={chartWrapperRef} className="relative w-full h-[calc(100%-70px)] overflow-scroll">
         {!isLoading &&
-          graphSize.width > 0 &&
-          graphSize.height > 0 &&
+          chartSize.width > 0 &&
+          chartSize.height > 0 &&
           chargedMoveList.map((move) => {
             const { id, power, energy } = move
             const dpe = power / energy
@@ -158,13 +167,13 @@ const ChargedMovesPage: FC = () => {
                   position: 'absolute',
                   left:
                     labelWidthY +
-                    (graphSize.width * (energy - minEnergy)) / (maxEnergy - minEnergy),
-                  top: graphSize.height * (1 - (dpe - minDpe) / (maxDpe - minDpe)),
+                    (chartSize.width * (energy - minEnergy)) / (maxEnergy - minEnergy),
+                  top: chartSize.height * (1 - (dpe - minDpe) / (maxDpe - minDpe)),
                 }}
               />
             )
           })}
-        <Graph
+        <Chart
           setIsLoading={setIsLoading}
           xAxisProps={{
             labelName: 'Energy',
@@ -179,6 +188,7 @@ const ChargedMovesPage: FC = () => {
             divisionCount: 5,
             interval: damageInterval,
           }}
+          graphProps={graphProps}
         />
       </div>
     </>

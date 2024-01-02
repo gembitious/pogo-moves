@@ -1,10 +1,11 @@
 'use client'
 
 import Button from '@components/Button'
-import { Graph } from '@components/Graph'
+import { Chart, ChartComponentProps } from '@components/Chart'
 import { MoveChip } from '@components/MoveChip'
 import { FastMoveData, pokemonTypeText } from '@constants'
 import useGlobalLoadingPanel from '@hooks/useGlobalLoadingPanel'
+import { darken, lighten } from '@mui/material'
 import { POGO_MOVES_COLORS } from '@styles/colors'
 import { PokemonType } from '@types'
 import Image from 'next/image'
@@ -20,13 +21,34 @@ const eptInterval = 1
 const labelHeightX = 48
 const labelWidthY = 48
 
+const graphProps: ChartComponentProps['graphProps'] = [
+  {
+    label: 'DPT*EPT^1.5 = 10',
+    yOfX: (x) => 10 / Math.pow(x, 1.5),
+    lineWidth: 1,
+    strokeStyle: darken(POGO_MOVES_COLORS.secondary, 0.3),
+  },
+  {
+    label: 'DPT*EPT^1.5 = 15',
+    yOfX: (x) => 15 / Math.pow(x, 1.5),
+    lineWidth: 1,
+    strokeStyle: POGO_MOVES_COLORS.secondary,
+  },
+  {
+    label: 'DPT*EPT^1.5 = 20',
+    yOfX: (x) => 20 / Math.pow(x, 1.5),
+    lineWidth: 1,
+    strokeStyle: lighten(POGO_MOVES_COLORS.secondary, 0.7),
+  },
+]
+
 const FastMovesPage: FC = () => {
   const { setGlobalLoadingPanelVisible } = useGlobalLoadingPanel()
   const [selectedType, setSelectedType] = useState<{ [key in PokemonType]?: string }>({})
   const [fastMoveList, setFastMoveList] = useState(FastMoveData)
   const [isLoading, setIsLoading] = useState(true)
-  const graphWrapperRef = useRef<HTMLDivElement>(null)
-  const [graphSize, setGraphSize] = useState({ width: 0, height: 0 })
+  const chartWrapperRef = useRef<HTMLDivElement>(null)
+  const [chartSize, setChartSize] = useState({ width: 0, height: 0 })
 
   useEffect(() => {
     if (Object.values(selectedType).length > 0)
@@ -38,18 +60,18 @@ const FastMovesPage: FC = () => {
     setGlobalLoadingPanelVisible(isLoading)
   }, [isLoading])
 
-  // graph size handler
+  // chart size handler
   const handleResize = () => {
-    if (graphWrapperRef.current) {
-      const { clientWidth, clientHeight } = graphWrapperRef.current
+    if (chartWrapperRef.current) {
+      const { clientWidth, clientHeight } = chartWrapperRef.current
       const isVideoRatio = clientWidth > (clientHeight * 16) / 9
       if (isVideoRatio) {
-        setGraphSize({
+        setChartSize({
           width: clientWidth - labelWidthY,
           height: (clientWidth * 9) / 16 - labelHeightX,
         })
       } else {
-        setGraphSize({
+        setChartSize({
           width: (clientHeight * 16) / 9 - labelWidthY,
           height: clientHeight - labelHeightX,
         })
@@ -145,10 +167,10 @@ const FastMovesPage: FC = () => {
           )
         })}
       </div>
-      <div ref={graphWrapperRef} className="relative w-full h-[calc(100%-70px)] overflow-scroll">
+      <div ref={chartWrapperRef} className="relative w-full h-[calc(100%-70px)] overflow-scroll">
         {!isLoading &&
-          graphSize.width > 0 &&
-          graphSize.height > 0 &&
+          chartSize.width > 0 &&
+          chartSize.height > 0 &&
           fastMoveList.map((move) => {
             const { id, dpt, ept } = move
             return (
@@ -157,13 +179,13 @@ const FastMovesPage: FC = () => {
                 data={move}
                 style={{
                   position: 'absolute',
-                  left: labelWidthY + (graphSize.width * (dpt - minDpt)) / (maxDpt - minDpt),
-                  top: graphSize.height * (1 - (ept * eptWeight - minEpt) / (maxEpt - minEpt)),
+                  left: labelWidthY + (chartSize.width * (dpt - minDpt)) / (maxDpt - minDpt),
+                  top: chartSize.height * (1 - (ept * eptWeight - minEpt) / (maxEpt - minEpt)),
                 }}
               />
             )
           })}
-        <Graph
+        <Chart
           setIsLoading={setIsLoading}
           xAxisProps={{
             labelName: 'DPT',
@@ -173,12 +195,14 @@ const FastMovesPage: FC = () => {
             interval: dptInterval,
           }}
           yAxisProps={{
-            labelName: `EPT*${eptWeight}`,
+            labelName: `EPT`,
             labelWidth: 48,
             initialValue: minEpt,
             divisionCount: 5,
             interval: eptInterval,
           }}
+          graphProps={graphProps}
+          graphLabelProps={{ gap: 16, paddingX: 16, paddingY: 16 }}
         />
       </div>
     </>
