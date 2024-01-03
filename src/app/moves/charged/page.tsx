@@ -92,7 +92,7 @@ const ChargedMovesPage: FC = () => {
       moves.map((move, index) => {
         const moveElement = move.nextElementSibling
         if (moveElement instanceof HTMLDivElement) {
-          const offset = (index - (moves.length - 1) / 2) * 24
+          const offset = moves.length > 1 ? (index - (moves.length - 1) / 2) * 18 : 0
           spreadMove(moveElement, offset)
         }
       })
@@ -189,6 +189,7 @@ const ChargedMovesPage: FC = () => {
             interval: damageInterval,
           }}
           graphProps={graphProps}
+          graphLabelProps={{ paddingX: 12, paddingY: 12 }}
         />
       </div>
     </>

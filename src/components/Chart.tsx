@@ -180,7 +180,7 @@ export const Chart: FC<ChartComponentProps> = ({
             ((yOfX((x * divisionCountX * intervalX) / xAxisWidth + initialValueX) - initialValueY) *
               yAxisHeight) /
             (divisionCountY * intervalY)
-          if (y <= yAxisHeight) ctx1.lineTo(x + yAxisLabelWidth, yAxisHeight - y)
+          if (y >= 0) ctx1.lineTo(x + yAxisLabelWidth, yAxisHeight - y)
         }
         ctx1.strokeStyle = strokeStyle ?? POGO_MOVES_COLORS.white
         ctx1.lineWidth = lineWidth ?? 1

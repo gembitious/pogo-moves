@@ -36,7 +36,7 @@ export const MoveChip: FC<MoveChipProps> = ({ data, style, ...others }) => {
           style={{ ...style, backgroundColor: POGO_MOVES_COLORS.type[data.type] }}
           {...others}
         >
-          <span className="text-sm overflow-hidden text-ellipsis whitespace-nowrap">
+          <span className="text-xs font-semibold overflow-hidden text-ellipsis whitespace-nowrap">
             {data.name}
           </span>
         </div>

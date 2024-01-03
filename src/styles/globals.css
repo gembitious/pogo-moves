@@ -61,8 +61,8 @@ input::-webkit-inner-spin-button {
 }
 
 .move-chip {
-  height: 1.5rem;
-  padding: 0 0.5rem;
+  height: 18px;
+  padding: 0 6px;
   display: flex;
   position: relative;
   align-items: center;
