@@ -3,6 +3,7 @@ import { POGO_MOVES_COLORS } from '@styles/colors'
 import { ChargedMove, FastMove } from '@types'
 import { isChargedMove, isFastMove } from '@utils'
 import { FC, HTMLAttributes, useState } from 'react'
+import Button from './Button'
 
 interface MoveChipProps extends HTMLAttributes<HTMLDivElement> {
   data: FastMove | ChargedMove
@@ -21,7 +22,14 @@ export const MoveChip: FC<MoveChipProps> = ({ data, style, ...others }) => {
       <MoveChipPoint data={data} style={style} />
       <Tooltip
         open={open}
-        title={tooltipText}
+        title={
+          <div className="flex flex-col gap-1">
+            {tooltipText}
+            <Button color="info" variant="contained">
+              상세 보기
+            </Button>
+          </div>
+        }
         onClick={() => {
           if (open) {
             setOpen(false)
@@ -30,13 +38,14 @@ export const MoveChip: FC<MoveChipProps> = ({ data, style, ...others }) => {
             setTimeout(() => setOpen(false), 2000)
           }
         }}
+        PopperProps={{ className: 'move-chip-tooltip' }}
       >
         <div
           className="move-chip h-6 px-2 flex items-center rounded relative"
           style={{ ...style, backgroundColor: POGO_MOVES_COLORS.type[data.type] }}
           {...others}
         >
-          <span className="text-xs font-semibold overflow-hidden text-ellipsis whitespace-nowrap">
+          <span className="text-xs font-medium overflow-hidden text-ellipsis whitespace-nowrap">
             {data.name}
           </span>
         </div>

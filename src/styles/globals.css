@@ -79,3 +79,12 @@ input::-webkit-inner-spin-button {
   transition: none;
   cursor: pointer;
 }
+
+.move-chip-tooltip > .MuiTooltip-tooltip {
+  margin: 0 !important;
+}
+
+.move-chip-tooltip .MuiButtonBase-root {
+  padding: 0 !important;
+  font-size: 12px;
+}
