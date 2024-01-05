@@ -596,14 +596,6 @@
     "energy": 65
   },
   {
-    "id": "giga_drain",
-    "nameEn": "Giga Drain",
-    "name": "기가드레인",
-    "type": "grass",
-    "power": 50,
-    "energy": 80
-  },
-  {
     "id": "giga_impact",
     "nameEn": "Giga Impact",
     "name": "기가임팩트",
@@ -863,14 +855,6 @@
     "type": "steel",
     "power": 70,
     "energy": 45
-  },
-  {
-    "id": "mega_drain",
-    "nameEn": "Mega Drain",
-    "name": "메가드레인",
-    "type": "grass",
-    "power": 25,
-    "energy": 55
   },
   {
     "id": "megahorn",
@@ -1210,14 +1194,6 @@
     "buffs": [0, -1],
     "buffTarget": "opponent",
     "buffApplyChance": 0.5
-  },
-  {
-    "id": "rest",
-    "nameEn": "Rest",
-    "name": "잠자기",
-    "type": "normal",
-    "power": 50,
-    "energy": 35
   },
   {
     "id": "return",
