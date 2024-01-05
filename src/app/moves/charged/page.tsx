@@ -157,8 +157,7 @@ const ChargedMovesPage: FC = () => {
           chartSize.width > 0 &&
           chartSize.height > 0 &&
           chargedMoveList.map((move) => {
-            const { id, power, energy } = move
-            const dpe = power / energy
+            const { id, energy, dpe } = move
             return (
               <MoveChip
                 key={id}

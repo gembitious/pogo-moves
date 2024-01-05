@@ -65,7 +65,13 @@ export const getFastMoveData = (moves: object[]) => {
 export const getChargedMoveData = (moves: object[]) => {
   const result: ChargedMove[] = []
   moves.map((move) => {
-    if (isChargedMove(move) && !unreleasedMove.includes(move.id)) result.push(move)
+    if (isChargedMove(move) && !unreleasedMove.includes(move.id)) {
+      const { energy, power } = move
+      result.push({
+        ...move,
+        dpe: Math.round((power / energy) * 100) / 100,
+      })
+    }
   })
   return result
 }

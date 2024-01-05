@@ -17,9 +17,10 @@ export interface FastMove extends BasicMove {
 
 export interface ChargedMove extends BasicMove {
   energy: number
+  dpe: number
   buffs?: number[] // [attack, defense]
   buffTarget?: 'self' | 'opponent'
-  buffApplyChance?: number
+  buffApplyChance?: number // 0 - 1
 }
 
 export type PokemonType = keyof typeof pokemonType

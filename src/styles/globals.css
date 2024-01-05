@@ -82,9 +82,15 @@ input::-webkit-inner-spin-button {
 
 .move-chip-tooltip > .MuiTooltip-tooltip {
   margin: 0 !important;
+  font-family: 'pretendard', 'Noto Sans KR', sans-serif;
+  font-weight: 600;
+  background-color: #219dbccc;
+  padding: 4px;
+  font-size: 12px;
 }
 
 .move-chip-tooltip .MuiButtonBase-root {
+  font-family: 'pretendard', 'Noto Sans KR', sans-serif;
+  font-weight: 300;
   padding: 0 !important;
-  font-size: 12px;
 }
