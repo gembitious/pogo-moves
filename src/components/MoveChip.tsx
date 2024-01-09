@@ -10,20 +10,32 @@ interface MoveChipProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const MoveChip: FC<MoveChipProps> = ({ data, style, ...others }) => {
-  const [open, setOpen] = useState(false)
-  let tooltipText = ''
+  const [isTooltipVisible, setIsTooltipVisible] = useState(false)
+  const [isDetailDialogVisible, setIsDetailDialogVisible] = useState(false)
+
+  const onClickDetailButton = () => {
+    setIsDetailDialogVisible(true)
+  }
+
+  const handleDetailDialogClose = () => {
+    setIsDetailDialogVisible(false)
+  }
+
   return (
     <>
+      {/* <MoveDialog data={data} visible={isDetailDialogVisible} onClose={handleDetailDialogClose}>
+        {data.name}
+      </MoveDialog> */}
       <MoveChipPoint data={data} style={style} />
       <Tooltip
-        open={open}
-        title={<MoveTooltip data={data} />}
+        open={isTooltipVisible}
+        title={<MoveTooltip data={data} onClickDetailButton={onClickDetailButton} />}
         onClick={() => {
-          if (open) {
-            setOpen(false)
+          if (isTooltipVisible) {
+            setIsTooltipVisible(false)
           } else {
-            setOpen(true)
-            setTimeout(() => setOpen(false), 2000)
+            setIsTooltipVisible(true)
+            setTimeout(() => setIsTooltipVisible(false), 2000)
           }
         }}
         PopperProps={{ className: 'move-chip-tooltip' }}
@@ -118,17 +130,21 @@ export const MoveTooltipText: FC<{ data: FastMove | ChargedMove }> = ({ data }) 
   return <>{result}</>
 }
 
-const MoveTooltip: FC<MoveChipProps> = ({ data }) => {
+const MoveTooltip: FC<MoveChipProps & { onClickDetailButton: () => void }> = ({
+  data,
+  onClickDetailButton,
+}) => {
   let tooltipText = ''
   if (isFastMove(data)) {
     tooltipText = `Turn: ${data.turn}\nDamage: ${data.power} DPT: ${data.dpt}\nEnergy: ${data.energyGain} EPT: ${data.ept}`
   } else if (isChargedMove(data)) {
     tooltipText = `Damage: ${data.power}\nEnergy: ${data.energy}\nDPE: ${data.dpe}`
   }
+
   return (
     <div className="flex flex-col gap-0.5">
       <MoveTooltipText data={data} />
-      <Button color="info" variant="contained">
+      <Button color="info" variant="contained" onClick={onClickDetailButton}>
         상세 보기
       </Button>
     </div>
