@@ -107,9 +107,15 @@ const ChargedMovesPage: FC = () => {
   const [mode, setMode] = useState<MoveMode>('pvp')
 
   useEffect(() => {
-    if (Object.values(selectedType).length > 0)
+    if (Object.values(selectedType).length > 0) {
       setChargedMoveList(chargedMoveData.filter((value) => selectedType[value.type] !== undefined))
-    else setChargedMoveList(chargedMoveData)
+      setPveChargedMoveList(
+        pveChargedMoveData.filter((value) => selectedType[value.type] !== undefined),
+      )
+    } else {
+      setChargedMoveList(chargedMoveData)
+      setPveChargedMoveList(pveChargedMoveData)
+    }
   }, [selectedType])
 
   useEffect(() => {
