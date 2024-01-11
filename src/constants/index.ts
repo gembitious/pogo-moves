@@ -1,7 +1,9 @@
 import chargedMoves from '@data/charged_moves.json'
 import fastMoves from '@data/fast_moves.json'
-import { ChargedMove, FastMove } from '@types'
-import { isChargedMove, isFastMove } from '@utils'
+import pveChargedMoves from '@data/charged_moves_pve.json'
+import pveFastMoves from '@data/fast_moves_pve.json'
+import { ChargedMove, ChargedMovePvE, FastMove, FastMovePvE } from '@types'
+import { isChargedMove, isChargedMovePvE, isFastMove, isFastMovePvE } from '@utils'
 
 export const pokemonType = {
   normal: 'normal',
@@ -50,14 +52,7 @@ export const unreleasedMove = ['roar_of_time', 'spacial_rend']
 export const getFastMoveData = (moves: object[]) => {
   const result: FastMove[] = []
   moves.map((move) => {
-    if (isFastMove(move)) {
-      const { energyGain, power, turn } = move
-      result.push({
-        ...move,
-        dpt: Math.round((power / turn) * 100) / 100,
-        ept: Math.round((energyGain / turn) * 100) / 100,
-      })
-    }
+    if (isFastMove(move)) result.push(move)
   })
   return result
 }
@@ -65,16 +60,27 @@ export const getFastMoveData = (moves: object[]) => {
 export const getChargedMoveData = (moves: object[]) => {
   const result: ChargedMove[] = []
   moves.map((move) => {
-    if (isChargedMove(move) && !unreleasedMove.includes(move.id)) {
-      const { energy, power } = move
-      result.push({
-        ...move,
-        dpe: Math.round((power / energy) * 100) / 100,
-      })
-    }
+    if (isChargedMove(move) && !unreleasedMove.includes(move.id)) result.push(move)
+  })
+  return result
+}
+export const getFastMovePvEData = (moves: object[]) => {
+  const result: FastMovePvE[] = []
+  moves.map((move) => {
+    if (isFastMovePvE(move)) result.push(move)
   })
   return result
 }
 
-export const FastMoveData: FastMove[] = getFastMoveData(fastMoves)
-export const ChargedMoveData: ChargedMove[] = getChargedMoveData(chargedMoves)
+export const getChargedMovePvEData = (moves: object[]) => {
+  const result: ChargedMovePvE[] = []
+  moves.map((move) => {
+    if (isChargedMovePvE(move) && !unreleasedMove.includes(move.id)) result.push(move)
+  })
+  return result
+}
+
+export const fastMoveData: FastMove[] = getFastMoveData(fastMoves)
+export const chargedMoveData: ChargedMove[] = getChargedMoveData(chargedMoves)
+export const pveFastMoveData: FastMovePvE[] = getFastMovePvEData(pveFastMoves)
+export const pveChargedMoveData: ChargedMovePvE[] = getChargedMovePvEData(pveChargedMoves)

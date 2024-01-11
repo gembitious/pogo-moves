@@ -1,4 +1,4 @@
-import { ChargedMove, FastMove } from '@types'
+import { ChargedMove, ChargedMovePvE, FastMove, FastMovePvE } from '@types'
 import { ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 
@@ -16,3 +16,12 @@ export const isFastMove = (target: any): target is FastMove =>
 
 export const isChargedMove = (target: any): target is ChargedMove =>
   typeof target == 'object' && target.energy !== undefined
+
+export const isFastMovePvE = (target: any): target is FastMovePvE =>
+  typeof target == 'object' &&
+  target.duration !== undefined &&
+  target.energyGain !== undefined &&
+  (target.power > 0 || target.energyGain > 0)
+
+export const isChargedMovePvE = (target: any): target is ChargedMovePvE =>
+  typeof target == 'object' && target.energy !== undefined && target.duration !== undefined

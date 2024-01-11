@@ -23,6 +23,25 @@ export interface ChargedMove extends BasicMove {
   buffApplyChance?: number // 0 - 1
 }
 
+export interface FastMovePvE extends BasicMove {
+  energyGain: number
+  duration: number
+  damageWindowStart: number
+  damageWindowEnd: number
+  dps: number
+  dpe: number
+  eps: number
+}
+
+export interface ChargedMovePvE extends BasicMove {
+  energy: number
+  duration: number
+  damageWindowStart: number
+  damageWindowEnd: number
+  dpe: number
+  dps: number
+}
+
 export type PokemonType = keyof typeof pokemonType
 
 export interface Pokemon {

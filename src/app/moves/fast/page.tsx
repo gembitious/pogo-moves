@@ -3,10 +3,10 @@
 import Button from '@components/Button'
 import { Chart, ChartComponentProps } from '@components/Chart'
 import { MoveChip } from '@components/MoveChip'
-import { FastMoveData, pokemonTypeText } from '@constants'
+import { fastMoveData, pokemonTypeText } from '@constants'
 import useGlobalLoadingPanel from '@hooks/useGlobalLoadingPanel'
 import { darken, lighten } from '@mui/material'
-import { POGO_MOVES_COLORS } from '@styles/colors'
+import { POGO_MOVES_COLORS, POKEMON_TYPE_COLORS } from '@styles/colors'
 import { PokemonType } from '@types'
 import Image from 'next/image'
 import { FC, useEffect, useRef, useState } from 'react'
@@ -45,15 +45,15 @@ const graphProps: ChartComponentProps['graphProps'] = [
 const FastMovesPage: FC = () => {
   const { setGlobalLoadingPanelVisible } = useGlobalLoadingPanel()
   const [selectedType, setSelectedType] = useState<{ [key in PokemonType]?: string }>({})
-  const [fastMoveList, setFastMoveList] = useState(FastMoveData)
+  const [fastMoveList, setFastMoveList] = useState(fastMoveData)
   const [isLoading, setIsLoading] = useState(true)
   const chartWrapperRef = useRef<HTMLDivElement>(null)
   const [chartSize, setChartSize] = useState({ width: 0, height: 0 })
 
   useEffect(() => {
     if (Object.values(selectedType).length > 0)
-      setFastMoveList(FastMoveData.filter((value) => selectedType[value.type] !== undefined))
-    else setFastMoveList(FastMoveData)
+      setFastMoveList(fastMoveData.filter((value) => selectedType[value.type] !== undefined))
+    else setFastMoveList(fastMoveData)
   }, [selectedType])
 
   useEffect(() => {
@@ -132,7 +132,7 @@ const FastMovesPage: FC = () => {
           className="static-text h-8 !min-w-[32px] !py-[2px]"
           style={{ backgroundColor: POGO_MOVES_COLORS.white }}
           onClick={() => {
-            setFastMoveList(FastMoveData)
+            setFastMoveList(fastMoveData)
             setSelectedType({})
           }}
         >
@@ -148,7 +148,7 @@ const FastMovesPage: FC = () => {
               className="flex gap-0.5 static-text h-8 !min-w-[32px] !py-[2px]"
               style={{
                 opacity: isSelected ? '' : ' 30%',
-                backgroundColor: POGO_MOVES_COLORS.type[type],
+                backgroundColor: POKEMON_TYPE_COLORS[type],
               }}
               onClick={() =>
                 setSelectedType((prev) => {

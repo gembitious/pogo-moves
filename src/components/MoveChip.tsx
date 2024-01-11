@@ -1,5 +1,5 @@
 import { Tooltip } from '@mui/material'
-import { POGO_MOVES_COLORS } from '@styles/colors'
+import { POKEMON_TYPE_COLORS } from '@styles/colors'
 import { ChargedMove, FastMove } from '@types'
 import { isChargedMove, isFastMove } from '@utils'
 import { FC, HTMLAttributes, ReactNode, useState } from 'react'
@@ -42,7 +42,7 @@ export const MoveChip: FC<MoveChipProps> = ({ data, style, ...others }) => {
       >
         <div
           className="move-chip h-6 px-2 flex items-center rounded relative"
-          style={{ ...style, backgroundColor: POGO_MOVES_COLORS.type[data.type] }}
+          style={{ ...style, backgroundColor: POKEMON_TYPE_COLORS[data.type] }}
           {...others}
         >
           <span className="text-xs font-medium overflow-hidden text-ellipsis whitespace-nowrap">
@@ -66,7 +66,7 @@ export const MoveChipPoint: FC<MoveChipProps> = ({ data, style }) => {
       <div
         className="w-2 h-2 m-1 border-solid border-[1px] rounded-full"
         style={{
-          backgroundColor: POGO_MOVES_COLORS.type[data.type],
+          backgroundColor: POKEMON_TYPE_COLORS[data.type],
         }}
       />
     </div>
