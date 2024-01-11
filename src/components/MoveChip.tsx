@@ -1,15 +1,16 @@
 import { Tooltip } from '@mui/material'
 import { POKEMON_TYPE_COLORS } from '@styles/colors'
-import { ChargedMove, FastMove } from '@types'
+import { ChargedMove, FastMove, MoveMode } from '@types'
 import { isChargedMove, isFastMove } from '@utils'
 import { FC, HTMLAttributes, ReactNode, useState } from 'react'
 import Button from './Button'
 
 interface MoveChipProps extends HTMLAttributes<HTMLDivElement> {
   data: FastMove | ChargedMove
+  mode?: MoveMode
 }
 
-export const MoveChip: FC<MoveChipProps> = ({ data, style, ...others }) => {
+export const MoveChip: FC<MoveChipProps> = ({ data, mode = 'pvp', style, ...others }) => {
   const [isTooltipVisible, setIsTooltipVisible] = useState(false)
   const [isDetailDialogVisible, setIsDetailDialogVisible] = useState(false)
 
@@ -29,7 +30,7 @@ export const MoveChip: FC<MoveChipProps> = ({ data, style, ...others }) => {
       <MoveChipPoint data={data} style={style} />
       <Tooltip
         open={isTooltipVisible}
-        title={<MoveTooltip data={data} onClickDetailButton={onClickDetailButton} />}
+        title={<MoveTooltip data={data} mode={mode} onClickDetailButton={onClickDetailButton} />}
         onClick={() => {
           if (isTooltipVisible) {
             setIsTooltipVisible(false)

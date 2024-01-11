@@ -3,38 +3,108 @@
 import Button from '@components/Button'
 import { Chart, ChartComponentProps } from '@components/Chart'
 import { MoveChip } from '@components/MoveChip'
-import { chargedMoveData, pokemonTypeText } from '@constants'
+import { chargedMoveData, pokemonTypeText, pveChargedMoveData } from '@constants'
 import useGlobalLoadingPanel from '@hooks/useGlobalLoadingPanel'
+import { darken, lighten } from '@mui/material'
 import { POGO_MOVES_COLORS, POKEMON_TYPE_COLORS } from '@styles/colors'
-import { PokemonType } from '@types'
+import { MoveMode, PokemonType } from '@types'
 import Image from 'next/image'
 import { FC, useEffect, useRef, useState } from 'react'
 
-const maxDpe = 2.5
-const minDpe = 0
-const minEnergy = 30
-const maxEnergy = 95
-const energyInterval = 5
-const damageInterval = 0.5
-const labelHeightX = 48
-const labelWidthY = 48
+const pvpConstants = {
+  maxDpe: 2.5,
+  minDpe: 0,
+  minEnergy: 30,
+  maxEnergy: 95,
+  energyInterval: 5,
+  dpeInterval: 0.5,
+  labelHeightX: 48,
+  labelWidthY: 48,
+}
 
-const graphProps: ChartComponentProps['graphProps'] = [
-  {
-    label: 'DPE/Energy = 1/35',
-    yOfX: (x) => x / 35,
-    lineWidth: 1,
-    strokeStyle: POGO_MOVES_COLORS.secondary,
+const pveConstants = {
+  maxDpe: 3,
+  minDpe: 0,
+  maxDps: 80,
+  minDps: 0,
+  dpeInterval: 0.5,
+  dpsInterval: 5,
+  labelHeightX: 48,
+  labelWidthY: 48,
+}
+
+const pvpChartProps: ChartComponentProps = {
+  xAxisProps: {
+    labelName: 'Energy',
+    labelHeight: pvpConstants.labelHeightX,
+    initialValue: pvpConstants.minEnergy,
+    divisionCount: 13,
+    interval: pvpConstants.energyInterval,
   },
-]
+  yAxisProps: {
+    labelName: 'DPE (Damage Per Energy)',
+    labelWidth: 48,
+    divisionCount: 5,
+    interval: pvpConstants.dpeInterval,
+  },
+  graphLabelProps: { paddingX: 12, paddingY: 12 },
+  graphProps: [
+    {
+      label: 'DPE/Energy = 1/35',
+      yOfX: (x) => x / 35,
+      lineWidth: 1,
+      strokeStyle: POGO_MOVES_COLORS.secondary,
+    },
+  ],
+}
+
+const pveChartProps: ChartComponentProps = {
+  xAxisProps: {
+    labelName: 'DPS (Damage Per Second)',
+    labelHeight: pveConstants.labelHeightX,
+    initialValue: pveConstants.minDps,
+    divisionCount: 16,
+    interval: pveConstants.dpsInterval,
+  },
+  yAxisProps: {
+    labelName: 'DPE (Damage Per Energy)',
+    labelWidth: 48,
+    divisionCount: 6,
+    interval: pveConstants.dpeInterval,
+  },
+  graphLabelProps: { gap: 16, paddingX: 16, paddingY: 16 },
+  graphProps: [
+    {
+      label: 'DPS*DPE = 20',
+      yOfX: (x) => 20 / x,
+      lineWidth: 1,
+      strokeStyle: darken(POGO_MOVES_COLORS.secondary, 0.3),
+    },
+    {
+      label: 'DPS*DPE = 60',
+      yOfX: (x) => 60 / x,
+      lineWidth: 1,
+      strokeStyle: POGO_MOVES_COLORS.secondary,
+    },
+    {
+      label: 'DPS*DPE = 100',
+      yOfX: (x) => 100 / x,
+      lineWidth: 1,
+      strokeStyle: lighten(POGO_MOVES_COLORS.secondary, 0.7),
+    },
+  ],
+}
 
 const ChargedMovesPage: FC = () => {
   const { setGlobalLoadingPanelVisible } = useGlobalLoadingPanel()
   const [selectedType, setSelectedType] = useState<{ [key in PokemonType]?: string }>({})
   const [chargedMoveList, setChargedMoveList] = useState(chargedMoveData)
+  const [pveChargedMoveList, setPveChargedMoveList] = useState(pveChargedMoveData)
   const [isLoading, setIsLoading] = useState(true)
   const chartWrapperRef = useRef<HTMLDivElement>(null)
   const [chartSize, setChartSize] = useState({ width: 0, height: 0 })
+  const [chartProps, setChartProps] = useState<ChartComponentProps>(pvpChartProps)
+  const [mode, setMode] = useState<MoveMode>('pvp')
 
   useEffect(() => {
     if (Object.values(selectedType).length > 0)
@@ -52,15 +122,29 @@ const ChargedMovesPage: FC = () => {
       const { clientWidth, clientHeight } = chartWrapperRef.current
       const isVideoRatio = clientWidth > (clientHeight * 16) / 9
       if (isVideoRatio) {
-        setChartSize({
-          width: clientWidth - labelWidthY,
-          height: (clientWidth * 9) / 16 - labelHeightX,
-        })
+        setChartSize(
+          mode === 'pvp'
+            ? {
+                width: clientWidth - pvpConstants.labelWidthY,
+                height: (clientWidth * 9) / 16 - pvpConstants.labelHeightX,
+              }
+            : {
+                width: clientWidth - pveConstants.labelWidthY,
+                height: (clientWidth * 9) / 16 - pveConstants.labelHeightX,
+              },
+        )
       } else {
-        setChartSize({
-          width: (clientHeight * 16) / 9 - labelWidthY,
-          height: clientHeight - labelHeightX,
-        })
+        setChartSize(
+          mode === 'pvp'
+            ? {
+                width: (clientHeight * 16) / 9 - pvpConstants.labelWidthY,
+                height: clientHeight - pvpConstants.labelHeightX,
+              }
+            : {
+                width: (clientHeight * 16) / 9 - pveConstants.labelWidthY,
+                height: clientHeight - pveConstants.labelHeightX,
+              },
+        )
       }
     }
   }
@@ -100,6 +184,14 @@ const ChargedMovesPage: FC = () => {
   }
 
   useEffect(() => {
+    if (mode === 'pvp') {
+      setChartProps(pvpChartProps)
+    } else {
+      setChartProps(pveChartProps)
+    }
+  }, [mode])
+
+  useEffect(() => {
     handleResize()
     window.addEventListener('resize', handleResize)
     document.addEventListener('mousemove', handleMouse)
@@ -112,6 +204,16 @@ const ChargedMovesPage: FC = () => {
   return (
     <>
       <div className="w-full h-[70px] pb-1 flex flex-wrap justify-center gap-1 overflow-x-scroll scroll-hidden">
+        <Button
+          variant="contained"
+          className="static-text h-8 !min-w-[32px] !py-[2px]"
+          style={{ backgroundColor: POGO_MOVES_COLORS.surface }}
+          onClick={() => {
+            setMode(mode === 'pve' ? 'pvp' : 'pve')
+          }}
+        >
+          {mode === 'pve' ? 'PvP' : 'PvE'}
+        </Button>
         <Button
           variant="contained"
           className="static-text h-8 !min-w-[32px] !py-[2px]"
@@ -156,40 +258,50 @@ const ChargedMovesPage: FC = () => {
         {!isLoading &&
           chartSize.width > 0 &&
           chartSize.height > 0 &&
-          chargedMoveList.map((move) => {
-            const { id, energy, dpe } = move
-            return (
-              <MoveChip
-                key={id}
-                data={move}
-                style={{
-                  position: 'absolute',
-                  left:
-                    labelWidthY +
-                    (chartSize.width * (energy - minEnergy)) / (maxEnergy - minEnergy),
-                  top: chartSize.height * (1 - (dpe - minDpe) / (maxDpe - minDpe)),
-                }}
-              />
-            )
-          })}
-        <Chart
-          setIsLoading={setIsLoading}
-          xAxisProps={{
-            labelName: 'Energy',
-            labelHeight: labelHeightX,
-            initialValue: minEnergy,
-            divisionCount: 13,
-            interval: energyInterval,
-          }}
-          yAxisProps={{
-            labelName: 'DPE (Damage Per Energy)',
-            labelWidth: 48,
-            divisionCount: 5,
-            interval: damageInterval,
-          }}
-          graphProps={graphProps}
-          graphLabelProps={{ paddingX: 12, paddingY: 12 }}
-        />
+          (mode === 'pvp'
+            ? chargedMoveList.map((move) => {
+                const { id, energy, dpe } = move
+                return (
+                  <MoveChip
+                    key={id}
+                    data={move}
+                    style={{
+                      position: 'absolute',
+                      left:
+                        pvpConstants.labelWidthY +
+                        (chartSize.width * (energy - pvpConstants.minEnergy)) /
+                          (pvpConstants.maxEnergy - pvpConstants.minEnergy),
+                      top:
+                        chartSize.height *
+                        (1 -
+                          (dpe - pvpConstants.minDpe) /
+                            (pvpConstants.maxDpe - pvpConstants.minDpe)),
+                    }}
+                  />
+                )
+              })
+            : pveChargedMoveList.map((move) => {
+                const { id, dps, dpe } = move
+                return (
+                  <MoveChip
+                    key={id}
+                    data={move}
+                    style={{
+                      position: 'absolute',
+                      left:
+                        pveConstants.labelWidthY +
+                        (chartSize.width * (dps - pveConstants.minDps)) /
+                          (pveConstants.maxDps - pveConstants.minDps),
+                      top:
+                        chartSize.height *
+                        (1 -
+                          (dpe - pveConstants.minDpe) /
+                            (pveConstants.maxDpe - pveConstants.minDpe)),
+                    }}
+                  />
+                )
+              }))}
+        <Chart setIsLoading={setIsLoading} {...chartProps} />
       </div>
     </>
   )

@@ -39,13 +39,14 @@ export interface ChartComponentProps {
   setIsLoading?: Dispatch<SetStateAction<boolean>> // canvas drawing 이후 외부 isLoading 변수 false 전환
 }
 
-export const Chart: FC<ChartComponentProps> = ({
-  xAxisProps,
-  yAxisProps,
-  graphProps,
-  graphLabelProps = { placement: 'left-start' },
-  setIsLoading,
-}) => {
+export const Chart: FC<ChartComponentProps> = (props) => {
+  const {
+    xAxisProps,
+    yAxisProps,
+    graphProps,
+    graphLabelProps = { placement: 'left-start' },
+    setIsLoading,
+  } = props
   const canvasFirstLayerRef = useRef<HTMLCanvasElement>(null)
   const canvasSecondLayerRef = useRef<HTMLCanvasElement>(null)
   const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 })
@@ -85,6 +86,7 @@ export const Chart: FC<ChartComponentProps> = ({
     ) {
       setIsLoading?.(true)
       ctx1.clearRect(0, 0, canvasSize.width, canvasSize.height)
+      ctx2.clearRect(0, 0, canvasSize.width, canvasSize.height)
       ctx1.strokeStyle = POGO_MOVES_COLORS.gray[2]
       ctx2.strokeStyle = POGO_MOVES_COLORS.gray[7]
       ctx1.fillStyle = POGO_MOVES_COLORS.white
@@ -98,7 +100,7 @@ export const Chart: FC<ChartComponentProps> = ({
       ctx1.font = `${labelTextSizeY}px Arial`
       ctx1.translate(0, yAxisHeight / 2)
       ctx1.rotate(-Math.PI / 2)
-      ctx1.fillText(labelNameY, 0, labelTextSizeY)
+      ctx1.fillText(labelNameY, 0, 0)
       ctx1.rotate(Math.PI / 2)
       ctx1.translate(0, -yAxisHeight / 2)
 
@@ -236,7 +238,7 @@ export const Chart: FC<ChartComponentProps> = ({
 
       setIsLoading?.(false)
     }
-  }, [canvasSize])
+  }, [canvasSize, props])
 
   // window resize handler
   const handleResize = () => {

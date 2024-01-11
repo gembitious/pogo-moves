@@ -42,6 +42,8 @@ export interface ChargedMovePvE extends BasicMove {
   dps: number
 }
 
+export type MoveMode = 'pve' | 'pvp'
+
 export type PokemonType = keyof typeof pokemonType
 
 export interface Pokemon {

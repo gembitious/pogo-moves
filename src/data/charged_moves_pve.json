@@ -7,12 +7,6 @@
 		"power": 20,
 		"energy": 50,
 		"dpe": 0.4,
-		"buffs": [
-			0,
-			-2
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0,
 		"duration": 3.0,
 		"damageWindowStart": 2.1,
 		"damageWindowEnd": 2.8,
@@ -52,12 +46,6 @@
 		"power": 180,
 		"energy": 100,
 		"dpe": 1.8,
-		"buffs": [
-			2,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 0.125,
 		"duration": 3.4,
 		"damageWindowStart": 3.2,
 		"damageWindowEnd": 3.4,
@@ -84,12 +72,6 @@
 		"power": 70,
 		"energy": 33,
 		"dpe": 2.12,
-		"buffs": [
-			1,
-			1
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 0.1,
 		"duration": 3.5,
 		"damageWindowStart": 2.85,
 		"damageWindowEnd": 3.1,
@@ -181,12 +163,6 @@
 		"power": 140,
 		"energy": 100,
 		"dpe": 1.4,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0,
 		"duration": 2.3,
 		"damageWindowStart": 1.8,
 		"damageWindowEnd": 2.6,
@@ -252,12 +228,6 @@
 		"power": 130,
 		"energy": 100,
 		"dpe": 1.3,
-		"buffs": [
-			0,
-			-3
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0,
 		"duration": 2.0,
 		"damageWindowStart": 1.0,
 		"damageWindowEnd": 1.6,
@@ -271,12 +241,6 @@
 		"power": 35,
 		"energy": 33,
 		"dpe": 1.06,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.5,
 		"duration": 0.8,
 		"damageWindowStart": 0.27,
 		"damageWindowEnd": 0.7,
@@ -329,12 +293,6 @@
 		"power": 45,
 		"energy": 33,
 		"dpe": 1.36,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0,
 		"duration": 1.9,
 		"damageWindowStart": 1.45,
 		"damageWindowEnd": 1.7,
@@ -348,12 +306,6 @@
 		"power": 100,
 		"energy": 50,
 		"dpe": 2.0,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.3,
 		"duration": 3.7,
 		"damageWindowStart": 2.0,
 		"damageWindowEnd": 3.1,
@@ -380,12 +332,6 @@
 		"power": 100,
 		"energy": 100,
 		"dpe": 1.0,
-		"buffs": [
-			0,
-			-2
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0,
 		"duration": 2.3,
 		"damageWindowStart": 1.0,
 		"damageWindowEnd": 2.3,
@@ -399,12 +345,6 @@
 		"power": 85,
 		"energy": 50,
 		"dpe": 1.7,
-		"buffs": [
-			2,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 0.125,
 		"duration": 1.9,
 		"damageWindowStart": 1.5,
 		"damageWindowEnd": 1.75,
@@ -431,12 +371,6 @@
 		"power": 40,
 		"energy": 33,
 		"dpe": 1.21,
-		"buffs": [
-			2,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 0.125,
 		"duration": 1.5,
 		"damageWindowStart": 0.9,
 		"damageWindowEnd": 1.3,
@@ -450,12 +384,6 @@
 		"power": 70,
 		"energy": 33,
 		"dpe": 2.12,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.3,
 		"duration": 3.2,
 		"damageWindowStart": 1.3,
 		"damageWindowEnd": 3.0,
@@ -560,12 +488,6 @@
 		"power": 150,
 		"energy": 100,
 		"dpe": 1.5,
-		"buffs": [
-			-2,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0,
 		"duration": 3.6,
 		"damageWindowStart": 3.0,
 		"damageWindowEnd": 3.5,
@@ -579,12 +501,6 @@
 		"power": 140,
 		"energy": 50,
 		"dpe": 2.8,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0,
 		"duration": 3.5,
 		"damageWindowStart": 3.25,
 		"damageWindowEnd": 3.4,
@@ -624,12 +540,6 @@
 		"power": 50,
 		"energy": 33,
 		"dpe": 1.52,
-		"buffs": [
-			0,
-			1
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0,
 		"duration": 2.4,
 		"damageWindowStart": 1.0,
 		"damageWindowEnd": 1.5,
@@ -708,12 +618,6 @@
 		"power": 100,
 		"energy": 50,
 		"dpe": 2.0,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.1,
 		"duration": 3.6,
 		"damageWindowStart": 2.7,
 		"damageWindowEnd": 3.4,
@@ -727,12 +631,6 @@
 		"power": 90,
 		"energy": 50,
 		"dpe": 1.8,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.1,
 		"duration": 3.9,
 		"damageWindowStart": 3.0,
 		"damageWindowEnd": 3.8,
@@ -746,12 +644,6 @@
 		"power": 50,
 		"energy": 33,
 		"dpe": 1.52,
-		"buffs": [
-			1,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0,
 		"duration": 2.2,
 		"damageWindowStart": 1.8,
 		"damageWindowEnd": 2.0,
@@ -804,12 +696,6 @@
 		"power": 35,
 		"energy": 50,
 		"dpe": 0.7,
-		"buffs": [
-			-2,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0,
 		"duration": 2.8,
 		"damageWindowStart": 1.7,
 		"damageWindowEnd": 2.5,
@@ -836,12 +722,6 @@
 		"power": 70,
 		"energy": 33,
 		"dpe": 2.12,
-		"buffs": [
-			1,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0,
 		"duration": 3.8,
 		"damageWindowStart": 2.9,
 		"damageWindowEnd": 3.45,
@@ -1011,12 +891,6 @@
 		"power": 160,
 		"energy": 100,
 		"dpe": 1.6,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0,
 		"duration": 2.5,
 		"damageWindowStart": 1.5,
 		"damageWindowEnd": 2.5,
@@ -1238,12 +1112,6 @@
 		"power": 60,
 		"energy": 33,
 		"dpe": 1.82,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0,
 		"duration": 3.3,
 		"damageWindowStart": 2.0,
 		"damageWindowEnd": 2.8,
@@ -1296,12 +1164,6 @@
 		"power": 45,
 		"energy": 33,
 		"dpe": 1.36,
-		"buffs": [
-			-2,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.5,
 		"duration": 3.1,
 		"damageWindowStart": 2.0,
 		"damageWindowEnd": 2.6,
@@ -1315,12 +1177,6 @@
 		"power": 130,
 		"energy": 100,
 		"dpe": 1.3,
-		"buffs": [
-			-2,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0,
 		"duration": 2.5,
 		"damageWindowStart": 1.1,
 		"damageWindowEnd": 1.25,
@@ -1334,12 +1190,6 @@
 		"power": 70,
 		"energy": 33,
 		"dpe": 2.12,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.3,
 		"duration": 3.0,
 		"damageWindowStart": 2.0,
 		"damageWindowEnd": 2.7,
@@ -1366,12 +1216,6 @@
 		"power": 55,
 		"energy": 33,
 		"dpe": 1.67,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0,
 		"duration": 2.9,
 		"damageWindowStart": 2.4,
 		"damageWindowEnd": 2.7,
@@ -1385,12 +1229,6 @@
 		"power": 100,
 		"energy": 100,
 		"dpe": 1.0,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.5,
 		"duration": 1.5,
 		"damageWindowStart": 0.5,
 		"damageWindowEnd": 1.5,
@@ -1443,12 +1281,6 @@
 		"power": 140,
 		"energy": 100,
 		"dpe": 1.4,
-		"buffs": [
-			1,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0,
 		"duration": 1.9,
 		"damageWindowStart": 1.0,
 		"damageWindowEnd": 1.9,
@@ -1488,12 +1320,6 @@
 		"power": 50,
 		"energy": 33,
 		"dpe": 1.52,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.3,
 		"duration": 2.4,
 		"damageWindowStart": 1.8,
 		"damageWindowEnd": 2.2,
@@ -1507,12 +1333,6 @@
 		"power": 105,
 		"energy": 100,
 		"dpe": 1.05,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.5,
 		"duration": 2.0,
 		"damageWindowStart": 1.2,
 		"damageWindowEnd": 1.7,
@@ -1526,12 +1346,6 @@
 		"power": 130,
 		"energy": 100,
 		"dpe": 1.3,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.1,
 		"duration": 3.9,
 		"damageWindowStart": 2.2,
 		"damageWindowEnd": 3.7,
@@ -1558,12 +1372,6 @@
 		"power": 50,
 		"energy": 33,
 		"dpe": 1.52,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.3,
 		"duration": 2.2,
 		"damageWindowStart": 1.2,
 		"damageWindowEnd": 1.9,
@@ -1577,12 +1385,6 @@
 		"power": 60,
 		"energy": 33,
 		"dpe": 1.82,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0,
 		"duration": 2.0,
 		"damageWindowStart": 1.3,
 		"damageWindowEnd": 2.0,
@@ -1609,12 +1411,6 @@
 		"power": 50,
 		"energy": 33,
 		"dpe": 1.52,
-		"buffs": [
-			2,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 0.125,
 		"duration": 2.2,
 		"damageWindowStart": 1.3,
 		"damageWindowEnd": 2.0,
@@ -1641,12 +1437,6 @@
 		"power": 20,
 		"energy": 33,
 		"dpe": 0.61,
-		"buffs": [
-			0,
-			1
-		],
-		"buffTarget": "both",
-		"buffApplyChance": 1.0,
 		"duration": 1.7,
 		"damageWindowStart": 0.5,
 		"damageWindowEnd": 1.6,
@@ -1660,12 +1450,6 @@
 		"power": 50,
 		"energy": 50,
 		"dpe": 1.0,
-		"buffs": [
-			-2,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.5,
 		"duration": 2.3,
 		"damageWindowStart": 1.3,
 		"damageWindowEnd": 1.6,
@@ -1679,12 +1463,6 @@
 		"power": 50,
 		"energy": 33,
 		"dpe": 1.52,
-		"buffs": [
-			1,
-			1
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 0.1,
 		"duration": 2.3,
 		"damageWindowStart": 1.85,
 		"damageWindowEnd": 2.1,
@@ -1724,12 +1502,6 @@
 		"power": 160,
 		"energy": 100,
 		"dpe": 1.6,
-		"buffs": [
-			-2,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0,
 		"duration": 4.0,
 		"damageWindowStart": 2.6,
 		"damageWindowEnd": 3.8,
@@ -1795,12 +1567,6 @@
 		"power": 35,
 		"energy": 33,
 		"dpe": 1.06,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0,
 		"duration": 1.7,
 		"damageWindowStart": 0.9,
 		"damageWindowEnd": 1.4,
@@ -1840,12 +1606,6 @@
 		"power": 50,
 		"energy": 33,
 		"dpe": 1.52,
-		"buffs": [
-			1,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0,
 		"duration": 2.0,
 		"damageWindowStart": 1.7,
 		"damageWindowEnd": 1.9,
@@ -1898,12 +1658,6 @@
 		"power": 90,
 		"energy": 50,
 		"dpe": 1.8,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.1,
 		"duration": 2.8,
 		"damageWindowStart": 1.3,
 		"damageWindowEnd": 2.6,
@@ -1917,12 +1671,6 @@
 		"power": 30,
 		"energy": 33,
 		"dpe": 0.91,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0,
 		"duration": 1.2,
 		"damageWindowStart": 0.4,
 		"damageWindowEnd": 1.1,
@@ -1936,12 +1684,6 @@
 		"power": 70,
 		"energy": 50,
 		"dpe": 1.4,
-		"buffs": [
-			-2,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0,
 		"duration": 4.0,
 		"damageWindowStart": 3.5,
 		"damageWindowEnd": 4.0,
@@ -1981,12 +1723,6 @@
 		"power": 45,
 		"energy": 33,
 		"dpe": 1.36,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.5,
 		"duration": 1.3,
 		"damageWindowStart": 0.65,
 		"damageWindowEnd": 1.0,
@@ -2052,12 +1788,6 @@
 		"power": 70,
 		"energy": 50,
 		"dpe": 1.4,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0,
 		"duration": 3.2,
 		"damageWindowStart": 2.25,
 		"damageWindowEnd": 3.0,
@@ -2084,12 +1814,6 @@
 		"power": 120,
 		"energy": 100,
 		"dpe": 1.2,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.5,
 		"duration": 2.6,
 		"damageWindowStart": 1.2,
 		"damageWindowEnd": 2.4,
@@ -2116,12 +1840,6 @@
 		"power": 60,
 		"energy": 33,
 		"dpe": 1.82,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0,
 		"duration": 4.0,
 		"damageWindowStart": 1.7,
 		"damageWindowEnd": 4.0,
@@ -2135,12 +1853,6 @@
 		"power": 140,
 		"energy": 100,
 		"dpe": 1.4,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0,
 		"duration": 2.3,
 		"damageWindowStart": 1.8,
 		"damageWindowEnd": 2.6,
@@ -2154,12 +1866,6 @@
 		"power": 80,
 		"energy": 50,
 		"dpe": 1.6,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.5,
 		"duration": 3.7,
 		"damageWindowStart": 1.3,
 		"damageWindowEnd": 3.4,
@@ -2173,12 +1879,6 @@
 		"power": 95,
 		"energy": 50,
 		"dpe": 1.9,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.3,
 		"duration": 3.2,
 		"damageWindowStart": 1.6,
 		"damageWindowEnd": 2.5,
@@ -2205,12 +1905,6 @@
 		"power": 120,
 		"energy": 100,
 		"dpe": 1.2,
-		"buffs": [
-			0,
-			-2
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.4,
 		"duration": 2.7,
 		"damageWindowStart": 2.5,
 		"damageWindowEnd": 2.6,
@@ -2237,12 +1931,6 @@
 		"power": 80,
 		"energy": 50,
 		"dpe": 1.6,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.2,
 		"duration": 2.8,
 		"damageWindowStart": 2.25,
 		"damageWindowEnd": 2.7,
@@ -2295,12 +1983,6 @@
 		"power": 75,
 		"energy": 50,
 		"dpe": 1.5,
-		"buffs": [
-			-1,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.2,
 		"duration": 2.9,
 		"damageWindowStart": 1.8,
 		"damageWindowEnd": 2.6,
@@ -2314,12 +1996,6 @@
 		"power": 70,
 		"energy": 33,
 		"dpe": 2.12,
-		"buffs": [
-			1,
-			1
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 0.1,
 		"duration": 3.7,
 		"damageWindowStart": 1.7,
 		"damageWindowEnd": 3.5,
@@ -2333,12 +2009,6 @@
 		"power": 130,
 		"energy": 100,
 		"dpe": 1.3,
-		"buffs": [
-			0,
-			1
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0,
 		"duration": 3.1,
 		"damageWindowStart": 1.8,
 		"damageWindowEnd": 2.3,
@@ -2430,12 +2100,6 @@
 		"power": 70,
 		"energy": 33,
 		"dpe": 2.12,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.33,
 		"duration": 2.5,
 		"damageWindowStart": 2.0,
 		"damageWindowEnd": 3.4,
@@ -2488,12 +2152,6 @@
 		"power": 85,
 		"energy": 50,
 		"dpe": 1.7,
-		"buffs": [
-			-1,
-			-1
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0,
 		"duration": 3.0,
 		"damageWindowStart": 2.1,
 		"damageWindowEnd": 2.8,
@@ -2650,12 +2308,6 @@
 		"power": 65,
 		"energy": 50,
 		"dpe": 1.3,
-		"buffs": [
-			1,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0,
 		"duration": 2.0,
 		"damageWindowStart": 1.2,
 		"damageWindowEnd": 1.9,
@@ -2669,12 +2321,6 @@
 		"power": 75,
 		"energy": 50,
 		"dpe": 1.5,
-		"buffs": [
-			-1,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.5,
 		"duration": 2.5,
 		"damageWindowStart": 1.3,
 		"damageWindowEnd": 2.4,
@@ -2688,12 +2334,6 @@
 		"power": 60,
 		"energy": 33,
 		"dpe": 1.82,
-		"buffs": [
-			1,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0,
 		"duration": 2.0,
 		"damageWindowStart": 1.5,
 		"damageWindowEnd": 1.7,
@@ -2720,12 +2360,6 @@
 		"power": 95,
 		"energy": 33,
 		"dpe": 2.88,
-		"buffs": [
-			0,
-			-3
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0,
 		"duration": 2.8,
 		"damageWindowStart": 1.7,
 		"damageWindowEnd": 2.5,
@@ -2830,12 +2464,6 @@
 		"power": 140,
 		"energy": 100,
 		"dpe": 1.4,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0,
 		"duration": 2.3,
 		"damageWindowStart": 1.8,
 		"damageWindowEnd": 2.6,
@@ -2849,12 +2477,6 @@
 		"power": 90,
 		"energy": 50,
 		"dpe": 1.8,
-		"buffs": [
-			0,
-			-2
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0,
 		"duration": 2.6,
 		"damageWindowStart": 1.7,
 		"damageWindowEnd": 2.1,
@@ -2894,12 +2516,6 @@
 		"power": 140,
 		"energy": 100,
 		"dpe": 1.4,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.66,
 		"duration": 3.7,
 		"damageWindowStart": 3.0,
 		"damageWindowEnd": 3.5,
