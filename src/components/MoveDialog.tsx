@@ -1,6 +1,6 @@
 'use client'
 
-import { ChargedMove, FastMove } from '@types'
+import { ChargedMove, FastMove } from '@core/types'
 import { FC } from 'react'
 import Dialog, { DialogProps } from './Dialog'
 

@@ -1,7 +1,7 @@
+import { ChargedMove, FastMove, MoveMode } from '@core/types'
+import { isChargedMove, isFastMove } from '@core/utils'
 import { Tooltip } from '@mui/material'
 import { POKEMON_TYPE_COLORS } from '@styles/colors'
-import { ChargedMove, FastMove, MoveMode } from '@types'
-import { isChargedMove, isFastMove } from '@utils'
 import { FC, HTMLAttributes, ReactNode, useState } from 'react'
 import Button from './Button'
 

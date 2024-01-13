@@ -1,6 +1,6 @@
 'use client'
 
-import { globalLoadingPanelContext } from '@context/globalLoadingPanelContext'
+import { globalLoadingPanelContext } from '@core/context/globalLoadingPanelContext'
 import { FC, ReactNode, useState } from 'react'
 
 const GlobalLoadingPanelProvider: FC<{ children: ReactNode }> = ({ children }) => {

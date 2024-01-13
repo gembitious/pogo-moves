@@ -1,9 +1,9 @@
+import { ChargedMove, ChargedMovePvE, FastMove, FastMovePvE } from '@core/types'
+import { isChargedMove, isChargedMovePvE, isFastMove, isFastMovePvE } from '@core/utils'
 import chargedMoves from '@data/charged_moves.json'
-import fastMoves from '@data/fast_moves.json'
 import pveChargedMoves from '@data/charged_moves_pve.json'
+import fastMoves from '@data/fast_moves.json'
 import pveFastMoves from '@data/fast_moves_pve.json'
-import { ChargedMove, ChargedMovePvE, FastMove, FastMovePvE } from '@types'
-import { isChargedMove, isChargedMovePvE, isFastMove, isFastMovePvE } from '@utils'
 
 export const pokemonType = {
   normal: 'normal',

@@ -1,8 +1,8 @@
 'use client'
 
+import { Placement } from '@core/types'
 import { darken } from '@mui/material'
 import { POGO_MOVES_COLORS } from '@styles/colors'
-import { Placement } from '@types'
 import { Dispatch, FC, SetStateAction, useEffect, useRef, useState } from 'react'
 
 interface ChartAxisProps {

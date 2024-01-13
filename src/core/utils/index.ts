@@ -1,4 +1,4 @@
-import { ChargedMove, ChargedMovePvE, FastMove, FastMovePvE } from '@types'
+import { ChargedMove, ChargedMovePvE, FastMove, FastMovePvE } from '@core/types'
 import { ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 

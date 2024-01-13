@@ -1,6 +1,6 @@
 'use client'
 
-import { globalLoadingPanelContext } from '@context/globalLoadingPanelContext'
+import { globalLoadingPanelContext } from '@core/context/globalLoadingPanelContext'
 import { useContext } from 'react'
 
 const useGlobalLoadingPanel = () => {
