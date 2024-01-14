@@ -1,9 +1,9 @@
 'use client'
 
-import { FC } from 'react'
+import { NextPage } from 'next'
 import ChargedMovesPage from './moves/charged/page'
 
-const HomePage: FC = () => {
+const HomePage: NextPage = () => {
   return <ChargedMovesPage />
 }
 

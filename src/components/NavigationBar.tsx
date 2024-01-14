@@ -1,8 +1,10 @@
 'use client'
 
 import { styled } from '@mui/material'
+import { Locale, i18n } from 'i18n-config'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
+import Link from 'next/link'
+import { usePathname, useRouter } from 'next/navigation'
 import { FC } from 'react'
 import Button from './Button'
 
@@ -59,15 +61,25 @@ const TitleBannerWrapper = styled('div')`
   }
 `
 
-export const NavigationBar: FC = () => {
+// pathname에 현재 locale 적용하는 함수
+const redirectedPathname = (pathname: string, locale: Locale) => {
+  if (!pathname) return '/'
+  const segments = pathname.split('/')
+  if (i18n.locales.includes(segments[1] as Locale)) segments[1] = locale
+  else segments.splice(1, 0, locale)
+  return segments.join('/')
+}
+
+export const NavigationBar: FC<{ locale: Locale }> = ({ locale }) => {
   const router = useRouter()
+  const pathname = usePathname()
   return (
     <NavigationBarContainer>
       <TitleBannerWrapper>
         <Image
           className="object-contain cursor-pointer"
-          src={'/images/title_banner.png'}
-          alt={'Title banner'}
+          src="/images/title_banner.png"
+          alt="Title banner"
           priority
           fill
           onClick={() => {
@@ -76,12 +88,20 @@ export const NavigationBar: FC = () => {
         />
       </TitleBannerWrapper>
       <div className="max-w-[480px] flex gap-2 scroll-hidden overflow-scroll">
+        <div className="flex flex-col gap-2">
+          <Link href={{ pathname: redirectedPathname(pathname, 'ko') }} replace>
+            <Image src="/country/kr.svg" width={24} height={16} alt="kr" />
+          </Link>
+          <Link href={{ pathname: redirectedPathname(pathname, 'en') }} replace>
+            <Image src="/country/en.svg" width={24} height={16} alt="en" />
+          </Link>
+        </div>
         <Button
           variant="contained"
           color="secondary"
           className="static-text"
           onClick={() => {
-            router.push('/moves/fast')
+            router.push(redirectedPathname('/moves/fast', locale))
           }}
         >
           {'노말 기술'}
@@ -90,7 +110,7 @@ export const NavigationBar: FC = () => {
           variant="contained"
           className="static-text"
           onClick={() => {
-            router.push('/moves/charged')
+            router.push(redirectedPathname('/moves/charged', locale))
           }}
         >
           {'스페셜 기술'}

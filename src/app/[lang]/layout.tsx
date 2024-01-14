@@ -5,6 +5,7 @@ import { ThemeProvider } from '@mui/material'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
 import '@styles/globals.css'
 import theme from '@styles/theme'
+import { Locale, i18n } from 'i18n-config'
 import type { Metadata } from 'next'
 import { FC, ReactNode } from 'react'
 // import Script from 'next/script'
@@ -14,16 +15,23 @@ export const metadata: Metadata = {
   description: 'Pokemon GO Moves for GO Battle League',
 }
 
-const RootLayout: FC<{ children: ReactNode }> = ({ children }) => {
+export async function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }))
+}
+
+const RootLayout: FC<{ children: ReactNode; params: { lang: Locale } }> = ({
+  children,
+  params,
+}) => {
   return (
-    <html lang="ko">
+    <html lang={params.lang}>
       <body>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <GlobalLoadingPanelProvider>
               <AppWrapper>
                 <div className="w-full h-full">
-                  <NavigationBar />
+                  <NavigationBar locale={params.lang} />
                   <div className="h-full">
                     <Header />
                     <MainWrapper>

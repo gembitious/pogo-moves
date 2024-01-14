@@ -8,8 +8,10 @@ import useGlobalLoadingPanel from '@core/hooks/useGlobalLoadingPanel'
 import { PokemonType } from '@core/types'
 import { darken, lighten } from '@mui/material'
 import { POGO_MOVES_COLORS, POKEMON_TYPE_COLORS } from '@styles/colors'
+import { Locale } from 'i18n-config'
+import { NextPage } from 'next'
 import Image from 'next/image'
-import { FC, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const maxDpt = 6
 const minDpt = 0
@@ -42,7 +44,7 @@ const graphProps: ChartComponentProps['graphProps'] = [
   },
 ]
 
-const FastMovesPage: FC = () => {
+const FastMovesPage: NextPage<{ params: { lang: Locale } }> = ({ params: { lang } }) => {
   const { setGlobalLoadingPanelVisible } = useGlobalLoadingPanel()
   const [selectedType, setSelectedType] = useState<{ [key in PokemonType]?: string }>({})
   const [fastMoveList, setFastMoveList] = useState(fastMoveData)
