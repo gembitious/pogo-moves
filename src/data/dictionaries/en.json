@@ -2,26 +2,27 @@
   "common": {
     "move": "move",
     "fastMove": "Fast Move",
-    "chargedMove": "Charged Move"
+    "chargedMove": "Charged Move",
+    "allType": "All Type"
   },
   "type": {
-    "normal": "normal",
-    "fire": "fire",
-    "water": "water",
-    "grass": "grass",
-    "electric": "electric",
-    "ice": "ice",
-    "fighting": "fighting",
-    "poison": "poison",
-    "ground": "ground",
-    "flying": "flying",
-    "psychic": "psychic",
-    "bug": "bug",
-    "rock": "rock",
-    "ghost": "ghost",
-    "dragon": "dragon",
-    "dark": "dark",
-    "steel": "steel",
-    "fairy": "fairy"
+    "normal": "Normal",
+    "fire": "Fire",
+    "water": "Water",
+    "grass": "Grass",
+    "electric": "Electric",
+    "ice": "Ice",
+    "fighting": "Fighting",
+    "poison": "Poison",
+    "ground": "Ground",
+    "flying": "Flying",
+    "psychic": "Psychic",
+    "bug": "Bug",
+    "rock": "Rock",
+    "ghost": "Ghost",
+    "dragon": "Dragon",
+    "dark": "Dark",
+    "steel": "Steel",
+    "fairy": "Fairy"
   }
 }

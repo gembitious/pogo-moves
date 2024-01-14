@@ -232,7 +232,7 @@ const ChargedMovesPage: NextPage<{ params: NextPageStaticParams }> = ({ params: 
             setSelectedType({})
           }}
         >
-          {'타입 전체'}
+          {dictionary.common.allType}
         </Button>
         {Object.keys(pokemonType).map((key) => {
           const type = key as PokemonType

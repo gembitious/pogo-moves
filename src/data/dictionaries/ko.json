@@ -2,7 +2,8 @@
   "common": {
     "move": "기술",
     "fastMove": "노말 기술",
-    "chargedMove": "스페셜 기술"
+    "chargedMove": "스페셜 기술",
+    "allType": "타입 전체"
   },
   "type": {
     "normal": "노말",

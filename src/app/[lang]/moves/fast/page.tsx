@@ -140,7 +140,7 @@ const FastMovesPage: NextPage<{ params: { lang: Locale } }> = ({ params: { lang 
             setSelectedType({})
           }}
         >
-          {'타입 전체'}
+          {dictionary.common.allType}
         </Button>
         {Object.keys(pokemonType).map((key) => {
           const type = key as PokemonType
