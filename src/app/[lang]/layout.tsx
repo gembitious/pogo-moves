@@ -5,6 +5,7 @@ import { ThemeProvider } from '@mui/material'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
 import '@styles/globals.css'
 import theme from '@styles/theme'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import { Locale, i18n } from 'i18n-config'
 import type { Metadata } from 'next'
 import { FC, ReactNode } from 'react'
@@ -43,6 +44,7 @@ const RootLayout: FC<{ children: ReactNode; params: { lang: Locale } }> = ({
             </GlobalLoadingPanelProvider>
           </ThemeProvider>
         </AppRouterCacheProvider>
+        <SpeedInsights />
       </body>
       {/* <Script
         async
