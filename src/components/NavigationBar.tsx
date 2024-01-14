@@ -8,6 +8,7 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { FC } from 'react'
 import Button from './Button'
+import { redirectedPathname } from '@core/utils'
 
 const NavigationBarContainer = styled('div')`
   position: fixed;
@@ -61,15 +62,6 @@ const TitleBannerWrapper = styled('div')`
     padding: 0 16px;
   }
 `
-
-// pathname에 현재 locale 적용하는 함수
-const redirectedPathname = (pathname: string, locale: Locale) => {
-  if (!pathname) return '/'
-  const segments = pathname.split('/')
-  if (i18n.locales.includes(segments[1] as Locale)) segments[1] = locale
-  else segments.splice(1, 0, locale)
-  return segments.join('/')
-}
 
 export const NavigationBar: FC<{
   locale: Locale
