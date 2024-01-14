@@ -1,7 +1,8 @@
 'use client'
 
+import { getDictionary } from '@core/constants/dictionary'
+import { Locale, i18n } from '@core/types/i18n-config'
 import { styled } from '@mui/material'
-import { Locale, i18n } from 'i18n-config'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
@@ -70,9 +71,12 @@ const redirectedPathname = (pathname: string, locale: Locale) => {
   return segments.join('/')
 }
 
-export const NavigationBar: FC<{ locale: Locale }> = ({ locale }) => {
+export const NavigationBar: FC<{
+  locale: Locale
+}> = ({ locale }) => {
   const router = useRouter()
   const pathname = usePathname()
+  const dictionary = getDictionary(locale)
   return (
     <NavigationBarContainer>
       <TitleBannerWrapper>
@@ -88,14 +92,6 @@ export const NavigationBar: FC<{ locale: Locale }> = ({ locale }) => {
         />
       </TitleBannerWrapper>
       <div className="max-w-[480px] flex gap-2 scroll-hidden overflow-scroll">
-        <div className="flex flex-col gap-2">
-          <Link href={{ pathname: redirectedPathname(pathname, 'ko') }} replace>
-            <Image src="/country/kr.svg" width={24} height={16} alt="kr" />
-          </Link>
-          <Link href={{ pathname: redirectedPathname(pathname, 'en') }} replace>
-            <Image src="/country/en.svg" width={24} height={16} alt="en" />
-          </Link>
-        </div>
         <Button
           variant="contained"
           color="secondary"
@@ -104,7 +100,7 @@ export const NavigationBar: FC<{ locale: Locale }> = ({ locale }) => {
             router.push(redirectedPathname('/moves/fast', locale))
           }}
         >
-          {'노말 기술'}
+          {dictionary.common.fastMove}
         </Button>
         <Button
           variant="contained"
@@ -113,8 +109,16 @@ export const NavigationBar: FC<{ locale: Locale }> = ({ locale }) => {
             router.push(redirectedPathname('/moves/charged', locale))
           }}
         >
-          {'스페셜 기술'}
+          {dictionary.common.chargedMove}
         </Button>
+        <div className="flex flex-col gap-2">
+          <Link href={{ pathname: redirectedPathname(pathname, 'ko') }} replace>
+            <Image src="/country/kr.svg" width={24} height={16} alt="kr" />
+          </Link>
+          <Link href={{ pathname: redirectedPathname(pathname, 'en') }} replace>
+            <Image src="/country/en.svg" width={24} height={16} alt="en" />
+          </Link>
+        </div>
       </div>
     </NavigationBarContainer>
   )

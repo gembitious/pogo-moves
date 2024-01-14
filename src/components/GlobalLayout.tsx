@@ -1,6 +1,6 @@
 'use client'
 
-import useGlobalLoadingPanel from '@core/hooks/useGlobalLoadingPanel'
+import { useGlobalLoadingPanel } from '@core/hooks'
 import { portalToBody } from '@core/utils'
 import { styled } from '@mui/material'
 import { FC, PropsWithChildren } from 'react'

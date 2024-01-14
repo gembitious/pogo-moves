@@ -1,13 +1,14 @@
 import { AppWrapper, Header, MainContainer, MainWrapper } from '@components/GlobalLayout'
 import { NavigationBar } from '@components/NavigationBar'
 import GlobalLoadingPanelProvider from '@components/provider/GlobalLoadingPanelProvider'
+import { NextPageStaticParams } from '@core/types'
+import { i18n } from '@core/types/i18n-config'
 import { ThemeProvider } from '@mui/material'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
 import '@styles/globals.css'
 import theme from '@styles/theme'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { Locale, i18n } from 'i18n-config'
 import type { Metadata } from 'next'
 import { FC, ReactNode } from 'react'
 // import Script from 'next/script'
@@ -18,13 +19,15 @@ export const metadata: Metadata = {
 }
 
 export async function generateStaticParams() {
-  return i18n.locales.map((locale) => ({ lang: locale }))
+  return i18n.locales.map((locale) => ({
+    lang: locale,
+  }))
 }
 
-const RootLayout: FC<{ children: ReactNode; params: { lang: Locale } }> = ({
-  children,
-  params,
-}) => {
+const RootLayout: FC<{
+  children: ReactNode
+  params: NextPageStaticParams
+}> = ({ children, params }) => {
   return (
     <html lang={params.lang}>
       <body>

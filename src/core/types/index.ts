@@ -1,4 +1,9 @@
+import { Locale } from '@core/types/i18n-config'
 import { pokemonType } from 'src/core/constants'
+
+export interface NextPageStaticParams {
+  lang: Locale
+}
 
 interface BasicMove {
   id: string

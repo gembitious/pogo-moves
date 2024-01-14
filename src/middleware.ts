@@ -1,4 +1,4 @@
-import { i18n } from 'i18n-config'
+import { i18n } from '@core/types/i18n-config'
 import type { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
 

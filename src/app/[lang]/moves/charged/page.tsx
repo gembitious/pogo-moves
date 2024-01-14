@@ -3,13 +3,15 @@
 import Button from '@components/Button'
 import { Chart, ChartComponentProps } from '@components/Chart'
 import { MoveChip } from '@components/MoveChip'
-import { chargedMoveData, pokemonTypeText, pveChargedMoveData } from '@core/constants'
-import useGlobalLoadingPanel from '@core/hooks/useGlobalLoadingPanel'
-import { MoveMode, PokemonType } from '@core/types'
+import { chargedMoveData, pokemonType, pveChargedMoveData } from '@core/constants'
+import { getDictionary } from '@core/constants/dictionary'
+import { useGlobalLoadingPanel } from '@core/hooks'
+import { MoveMode, NextPageStaticParams, PokemonType } from '@core/types'
 import { darken, lighten } from '@mui/material'
 import { POGO_MOVES_COLORS, POKEMON_TYPE_COLORS } from '@styles/colors'
+import { NextPage } from 'next'
 import Image from 'next/image'
-import { FC, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const pvpConstants = {
   maxDpe: 2.5,
@@ -95,7 +97,7 @@ const pveChartProps: ChartComponentProps = {
   ],
 }
 
-const ChargedMovesPage: FC = () => {
+const ChargedMovesPage: NextPage<{ params: NextPageStaticParams }> = ({ params: { lang } }) => {
   const { setGlobalLoadingPanelVisible } = useGlobalLoadingPanel()
   const [selectedType, setSelectedType] = useState<{ [key in PokemonType]?: string }>({})
   const [chargedMoveList, setChargedMoveList] = useState(chargedMoveData)
@@ -105,6 +107,7 @@ const ChargedMovesPage: FC = () => {
   const [chartSize, setChartSize] = useState({ width: 0, height: 0 })
   const [chartProps, setChartProps] = useState<ChartComponentProps>(pvpChartProps)
   const [mode, setMode] = useState<MoveMode>('pvp')
+  const dictionary = getDictionary(lang)
 
   useEffect(() => {
     if (Object.values(selectedType).length > 0) {
@@ -231,7 +234,7 @@ const ChargedMovesPage: FC = () => {
         >
           {'타입 전체'}
         </Button>
-        {Object.entries(pokemonTypeText).map(([key, text]) => {
+        {Object.keys(pokemonType).map((key) => {
           const type = key as PokemonType
           const isSelected = Object.values(selectedType).length === 0 || selectedType[type]
           return (
@@ -255,7 +258,7 @@ const ChargedMovesPage: FC = () => {
               }
             >
               <Image src={`/images/types/${type}.png`} alt={type} width={16} height={16} />
-              {text}
+              {dictionary.type[type]}
             </Button>
           )
         })}
@@ -271,6 +274,7 @@ const ChargedMovesPage: FC = () => {
                   <MoveChip
                     key={id}
                     data={move}
+                    locale={lang}
                     style={{
                       position: 'absolute',
                       left:
@@ -292,6 +296,7 @@ const ChargedMovesPage: FC = () => {
                   <MoveChip
                     key={id}
                     data={move}
+                    locale={lang}
                     style={{
                       position: 'absolute',
                       left:

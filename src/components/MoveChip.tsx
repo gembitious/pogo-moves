@@ -1,4 +1,5 @@
 import { ChargedMove, FastMove, MoveMode } from '@core/types'
+import { Locale } from '@core/types/i18n-config'
 import { isChargedMove, isFastMove } from '@core/utils'
 import { Tooltip } from '@mui/material'
 import { POKEMON_TYPE_COLORS } from '@styles/colors'
@@ -7,10 +8,17 @@ import Button from './Button'
 
 interface MoveChipProps extends HTMLAttributes<HTMLDivElement> {
   data: FastMove | ChargedMove
+  locale?: Locale
   mode?: MoveMode
 }
 
-export const MoveChip: FC<MoveChipProps> = ({ data, mode = 'pvp', style, ...others }) => {
+export const MoveChip: FC<MoveChipProps> = ({
+  data,
+  locale = 'ko',
+  mode = 'pvp',
+  style,
+  ...others
+}) => {
   const [isTooltipVisible, setIsTooltipVisible] = useState(false)
   const [isDetailDialogVisible, setIsDetailDialogVisible] = useState(false)
 
@@ -47,7 +55,7 @@ export const MoveChip: FC<MoveChipProps> = ({ data, mode = 'pvp', style, ...othe
           {...others}
         >
           <span className="text-xs font-medium overflow-hidden text-ellipsis whitespace-nowrap">
-            {data.name}
+            {locale === 'ko' ? data.name : data.nameEn}
           </span>
         </div>
       </Tooltip>
@@ -79,7 +87,10 @@ const buffTargetText = {
   opponent: '상대',
 }
 
-export const MoveTooltipText: FC<{ data: FastMove | ChargedMove }> = ({ data }) => {
+export const MoveTooltipText: FC<{ data: FastMove | ChargedMove; locale: Locale }> = ({
+  data,
+  locale,
+}) => {
   let result: ReactNode[] = []
   if (isFastMove(data)) {
     const { turn, power, dpt, energyGain, ept } = data
@@ -98,9 +109,9 @@ export const MoveTooltipText: FC<{ data: FastMove | ChargedMove }> = ({ data }) 
     )
   } else if (isChargedMove(data)) {
     const { power, energy, dpe, buffs, buffTarget, buffApplyChance } = data
-    result.push(<div className="text-[#fbb800]">Damage: {data.power}</div>)
-    result.push(<div className="text-[#fbb800]">Energy: {data.energy}</div>)
-    result.push(<div className="text-[#fbb800]">DPE: {data.dpe}</div>)
+    result.push(<div className="text-[#fbb800]">Damage: {power}</div>)
+    result.push(<div className="text-[#fbb800]">Energy: {energy}</div>)
+    result.push(<div className="text-[#fbb800]">DPE: {dpe}</div>)
     if (buffs && buffTarget && buffApplyChance) {
       const buffChanceText = `${buffApplyChance * 100}% 확률로`
       const attackBuffText =
@@ -133,6 +144,7 @@ export const MoveTooltipText: FC<{ data: FastMove | ChargedMove }> = ({ data }) 
 
 const MoveTooltip: FC<MoveChipProps & { onClickDetailButton: () => void }> = ({
   data,
+  locale = 'ko',
   onClickDetailButton,
 }) => {
   let tooltipText = ''
@@ -144,7 +156,7 @@ const MoveTooltip: FC<MoveChipProps & { onClickDetailButton: () => void }> = ({
 
   return (
     <div className="flex flex-col gap-0.5">
-      <MoveTooltipText data={data} />
+      <MoveTooltipText data={data} locale={locale} />
       <Button color="info" variant="contained" onClick={onClickDetailButton}>
         상세 보기
       </Button>

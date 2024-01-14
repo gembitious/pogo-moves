@@ -3,12 +3,13 @@
 import Button from '@components/Button'
 import { Chart, ChartComponentProps } from '@components/Chart'
 import { MoveChip } from '@components/MoveChip'
-import { fastMoveData, pokemonTypeText } from '@core/constants'
-import useGlobalLoadingPanel from '@core/hooks/useGlobalLoadingPanel'
+import { fastMoveData, pokemonType } from '@core/constants'
+import { getDictionary } from '@core/constants/dictionary'
+import { useGlobalLoadingPanel } from '@core/hooks'
 import { PokemonType } from '@core/types'
+import { Locale } from '@core/types/i18n-config'
 import { darken, lighten } from '@mui/material'
 import { POGO_MOVES_COLORS, POKEMON_TYPE_COLORS } from '@styles/colors'
-import { Locale } from 'i18n-config'
 import { NextPage } from 'next'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
@@ -51,6 +52,7 @@ const FastMovesPage: NextPage<{ params: { lang: Locale } }> = ({ params: { lang 
   const [isLoading, setIsLoading] = useState(true)
   const chartWrapperRef = useRef<HTMLDivElement>(null)
   const [chartSize, setChartSize] = useState({ width: 0, height: 0 })
+  const dictionary = getDictionary(lang)
 
   useEffect(() => {
     if (Object.values(selectedType).length > 0)
@@ -140,7 +142,7 @@ const FastMovesPage: NextPage<{ params: { lang: Locale } }> = ({ params: { lang 
         >
           {'타입 전체'}
         </Button>
-        {Object.entries(pokemonTypeText).map(([key, text]) => {
+        {Object.keys(pokemonType).map((key) => {
           const type = key as PokemonType
           const isSelected = Object.values(selectedType).length === 0 || selectedType[type]
           return (
@@ -164,7 +166,7 @@ const FastMovesPage: NextPage<{ params: { lang: Locale } }> = ({ params: { lang 
               }
             >
               <Image src={`/images/types/${type}.png`} alt={type} width={16} height={16} />
-              {text}
+              {dictionary.type[type]}
             </Button>
           )
         })}
@@ -179,6 +181,7 @@ const FastMovesPage: NextPage<{ params: { lang: Locale } }> = ({ params: { lang 
               <MoveChip
                 key={id}
                 data={move}
+                locale={lang}
                 style={{
                   position: 'absolute',
                   left: labelWidthY + (chartSize.width * (dpt - minDpt)) / (maxDpt - minDpt),
