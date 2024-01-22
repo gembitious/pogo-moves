@@ -36,34 +36,3 @@ export const redirectedPathname = (pathname: string, locale: Locale) => {
   else segments.splice(1, 0, locale)
   return segments.join('/')
 }
-
-export const getFastMoveData = (moves: object[]) => {
-  const result: FastMove[] = []
-  moves.map((move) => {
-    if (isFastMove(move)) result.push(move)
-  })
-  return result
-}
-
-export const getChargedMoveData = (moves: object[]) => {
-  const result: ChargedMove[] = []
-  moves.map((move) => {
-    if (isChargedMove(move) && !unreleasedMove.includes(move.id)) result.push(move)
-  })
-  return result
-}
-export const getFastMovePvEData = (moves: object[]) => {
-  const result: FastMovePvE[] = []
-  moves.map((move) => {
-    if (isFastMovePvE(move)) result.push(move)
-  })
-  return result
-}
-
-export const getChargedMovePvEData = (moves: object[]) => {
-  const result: ChargedMovePvE[] = []
-  moves.map((move) => {
-    if (isChargedMovePvE(move) && !unreleasedMove.includes(move.id)) result.push(move)
-  })
-  return result
-}
