@@ -1,3 +1,4 @@
+import { unreleasedMove } from '@core/constants'
 import { ChargedMove, ChargedMovePvE, FastMove, FastMovePvE } from '@core/types'
 import { Locale, i18n } from '@core/types/i18n-config'
 import { ReactNode } from 'react'
@@ -34,4 +35,35 @@ export const redirectedPathname = (pathname: string, locale: Locale) => {
   if (i18n.locales.includes(segments[1] as Locale)) segments[1] = locale
   else segments.splice(1, 0, locale)
   return segments.join('/')
+}
+
+export const getFastMoveData = (moves: object[]) => {
+  const result: FastMove[] = []
+  moves.map((move) => {
+    if (isFastMove(move)) result.push(move)
+  })
+  return result
+}
+
+export const getChargedMoveData = (moves: object[]) => {
+  const result: ChargedMove[] = []
+  moves.map((move) => {
+    if (isChargedMove(move) && !unreleasedMove.includes(move.id)) result.push(move)
+  })
+  return result
+}
+export const getFastMovePvEData = (moves: object[]) => {
+  const result: FastMovePvE[] = []
+  moves.map((move) => {
+    if (isFastMovePvE(move)) result.push(move)
+  })
+  return result
+}
+
+export const getChargedMovePvEData = (moves: object[]) => {
+  const result: ChargedMovePvE[] = []
+  moves.map((move) => {
+    if (isChargedMovePvE(move) && !unreleasedMove.includes(move.id)) result.push(move)
+  })
+  return result
 }

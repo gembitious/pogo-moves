@@ -3,8 +3,9 @@
 import Button from '@components/Button'
 import { Chart, ChartComponentProps } from '@components/Chart'
 import { MoveChip } from '@components/MoveChip'
-import { chargedMoveData, pokemonType, pveChargedMoveData } from '@core/constants'
+import { chargedMoveData, pveChargedMoveData } from '@core/constants'
 import { getDictionary } from '@core/constants/dictionary'
+import { POKEMON_TYPE } from '@core/constants'
 import { useGlobalLoadingPanel } from '@core/hooks'
 import { MoveMode, NextPageStaticParams, PokemonType } from '@core/types'
 import { darken, lighten } from '@mui/material'
@@ -234,7 +235,7 @@ const ChargedMovesPage: NextPage<{ params: NextPageStaticParams }> = ({ params: 
         >
           {dictionary.common.allType}
         </Button>
-        {Object.keys(pokemonType).map((key) => {
+        {Object.keys(POKEMON_TYPE).map((key) => {
           const type = key as PokemonType
           const isSelected = Object.values(selectedType).length === 0 || selectedType[type]
           return (

@@ -3,7 +3,7 @@
 import Button from '@components/Button'
 import { Chart, ChartComponentProps } from '@components/Chart'
 import { MoveChip } from '@components/MoveChip'
-import { fastMoveData, pokemonType } from '@core/constants'
+import { fastMoveData, POKEMON_TYPE } from '@core/constants'
 import { getDictionary } from '@core/constants/dictionary'
 import { useGlobalLoadingPanel } from '@core/hooks'
 import { PokemonType } from '@core/types'
@@ -142,7 +142,7 @@ const FastMovesPage: NextPage<{ params: { lang: Locale } }> = ({ params: { lang 
         >
           {dictionary.common.allType}
         </Button>
-        {Object.keys(pokemonType).map((key) => {
+        {Object.keys(POKEMON_TYPE).map((key) => {
           const type = key as PokemonType
           const isSelected = Object.values(selectedType).length === 0 || selectedType[type]
           return (

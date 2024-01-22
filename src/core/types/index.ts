@@ -1,5 +1,5 @@
 import { Locale } from '@core/types/i18n-config'
-import { pokemonType } from 'src/core/constants'
+import { POKEMON_TYPE } from '@core/constants'
 
 export interface NextPageStaticParams {
   lang: Locale
@@ -49,7 +49,7 @@ export interface ChargedMovePvE extends BasicMove {
 
 export type MoveMode = 'pve' | 'pvp'
 
-export type PokemonType = keyof typeof pokemonType
+export type PokemonType = keyof typeof POKEMON_TYPE
 
 export interface Pokemon {
   dex: number
