@@ -1,14 +1,14 @@
 'use client'
 
 import { getDictionary } from '@core/constants/dictionary'
-import { Locale, i18n } from '@core/types/i18n-config'
+import { Locale } from '@core/types/i18n-config'
+import { redirectedPathname } from '@core/utils'
 import { styled } from '@mui/material'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { FC } from 'react'
 import Button from './Button'
-import { redirectedPathname } from '@core/utils'
 
 const NavigationBarContainer = styled('div')`
   position: fixed;
@@ -96,12 +96,23 @@ export const NavigationBar: FC<{
         </Button>
         <Button
           variant="contained"
+          color="secondary"
           className="static-text"
           onClick={() => {
             router.push(redirectedPathname('/moves/charged', locale))
           }}
         >
           {dictionary.common.chargedMove}
+        </Button>
+        <Button
+          variant="contained"
+          color="secondary"
+          className="static-text"
+          onClick={() => {
+            router.push(redirectedPathname('/type', locale))
+          }}
+        >
+          {dictionary.common.typeChart}
         </Button>
         <div className="flex flex-col gap-2">
           <Link href={{ pathname: redirectedPathname(pathname, 'ko') }} replace>

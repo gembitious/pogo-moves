@@ -18,7 +18,7 @@ export const POGO_MOVES_COLORS = {
   tertiary: '#8ecae6',
   surface: '#ffb703',
   error: '#fb002f',
-  background: '#023047',
+  background: '#121212',
 }
 
 export const POKEMON_TYPE_COLORS = {

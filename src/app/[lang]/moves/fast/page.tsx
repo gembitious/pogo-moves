@@ -45,6 +45,40 @@ const graphProps: ChartComponentProps['graphProps'] = [
   },
 ]
 
+// moves spread handler
+const spreadMove = (move: HTMLDivElement, offset: number) => {
+  if (!move.classList.contains('move-chip-spread')) {
+    move.classList.add('move-chip-spread')
+    move.style.zIndex = '5'
+    move.style.top = `${Number(move.style.top.split('px')[0]) + offset}px`
+    const t = setTimeout(() => rollbackMove(move, offset), 2000)
+  }
+}
+
+// spread moves rollback handler
+const rollbackMove = (move: HTMLDivElement, offset: number) => {
+  if (move.classList.contains('move-chip-spread')) {
+    move.classList.remove('move-chip-spread')
+    move.style.zIndex = '1'
+    move.style.top = `${Number(move.style.top.split('px')[0]) - offset}px`
+  }
+}
+
+// mouse move event handler
+const handleMouse = (e: MouseEvent, isClicked?: boolean) => {
+  let elements = document.elementsFromPoint(e.clientX, e.clientY)
+  const moves = elements.filter((e) => e.classList.contains('move-chip-point'))
+  if (moves.length > 1) {
+    moves.map((move, index) => {
+      const moveElement = move.nextElementSibling
+      if (moveElement instanceof HTMLDivElement) {
+        const offset = moves.length > 1 ? (index - (moves.length - 1) / 2) * 18 : 0
+        spreadMove(moveElement, offset)
+      }
+    })
+  }
+}
+
 const FastMovesPage: NextPage<{ params: { lang: Locale } }> = ({ params: { lang } }) => {
   const { setGlobalLoadingPanelVisible } = useGlobalLoadingPanel()
   const [selectedType, setSelectedType] = useState<{ [key in PokemonType]?: string }>({})
@@ -83,40 +117,6 @@ const FastMovesPage: NextPage<{ params: { lang: Locale } }> = ({ params: { lang 
     }
   }
 
-  // moves spread handler
-  const spreadMove = (move: HTMLDivElement, offset: number) => {
-    if (!move.classList.contains('move-chip-spread')) {
-      move.classList.add('move-chip-spread')
-      move.style.zIndex = '5'
-      move.style.top = `${Number(move.style.top.split('px')[0]) + offset}px`
-      setTimeout(() => rollbackMove(move, offset), 2000)
-    }
-  }
-
-  // spread moves rollback handler
-  const rollbackMove = (move: HTMLDivElement, offset: number) => {
-    if (move.classList.contains('move-chip-spread')) {
-      move.classList.remove('move-chip-spread')
-      move.style.zIndex = '1'
-      move.style.top = `${Number(move.style.top.split('px')[0]) - offset}px`
-    }
-  }
-
-  // mouse move event handler
-  const handleMouse = (e: MouseEvent) => {
-    let elements = document.elementsFromPoint(e.clientX, e.clientY)
-    const moves = elements.filter((e) => e.classList.contains('move-chip-point'))
-    if (moves.length > 0) {
-      moves.map((move, index) => {
-        const moveElement = move.nextElementSibling
-        if (moveElement instanceof HTMLDivElement) {
-          const offset = moves.length > 1 ? (index - (moves.length - 1) / 2) * 18 : 0
-          spreadMove(moveElement, offset)
-        }
-      })
-    }
-  }
-
   useEffect(() => {
     setGlobalLoadingPanelVisible(true)
     handleResize()
@@ -133,7 +133,7 @@ const FastMovesPage: NextPage<{ params: { lang: Locale } }> = ({ params: { lang 
       <div className="w-full h-[70px] pb-1 flex flex-wrap justify-center gap-1 overflow-x-scroll scroll-hidden">
         <Button
           variant="contained"
-          className="static-text h-8 !min-w-[32px] !py-[2px]"
+          className="static-text h-8 !min-w-[32px] !py-[2px] !rounded-full"
           style={{ backgroundColor: POGO_MOVES_COLORS.white }}
           onClick={() => {
             setFastMoveList(fastMoveData)
@@ -149,7 +149,7 @@ const FastMovesPage: NextPage<{ params: { lang: Locale } }> = ({ params: { lang 
             <Button
               key={type}
               variant="contained"
-              className="flex gap-0.5 static-text h-8 !min-w-[32px] !py-[2px]"
+              className="flex gap-0.5 static-text h-8 !min-w-[32px] !py-[2px] !rounded-full"
               style={{
                 opacity: isSelected ? '' : ' 30%',
                 backgroundColor: POKEMON_TYPE_COLORS[type],
