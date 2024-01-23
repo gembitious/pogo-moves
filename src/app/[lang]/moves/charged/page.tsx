@@ -5,7 +5,7 @@ import { MoveChip } from '@components/MoveChip'
 import { POKEMON_TYPE, chargedMoveData, pveChargedMoveData } from '@core/constants'
 import { getDictionary } from '@core/constants/dictionary'
 import { useGlobalLoadingPanel } from '@core/hooks'
-import { TypeButton, TypeButtonContainer } from '@core/modules/components'
+import { ChartWrapper, TypeButton, TypeButtonContainer } from '@core/modules/components'
 import { MoveMode, NextPageStaticParams, PokemonType } from '@core/types'
 import { handleMoveChip } from '@core/utils'
 import { darken, lighten } from '@mui/material'
@@ -224,7 +224,7 @@ const ChargedMovesPage: NextPage<{ params: NextPageStaticParams }> = ({ params: 
           )
         })}
       </TypeButtonContainer>
-      <div ref={chartWrapperRef} className="relative w-full h-[calc(100%-70px)] overflow-scroll">
+      <ChartWrapper ref={chartWrapperRef}>
         {!isLoading &&
           chartSize.width > 0 &&
           chartSize.height > 0 &&
@@ -274,7 +274,7 @@ const ChargedMovesPage: NextPage<{ params: NextPageStaticParams }> = ({ params: 
                 )
               }))}
         <Chart setIsLoading={setIsLoading} {...chartProps} />
-      </div>
+      </ChartWrapper>
     </>
   )
 }

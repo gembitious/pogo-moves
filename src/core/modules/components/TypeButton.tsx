@@ -8,15 +8,16 @@ const BaseButton = styled(Button)`
   gap: 2px;
   min-width: 24px !important;
   height: 24px;
-  padding: 2px;
+  padding: 4px 8px;
   border-radius: 12px;
   color: ${POGO_MOVES_COLORS.white};
-
+  font-size: 12px;
   @media (min-width: 768px) {
     min-width: 32px !important;
     height: 32px;
-    padding: 4px;
+    padding: 4px 8px;
     border-radius: 16px;
+    font-size: 14px;
   }
 `
 

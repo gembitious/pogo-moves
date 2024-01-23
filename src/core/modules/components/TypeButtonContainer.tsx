@@ -1,9 +1,12 @@
 import { styled } from '@mui/material'
 import { HTMLAttributes, type FC } from 'react'
 
+export const ContainerMobileHeight = '54px'
+export const ContainerHeight = '72px'
+
 const Container = styled('div')`
   width: 100%;
-  height: 54px;
+  height: ${ContainerMobileHeight};
   gap: 4px;
   padding-bottom: 2px;
   display: flex;
@@ -12,9 +15,9 @@ const Container = styled('div')`
   overflow-x: scroll;
 
   @media (min-width: 768px) {
-    height: 70px;
+    height: ${ContainerHeight};
     gap: 4px;
-    padding-bottom: 2px;
+    padding-bottom: 4px;
   }
 `
 

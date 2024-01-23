@@ -5,7 +5,7 @@ import { MoveChip } from '@components/MoveChip'
 import { POKEMON_TYPE, fastMoveData } from '@core/constants'
 import { getDictionary } from '@core/constants/dictionary'
 import { useGlobalLoadingPanel } from '@core/hooks'
-import { TypeButton, TypeButtonContainer } from '@core/modules/components'
+import { ChartWrapper, TypeButton, TypeButtonContainer } from '@core/modules/components'
 import { PokemonType } from '@core/types'
 import { Locale } from '@core/types/i18n-config'
 import { handleMoveChip } from '@core/utils'
@@ -134,7 +134,7 @@ const FastMovesPage: NextPage<{ params: { lang: Locale } }> = ({ params: { lang 
           )
         })}
       </TypeButtonContainer>
-      <div ref={chartWrapperRef} className="relative w-full h-[calc(100%-70px)] overflow-scroll">
+      <ChartWrapper ref={chartWrapperRef}>
         {!isLoading &&
           chartSize.width > 0 &&
           chartSize.height > 0 &&
@@ -172,7 +172,7 @@ const FastMovesPage: NextPage<{ params: { lang: Locale } }> = ({ params: { lang 
           graphProps={graphProps}
           graphLabelProps={{ gap: 16, paddingX: 16, paddingY: 16 }}
         />
-      </div>
+      </ChartWrapper>
     </>
   )
 }
