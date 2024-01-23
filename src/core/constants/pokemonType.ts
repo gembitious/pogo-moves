@@ -47,7 +47,7 @@ export const TYPE_EFFECTIVENESS = {
   superEffective: 1.6,
   netural: 1,
   resisted: 0.625,
-  doublyResisted: 0.0390625,
+  doublyResisted: 0.390625,
 }
 
 export const POKEMON_TYPE_EFFECTIVENESS: {
@@ -332,7 +332,7 @@ export const POKEMON_TYPE_EFFECTIVENESS: {
     ghost: TYPE_EFFECTIVENESS.superEffective,
     dragon: TYPE_EFFECTIVENESS.netural,
     dark: TYPE_EFFECTIVENESS.resisted,
-    steel: TYPE_EFFECTIVENESS.resisted,
+    steel: TYPE_EFFECTIVENESS.netural,
     fairy: TYPE_EFFECTIVENESS.netural,
   },
   dragon: {
@@ -402,7 +402,7 @@ export const POKEMON_TYPE_EFFECTIVENESS: {
     electric: TYPE_EFFECTIVENESS.netural,
     grass: TYPE_EFFECTIVENESS.netural,
     ice: TYPE_EFFECTIVENESS.netural,
-    fighting: TYPE_EFFECTIVENESS.netural,
+    fighting: TYPE_EFFECTIVENESS.superEffective,
     poison: TYPE_EFFECTIVENESS.resisted,
     ground: TYPE_EFFECTIVENESS.netural,
     flying: TYPE_EFFECTIVENESS.netural,

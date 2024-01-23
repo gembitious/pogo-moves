@@ -4,7 +4,7 @@
     "fastMove": "노말 기술",
     "chargedMove": "스페셜 기술",
     "type": "타입",
-    "typeChart": "타입표",
+    "typeChart": "타입 상성표",
     "allType": "타입 전체"
   },
   "type": {
