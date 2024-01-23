@@ -1,13 +1,13 @@
 'use client'
 
-import Button from '@components/Button'
 import { Chart, ChartComponentProps } from '@components/Chart'
 import { MoveChip } from '@components/MoveChip'
-import { chargedMoveData, pveChargedMoveData } from '@core/constants'
+import { POKEMON_TYPE, chargedMoveData, pveChargedMoveData } from '@core/constants'
 import { getDictionary } from '@core/constants/dictionary'
-import { POKEMON_TYPE } from '@core/constants'
 import { useGlobalLoadingPanel } from '@core/hooks'
+import { TypeButton, TypeButtonContainer } from '@core/modules/components'
 import { MoveMode, NextPageStaticParams, PokemonType } from '@core/types'
+import { handleMoveChip } from '@core/utils'
 import { darken, lighten } from '@mui/material'
 import { POGO_MOVES_COLORS, POKEMON_TYPE_COLORS } from '@styles/colors'
 import { NextPage } from 'next'
@@ -98,40 +98,6 @@ const pveChartProps: ChartComponentProps = {
   ],
 }
 
-// moves spread handler
-const spreadMove = (move: HTMLDivElement, offset: number) => {
-  if (!move.classList.contains('move-chip-spread')) {
-    move.classList.add('move-chip-spread')
-    move.style.zIndex = '5'
-    move.style.top = `${Number(move.style.top.split('px')[0]) + offset}px`
-    const t = setTimeout(() => rollbackMove(move, offset), 2000)
-  }
-}
-
-// spread moves rollback handler
-const rollbackMove = (move: HTMLDivElement, offset: number) => {
-  if (move.classList.contains('move-chip-spread')) {
-    move.classList.remove('move-chip-spread')
-    move.style.zIndex = '1'
-    move.style.top = `${Number(move.style.top.split('px')[0]) - offset}px`
-  }
-}
-
-// mouse move event handler
-const handleMouse = (e: MouseEvent, isClicked?: boolean) => {
-  let elements = document.elementsFromPoint(e.clientX, e.clientY)
-  const moves = elements.filter((e) => e.classList.contains('move-chip-point'))
-  if (moves.length > 1) {
-    moves.map((move, index) => {
-      const moveElement = move.nextElementSibling
-      if (moveElement instanceof HTMLDivElement) {
-        const offset = moves.length > 1 ? (index - (moves.length - 1) / 2) * 18 : 0
-        spreadMove(moveElement, offset)
-      }
-    })
-  }
-}
-
 const ChargedMovesPage: NextPage<{ params: NextPageStaticParams }> = ({ params: { lang } }) => {
   const { setGlobalLoadingPanelVisible } = useGlobalLoadingPanel()
   const [selectedType, setSelectedType] = useState<{ [key in PokemonType]?: string }>({})
@@ -204,45 +170,39 @@ const ChargedMovesPage: NextPage<{ params: NextPageStaticParams }> = ({ params: 
   useEffect(() => {
     handleResize()
     window.addEventListener('resize', handleResize)
-    document.addEventListener('mousemove', handleMouse)
+    document.addEventListener('mousemove', handleMoveChip)
     return () => {
       window.removeEventListener('resize', handleResize)
-      document.removeEventListener('mousemove', handleMouse)
+      document.removeEventListener('mousemove', handleMoveChip)
     }
   }, [])
 
   return (
     <>
-      <div className="w-full h-[70px] pb-1 flex flex-wrap justify-center gap-1 overflow-x-scroll scroll-hidden">
-        <Button
-          variant="contained"
-          className="static-text h-8 !min-w-[32px] !py-[2px] !rounded-full"
+      <TypeButtonContainer>
+        <TypeButton
           style={{ backgroundColor: POGO_MOVES_COLORS.surface }}
           onClick={() => {
             setMode(mode === 'pve' ? 'pvp' : 'pve')
           }}
         >
           {mode === 'pve' ? 'PvP' : 'PvE'}
-        </Button>
-        <Button
-          variant="contained"
-          className="static-text h-8 !min-w-[32px] !py-[2px] !rounded-full"
-          style={{ backgroundColor: POGO_MOVES_COLORS.white }}
+        </TypeButton>
+        <TypeButton
+          style={{ backgroundColor: POGO_MOVES_COLORS.gray[7] }}
           onClick={() => {
             setChargedMoveList(chargedMoveData)
             setSelectedType({})
           }}
         >
           {dictionary.common.allType}
-        </Button>
+        </TypeButton>
         {Object.keys(POKEMON_TYPE).map((key) => {
           const type = key as PokemonType
           const isSelected = Object.values(selectedType).length === 0 || selectedType[type]
           return (
-            <Button
+            <TypeButton
               key={type}
-              variant="contained"
-              className="flex gap-0.5 static-text h-8 !min-w-[32px] !py-[2px] !rounded-full"
               style={{
                 opacity: isSelected ? '' : ' 30%',
                 backgroundColor: POKEMON_TYPE_COLORS[type],
@@ -260,10 +220,10 @@ const ChargedMovesPage: NextPage<{ params: NextPageStaticParams }> = ({ params: 
             >
               <Image src={`/images/types/${type}.png`} alt={type} width={16} height={16} />
               {dictionary.type[type]}
-            </Button>
+            </TypeButton>
           )
         })}
-      </div>
+      </TypeButtonContainer>
       <div ref={chartWrapperRef} className="relative w-full h-[calc(100%-70px)] overflow-scroll">
         {!isLoading &&
           chartSize.width > 0 &&

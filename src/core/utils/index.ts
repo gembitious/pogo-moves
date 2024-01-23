@@ -1,4 +1,3 @@
-import { unreleasedMove } from '@core/constants'
 import { ChargedMove, ChargedMovePvE, FastMove, FastMovePvE } from '@core/types'
 import { Locale, i18n } from '@core/types/i18n-config'
 import { ReactNode } from 'react'
@@ -36,3 +35,5 @@ export const redirectedPathname = (pathname: string, locale: Locale) => {
   else segments.splice(1, 0, locale)
   return segments.join('/')
 }
+
+export * from './chart'

@@ -1,13 +1,14 @@
 'use client'
 
-import Button from '@components/Button'
 import { Chart, ChartComponentProps } from '@components/Chart'
 import { MoveChip } from '@components/MoveChip'
-import { fastMoveData, POKEMON_TYPE } from '@core/constants'
+import { POKEMON_TYPE, fastMoveData } from '@core/constants'
 import { getDictionary } from '@core/constants/dictionary'
 import { useGlobalLoadingPanel } from '@core/hooks'
+import { TypeButton, TypeButtonContainer } from '@core/modules/components'
 import { PokemonType } from '@core/types'
 import { Locale } from '@core/types/i18n-config'
+import { handleMoveChip } from '@core/utils'
 import { darken, lighten } from '@mui/material'
 import { POGO_MOVES_COLORS, POKEMON_TYPE_COLORS } from '@styles/colors'
 import { NextPage } from 'next'
@@ -44,40 +45,6 @@ const graphProps: ChartComponentProps['graphProps'] = [
     strokeStyle: lighten(POGO_MOVES_COLORS.secondary, 0.7),
   },
 ]
-
-// moves spread handler
-const spreadMove = (move: HTMLDivElement, offset: number) => {
-  if (!move.classList.contains('move-chip-spread')) {
-    move.classList.add('move-chip-spread')
-    move.style.zIndex = '5'
-    move.style.top = `${Number(move.style.top.split('px')[0]) + offset}px`
-    const t = setTimeout(() => rollbackMove(move, offset), 2000)
-  }
-}
-
-// spread moves rollback handler
-const rollbackMove = (move: HTMLDivElement, offset: number) => {
-  if (move.classList.contains('move-chip-spread')) {
-    move.classList.remove('move-chip-spread')
-    move.style.zIndex = '1'
-    move.style.top = `${Number(move.style.top.split('px')[0]) - offset}px`
-  }
-}
-
-// mouse move event handler
-const handleMouse = (e: MouseEvent, isClicked?: boolean) => {
-  let elements = document.elementsFromPoint(e.clientX, e.clientY)
-  const moves = elements.filter((e) => e.classList.contains('move-chip-point'))
-  if (moves.length > 1) {
-    moves.map((move, index) => {
-      const moveElement = move.nextElementSibling
-      if (moveElement instanceof HTMLDivElement) {
-        const offset = moves.length > 1 ? (index - (moves.length - 1) / 2) * 18 : 0
-        spreadMove(moveElement, offset)
-      }
-    })
-  }
-}
 
 const FastMovesPage: NextPage<{ params: { lang: Locale } }> = ({ params: { lang } }) => {
   const { setGlobalLoadingPanelVisible } = useGlobalLoadingPanel()
@@ -121,35 +88,31 @@ const FastMovesPage: NextPage<{ params: { lang: Locale } }> = ({ params: { lang 
     setGlobalLoadingPanelVisible(true)
     handleResize()
     window.addEventListener('resize', handleResize)
-    document.addEventListener('mousemove', handleMouse)
+    document.addEventListener('mousemove', handleMoveChip)
     return () => {
       window.removeEventListener('resize', handleResize)
-      document.removeEventListener('mousemove', handleMouse)
+      document.removeEventListener('mousemove', handleMoveChip)
     }
   }, [])
 
   return (
     <>
-      <div className="w-full h-[70px] pb-1 flex flex-wrap justify-center gap-1 overflow-x-scroll scroll-hidden">
-        <Button
-          variant="contained"
-          className="static-text h-8 !min-w-[32px] !py-[2px] !rounded-full"
-          style={{ backgroundColor: POGO_MOVES_COLORS.white }}
+      <TypeButtonContainer>
+        <TypeButton
+          style={{ backgroundColor: POGO_MOVES_COLORS.gray[7] }}
           onClick={() => {
             setFastMoveList(fastMoveData)
             setSelectedType({})
           }}
         >
           {dictionary.common.allType}
-        </Button>
+        </TypeButton>
         {Object.keys(POKEMON_TYPE).map((key) => {
           const type = key as PokemonType
           const isSelected = Object.values(selectedType).length === 0 || selectedType[type]
           return (
-            <Button
+            <TypeButton
               key={type}
-              variant="contained"
-              className="flex gap-0.5 static-text h-8 !min-w-[32px] !py-[2px] !rounded-full"
               style={{
                 opacity: isSelected ? '' : ' 30%',
                 backgroundColor: POKEMON_TYPE_COLORS[type],
@@ -167,10 +130,10 @@ const FastMovesPage: NextPage<{ params: { lang: Locale } }> = ({ params: { lang 
             >
               <Image src={`/images/types/${type}.png`} alt={type} width={16} height={16} />
               {dictionary.type[type]}
-            </Button>
+            </TypeButton>
           )
         })}
-      </div>
+      </TypeButtonContainer>
       <div ref={chartWrapperRef} className="relative w-full h-[calc(100%-70px)] overflow-scroll">
         {!isLoading &&
           chartSize.width > 0 &&
