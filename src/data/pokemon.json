@@ -8615,7 +8615,8 @@
     "nameEn": "Landorus (Therian)",
     "name": "랜드로스 (therian)",
     "fastMoves": ["mud_shot", "extrasensory"],
-    "chargedMoves": ["earthquake", "stone_edge", "super_power", "bulldoze"],
+    "chargedMoves": ["earthquake", "stone_edge", "super_power", "bulldoze", "sandsear_storm"],
+    "eliteMoves": ["sandsear_storm"],
     "released": true
   },
   {
@@ -12659,7 +12660,7 @@
     "name": "부르롱",
     "fastMoves": ["lick", "poison_jab"],
     "chargedMoves": ["acid_spray", "gunk_shot", "gyro_ball"],
-    "released": false
+    "released": true
   },
   {
     "dex": 966,
@@ -12669,7 +12670,7 @@
     "name": "부르르룸",
     "fastMoves": ["lick", "poison_jab"],
     "chargedMoves": ["acid_spray", "gunk_shot", "gyro_ball", "overheat"],
-    "released": false
+    "released": true
   },
   {
     "dex": 967,

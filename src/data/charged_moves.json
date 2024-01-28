@@ -1,2132 +1,1940 @@
 [
-	{
-		"id": "acid_spray",
-		"nameEn": "Acid Spray",
-		"name": "애시드봄",
-		"type": "poison",
-		"power": 20,
-		"energy": 45,
-		"dpe": 0.44,
-		"buffs": [
-			0,
-			-2
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "acrobatics",
-		"nameEn": "Acrobatics",
-		"name": "애크러뱃",
-		"type": "flying",
-		"power": 110,
-		"energy": 60,
-		"dpe": 1.83
-	},
-	{
-		"id": "aerial_ace",
-		"nameEn": "Aerial Ace",
-		"name": "제비반환",
-		"type": "flying",
-		"power": 55,
-		"energy": 40,
-		"dpe": 1.38
-	},
-	{
-		"id": "aeroblast",
-		"nameEn": "Aeroblast",
-		"name": "에어로블라스트",
-		"type": "flying",
-		"power": 170,
-		"energy": 75,
-		"dpe": 2.27,
-		"buffs": [
-			2,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 0.125
-	},
-	{
-		"id": "air_cutter",
-		"nameEn": "Air Cutter",
-		"name": "에어커터",
-		"type": "flying",
-		"power": 60,
-		"energy": 55,
-		"dpe": 1.09
-	},
-	{
-		"id": "ancient_power",
-		"nameEn": "Ancient Power",
-		"name": "원시의힘",
-		"type": "rock",
-		"power": 60,
-		"energy": 45,
-		"dpe": 1.33,
-		"buffs": [
-			1,
-			1
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 0.1
-	},
-	{
-		"id": "aqua_jet",
-		"nameEn": "Aqua Jet",
-		"name": "아쿠아제트",
-		"type": "water",
-		"power": 45,
-		"energy": 45,
-		"dpe": 1.0
-	},
-	{
-		"id": "aqua_tail",
-		"nameEn": "Aqua Tail",
-		"name": "아쿠아테일",
-		"type": "water",
-		"power": 50,
-		"energy": 35,
-		"dpe": 1.43
-	},
-	{
-		"id": "aura_sphere",
-		"nameEn": "Aura Sphere",
-		"name": "파동탄",
-		"type": "fighting",
-		"power": 100,
-		"energy": 55,
-		"dpe": 1.82
-	},
-	{
-		"id": "aurora_beam",
-		"nameEn": "Aurora Beam",
-		"name": "오로라빔",
-		"type": "ice",
-		"power": 80,
-		"energy": 60,
-		"dpe": 1.33
-	},
-	{
-		"id": "avalanche",
-		"nameEn": "Avalanche",
-		"name": "눈사태",
-		"type": "ice",
-		"power": 90,
-		"energy": 45,
-		"dpe": 2.0
-	},
-	{
-		"id": "blast_burn",
-		"nameEn": "Blast Burn",
-		"name": "블라스트번",
-		"type": "fire",
-		"power": 110,
-		"energy": 50,
-		"dpe": 2.2
-	},
-	{
-		"id": "bleakwind_storm",
-		"nameEn": "Bleakwind Storm",
-		"name": "찬바람폭풍",
-		"type": "flying",
-		"power": 60,
-		"energy": 45,
-		"dpe": 1.33,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "blizzard",
-		"nameEn": "Blizzard",
-		"name": "눈보라",
-		"type": "ice",
-		"power": 140,
-		"energy": 75,
-		"dpe": 1.87
-	},
-	{
-		"id": "body_slam",
-		"nameEn": "Body Slam",
-		"name": "누르기",
-		"type": "normal",
-		"power": 60,
-		"energy": 35,
-		"dpe": 1.71
-	},
-	{
-		"id": "boomburst",
-		"nameEn": "Boomburst",
-		"name": "폭음파",
-		"type": "normal",
-		"power": 150,
-		"energy": 70,
-		"dpe": 2.14
-	},
-	{
-		"id": "bone_club",
-		"nameEn": "Bone Club",
-		"name": "뼈다귀치기",
-		"type": "ground",
-		"power": 40,
-		"energy": 35,
-		"dpe": 1.14
-	},
-	{
-		"id": "brave_bird",
-		"nameEn": "Brave Bird",
-		"name": "브레이브버드",
-		"type": "flying",
-		"power": 130,
-		"energy": 55,
-		"dpe": 2.36,
-		"buffs": [
-			0,
-			-3
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "breaking_swipe",
-		"nameEn": "Breaking Swipe",
-		"name": "와이드브레이커",
-		"type": "dragon",
-		"power": 50,
-		"energy": 35,
-		"dpe": 1.43,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.5
-	},
-	{
-		"id": "brick_break",
-		"nameEn": "Brick Break",
-		"name": "깨트리기",
-		"type": "fighting",
-		"power": 40,
-		"energy": 35,
-		"dpe": 1.14
-	},
-	{
-		"id": "brutal_swing",
-		"nameEn": "Brutal Swing",
-		"name": "세차게휘두르기",
-		"type": "dark",
-		"power": 65,
-		"energy": 40,
-		"dpe": 1.62
-	},
-	{
-		"id": "brine",
-		"nameEn": "Brine",
-		"name": "소금물",
-		"type": "water",
-		"power": 60,
-		"energy": 50,
-		"dpe": 1.2
-	},
-	{
-		"id": "bubble_beam",
-		"nameEn": "Bubble Beam",
-		"name": "거품광선",
-		"type": "water",
-		"power": 25,
-		"energy": 40,
-		"dpe": 0.62,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "bug_buzz",
-		"nameEn": "Bug Buzz",
-		"name": "벌레의야단법석",
-		"type": "bug",
-		"power": 100,
-		"energy": 60,
-		"dpe": 1.67,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.3
-	},
-	{
-		"id": "bulldoze",
-		"nameEn": "Bulldoze",
-		"name": "땅고르기",
-		"type": "ground",
-		"power": 80,
-		"energy": 60,
-		"dpe": 1.33
-	},
-	{
-		"id": "close_combat",
-		"nameEn": "Close Combat",
-		"name": "인파이트",
-		"type": "fighting",
-		"power": 100,
-		"energy": 45,
-		"dpe": 2.22,
-		"buffs": [
-			0,
-			-2
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "crabhammer",
-		"nameEn": "Crabhammer",
-		"name": "집게해머",
-		"type": "water",
-		"power": 85,
-		"energy": 50,
-		"dpe": 1.7,
-		"buffs": [
-			2,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 0.125
-	},
-	{
-		"id": "cross_chop",
-		"nameEn": "Cross Chop",
-		"name": "크로스촙",
-		"type": "fighting",
-		"power": 50,
-		"energy": 35,
-		"dpe": 1.43
-	},
-	{
-		"id": "cross_poison",
-		"nameEn": "Cross Poison",
-		"name": "크로스포이즌",
-		"type": "poison",
-		"power": 50,
-		"energy": 35,
-		"dpe": 1.43,
-		"buffs": [
-			2,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 0.125
-	},
-	{
-		"id": "crunch",
-		"nameEn": "Crunch",
-		"name": "깨물어부수기",
-		"type": "dark",
-		"power": 70,
-		"energy": 45,
-		"dpe": 1.56,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.3
-	},
-	{
-		"id": "dark_pulse",
-		"nameEn": "Dark Pulse",
-		"name": "악의파동",
-		"type": "dark",
-		"power": 80,
-		"energy": 50,
-		"dpe": 1.6
-	},
-	{
-		"id": "dazzling_gleam",
-		"nameEn": "Dazzling Gleam",
-		"name": "매지컬샤인",
-		"type": "fairy",
-		"power": 110,
-		"energy": 70,
-		"dpe": 1.57
-	},
-	{
-		"id": "dig",
-		"nameEn": "Dig",
-		"name": "구멍파기",
-		"type": "ground",
-		"power": 80,
-		"energy": 50,
-		"dpe": 1.6
-	},
-	{
-		"id": "disarming_voice",
-		"nameEn": "Disarming Voice",
-		"name": "차밍보이스",
-		"type": "fairy",
-		"power": 70,
-		"energy": 45,
-		"dpe": 1.56
-	},
-	{
-		"id": "discharge",
-		"nameEn": "Discharge",
-		"name": "방전",
-		"type": "electric",
-		"power": 65,
-		"energy": 45,
-		"dpe": 1.44
-	},
-	{
-		"id": "doom_desire",
-		"nameEn": "Doom Desire",
-		"name": "파멸의소원",
-		"type": "steel",
-		"power": 75,
-		"energy": 40,
-		"dpe": 1.88
-	},
-	{
-		"id": "double_iron_bash",
-		"nameEn": "Double Iron Bash",
-		"name": "더블펀처",
-		"type": "steel",
-		"power": 50,
-		"energy": 35,
-		"dpe": 1.43
-	},
-	{
-		"id": "draco_meteor",
-		"nameEn": "Draco Meteor",
-		"name": "용성군",
-		"type": "dragon",
-		"power": 150,
-		"energy": 65,
-		"dpe": 2.31,
-		"buffs": [
-			-2,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "dragon_ascent",
-		"nameEn": "Dragon Ascent",
-		"name": "화룡점정",
-		"type": "flying",
-		"power": 150,
-		"energy": 70,
-		"dpe": 2.14,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "dragon_claw",
-		"nameEn": "Dragon Claw",
-		"name": "드래곤클로",
-		"type": "dragon",
-		"power": 50,
-		"energy": 35,
-		"dpe": 1.43
-	},
-	{
-		"id": "dragon_pulse",
-		"nameEn": "Dragon Pulse",
-		"name": "용의파동",
-		"type": "dragon",
-		"power": 90,
-		"energy": 60,
-		"dpe": 1.5
-	},
-	{
-		"id": "drain_punch",
-		"nameEn": "Drain Punch",
-		"name": "드레인펀치",
-		"type": "fighting",
-		"power": 20,
-		"energy": 40,
-		"dpe": 0.5,
-		"buffs": [
-			0,
-			1
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "draining_kiss",
-		"nameEn": "Draining Kiss",
-		"name": "드레인키스",
-		"type": "fairy",
-		"power": 60,
-		"energy": 55,
-		"dpe": 1.09
-	},
-	{
-		"id": "drill_peck",
-		"nameEn": "Drill Peck",
-		"name": "회전부리",
-		"type": "flying",
-		"power": 65,
-		"energy": 40,
-		"dpe": 1.62
-	},
-	{
-		"id": "drill_run",
-		"nameEn": "Drill Run",
-		"name": "드릴라이너",
-		"type": "ground",
-		"power": 80,
-		"energy": 45,
-		"dpe": 1.78
-	},
-	{
-		"id": "dynamic_punch",
-		"nameEn": "Dynamic Punch",
-		"name": "폭발펀치",
-		"type": "fighting",
-		"power": 90,
-		"energy": 50,
-		"dpe": 1.8
-	},
-	{
-		"id": "earthquake",
-		"nameEn": "Earthquake",
-		"name": "지진",
-		"type": "ground",
-		"power": 110,
-		"energy": 65,
-		"dpe": 1.69
-	},
-	{
-		"id": "earth_power",
-		"nameEn": "Earth Power",
-		"name": "대지의힘",
-		"type": "ground",
-		"power": 90,
-		"energy": 55,
-		"dpe": 1.64,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.1
-	},
-	{
-		"id": "energy_ball",
-		"nameEn": "Energy Ball",
-		"name": "에너지볼",
-		"type": "grass",
-		"power": 90,
-		"energy": 55,
-		"dpe": 1.64,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.1
-	},
-	{
-		"id": "fell_stinger",
-		"nameEn": "Fell Stinger",
-		"name": "마지막일침",
-		"type": "bug",
-		"power": 20,
-		"energy": 35,
-		"dpe": 0.57,
-		"buffs": [
-			1,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "fire_blast",
-		"nameEn": "Fire Blast",
-		"name": "불대문자",
-		"type": "fire",
-		"power": 140,
-		"energy": 80,
-		"dpe": 1.75
-	},
-	{
-		"id": "fire_punch",
-		"nameEn": "Fire Punch",
-		"name": "불꽃펀치",
-		"type": "fire",
-		"power": 55,
-		"energy": 40,
-		"dpe": 1.38
-	},
-	{
-		"id": "blaze_kick",
-		"nameEn": "Blaze Kick",
-		"name": "블레이즈킥",
-		"type": "fire",
-		"power": 60,
-		"energy": 40,
-		"dpe": 1.5
-	},
-	{
-		"id": "feather_dance",
-		"nameEn": "Feather Dance",
-		"name": "깃털댄스",
-		"type": "flying",
-		"power": 35,
-		"energy": 50,
-		"dpe": 0.7,
-		"buffs": [
-			-2,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "flame_burst",
-		"nameEn": "Flame Burst",
-		"name": "불꽃튀기기",
-		"type": "fire",
-		"power": 70,
-		"energy": 55,
-		"dpe": 1.27
-	},
-	{
-		"id": "flame_charge",
-		"nameEn": "Flame Charge",
-		"name": "니트로차지",
-		"type": "fire",
-		"power": 65,
-		"energy": 50,
-		"dpe": 1.3,
-		"buffs": [
-			1,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "flame_wheel",
-		"nameEn": "Flame Wheel",
-		"name": "화염바퀴",
-		"type": "fire",
-		"power": 60,
-		"energy": 55,
-		"dpe": 1.09
-	},
-	{
-		"id": "flamethrower",
-		"nameEn": "Flamethrower",
-		"name": "화염방사",
-		"type": "fire",
-		"power": 90,
-		"energy": 55,
-		"dpe": 1.64
-	},
-	{
-		"id": "flash_cannon",
-		"nameEn": "Flash Cannon",
-		"name": "러스터캐논",
-		"type": "steel",
-		"power": 110,
-		"energy": 70,
-		"dpe": 1.57
-	},
-	{
-		"id": "fly",
-		"nameEn": "Fly",
-		"name": "공중날기",
-		"type": "flying",
-		"power": 80,
-		"energy": 45,
-		"dpe": 1.78
-	},
-	{
-		"id": "flying_press",
-		"nameEn": "Flying Press",
-		"name": "플라잉프레스",
-		"type": "fighting",
-		"power": 90,
-		"energy": 40,
-		"dpe": 2.25
-	},
-	{
-		"id": "focus_blast",
-		"nameEn": "Focus Blast",
-		"name": "기합구슬",
-		"type": "fighting",
-		"power": 150,
-		"energy": 75,
-		"dpe": 2.0
-	},
-	{
-		"id": "foul_play",
-		"nameEn": "Foul Play",
-		"name": "속임수",
-		"type": "dark",
-		"power": 70,
-		"energy": 45,
-		"dpe": 1.56
-	},
-	{
-		"id": "frenzy_plant",
-		"nameEn": "Frenzy Plant",
-		"name": "하드플랜트",
-		"type": "grass",
-		"power": 100,
-		"energy": 45,
-		"dpe": 2.22
-	},
-	{
-		"id": "fusion_bolt",
-		"nameEn": "Fusion Bolt",
-		"name": "크로스썬더",
-		"type": "electric",
-		"power": 90,
-		"energy": 45,
-		"dpe": 2.0
-	},
-	{
-		"id": "fusion_flare",
-		"nameEn": "Fusion Flare",
-		"name": "크로스플레임",
-		"type": "fire",
-		"power": 90,
-		"energy": 45,
-		"dpe": 2.0
-	},
-	{
-		"id": "future_sight",
-		"nameEn": "Future Sight",
-		"name": "미래예지",
-		"type": "psychic",
-		"power": 120,
-		"energy": 65,
-		"dpe": 1.85
-	},
-	{
-		"id": "giga_impact",
-		"nameEn": "Giga Impact",
-		"name": "기가임팩트",
-		"type": "normal",
-		"power": 150,
-		"energy": 80,
-		"dpe": 1.88
-	},
-	{
-		"id": "glaciate",
-		"nameEn": "Glaciate",
-		"name": "얼어붙은세계",
-		"type": "ice",
-		"power": 60,
-		"energy": 40,
-		"dpe": 1.5,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "grass_knot",
-		"nameEn": "Grass Knot",
-		"name": "풀묶기",
-		"type": "grass",
-		"power": 90,
-		"energy": 50,
-		"dpe": 1.8
-	},
-	{
-		"id": "gunk_shot",
-		"nameEn": "Gunk Shot",
-		"name": "더스트슈트",
-		"type": "poison",
-		"power": 130,
-		"energy": 75,
-		"dpe": 1.73
-	},
-	{
-		"id": "gyro_ball",
-		"nameEn": "Gyro Ball",
-		"name": "자이로볼",
-		"type": "steel",
-		"power": 80,
-		"energy": 60,
-		"dpe": 1.33
-	},
-	{
-		"id": "heart_stamp",
-		"nameEn": "Heart Stamp",
-		"name": "하트스탬프",
-		"type": "psychic",
-		"power": 40,
-		"energy": 40,
-		"dpe": 1.0
-	},
-	{
-		"id": "heat_wave",
-		"nameEn": "Heat Wave",
-		"name": "열풍",
-		"type": "fire",
-		"power": 95,
-		"energy": 75,
-		"dpe": 1.27
-	},
-	{
-		"id": "heavy_slam",
-		"nameEn": "Heavy Slam",
-		"name": "헤비봄버",
-		"type": "steel",
-		"power": 70,
-		"energy": 50,
-		"dpe": 1.4
-	},
-	{
-		"id": "high_horsepower",
-		"nameEn": "High Horsepower",
-		"name": "10만마력",
-		"type": "ground",
-		"power": 100,
-		"energy": 60,
-		"dpe": 1.67
-	},
-	{
-		"id": "horn_attack",
-		"nameEn": "Horn Attack",
-		"name": "뿔찌르기",
-		"type": "normal",
-		"power": 40,
-		"energy": 35,
-		"dpe": 1.14
-	},
-	{
-		"id": "hurricane",
-		"nameEn": "Hurricane",
-		"name": "폭풍",
-		"type": "flying",
-		"power": 110,
-		"energy": 65,
-		"dpe": 1.69
-	},
-	{
-		"id": "hydro_cannon",
-		"nameEn": "Hydro Cannon",
-		"name": "하이드로캐논",
-		"type": "water",
-		"power": 80,
-		"energy": 40,
-		"dpe": 2.0
-	},
-	{
-		"id": "hydro_pump",
-		"nameEn": "Hydro Pump",
-		"name": "하이드로펌프",
-		"type": "water",
-		"power": 130,
-		"energy": 75,
-		"dpe": 1.73
-	},
-	{
-		"id": "hyper_beam",
-		"nameEn": "Hyper Beam",
-		"name": "파괴광선",
-		"type": "normal",
-		"power": 150,
-		"energy": 80,
-		"dpe": 1.88
-	},
-	{
-		"id": "hyper_fang",
-		"nameEn": "Hyper Fang",
-		"name": "필살앞니",
-		"type": "normal",
-		"power": 80,
-		"energy": 50,
-		"dpe": 1.6
-	},
-	{
-		"id": "ice_beam",
-		"nameEn": "Ice Beam",
-		"name": "냉동빔",
-		"type": "ice",
-		"power": 90,
-		"energy": 55,
-		"dpe": 1.64
-	},
-	{
-		"id": "ice_punch",
-		"nameEn": "Ice Punch",
-		"name": "냉동펀치",
-		"type": "ice",
-		"power": 55,
-		"energy": 40,
-		"dpe": 1.38
-	},
-	{
-		"id": "icicle_spear",
-		"nameEn": "Icicle Spear",
-		"name": "고드름침",
-		"type": "ice",
-		"power": 65,
-		"energy": 40,
-		"dpe": 1.62
-	},
-	{
-		"id": "icy_wind",
-		"nameEn": "Icy Wind",
-		"name": "얼어붙은바람",
-		"type": "ice",
-		"power": 60,
-		"energy": 45,
-		"dpe": 1.33,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "iron_head",
-		"nameEn": "Iron Head",
-		"name": "아이언헤드",
-		"type": "steel",
-		"power": 70,
-		"energy": 50,
-		"dpe": 1.4
-	},
-	{
-		"id": "last_resort",
-		"nameEn": "Last Resort",
-		"name": "비장의무기",
-		"type": "normal",
-		"power": 90,
-		"energy": 55,
-		"dpe": 1.64
-	},
-	{
-		"id": "leaf_blade",
-		"nameEn": "Leaf Blade",
-		"name": "리프블레이드",
-		"type": "grass",
-		"power": 70,
-		"energy": 35,
-		"dpe": 2.0
-	},
-	{
-		"id": "leaf_tornado",
-		"nameEn": "Leaf Tornado",
-		"name": "그래스믹서",
-		"type": "grass",
-		"power": 45,
-		"energy": 40,
-		"dpe": 1.12,
-		"buffs": [
-			-2,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.5
-	},
-	{
-		"id": "leaf_storm",
-		"nameEn": "Leaf Storm",
-		"name": "리프스톰",
-		"type": "grass",
-		"power": 130,
-		"energy": 55,
-		"dpe": 2.36,
-		"buffs": [
-			-2,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "liquidation",
-		"nameEn": "Liquidation",
-		"name": "아쿠아브레이크",
-		"type": "water",
-		"power": 70,
-		"energy": 45,
-		"dpe": 1.56,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.3
-	},
-	{
-		"id": "low_sweep",
-		"nameEn": "Low Sweep",
-		"name": "로킥",
-		"type": "fighting",
-		"power": 40,
-		"energy": 40,
-		"dpe": 1.0
-	},
-	{
-		"id": "lunge",
-		"nameEn": "Lunge",
-		"name": "덤벼들기",
-		"type": "bug",
-		"power": 60,
-		"energy": 45,
-		"dpe": 1.33,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "luster_purge",
-		"nameEn": "Luster Purge",
-		"name": "러스터퍼지",
-		"type": "psychic",
-		"power": 120,
-		"energy": 60,
-		"dpe": 2.0,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.5
-	},
-	{
-		"id": "magma_storm",
-		"nameEn": "Magma Storm",
-		"name": "마그마스톰",
-		"type": "fire",
-		"power": 65,
-		"energy": 40,
-		"dpe": 1.62
-	},
-	{
-		"id": "magnet_bomb",
-		"nameEn": "Magnet Bomb",
-		"name": "마그넷봄",
-		"type": "steel",
-		"power": 70,
-		"energy": 45,
-		"dpe": 1.56
-	},
-	{
-		"id": "megahorn",
-		"nameEn": "Megahorn",
-		"name": "메가혼",
-		"type": "bug",
-		"power": 110,
-		"energy": 55,
-		"dpe": 2.0
-	},
-	{
-		"id": "meteor_beam",
-		"nameEn": "Meteor Beam",
-		"name": "메테오빔",
-		"type": "rock",
-		"power": 120,
-		"energy": 60,
-		"dpe": 2.0,
-		"buffs": [
-			1,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "meteor_mash",
-		"nameEn": "Meteor Mash",
-		"name": "코멧펀치",
-		"type": "steel",
-		"power": 100,
-		"energy": 50,
-		"dpe": 2.0
-	},
-	{
-		"id": "mirror_coat",
-		"nameEn": "Mirror Coat",
-		"name": "미러코트",
-		"type": "psychic",
-		"power": 60,
-		"energy": 55,
-		"dpe": 1.09
-	},
-	{
-		"id": "mirror_shot",
-		"nameEn": "Mirror Shot",
-		"name": "미러샷",
-		"type": "steel",
-		"power": 35,
-		"energy": 35,
-		"dpe": 1.0,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.3
-	},
-	{
-		"id": "mist_ball",
-		"nameEn": "Mist Ball",
-		"name": "미스트볼",
-		"type": "psychic",
-		"power": 120,
-		"energy": 60,
-		"dpe": 2.0,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.5
-	},
-	{
-		"id": "moonblast",
-		"nameEn": "Moonblast",
-		"name": "문포스",
-		"type": "fairy",
-		"power": 110,
-		"energy": 60,
-		"dpe": 1.83,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.1
-	},
-	{
-		"id": "mud_bomb",
-		"nameEn": "Mud Bomb",
-		"name": "진흙폭탄",
-		"type": "ground",
-		"power": 60,
-		"energy": 40,
-		"dpe": 1.5
-	},
-	{
-		"id": "muddy_water",
-		"nameEn": "Muddy Water",
-		"name": "탁류",
-		"type": "water",
-		"power": 35,
-		"energy": 35,
-		"dpe": 1.0,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.3
-	},
-	{
-		"id": "mystical_fire",
-		"nameEn": "Mystical Fire",
-		"name": "매지컬플레임",
-		"type": "fire",
-		"power": 60,
-		"energy": 45,
-		"dpe": 1.33,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "night_shade",
-		"nameEn": "Night Shade",
-		"name": "나이트헤드",
-		"type": "ghost",
-		"power": 60,
-		"energy": 55,
-		"dpe": 1.09
-	},
-	{
-		"id": "night_slash",
-		"nameEn": "Night Slash",
-		"name": "깜짝베기",
-		"type": "dark",
-		"power": 50,
-		"energy": 35,
-		"dpe": 1.43,
-		"buffs": [
-			2,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 0.125
-	},
-	{
-		"id": "oblivion_wing",
-		"nameEn": "Oblivion Wing",
-		"name": "데스윙",
-		"type": "flying",
-		"power": 85,
-		"energy": 50,
-		"dpe": 1.7
-	},
-	{
-		"id": "obstruct",
-		"nameEn": "Obstruct",
-		"name": "블로킹",
-		"type": "dark",
-		"power": 15,
-		"energy": 40,
-		"dpe": 0.38,
-		"buffs": [
-			0,
-			1
-		],
-		"buffTarget": "both",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "octazooka",
-		"nameEn": "Octazooka",
-		"name": "대포무노포",
-		"type": "water",
-		"power": 50,
-		"energy": 50,
-		"dpe": 1.0,
-		"buffs": [
-			-2,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.5
-	},
-	{
-		"id": "ominous_wind",
-		"nameEn": "Ominous Wind",
-		"name": "괴상한바람",
-		"type": "ghost",
-		"power": 45,
-		"energy": 45,
-		"dpe": 1.0,
-		"buffs": [
-			1,
-			1
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 0.1
-	},
-	{
-		"id": "origin_pulse",
-		"nameEn": "Origin Pulse",
-		"name": "근원의파동",
-		"type": "water",
-		"power": 130,
-		"energy": 60,
-		"dpe": 2.17
-	},
-	{
-		"id": "outrage",
-		"nameEn": "Outrage",
-		"name": "역린",
-		"type": "dragon",
-		"power": 110,
-		"energy": 60,
-		"dpe": 1.83
-	},
-	{
-		"id": "overheat",
-		"nameEn": "Overheat",
-		"name": "오버히트",
-		"type": "fire",
-		"power": 130,
-		"energy": 55,
-		"dpe": 2.36,
-		"buffs": [
-			-2,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "parabolic_charge",
-		"nameEn": "Parabolic Charge",
-		"name": "파라볼라차지",
-		"type": "electric",
-		"power": 65,
-		"energy": 55,
-		"dpe": 1.18
-	},
-	{
-		"id": "payback",
-		"nameEn": "Payback",
-		"name": "보복",
-		"type": "dark",
-		"power": 110,
-		"energy": 60,
-		"dpe": 1.83
-	},
-	{
-		"id": "petal_blizzard",
-		"nameEn": "Petal Blizzard",
-		"name": "꽃보라",
-		"type": "grass",
-		"power": 110,
-		"energy": 65,
-		"dpe": 1.69
-	},
-	{
-		"id": "play_rough",
-		"nameEn": "Play Rough",
-		"name": "치근거리기",
-		"type": "fairy",
-		"power": 90,
-		"energy": 60,
-		"dpe": 1.5
-	},
-	{
-		"id": "poison_fang",
-		"nameEn": "Poison Fang",
-		"name": "맹독엄니",
-		"type": "poison",
-		"power": 45,
-		"energy": 40,
-		"dpe": 1.12,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "poltergeist",
-		"nameEn": "Poltergeist",
-		"name": "폴터가이스트",
-		"type": "ghost",
-		"power": 150,
-		"energy": 75,
-		"dpe": 2.0
-	},
-	{
-		"id": "power_gem",
-		"nameEn": "Power Gem",
-		"name": "파워젬",
-		"type": "rock",
-		"power": 80,
-		"energy": 60,
-		"dpe": 1.33
-	},
-	{
-		"id": "power_up_punch",
-		"nameEn": "Power-Up Punch",
-		"name": "그로우펀치",
-		"type": "fighting",
-		"power": 20,
-		"energy": 35,
-		"dpe": 0.57,
-		"buffs": [
-			1,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "power_whip",
-		"nameEn": "Power Whip",
-		"name": "파워휩",
-		"type": "grass",
-		"power": 90,
-		"energy": 50,
-		"dpe": 1.8
-	},
-	{
-		"id": "precipice_blades",
-		"nameEn": "Precipice Blades",
-		"name": "단애의칼",
-		"type": "ground",
-		"power": 130,
-		"energy": 60,
-		"dpe": 2.17
-	},
-	{
-		"id": "psybeam",
-		"nameEn": "Psybeam",
-		"name": "환상빔",
-		"type": "psychic",
-		"power": 70,
-		"energy": 60,
-		"dpe": 1.17
-	},
-	{
-		"id": "psychic",
-		"nameEn": "Psychic",
-		"name": "사이코키네시스",
-		"type": "psychic",
-		"power": 75,
-		"energy": 55,
-		"dpe": 1.36,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.1
-	},
-	{
-		"id": "psychic_fangs",
-		"nameEn": "Psychic Fangs",
-		"name": "사이코팽",
-		"type": "psychic",
-		"power": 40,
-		"energy": 35,
-		"dpe": 1.14,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "psycho_boost",
-		"nameEn": "Psycho Boost",
-		"name": "사이코부스트",
-		"type": "psychic",
-		"power": 70,
-		"energy": 35,
-		"dpe": 2.0,
-		"buffs": [
-			-2,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "psyshock",
-		"nameEn": "Psyshock",
-		"name": "사이코쇼크",
-		"type": "psychic",
-		"power": 70,
-		"energy": 45,
-		"dpe": 1.56
-	},
-	{
-		"id": "psystrike",
-		"nameEn": "Psystrike",
-		"name": "사이코브레이크",
-		"type": "psychic",
-		"power": 90,
-		"energy": 45,
-		"dpe": 2.0
-	},
-	{
-		"id": "razor_shell",
-		"nameEn": "Razor Shell",
-		"name": "셸블레이드",
-		"type": "water",
-		"power": 35,
-		"energy": 35,
-		"dpe": 1.0,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.5
-	},
-	{
-		"id": "return",
-		"nameEn": "Return",
-		"name": "은혜갚기",
-		"type": "normal",
-		"power": 130,
-		"energy": 70,
-		"dpe": 1.86
-	},
-	{
-		"id": "roar_of_time",
-		"nameEn": "Roar of Time",
-		"name": "시간의포효",
-		"type": "dragon",
-		"power": 150,
-		"energy": 65,
-		"dpe": 2.31
-	},
-	{
-		"id": "rock_blast",
-		"nameEn": "Rock Blast",
-		"name": "록블라스트",
-		"type": "rock",
-		"power": 50,
-		"energy": 40,
-		"dpe": 1.25
-	},
-	{
-		"id": "rock_slide",
-		"nameEn": "Rock Slide",
-		"name": "스톤샤워",
-		"type": "rock",
-		"power": 75,
-		"energy": 45,
-		"dpe": 1.67
-	},
-	{
-		"id": "rock_tomb",
-		"nameEn": "Rock Tomb",
-		"name": "암석봉인",
-		"type": "rock",
-		"power": 70,
-		"energy": 60,
-		"dpe": 1.17,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "rock_wrecker",
-		"nameEn": "Rock Wrecker",
-		"name": "암석포",
-		"type": "rock",
-		"power": 110,
-		"energy": 50,
-		"dpe": 2.2
-	},
-	{
-		"id": "sacred_fire",
-		"nameEn": "Sacred Fire",
-		"name": "성스러운불꽃",
-		"type": "fire",
-		"power": 130,
-		"energy": 65,
-		"dpe": 2.0,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.5
-	},
-	{
-		"id": "sacred_sword",
-		"nameEn": "Sacred Sword",
-		"name": "성스러운칼",
-		"type": "fighting",
-		"power": 60,
-		"energy": 35,
-		"dpe": 1.71
-	},
-	{
-		"id": "sand_tomb",
-		"nameEn": "Sand Tomb",
-		"name": "모래지옥",
-		"type": "ground",
-		"power": 25,
-		"energy": 40,
-		"dpe": 0.62,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "sandsear_storm",
-		"nameEn": "Sandsear Storm",
-		"name": "열사의폭풍",
-		"type": "ground",
-		"power": 60,
-		"energy": 45,
-		"dpe": 1.33,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "scald",
-		"nameEn": "Scald",
-		"name": "열탕",
-		"type": "water",
-		"power": 85,
-		"energy": 50,
-		"dpe": 1.7,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.5
-	},
-	{
-		"id": "scorching_sands",
-		"nameEn": "Scorching Sands",
-		"name": "열사의대지",
-		"type": "ground",
-		"power": 80,
-		"energy": 50,
-		"dpe": 1.6,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.3
-	},
-	{
-		"id": "seed_bomb",
-		"nameEn": "Seed Bomb",
-		"name": "씨폭탄",
-		"type": "grass",
-		"power": 60,
-		"energy": 45,
-		"dpe": 1.33
-	},
-	{
-		"id": "seed_flare",
-		"nameEn": "Seed Flare",
-		"name": "시드플레어",
-		"type": "grass",
-		"power": 130,
-		"energy": 75,
-		"dpe": 1.73,
-		"buffs": [
-			0,
-			-2
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.4
-	},
-	{
-		"id": "shadow_ball",
-		"nameEn": "Shadow Ball",
-		"name": "섀도볼",
-		"type": "ghost",
-		"power": 100,
-		"energy": 55,
-		"dpe": 1.82
-	},
-	{
-		"id": "shadow_bone",
-		"nameEn": "Shadow Bone",
-		"name": "섀도본",
-		"type": "ghost",
-		"power": 75,
-		"energy": 45,
-		"dpe": 1.67,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.2
-	},
-	{
-		"id": "shadow_force",
-		"nameEn": "Shadow Force",
-		"name": "섀도다이브",
-		"type": "ghost",
-		"power": 120,
-		"energy": 90,
-		"dpe": 1.33
-	},
-	{
-		"id": "shadow_punch",
-		"nameEn": "Shadow Punch",
-		"name": "섀도펀치",
-		"type": "ghost",
-		"power": 40,
-		"energy": 35,
-		"dpe": 1.14
-	},
-	{
-		"id": "shadow_sneak",
-		"nameEn": "Shadow Sneak",
-		"name": "야습",
-		"type": "ghost",
-		"power": 50,
-		"energy": 45,
-		"dpe": 1.11
-	},
-	{
-		"id": "signal_beam",
-		"nameEn": "Signal Beam",
-		"name": "시그널빔",
-		"type": "bug",
-		"power": 75,
-		"energy": 55,
-		"dpe": 1.36,
-		"buffs": [
-			-1,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.2
-	},
-	{
-		"id": "silver_wind",
-		"nameEn": "Silver Wind",
-		"name": "은빛바람",
-		"type": "bug",
-		"power": 60,
-		"energy": 45,
-		"dpe": 1.33,
-		"buffs": [
-			1,
-			1
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 0.1
-	},
-	{
-		"id": "skull_bash",
-		"nameEn": "Skull Bash",
-		"name": "로켓박치기",
-		"type": "normal",
-		"power": 130,
-		"energy": 75,
-		"dpe": 1.73,
-		"buffs": [
-			0,
-			1
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "sky_attack",
-		"nameEn": "Sky Attack",
-		"name": "불새",
-		"type": "flying",
-		"power": 75,
-		"energy": 50,
-		"dpe": 1.5
-	},
-	{
-		"id": "sludge",
-		"nameEn": "Sludge",
-		"name": "오물공격",
-		"type": "poison",
-		"power": 50,
-		"energy": 40,
-		"dpe": 1.25
-	},
-	{
-		"id": "sludge_bomb",
-		"nameEn": "Sludge Bomb",
-		"name": "오물폭탄",
-		"type": "poison",
-		"power": 80,
-		"energy": 50,
-		"dpe": 1.6
-	},
-	{
-		"id": "sludge_wave",
-		"nameEn": "Sludge Wave",
-		"name": "오물웨이브",
-		"type": "poison",
-		"power": 110,
-		"energy": 65,
-		"dpe": 1.69
-	},
-	{
-		"id": "solar_beam",
-		"nameEn": "Solar Beam",
-		"name": "솔라빔",
-		"type": "grass",
-		"power": 150,
-		"energy": 80,
-		"dpe": 1.88
-	},
-	{
-		"id": "spacial_rend",
-		"nameEn": "Spacial Rend",
-		"name": "공간절단",
-		"type": "dragon",
-		"power": 95,
-		"energy": 50,
-		"dpe": 1.9
-	},
-	{
-		"id": "spirit_shackle",
-		"nameEn": "Spirit Shackle",
-		"name": "그림자꿰매기",
-		"type": "ghost",
-		"power": 50,
-		"energy": 40,
-		"dpe": 1.25,
-		"buffs": [
-			0,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.33
-	},
-	{
-		"id": "stomp",
-		"nameEn": "Stomp",
-		"name": "짓밟기",
-		"type": "normal",
-		"power": 55,
-		"energy": 40,
-		"dpe": 1.38
-	},
-	{
-		"id": "stone_edge",
-		"nameEn": "Stone Edge",
-		"name": "스톤에지",
-		"type": "rock",
-		"power": 100,
-		"energy": 55,
-		"dpe": 1.82
-	},
-	{
-		"id": "submission",
-		"nameEn": "Submission",
-		"name": "지옥의바퀴",
-		"type": "fighting",
-		"power": 60,
-		"energy": 50,
-		"dpe": 1.2
-	},
-	{
-		"id": "super_power",
-		"nameEn": "Superpower",
-		"name": "엄청난힘",
-		"type": "fighting",
-		"power": 85,
-		"energy": 40,
-		"dpe": 2.12,
-		"buffs": [
-			-1,
-			-1
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "surf",
-		"nameEn": "Surf",
-		"name": "파도타기",
-		"type": "water",
-		"power": 65,
-		"energy": 40,
-		"dpe": 1.62
-	},
-	{
-		"id": "swift",
-		"nameEn": "Swift",
-		"name": "스피드스타",
-		"type": "normal",
-		"power": 60,
-		"energy": 55,
-		"dpe": 1.09
-	},
-	{
-		"id": "synchronoise",
-		"nameEn": "Synchronoise",
-		"name": "싱크로노이즈",
-		"type": "psychic",
-		"power": 80,
-		"energy": 50,
-		"dpe": 1.6
-	},
-	{
-		"id": "techno_blast_normal",
-		"nameEn": "Techno Blast (Normal)",
-		"name": "테크노버스터",
-		"type": "normal",
-		"power": 120,
-		"energy": 55,
-		"dpe": 2.18
-	},
-	{
-		"id": "techno_blast_burn",
-		"nameEn": "Techno Blast (Burn)",
-		"name": "테크노버스터",
-		"type": "fire",
-		"power": 120,
-		"energy": 55,
-		"dpe": 2.18
-	},
-	{
-		"id": "techno_blast_chill",
-		"nameEn": "Techno Blast (Chill)",
-		"name": "테크노버스터",
-		"type": "ice",
-		"power": 120,
-		"energy": 55,
-		"dpe": 2.18
-	},
-	{
-		"id": "techno_blast_douse",
-		"nameEn": "Techno Blast (Douse)",
-		"name": "테크노버스터",
-		"type": "water",
-		"power": 120,
-		"energy": 55,
-		"dpe": 2.18
-	},
-	{
-		"id": "techno_blast_shock",
-		"nameEn": "Techno Blast (Shock)",
-		"name": "테크노버스터",
-		"type": "electric",
-		"power": 120,
-		"energy": 55,
-		"dpe": 2.18
-	},
-	{
-		"id": "thunder",
-		"nameEn": "Thunder",
-		"name": "번개",
-		"type": "electric",
-		"power": 100,
-		"energy": 60,
-		"dpe": 1.67
-	},
-	{
-		"id": "thunder_punch",
-		"nameEn": "Thunder Punch",
-		"name": "번개펀치",
-		"type": "electric",
-		"power": 55,
-		"energy": 40,
-		"dpe": 1.38
-	},
-	{
-		"id": "thunderbolt",
-		"nameEn": "Thunderbolt",
-		"name": "１０만볼트",
-		"type": "electric",
-		"power": 90,
-		"energy": 55,
-		"dpe": 1.64
-	},
-	{
-		"id": "trailblaze",
-		"nameEn": "Trailblaze",
-		"name": "개척하기",
-		"type": "grass",
-		"power": 65,
-		"energy": 50,
-		"dpe": 1.3,
-		"buffs": [
-			1,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "tri_attack",
-		"nameEn": "Tri Attack",
-		"name": "트라이어택",
-		"type": "normal",
-		"power": 65,
-		"energy": 50,
-		"dpe": 1.3,
-		"buffs": [
-			-1,
-			-1
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.5
-	},
-	{
-		"id": "triple_axel",
-		"nameEn": "Triple Axel",
-		"name": "트리플악셀",
-		"type": "ice",
-		"power": 60,
-		"energy": 45,
-		"dpe": 1.33,
-		"buffs": [
-			1,
-			0
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "twister",
-		"nameEn": "Twister",
-		"name": "회오리",
-		"type": "dragon",
-		"power": 45,
-		"energy": 45,
-		"dpe": 1.0
-	},
-	{
-		"id": "v_create",
-		"nameEn": "V-create",
-		"name": "V제너레이트",
-		"type": "fire",
-		"power": 95,
-		"energy": 40,
-		"dpe": 2.38,
-		"buffs": [
-			0,
-			-3
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "vice_grip",
-		"nameEn": "Vise Grip",
-		"name": "찝기",
-		"type": "normal",
-		"power": 40,
-		"energy": 40,
-		"dpe": 1.0
-	},
-	{
-		"id": "water_pulse",
-		"nameEn": "Water Pulse",
-		"name": "물의파동",
-		"type": "water",
-		"power": 70,
-		"energy": 60,
-		"dpe": 1.17
-	},
-	{
-		"id": "weather_ball_fire",
-		"nameEn": "Weather Ball (Fire)",
-		"name": "웨더볼",
-		"type": "fire",
-		"power": 55,
-		"energy": 35,
-		"dpe": 1.57
-	},
-	{
-		"id": "weather_ball_ice",
-		"nameEn": "Weather Ball (Ice)",
-		"name": "웨더볼",
-		"type": "ice",
-		"power": 55,
-		"energy": 35,
-		"dpe": 1.57
-	},
-	{
-		"id": "weather_ball_rock",
-		"nameEn": "Weather Ball (Rock)",
-		"name": "웨더볼",
-		"type": "rock",
-		"power": 55,
-		"energy": 35,
-		"dpe": 1.57
-	},
-	{
-		"id": "weather_ball_normal",
-		"nameEn": "Weather Ball (Normal)",
-		"name": "웨더볼",
-		"type": "normal",
-		"power": 55,
-		"energy": 35,
-		"dpe": 1.57
-	},
-	{
-		"id": "weather_ball_water",
-		"nameEn": "Weather Ball (Water)",
-		"name": "웨더볼",
-		"type": "water",
-		"power": 55,
-		"energy": 35,
-		"dpe": 1.57
-	},
-	{
-		"id": "wildbolt_storm",
-		"nameEn": "Wildbolt Storm",
-		"name": "번개폭풍",
-		"type": "electric",
-		"power": 60,
-		"energy": 45,
-		"dpe": 1.33,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "wild_charge",
-		"nameEn": "Wild Charge",
-		"name": "와일드볼트",
-		"type": "electric",
-		"power": 100,
-		"energy": 45,
-		"dpe": 2.22,
-		"buffs": [
-			0,
-			-2
-		],
-		"buffTarget": "self",
-		"buffApplyChance": 1.0
-	},
-	{
-		"id": "wrap",
-		"nameEn": "Wrap",
-		"name": "김밥말이",
-		"type": "normal",
-		"power": 60,
-		"energy": 45,
-		"dpe": 1.33
-	},
-	{
-		"id": "x_scissor",
-		"nameEn": "X-Scissor",
-		"name": "시저크로스",
-		"type": "bug",
-		"power": 65,
-		"energy": 40,
-		"dpe": 1.62
-	},
-	{
-		"id": "zap_cannon",
-		"nameEn": "Zap Cannon",
-		"name": "전자포",
-		"type": "electric",
-		"power": 150,
-		"energy": 80,
-		"dpe": 1.88,
-		"buffs": [
-			-1,
-			0
-		],
-		"buffTarget": "opponent",
-		"buffApplyChance": 0.66
-	}
+  {
+    "id": "acid_spray",
+    "nameEn": "Acid Spray",
+    "name": "애시드봄",
+    "type": "poison",
+    "power": 20,
+    "energy": 45,
+    "dpe": 0.44,
+    "buffs": [0, -2],
+    "buffTarget": "opponent",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "acrobatics",
+    "nameEn": "Acrobatics",
+    "name": "애크러뱃",
+    "type": "flying",
+    "power": 110,
+    "energy": 60,
+    "dpe": 1.83
+  },
+  {
+    "id": "aerial_ace",
+    "nameEn": "Aerial Ace",
+    "name": "제비반환",
+    "type": "flying",
+    "power": 55,
+    "energy": 40,
+    "dpe": 1.38
+  },
+  {
+    "id": "aeroblast",
+    "nameEn": "Aeroblast",
+    "name": "에어로블라스트",
+    "type": "flying",
+    "power": 170,
+    "energy": 75,
+    "dpe": 2.27,
+    "buffs": [2, 0],
+    "buffTarget": "self",
+    "buffApplyChance": 0.125
+  },
+  {
+    "id": "air_cutter",
+    "nameEn": "Air Cutter",
+    "name": "에어커터",
+    "type": "flying",
+    "power": 60,
+    "energy": 55,
+    "dpe": 1.09
+  },
+  {
+    "id": "ancient_power",
+    "nameEn": "Ancient Power",
+    "name": "원시의힘",
+    "type": "rock",
+    "power": 60,
+    "energy": 45,
+    "dpe": 1.33,
+    "buffs": [1, 1],
+    "buffTarget": "self",
+    "buffApplyChance": 0.1
+  },
+  {
+    "id": "aqua_jet",
+    "nameEn": "Aqua Jet",
+    "name": "아쿠아제트",
+    "type": "water",
+    "power": 45,
+    "energy": 45,
+    "dpe": 1.0
+  },
+  {
+    "id": "aqua_tail",
+    "nameEn": "Aqua Tail",
+    "name": "아쿠아테일",
+    "type": "water",
+    "power": 50,
+    "energy": 35,
+    "dpe": 1.43
+  },
+  {
+    "id": "aura_sphere",
+    "nameEn": "Aura Sphere",
+    "name": "파동탄",
+    "type": "fighting",
+    "power": 100,
+    "energy": 55,
+    "dpe": 1.82
+  },
+  {
+    "id": "aurora_beam",
+    "nameEn": "Aurora Beam",
+    "name": "오로라빔",
+    "type": "ice",
+    "power": 80,
+    "energy": 60,
+    "dpe": 1.33
+  },
+  {
+    "id": "avalanche",
+    "nameEn": "Avalanche",
+    "name": "눈사태",
+    "type": "ice",
+    "power": 90,
+    "energy": 45,
+    "dpe": 2.0
+  },
+  {
+    "id": "blast_burn",
+    "nameEn": "Blast Burn",
+    "name": "블라스트번",
+    "type": "fire",
+    "power": 110,
+    "energy": 50,
+    "dpe": 2.2
+  },
+  {
+    "id": "bleakwind_storm",
+    "nameEn": "Bleakwind Storm",
+    "name": "찬바람폭풍",
+    "type": "flying",
+    "power": 60,
+    "energy": 45,
+    "dpe": 1.33,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "blizzard",
+    "nameEn": "Blizzard",
+    "name": "눈보라",
+    "type": "ice",
+    "power": 140,
+    "energy": 75,
+    "dpe": 1.87
+  },
+  {
+    "id": "body_slam",
+    "nameEn": "Body Slam",
+    "name": "누르기",
+    "type": "normal",
+    "power": 60,
+    "energy": 35,
+    "dpe": 1.71
+  },
+  {
+    "id": "boomburst",
+    "nameEn": "Boomburst",
+    "name": "폭음파",
+    "type": "normal",
+    "power": 150,
+    "energy": 70,
+    "dpe": 2.14
+  },
+  {
+    "id": "bone_club",
+    "nameEn": "Bone Club",
+    "name": "뼈다귀치기",
+    "type": "ground",
+    "power": 40,
+    "energy": 35,
+    "dpe": 1.14
+  },
+  {
+    "id": "brave_bird",
+    "nameEn": "Brave Bird",
+    "name": "브레이브버드",
+    "type": "flying",
+    "power": 130,
+    "energy": 55,
+    "dpe": 2.36,
+    "buffs": [0, -3],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "breaking_swipe",
+    "nameEn": "Breaking Swipe",
+    "name": "와이드브레이커",
+    "type": "dragon",
+    "power": 50,
+    "energy": 35,
+    "dpe": 1.43,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.5
+  },
+  {
+    "id": "brick_break",
+    "nameEn": "Brick Break",
+    "name": "깨트리기",
+    "type": "fighting",
+    "power": 40,
+    "energy": 35,
+    "dpe": 1.14
+  },
+  {
+    "id": "brutal_swing",
+    "nameEn": "Brutal Swing",
+    "name": "세차게휘두르기",
+    "type": "dark",
+    "power": 65,
+    "energy": 40,
+    "dpe": 1.62
+  },
+  {
+    "id": "brine",
+    "nameEn": "Brine",
+    "name": "소금물",
+    "type": "water",
+    "power": 60,
+    "energy": 50,
+    "dpe": 1.2
+  },
+  {
+    "id": "bubble_beam",
+    "nameEn": "Bubble Beam",
+    "name": "거품광선",
+    "type": "water",
+    "power": 25,
+    "energy": 40,
+    "dpe": 0.62,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "bug_buzz",
+    "nameEn": "Bug Buzz",
+    "name": "벌레의야단법석",
+    "type": "bug",
+    "power": 100,
+    "energy": 60,
+    "dpe": 1.67,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.3
+  },
+  {
+    "id": "bulldoze",
+    "nameEn": "Bulldoze",
+    "name": "땅고르기",
+    "type": "ground",
+    "power": 80,
+    "energy": 60,
+    "dpe": 1.33
+  },
+  {
+    "id": "close_combat",
+    "nameEn": "Close Combat",
+    "name": "인파이트",
+    "type": "fighting",
+    "power": 100,
+    "energy": 45,
+    "dpe": 2.22,
+    "buffs": [0, -2],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "crabhammer",
+    "nameEn": "Crabhammer",
+    "name": "집게해머",
+    "type": "water",
+    "power": 85,
+    "energy": 50,
+    "dpe": 1.7,
+    "buffs": [2, 0],
+    "buffTarget": "self",
+    "buffApplyChance": 0.125
+  },
+  {
+    "id": "cross_chop",
+    "nameEn": "Cross Chop",
+    "name": "크로스촙",
+    "type": "fighting",
+    "power": 50,
+    "energy": 35,
+    "dpe": 1.43
+  },
+  {
+    "id": "cross_poison",
+    "nameEn": "Cross Poison",
+    "name": "크로스포이즌",
+    "type": "poison",
+    "power": 50,
+    "energy": 35,
+    "dpe": 1.43,
+    "buffs": [2, 0],
+    "buffTarget": "self",
+    "buffApplyChance": 0.125
+  },
+  {
+    "id": "crunch",
+    "nameEn": "Crunch",
+    "name": "깨물어부수기",
+    "type": "dark",
+    "power": 70,
+    "energy": 45,
+    "dpe": 1.56,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.3
+  },
+  {
+    "id": "dark_pulse",
+    "nameEn": "Dark Pulse",
+    "name": "악의파동",
+    "type": "dark",
+    "power": 80,
+    "energy": 50,
+    "dpe": 1.6
+  },
+  {
+    "id": "dazzling_gleam",
+    "nameEn": "Dazzling Gleam",
+    "name": "매지컬샤인",
+    "type": "fairy",
+    "power": 110,
+    "energy": 70,
+    "dpe": 1.57
+  },
+  {
+    "id": "dig",
+    "nameEn": "Dig",
+    "name": "구멍파기",
+    "type": "ground",
+    "power": 80,
+    "energy": 50,
+    "dpe": 1.6
+  },
+  {
+    "id": "disarming_voice",
+    "nameEn": "Disarming Voice",
+    "name": "차밍보이스",
+    "type": "fairy",
+    "power": 70,
+    "energy": 45,
+    "dpe": 1.56
+  },
+  {
+    "id": "discharge",
+    "nameEn": "Discharge",
+    "name": "방전",
+    "type": "electric",
+    "power": 65,
+    "energy": 45,
+    "dpe": 1.44
+  },
+  {
+    "id": "doom_desire",
+    "nameEn": "Doom Desire",
+    "name": "파멸의소원",
+    "type": "steel",
+    "power": 75,
+    "energy": 40,
+    "dpe": 1.88
+  },
+  {
+    "id": "double_iron_bash",
+    "nameEn": "Double Iron Bash",
+    "name": "더블펀처",
+    "type": "steel",
+    "power": 50,
+    "energy": 35,
+    "dpe": 1.43
+  },
+  {
+    "id": "draco_meteor",
+    "nameEn": "Draco Meteor",
+    "name": "용성군",
+    "type": "dragon",
+    "power": 150,
+    "energy": 65,
+    "dpe": 2.31,
+    "buffs": [-2, 0],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "dragon_ascent",
+    "nameEn": "Dragon Ascent",
+    "name": "화룡점정",
+    "type": "flying",
+    "power": 150,
+    "energy": 70,
+    "dpe": 2.14,
+    "buffs": [0, -1],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "dragon_claw",
+    "nameEn": "Dragon Claw",
+    "name": "드래곤클로",
+    "type": "dragon",
+    "power": 50,
+    "energy": 35,
+    "dpe": 1.43
+  },
+  {
+    "id": "dragon_pulse",
+    "nameEn": "Dragon Pulse",
+    "name": "용의파동",
+    "type": "dragon",
+    "power": 90,
+    "energy": 60,
+    "dpe": 1.5
+  },
+  {
+    "id": "drain_punch",
+    "nameEn": "Drain Punch",
+    "name": "드레인펀치",
+    "type": "fighting",
+    "power": 20,
+    "energy": 40,
+    "dpe": 0.5,
+    "buffs": [0, 1],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "draining_kiss",
+    "nameEn": "Draining Kiss",
+    "name": "드레인키스",
+    "type": "fairy",
+    "power": 60,
+    "energy": 55,
+    "dpe": 1.09
+  },
+  {
+    "id": "drill_peck",
+    "nameEn": "Drill Peck",
+    "name": "회전부리",
+    "type": "flying",
+    "power": 65,
+    "energy": 40,
+    "dpe": 1.62
+  },
+  {
+    "id": "drill_run",
+    "nameEn": "Drill Run",
+    "name": "드릴라이너",
+    "type": "ground",
+    "power": 80,
+    "energy": 45,
+    "dpe": 1.78
+  },
+  {
+    "id": "dynamic_punch",
+    "nameEn": "Dynamic Punch",
+    "name": "폭발펀치",
+    "type": "fighting",
+    "power": 90,
+    "energy": 50,
+    "dpe": 1.8
+  },
+  {
+    "id": "earthquake",
+    "nameEn": "Earthquake",
+    "name": "지진",
+    "type": "ground",
+    "power": 110,
+    "energy": 65,
+    "dpe": 1.69
+  },
+  {
+    "id": "earth_power",
+    "nameEn": "Earth Power",
+    "name": "대지의힘",
+    "type": "ground",
+    "power": 90,
+    "energy": 55,
+    "dpe": 1.64,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.1
+  },
+  {
+    "id": "energy_ball",
+    "nameEn": "Energy Ball",
+    "name": "에너지볼",
+    "type": "grass",
+    "power": 90,
+    "energy": 55,
+    "dpe": 1.64,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.1
+  },
+  {
+    "id": "fell_stinger",
+    "nameEn": "Fell Stinger",
+    "name": "마지막일침",
+    "type": "bug",
+    "power": 20,
+    "energy": 35,
+    "dpe": 0.57,
+    "buffs": [1, 0],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "fire_blast",
+    "nameEn": "Fire Blast",
+    "name": "불대문자",
+    "type": "fire",
+    "power": 140,
+    "energy": 80,
+    "dpe": 1.75
+  },
+  {
+    "id": "fire_punch",
+    "nameEn": "Fire Punch",
+    "name": "불꽃펀치",
+    "type": "fire",
+    "power": 55,
+    "energy": 40,
+    "dpe": 1.38
+  },
+  {
+    "id": "blaze_kick",
+    "nameEn": "Blaze Kick",
+    "name": "블레이즈킥",
+    "type": "fire",
+    "power": 60,
+    "energy": 40,
+    "dpe": 1.5
+  },
+  {
+    "id": "feather_dance",
+    "nameEn": "Feather Dance",
+    "name": "깃털댄스",
+    "type": "flying",
+    "power": 35,
+    "energy": 50,
+    "dpe": 0.7,
+    "buffs": [-2, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "flame_burst",
+    "nameEn": "Flame Burst",
+    "name": "불꽃튀기기",
+    "type": "fire",
+    "power": 70,
+    "energy": 55,
+    "dpe": 1.27
+  },
+  {
+    "id": "flame_charge",
+    "nameEn": "Flame Charge",
+    "name": "니트로차지",
+    "type": "fire",
+    "power": 65,
+    "energy": 50,
+    "dpe": 1.3,
+    "buffs": [1, 0],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "flame_wheel",
+    "nameEn": "Flame Wheel",
+    "name": "화염바퀴",
+    "type": "fire",
+    "power": 60,
+    "energy": 55,
+    "dpe": 1.09
+  },
+  {
+    "id": "flamethrower",
+    "nameEn": "Flamethrower",
+    "name": "화염방사",
+    "type": "fire",
+    "power": 90,
+    "energy": 55,
+    "dpe": 1.64
+  },
+  {
+    "id": "flash_cannon",
+    "nameEn": "Flash Cannon",
+    "name": "러스터캐논",
+    "type": "steel",
+    "power": 110,
+    "energy": 70,
+    "dpe": 1.57
+  },
+  {
+    "id": "fly",
+    "nameEn": "Fly",
+    "name": "공중날기",
+    "type": "flying",
+    "power": 80,
+    "energy": 45,
+    "dpe": 1.78
+  },
+  {
+    "id": "flying_press",
+    "nameEn": "Flying Press",
+    "name": "플라잉프레스",
+    "type": "fighting",
+    "power": 90,
+    "energy": 40,
+    "dpe": 2.25
+  },
+  {
+    "id": "focus_blast",
+    "nameEn": "Focus Blast",
+    "name": "기합구슬",
+    "type": "fighting",
+    "power": 150,
+    "energy": 75,
+    "dpe": 2.0
+  },
+  {
+    "id": "foul_play",
+    "nameEn": "Foul Play",
+    "name": "속임수",
+    "type": "dark",
+    "power": 70,
+    "energy": 45,
+    "dpe": 1.56
+  },
+  {
+    "id": "frenzy_plant",
+    "nameEn": "Frenzy Plant",
+    "name": "하드플랜트",
+    "type": "grass",
+    "power": 100,
+    "energy": 45,
+    "dpe": 2.22
+  },
+  {
+    "id": "fusion_bolt",
+    "nameEn": "Fusion Bolt",
+    "name": "크로스썬더",
+    "type": "electric",
+    "power": 90,
+    "energy": 45,
+    "dpe": 2.0
+  },
+  {
+    "id": "fusion_flare",
+    "nameEn": "Fusion Flare",
+    "name": "크로스플레임",
+    "type": "fire",
+    "power": 90,
+    "energy": 45,
+    "dpe": 2.0
+  },
+  {
+    "id": "future_sight",
+    "nameEn": "Future Sight",
+    "name": "미래예지",
+    "type": "psychic",
+    "power": 120,
+    "energy": 65,
+    "dpe": 1.85
+  },
+  {
+    "id": "giga_impact",
+    "nameEn": "Giga Impact",
+    "name": "기가임팩트",
+    "type": "normal",
+    "power": 150,
+    "energy": 80,
+    "dpe": 1.88
+  },
+  {
+    "id": "glaciate",
+    "nameEn": "Glaciate",
+    "name": "얼어붙은세계",
+    "type": "ice",
+    "power": 60,
+    "energy": 40,
+    "dpe": 1.5,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "grass_knot",
+    "nameEn": "Grass Knot",
+    "name": "풀묶기",
+    "type": "grass",
+    "power": 90,
+    "energy": 50,
+    "dpe": 1.8
+  },
+  {
+    "id": "gunk_shot",
+    "nameEn": "Gunk Shot",
+    "name": "더스트슈트",
+    "type": "poison",
+    "power": 130,
+    "energy": 75,
+    "dpe": 1.73
+  },
+  {
+    "id": "gyro_ball",
+    "nameEn": "Gyro Ball",
+    "name": "자이로볼",
+    "type": "steel",
+    "power": 80,
+    "energy": 60,
+    "dpe": 1.33
+  },
+  {
+    "id": "heart_stamp",
+    "nameEn": "Heart Stamp",
+    "name": "하트스탬프",
+    "type": "psychic",
+    "power": 40,
+    "energy": 40,
+    "dpe": 1.0
+  },
+  {
+    "id": "heat_wave",
+    "nameEn": "Heat Wave",
+    "name": "열풍",
+    "type": "fire",
+    "power": 95,
+    "energy": 75,
+    "dpe": 1.27
+  },
+  {
+    "id": "heavy_slam",
+    "nameEn": "Heavy Slam",
+    "name": "헤비봄버",
+    "type": "steel",
+    "power": 70,
+    "energy": 50,
+    "dpe": 1.4
+  },
+  {
+    "id": "high_horsepower",
+    "nameEn": "High Horsepower",
+    "name": "10만마력",
+    "type": "ground",
+    "power": 100,
+    "energy": 60,
+    "dpe": 1.67
+  },
+  {
+    "id": "horn_attack",
+    "nameEn": "Horn Attack",
+    "name": "뿔찌르기",
+    "type": "normal",
+    "power": 40,
+    "energy": 35,
+    "dpe": 1.14
+  },
+  {
+    "id": "hurricane",
+    "nameEn": "Hurricane",
+    "name": "폭풍",
+    "type": "flying",
+    "power": 110,
+    "energy": 65,
+    "dpe": 1.69
+  },
+  {
+    "id": "hydro_cannon",
+    "nameEn": "Hydro Cannon",
+    "name": "하이드로캐논",
+    "type": "water",
+    "power": 80,
+    "energy": 40,
+    "dpe": 2.0
+  },
+  {
+    "id": "hydro_pump",
+    "nameEn": "Hydro Pump",
+    "name": "하이드로펌프",
+    "type": "water",
+    "power": 130,
+    "energy": 75,
+    "dpe": 1.73
+  },
+  {
+    "id": "hyper_beam",
+    "nameEn": "Hyper Beam",
+    "name": "파괴광선",
+    "type": "normal",
+    "power": 150,
+    "energy": 80,
+    "dpe": 1.88
+  },
+  {
+    "id": "hyper_fang",
+    "nameEn": "Hyper Fang",
+    "name": "필살앞니",
+    "type": "normal",
+    "power": 80,
+    "energy": 50,
+    "dpe": 1.6
+  },
+  {
+    "id": "ice_beam",
+    "nameEn": "Ice Beam",
+    "name": "냉동빔",
+    "type": "ice",
+    "power": 90,
+    "energy": 55,
+    "dpe": 1.64
+  },
+  {
+    "id": "ice_punch",
+    "nameEn": "Ice Punch",
+    "name": "냉동펀치",
+    "type": "ice",
+    "power": 55,
+    "energy": 40,
+    "dpe": 1.38
+  },
+  {
+    "id": "icicle_spear",
+    "nameEn": "Icicle Spear",
+    "name": "고드름침",
+    "type": "ice",
+    "power": 65,
+    "energy": 40,
+    "dpe": 1.62
+  },
+  {
+    "id": "icy_wind",
+    "nameEn": "Icy Wind",
+    "name": "얼어붙은바람",
+    "type": "ice",
+    "power": 60,
+    "energy": 45,
+    "dpe": 1.33,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "iron_head",
+    "nameEn": "Iron Head",
+    "name": "아이언헤드",
+    "type": "steel",
+    "power": 70,
+    "energy": 50,
+    "dpe": 1.4
+  },
+  {
+    "id": "last_resort",
+    "nameEn": "Last Resort",
+    "name": "비장의무기",
+    "type": "normal",
+    "power": 90,
+    "energy": 55,
+    "dpe": 1.64
+  },
+  {
+    "id": "leaf_blade",
+    "nameEn": "Leaf Blade",
+    "name": "리프블레이드",
+    "type": "grass",
+    "power": 70,
+    "energy": 35,
+    "dpe": 2.0
+  },
+  {
+    "id": "leaf_tornado",
+    "nameEn": "Leaf Tornado",
+    "name": "그래스믹서",
+    "type": "grass",
+    "power": 45,
+    "energy": 40,
+    "dpe": 1.12,
+    "buffs": [-2, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.5
+  },
+  {
+    "id": "leaf_storm",
+    "nameEn": "Leaf Storm",
+    "name": "리프스톰",
+    "type": "grass",
+    "power": 130,
+    "energy": 55,
+    "dpe": 2.36,
+    "buffs": [-2, 0],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "liquidation",
+    "nameEn": "Liquidation",
+    "name": "아쿠아브레이크",
+    "type": "water",
+    "power": 70,
+    "energy": 45,
+    "dpe": 1.56,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.3
+  },
+  {
+    "id": "low_sweep",
+    "nameEn": "Low Sweep",
+    "name": "로킥",
+    "type": "fighting",
+    "power": 40,
+    "energy": 40,
+    "dpe": 1.0
+  },
+  {
+    "id": "lunge",
+    "nameEn": "Lunge",
+    "name": "덤벼들기",
+    "type": "bug",
+    "power": 60,
+    "energy": 45,
+    "dpe": 1.33,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "luster_purge",
+    "nameEn": "Luster Purge",
+    "name": "러스터퍼지",
+    "type": "psychic",
+    "power": 120,
+    "energy": 60,
+    "dpe": 2.0,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.5
+  },
+  {
+    "id": "magma_storm",
+    "nameEn": "Magma Storm",
+    "name": "마그마스톰",
+    "type": "fire",
+    "power": 65,
+    "energy": 40,
+    "dpe": 1.62
+  },
+  {
+    "id": "magnet_bomb",
+    "nameEn": "Magnet Bomb",
+    "name": "마그넷봄",
+    "type": "steel",
+    "power": 70,
+    "energy": 45,
+    "dpe": 1.56
+  },
+  {
+    "id": "megahorn",
+    "nameEn": "Megahorn",
+    "name": "메가혼",
+    "type": "bug",
+    "power": 110,
+    "energy": 55,
+    "dpe": 2.0
+  },
+  {
+    "id": "meteor_beam",
+    "nameEn": "Meteor Beam",
+    "name": "메테오빔",
+    "type": "rock",
+    "power": 120,
+    "energy": 60,
+    "dpe": 2.0,
+    "buffs": [1, 0],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "meteor_mash",
+    "nameEn": "Meteor Mash",
+    "name": "코멧펀치",
+    "type": "steel",
+    "power": 100,
+    "energy": 50,
+    "dpe": 2.0
+  },
+  {
+    "id": "mirror_coat",
+    "nameEn": "Mirror Coat",
+    "name": "미러코트",
+    "type": "psychic",
+    "power": 60,
+    "energy": 55,
+    "dpe": 1.09
+  },
+  {
+    "id": "mirror_shot",
+    "nameEn": "Mirror Shot",
+    "name": "미러샷",
+    "type": "steel",
+    "power": 35,
+    "energy": 35,
+    "dpe": 1.0,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.3
+  },
+  {
+    "id": "mist_ball",
+    "nameEn": "Mist Ball",
+    "name": "미스트볼",
+    "type": "psychic",
+    "power": 120,
+    "energy": 60,
+    "dpe": 2.0,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.5
+  },
+  {
+    "id": "moonblast",
+    "nameEn": "Moonblast",
+    "name": "문포스",
+    "type": "fairy",
+    "power": 110,
+    "energy": 60,
+    "dpe": 1.83,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.1
+  },
+  {
+    "id": "mud_bomb",
+    "nameEn": "Mud Bomb",
+    "name": "진흙폭탄",
+    "type": "ground",
+    "power": 60,
+    "energy": 40,
+    "dpe": 1.5
+  },
+  {
+    "id": "muddy_water",
+    "nameEn": "Muddy Water",
+    "name": "탁류",
+    "type": "water",
+    "power": 35,
+    "energy": 35,
+    "dpe": 1.0,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.3
+  },
+  {
+    "id": "mystical_fire",
+    "nameEn": "Mystical Fire",
+    "name": "매지컬플레임",
+    "type": "fire",
+    "power": 60,
+    "energy": 45,
+    "dpe": 1.33,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "night_shade",
+    "nameEn": "Night Shade",
+    "name": "나이트헤드",
+    "type": "ghost",
+    "power": 60,
+    "energy": 55,
+    "dpe": 1.09
+  },
+  {
+    "id": "night_slash",
+    "nameEn": "Night Slash",
+    "name": "깜짝베기",
+    "type": "dark",
+    "power": 50,
+    "energy": 35,
+    "dpe": 1.43,
+    "buffs": [2, 0],
+    "buffTarget": "self",
+    "buffApplyChance": 0.125
+  },
+  {
+    "id": "oblivion_wing",
+    "nameEn": "Oblivion Wing",
+    "name": "데스윙",
+    "type": "flying",
+    "power": 85,
+    "energy": 50,
+    "dpe": 1.7
+  },
+  {
+    "id": "obstruct",
+    "nameEn": "Obstruct",
+    "name": "블로킹",
+    "type": "dark",
+    "power": 15,
+    "energy": 40,
+    "dpe": 0.38,
+    "buffs": [0, 1],
+    "buffTarget": "both",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "octazooka",
+    "nameEn": "Octazooka",
+    "name": "대포무노포",
+    "type": "water",
+    "power": 50,
+    "energy": 50,
+    "dpe": 1.0,
+    "buffs": [-2, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.5
+  },
+  {
+    "id": "ominous_wind",
+    "nameEn": "Ominous Wind",
+    "name": "괴상한바람",
+    "type": "ghost",
+    "power": 45,
+    "energy": 45,
+    "dpe": 1.0,
+    "buffs": [1, 1],
+    "buffTarget": "self",
+    "buffApplyChance": 0.1
+  },
+  {
+    "id": "origin_pulse",
+    "nameEn": "Origin Pulse",
+    "name": "근원의파동",
+    "type": "water",
+    "power": 130,
+    "energy": 60,
+    "dpe": 2.17
+  },
+  {
+    "id": "outrage",
+    "nameEn": "Outrage",
+    "name": "역린",
+    "type": "dragon",
+    "power": 110,
+    "energy": 60,
+    "dpe": 1.83
+  },
+  {
+    "id": "overheat",
+    "nameEn": "Overheat",
+    "name": "오버히트",
+    "type": "fire",
+    "power": 130,
+    "energy": 55,
+    "dpe": 2.36,
+    "buffs": [-2, 0],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "parabolic_charge",
+    "nameEn": "Parabolic Charge",
+    "name": "파라볼라차지",
+    "type": "electric",
+    "power": 65,
+    "energy": 55,
+    "dpe": 1.18
+  },
+  {
+    "id": "payback",
+    "nameEn": "Payback",
+    "name": "보복",
+    "type": "dark",
+    "power": 110,
+    "energy": 60,
+    "dpe": 1.83
+  },
+  {
+    "id": "petal_blizzard",
+    "nameEn": "Petal Blizzard",
+    "name": "꽃보라",
+    "type": "grass",
+    "power": 110,
+    "energy": 65,
+    "dpe": 1.69
+  },
+  {
+    "id": "play_rough",
+    "nameEn": "Play Rough",
+    "name": "치근거리기",
+    "type": "fairy",
+    "power": 90,
+    "energy": 60,
+    "dpe": 1.5
+  },
+  {
+    "id": "poison_fang",
+    "nameEn": "Poison Fang",
+    "name": "맹독엄니",
+    "type": "poison",
+    "power": 45,
+    "energy": 40,
+    "dpe": 1.12,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "poltergeist",
+    "nameEn": "Poltergeist",
+    "name": "폴터가이스트",
+    "type": "ghost",
+    "power": 150,
+    "energy": 75,
+    "dpe": 2.0
+  },
+  {
+    "id": "power_gem",
+    "nameEn": "Power Gem",
+    "name": "파워젬",
+    "type": "rock",
+    "power": 80,
+    "energy": 60,
+    "dpe": 1.33
+  },
+  {
+    "id": "power_up_punch",
+    "nameEn": "Power-Up Punch",
+    "name": "그로우펀치",
+    "type": "fighting",
+    "power": 20,
+    "energy": 35,
+    "dpe": 0.57,
+    "buffs": [1, 0],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "power_whip",
+    "nameEn": "Power Whip",
+    "name": "파워휩",
+    "type": "grass",
+    "power": 90,
+    "energy": 50,
+    "dpe": 1.8
+  },
+  {
+    "id": "precipice_blades",
+    "nameEn": "Precipice Blades",
+    "name": "단애의칼",
+    "type": "ground",
+    "power": 130,
+    "energy": 60,
+    "dpe": 2.17
+  },
+  {
+    "id": "psybeam",
+    "nameEn": "Psybeam",
+    "name": "환상빔",
+    "type": "psychic",
+    "power": 70,
+    "energy": 60,
+    "dpe": 1.17
+  },
+  {
+    "id": "psychic",
+    "nameEn": "Psychic",
+    "name": "사이코키네시스",
+    "type": "psychic",
+    "power": 75,
+    "energy": 55,
+    "dpe": 1.36,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.1
+  },
+  {
+    "id": "psychic_fangs",
+    "nameEn": "Psychic Fangs",
+    "name": "사이코팽",
+    "type": "psychic",
+    "power": 40,
+    "energy": 35,
+    "dpe": 1.14,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "psycho_boost",
+    "nameEn": "Psycho Boost",
+    "name": "사이코부스트",
+    "type": "psychic",
+    "power": 70,
+    "energy": 35,
+    "dpe": 2.0,
+    "buffs": [-2, 0],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "psyshock",
+    "nameEn": "Psyshock",
+    "name": "사이코쇼크",
+    "type": "psychic",
+    "power": 70,
+    "energy": 45,
+    "dpe": 1.56
+  },
+  {
+    "id": "psystrike",
+    "nameEn": "Psystrike",
+    "name": "사이코브레이크",
+    "type": "psychic",
+    "power": 90,
+    "energy": 45,
+    "dpe": 2.0
+  },
+  {
+    "id": "razor_shell",
+    "nameEn": "Razor Shell",
+    "name": "셸블레이드",
+    "type": "water",
+    "power": 35,
+    "energy": 35,
+    "dpe": 1.0,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.5
+  },
+  {
+    "id": "return",
+    "nameEn": "Return",
+    "name": "은혜갚기",
+    "type": "normal",
+    "power": 130,
+    "energy": 70,
+    "dpe": 1.86
+  },
+  {
+    "id": "roar_of_time",
+    "nameEn": "Roar of Time",
+    "name": "시간의포효",
+    "type": "dragon",
+    "power": 150,
+    "energy": 65,
+    "dpe": 2.31
+  },
+  {
+    "id": "rock_blast",
+    "nameEn": "Rock Blast",
+    "name": "록블라스트",
+    "type": "rock",
+    "power": 50,
+    "energy": 40,
+    "dpe": 1.25
+  },
+  {
+    "id": "rock_slide",
+    "nameEn": "Rock Slide",
+    "name": "스톤샤워",
+    "type": "rock",
+    "power": 75,
+    "energy": 45,
+    "dpe": 1.67
+  },
+  {
+    "id": "rock_tomb",
+    "nameEn": "Rock Tomb",
+    "name": "암석봉인",
+    "type": "rock",
+    "power": 70,
+    "energy": 60,
+    "dpe": 1.17,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "rock_wrecker",
+    "nameEn": "Rock Wrecker",
+    "name": "암석포",
+    "type": "rock",
+    "power": 110,
+    "energy": 50,
+    "dpe": 2.2
+  },
+  {
+    "id": "sacred_fire",
+    "nameEn": "Sacred Fire",
+    "name": "성스러운불꽃",
+    "type": "fire",
+    "power": 130,
+    "energy": 65,
+    "dpe": 2.0,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.5
+  },
+  {
+    "id": "sacred_sword",
+    "nameEn": "Sacred Sword",
+    "name": "성스러운칼",
+    "type": "fighting",
+    "power": 60,
+    "energy": 35,
+    "dpe": 1.71
+  },
+  {
+    "id": "sand_tomb",
+    "nameEn": "Sand Tomb",
+    "name": "모래지옥",
+    "type": "ground",
+    "power": 25,
+    "energy": 40,
+    "dpe": 0.62,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "sandsear_storm",
+    "nameEn": "Sandsear Storm",
+    "name": "열사의폭풍",
+    "type": "ground",
+    "power": 60,
+    "energy": 45,
+    "dpe": 1.33,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "scald",
+    "nameEn": "Scald",
+    "name": "열탕",
+    "type": "water",
+    "power": 85,
+    "energy": 50,
+    "dpe": 1.7,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.5
+  },
+  {
+    "id": "scorching_sands",
+    "nameEn": "Scorching Sands",
+    "name": "열사의대지",
+    "type": "ground",
+    "power": 80,
+    "energy": 50,
+    "dpe": 1.6,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.3
+  },
+  {
+    "id": "seed_bomb",
+    "nameEn": "Seed Bomb",
+    "name": "씨폭탄",
+    "type": "grass",
+    "power": 60,
+    "energy": 45,
+    "dpe": 1.33
+  },
+  {
+    "id": "seed_flare",
+    "nameEn": "Seed Flare",
+    "name": "시드플레어",
+    "type": "grass",
+    "power": 130,
+    "energy": 75,
+    "dpe": 1.73,
+    "buffs": [0, -2],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.4
+  },
+  {
+    "id": "shadow_ball",
+    "nameEn": "Shadow Ball",
+    "name": "섀도볼",
+    "type": "ghost",
+    "power": 100,
+    "energy": 55,
+    "dpe": 1.82
+  },
+  {
+    "id": "shadow_bone",
+    "nameEn": "Shadow Bone",
+    "name": "섀도본",
+    "type": "ghost",
+    "power": 75,
+    "energy": 45,
+    "dpe": 1.67,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.2
+  },
+  {
+    "id": "shadow_force",
+    "nameEn": "Shadow Force",
+    "name": "섀도다이브",
+    "type": "ghost",
+    "power": 120,
+    "energy": 90,
+    "dpe": 1.33
+  },
+  {
+    "id": "shadow_punch",
+    "nameEn": "Shadow Punch",
+    "name": "섀도펀치",
+    "type": "ghost",
+    "power": 40,
+    "energy": 35,
+    "dpe": 1.14
+  },
+  {
+    "id": "shadow_sneak",
+    "nameEn": "Shadow Sneak",
+    "name": "야습",
+    "type": "ghost",
+    "power": 50,
+    "energy": 45,
+    "dpe": 1.11
+  },
+  {
+    "id": "signal_beam",
+    "nameEn": "Signal Beam",
+    "name": "시그널빔",
+    "type": "bug",
+    "power": 75,
+    "energy": 55,
+    "dpe": 1.36,
+    "buffs": [-1, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.2
+  },
+  {
+    "id": "silver_wind",
+    "nameEn": "Silver Wind",
+    "name": "은빛바람",
+    "type": "bug",
+    "power": 60,
+    "energy": 45,
+    "dpe": 1.33,
+    "buffs": [1, 1],
+    "buffTarget": "self",
+    "buffApplyChance": 0.1
+  },
+  {
+    "id": "skull_bash",
+    "nameEn": "Skull Bash",
+    "name": "로켓박치기",
+    "type": "normal",
+    "power": 130,
+    "energy": 75,
+    "dpe": 1.73,
+    "buffs": [0, 1],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "sky_attack",
+    "nameEn": "Sky Attack",
+    "name": "불새",
+    "type": "flying",
+    "power": 75,
+    "energy": 50,
+    "dpe": 1.5
+  },
+  {
+    "id": "sludge",
+    "nameEn": "Sludge",
+    "name": "오물공격",
+    "type": "poison",
+    "power": 50,
+    "energy": 40,
+    "dpe": 1.25
+  },
+  {
+    "id": "sludge_bomb",
+    "nameEn": "Sludge Bomb",
+    "name": "오물폭탄",
+    "type": "poison",
+    "power": 80,
+    "energy": 50,
+    "dpe": 1.6
+  },
+  {
+    "id": "sludge_wave",
+    "nameEn": "Sludge Wave",
+    "name": "오물웨이브",
+    "type": "poison",
+    "power": 110,
+    "energy": 65,
+    "dpe": 1.69
+  },
+  {
+    "id": "solar_beam",
+    "nameEn": "Solar Beam",
+    "name": "솔라빔",
+    "type": "grass",
+    "power": 150,
+    "energy": 80,
+    "dpe": 1.88
+  },
+  {
+    "id": "spacial_rend",
+    "nameEn": "Spacial Rend",
+    "name": "공간절단",
+    "type": "dragon",
+    "power": 95,
+    "energy": 50,
+    "dpe": 1.9
+  },
+  {
+    "id": "spirit_shackle",
+    "nameEn": "Spirit Shackle",
+    "name": "그림자꿰매기",
+    "type": "ghost",
+    "power": 50,
+    "energy": 40,
+    "dpe": 1.25,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.33
+  },
+  {
+    "id": "stomp",
+    "nameEn": "Stomp",
+    "name": "짓밟기",
+    "type": "normal",
+    "power": 55,
+    "energy": 40,
+    "dpe": 1.38
+  },
+  {
+    "id": "stone_edge",
+    "nameEn": "Stone Edge",
+    "name": "스톤에지",
+    "type": "rock",
+    "power": 100,
+    "energy": 55,
+    "dpe": 1.82
+  },
+  {
+    "id": "submission",
+    "nameEn": "Submission",
+    "name": "지옥의바퀴",
+    "type": "fighting",
+    "power": 60,
+    "energy": 50,
+    "dpe": 1.2
+  },
+  {
+    "id": "super_power",
+    "nameEn": "Superpower",
+    "name": "엄청난힘",
+    "type": "fighting",
+    "power": 85,
+    "energy": 40,
+    "dpe": 2.12,
+    "buffs": [-1, -1],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "surf",
+    "nameEn": "Surf",
+    "name": "파도타기",
+    "type": "water",
+    "power": 65,
+    "energy": 40,
+    "dpe": 1.62
+  },
+  {
+    "id": "swift",
+    "nameEn": "Swift",
+    "name": "스피드스타",
+    "type": "normal",
+    "power": 60,
+    "energy": 55,
+    "dpe": 1.09
+  },
+  {
+    "id": "synchronoise",
+    "nameEn": "Synchronoise",
+    "name": "싱크로노이즈",
+    "type": "psychic",
+    "power": 80,
+    "energy": 50,
+    "dpe": 1.6
+  },
+  {
+    "id": "techno_blast_normal",
+    "nameEn": "Techno Blast (Normal)",
+    "name": "테크노버스터",
+    "type": "normal",
+    "power": 120,
+    "energy": 55,
+    "dpe": 2.18
+  },
+  {
+    "id": "techno_blast_burn",
+    "nameEn": "Techno Blast (Burn)",
+    "name": "테크노버스터",
+    "type": "fire",
+    "power": 120,
+    "energy": 55,
+    "dpe": 2.18
+  },
+  {
+    "id": "techno_blast_chill",
+    "nameEn": "Techno Blast (Chill)",
+    "name": "테크노버스터",
+    "type": "ice",
+    "power": 120,
+    "energy": 55,
+    "dpe": 2.18
+  },
+  {
+    "id": "techno_blast_douse",
+    "nameEn": "Techno Blast (Douse)",
+    "name": "테크노버스터",
+    "type": "water",
+    "power": 120,
+    "energy": 55,
+    "dpe": 2.18
+  },
+  {
+    "id": "techno_blast_shock",
+    "nameEn": "Techno Blast (Shock)",
+    "name": "테크노버스터",
+    "type": "electric",
+    "power": 120,
+    "energy": 55,
+    "dpe": 2.18
+  },
+  {
+    "id": "thunder",
+    "nameEn": "Thunder",
+    "name": "번개",
+    "type": "electric",
+    "power": 100,
+    "energy": 60,
+    "dpe": 1.67
+  },
+  {
+    "id": "thunder_punch",
+    "nameEn": "Thunder Punch",
+    "name": "번개펀치",
+    "type": "electric",
+    "power": 55,
+    "energy": 40,
+    "dpe": 1.38
+  },
+  {
+    "id": "thunderbolt",
+    "nameEn": "Thunderbolt",
+    "name": "１０만볼트",
+    "type": "electric",
+    "power": 90,
+    "energy": 55,
+    "dpe": 1.64
+  },
+  {
+    "id": "trailblaze",
+    "nameEn": "Trailblaze",
+    "name": "개척하기",
+    "type": "grass",
+    "power": 65,
+    "energy": 50,
+    "dpe": 1.3,
+    "buffs": [1, 0],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "tri_attack",
+    "nameEn": "Tri Attack",
+    "name": "트라이어택",
+    "type": "normal",
+    "power": 65,
+    "energy": 50,
+    "dpe": 1.3,
+    "buffs": [-1, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.5
+  },
+  {
+    "id": "triple_axel",
+    "nameEn": "Triple Axel",
+    "name": "트리플악셀",
+    "type": "ice",
+    "power": 60,
+    "energy": 45,
+    "dpe": 1.33,
+    "buffs": [1, 0],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "twister",
+    "nameEn": "Twister",
+    "name": "회오리",
+    "type": "dragon",
+    "power": 45,
+    "energy": 45,
+    "dpe": 1.0
+  },
+  {
+    "id": "v_create",
+    "nameEn": "V-create",
+    "name": "V제너레이트",
+    "type": "fire",
+    "power": 95,
+    "energy": 40,
+    "dpe": 2.38,
+    "buffs": [0, -3],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "vice_grip",
+    "nameEn": "Vise Grip",
+    "name": "찝기",
+    "type": "normal",
+    "power": 40,
+    "energy": 40,
+    "dpe": 1.0
+  },
+  {
+    "id": "water_pulse",
+    "nameEn": "Water Pulse",
+    "name": "물의파동",
+    "type": "water",
+    "power": 70,
+    "energy": 60,
+    "dpe": 1.17
+  },
+  {
+    "id": "weather_ball_fire",
+    "nameEn": "Weather Ball (Fire)",
+    "name": "웨더볼",
+    "type": "fire",
+    "power": 55,
+    "energy": 35,
+    "dpe": 1.57
+  },
+  {
+    "id": "weather_ball_ice",
+    "nameEn": "Weather Ball (Ice)",
+    "name": "웨더볼",
+    "type": "ice",
+    "power": 55,
+    "energy": 35,
+    "dpe": 1.57
+  },
+  {
+    "id": "weather_ball_rock",
+    "nameEn": "Weather Ball (Rock)",
+    "name": "웨더볼",
+    "type": "rock",
+    "power": 55,
+    "energy": 35,
+    "dpe": 1.57
+  },
+  {
+    "id": "weather_ball_normal",
+    "nameEn": "Weather Ball (Normal)",
+    "name": "웨더볼",
+    "type": "normal",
+    "power": 55,
+    "energy": 35,
+    "dpe": 1.57
+  },
+  {
+    "id": "weather_ball_water",
+    "nameEn": "Weather Ball (Water)",
+    "name": "웨더볼",
+    "type": "water",
+    "power": 55,
+    "energy": 35,
+    "dpe": 1.57
+  },
+  {
+    "id": "wildbolt_storm",
+    "nameEn": "Wildbolt Storm",
+    "name": "번개폭풍",
+    "type": "electric",
+    "power": 60,
+    "energy": 45,
+    "dpe": 1.33,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "wild_charge",
+    "nameEn": "Wild Charge",
+    "name": "와일드볼트",
+    "type": "electric",
+    "power": 100,
+    "energy": 45,
+    "dpe": 2.22,
+    "buffs": [0, -2],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "wrap",
+    "nameEn": "Wrap",
+    "name": "김밥말이",
+    "type": "normal",
+    "power": 60,
+    "energy": 45,
+    "dpe": 1.33
+  },
+  {
+    "id": "x_scissor",
+    "nameEn": "X-Scissor",
+    "name": "시저크로스",
+    "type": "bug",
+    "power": 65,
+    "energy": 40,
+    "dpe": 1.62
+  },
+  {
+    "id": "zap_cannon",
+    "nameEn": "Zap Cannon",
+    "name": "전자포",
+    "type": "electric",
+    "power": 150,
+    "energy": 80,
+    "dpe": 1.88,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.66
+  }
 ]
