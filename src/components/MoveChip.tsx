@@ -54,7 +54,7 @@ export const MoveChip: FC<MoveChipProps> = ({
           style={{ ...style, backgroundColor: POKEMON_TYPE_COLORS[data.type] }}
           {...others}
         >
-          <span className="text-xs font-medium overflow-hidden text-ellipsis whitespace-nowrap">
+          <span className="static-text text-xs font-medium">
             {locale === 'ko' ? data.name : data.nameEn}
           </span>
         </div>
