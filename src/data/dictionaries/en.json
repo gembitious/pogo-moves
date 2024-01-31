@@ -5,7 +5,9 @@
     "chargedMove": "Charged Move",
     "type": "Type",
     "typeChart": "Type Chart",
-    "allType": "All Type"
+    "allType": "All Type",
+    "attacker": "Attacker",
+    "defender": "Defender"
   },
   "type": {
     "normal": "Normal",

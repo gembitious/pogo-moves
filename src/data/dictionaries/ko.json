@@ -5,7 +5,9 @@
     "chargedMove": "스페셜 기술",
     "type": "타입",
     "typeChart": "타입 상성표",
-    "allType": "타입 전체"
+    "allType": "타입 전체",
+    "attacker": "공격하는 타입",
+    "defender": "방어하는 타입"
   },
   "type": {
     "normal": "노말",

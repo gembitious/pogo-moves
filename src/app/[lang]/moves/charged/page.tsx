@@ -218,7 +218,7 @@ const ChargedMovesPage: NextPage<{ params: NextPageStaticParams }> = ({ params: 
                 })
               }
             >
-              <Image src={`/images/types/${type}.png`} alt={type} width={16} height={16} />
+              <Image src={`/images/types/${type}.png`} alt={type} width={24} height={24} />
               {dictionary.type[type]}
             </TypeButton>
           )

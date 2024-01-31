@@ -128,7 +128,7 @@ const FastMovesPage: NextPage<{ params: { lang: Locale } }> = ({ params: { lang 
                 })
               }
             >
-              <Image src={`/images/types/${type}.png`} alt={type} width={16} height={16} />
+              <Image src={`/images/types/${type}.png`} alt={type} width={24} height={24} />
               {dictionary.type[type]}
             </TypeButton>
           )

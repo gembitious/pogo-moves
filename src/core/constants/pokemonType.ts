@@ -43,11 +43,12 @@ export const POKEMON_TYPE_TEXT = {
 }
 
 export const TYPE_EFFECTIVENESS = {
-  doublyEffective: 2.56,
-  superEffective: 1.6,
-  netural: 1,
-  resisted: 0.625,
-  doublyResisted: 0.390625,
+  doublyEffective: 'doubly_effective', // 2.56
+  superEffective: 'super_effective', // 1.6
+  netural: 'netural', // 1
+  resisted: 'resisted', // 0.625
+  doublyResisted: 'doubly_resisted', // 0.390625
+  triplyResisted: 'triply_resisted', // 0.244140625
 }
 
 export const POKEMON_TYPE_EFFECTIVENESS: {
