@@ -2106,6 +2106,19 @@
     "dps": 28.0
   },
   {
+    "id": "springtide_storm",
+    "nameEn": "Springtide Storm (Speculative)",
+    "name": "봄의폭풍",
+    "type": "fairy",
+    "power": 120,
+    "energy": 100,
+    "dpe": 1.2,
+    "duration": 2.0,
+    "damageWindowStart": 1.6,
+    "damageWindowEnd": 2.0,
+    "dps": 60.0
+  },
+  {
     "id": "stomp",
     "nameEn": "Stomp",
     "name": "짓밟기",

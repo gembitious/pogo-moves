@@ -3585,7 +3585,8 @@
     "nameEn": "Blissey",
     "name": "해피너스",
     "fastMoves": ["pound", "zen_headbutt"],
-    "chargedMoves": ["dazzling_gleam", "hyper_beam", "psychic"],
+    "chargedMoves": ["dazzling_gleam", "hyper_beam", "psychic", "wild_charge"],
+    "eliteMoves": ["wild_charge"],
     "released": true
   },
   {
@@ -6498,6 +6499,17 @@
     "released": true
   },
   {
+    "dex": 483,
+    "id": "dialga_origin",
+    "types": ["steel", "dragon"],
+    "nameEn": "Dialga (Origin)",
+    "name": "Dialga (Origin)",
+    "fastMoves": ["dragon_breath", "metal_claw"],
+    "chargedMoves": ["draco_meteor", "iron_head", "thunder", "roar_of_time"],
+    "eliteMoves": ["roar_of_time"],
+    "released": true
+  },
+  {
     "dex": 484,
     "id": "palkia",
     "types": ["water", "dragon"],
@@ -6505,6 +6517,17 @@
     "name": "펄기아",
     "fastMoves": ["dragon_breath", "dragon_tail"],
     "chargedMoves": ["draco_meteor", "fire_blast", "hydro_pump", "aqua_tail"],
+    "released": true
+  },
+  {
+    "dex": 484,
+    "id": "palkia_origin",
+    "types": ["water", "dragon"],
+    "nameEn": "Palkia (Origin)",
+    "name": "Palkia (Origin)",
+    "fastMoves": ["dragon_breath", "dragon_tail"],
+    "chargedMoves": ["draco_meteor", "fire_blast", "hydro_pump", "aqua_tail", "spacial_rend"],
+    "eliteMoves": ["spacial_rend"],
     "released": true
   },
   {
@@ -9654,7 +9677,7 @@
     "name": "모크나이퍼 (히스이)",
     "fastMoves": ["magical_leaf", "psycho_cut"],
     "chargedMoves": ["aura_sphere", "energy_ball", "aerial_ace"],
-    "released": false
+    "released": true
   },
   {
     "dex": 725,
@@ -10485,7 +10508,7 @@
     "name": "할비롱",
     "fastMoves": ["dragon_breath", "extrasensory"],
     "chargedMoves": ["outrage", "dragon_pulse", "fly"],
-    "released": false
+    "released": true
   },
   {
     "dex": 781,
@@ -11953,6 +11976,26 @@
     "released": true
   },
   {
+    "dex": 902,
+    "id": "basculegion_female",
+    "types": ["water", "ghost"],
+    "nameEn": "Basculegion (Female)",
+    "name": "Basculegion (Female)",
+    "fastMoves": ["splash"],
+    "chargedMoves": ["struggle"],
+    "released": false
+  },
+  {
+    "dex": 902,
+    "id": "basculegion_male",
+    "types": ["water", "ghost"],
+    "nameEn": "Basculegion (Male)",
+    "name": "Basculegion (Male)",
+    "fastMoves": ["splash"],
+    "chargedMoves": ["struggle"],
+    "released": false
+  },
+  {
     "dex": 903,
     "id": "sneasler",
     "types": ["fighting", "poison"],
@@ -11971,6 +12014,26 @@
     "fastMoves": ["poison_sting", "poison_jab"],
     "chargedMoves": ["aqua_tail", "ice_beam", "sludge_bomb", "dark_pulse", "shadow_ball"],
     "released": true
+  },
+  {
+    "dex": 905,
+    "id": "enamorus_incarnate",
+    "types": ["fairy", "flying"],
+    "nameEn": "Enamorus (Incarnate)",
+    "name": "Enamorus (Incarnate)",
+    "fastMoves": ["astonish", "zen_headbutt", "fairy_wind"],
+    "chargedMoves": ["dazzling_gleam", "fly", "grass_knot"],
+    "released": true
+  },
+  {
+    "dex": 905,
+    "id": "enamorus_therian",
+    "types": ["fairy", "flying"],
+    "nameEn": "Enamorus (Therian)",
+    "name": "Enamorus (Therian)",
+    "fastMoves": ["astonish", "zen_headbutt", "fairy_wind"],
+    "chargedMoves": ["dazzling_gleam", "fly", "grass_knot"],
+    "released": false
   },
   {
     "dex": 906,
