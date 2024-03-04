@@ -605,6 +605,17 @@
     "ept": 3.0
   },
   {
+    "id": "metal_sound",
+    "nameEn": "Metal Sound",
+    "name": "금속음",
+    "type": "steel",
+    "power": 3,
+    "turn": 2,
+    "energyGain": 8,
+    "dpt": 1.5,
+    "ept": 4.0
+  },
+  {
     "id": "mud_shot",
     "nameEn": "Mud Shot",
     "name": "머드샷",
@@ -704,6 +715,17 @@
     "ept": 4.5
   },
   {
+    "id": "psywave",
+    "nameEn": "Psywave",
+    "name": "사이코웨이브",
+    "type": "psychic",
+    "power": 3,
+    "turn": 1,
+    "energyGain": 2,
+    "dpt": 3.0,
+    "ept": 2.0
+  },
+  {
     "id": "quick_attack",
     "nameEn": "Quick Attack",
     "name": "전광석화",
@@ -757,6 +779,17 @@
     "energyGain": 13,
     "dpt": 1.67,
     "ept": 4.33
+  },
+  {
+    "id": "sand_attack",
+    "nameEn": "Sand Attack",
+    "name": "모래뿌리기",
+    "type": "ground",
+    "power": 2,
+    "turn": 1,
+    "energyGain": 4,
+    "dpt": 2.0,
+    "ept": 4.0
   },
   {
     "id": "scratch",

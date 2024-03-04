@@ -76,9 +76,9 @@
     "nameEn": "Aqua Tail",
     "name": "아쿠아테일",
     "type": "water",
-    "power": 50,
+    "power": 55,
     "energy": 35,
-    "dpe": 1.43
+    "dpe": 1.57
   },
   {
     "id": "aura_sphere",
@@ -194,8 +194,11 @@
     "name": "깨트리기",
     "type": "fighting",
     "power": 40,
-    "energy": 35,
-    "dpe": 1.14
+    "energy": 40,
+    "dpe": 1.0,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": 1.0
   },
   {
     "id": "brutal_swing",
@@ -277,9 +280,9 @@
     "nameEn": "Cross Chop",
     "name": "크로스촙",
     "type": "fighting",
-    "power": 50,
+    "power": 55,
     "energy": 35,
-    "dpe": 1.43
+    "dpe": 1.57
   },
   {
     "id": "cross_poison",
@@ -304,6 +307,15 @@
     "buffs": [0, -1],
     "buffTarget": "opponent",
     "buffApplyChance": 0.3
+  },
+  {
+    "id": "darkest_lariat",
+    "nameEn": "Darkest Lariat",
+    "name": "DD래리어트",
+    "type": "dark",
+    "power": 120,
+    "energy": 60,
+    "dpe": 2.0
   },
   {
     "id": "dark_pulse",
@@ -1062,6 +1074,18 @@
     "buffApplyChance": 1.0
   },
   {
+    "id": "natures_madness",
+    "nameEn": "Nature's Madness",
+    "name": "자연의분노",
+    "type": "fairy",
+    "power": 80,
+    "energy": 50,
+    "dpe": 1.6,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": 1.0
+  },
+  {
     "id": "night_shade",
     "nameEn": "Night Shade",
     "name": "나이트헤드",
@@ -1489,9 +1513,9 @@
     "nameEn": "Shadow Bone",
     "name": "섀도본",
     "type": "ghost",
-    "power": 75,
+    "power": 80,
     "energy": 45,
-    "dpe": 1.67,
+    "dpe": 1.78,
     "buffs": [0, -1],
     "buffTarget": "opponent",
     "buffApplyChance": 0.2
@@ -1846,9 +1870,9 @@
     "nameEn": "Water Pulse",
     "name": "물의파동",
     "type": "water",
-    "power": 70,
-    "energy": 60,
-    "dpe": 1.17
+    "power": 80,
+    "energy": 55,
+    "dpe": 1.45
   },
   {
     "id": "weather_ball_fire",
