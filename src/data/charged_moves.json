@@ -1650,18 +1650,6 @@
     "buffApplyChance": 0.33
   },
   {
-    "id": "springtide_storm",
-    "nameEn": "Springtide Storm (Speculative)",
-    "name": "봄의폭풍",
-    "type": "fairy",
-    "power": 60,
-    "energy": 45,
-    "dpe": 1.33,
-    "buffs": [-1, 0],
-    "buffTarget": "opponent",
-    "buffApplyChance": 1.0
-  },
-  {
     "id": "stomp",
     "nameEn": "Stomp",
     "name": "짓밟기",
