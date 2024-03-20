@@ -2405,6 +2405,19 @@
     "dps": 18.42
   },
   {
+    "id": "volt_tackle",
+    "nameEn": "Volt Tackle",
+    "name": "볼트태클",
+    "type": "electric",
+    "power": 90,
+    "energy": 33,
+    "dpe": 2.73,
+    "duration": 3.4,
+    "damageWindowStart": 2.0,
+    "damageWindowEnd": 2.5,
+    "dps": 26.47
+  },
+  {
     "id": "water_pulse",
     "nameEn": "Water Pulse",
     "name": "물의파동",

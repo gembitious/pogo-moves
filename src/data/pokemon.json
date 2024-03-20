@@ -353,6 +353,17 @@
     "released": true
   },
   {
+    "dex": 25,
+    "id": "pikachu_horizons",
+    "types": ["electric", "none"],
+    "nameEn": "Pikachu (Horizons)",
+    "name": "피카츄 (horizons)",
+    "fastMoves": ["thunder_shock", "quick_attack"],
+    "chargedMoves": ["discharge", "thunderbolt", "wild_charge", "volt_tackle"],
+    "eliteMoves": ["volt_tackle"],
+    "released": true
+  },
+  {
     "dex": 26,
     "id": "raichu",
     "types": ["electric", "none"],
@@ -6406,7 +6417,7 @@
     "name": "로토무",
     "fastMoves": ["astonish", "thunder_shock"],
     "chargedMoves": ["ominous_wind", "thunder", "thunderbolt"],
-    "released": false
+    "released": true
   },
   {
     "dex": 479,
@@ -9704,7 +9715,15 @@
     "nameEn": "Incineroar",
     "name": "어흥염",
     "fastMoves": ["snarl", "fire_fang", "double_kick"],
-    "chargedMoves": ["fire_blast", "flame_charge", "dark_pulse", "blaze_kick"],
+    "chargedMoves": [
+      "fire_blast",
+      "flame_charge",
+      "dark_pulse",
+      "blaze_kick",
+      "blast_burn",
+      "darkest_lariat"
+    ],
+    "eliteMoves": ["blast_burn"],
     "released": true
   },
   {
@@ -12402,7 +12421,7 @@
     "name": "카르본",
     "fastMoves": ["ember", "incinerate"],
     "chargedMoves": ["flame_charge", "heat_wave", "flamethrower"],
-    "released": false
+    "released": true
   },
   {
     "dex": 936,
@@ -12412,7 +12431,7 @@
     "name": "카디나르마",
     "fastMoves": ["ember", "incinerate"],
     "chargedMoves": ["flame_charge", "heat_wave", "flamethrower", "psyshock"],
-    "released": false
+    "released": true
   },
   {
     "dex": 937,
@@ -12422,7 +12441,7 @@
     "name": "파라블레이즈",
     "fastMoves": ["ember", "incinerate"],
     "chargedMoves": ["flame_charge", "heat_wave", "flamethrower", "shadow_ball"],
-    "released": false
+    "released": true
   },
   {
     "dex": 938,

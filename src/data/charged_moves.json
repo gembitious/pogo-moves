@@ -1854,6 +1854,18 @@
     "dpe": 1.0
   },
   {
+    "id": "volt_tackle",
+    "nameEn": "Volt Tackle",
+    "name": "볼트태클",
+    "type": "electric",
+    "power": 90,
+    "energy": 50,
+    "dpe": 1.8,
+    "buffs": [0, -1],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
     "id": "water_pulse",
     "nameEn": "Water Pulse",
     "name": "물의파동",
