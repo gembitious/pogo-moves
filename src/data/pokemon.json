@@ -303,6 +303,17 @@
   },
   {
     "dex": 25,
+    "id": "pikachu_horizons",
+    "types": ["electric", "none"],
+    "nameEn": "Pikachu (Horizons)",
+    "name": "피카츄 (horizons)",
+    "fastMoves": ["thunder_shock", "quick_attack"],
+    "chargedMoves": ["discharge", "thunderbolt", "wild_charge", "volt_tackle"],
+    "eliteMoves": ["volt_tackle"],
+    "released": true
+  },
+  {
+    "dex": 25,
     "id": "pikachu_kariyushi",
     "types": ["electric", "none"],
     "nameEn": "Pikachu (Kariyushi)",
@@ -350,17 +361,6 @@
     "fastMoves": ["present", "quick_attack", "thunder_shock"],
     "chargedMoves": ["discharge", "surf", "thunder", "thunderbolt", "wild_charge", "grass_knot"],
     "eliteMoves": ["present", "surf", "thunder"],
-    "released": true
-  },
-  {
-    "dex": 25,
-    "id": "pikachu_horizons",
-    "types": ["electric", "none"],
-    "nameEn": "Pikachu (Horizons)",
-    "name": "피카츄 (horizons)",
-    "fastMoves": ["thunder_shock", "quick_attack"],
-    "chargedMoves": ["discharge", "thunderbolt", "wild_charge", "volt_tackle"],
-    "eliteMoves": ["volt_tackle"],
     "released": true
   },
   {
@@ -1025,8 +1025,9 @@
     "types": ["grass", "poison"],
     "nameEn": "Victreebel",
     "name": "우츠보트",
-    "fastMoves": ["acid", "razor_leaf"],
+    "fastMoves": ["acid", "razor_leaf", "magical_leaf"],
     "chargedMoves": ["leaf_blade", "sludge_bomb", "solar_beam", "acid_spray", "leaf_tornado"],
+    "eliteMoves": ["magical_leaf"],
     "released": true
   },
   {
@@ -8690,7 +8691,6 @@
     "name": "케르디오 (ordinary)",
     "fastMoves": ["poison_jab", "low_kick"],
     "chargedMoves": ["aqua_jet", "close_combat", "hydro_pump", "x_scissor", "sacred_sword"],
-    "eliteMoves": ["sacred_sword"],
     "released": true
   },
   {
@@ -10585,7 +10585,8 @@
     "nameEn": "Tapu Lele",
     "name": "카푸나비나",
     "fastMoves": ["confusion", "astonish"],
-    "chargedMoves": ["psyshock", "moonblast", "focus_blast", "future_sight"],
+    "chargedMoves": ["psyshock", "moonblast", "focus_blast", "future_sight", "natures_madness"],
+    "eliteMoves": ["natures_madness"],
     "released": true
   },
   {
@@ -10595,7 +10596,8 @@
     "nameEn": "Tapu Bulu",
     "name": "카푸브루루",
     "fastMoves": ["bullet_seed", "rock_smash"],
-    "chargedMoves": ["grass_knot", "dazzling_gleam", "megahorn", "solar_beam"],
+    "chargedMoves": ["grass_knot", "dazzling_gleam", "megahorn", "solar_beam", "natures_madness"],
+    "eliteMoves": ["natures_madness"],
     "released": true
   },
   {
@@ -10742,8 +10744,8 @@
     "types": ["psychic", "none"],
     "nameEn": "Necrozma",
     "name": "네크로즈마",
-    "fastMoves": ["struggle"],
-    "chargedMoves": ["struggle"],
+    "fastMoves": ["confusion", "psycho_cut"],
+    "chargedMoves": ["rock_blast", "night_slash", "power_gem"],
     "released": false
   },
   {
@@ -10752,8 +10754,8 @@
     "types": ["psychic", "ghost"],
     "nameEn": "Necrozma (Dawn Wings)",
     "name": "네크로즈마 (dawn wings)",
-    "fastMoves": ["struggle"],
-    "chargedMoves": ["struggle"],
+    "fastMoves": ["confusion", "psycho_cut"],
+    "chargedMoves": ["rock_blast", "night_slash", "power_gem"],
     "released": false
   },
   {
@@ -10762,8 +10764,8 @@
     "types": ["psychic", "steel"],
     "nameEn": "Necrozma (Dusk Mane)",
     "name": "네크로즈마 (dusk mane)",
-    "fastMoves": ["struggle"],
-    "chargedMoves": ["struggle"],
+    "fastMoves": ["confusion", "psycho_cut"],
+    "chargedMoves": ["rock_blast", "night_slash", "power_gem"],
     "released": false
   },
   {
@@ -10772,8 +10774,8 @@
     "types": ["psychic", "dragon"],
     "nameEn": "Necrozma (Ultra)",
     "name": "네크로즈마 (ultra)",
-    "fastMoves": ["struggle"],
-    "chargedMoves": ["struggle"],
+    "fastMoves": ["confusion", "psycho_cut"],
+    "chargedMoves": ["rock_blast", "night_slash", "power_gem"],
     "released": false
   },
   {
@@ -12671,7 +12673,7 @@
     "name": "바다그다",
     "fastMoves": ["water_gun", "mud_slap"],
     "chargedMoves": ["liquidation", "dig", "surf"],
-    "released": false
+    "released": true
   },
   {
     "dex": 961,
@@ -12681,7 +12683,7 @@
     "name": "바닥트리오",
     "fastMoves": ["water_gun", "mud_slap"],
     "chargedMoves": ["liquidation", "dig", "surf"],
-    "released": false
+    "released": true
   },
   {
     "dex": 962,

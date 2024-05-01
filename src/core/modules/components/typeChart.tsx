@@ -8,7 +8,7 @@ import { FC } from 'react'
 
 const BaseButton = styled(Button)`
   display: flex;
-  gap: 2px;
+  gap: 4px;
   width: 96px;
   height: 24px;
   padding: 4px 8px;
@@ -21,6 +21,16 @@ const BaseButton = styled(Button)`
     padding: 4px 8px;
     border-radius: 16px;
     font-size: 14px;
+  }
+`
+
+const IconWrapper = styled('div')`
+  position: relative;
+  width: 24px;
+  height: 24px;
+  @media (min-width: 768px) {
+    width: 32px;
+    height: 32px;
   }
 `
 
@@ -52,11 +62,20 @@ export const TypeLabel: FC<TypeLabelProps> = ({
 }
 
 export const TypeIcon: FC<{ type: PokemonType; size?: number }> = ({ type, size = 24 }) => (
-  <Image
-    src={`/images/types/${type}.png`}
-    className="cursor-pointer"
-    alt={type}
-    width={size}
-    height={size}
-  />
+  <IconWrapper>
+    <Image src={`/images/types/${type}.png`} className="cursor-pointer" alt={type} fill />
+  </IconWrapper>
 )
+
+export const TypeEffectIcon: FC<{ effect: string }> = ({ effect }) => {
+  return (
+    <IconWrapper>
+      <Image
+        src={`/images/types/type_${effect}.png`}
+        className="cursor-pointer"
+        alt={effect}
+        fill
+      />
+    </IconWrapper>
+  )
+}
