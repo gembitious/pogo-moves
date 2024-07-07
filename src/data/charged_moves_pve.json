@@ -1001,6 +1001,19 @@
     "dps": 68.75
   },
   {
+    "id": "high_jump_kick",
+    "nameEn": "High Jump Kick",
+    "name": "무릎차기",
+    "type": "fighting",
+    "power": 90,
+    "energy": 100,
+    "dpe": 0.9,
+    "duration": 1.5,
+    "damageWindowStart": 0.45,
+    "damageWindowEnd": 0.8,
+    "dps": 60.0
+  },
+  {
     "id": "horn_attack",
     "nameEn": "Horn Attack",
     "name": "뿔찌르기",
@@ -1363,6 +1376,19 @@
     "damageWindowStart": 2.2,
     "damageWindowEnd": 3.7,
     "dps": 33.33
+  },
+  {
+    "id": "moongeist_beam",
+    "nameEn": "Moongeist Beam",
+    "name": "섀도레이",
+    "type": "ghost",
+    "power": 230,
+    "energy": 100,
+    "dpe": 2.3,
+    "duration": 3.1,
+    "damageWindowStart": 2.3,
+    "damageWindowEnd": 3.1,
+    "dps": 74.19
   },
   {
     "id": "mud_bomb",
@@ -2169,6 +2195,19 @@
     "damageWindowStart": 1.8,
     "damageWindowEnd": 2.0,
     "dps": 27.27
+  },
+  {
+    "id": "sunsteel_strike",
+    "nameEn": "Sunsteel Strike",
+    "name": "메테오드라이브",
+    "type": "steel",
+    "power": 230,
+    "energy": 100,
+    "dpe": 2.3,
+    "duration": 3.1,
+    "damageWindowStart": 2.3,
+    "damageWindowEnd": 3.1,
+    "dps": 74.19
   },
   {
     "id": "super_power",

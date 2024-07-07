@@ -759,6 +759,18 @@
     "dpe": 1.67
   },
   {
+    "id": "high_jump_kick",
+    "nameEn": "High Jump Kick",
+    "name": "무릎차기",
+    "type": "fighting",
+    "power": 110,
+    "energy": 55,
+    "dpe": 2.0,
+    "buffs": [0, -4],
+    "buffTarget": "self",
+    "buffApplyChance": 0.1
+  },
+  {
     "id": "horn_attack",
     "nameEn": "Horn Attack",
     "name": "뿔찌르기",
@@ -1039,6 +1051,15 @@
     "buffs": [-1, 0],
     "buffTarget": "opponent",
     "buffApplyChance": 0.1
+  },
+  {
+    "id": "moongeist_beam",
+    "nameEn": "Moongeist Beam",
+    "name": "섀도레이",
+    "type": "ghost",
+    "power": 135,
+    "energy": 65,
+    "dpe": 2.08
   },
   {
     "id": "mud_bomb",
@@ -1464,7 +1485,7 @@
     "dpe": 1.7,
     "buffs": [-1, 0],
     "buffTarget": "opponent",
-    "buffApplyChance": 0.5
+    "buffApplyChance": 0.3
   },
   {
     "id": "scorching_sands",
@@ -1483,9 +1504,9 @@
     "nameEn": "Seed Bomb",
     "name": "씨폭탄",
     "type": "grass",
-    "power": 60,
+    "power": 65,
     "energy": 45,
-    "dpe": 1.33
+    "dpe": 1.44
   },
   {
     "id": "seed_flare",
@@ -1677,6 +1698,15 @@
     "dpe": 1.2
   },
   {
+    "id": "sunsteel_strike",
+    "nameEn": "Sunsteel Strike",
+    "name": "메테오드라이브",
+    "type": "steel",
+    "power": 135,
+    "energy": 65,
+    "dpe": 2.08
+  },
+  {
     "id": "super_power",
     "nameEn": "Superpower",
     "name": "엄청난힘",
@@ -1702,9 +1732,9 @@
     "nameEn": "Swift",
     "name": "스피드스타",
     "type": "normal",
-    "power": 60,
-    "energy": 55,
-    "dpe": 1.09
+    "power": 55,
+    "energy": 40,
+    "dpe": 1.38
   },
   {
     "id": "synchronoise",

@@ -840,10 +840,10 @@
     "nameEn": "Spark",
     "name": "스파크",
     "type": "electric",
-    "power": 6,
+    "power": 5,
     "turn": 2,
     "energyGain": 7,
-    "dpt": 3.0,
+    "dpt": 2.5,
     "ept": 3.5
   },
   {
