@@ -9,30 +9,30 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/cache": "^11.11.0",
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.14.7",
-    "@mui/material": "^5.14.7",
-    "@mui/material-nextjs": "^5.15.0",
+    "@emotion/cache": "^11.13.0",
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^5.16.4",
+    "@mui/material": "^5.16.4",
+    "@mui/material-nextjs": "^5.16.4",
     "@vercel/analytics": "^1.1.1",
     "@vercel/speed-insights": "^1.0.3",
-    "autoprefixer": "10.4.15",
-    "next": "^14.0.4",
-    "postcss": "8.4.28",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "5.1.6"
+    "autoprefixer": "^10.4.19",
+    "next": "^14.2.5",
+    "postcss": "^8.4.28",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.5.3"
   },
   "devDependencies": {
-    "@types/node": "20.5.1",
-    "@types/react": "18.2.20",
-    "@types/react-dom": "18.2.7",
+    "@types/node": "^20.5.1",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.5.0",
     "@typescript-eslint/parser": "^6.5.0",
-    "eslint": "8.47.0",
+    "eslint": "^8.47.0",
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-next": "13.4.19",
+    "eslint-config-next": "^13.4.19",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-jsx-a11y": "^6.7.1",
@@ -45,6 +45,6 @@
     "stylelint-config-standard": "^34.0.0",
     "stylelint-order": "^6.0.3",
     "stylelint-scss": "^5.1.0",
-    "tailwindcss": "3.3.3"
+    "tailwindcss": "^3.3.3"
   }
 }
