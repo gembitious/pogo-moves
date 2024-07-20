@@ -36,3 +36,6 @@ next-env.d.ts
 
 # data utils
 /utils
+
+# JetBrains IDE
+.idea

@@ -6457,7 +6457,7 @@
     "name": "로토무 (heat)",
     "fastMoves": ["astonish", "thunder_shock"],
     "chargedMoves": ["overheat", "thunder", "thunderbolt"],
-    "released": false
+    "released": true
   },
   {
     "dex": 479,
@@ -8186,8 +8186,9 @@
     "types": ["electric", "none"],
     "nameEn": "Eelektross",
     "name": "저리더프",
-    "fastMoves": ["acid", "spark"],
+    "fastMoves": ["acid", "spark", "volt_switch"],
     "chargedMoves": ["crunch", "thunderbolt", "acid_spray", "dragon_claw", "liquidation"],
+    "eliteMoves": ["volt_switch"],
     "released": true
   },
   {
@@ -12289,7 +12290,7 @@
     "name": "두리쥐",
     "fastMoves": ["take_down", "mud_shot", "bullet_seed"],
     "chargedMoves": ["swift", "play_rough", "crunch"],
-    "released": false
+    "released": true
   },
   {
     "dex": 925,
@@ -12299,7 +12300,7 @@
     "name": "파밀리쥐",
     "fastMoves": ["take_down", "mud_shot", "bullet_seed"],
     "chargedMoves": ["swift", "play_rough", "crunch"],
-    "released": false
+    "released": true
   },
   {
     "dex": 925,
