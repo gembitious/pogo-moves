@@ -2145,6 +2145,19 @@
     "dps": 64.0
   },
   {
+    "id": "sparkling_aria",
+    "nameEn": "Sparkling Aria",
+    "name": "물거품아리아",
+    "type": "water",
+    "power": 85,
+    "energy": 33,
+    "dpe": 2.58,
+    "duration": 3.0,
+    "damageWindowStart": 1.7,
+    "damageWindowEnd": 2.9,
+    "dps": 28.33
+  },
+  {
     "id": "spirit_shackle",
     "nameEn": "Spirit Shackle",
     "name": "그림자꿰매기",

@@ -26,10 +26,10 @@
     "nameEn": "Astonish",
     "name": "놀래키기",
     "type": "ghost",
-    "power": 9,
+    "power": 12,
     "turn": 3,
     "energyGain": 10,
-    "dpt": 3.0,
+    "dpt": 4.0,
     "ept": 3.33
   },
   {
@@ -127,9 +127,9 @@
     "type": "fighting",
     "power": 8,
     "turn": 2,
-    "energyGain": 7,
+    "energyGain": 6,
     "dpt": 4.0,
-    "ept": 3.5
+    "ept": 3.0
   },
   {
     "id": "cut",
@@ -224,10 +224,10 @@
     "nameEn": "Fairy Wind",
     "name": "요정의바람",
     "type": "fairy",
-    "power": 3,
+    "power": 4,
     "turn": 2,
     "energyGain": 9,
-    "dpt": 1.5,
+    "dpt": 2.0,
     "ept": 4.5
   },
   {
@@ -235,10 +235,21 @@
     "nameEn": "Fire Spin",
     "name": "회오리불꽃",
     "type": "fire",
-    "power": 10,
+    "power": 11,
     "turn": 3,
     "energyGain": 10,
-    "dpt": 3.33,
+    "dpt": 3.67,
+    "ept": 3.33
+  },
+  {
+    "id": "force_palm",
+    "nameEn": "Force Palm",
+    "name": "발경",
+    "type": "fighting",
+    "power": 13,
+    "turn": 3,
+    "energyGain": 10,
+    "dpt": 4.33,
     "ept": 3.33
   },
   {
@@ -534,9 +545,9 @@
     "type": "fighting",
     "power": 5,
     "turn": 2,
-    "energyGain": 8,
+    "energyGain": 9,
     "dpt": 2.5,
-    "ept": 4.0
+    "ept": 4.5
   },
   {
     "id": "leafage",
@@ -600,9 +611,9 @@
     "type": "steel",
     "power": 5,
     "turn": 2,
-    "energyGain": 6,
+    "energyGain": 7,
     "dpt": 2.5,
-    "ept": 3.0
+    "ept": 3.5
   },
   {
     "id": "metal_sound",
@@ -620,22 +631,22 @@
     "nameEn": "Mud Shot",
     "name": "머드샷",
     "type": "ground",
-    "power": 3,
+    "power": 4,
     "turn": 2,
-    "energyGain": 9,
-    "dpt": 1.5,
-    "ept": 4.5
+    "energyGain": 8,
+    "dpt": 2.0,
+    "ept": 4.0
   },
   {
     "id": "mud_slap",
     "nameEn": "Mud-Slap",
     "name": "진흙뿌리기",
     "type": "ground",
-    "power": 11,
+    "power": 12,
     "turn": 3,
-    "energyGain": 9,
-    "dpt": 3.67,
-    "ept": 3.0
+    "energyGain": 10,
+    "dpt": 4.0,
+    "ept": 3.33
   },
   {
     "id": "peck",
@@ -664,10 +675,10 @@
     "nameEn": "Poison Sting",
     "name": "독침",
     "type": "poison",
-    "power": 3,
+    "power": 4,
     "turn": 2,
     "energyGain": 9,
-    "dpt": 1.5,
+    "dpt": 2.0,
     "ept": 4.5
   },
   {
@@ -721,9 +732,9 @@
     "type": "psychic",
     "power": 3,
     "turn": 1,
-    "energyGain": 2,
+    "energyGain": 4,
     "dpt": 3.0,
-    "ept": 2.0
+    "ept": 4.0
   },
   {
     "id": "quick_attack",
@@ -741,10 +752,10 @@
     "nameEn": "Razor Leaf",
     "name": "잎날가르기",
     "type": "grass",
-    "power": 10,
+    "power": 9,
     "turn": 2,
     "energyGain": 4,
-    "dpt": 5.0,
+    "dpt": 4.5,
     "ept": 2.0
   },
   {
@@ -774,10 +785,10 @@
     "nameEn": "Rollout",
     "name": "구르기",
     "type": "rock",
-    "power": 5,
+    "power": 8,
     "turn": 3,
     "energyGain": 13,
-    "dpt": 1.67,
+    "dpt": 2.67,
     "ept": 4.33
   },
   {
@@ -818,10 +829,10 @@
     "nameEn": "Smack Down",
     "name": "떨어뜨리기",
     "type": "rock",
-    "power": 12,
+    "power": 11,
     "turn": 3,
     "energyGain": 8,
-    "dpt": 4.0,
+    "dpt": 3.67,
     "ept": 2.67
   },
   {
@@ -864,9 +875,9 @@
     "type": "steel",
     "power": 7,
     "turn": 2,
-    "energyGain": 7,
+    "energyGain": 6,
     "dpt": 3.5,
-    "ept": 3.5
+    "ept": 3.0
   },
   {
     "id": "struggle_bug",
@@ -884,10 +895,10 @@
     "nameEn": "Sucker Punch",
     "name": "기습",
     "type": "dark",
-    "power": 5,
+    "power": 8,
     "turn": 2,
     "energyGain": 7,
-    "dpt": 2.5,
+    "dpt": 4.0,
     "ept": 3.5
   },
   {
@@ -996,9 +1007,9 @@
     "type": "flying",
     "power": 5,
     "turn": 2,
-    "energyGain": 8,
+    "energyGain": 7,
     "dpt": 2.5,
-    "ept": 4.0
+    "ept": 3.5
   },
   {
     "id": "yawn",

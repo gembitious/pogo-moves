@@ -142,9 +142,9 @@
     "nameEn": "Body Slam",
     "name": "누르기",
     "type": "normal",
-    "power": 60,
+    "power": 50,
     "energy": 35,
-    "dpe": 1.71
+    "dpe": 1.43
   },
   {
     "id": "boomburst",
@@ -160,9 +160,9 @@
     "nameEn": "Bone Club",
     "name": "뼈다귀치기",
     "type": "ground",
-    "power": 40,
+    "power": 55,
     "energy": 35,
-    "dpe": 1.14
+    "dpe": 1.57
   },
   {
     "id": "brave_bird",
@@ -205,9 +205,9 @@
     "nameEn": "Brutal Swing",
     "name": "세차게휘두르기",
     "type": "dark",
-    "power": 65,
-    "energy": 40,
-    "dpe": 1.62
+    "power": 55,
+    "energy": 35,
+    "dpe": 1.57
   },
   {
     "id": "brine",
@@ -340,9 +340,9 @@
     "nameEn": "Dig",
     "name": "구멍파기",
     "type": "ground",
-    "power": 80,
+    "power": 70,
     "energy": 50,
-    "dpe": 1.6
+    "dpe": 1.4
   },
   {
     "id": "disarming_voice",
@@ -670,9 +670,9 @@
     "nameEn": "Future Sight",
     "name": "미래예지",
     "type": "psychic",
-    "power": 120,
+    "power": 110,
     "energy": 65,
-    "dpe": 1.85
+    "dpe": 1.69
   },
   {
     "id": "giga_impact",
@@ -1111,9 +1111,9 @@
     "nameEn": "Night Shade",
     "name": "나이트헤드",
     "type": "ghost",
-    "power": 60,
-    "energy": 55,
-    "dpe": 1.09
+    "power": 80,
+    "energy": 45,
+    "dpe": 1.78
   },
   {
     "id": "night_slash",
@@ -1207,9 +1207,12 @@
     "nameEn": "Parabolic Charge",
     "name": "파라볼라차지",
     "type": "electric",
-    "power": 65,
-    "energy": 55,
-    "dpe": 1.18
+    "power": 70,
+    "energy": 50,
+    "dpe": 1.4,
+    "buffs": [0, 1],
+    "buffTarget": "self",
+    "buffApplyChance": 0.66
   },
   {
     "id": "payback",
@@ -1264,9 +1267,9 @@
     "nameEn": "Power Gem",
     "name": "파워젬",
     "type": "rock",
-    "power": 80,
-    "energy": 60,
-    "dpe": 1.33
+    "power": 85,
+    "energy": 50,
+    "dpe": 1.7
   },
   {
     "id": "power_up_punch",
@@ -1405,9 +1408,9 @@
     "nameEn": "Rock Slide",
     "name": "스톤샤워",
     "type": "rock",
-    "power": 75,
+    "power": 65,
     "energy": 45,
-    "dpe": 1.67
+    "dpe": 1.44
   },
   {
     "id": "rock_tomb",
@@ -1555,9 +1558,9 @@
     "nameEn": "Shadow Punch",
     "name": "섀도펀치",
     "type": "ghost",
-    "power": 40,
+    "power": 55,
     "energy": 35,
-    "dpe": 1.14
+    "dpe": 1.57
   },
   {
     "id": "shadow_sneak",
@@ -1609,9 +1612,9 @@
     "nameEn": "Sky Attack",
     "name": "불새",
     "type": "flying",
-    "power": 75,
-    "energy": 50,
-    "dpe": 1.5
+    "power": 85,
+    "energy": 55,
+    "dpe": 1.55
   },
   {
     "id": "sludge",
@@ -1657,6 +1660,15 @@
     "power": 95,
     "energy": 50,
     "dpe": 1.9
+  },
+  {
+    "id": "sparkling_aria",
+    "nameEn": "Sparkling Aria",
+    "name": "물거품아리아",
+    "type": "water",
+    "power": 80,
+    "energy": 45,
+    "dpe": 1.78
   },
   {
     "id": "spirit_shackle",
@@ -1723,9 +1735,9 @@
     "nameEn": "Surf",
     "name": "파도타기",
     "type": "water",
-    "power": 65,
-    "energy": 40,
-    "dpe": 1.62
+    "power": 75,
+    "energy": 45,
+    "dpe": 1.67
   },
   {
     "id": "swift",
@@ -1733,8 +1745,8 @@
     "name": "스피드스타",
     "type": "normal",
     "power": 55,
-    "energy": 40,
-    "dpe": 1.38
+    "energy": 35,
+    "dpe": 1.57
   },
   {
     "id": "synchronoise",
@@ -1823,8 +1835,8 @@
     "name": "개척하기",
     "type": "grass",
     "power": 65,
-    "energy": 50,
-    "dpe": 1.3,
+    "energy": 45,
+    "dpe": 1.44,
     "buffs": [1, 0],
     "buffTarget": "self",
     "buffApplyChance": 1.0
@@ -2001,6 +2013,6 @@
     "dpe": 1.88,
     "buffs": [-1, 0],
     "buffTarget": "opponent",
-    "buffApplyChance": 0.66
+    "buffApplyChance": 0.33
   }
 ]

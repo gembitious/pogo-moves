@@ -308,6 +308,20 @@
     "eps": 9.09
   },
   {
+    "id": "force_palm",
+    "nameEn": "Force Palm",
+    "name": "발경",
+    "type": "fighting",
+    "power": 9,
+    "energyGain": 14,
+    "duration": 0.9,
+    "damageWindowStart": 0.7,
+    "damageWindowEnd": 0.9,
+    "dps": 10.0,
+    "dpe": 0.64,
+    "eps": 15.56
+  },
+  {
     "id": "frost_breath",
     "nameEn": "Frost Breath",
     "name": "얼음숨결",
