@@ -1155,8 +1155,15 @@
     "nameEn": "Rapidash",
     "name": "날쌩마",
     "fastMoves": ["ember", "fire_spin", "low_kick", "incinerate"],
-    "chargedMoves": ["drill_run", "fire_blast", "heat_wave", "flame_charge", "scorching_sands"],
-    "eliteMoves": ["ember"],
+    "chargedMoves": [
+      "drill_run",
+      "fire_blast",
+      "heat_wave",
+      "flame_charge",
+      "scorching_sands",
+      "wild_charge"
+    ],
+    "eliteMoves": ["ember", "wild_charge"],
     "released": true
   },
   {
@@ -1166,7 +1173,15 @@
     "nameEn": "Rapidash (Galarian)",
     "name": "날쌩마 (가라르)",
     "fastMoves": ["low_kick", "psycho_cut", "fairy_wind"],
-    "chargedMoves": ["play_rough", "psychic", "body_slam", "megahorn", "high_horsepower"],
+    "chargedMoves": [
+      "play_rough",
+      "psychic",
+      "body_slam",
+      "megahorn",
+      "high_horsepower",
+      "wild_charge"
+    ],
+    "eliteMoves": ["wild_charge"],
     "released": true
   },
   {
@@ -5126,7 +5141,7 @@
     "nameEn": "Beldum",
     "name": "메탕",
     "fastMoves": ["take_down"],
-    "chargedMoves": ["struggle"],
+    "chargedMoves": ["iron_head"],
     "released": true
   },
   {
@@ -7432,8 +7447,9 @@
     "types": ["bug", "grass"],
     "nameEn": "Leavanny",
     "name": "모아머",
-    "fastMoves": ["razor_leaf", "bug_bite"],
+    "fastMoves": ["razor_leaf", "bug_bite", "shadow_claw"],
     "chargedMoves": ["leaf_blade", "x_scissor", "silver_wind", "leaf_storm"],
+    "eliteMoves": ["shadow_claw"],
     "released": true
   },
   {
@@ -8375,7 +8391,8 @@
     "nameEn": "Mienfoo",
     "name": "비조푸",
     "fastMoves": ["low_kick", "pound"],
-    "chargedMoves": ["brick_break", "low_sweep", "focus_blast"],
+    "chargedMoves": ["brick_break", "low_sweep", "focus_blast", "high_jump_kick"],
+    "eliteMoves": ["high_jump_kick"],
     "released": true
   },
   {
@@ -9153,10 +9170,20 @@
   },
   {
     "dex": 681,
-    "id": "aegislash",
+    "id": "aegislash_blade",
     "types": ["steel", "ghost"],
-    "nameEn": "Aegislash",
-    "name": "킬가르도",
+    "nameEn": "Aegislash (Blade)",
+    "name": "Aegislash (Blade)",
+    "fastMoves": ["psycho_cut", "fury_cutter"],
+    "chargedMoves": ["flash_cannon", "gyro_ball", "shadow_ball"],
+    "released": false
+  },
+  {
+    "dex": 681,
+    "id": "aegislash_shield",
+    "types": ["steel", "ghost"],
+    "nameEn": "Aegislash (Shield)",
+    "name": "Aegislash (Shield)",
     "fastMoves": ["psycho_cut", "fury_cutter"],
     "chargedMoves": ["flash_cannon", "gyro_ball", "shadow_ball"],
     "released": false
@@ -11469,8 +11496,8 @@
     "nameEn": "Hatenna",
     "name": "몸지브림",
     "fastMoves": ["confusion", "charm"],
-    "chargedMoves": ["psybeam", "psychic", "dazzling_gleam"],
-    "released": false
+    "chargedMoves": ["psyshock", "psychic", "dazzling_gleam"],
+    "released": true
   },
   {
     "dex": 857,
@@ -11479,8 +11506,8 @@
     "nameEn": "Hattrem",
     "name": "손지브림",
     "fastMoves": ["confusion", "charm"],
-    "chargedMoves": ["psybeam", "psychic", "dazzling_gleam"],
-    "released": false
+    "chargedMoves": ["psyshock", "psychic", "dazzling_gleam"],
+    "released": true
   },
   {
     "dex": 858,
@@ -11489,8 +11516,8 @@
     "nameEn": "Hatterene",
     "name": "브리무음",
     "fastMoves": ["confusion", "charm", "psycho_cut"],
-    "chargedMoves": ["psybeam", "psychic", "dazzling_gleam", "power_whip"],
-    "released": false
+    "chargedMoves": ["psyshock", "psychic", "dazzling_gleam", "power_whip"],
+    "released": true
   },
   {
     "dex": 859,
@@ -11715,23 +11742,13 @@
   },
   {
     "dex": 877,
-    "id": "morpeko",
-    "types": ["electric", "dark"],
-    "nameEn": "Morpeko",
-    "name": "모르페코",
-    "fastMoves": ["thunder_shock", "bite"],
-    "chargedMoves": ["crunch", "payback", "thunderbolt", "wild_charge"],
-    "released": false
-  },
-  {
-    "dex": 877,
     "id": "morpeko_full_belly",
     "types": ["electric", "dark"],
     "nameEn": "Morpeko (Full Belly)",
     "name": "모르페코 (full belly)",
-    "fastMoves": ["thunder_shock", "bite"],
-    "chargedMoves": ["crunch", "payback", "thunderbolt", "wild_charge"],
-    "released": false
+    "fastMoves": ["charge_beam", "bite", "thunder_shock"],
+    "chargedMoves": ["seed_bomb", "outrage", "psychic_fangs", "aura_wheel_electric"],
+    "released": true
   },
   {
     "dex": 877,
@@ -11739,8 +11756,8 @@
     "types": ["electric", "dark"],
     "nameEn": "Morpeko (Hangry)",
     "name": "모르페코 (hangry)",
-    "fastMoves": ["thunder_shock", "bite"],
-    "chargedMoves": ["crunch", "payback", "thunderbolt", "wild_charge"],
+    "fastMoves": ["charge_beam", "bite", "thunder_shock"],
+    "chargedMoves": ["seed_bomb", "outrage", "psychic_fangs", "aura_wheel_dark"],
     "released": false
   },
   {

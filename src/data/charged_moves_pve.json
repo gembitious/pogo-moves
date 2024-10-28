@@ -33,10 +33,10 @@
     "power": 55,
     "energy": 33,
     "dpe": 1.67,
-    "duration": 2.4,
-    "damageWindowStart": 1.9,
-    "damageWindowEnd": 2.2,
-    "dps": 22.92
+    "duration": 2.5,
+    "damageWindowStart": 2.0,
+    "damageWindowEnd": 2.3,
+    "dps": 22.0
   },
   {
     "id": "aeroblast",
@@ -46,23 +46,23 @@
     "power": 180,
     "energy": 100,
     "dpe": 1.8,
-    "duration": 3.4,
-    "damageWindowStart": 3.2,
-    "damageWindowEnd": 3.4,
-    "dps": 52.94
+    "duration": 3.5,
+    "damageWindowStart": 3.3,
+    "damageWindowEnd": 3.5,
+    "dps": 51.43
   },
   {
     "id": "air_cutter",
     "nameEn": "Air Cutter",
     "name": "에어커터",
     "type": "flying",
-    "power": 60,
+    "power": 55,
     "energy": 50,
-    "dpe": 1.2,
-    "duration": 2.7,
-    "damageWindowStart": 1.8,
-    "damageWindowEnd": 2.5,
-    "dps": 22.22
+    "dpe": 1.1,
+    "duration": 2.5,
+    "damageWindowStart": 1.6,
+    "damageWindowEnd": 2.3,
+    "dps": 22.0
   },
   {
     "id": "ancient_power",
@@ -85,10 +85,10 @@
     "power": 45,
     "energy": 33,
     "dpe": 1.36,
-    "duration": 2.6,
-    "damageWindowStart": 1.7,
-    "damageWindowEnd": 2.1,
-    "dps": 17.31
+    "duration": 2.5,
+    "damageWindowStart": 1.6,
+    "damageWindowEnd": 2.0,
+    "dps": 18.0
   },
   {
     "id": "aqua_tail",
@@ -98,23 +98,49 @@
     "power": 50,
     "energy": 33,
     "dpe": 1.52,
-    "duration": 1.9,
-    "damageWindowStart": 1.2,
-    "damageWindowEnd": 1.65,
-    "dps": 26.32
+    "duration": 2.0,
+    "damageWindowStart": 1.3,
+    "damageWindowEnd": 1.75,
+    "dps": 25.0
   },
   {
     "id": "aura_sphere",
     "nameEn": "Aura Sphere",
     "name": "파동탄",
     "type": "fighting",
-    "power": 90,
+    "power": 100,
     "energy": 50,
-    "dpe": 1.8,
-    "duration": 1.8,
-    "damageWindowStart": 1.0,
-    "damageWindowEnd": 1.6,
+    "dpe": 2.0,
+    "duration": 2.0,
+    "damageWindowStart": 1.2,
+    "damageWindowEnd": 1.8,
     "dps": 50.0
+  },
+  {
+    "id": "aura_wheel_electric",
+    "nameEn": "Aura Wheel",
+    "name": "오라휠",
+    "type": "electric",
+    "power": 100,
+    "energy": 45,
+    "dpe": 2.22,
+    "duration": 2.7,
+    "damageWindowStart": 2.1,
+    "damageWindowEnd": 2.5,
+    "dps": 37.04
+  },
+  {
+    "id": "aura_wheel_dark",
+    "nameEn": "Aura Wheel",
+    "name": "오라휠",
+    "type": "dark",
+    "power": 100,
+    "energy": 45,
+    "dpe": 2.22,
+    "duration": 2.7,
+    "damageWindowStart": 2.1,
+    "damageWindowEnd": 2.5,
+    "dps": 37.04
   },
   {
     "id": "aurora_beam",
@@ -124,49 +150,49 @@
     "power": 80,
     "energy": 50,
     "dpe": 1.6,
-    "duration": 3.55,
-    "damageWindowStart": 3.35,
-    "damageWindowEnd": 3.55,
-    "dps": 22.54
+    "duration": 3.5,
+    "damageWindowStart": 3.3,
+    "damageWindowEnd": 3.5,
+    "dps": 22.86
   },
   {
     "id": "avalanche",
     "nameEn": "Avalanche",
     "name": "눈사태",
     "type": "ice",
-    "power": 90,
+    "power": 85,
     "energy": 50,
-    "dpe": 1.8,
-    "duration": 2.7,
-    "damageWindowStart": 1.7,
-    "damageWindowEnd": 2.1,
-    "dps": 33.33
+    "dpe": 1.7,
+    "duration": 2.5,
+    "damageWindowStart": 1.5,
+    "damageWindowEnd": 1.9,
+    "dps": 34.0
   },
   {
     "id": "blast_burn",
     "nameEn": "Blast Burn",
     "name": "블라스트번",
     "type": "fire",
-    "power": 110,
+    "power": 120,
     "energy": 50,
-    "dpe": 2.2,
-    "duration": 3.3,
-    "damageWindowStart": 2.75,
-    "damageWindowEnd": 3.2,
-    "dps": 33.33
+    "dpe": 2.4,
+    "duration": 3.5,
+    "damageWindowStart": 2.95,
+    "damageWindowEnd": 3.4,
+    "dps": 34.29
   },
   {
     "id": "bleakwind_storm",
     "nameEn": "Bleakwind Storm",
     "name": "찬바람폭풍",
     "type": "flying",
-    "power": 140,
+    "power": 150,
     "energy": 100,
-    "dpe": 1.4,
-    "duration": 2.3,
-    "damageWindowStart": 1.8,
-    "damageWindowEnd": 2.6,
-    "dps": 60.87
+    "dpe": 1.5,
+    "duration": 2.5,
+    "damageWindowStart": 2.0,
+    "damageWindowEnd": 2.8,
+    "dps": 60.0
   },
   {
     "id": "blizzard",
@@ -176,10 +202,10 @@
     "power": 130,
     "energy": 100,
     "dpe": 1.3,
-    "duration": 3.1,
-    "damageWindowStart": 1.5,
-    "damageWindowEnd": 2.9,
-    "dps": 41.94
+    "duration": 3.0,
+    "damageWindowStart": 1.4,
+    "damageWindowEnd": 2.8,
+    "dps": 43.33
   },
   {
     "id": "body_slam",
@@ -189,23 +215,23 @@
     "power": 50,
     "energy": 33,
     "dpe": 1.52,
-    "duration": 1.9,
-    "damageWindowStart": 1.2,
-    "damageWindowEnd": 1.7,
-    "dps": 26.32
+    "duration": 2.0,
+    "damageWindowStart": 1.3,
+    "damageWindowEnd": 1.8,
+    "dps": 25.0
   },
   {
     "id": "boomburst",
     "nameEn": "Boomburst",
     "name": "폭음파",
     "type": "normal",
-    "power": 140,
+    "power": 150,
     "energy": 100,
-    "dpe": 1.4,
-    "duration": 2.3,
-    "damageWindowStart": 1.0,
-    "damageWindowEnd": 2.0,
-    "dps": 60.87
+    "dpe": 1.5,
+    "duration": 2.5,
+    "damageWindowStart": 1.2,
+    "damageWindowEnd": 2.2,
+    "dps": 60.0
   },
   {
     "id": "bone_club",
@@ -215,10 +241,10 @@
     "power": 40,
     "energy": 33,
     "dpe": 1.21,
-    "duration": 1.6,
-    "damageWindowStart": 1.0,
-    "damageWindowEnd": 1.4,
-    "dps": 25.0
+    "duration": 1.5,
+    "damageWindowStart": 0.9,
+    "damageWindowEnd": 1.3,
+    "dps": 26.67
   },
   {
     "id": "brave_bird",
@@ -238,13 +264,13 @@
     "nameEn": "Breaking Swipe",
     "name": "와이드브레이커",
     "type": "dragon",
-    "power": 35,
+    "power": 45,
     "energy": 33,
-    "dpe": 1.06,
-    "duration": 0.8,
-    "damageWindowStart": 0.27,
-    "damageWindowEnd": 0.7,
-    "dps": 43.75
+    "dpe": 1.36,
+    "duration": 1.0,
+    "damageWindowStart": 0.47,
+    "damageWindowEnd": 0.9,
+    "dps": 45.0
   },
   {
     "id": "brick_break",
@@ -254,10 +280,10 @@
     "power": 40,
     "energy": 33,
     "dpe": 1.21,
-    "duration": 1.6,
-    "damageWindowStart": 0.8,
-    "damageWindowEnd": 1.4,
-    "dps": 25.0
+    "duration": 1.5,
+    "damageWindowStart": 0.7,
+    "damageWindowEnd": 1.3,
+    "dps": 26.67
   },
   {
     "id": "brutal_swing",
@@ -267,23 +293,23 @@
     "power": 65,
     "energy": 33,
     "dpe": 1.97,
-    "duration": 1.9,
-    "damageWindowStart": 1.2,
-    "damageWindowEnd": 1.6,
-    "dps": 34.21
+    "duration": 2.0,
+    "damageWindowStart": 1.3,
+    "damageWindowEnd": 1.7,
+    "dps": 32.5
   },
   {
     "id": "brine",
     "nameEn": "Brine",
     "name": "소금물",
     "type": "water",
-    "power": 60,
+    "power": 65,
     "energy": 50,
-    "dpe": 1.2,
-    "duration": 2.3,
-    "damageWindowStart": 1.5,
-    "damageWindowEnd": 2.1,
-    "dps": 26.09
+    "dpe": 1.3,
+    "duration": 2.5,
+    "damageWindowStart": 1.7,
+    "damageWindowEnd": 2.3,
+    "dps": 26.0
   },
   {
     "id": "bubble_beam",
@@ -293,23 +319,23 @@
     "power": 45,
     "energy": 33,
     "dpe": 1.36,
-    "duration": 1.9,
-    "damageWindowStart": 1.45,
-    "damageWindowEnd": 1.7,
-    "dps": 23.68
+    "duration": 2.0,
+    "damageWindowStart": 1.55,
+    "damageWindowEnd": 1.8,
+    "dps": 22.5
   },
   {
     "id": "bug_buzz",
     "nameEn": "Bug Buzz",
     "name": "벌레의야단법석",
     "type": "bug",
-    "power": 100,
+    "power": 95,
     "energy": 50,
-    "dpe": 2.0,
-    "duration": 3.7,
-    "damageWindowStart": 2.0,
-    "damageWindowEnd": 3.1,
-    "dps": 27.03
+    "dpe": 1.9,
+    "duration": 3.5,
+    "damageWindowStart": 1.8,
+    "damageWindowEnd": 2.9,
+    "dps": 27.14
   },
   {
     "id": "bulldoze",
@@ -329,13 +355,13 @@
     "nameEn": "Close Combat",
     "name": "인파이트",
     "type": "fighting",
-    "power": 100,
+    "power": 105,
     "energy": 100,
-    "dpe": 1.0,
-    "duration": 2.3,
-    "damageWindowStart": 1.0,
-    "damageWindowEnd": 2.3,
-    "dps": 43.48
+    "dpe": 1.05,
+    "duration": 2.5,
+    "damageWindowStart": 1.2,
+    "damageWindowEnd": 2.5,
+    "dps": 42.0
   },
   {
     "id": "crabhammer",
@@ -345,10 +371,10 @@
     "power": 85,
     "energy": 50,
     "dpe": 1.7,
-    "duration": 1.9,
-    "damageWindowStart": 1.5,
-    "damageWindowEnd": 1.75,
-    "dps": 44.74
+    "duration": 2.0,
+    "damageWindowStart": 1.6,
+    "damageWindowEnd": 1.85,
+    "dps": 42.5
   },
   {
     "id": "cross_chop",
@@ -381,13 +407,13 @@
     "nameEn": "Crunch",
     "name": "깨물어부수기",
     "type": "dark",
-    "power": 70,
+    "power": 65,
     "energy": 33,
-    "dpe": 2.12,
-    "duration": 3.2,
-    "damageWindowStart": 1.3,
-    "damageWindowEnd": 3.0,
-    "dps": 21.88
+    "dpe": 1.97,
+    "duration": 3.0,
+    "damageWindowStart": 1.1,
+    "damageWindowEnd": 2.8,
+    "dps": 21.67
   },
   {
     "id": "darkest_lariat",
@@ -436,10 +462,10 @@
     "power": 100,
     "energy": 50,
     "dpe": 2.0,
-    "duration": 4.7,
-    "damageWindowStart": 2.8,
-    "damageWindowEnd": 4.5,
-    "dps": 21.28
+    "duration": 4.5,
+    "damageWindowStart": 2.6,
+    "damageWindowEnd": 4.3,
+    "dps": 22.22
   },
   {
     "id": "disarming_voice",
@@ -449,10 +475,10 @@
     "power": 70,
     "energy": 33,
     "dpe": 2.12,
-    "duration": 3.9,
-    "damageWindowStart": 3.2,
-    "damageWindowEnd": 3.5,
-    "dps": 17.95
+    "duration": 4.0,
+    "damageWindowStart": 3.3,
+    "damageWindowEnd": 3.6,
+    "dps": 17.5
   },
   {
     "id": "discharge",
@@ -472,13 +498,13 @@
     "nameEn": "Doom Desire",
     "name": "파멸의소원",
     "type": "steel",
-    "power": 70,
+    "power": 65,
     "energy": 33,
-    "dpe": 2.12,
-    "duration": 1.7,
-    "damageWindowStart": 1.4,
-    "damageWindowEnd": 1.6,
-    "dps": 41.18
+    "dpe": 1.97,
+    "duration": 1.5,
+    "damageWindowStart": 1.2,
+    "damageWindowEnd": 1.4,
+    "dps": 43.33
   },
   {
     "id": "double_iron_bash",
@@ -501,10 +527,10 @@
     "power": 150,
     "energy": 100,
     "dpe": 1.5,
-    "duration": 3.6,
-    "damageWindowStart": 3.0,
-    "damageWindowEnd": 3.5,
-    "dps": 41.67
+    "duration": 3.5,
+    "damageWindowStart": 2.9,
+    "damageWindowEnd": 3.4,
+    "dps": 42.86
   },
   {
     "id": "dragon_ascent",
@@ -524,13 +550,13 @@
     "nameEn": "Dragon Claw",
     "name": "드래곤클로",
     "type": "dragon",
-    "power": 50,
+    "power": 45,
     "energy": 33,
-    "dpe": 1.52,
-    "duration": 1.7,
-    "damageWindowStart": 1.1,
-    "damageWindowEnd": 1.3,
-    "dps": 29.41
+    "dpe": 1.36,
+    "duration": 1.5,
+    "damageWindowStart": 0.9,
+    "damageWindowEnd": 1.1,
+    "dps": 30.0
   },
   {
     "id": "dragon_pulse",
@@ -540,10 +566,10 @@
     "power": 90,
     "energy": 50,
     "dpe": 1.8,
-    "duration": 3.6,
-    "damageWindowStart": 2.15,
-    "damageWindowEnd": 3.3,
-    "dps": 25.0
+    "duration": 3.5,
+    "damageWindowStart": 2.05,
+    "damageWindowEnd": 3.2,
+    "dps": 25.71
   },
   {
     "id": "drain_punch",
@@ -553,10 +579,10 @@
     "power": 50,
     "energy": 33,
     "dpe": 1.52,
-    "duration": 2.4,
-    "damageWindowStart": 1.0,
-    "damageWindowEnd": 1.5,
-    "dps": 20.83
+    "duration": 2.5,
+    "damageWindowStart": 1.1,
+    "damageWindowEnd": 1.6,
+    "dps": 20.0
   },
   {
     "id": "draining_kiss",
@@ -566,49 +592,49 @@
     "power": 60,
     "energy": 50,
     "dpe": 1.2,
-    "duration": 2.6,
-    "damageWindowStart": 1.0,
-    "damageWindowEnd": 1.3,
-    "dps": 23.08
+    "duration": 2.5,
+    "damageWindowStart": 0.9,
+    "damageWindowEnd": 1.2,
+    "dps": 24.0
   },
   {
     "id": "drill_peck",
     "nameEn": "Drill Peck",
     "name": "회전부리",
     "type": "flying",
-    "power": 65,
+    "power": 70,
     "energy": 33,
-    "dpe": 1.97,
-    "duration": 2.3,
-    "damageWindowStart": 1.7,
-    "damageWindowEnd": 2.1,
-    "dps": 28.26
+    "dpe": 2.12,
+    "duration": 2.5,
+    "damageWindowStart": 1.9,
+    "damageWindowEnd": 2.3,
+    "dps": 28.0
   },
   {
     "id": "drill_run",
     "nameEn": "Drill Run",
     "name": "드릴라이너",
     "type": "ground",
-    "power": 80,
+    "power": 85,
     "energy": 50,
-    "dpe": 1.6,
-    "duration": 2.8,
-    "damageWindowStart": 1.7,
-    "damageWindowEnd": 2.6,
-    "dps": 28.57
+    "dpe": 1.7,
+    "duration": 3.0,
+    "damageWindowStart": 1.9,
+    "damageWindowEnd": 2.8,
+    "dps": 28.33
   },
   {
     "id": "dynamic_punch",
     "nameEn": "Dynamic Punch",
     "name": "폭발펀치",
     "type": "fighting",
-    "power": 90,
+    "power": 85,
     "energy": 50,
-    "dpe": 1.8,
-    "duration": 2.7,
-    "damageWindowStart": 1.2,
-    "damageWindowEnd": 2.7,
-    "dps": 33.33
+    "dpe": 1.7,
+    "duration": 2.5,
+    "damageWindowStart": 1.0,
+    "damageWindowEnd": 2.5,
+    "dps": 34.0
   },
   {
     "id": "earthquake",
@@ -618,10 +644,10 @@
     "power": 140,
     "energy": 100,
     "dpe": 1.4,
-    "duration": 3.6,
-    "damageWindowStart": 2.7,
-    "damageWindowEnd": 3.5,
-    "dps": 38.89
+    "duration": 3.5,
+    "damageWindowStart": 2.6,
+    "damageWindowEnd": 3.4,
+    "dps": 40.0
   },
   {
     "id": "earth_power",
@@ -631,10 +657,10 @@
     "power": 100,
     "energy": 50,
     "dpe": 2.0,
-    "duration": 3.6,
-    "damageWindowStart": 2.7,
-    "damageWindowEnd": 3.4,
-    "dps": 27.78
+    "duration": 3.5,
+    "damageWindowStart": 2.6,
+    "damageWindowEnd": 3.3,
+    "dps": 28.57
   },
   {
     "id": "energy_ball",
@@ -644,23 +670,23 @@
     "power": 90,
     "energy": 50,
     "dpe": 1.8,
-    "duration": 3.9,
-    "damageWindowStart": 3.0,
-    "damageWindowEnd": 3.8,
-    "dps": 23.08
+    "duration": 4.0,
+    "damageWindowStart": 3.1,
+    "damageWindowEnd": 3.9,
+    "dps": 22.5
   },
   {
     "id": "fell_stinger",
     "nameEn": "Fell Stinger",
     "name": "마지막일침",
     "type": "bug",
-    "power": 50,
+    "power": 45,
     "energy": 33,
-    "dpe": 1.52,
-    "duration": 2.2,
-    "damageWindowStart": 1.8,
-    "damageWindowEnd": 2.0,
-    "dps": 22.73
+    "dpe": 1.36,
+    "duration": 2.0,
+    "damageWindowStart": 1.6,
+    "damageWindowEnd": 1.8,
+    "dps": 22.5
   },
   {
     "id": "fire_blast",
@@ -670,22 +696,22 @@
     "power": 140,
     "energy": 100,
     "dpe": 1.4,
-    "duration": 4.2,
-    "damageWindowStart": 3.1,
-    "damageWindowEnd": 3.9,
-    "dps": 33.33
+    "duration": 4.0,
+    "damageWindowStart": 2.9,
+    "damageWindowEnd": 3.7,
+    "dps": 35.0
   },
   {
     "id": "fire_punch",
     "nameEn": "Fire Punch",
     "name": "불꽃펀치",
     "type": "fire",
-    "power": 55,
+    "power": 50,
     "energy": 33,
-    "dpe": 1.67,
-    "duration": 2.2,
-    "damageWindowStart": 1.5,
-    "damageWindowEnd": 1.9,
+    "dpe": 1.52,
+    "duration": 2.0,
+    "damageWindowStart": 1.3,
+    "damageWindowEnd": 1.7,
     "dps": 25.0
   },
   {
@@ -693,13 +719,13 @@
     "nameEn": "Blaze Kick",
     "name": "블레이즈킥",
     "type": "fire",
-    "power": 45,
+    "power": 40,
     "energy": 33,
-    "dpe": 1.36,
-    "duration": 1.2,
-    "damageWindowStart": 0.45,
-    "damageWindowEnd": 0.8,
-    "dps": 37.5
+    "dpe": 1.21,
+    "duration": 1.0,
+    "damageWindowStart": 0.25,
+    "damageWindowEnd": 0.6,
+    "dps": 40.0
   },
   {
     "id": "feather_dance",
@@ -709,10 +735,10 @@
     "power": 35,
     "energy": 50,
     "dpe": 0.7,
-    "duration": 2.8,
-    "damageWindowStart": 1.7,
-    "damageWindowEnd": 2.5,
-    "dps": 12.5
+    "duration": 3.0,
+    "damageWindowStart": 1.9,
+    "damageWindowEnd": 2.7,
+    "dps": 11.67
   },
   {
     "id": "flame_burst",
@@ -722,10 +748,10 @@
     "power": 70,
     "energy": 50,
     "dpe": 1.4,
-    "duration": 2.6,
-    "damageWindowStart": 1.0,
-    "damageWindowEnd": 2.1,
-    "dps": 26.92
+    "duration": 2.5,
+    "damageWindowStart": 0.9,
+    "damageWindowEnd": 2.0,
+    "dps": 28.0
   },
   {
     "id": "flame_charge",
@@ -735,36 +761,36 @@
     "power": 70,
     "energy": 33,
     "dpe": 2.12,
-    "duration": 3.8,
-    "damageWindowStart": 2.9,
-    "damageWindowEnd": 3.45,
-    "dps": 18.42
+    "duration": 4.0,
+    "damageWindowStart": 3.1,
+    "damageWindowEnd": 3.65,
+    "dps": 17.5
   },
   {
     "id": "flame_wheel",
     "nameEn": "Flame Wheel",
     "name": "화염바퀴",
     "type": "fire",
-    "power": 60,
+    "power": 55,
     "energy": 50,
-    "dpe": 1.2,
-    "duration": 2.7,
-    "damageWindowStart": 2.1,
-    "damageWindowEnd": 2.4,
-    "dps": 22.22
+    "dpe": 1.1,
+    "duration": 2.5,
+    "damageWindowStart": 1.9,
+    "damageWindowEnd": 2.2,
+    "dps": 22.0
   },
   {
     "id": "flamethrower",
     "nameEn": "Flamethrower",
     "name": "화염방사",
     "type": "fire",
-    "power": 70,
+    "power": 65,
     "energy": 50,
-    "dpe": 1.4,
-    "duration": 2.2,
-    "damageWindowStart": 1.5,
-    "damageWindowEnd": 1.7,
-    "dps": 31.82
+    "dpe": 1.3,
+    "duration": 2.0,
+    "damageWindowStart": 1.3,
+    "damageWindowEnd": 1.5,
+    "dps": 32.5
   },
   {
     "id": "flash_cannon",
@@ -774,36 +800,36 @@
     "power": 100,
     "energy": 100,
     "dpe": 1.0,
-    "duration": 2.7,
-    "damageWindowStart": 1.6,
-    "damageWindowEnd": 2.5,
-    "dps": 37.04
+    "duration": 2.5,
+    "damageWindowStart": 1.4,
+    "damageWindowEnd": 2.3,
+    "dps": 40.0
   },
   {
     "id": "fly",
     "nameEn": "Fly",
     "name": "공중날기",
     "type": "flying",
-    "power": 80,
+    "power": 90,
     "energy": 50,
-    "dpe": 1.6,
-    "duration": 1.8,
-    "damageWindowStart": 1.2,
-    "damageWindowEnd": 1.5,
-    "dps": 44.44
+    "dpe": 1.8,
+    "duration": 2.0,
+    "damageWindowStart": 1.4,
+    "damageWindowEnd": 1.7,
+    "dps": 45.0
   },
   {
     "id": "flying_press",
     "nameEn": "Flying Press",
     "name": "플라잉프레스",
     "type": "fighting",
-    "power": 110,
+    "power": 115,
     "energy": 50,
-    "dpe": 2.2,
-    "duration": 2.3,
-    "damageWindowStart": 1.0,
-    "damageWindowEnd": 2.0,
-    "dps": 47.83
+    "dpe": 2.3,
+    "duration": 2.5,
+    "damageWindowStart": 1.2,
+    "damageWindowEnd": 2.2,
+    "dps": 46.0
   },
   {
     "id": "focus_blast",
@@ -839,10 +865,10 @@
     "power": 100,
     "energy": 50,
     "dpe": 2.0,
-    "duration": 2.6,
-    "damageWindowStart": 2.145,
-    "damageWindowEnd": 2.55,
-    "dps": 38.46
+    "duration": 2.5,
+    "damageWindowStart": 2.045,
+    "damageWindowEnd": 2.45,
+    "dps": 40.0
   },
   {
     "id": "fusion_bolt",
@@ -865,23 +891,23 @@
     "power": 140,
     "energy": 100,
     "dpe": 1.4,
-    "duration": 2.2,
-    "damageWindowStart": 1.5,
-    "damageWindowEnd": 2.0,
-    "dps": 63.64
+    "duration": 2.0,
+    "damageWindowStart": 1.3,
+    "damageWindowEnd": 1.8,
+    "dps": 70.0
   },
   {
     "id": "future_sight",
     "nameEn": "Future Sight",
     "name": "미래예지",
     "type": "psychic",
-    "power": 120,
+    "power": 115,
     "energy": 100,
-    "dpe": 1.2,
-    "duration": 2.7,
-    "damageWindowStart": 1.4,
-    "damageWindowEnd": 2.7,
-    "dps": 44.44
+    "dpe": 1.15,
+    "duration": 2.5,
+    "damageWindowStart": 1.2,
+    "damageWindowEnd": 2.5,
+    "dps": 46.0
   },
   {
     "id": "giga_impact",
@@ -891,10 +917,10 @@
     "power": 200,
     "energy": 100,
     "dpe": 2.0,
-    "duration": 4.7,
-    "damageWindowStart": 1.0,
-    "damageWindowEnd": 2.4,
-    "dps": 42.55
+    "duration": 4.5,
+    "damageWindowStart": 0.8,
+    "damageWindowEnd": 2.2,
+    "dps": 44.44
   },
   {
     "id": "glaciate",
@@ -917,10 +943,10 @@
     "power": 90,
     "energy": 50,
     "dpe": 1.8,
-    "duration": 2.6,
-    "damageWindowStart": 1.7,
-    "damageWindowEnd": 2.6,
-    "dps": 34.62
+    "duration": 2.5,
+    "damageWindowStart": 1.6,
+    "damageWindowEnd": 2.5,
+    "dps": 36.0
   },
   {
     "id": "gunk_shot",
@@ -930,23 +956,23 @@
     "power": 130,
     "energy": 100,
     "dpe": 1.3,
-    "duration": 3.1,
-    "damageWindowStart": 1.7,
-    "damageWindowEnd": 2.7,
-    "dps": 41.94
+    "duration": 3.0,
+    "damageWindowStart": 1.6,
+    "damageWindowEnd": 2.6,
+    "dps": 43.33
   },
   {
     "id": "gyro_ball",
     "nameEn": "Gyro Ball",
     "name": "자이로볼",
     "type": "steel",
-    "power": 80,
+    "power": 85,
     "energy": 50,
-    "dpe": 1.6,
-    "duration": 3.3,
-    "damageWindowStart": 3.0,
-    "damageWindowEnd": 3.3,
-    "dps": 24.24
+    "dpe": 1.7,
+    "duration": 3.5,
+    "damageWindowStart": 3.2,
+    "damageWindowEnd": 3.5,
+    "dps": 24.29
   },
   {
     "id": "heart_stamp",
@@ -956,10 +982,10 @@
     "power": 40,
     "energy": 33,
     "dpe": 1.21,
-    "duration": 1.9,
-    "damageWindowStart": 1.1,
-    "damageWindowEnd": 1.6,
-    "dps": 21.05
+    "duration": 2.0,
+    "damageWindowStart": 1.2,
+    "damageWindowEnd": 1.7,
+    "dps": 20.0
   },
   {
     "id": "heat_wave",
@@ -982,23 +1008,23 @@
     "power": 70,
     "energy": 50,
     "dpe": 1.4,
-    "duration": 2.1,
-    "damageWindowStart": 1.5,
-    "damageWindowEnd": 1.9,
-    "dps": 33.33
+    "duration": 2.0,
+    "damageWindowStart": 1.4,
+    "damageWindowEnd": 1.8,
+    "dps": 35.0
   },
   {
     "id": "high_horsepower",
     "nameEn": "High Horsepower",
     "name": "10만마력",
     "type": "ground",
-    "power": 110,
+    "power": 105,
     "energy": 100,
-    "dpe": 1.1,
-    "duration": 1.6,
-    "damageWindowStart": 1.0,
-    "damageWindowEnd": 1.2,
-    "dps": 68.75
+    "dpe": 1.05,
+    "duration": 1.5,
+    "damageWindowStart": 0.9,
+    "damageWindowEnd": 1.1,
+    "dps": 70.0
   },
   {
     "id": "high_jump_kick",
@@ -1018,26 +1044,26 @@
     "nameEn": "Horn Attack",
     "name": "뿔찌르기",
     "type": "normal",
-    "power": 40,
+    "power": 45,
     "energy": 33,
-    "dpe": 1.21,
-    "duration": 1.85,
-    "damageWindowStart": 0.8,
-    "damageWindowEnd": 1.65,
-    "dps": 21.62
+    "dpe": 1.36,
+    "duration": 2.0,
+    "damageWindowStart": 0.95,
+    "damageWindowEnd": 1.8,
+    "dps": 22.5
   },
   {
     "id": "hurricane",
     "nameEn": "Hurricane",
     "name": "폭풍",
     "type": "flying",
-    "power": 110,
+    "power": 105,
     "energy": 100,
-    "dpe": 1.1,
-    "duration": 2.7,
-    "damageWindowStart": 1.2,
-    "damageWindowEnd": 2.4,
-    "dps": 40.74
+    "dpe": 1.05,
+    "duration": 2.5,
+    "damageWindowStart": 1.0,
+    "damageWindowEnd": 2.2,
+    "dps": 42.0
   },
   {
     "id": "hydro_cannon",
@@ -1047,23 +1073,23 @@
     "power": 90,
     "energy": 50,
     "dpe": 1.8,
-    "duration": 1.9,
-    "damageWindowStart": 0.5,
-    "damageWindowEnd": 1.6,
-    "dps": 47.37
+    "duration": 2.0,
+    "damageWindowStart": 0.6,
+    "damageWindowEnd": 1.7,
+    "dps": 45.0
   },
   {
     "id": "hydro_pump",
     "nameEn": "Hydro Pump",
     "name": "하이드로펌프",
     "type": "water",
-    "power": 130,
+    "power": 135,
     "energy": 100,
-    "dpe": 1.3,
-    "duration": 3.3,
-    "damageWindowStart": 0.9,
-    "damageWindowEnd": 3.0,
-    "dps": 39.39
+    "dpe": 1.35,
+    "duration": 3.5,
+    "damageWindowStart": 1.1,
+    "damageWindowEnd": 3.2,
+    "dps": 38.57
   },
   {
     "id": "hyper_beam",
@@ -1073,10 +1099,10 @@
     "power": 150,
     "energy": 100,
     "dpe": 1.5,
-    "duration": 3.8,
-    "damageWindowStart": 3.3,
-    "damageWindowEnd": 3.6,
-    "dps": 39.47
+    "duration": 4.0,
+    "damageWindowStart": 3.5,
+    "damageWindowEnd": 3.8,
+    "dps": 37.5
   },
   {
     "id": "hyper_fang",
@@ -1096,13 +1122,13 @@
     "nameEn": "Ice Beam",
     "name": "냉동빔",
     "type": "ice",
-    "power": 90,
+    "power": 95,
     "energy": 50,
-    "dpe": 1.8,
-    "duration": 3.3,
-    "damageWindowStart": 1.3,
-    "damageWindowEnd": 2.8,
-    "dps": 27.27
+    "dpe": 1.9,
+    "duration": 3.5,
+    "damageWindowStart": 1.5,
+    "damageWindowEnd": 3.0,
+    "dps": 27.14
   },
   {
     "id": "ice_punch",
@@ -1112,36 +1138,36 @@
     "power": 50,
     "energy": 33,
     "dpe": 1.52,
-    "duration": 1.9,
-    "damageWindowStart": 1.3,
-    "damageWindowEnd": 1.6,
-    "dps": 26.32
+    "duration": 2.0,
+    "damageWindowStart": 1.4,
+    "damageWindowEnd": 1.7,
+    "dps": 25.0
   },
   {
     "id": "icicle_spear",
     "nameEn": "Icicle Spear",
     "name": "고드름침",
     "type": "ice",
-    "power": 60,
+    "power": 55,
     "energy": 33,
-    "dpe": 1.82,
-    "duration": 2.2,
-    "damageWindowStart": 1.2,
-    "damageWindowEnd": 1.8,
-    "dps": 27.27
+    "dpe": 1.67,
+    "duration": 2.0,
+    "damageWindowStart": 1.0,
+    "damageWindowEnd": 1.6,
+    "dps": 27.5
   },
   {
     "id": "icy_wind",
     "nameEn": "Icy Wind",
     "name": "얼어붙은바람",
     "type": "ice",
-    "power": 60,
+    "power": 65,
     "energy": 33,
-    "dpe": 1.82,
-    "duration": 3.3,
-    "damageWindowStart": 2.0,
-    "damageWindowEnd": 2.8,
-    "dps": 18.18
+    "dpe": 1.97,
+    "duration": 3.5,
+    "damageWindowStart": 2.2,
+    "damageWindowEnd": 3.0,
+    "dps": 18.57
   },
   {
     "id": "iron_head",
@@ -1151,10 +1177,10 @@
     "power": 60,
     "energy": 50,
     "dpe": 1.2,
-    "duration": 1.9,
-    "damageWindowStart": 1.3,
-    "damageWindowEnd": 1.7,
-    "dps": 31.58
+    "duration": 2.0,
+    "damageWindowStart": 1.4,
+    "damageWindowEnd": 1.8,
+    "dps": 30.0
   },
   {
     "id": "last_resort",
@@ -1164,10 +1190,10 @@
     "power": 90,
     "energy": 50,
     "dpe": 1.8,
-    "duration": 2.9,
-    "damageWindowStart": 2.7,
-    "damageWindowEnd": 2.85,
-    "dps": 31.03
+    "duration": 3.0,
+    "damageWindowStart": 2.8,
+    "damageWindowEnd": 2.95,
+    "dps": 30.0
   },
   {
     "id": "leaf_blade",
@@ -1177,10 +1203,10 @@
     "power": 70,
     "energy": 33,
     "dpe": 2.12,
-    "duration": 2.4,
-    "damageWindowStart": 1.25,
-    "damageWindowEnd": 2.2,
-    "dps": 29.17
+    "duration": 2.5,
+    "damageWindowStart": 1.35,
+    "damageWindowEnd": 2.3,
+    "dps": 28.0
   },
   {
     "id": "leaf_tornado",
@@ -1190,10 +1216,10 @@
     "power": 45,
     "energy": 33,
     "dpe": 1.36,
-    "duration": 3.1,
-    "damageWindowStart": 2.0,
-    "damageWindowEnd": 2.6,
-    "dps": 14.52
+    "duration": 3.0,
+    "damageWindowStart": 1.9,
+    "damageWindowEnd": 2.5,
+    "dps": 15.0
   },
   {
     "id": "leaf_storm",
@@ -1229,10 +1255,10 @@
     "power": 40,
     "energy": 33,
     "dpe": 1.21,
-    "duration": 1.9,
-    "damageWindowStart": 1.3,
-    "damageWindowEnd": 1.65,
-    "dps": 21.05
+    "duration": 2.0,
+    "damageWindowStart": 1.4,
+    "damageWindowEnd": 1.75,
+    "dps": 20.0
   },
   {
     "id": "lunge",
@@ -1242,10 +1268,10 @@
     "power": 55,
     "energy": 33,
     "dpe": 1.67,
-    "duration": 2.9,
-    "damageWindowStart": 2.4,
-    "damageWindowEnd": 2.7,
-    "dps": 18.97
+    "duration": 3.0,
+    "damageWindowStart": 2.5,
+    "damageWindowEnd": 2.8,
+    "dps": 18.33
   },
   {
     "id": "luster_purge",
@@ -1278,12 +1304,12 @@
     "nameEn": "Magnet Bomb",
     "name": "마그넷봄",
     "type": "steel",
-    "power": 70,
+    "power": 75,
     "energy": 33,
-    "dpe": 2.12,
-    "duration": 2.8,
-    "damageWindowStart": 2.2,
-    "damageWindowEnd": 2.6,
+    "dpe": 2.27,
+    "duration": 3.0,
+    "damageWindowStart": 2.4,
+    "damageWindowEnd": 2.8,
     "dps": 25.0
   },
   {
@@ -1291,13 +1317,13 @@
     "nameEn": "Megahorn",
     "name": "메가혼",
     "type": "bug",
-    "power": 110,
+    "power": 105,
     "energy": 100,
-    "dpe": 1.1,
-    "duration": 2.2,
-    "damageWindowStart": 1.7,
-    "damageWindowEnd": 1.9,
-    "dps": 50.0
+    "dpe": 1.05,
+    "duration": 2.0,
+    "damageWindowStart": 1.5,
+    "damageWindowEnd": 1.7,
+    "dps": 52.5
   },
   {
     "id": "meteor_beam",
@@ -1307,10 +1333,10 @@
     "power": 140,
     "energy": 100,
     "dpe": 1.4,
-    "duration": 1.9,
-    "damageWindowStart": 1.0,
-    "damageWindowEnd": 1.9,
-    "dps": 73.68
+    "duration": 2.0,
+    "damageWindowStart": 1.1,
+    "damageWindowEnd": 2.0,
+    "dps": 70.0
   },
   {
     "id": "meteor_mash",
@@ -1320,10 +1346,10 @@
     "power": 100,
     "energy": 50,
     "dpe": 2.0,
-    "duration": 2.6,
-    "damageWindowStart": 2.3,
-    "damageWindowEnd": 2.5,
-    "dps": 38.46
+    "duration": 2.5,
+    "damageWindowStart": 2.2,
+    "damageWindowEnd": 2.4,
+    "dps": 40.0
   },
   {
     "id": "mirror_coat",
@@ -1333,10 +1359,10 @@
     "power": 60,
     "energy": 50,
     "dpe": 1.2,
-    "duration": 2.6,
-    "damageWindowStart": 2.3,
-    "damageWindowEnd": 2.5,
-    "dps": 23.08
+    "duration": 2.5,
+    "damageWindowStart": 2.2,
+    "damageWindowEnd": 2.4,
+    "dps": 24.0
   },
   {
     "id": "mirror_shot",
@@ -1346,10 +1372,10 @@
     "power": 50,
     "energy": 33,
     "dpe": 1.52,
-    "duration": 2.4,
-    "damageWindowStart": 1.8,
-    "damageWindowEnd": 2.2,
-    "dps": 20.83
+    "duration": 2.5,
+    "damageWindowStart": 1.9,
+    "damageWindowEnd": 2.3,
+    "dps": 20.0
   },
   {
     "id": "mist_ball",
@@ -1372,10 +1398,10 @@
     "power": 130,
     "energy": 100,
     "dpe": 1.3,
-    "duration": 3.9,
-    "damageWindowStart": 2.2,
-    "damageWindowEnd": 3.7,
-    "dps": 33.33
+    "duration": 4.0,
+    "damageWindowStart": 2.3,
+    "damageWindowEnd": 3.8,
+    "dps": 32.5
   },
   {
     "id": "moongeist_beam",
@@ -1385,36 +1411,36 @@
     "power": 230,
     "energy": 100,
     "dpe": 2.3,
-    "duration": 3.1,
-    "damageWindowStart": 2.3,
-    "damageWindowEnd": 3.1,
-    "dps": 74.19
+    "duration": 3.0,
+    "damageWindowStart": 2.2,
+    "damageWindowEnd": 3.0,
+    "dps": 76.67
   },
   {
     "id": "mud_bomb",
     "nameEn": "Mud Bomb",
     "name": "진흙폭탄",
     "type": "ground",
-    "power": 55,
+    "power": 60,
     "energy": 33,
-    "dpe": 1.67,
-    "duration": 2.3,
-    "damageWindowStart": 1.7,
-    "damageWindowEnd": 2.1,
-    "dps": 23.91
+    "dpe": 1.82,
+    "duration": 2.5,
+    "damageWindowStart": 1.9,
+    "damageWindowEnd": 2.3,
+    "dps": 24.0
   },
   {
     "id": "muddy_water",
     "nameEn": "Muddy Water",
     "name": "탁류",
     "type": "water",
-    "power": 50,
+    "power": 45,
     "energy": 33,
-    "dpe": 1.52,
-    "duration": 2.2,
-    "damageWindowStart": 1.2,
-    "damageWindowEnd": 1.9,
-    "dps": 22.73
+    "dpe": 1.36,
+    "duration": 2.0,
+    "damageWindowStart": 1.0,
+    "damageWindowEnd": 1.7,
+    "dps": 22.5
   },
   {
     "id": "mystical_fire",
@@ -1437,10 +1463,10 @@
     "power": 90,
     "energy": 50,
     "dpe": 1.8,
-    "duration": 2.1,
-    "damageWindowStart": 1.4,
-    "damageWindowEnd": 2.0,
-    "dps": 42.86
+    "duration": 2.0,
+    "damageWindowStart": 1.3,
+    "damageWindowEnd": 1.9,
+    "dps": 45.0
   },
   {
     "id": "night_shade",
@@ -1450,23 +1476,23 @@
     "power": 60,
     "energy": 50,
     "dpe": 1.2,
-    "duration": 2.6,
-    "damageWindowStart": 2.1,
-    "damageWindowEnd": 2.5,
-    "dps": 23.08
+    "duration": 2.5,
+    "damageWindowStart": 2.0,
+    "damageWindowEnd": 2.4,
+    "dps": 24.0
   },
   {
     "id": "night_slash",
     "nameEn": "Night Slash",
     "name": "깜짝베기",
     "type": "dark",
-    "power": 50,
+    "power": 45,
     "energy": 33,
-    "dpe": 1.52,
-    "duration": 2.2,
-    "damageWindowStart": 1.3,
-    "damageWindowEnd": 2.0,
-    "dps": 22.73
+    "dpe": 1.36,
+    "duration": 2.0,
+    "damageWindowStart": 1.1,
+    "damageWindowEnd": 1.8,
+    "dps": 22.5
   },
   {
     "id": "oblivion_wing",
@@ -1489,49 +1515,49 @@
     "power": 20,
     "energy": 33,
     "dpe": 0.61,
-    "duration": 1.7,
-    "damageWindowStart": 0.5,
-    "damageWindowEnd": 1.6,
-    "dps": 11.76
+    "duration": 1.5,
+    "damageWindowStart": 0.3,
+    "damageWindowEnd": 1.4,
+    "dps": 13.33
   },
   {
     "id": "octazooka",
     "nameEn": "Octazooka",
     "name": "대포무노포",
     "type": "water",
-    "power": 50,
+    "power": 55,
     "energy": 50,
-    "dpe": 1.0,
-    "duration": 2.3,
-    "damageWindowStart": 1.3,
-    "damageWindowEnd": 1.6,
-    "dps": 21.74
+    "dpe": 1.1,
+    "duration": 2.5,
+    "damageWindowStart": 1.5,
+    "damageWindowEnd": 1.8,
+    "dps": 22.0
   },
   {
     "id": "ominous_wind",
     "nameEn": "Ominous Wind",
     "name": "괴상한바람",
     "type": "ghost",
-    "power": 50,
+    "power": 55,
     "energy": 33,
-    "dpe": 1.52,
-    "duration": 2.3,
-    "damageWindowStart": 1.85,
-    "damageWindowEnd": 2.1,
-    "dps": 21.74
+    "dpe": 1.67,
+    "duration": 2.5,
+    "damageWindowStart": 2.05,
+    "damageWindowEnd": 2.3,
+    "dps": 22.0
   },
   {
     "id": "origin_pulse",
     "nameEn": "Origin Pulse",
     "name": "근원의파동",
     "type": "water",
-    "power": 130,
+    "power": 120,
     "energy": 100,
-    "dpe": 1.3,
-    "duration": 1.7,
-    "damageWindowStart": 1.4,
-    "damageWindowEnd": 1.6,
-    "dps": 76.47
+    "dpe": 1.2,
+    "duration": 1.5,
+    "damageWindowStart": 1.2,
+    "damageWindowEnd": 1.4,
+    "dps": 80.0
   },
   {
     "id": "outrage",
@@ -1541,10 +1567,10 @@
     "power": 110,
     "energy": 50,
     "dpe": 2.2,
-    "duration": 3.9,
-    "damageWindowStart": 2.5,
-    "damageWindowEnd": 3.7,
-    "dps": 28.21
+    "duration": 4.0,
+    "damageWindowStart": 2.6,
+    "damageWindowEnd": 3.8,
+    "dps": 27.5
   },
   {
     "id": "overheat",
@@ -1564,26 +1590,26 @@
     "nameEn": "Parabolic Charge",
     "name": "파라볼라차지",
     "type": "electric",
-    "power": 65,
+    "power": 70,
     "energy": 50,
-    "dpe": 1.3,
-    "duration": 2.8,
-    "damageWindowStart": 1.2,
-    "damageWindowEnd": 2.4,
-    "dps": 23.21
+    "dpe": 1.4,
+    "duration": 3.0,
+    "damageWindowStart": 1.4,
+    "damageWindowEnd": 2.6,
+    "dps": 23.33
   },
   {
     "id": "payback",
     "nameEn": "Payback",
     "name": "보복",
     "type": "dark",
-    "power": 100,
+    "power": 95,
     "energy": 100,
-    "dpe": 1.0,
-    "duration": 2.2,
-    "damageWindowStart": 1.1,
-    "damageWindowEnd": 2.0,
-    "dps": 45.45
+    "dpe": 0.95,
+    "duration": 2.0,
+    "damageWindowStart": 0.9,
+    "damageWindowEnd": 1.8,
+    "dps": 47.5
   },
   {
     "id": "petal_blizzard",
@@ -1593,10 +1619,10 @@
     "power": 110,
     "energy": 100,
     "dpe": 1.1,
-    "duration": 2.6,
-    "damageWindowStart": 1.7,
-    "damageWindowEnd": 2.3,
-    "dps": 42.31
+    "duration": 2.5,
+    "damageWindowStart": 1.6,
+    "damageWindowEnd": 2.2,
+    "dps": 44.0
   },
   {
     "id": "play_rough",
@@ -1606,23 +1632,23 @@
     "power": 90,
     "energy": 50,
     "dpe": 1.8,
-    "duration": 2.9,
-    "damageWindowStart": 1.3,
-    "damageWindowEnd": 2.7,
-    "dps": 31.03
+    "duration": 3.0,
+    "damageWindowStart": 1.4,
+    "damageWindowEnd": 2.8,
+    "dps": 30.0
   },
   {
     "id": "poison_fang",
     "nameEn": "Poison Fang",
     "name": "맹독엄니",
     "type": "poison",
-    "power": 35,
+    "power": 30,
     "energy": 33,
-    "dpe": 1.06,
-    "duration": 1.7,
-    "damageWindowStart": 0.9,
-    "damageWindowEnd": 1.4,
-    "dps": 20.59
+    "dpe": 0.91,
+    "duration": 1.5,
+    "damageWindowStart": 0.7,
+    "damageWindowEnd": 1.2,
+    "dps": 20.0
   },
   {
     "id": "poltergeist",
@@ -1632,10 +1658,10 @@
     "power": 140,
     "energy": 100,
     "dpe": 1.4,
-    "duration": 3.6,
-    "damageWindowStart": 2.8,
-    "damageWindowEnd": 3.0,
-    "dps": 38.89
+    "duration": 3.5,
+    "damageWindowStart": 2.7,
+    "damageWindowEnd": 2.9,
+    "dps": 40.0
   },
   {
     "id": "power_gem",
@@ -1645,10 +1671,10 @@
     "power": 80,
     "energy": 50,
     "dpe": 1.6,
-    "duration": 2.9,
-    "damageWindowStart": 1.95,
-    "damageWindowEnd": 2.7,
-    "dps": 27.59
+    "duration": 3.0,
+    "damageWindowStart": 2.05,
+    "damageWindowEnd": 2.8,
+    "dps": 26.67
   },
   {
     "id": "power_up_punch",
@@ -1671,61 +1697,61 @@
     "power": 90,
     "energy": 50,
     "dpe": 1.8,
-    "duration": 2.6,
-    "damageWindowStart": 1.25,
-    "damageWindowEnd": 2.35,
-    "dps": 34.62
+    "duration": 2.5,
+    "damageWindowStart": 1.15,
+    "damageWindowEnd": 2.25,
+    "dps": 36.0
   },
   {
     "id": "precipice_blades",
     "nameEn": "Precipice Blades",
     "name": "단애의칼",
     "type": "ground",
-    "power": 130,
+    "power": 120,
     "energy": 100,
-    "dpe": 1.3,
-    "duration": 1.7,
-    "damageWindowStart": 1.4,
-    "damageWindowEnd": 1.6,
-    "dps": 76.47
+    "dpe": 1.2,
+    "duration": 1.5,
+    "damageWindowStart": 1.2,
+    "damageWindowEnd": 1.4,
+    "dps": 80.0
   },
   {
     "id": "psybeam",
     "nameEn": "Psybeam",
     "name": "환상빔",
     "type": "psychic",
-    "power": 70,
+    "power": 65,
     "energy": 50,
-    "dpe": 1.4,
-    "duration": 3.2,
-    "damageWindowStart": 1.3,
-    "damageWindowEnd": 2.7,
-    "dps": 21.88
+    "dpe": 1.3,
+    "duration": 3.0,
+    "damageWindowStart": 1.1,
+    "damageWindowEnd": 2.5,
+    "dps": 21.67
   },
   {
     "id": "psychic",
     "nameEn": "Psychic",
     "name": "사이코키네시스",
     "type": "psychic",
-    "power": 90,
+    "power": 95,
     "energy": 50,
-    "dpe": 1.8,
-    "duration": 2.8,
-    "damageWindowStart": 1.3,
-    "damageWindowEnd": 2.6,
-    "dps": 32.14
+    "dpe": 1.9,
+    "duration": 3.0,
+    "damageWindowStart": 1.5,
+    "damageWindowEnd": 2.8,
+    "dps": 31.67
   },
   {
     "id": "psychic_fangs",
     "nameEn": "Psychic Fangs",
     "name": "사이코팽",
     "type": "psychic",
-    "power": 30,
+    "power": 25,
     "energy": 33,
-    "dpe": 0.91,
-    "duration": 1.2,
-    "damageWindowStart": 0.4,
-    "damageWindowEnd": 1.1,
+    "dpe": 0.76,
+    "duration": 1.0,
+    "damageWindowStart": 0.2,
+    "damageWindowEnd": 0.9,
     "dps": 25.0
   },
   {
@@ -1746,51 +1772,64 @@
     "nameEn": "Psyshock",
     "name": "사이코쇼크",
     "type": "psychic",
-    "power": 65,
+    "power": 60,
     "energy": 33,
-    "dpe": 1.97,
-    "duration": 2.7,
-    "damageWindowStart": 2.0,
-    "damageWindowEnd": 2.6,
-    "dps": 24.07
+    "dpe": 1.82,
+    "duration": 2.5,
+    "damageWindowStart": 1.8,
+    "damageWindowEnd": 2.4,
+    "dps": 24.0
   },
   {
     "id": "psystrike",
     "nameEn": "Psystrike",
     "name": "사이코브레이크",
     "type": "psychic",
-    "power": 90,
+    "power": 95,
     "energy": 50,
-    "dpe": 1.8,
-    "duration": 2.3,
-    "damageWindowStart": 1.0,
-    "damageWindowEnd": 2.0,
-    "dps": 39.13
+    "dpe": 1.9,
+    "duration": 2.5,
+    "damageWindowStart": 1.2,
+    "damageWindowEnd": 2.2,
+    "dps": 38.0
+  },
+  {
+    "id": "rage_fist",
+    "nameEn": "Rage Fist",
+    "name": "분노의주먹",
+    "type": "ghost",
+    "power": 100,
+    "energy": 50,
+    "dpe": 2.0,
+    "duration": 3.0,
+    "damageWindowStart": 2.75,
+    "damageWindowEnd": 3.0,
+    "dps": 33.33
   },
   {
     "id": "razor_shell",
     "nameEn": "Razor Shell",
     "name": "셸블레이드",
     "type": "water",
-    "power": 45,
+    "power": 55,
     "energy": 33,
-    "dpe": 1.36,
-    "duration": 1.3,
-    "damageWindowStart": 0.65,
-    "damageWindowEnd": 1.0,
-    "dps": 34.62
+    "dpe": 1.67,
+    "duration": 1.5,
+    "damageWindowStart": 0.85,
+    "damageWindowEnd": 1.2,
+    "dps": 36.67
   },
   {
     "id": "return",
     "nameEn": "Return",
     "name": "은혜갚기",
     "type": "normal",
-    "power": 35,
+    "power": 25,
     "energy": 33,
-    "dpe": 1.06,
-    "duration": 0.7,
-    "damageWindowStart": 0.1,
-    "damageWindowEnd": 0.35,
+    "dpe": 0.76,
+    "duration": 0.5,
+    "damageWindowStart": 0.0,
+    "damageWindowEnd": 0.15,
     "dps": 50.0
   },
   {
@@ -1801,10 +1840,10 @@
     "power": 160,
     "energy": 100,
     "dpe": 1.6,
-    "duration": 2.2,
-    "damageWindowStart": 1.05,
-    "damageWindowEnd": 2.5,
-    "dps": 72.73
+    "duration": 2.0,
+    "damageWindowStart": 0.85,
+    "damageWindowEnd": 2.3,
+    "dps": 80.0
   },
   {
     "id": "rock_blast",
@@ -1814,36 +1853,36 @@
     "power": 50,
     "energy": 33,
     "dpe": 1.52,
-    "duration": 2.1,
-    "damageWindowStart": 1.6,
-    "damageWindowEnd": 2.0,
-    "dps": 23.81
+    "duration": 2.0,
+    "damageWindowStart": 1.5,
+    "damageWindowEnd": 1.9,
+    "dps": 25.0
   },
   {
     "id": "rock_slide",
     "nameEn": "Rock Slide",
     "name": "스톤샤워",
     "type": "rock",
-    "power": 80,
+    "power": 75,
     "energy": 50,
-    "dpe": 1.6,
-    "duration": 2.7,
-    "damageWindowStart": 1.5,
-    "damageWindowEnd": 2.6,
-    "dps": 29.63
+    "dpe": 1.5,
+    "duration": 2.5,
+    "damageWindowStart": 1.3,
+    "damageWindowEnd": 2.4,
+    "dps": 30.0
   },
   {
     "id": "rock_tomb",
     "nameEn": "Rock Tomb",
     "name": "암석봉인",
     "type": "rock",
-    "power": 70,
+    "power": 65,
     "energy": 50,
-    "dpe": 1.4,
-    "duration": 3.2,
-    "damageWindowStart": 2.25,
-    "damageWindowEnd": 3.0,
-    "dps": 21.88
+    "dpe": 1.3,
+    "duration": 3.0,
+    "damageWindowStart": 2.05,
+    "damageWindowEnd": 2.8,
+    "dps": 21.67
   },
   {
     "id": "rock_wrecker",
@@ -1853,10 +1892,10 @@
     "power": 110,
     "energy": 50,
     "dpe": 2.2,
-    "duration": 3.6,
-    "damageWindowStart": 2.0,
-    "damageWindowEnd": 2.7,
-    "dps": 30.56
+    "duration": 3.5,
+    "damageWindowStart": 1.9,
+    "damageWindowEnd": 2.6,
+    "dps": 31.43
   },
   {
     "id": "sacred_fire",
@@ -1866,23 +1905,23 @@
     "power": 120,
     "energy": 100,
     "dpe": 1.2,
-    "duration": 2.6,
-    "damageWindowStart": 1.2,
-    "damageWindowEnd": 2.4,
-    "dps": 46.15
+    "duration": 2.5,
+    "damageWindowStart": 1.1,
+    "damageWindowEnd": 2.3,
+    "dps": 48.0
   },
   {
     "id": "sacred_sword",
     "nameEn": "Sacred Sword",
     "name": "성스러운칼",
     "type": "fighting",
-    "power": 55,
+    "power": 50,
     "energy": 33,
-    "dpe": 1.67,
-    "duration": 1.2,
-    "damageWindowStart": 0.5,
-    "damageWindowEnd": 1.0,
-    "dps": 45.83
+    "dpe": 1.52,
+    "duration": 1.0,
+    "damageWindowStart": 0.3,
+    "damageWindowEnd": 0.8,
+    "dps": 50.0
   },
   {
     "id": "sand_tomb",
@@ -1902,39 +1941,39 @@
     "nameEn": "Sandsear Storm",
     "name": "열사의폭풍",
     "type": "ground",
-    "power": 140,
+    "power": 150,
     "energy": 100,
-    "dpe": 1.4,
-    "duration": 2.3,
-    "damageWindowStart": 1.8,
-    "damageWindowEnd": 2.6,
-    "dps": 60.87
+    "dpe": 1.5,
+    "duration": 2.5,
+    "damageWindowStart": 2.0,
+    "damageWindowEnd": 2.8,
+    "dps": 60.0
   },
   {
     "id": "scald",
     "nameEn": "Scald",
     "name": "열탕",
     "type": "water",
-    "power": 80,
+    "power": 75,
     "energy": 50,
-    "dpe": 1.6,
-    "duration": 3.7,
-    "damageWindowStart": 1.3,
-    "damageWindowEnd": 3.4,
-    "dps": 21.62
+    "dpe": 1.5,
+    "duration": 3.5,
+    "damageWindowStart": 1.1,
+    "damageWindowEnd": 3.2,
+    "dps": 21.43
   },
   {
     "id": "scorching_sands",
     "nameEn": "Scorching Sands",
     "name": "열사의대지",
     "type": "ground",
-    "power": 95,
+    "power": 90,
     "energy": 50,
-    "dpe": 1.9,
-    "duration": 3.2,
-    "damageWindowStart": 1.6,
-    "damageWindowEnd": 2.5,
-    "dps": 29.69
+    "dpe": 1.8,
+    "duration": 3.0,
+    "damageWindowStart": 1.4,
+    "damageWindowEnd": 2.3,
+    "dps": 30.0
   },
   {
     "id": "seed_bomb",
@@ -1944,23 +1983,23 @@
     "power": 55,
     "energy": 33,
     "dpe": 1.67,
-    "duration": 2.1,
-    "damageWindowStart": 1.2,
-    "damageWindowEnd": 1.9,
-    "dps": 26.19
+    "duration": 2.0,
+    "damageWindowStart": 1.1,
+    "damageWindowEnd": 1.8,
+    "dps": 27.5
   },
   {
     "id": "seed_flare",
     "nameEn": "Seed Flare",
     "name": "시드플레어",
     "type": "grass",
-    "power": 120,
+    "power": 115,
     "energy": 100,
-    "dpe": 1.2,
-    "duration": 2.7,
-    "damageWindowStart": 2.5,
-    "damageWindowEnd": 2.6,
-    "dps": 44.44
+    "dpe": 1.15,
+    "duration": 2.5,
+    "damageWindowStart": 2.3,
+    "damageWindowEnd": 2.4,
+    "dps": 46.0
   },
   {
     "id": "shadow_ball",
@@ -1980,13 +2019,13 @@
     "nameEn": "Shadow Bone",
     "name": "섀도본",
     "type": "ghost",
-    "power": 80,
+    "power": 85,
     "energy": 50,
-    "dpe": 1.6,
-    "duration": 2.8,
-    "damageWindowStart": 2.25,
-    "damageWindowEnd": 2.7,
-    "dps": 28.57
+    "dpe": 1.7,
+    "duration": 3.0,
+    "damageWindowStart": 2.45,
+    "damageWindowEnd": 2.9,
+    "dps": 28.33
   },
   {
     "id": "shadow_force",
@@ -1996,23 +2035,23 @@
     "power": 140,
     "energy": 100,
     "dpe": 1.4,
-    "duration": 1.9,
-    "damageWindowStart": 1.7,
-    "damageWindowEnd": 1.9,
-    "dps": 73.68
+    "duration": 2.0,
+    "damageWindowStart": 1.8,
+    "damageWindowEnd": 2.0,
+    "dps": 70.0
   },
   {
     "id": "shadow_punch",
     "nameEn": "Shadow Punch",
     "name": "섀도펀치",
     "type": "ghost",
-    "power": 40,
+    "power": 35,
     "energy": 33,
-    "dpe": 1.21,
-    "duration": 1.7,
-    "damageWindowStart": 1.3,
-    "damageWindowEnd": 1.5,
-    "dps": 23.53
+    "dpe": 1.06,
+    "duration": 1.5,
+    "damageWindowStart": 1.1,
+    "damageWindowEnd": 1.3,
+    "dps": 23.33
   },
   {
     "id": "shadow_sneak",
@@ -2022,10 +2061,10 @@
     "power": 50,
     "energy": 33,
     "dpe": 1.52,
-    "duration": 2.9,
-    "damageWindowStart": 2.2,
-    "damageWindowEnd": 2.7,
-    "dps": 17.24
+    "duration": 3.0,
+    "damageWindowStart": 2.3,
+    "damageWindowEnd": 2.8,
+    "dps": 16.67
   },
   {
     "id": "signal_beam",
@@ -2035,23 +2074,23 @@
     "power": 75,
     "energy": 50,
     "dpe": 1.5,
-    "duration": 2.9,
-    "damageWindowStart": 1.8,
-    "damageWindowEnd": 2.6,
-    "dps": 25.86
+    "duration": 3.0,
+    "damageWindowStart": 1.9,
+    "damageWindowEnd": 2.7,
+    "dps": 25.0
   },
   {
     "id": "silver_wind",
     "nameEn": "Silver Wind",
     "name": "은빛바람",
     "type": "bug",
-    "power": 70,
+    "power": 65,
     "energy": 33,
-    "dpe": 2.12,
-    "duration": 3.7,
-    "damageWindowStart": 1.7,
-    "damageWindowEnd": 3.5,
-    "dps": 18.92
+    "dpe": 1.97,
+    "duration": 3.5,
+    "damageWindowStart": 1.5,
+    "damageWindowEnd": 3.3,
+    "dps": 18.57
   },
   {
     "id": "skull_bash",
@@ -2061,10 +2100,10 @@
     "power": 130,
     "energy": 100,
     "dpe": 1.3,
-    "duration": 3.1,
-    "damageWindowStart": 1.8,
-    "damageWindowEnd": 2.3,
-    "dps": 41.94
+    "duration": 3.0,
+    "damageWindowStart": 1.7,
+    "damageWindowEnd": 2.2,
+    "dps": 43.33
   },
   {
     "id": "sky_attack",
@@ -2087,36 +2126,36 @@
     "power": 50,
     "energy": 33,
     "dpe": 1.52,
-    "duration": 2.1,
-    "damageWindowStart": 1.2,
-    "damageWindowEnd": 1.55,
-    "dps": 23.81
+    "duration": 2.0,
+    "damageWindowStart": 1.1,
+    "damageWindowEnd": 1.45,
+    "dps": 25.0
   },
   {
     "id": "sludge_bomb",
     "nameEn": "Sludge Bomb",
     "name": "오물폭탄",
     "type": "poison",
-    "power": 80,
+    "power": 85,
     "energy": 50,
-    "dpe": 1.6,
-    "duration": 2.3,
-    "damageWindowStart": 1.1,
-    "damageWindowEnd": 2.1,
-    "dps": 34.78
+    "dpe": 1.7,
+    "duration": 2.5,
+    "damageWindowStart": 1.3,
+    "damageWindowEnd": 2.3,
+    "dps": 34.0
   },
   {
     "id": "sludge_wave",
     "nameEn": "Sludge Wave",
     "name": "오물웨이브",
     "type": "poison",
-    "power": 110,
+    "power": 105,
     "energy": 100,
-    "dpe": 1.1,
-    "duration": 3.2,
-    "damageWindowStart": 2.0,
-    "damageWindowEnd": 3.0,
-    "dps": 34.38
+    "dpe": 1.05,
+    "duration": 3.0,
+    "damageWindowStart": 1.8,
+    "damageWindowEnd": 2.8,
+    "dps": 35.0
   },
   {
     "id": "solar_beam",
@@ -2126,10 +2165,10 @@
     "power": 180,
     "energy": 100,
     "dpe": 1.8,
-    "duration": 4.9,
-    "damageWindowStart": 2.7,
-    "damageWindowEnd": 4.7,
-    "dps": 36.73
+    "duration": 5.0,
+    "damageWindowStart": 2.8,
+    "damageWindowEnd": 4.8,
+    "dps": 36.0
   },
   {
     "id": "spacial_rend",
@@ -2171,43 +2210,56 @@
     "dps": 28.0
   },
   {
+    "id": "springtide_storm",
+    "nameEn": "Springtide Storm (Speculative)",
+    "name": "봄의폭풍",
+    "type": "fairy",
+    "power": 120,
+    "energy": 100,
+    "dpe": 1.2,
+    "duration": 2.0,
+    "damageWindowStart": 1.6,
+    "damageWindowEnd": 2.0,
+    "dps": 60.0
+  },
+  {
     "id": "stomp",
     "nameEn": "Stomp",
     "name": "짓밟기",
     "type": "normal",
-    "power": 55,
+    "power": 50,
     "energy": 50,
-    "dpe": 1.1,
-    "duration": 1.7,
-    "damageWindowStart": 1.1,
-    "damageWindowEnd": 1.5,
-    "dps": 32.35
+    "dpe": 1.0,
+    "duration": 1.5,
+    "damageWindowStart": 0.9,
+    "damageWindowEnd": 1.3,
+    "dps": 33.33
   },
   {
     "id": "stone_edge",
     "nameEn": "Stone Edge",
     "name": "스톤에지",
     "type": "rock",
-    "power": 100,
+    "power": 105,
     "energy": 100,
-    "dpe": 1.0,
-    "duration": 2.3,
-    "damageWindowStart": 0.7,
-    "damageWindowEnd": 2.1,
-    "dps": 43.48
+    "dpe": 1.05,
+    "duration": 2.5,
+    "damageWindowStart": 0.9,
+    "damageWindowEnd": 2.3,
+    "dps": 42.0
   },
   {
     "id": "submission",
     "nameEn": "Submission",
     "name": "지옥의바퀴",
     "type": "fighting",
-    "power": 60,
+    "power": 55,
     "energy": 50,
-    "dpe": 1.2,
-    "duration": 2.2,
-    "damageWindowStart": 1.8,
-    "damageWindowEnd": 2.0,
-    "dps": 27.27
+    "dpe": 1.1,
+    "duration": 2.0,
+    "damageWindowStart": 1.6,
+    "damageWindowEnd": 1.8,
+    "dps": 27.5
   },
   {
     "id": "sunsteel_strike",
@@ -2217,10 +2269,10 @@
     "power": 230,
     "energy": 100,
     "dpe": 2.3,
-    "duration": 3.1,
-    "damageWindowStart": 2.3,
-    "damageWindowEnd": 3.1,
-    "dps": 74.19
+    "duration": 3.0,
+    "damageWindowStart": 2.2,
+    "damageWindowEnd": 3.0,
+    "dps": 76.67
   },
   {
     "id": "super_power",
@@ -2240,26 +2292,26 @@
     "nameEn": "Surf",
     "name": "파도타기",
     "type": "water",
-    "power": 65,
+    "power": 60,
     "energy": 50,
-    "dpe": 1.3,
-    "duration": 1.7,
-    "damageWindowStart": 1.4,
-    "damageWindowEnd": 1.6,
-    "dps": 38.24
+    "dpe": 1.2,
+    "duration": 1.5,
+    "damageWindowStart": 1.2,
+    "damageWindowEnd": 1.4,
+    "dps": 40.0
   },
   {
     "id": "swift",
     "nameEn": "Swift",
     "name": "스피드스타",
     "type": "normal",
-    "power": 60,
+    "power": 65,
     "energy": 50,
-    "dpe": 1.2,
-    "duration": 2.8,
-    "damageWindowStart": 2.0,
-    "damageWindowEnd": 2.6,
-    "dps": 21.43
+    "dpe": 1.3,
+    "duration": 3.0,
+    "damageWindowStart": 2.2,
+    "damageWindowEnd": 2.8,
+    "dps": 21.67
   },
   {
     "id": "synchronoise",
@@ -2269,10 +2321,10 @@
     "power": 80,
     "energy": 50,
     "dpe": 1.6,
-    "duration": 2.6,
-    "damageWindowStart": 0.85,
-    "damageWindowEnd": 1.6,
-    "dps": 30.77
+    "duration": 2.5,
+    "damageWindowStart": 0.75,
+    "damageWindowEnd": 1.5,
+    "dps": 32.0
   },
   {
     "id": "techno_blast_normal",
@@ -2347,22 +2399,22 @@
     "power": 100,
     "energy": 100,
     "dpe": 1.0,
-    "duration": 2.4,
-    "damageWindowStart": 1.2,
-    "damageWindowEnd": 2.2,
-    "dps": 41.67
+    "duration": 2.5,
+    "damageWindowStart": 1.3,
+    "damageWindowEnd": 2.3,
+    "dps": 40.0
   },
   {
     "id": "thunder_punch",
     "nameEn": "Thunder Punch",
     "name": "번개펀치",
     "type": "electric",
-    "power": 45,
+    "power": 50,
     "energy": 33,
-    "dpe": 1.36,
-    "duration": 1.8,
-    "damageWindowStart": 1.7,
-    "damageWindowEnd": 1.55,
+    "dpe": 1.52,
+    "duration": 2.0,
+    "damageWindowStart": 1.9,
+    "damageWindowEnd": 1.75,
     "dps": 25.0
   },
   {
@@ -2422,26 +2474,26 @@
     "nameEn": "Twister",
     "name": "회오리",
     "type": "dragon",
-    "power": 45,
+    "power": 50,
     "energy": 33,
-    "dpe": 1.36,
-    "duration": 2.8,
-    "damageWindowStart": 0.95,
-    "damageWindowEnd": 2.6,
-    "dps": 16.07
+    "dpe": 1.52,
+    "duration": 3.0,
+    "damageWindowStart": 1.15,
+    "damageWindowEnd": 2.8,
+    "dps": 16.67
   },
   {
     "id": "v_create",
     "nameEn": "V-create",
     "name": "V제너레이트",
     "type": "fire",
-    "power": 95,
+    "power": 105,
     "energy": 33,
-    "dpe": 2.88,
-    "duration": 2.8,
-    "damageWindowStart": 1.7,
-    "damageWindowEnd": 2.5,
-    "dps": 33.93
+    "dpe": 3.18,
+    "duration": 3.0,
+    "damageWindowStart": 1.9,
+    "damageWindowEnd": 2.7,
+    "dps": 35.0
   },
   {
     "id": "vice_grip",
@@ -2451,10 +2503,10 @@
     "power": 35,
     "energy": 33,
     "dpe": 1.06,
-    "duration": 1.9,
-    "damageWindowStart": 1.1,
-    "damageWindowEnd": 1.5,
-    "dps": 18.42
+    "duration": 2.0,
+    "damageWindowStart": 1.2,
+    "damageWindowEnd": 1.6,
+    "dps": 17.5
   },
   {
     "id": "volt_tackle",
@@ -2464,23 +2516,23 @@
     "power": 90,
     "energy": 33,
     "dpe": 2.73,
-    "duration": 3.4,
-    "damageWindowStart": 2.0,
-    "damageWindowEnd": 2.5,
-    "dps": 26.47
+    "duration": 3.5,
+    "damageWindowStart": 2.1,
+    "damageWindowEnd": 2.6,
+    "dps": 25.71
   },
   {
     "id": "water_pulse",
     "nameEn": "Water Pulse",
     "name": "물의파동",
     "type": "water",
-    "power": 70,
+    "power": 65,
     "energy": 50,
-    "dpe": 1.4,
-    "duration": 3.2,
-    "damageWindowStart": 2.2,
-    "damageWindowEnd": 2.9,
-    "dps": 21.88
+    "dpe": 1.3,
+    "duration": 3.0,
+    "damageWindowStart": 2.0,
+    "damageWindowEnd": 2.7,
+    "dps": 21.67
   },
   {
     "id": "weather_ball_fire",
@@ -2490,10 +2542,10 @@
     "power": 55,
     "energy": 33,
     "dpe": 1.67,
-    "duration": 1.6,
-    "damageWindowStart": 1.35,
-    "damageWindowEnd": 1.6,
-    "dps": 34.38
+    "duration": 1.5,
+    "damageWindowStart": 1.25,
+    "damageWindowEnd": 1.5,
+    "dps": 36.67
   },
   {
     "id": "weather_ball_ice",
@@ -2503,10 +2555,10 @@
     "power": 55,
     "energy": 33,
     "dpe": 1.67,
-    "duration": 1.6,
-    "damageWindowStart": 1.35,
-    "damageWindowEnd": 1.6,
-    "dps": 34.38
+    "duration": 1.5,
+    "damageWindowStart": 1.25,
+    "damageWindowEnd": 1.5,
+    "dps": 36.67
   },
   {
     "id": "weather_ball_rock",
@@ -2516,10 +2568,10 @@
     "power": 55,
     "energy": 33,
     "dpe": 1.67,
-    "duration": 1.6,
-    "damageWindowStart": 1.35,
-    "damageWindowEnd": 1.6,
-    "dps": 34.38
+    "duration": 1.5,
+    "damageWindowStart": 1.25,
+    "damageWindowEnd": 1.5,
+    "dps": 36.67
   },
   {
     "id": "weather_ball_normal",
@@ -2529,10 +2581,10 @@
     "power": 55,
     "energy": 33,
     "dpe": 1.67,
-    "duration": 1.6,
-    "damageWindowStart": 1.35,
-    "damageWindowEnd": 1.6,
-    "dps": 34.38
+    "duration": 1.5,
+    "damageWindowStart": 1.25,
+    "damageWindowEnd": 1.5,
+    "dps": 36.67
   },
   {
     "id": "weather_ball_water",
@@ -2542,23 +2594,23 @@
     "power": 55,
     "energy": 33,
     "dpe": 1.67,
-    "duration": 1.6,
-    "damageWindowStart": 1.35,
-    "damageWindowEnd": 1.6,
-    "dps": 34.38
+    "duration": 1.5,
+    "damageWindowStart": 1.25,
+    "damageWindowEnd": 1.5,
+    "dps": 36.67
   },
   {
     "id": "wildbolt_storm",
     "nameEn": "Wildbolt Storm",
     "name": "번개폭풍",
     "type": "electric",
-    "power": 140,
+    "power": 150,
     "energy": 100,
-    "dpe": 1.4,
-    "duration": 2.3,
-    "damageWindowStart": 1.8,
-    "damageWindowEnd": 2.6,
-    "dps": 60.87
+    "dpe": 1.5,
+    "duration": 2.5,
+    "damageWindowStart": 2.0,
+    "damageWindowEnd": 2.8,
+    "dps": 60.0
   },
   {
     "id": "wild_charge",
@@ -2568,10 +2620,10 @@
     "power": 90,
     "energy": 50,
     "dpe": 1.8,
-    "duration": 2.6,
-    "damageWindowStart": 1.7,
-    "damageWindowEnd": 2.1,
-    "dps": 34.62
+    "duration": 2.5,
+    "damageWindowStart": 1.6,
+    "damageWindowEnd": 2.0,
+    "dps": 36.0
   },
   {
     "id": "wrap",
@@ -2581,10 +2633,10 @@
     "power": 60,
     "energy": 33,
     "dpe": 1.82,
-    "duration": 2.9,
-    "damageWindowStart": 2.05,
-    "damageWindowEnd": 2.7,
-    "dps": 20.69
+    "duration": 3.0,
+    "damageWindowStart": 2.15,
+    "damageWindowEnd": 2.8,
+    "dps": 20.0
   },
   {
     "id": "x_scissor",
@@ -2594,10 +2646,10 @@
     "power": 45,
     "energy": 33,
     "dpe": 1.36,
-    "duration": 1.6,
-    "damageWindowStart": 1.2,
-    "damageWindowEnd": 1.4,
-    "dps": 28.12
+    "duration": 1.5,
+    "damageWindowStart": 1.1,
+    "damageWindowEnd": 1.3,
+    "dps": 30.0
   },
   {
     "id": "zap_cannon",
@@ -2607,9 +2659,9 @@
     "power": 140,
     "energy": 100,
     "dpe": 1.4,
-    "duration": 3.7,
-    "damageWindowStart": 3.0,
-    "damageWindowEnd": 3.5,
-    "dps": 37.84
+    "duration": 3.5,
+    "damageWindowStart": 2.8,
+    "damageWindowEnd": 3.3,
+    "dps": 40.0
   }
 ]

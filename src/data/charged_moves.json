@@ -90,6 +90,30 @@
     "dpe": 1.82
   },
   {
+    "id": "aura_wheel_electric",
+    "nameEn": "Aura Wheel",
+    "name": "오라휠",
+    "type": "electric",
+    "power": 100,
+    "energy": 45,
+    "dpe": 2.22,
+    "buffs": [1, 0],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "aura_wheel_dark",
+    "nameEn": "Aura Wheel",
+    "name": "오라휠",
+    "type": "dark",
+    "power": 100,
+    "energy": 45,
+    "dpe": 2.22,
+    "buffs": [1, 0],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
     "id": "aurora_beam",
     "nameEn": "Aurora Beam",
     "name": "오로라빔",
@@ -1363,6 +1387,18 @@
     "power": 90,
     "energy": 45,
     "dpe": 2.0
+  },
+  {
+    "id": "rage_fist",
+    "nameEn": "Rage Fist",
+    "name": "분노의주먹",
+    "type": "ghost",
+    "power": 50,
+    "energy": 35,
+    "dpe": 1.43,
+    "buffs": [1, 0],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
   },
   {
     "id": "razor_shell",
