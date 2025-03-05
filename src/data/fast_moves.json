@@ -215,9 +215,9 @@
     "type": "fire",
     "power": 8,
     "turn": 2,
-    "energyGain": 5,
+    "energyGain": 6,
     "dpt": 4.0,
-    "ept": 2.5
+    "ept": 3.0
   },
   {
     "id": "fairy_wind",
@@ -301,11 +301,11 @@
     "nameEn": "Hex",
     "name": "병상첨병",
     "type": "ghost",
-    "power": 6,
+    "power": 7,
     "turn": 3,
-    "energyGain": 12,
-    "dpt": 2.0,
-    "ept": 4.0
+    "energyGain": 13,
+    "dpt": 2.33,
+    "ept": 4.33
   },
   {
     "id": "hidden_power_bug",
@@ -490,9 +490,9 @@
     "type": "ice",
     "power": 8,
     "turn": 2,
-    "energyGain": 5,
+    "energyGain": 6,
     "dpt": 4.0,
-    "ept": 2.5
+    "ept": 3.0
   },
   {
     "id": "ice_shard",
@@ -785,10 +785,10 @@
     "nameEn": "Rollout",
     "name": "구르기",
     "type": "rock",
-    "power": 8,
+    "power": 7,
     "turn": 3,
     "energyGain": 13,
-    "dpt": 2.67,
+    "dpt": 2.33,
     "ept": 4.33
   },
   {
@@ -930,19 +930,19 @@
     "type": "electric",
     "power": 8,
     "turn": 2,
-    "energyGain": 5,
+    "energyGain": 6,
     "dpt": 4.0,
-    "ept": 2.5
+    "ept": 3.0
   },
   {
     "id": "thunder_shock",
     "nameEn": "Thunder Shock",
     "name": "전기쇼크",
     "type": "electric",
-    "power": 3,
+    "power": 4,
     "turn": 2,
     "energyGain": 9,
-    "dpt": 1.5,
+    "dpt": 2.0,
     "ept": 4.5
   },
   {

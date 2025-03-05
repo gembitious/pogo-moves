@@ -17,8 +17,8 @@
     "name": "애크러뱃",
     "type": "flying",
     "power": 110,
-    "energy": 60,
-    "dpe": 1.83
+    "energy": 55,
+    "dpe": 2.0
   },
   {
     "id": "aerial_ace",
@@ -46,9 +46,12 @@
     "nameEn": "Air Cutter",
     "name": "에어커터",
     "type": "flying",
-    "power": 60,
-    "energy": 55,
-    "dpe": 1.09
+    "power": 45,
+    "energy": 35,
+    "dpe": 1.29,
+    "buffs": [1, 0],
+    "buffTarget": "self",
+    "buffApplyChance": 0.3
   },
   {
     "id": "ancient_power",
@@ -67,9 +70,9 @@
     "nameEn": "Aqua Jet",
     "name": "아쿠아제트",
     "type": "water",
-    "power": 45,
-    "energy": 45,
-    "dpe": 1.0
+    "power": 70,
+    "energy": 40,
+    "dpe": 1.75
   },
   {
     "id": "aqua_tail",
@@ -271,9 +274,12 @@
     "nameEn": "Bulldoze",
     "name": "땅고르기",
     "type": "ground",
-    "power": 80,
-    "energy": 60,
-    "dpe": 1.33
+    "power": 45,
+    "energy": 45,
+    "dpe": 1.0,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.5
   },
   {
     "id": "close_combat",
@@ -355,9 +361,9 @@
     "nameEn": "Dazzling Gleam",
     "name": "매지컬샤인",
     "type": "fairy",
-    "power": 110,
-    "energy": 70,
-    "dpe": 1.57
+    "power": 90,
+    "energy": 55,
+    "dpe": 1.64
   },
   {
     "id": "dig",
@@ -382,9 +388,9 @@
     "nameEn": "Discharge",
     "name": "방전",
     "type": "electric",
-    "power": 65,
-    "energy": 45,
-    "dpe": 1.44
+    "power": 55,
+    "energy": 40,
+    "dpe": 1.38
   },
   {
     "id": "doom_desire",
@@ -491,8 +497,8 @@
     "name": "폭발펀치",
     "type": "fighting",
     "power": 90,
-    "energy": 50,
-    "dpe": 1.8
+    "energy": 45,
+    "dpe": 2.0
   },
   {
     "id": "earthquake",
@@ -553,9 +559,9 @@
     "nameEn": "Fire Punch",
     "name": "불꽃펀치",
     "type": "fire",
-    "power": 55,
+    "power": 60,
     "energy": 40,
-    "dpe": 1.38
+    "dpe": 1.5
   },
   {
     "id": "blaze_kick",
@@ -627,6 +633,18 @@
     "dpe": 1.57
   },
   {
+    "id": "flower_trick",
+    "nameEn": "Flower Trick",
+    "name": "트릭플라워",
+    "type": "grass",
+    "power": 30,
+    "energy": 35,
+    "dpe": 0.86,
+    "buffs": [1, 0],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
     "id": "fly",
     "nameEn": "Fly",
     "name": "공중날기",
@@ -658,9 +676,21 @@
     "nameEn": "Foul Play",
     "name": "속임수",
     "type": "dark",
-    "power": 70,
-    "energy": 45,
-    "dpe": 1.56
+    "power": 60,
+    "energy": 40,
+    "dpe": 1.5
+  },
+  {
+    "id": "freeze_shock",
+    "nameEn": "Freeze Shock",
+    "name": "프리즈볼트",
+    "type": "ice",
+    "power": 120,
+    "energy": 60,
+    "dpe": 2.0,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.3
   },
   {
     "id": "frenzy_plant",
@@ -858,13 +888,25 @@
     "dpe": 1.64
   },
   {
+    "id": "ice_burn",
+    "nameEn": "Ice Burn",
+    "name": "콜드플레어",
+    "type": "ice",
+    "power": 120,
+    "energy": 60,
+    "dpe": 2.0,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.3
+  },
+  {
     "id": "ice_punch",
     "nameEn": "Ice Punch",
     "name": "냉동펀치",
     "type": "ice",
-    "power": 55,
+    "power": 60,
     "energy": 40,
-    "dpe": 1.38
+    "dpe": 1.5
   },
   {
     "id": "icicle_spear",
@@ -1135,9 +1177,9 @@
     "nameEn": "Night Shade",
     "name": "나이트헤드",
     "type": "ghost",
-    "power": 80,
+    "power": 70,
     "energy": 45,
-    "dpe": 1.78
+    "dpe": 1.56
   },
   {
     "id": "night_slash",
@@ -1376,8 +1418,8 @@
     "name": "사이코쇼크",
     "type": "psychic",
     "power": 70,
-    "energy": 45,
-    "dpe": 1.56
+    "energy": 40,
+    "dpe": 1.75
   },
   {
     "id": "psystrike",
@@ -1453,9 +1495,9 @@
     "nameEn": "Rock Tomb",
     "name": "암석봉인",
     "type": "rock",
-    "power": 70,
-    "energy": 60,
-    "dpe": 1.17,
+    "power": 80,
+    "energy": 50,
+    "dpe": 1.6,
     "buffs": [-1, 0],
     "buffTarget": "opponent",
     "buffApplyChance": 1.0
@@ -1657,9 +1699,9 @@
     "nameEn": "Sludge",
     "name": "오물공격",
     "type": "poison",
-    "power": 50,
+    "power": 70,
     "energy": 40,
-    "dpe": 1.25
+    "dpe": 1.75
   },
   {
     "id": "sludge_bomb",
@@ -1717,6 +1759,18 @@
     "buffs": [0, -1],
     "buffTarget": "opponent",
     "buffApplyChance": 0.33
+  },
+  {
+    "id": "springtide_storm",
+    "nameEn": "Springtide Storm (Speculative)",
+    "name": "봄의폭풍",
+    "type": "fairy",
+    "power": 60,
+    "energy": 45,
+    "dpe": 1.33,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 1.0
   },
   {
     "id": "stomp",
@@ -1852,9 +1906,9 @@
     "nameEn": "Thunder Punch",
     "name": "번개펀치",
     "type": "electric",
-    "power": 55,
+    "power": 60,
     "energy": 40,
-    "dpe": 1.38
+    "dpe": 1.5
   },
   {
     "id": "thunderbolt",

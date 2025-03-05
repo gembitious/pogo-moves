@@ -806,6 +806,19 @@
     "dps": 40.0
   },
   {
+    "id": "flower_trick",
+    "nameEn": "Flower Trick",
+    "name": "트릭플라워",
+    "type": "grass",
+    "power": 75,
+    "energy": 33,
+    "dpe": 2.27,
+    "duration": 2.7,
+    "damageWindowStart": 1.8,
+    "damageWindowEnd": 2.7,
+    "dps": 27.78
+  },
+  {
     "id": "fly",
     "nameEn": "Fly",
     "name": "공중날기",
@@ -856,6 +869,19 @@
     "damageWindowStart": 1.7,
     "damageWindowEnd": 1.9,
     "dps": 35.0
+  },
+  {
+    "id": "freeze_shock",
+    "nameEn": "Freeze Shock",
+    "name": "프리즈볼트",
+    "type": "ice",
+    "power": 160,
+    "energy": 100,
+    "dpe": 1.6,
+    "duration": 1.5,
+    "damageWindowStart": 0.9,
+    "damageWindowEnd": 1.4,
+    "dps": 106.67
   },
   {
     "id": "frenzy_plant",
@@ -1129,6 +1155,19 @@
     "damageWindowStart": 1.5,
     "damageWindowEnd": 3.0,
     "dps": 27.14
+  },
+  {
+    "id": "ice_burn",
+    "nameEn": "Ice Burn",
+    "name": "콜드플레어",
+    "type": "ice",
+    "power": 90,
+    "energy": 50,
+    "dpe": 1.8,
+    "duration": 2.0,
+    "damageWindowStart": 1.8,
+    "damageWindowEnd": 2.2,
+    "dps": 45.0
   },
   {
     "id": "ice_punch",
