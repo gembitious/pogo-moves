@@ -135,6 +135,24 @@
     "dpe": 2.0
   },
   {
+    "id": "behemoth_bash",
+    "nameEn": "Behemoth Bash",
+    "name": "거수탄",
+    "type": "steel",
+    "power": 80,
+    "energy": 45,
+    "dpe": 1.78
+  },
+  {
+    "id": "behemoth_blade",
+    "nameEn": "Behemoth Blade",
+    "name": "거수참",
+    "type": "steel",
+    "power": 100,
+    "energy": 55,
+    "dpe": 1.82
+  },
+  {
     "id": "blast_burn",
     "nameEn": "Blast Burn",
     "name": "블라스트번",
@@ -336,7 +354,16 @@
     "dpe": 1.56,
     "buffs": [0, -1],
     "buffTarget": "opponent",
-    "buffApplyChance": 0.3
+    "buffApplyChance": 0.2
+  },
+  {
+    "id": "crush_grip",
+    "nameEn": "Crush Grip",
+    "name": "묵사발",
+    "type": "normal",
+    "power": 110,
+    "energy": 50,
+    "dpe": 2.2
   },
   {
     "id": "darkest_lariat",
@@ -397,18 +424,18 @@
     "nameEn": "Doom Desire",
     "name": "파멸의소원",
     "type": "steel",
-    "power": 75,
+    "power": 80,
     "energy": 40,
-    "dpe": 1.88
+    "dpe": 2.0
   },
   {
     "id": "double_iron_bash",
     "nameEn": "Double Iron Bash",
     "name": "더블펀처",
     "type": "steel",
-    "power": 50,
+    "power": 55,
     "energy": 35,
-    "dpe": 1.43
+    "dpe": 1.57
   },
   {
     "id": "draco_meteor",
@@ -442,6 +469,15 @@
     "power": 50,
     "energy": 35,
     "dpe": 1.43
+  },
+  {
+    "id": "dragon_energy",
+    "nameEn": "Dragon Energy",
+    "name": "드래곤에너지",
+    "type": "dragon",
+    "power": 100,
+    "energy": 45,
+    "dpe": 2.22
   },
   {
     "id": "dragon_pulse",
@@ -1274,11 +1310,11 @@
     "name": "파라볼라차지",
     "type": "electric",
     "power": 70,
-    "energy": 50,
-    "dpe": 1.4,
+    "energy": 45,
+    "dpe": 1.56,
     "buffs": [0, 1],
     "buffTarget": "self",
-    "buffApplyChance": 0.66
+    "buffApplyChance": 1.0
   },
   {
     "id": "payback",
@@ -1902,6 +1938,18 @@
     "dpe": 1.67
   },
   {
+    "id": "thunder_cage",
+    "nameEn": "Thunder Cage",
+    "name": "썬더프리즌",
+    "type": "electric",
+    "power": 60,
+    "energy": 40,
+    "dpe": 1.5,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": 1.0
+  },
+  {
     "id": "thunder_punch",
     "nameEn": "Thunder Punch",
     "name": "번개펀치",
@@ -1918,6 +1966,18 @@
     "power": 90,
     "energy": 55,
     "dpe": 1.64
+  },
+  {
+    "id": "torch_song",
+    "nameEn": "Torch Song",
+    "name": "플레어송",
+    "type": "fire",
+    "power": 70,
+    "energy": 45,
+    "dpe": 1.56,
+    "buffs": [1, 0],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
   },
   {
     "id": "trailblaze",
@@ -1963,6 +2023,18 @@
     "power": 45,
     "energy": 45,
     "dpe": 1.0
+  },
+  {
+    "id": "upper_hand",
+    "nameEn": "Upper Hand",
+    "name": "기선제압",
+    "type": "fighting",
+    "power": 70,
+    "energy": 40,
+    "dpe": 1.75,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": 0.3
   },
   {
     "id": "v_create",
@@ -2082,7 +2154,10 @@
     "type": "normal",
     "power": 60,
     "energy": 45,
-    "dpe": 1.33
+    "dpe": 1.33,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": 1.0
   },
   {
     "id": "x_scissor",

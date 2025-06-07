@@ -6,9 +6,9 @@
     "type": "poison",
     "power": 6,
     "turn": 2,
-    "energyGain": 5,
+    "energyGain": 8,
     "dpt": 3.0,
-    "ept": 2.5
+    "ept": 4.0
   },
   {
     "id": "air_slash",
@@ -59,10 +59,10 @@
     "nameEn": "Bug Bite",
     "name": "벌레먹기",
     "type": "bug",
-    "power": 3,
+    "power": 4,
     "turn": 1,
     "energyGain": 3,
-    "dpt": 3.0,
+    "dpt": 4.0,
     "ept": 3.0
   },
   {
@@ -70,10 +70,10 @@
     "nameEn": "Bullet Punch",
     "name": "불릿펀치",
     "type": "steel",
-    "power": 6,
+    "power": 8,
     "turn": 2,
     "energyGain": 7,
-    "dpt": 3.0,
+    "dpt": 4.0,
     "ept": 3.5
   },
   {
@@ -182,9 +182,9 @@
     "type": "fire",
     "power": 7,
     "turn": 2,
-    "energyGain": 6,
+    "energyGain": 7,
     "dpt": 3.5,
-    "ept": 3.0
+    "ept": 3.5
   },
   {
     "id": "extrasensory",
@@ -268,10 +268,10 @@
     "nameEn": "Fury Cutter",
     "name": "연속자르기",
     "type": "bug",
-    "power": 2,
+    "power": 3,
     "turn": 1,
     "energyGain": 4,
-    "dpt": 2.0,
+    "dpt": 3.0,
     "ept": 4.0
   },
   {
@@ -620,10 +620,10 @@
     "nameEn": "Metal Sound",
     "name": "금속음",
     "type": "steel",
-    "power": 3,
+    "power": 5,
     "turn": 2,
     "energyGain": 8,
-    "dpt": 1.5,
+    "dpt": 2.5,
     "ept": 4.0
   },
   {

@@ -169,6 +169,32 @@
     "dps": 34.0
   },
   {
+    "id": "behemoth_bash",
+    "nameEn": "Behemoth Bash",
+    "name": "거수탄",
+    "type": "steel",
+    "power": 125,
+    "energy": 50,
+    "dpe": 2.5,
+    "duration": 1.5,
+    "damageWindowStart": 0.9,
+    "damageWindowEnd": 1.4,
+    "dps": 83.33
+  },
+  {
+    "id": "behemoth_blade",
+    "nameEn": "Behemoth Blade",
+    "name": "거수참",
+    "type": "steel",
+    "power": 200,
+    "energy": 100,
+    "dpe": 2.0,
+    "duration": 3.5,
+    "damageWindowStart": 2.5,
+    "damageWindowEnd": 3.5,
+    "dps": 57.14
+  },
+  {
     "id": "blast_burn",
     "nameEn": "Blast Burn",
     "name": "블라스트번",
@@ -416,6 +442,19 @@
     "dps": 21.67
   },
   {
+    "id": "crush_grip",
+    "nameEn": "Crush Grip",
+    "name": "묵사발",
+    "type": "normal",
+    "power": 1,
+    "energy": 1,
+    "dpe": 1.0,
+    "duration": 1.8,
+    "damageWindowStart": 0.7,
+    "damageWindowEnd": 1.7,
+    "dps": 0.56
+  },
+  {
     "id": "darkest_lariat",
     "nameEn": "Darkest Lariat",
     "name": "DD래리어트",
@@ -557,6 +596,19 @@
     "damageWindowStart": 0.9,
     "damageWindowEnd": 1.1,
     "dps": 30.0
+  },
+  {
+    "id": "dragon_energy",
+    "nameEn": "Dragon Energy",
+    "name": "드래곤에너지",
+    "type": "dragon",
+    "power": 1,
+    "energy": 1,
+    "dpe": 1.0,
+    "duration": 3.3,
+    "damageWindowStart": 1.88,
+    "damageWindowEnd": 3.2,
+    "dps": 0.3
   },
   {
     "id": "dragon_pulse",
@@ -2444,6 +2496,19 @@
     "dps": 40.0
   },
   {
+    "id": "thunder_cage",
+    "nameEn": "Thunder Cage",
+    "name": "썬더프리즌",
+    "type": "electric",
+    "power": 1,
+    "energy": 1,
+    "dpe": 1.0,
+    "duration": 3.3,
+    "damageWindowStart": 1.88,
+    "damageWindowEnd": 3.2,
+    "dps": 0.3
+  },
+  {
     "id": "thunder_punch",
     "nameEn": "Thunder Punch",
     "name": "번개펀치",
@@ -2468,6 +2533,19 @@
     "damageWindowStart": 1.8,
     "damageWindowEnd": 2.3,
     "dps": 32.0
+  },
+  {
+    "id": "torch_song",
+    "nameEn": "Torch Song",
+    "name": "플레어송",
+    "type": "fire",
+    "power": 100,
+    "energy": 50,
+    "dpe": 2.0,
+    "duration": 3.5,
+    "damageWindowStart": 2.5,
+    "damageWindowEnd": 3.5,
+    "dps": 28.57
   },
   {
     "id": "trailblaze",
@@ -2520,6 +2598,19 @@
     "damageWindowStart": 1.15,
     "damageWindowEnd": 2.8,
     "dps": 16.67
+  },
+  {
+    "id": "upper_hand",
+    "nameEn": "Upper Hand",
+    "name": "기선제압",
+    "type": "fighting",
+    "power": 50,
+    "energy": 33,
+    "dpe": 1.52,
+    "duration": 2.0,
+    "damageWindowStart": 2.3,
+    "damageWindowEnd": 3.1,
+    "dps": 25.0
   },
   {
     "id": "v_create",
