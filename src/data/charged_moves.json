@@ -75,6 +75,18 @@
     "dpe": 1.75
   },
   {
+    "id": "aqua_step",
+    "nameEn": "Aqua Step",
+    "name": "아쿠아스텝",
+    "type": "water",
+    "power": 55,
+    "energy": 40,
+    "dpe": 1.38,
+    "buffs": [1, 0],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
     "id": "aqua_tail",
     "nameEn": "Aqua Tail",
     "name": "아쿠아테일",
@@ -300,6 +312,30 @@
     "buffApplyChance": 0.5
   },
   {
+    "id": "chilling_water",
+    "nameEn": "Chilling Water (Speculative)",
+    "name": "찬물끼얹기",
+    "type": "water",
+    "power": 60,
+    "energy": 45,
+    "dpe": 1.33,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 1.0
+  },
+  {
+    "id": "clanging_scales",
+    "nameEn": "Clanging Scales",
+    "name": "스케일노이즈",
+    "type": "dragon",
+    "power": 120,
+    "energy": 45,
+    "dpe": 2.67,
+    "buffs": [0, -1],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
     "id": "close_combat",
     "nameEn": "Close Combat",
     "name": "인파이트",
@@ -523,6 +559,15 @@
     "nameEn": "Drill Run",
     "name": "드릴라이너",
     "type": "ground",
+    "power": 80,
+    "energy": 45,
+    "dpe": 1.78
+  },
+  {
+    "id": "dynamax_cannon",
+    "nameEn": "Dynamax Cannon",
+    "name": "다이맥스포",
+    "type": "dragon",
     "power": 80,
     "energy": 45,
     "dpe": 1.78
