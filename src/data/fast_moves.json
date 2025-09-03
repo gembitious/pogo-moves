@@ -103,11 +103,11 @@
     "nameEn": "Charm",
     "name": "애교부리기",
     "type": "fairy",
-    "power": 15,
+    "power": 13,
     "turn": 3,
-    "energyGain": 6,
-    "dpt": 5.0,
-    "ept": 2.0
+    "energyGain": 8,
+    "dpt": 4.33,
+    "ept": 2.67
   },
   {
     "id": "confusion",
@@ -116,9 +116,9 @@
     "type": "psychic",
     "power": 16,
     "turn": 4,
-    "energyGain": 12,
+    "energyGain": 14,
     "dpt": 4.0,
-    "ept": 3.0
+    "ept": 3.5
   },
   {
     "id": "counter",
@@ -158,33 +158,33 @@
     "nameEn": "Dragon Breath",
     "name": "용의숨결",
     "type": "dragon",
-    "power": 4,
+    "power": 3,
     "turn": 1,
-    "energyGain": 3,
-    "dpt": 4.0,
-    "ept": 3.0
+    "energyGain": 4,
+    "dpt": 3.0,
+    "ept": 4.0
   },
   {
     "id": "dragon_tail",
     "nameEn": "Dragon Tail",
     "name": "드래곤테일",
     "type": "dragon",
-    "power": 13,
+    "power": 9,
     "turn": 3,
-    "energyGain": 9,
-    "dpt": 4.33,
-    "ept": 3.0
+    "energyGain": 12,
+    "dpt": 3.0,
+    "ept": 4.0
   },
   {
     "id": "ember",
     "nameEn": "Ember",
     "name": "불꽃세례",
     "type": "fire",
-    "power": 7,
+    "power": 4,
     "turn": 2,
-    "energyGain": 7,
-    "dpt": 3.5,
-    "ept": 3.5
+    "energyGain": 9,
+    "dpt": 2.0,
+    "ept": 4.5
   },
   {
     "id": "extrasensory",
@@ -196,6 +196,17 @@
     "energyGain": 10,
     "dpt": 2.67,
     "ept": 3.33
+  },
+  {
+    "id": "fairy_wind",
+    "nameEn": "Fairy Wind",
+    "name": "요정의바람",
+    "type": "fairy",
+    "power": 4,
+    "turn": 2,
+    "energyGain": 9,
+    "dpt": 2.0,
+    "ept": 4.5
   },
   {
     "id": "feint_attack",
@@ -218,17 +229,6 @@
     "energyGain": 6,
     "dpt": 4.0,
     "ept": 3.0
-  },
-  {
-    "id": "fairy_wind",
-    "nameEn": "Fairy Wind",
-    "name": "요정의바람",
-    "type": "fairy",
-    "power": 4,
-    "turn": 2,
-    "energyGain": 9,
-    "dpt": 2.0,
-    "ept": 4.5
   },
   {
     "id": "fire_spin",
@@ -556,9 +556,9 @@
     "type": "grass",
     "power": 6,
     "turn": 2,
-    "energyGain": 7,
+    "energyGain": 8,
     "dpt": 3.0,
-    "ept": 3.5
+    "ept": 4.0
   },
   {
     "id": "lick",
@@ -655,9 +655,9 @@
     "type": "flying",
     "power": 6,
     "turn": 2,
-    "energyGain": 5,
+    "energyGain": 8,
     "dpt": 3.0,
-    "ept": 2.5
+    "ept": 4.0
   },
   {
     "id": "poison_jab",
@@ -829,10 +829,10 @@
     "nameEn": "Smack Down",
     "name": "떨어뜨리기",
     "type": "rock",
-    "power": 11,
+    "power": 12,
     "turn": 3,
     "energyGain": 8,
-    "dpt": 3.67,
+    "dpt": 4.0,
     "ept": 2.67
   },
   {
@@ -875,9 +875,9 @@
     "type": "steel",
     "power": 7,
     "turn": 2,
-    "energyGain": 6,
+    "energyGain": 5,
     "dpt": 3.5,
-    "ept": 3.0
+    "ept": 2.5
   },
   {
     "id": "struggle_bug",
@@ -961,22 +961,11 @@
     "nameEn": "Volt Switch",
     "name": "볼트체인지",
     "type": "electric",
-    "power": 12,
+    "power": 14,
     "turn": 4,
     "energyGain": 16,
-    "dpt": 3.0,
+    "dpt": 3.5,
     "ept": 4.0
-  },
-  {
-    "id": "water_gun",
-    "nameEn": "Water Gun",
-    "name": "물대포",
-    "type": "water",
-    "power": 3,
-    "turn": 1,
-    "energyGain": 3,
-    "dpt": 3.0,
-    "ept": 3.0
   },
   {
     "id": "waterfall",
@@ -988,6 +977,17 @@
     "energyGain": 8,
     "dpt": 4.0,
     "ept": 2.67
+  },
+  {
+    "id": "water_gun",
+    "nameEn": "Water Gun",
+    "name": "물대포",
+    "type": "water",
+    "power": 3,
+    "turn": 1,
+    "energyGain": 3,
+    "dpt": 3.0,
+    "ept": 3.0
   },
   {
     "id": "water_shuriken",
