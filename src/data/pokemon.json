@@ -5268,9 +5268,9 @@
     "types": ["steel", "psychic"],
     "nameEn": "Metagross",
     "name": "메타그로스",
-    "fastMoves": ["bullet_punch", "zen_headbutt", "fury_cutter"],
+    "fastMoves": ["bullet_punch", "zen_headbutt", "fury_cutter", "shadow_claw"],
     "chargedMoves": ["earthquake", "flash_cannon", "meteor_mash", "psychic"],
-    "eliteMoves": ["meteor_mash"],
+    "eliteMoves": ["meteor_mash", "shadow_claw"],
     "released": true
   },
   {
@@ -8115,9 +8115,11 @@
       "hidden_power_rock",
       "hidden_power_steel",
       "hidden_power_water",
-      "zen_headbutt"
+      "zen_headbutt",
+      "charm"
     ],
     "chargedMoves": ["future_sight", "shadow_ball", "thunder", "psyshock"],
+    "eliteMoves": ["charm"],
     "released": true
   },
   {
@@ -8933,9 +8935,8 @@
     "nameEn": "Keldeo (Resolute)",
     "name": "케르디오 (resolute)",
     "fastMoves": ["poison_jab", "low_kick"],
-    "chargedMoves": ["aqua_jet", "close_combat", "hydro_pump", "x_scissor", "sacred_sword"],
-    "eliteMoves": ["sacred_sword"],
-    "released": false
+    "chargedMoves": ["aqua_jet", "close_combat", "hydro_pump", "x_scissor", "secret_sword"],
+    "released": true
   },
   {
     "dex": 648,
@@ -9247,7 +9248,15 @@
     "nameEn": "Florges",
     "name": "플라제스",
     "fastMoves": ["vine_whip", "tackle", "razor_leaf", "fairy_wind"],
-    "chargedMoves": ["moonblast", "petal_blizzard", "psychic", "disarming_voice", "trailblaze"],
+    "chargedMoves": [
+      "moonblast",
+      "petal_blizzard",
+      "psychic",
+      "disarming_voice",
+      "trailblaze",
+      "chilling_water"
+    ],
+    "eliteMoves": ["chilling_water"],
     "released": true
   },
   {
@@ -10059,7 +10068,8 @@
     "nameEn": "Toucannon",
     "name": "왕큰부리",
     "fastMoves": ["peck", "rock_smash", "bullet_seed"],
-    "chargedMoves": ["drill_peck", "rock_blast", "flash_cannon"],
+    "chargedMoves": ["drill_peck", "rock_blast", "flash_cannon", "beak_blast"],
+    "eliteMoves": ["beak_blast"],
     "released": true
   },
   {
@@ -11703,7 +11713,7 @@
     "name": "메롱꿍",
     "fastMoves": ["bite", "sucker_punch"],
     "chargedMoves": ["foul_play", "dark_pulse", "play_rough"],
-    "released": false
+    "released": true
   },
   {
     "dex": 860,
@@ -11713,7 +11723,7 @@
     "name": "쏘겨모",
     "fastMoves": ["bite", "sucker_punch"],
     "chargedMoves": ["foul_play", "dark_pulse", "play_rough"],
-    "released": false
+    "released": true
   },
   {
     "dex": 861,
@@ -11723,7 +11733,7 @@
     "name": "오롱털",
     "fastMoves": ["bite", "sucker_punch", "low_kick"],
     "chargedMoves": ["foul_play", "dark_pulse", "play_rough", "power_up_punch"],
-    "released": false
+    "released": true
   },
   {
     "dex": 862,
@@ -11888,23 +11898,13 @@
   },
   {
     "dex": 876,
-    "id": "indeedee",
-    "types": ["psychic", "normal"],
-    "nameEn": "Indeedee",
-    "name": "에써르",
-    "fastMoves": ["extrasensory"],
-    "chargedMoves": ["psybeam", "psychic", "shadow_ball"],
-    "released": false
-  },
-  {
-    "dex": 876,
     "id": "indeedee_female",
     "types": ["psychic", "normal"],
     "nameEn": "Indeedee (Female)",
     "name": "에써르 (female)",
     "fastMoves": ["extrasensory"],
     "chargedMoves": ["psybeam", "psychic", "energy_ball"],
-    "released": false
+    "released": true
   },
   {
     "dex": 876,
@@ -11914,7 +11914,7 @@
     "name": "에써르 (male)",
     "fastMoves": ["extrasensory"],
     "chargedMoves": ["psybeam", "psychic", "shadow_ball"],
-    "released": false
+    "released": true
   },
   {
     "dex": 877,
@@ -12004,7 +12004,7 @@
     "name": "두랄루돈",
     "fastMoves": ["dragon_tail", "metal_claw"],
     "chargedMoves": ["flash_cannon", "dragon_claw", "hyper_beam"],
-    "released": false
+    "released": true
   },
   {
     "dex": 885,
@@ -12450,7 +12450,7 @@
     "name": "타랜툴라",
     "fastMoves": ["bug_bite", "struggle_bug"],
     "chargedMoves": ["x_scissor", "grass_knot", "lunge"],
-    "released": false
+    "released": true
   },
   {
     "dex": 918,
@@ -12458,9 +12458,9 @@
     "types": ["bug", "none"],
     "nameEn": "Spidops",
     "name": "트래피더",
-    "fastMoves": ["bug_bite", "counter"],
+    "fastMoves": ["bug_bite", "counter", "shadow_claw"],
     "chargedMoves": ["x_scissor", "grass_knot", "lunge", "rock_tomb"],
-    "released": false
+    "released": true
   },
   {
     "dex": 919,
@@ -13207,24 +13207,6 @@
     "released": true
   },
   {
-    "dex": 980,
-    "id": "clodsiresb",
-    "types": ["poison", "ground"],
-    "nameEn": "Clodsire",
-    "name": "토오",
-    "fastMoves": ["poison_sting", "mud_shot"],
-    "chargedMoves": [
-      "sludge_bomb",
-      "earthquake",
-      "stone_edge",
-      "acid_spray",
-      "water_pulse",
-      "megahorn"
-    ],
-    "eliteMoves": ["megahorn"],
-    "released": true
-  },
-  {
     "dex": 981,
     "id": "farigiraf",
     "types": ["normal", "psychic"],
@@ -13242,27 +13224,7 @@
     "name": "노고고치",
     "fastMoves": ["bite", "astonish", "rollout"],
     "chargedMoves": ["dig", "rock_slide", "drill_run"],
-    "released": false
-  },
-  {
-    "dex": 982,
-    "id": "dudunsparce_three",
-    "types": ["normal", "none"],
-    "nameEn": "Dudunsparce_three",
-    "name": "노고고치",
-    "fastMoves": ["bite", "astonish", "rollout"],
-    "chargedMoves": ["dig", "rock_slide", "drill_run"],
-    "released": false
-  },
-  {
-    "dex": 982,
-    "id": "dudunsparce_two",
-    "types": ["normal", "none"],
-    "nameEn": "Dudunsparce_two",
-    "name": "노고고치",
-    "fastMoves": ["bite", "astonish", "rollout"],
-    "chargedMoves": ["dig", "rock_slide", "drill_run"],
-    "released": false
+    "released": true
   },
   {
     "dex": 983,
@@ -13542,6 +13504,176 @@
     "name": "Miraidon_ultimate",
     "fastMoves": ["thunder_shock", "dragon_tail"],
     "chargedMoves": ["hyper_beam", "dragon_pulse", "thunder", "outrage"],
+    "released": false
+  },
+  {
+    "dex": 1009,
+    "id": "walking_wake",
+    "types": ["water", "dragon"],
+    "nameEn": "Walking Wake",
+    "name": "굽이치는물결",
+    "fastMoves": ["splash"],
+    "chargedMoves": ["struggle"],
+    "released": false
+  },
+  {
+    "dex": 1010,
+    "id": "iron_leaves",
+    "types": ["grass", "psychic"],
+    "nameEn": "Iron Leaves",
+    "name": "무쇠잎새",
+    "fastMoves": ["splash"],
+    "chargedMoves": ["struggle"],
+    "released": false
+  },
+  {
+    "dex": 1011,
+    "id": "dipplin",
+    "types": ["grass", "dragon"],
+    "nameEn": "Dipplin",
+    "name": "Dipplin",
+    "fastMoves": ["bullet_seed", "dragon_tail", "rollout"],
+    "chargedMoves": ["dragon_pulse", "outrage", "seed_bomb"],
+    "released": true
+  },
+  {
+    "dex": 1012,
+    "id": "poltchageist",
+    "types": ["grass", "ghost"],
+    "nameEn": "Poltchageist",
+    "name": "Poltchageist",
+    "fastMoves": ["astonish", "magical_leaf"],
+    "chargedMoves": ["shadow_ball", "energy_ball", "poltergeist"],
+    "released": true
+  },
+  {
+    "dex": 1013,
+    "id": "sinistcha",
+    "types": ["grass", "ghost"],
+    "nameEn": "Sinistcha",
+    "name": "Sinistcha",
+    "fastMoves": ["astonish", "magical_leaf"],
+    "chargedMoves": ["shadow_ball", "energy_ball", "poltergeist"],
+    "released": true
+  },
+  {
+    "dex": 1014,
+    "id": "okidogi",
+    "types": ["poison", "fighting"],
+    "nameEn": "Okidogi",
+    "name": "Okidogi",
+    "fastMoves": ["poison_jab", "force_palm"],
+    "chargedMoves": ["super_power", "upper_hand", "sludge_bomb"],
+    "released": false
+  },
+  {
+    "dex": 1015,
+    "id": "munkidori",
+    "types": ["poison", "psychic"],
+    "nameEn": "Munkidori",
+    "name": "Munkidori",
+    "fastMoves": ["poison_jab", "confusion"],
+    "chargedMoves": ["sludge_bomb", "future_sight", "psychic"],
+    "released": false
+  },
+  {
+    "dex": 1016,
+    "id": "fezandipiti",
+    "types": ["poison", "fairy"],
+    "nameEn": "Fezandipiti",
+    "name": "Fezandipiti",
+    "fastMoves": ["poison_jab", "charm"],
+    "chargedMoves": ["sludge_bomb", "moonblast", "disarming_voice"],
+    "released": false
+  },
+  {
+    "dex": 1017,
+    "id": "ogerpon",
+    "types": ["grass", "none"],
+    "nameEn": "Ogerpon",
+    "name": "Ogerpon",
+    "fastMoves": ["vine_whip", "magical_leaf", "double_kick"],
+    "chargedMoves": ["power_whip", "grass_knot", "play_rough"],
+    "released": false
+  },
+  {
+    "dex": 1018,
+    "id": "archaludon",
+    "types": ["steel", "dragon"],
+    "nameEn": "Archaludon",
+    "name": "Archaludon",
+    "fastMoves": ["dragon_tail", "metal_claw"],
+    "chargedMoves": ["flash_cannon", "dragon_claw", "hyper_beam"],
+    "released": false
+  },
+  {
+    "dex": 1019,
+    "id": "hydrapple",
+    "types": ["grass", "dragon"],
+    "nameEn": "Hydrapple",
+    "name": "Hydrapple",
+    "fastMoves": ["bullet_seed", "dragon_tail", "rollout"],
+    "chargedMoves": ["dragon_pulse", "outrage", "seed_bomb"],
+    "released": true
+  },
+  {
+    "dex": 1020,
+    "id": "gouging_fire",
+    "types": ["fire", "dragon"],
+    "nameEn": "Gouging Fire",
+    "name": "Gouging Fire",
+    "fastMoves": ["splash"],
+    "chargedMoves": ["struggle"],
+    "released": false
+  },
+  {
+    "dex": 1021,
+    "id": "raging_bolt",
+    "types": ["electric", "dragon"],
+    "nameEn": "Raging Bolt",
+    "name": "Raging Bolt",
+    "fastMoves": ["splash"],
+    "chargedMoves": ["struggle"],
+    "released": false
+  },
+  {
+    "dex": 1022,
+    "id": "iron_boulder",
+    "types": ["rock", "psychic"],
+    "nameEn": "Iron Boulder",
+    "name": "Iron Boulder",
+    "fastMoves": ["splash"],
+    "chargedMoves": ["struggle"],
+    "released": false
+  },
+  {
+    "dex": 1023,
+    "id": "iron_crown",
+    "types": ["steel", "psychic"],
+    "nameEn": "Iron Crown",
+    "name": "Iron Crown",
+    "fastMoves": ["splash"],
+    "chargedMoves": ["struggle"],
+    "released": false
+  },
+  {
+    "dex": 1024,
+    "id": "terapagos",
+    "types": ["normal", "none"],
+    "nameEn": "Terapagos",
+    "name": "Terapagos",
+    "fastMoves": ["splash"],
+    "chargedMoves": ["struggle"],
+    "released": false
+  },
+  {
+    "dex": 1025,
+    "id": "pecharunt",
+    "types": ["poison", "ghost"],
+    "nameEn": "Pecharunt",
+    "name": "Pecharunt",
+    "fastMoves": ["astonish"],
+    "chargedMoves": ["shadow_ball", "gunk_shot", "poltergeist"],
     "released": false
   }
 ]

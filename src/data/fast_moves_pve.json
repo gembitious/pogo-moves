@@ -252,6 +252,20 @@
     "eps": 11.0
   },
   {
+    "id": "fairy_wind",
+    "nameEn": "Fairy Wind",
+    "name": "요정의바람",
+    "type": "fairy",
+    "power": 9,
+    "energyGain": 13,
+    "duration": 1.0,
+    "damageWindowStart": 0.63,
+    "damageWindowEnd": 1.0,
+    "dps": 9.0,
+    "dpe": 0.69,
+    "eps": 13.0
+  },
+  {
     "id": "feint_attack",
     "nameEn": "Feint Attack",
     "name": "속여때리기",
@@ -278,20 +292,6 @@
     "dps": 13.0,
     "dpe": 1.44,
     "eps": 9.0
-  },
-  {
-    "id": "fairy_wind",
-    "nameEn": "Fairy Wind",
-    "name": "요정의바람",
-    "type": "fairy",
-    "power": 9,
-    "energyGain": 13,
-    "duration": 1.0,
-    "damageWindowStart": 0.63,
-    "damageWindowEnd": 1.0,
-    "dps": 9.0,
-    "dpe": 0.69,
-    "eps": 13.0
   },
   {
     "id": "fire_spin",
@@ -1232,20 +1232,6 @@
     "eps": 13.33
   },
   {
-    "id": "water_gun",
-    "nameEn": "Water Gun",
-    "name": "물대포",
-    "type": "water",
-    "power": 5,
-    "energyGain": 5,
-    "duration": 0.5,
-    "damageWindowStart": 0.3,
-    "damageWindowEnd": 0.5,
-    "dps": 10.0,
-    "dpe": 1.0,
-    "eps": 10.0
-  },
-  {
     "id": "waterfall",
     "nameEn": "Waterfall",
     "name": "폭포오르기",
@@ -1258,6 +1244,20 @@
     "dps": 13.0,
     "dpe": 1.86,
     "eps": 7.0
+  },
+  {
+    "id": "water_gun",
+    "nameEn": "Water Gun",
+    "name": "물대포",
+    "type": "water",
+    "power": 5,
+    "energyGain": 5,
+    "duration": 0.5,
+    "damageWindowStart": 0.3,
+    "damageWindowEnd": 0.5,
+    "dps": 10.0,
+    "dpe": 1.0,
+    "eps": 10.0
   },
   {
     "id": "water_shuriken",

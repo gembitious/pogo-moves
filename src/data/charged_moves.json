@@ -322,7 +322,7 @@
   },
   {
     "id": "chilling_water",
-    "nameEn": "Chilling Water (Speculative)",
+    "nameEn": "Chilling Water",
     "name": "찬물끼얹기",
     "type": "water",
     "power": 60,
@@ -1660,6 +1660,15 @@
     "buffs": [-1, 0],
     "buffTarget": "opponent",
     "buffApplyChance": 0.1
+  },
+  {
+    "id": "secret_sword",
+    "nameEn": "Secret Sword",
+    "name": "신비의칼",
+    "type": "fighting",
+    "power": 70,
+    "energy": 35,
+    "dpe": 2.0
   },
   {
     "id": "seed_bomb",
