@@ -147,6 +147,18 @@
     "dpe": 2.0
   },
   {
+    "id": "beak_blast",
+    "nameEn": "Beak Blast",
+    "name": "부리캐논",
+    "type": "flying",
+    "power": 110,
+    "energy": 55,
+    "dpe": 2.0,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 1.0
+  },
+  {
     "id": "behemoth_bash",
     "nameEn": "Behemoth Bash",
     "name": "거수탄",
@@ -259,9 +271,9 @@
     "nameEn": "Brick Break",
     "name": "깨트리기",
     "type": "fighting",
-    "power": 40,
+    "power": 50,
     "energy": 40,
-    "dpe": 1.0,
+    "dpe": 1.25,
     "buffs": [0, -1],
     "buffTarget": "opponent",
     "buffApplyChance": 1.0
@@ -520,9 +532,9 @@
     "nameEn": "Dragon Energy",
     "name": "드래곤에너지",
     "type": "dragon",
-    "power": 100,
+    "power": 90,
     "energy": 45,
-    "dpe": 2.22
+    "dpe": 2.0
   },
   {
     "id": "dragon_pulse",
@@ -757,9 +769,9 @@
     "nameEn": "Foul Play",
     "name": "속임수",
     "type": "dark",
-    "power": 60,
+    "power": 65,
     "energy": 40,
-    "dpe": 1.5
+    "dpe": 1.62
   },
   {
     "id": "freeze_shock",
@@ -994,9 +1006,9 @@
     "nameEn": "Icicle Spear",
     "name": "고드름침",
     "type": "ice",
-    "power": 65,
+    "power": 70,
     "energy": 40,
-    "dpe": 1.62
+    "dpe": 1.75
   },
   {
     "id": "icy_wind",
@@ -1151,8 +1163,8 @@
     "name": "코멧펀치",
     "type": "steel",
     "power": 100,
-    "energy": 50,
-    "dpe": 2.0
+    "energy": 45,
+    "dpe": 2.22
   },
   {
     "id": "mirror_coat",
@@ -1281,7 +1293,10 @@
     "type": "flying",
     "power": 85,
     "energy": 50,
-    "dpe": 1.7
+    "dpe": 1.7,
+    "buffs": [0, 1],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
   },
   {
     "id": "obstruct",
@@ -1355,8 +1370,8 @@
     "name": "파라볼라차지",
     "type": "electric",
     "power": 70,
-    "energy": 45,
-    "dpe": 1.56,
+    "energy": 50,
+    "dpe": 1.4,
     "buffs": [0, 1],
     "buffTarget": "self",
     "buffApplyChance": 1.0
@@ -1697,8 +1712,8 @@
     "name": "섀도볼",
     "type": "ghost",
     "power": 100,
-    "energy": 55,
-    "dpe": 1.82
+    "energy": 50,
+    "dpe": 2.0
   },
   {
     "id": "shadow_bone",
@@ -1735,9 +1750,9 @@
     "nameEn": "Shadow Sneak",
     "name": "야습",
     "type": "ghost",
-    "power": 50,
-    "energy": 45,
-    "dpe": 1.11
+    "power": 75,
+    "energy": 50,
+    "dpe": 1.5
   },
   {
     "id": "signal_beam",
@@ -1826,8 +1841,8 @@
     "name": "공간절단",
     "type": "dragon",
     "power": 95,
-    "energy": 50,
-    "dpe": 1.9
+    "energy": 55,
+    "dpe": 1.73
   },
   {
     "id": "sparkling_aria",
@@ -2095,9 +2110,9 @@
     "nameEn": "Vise Grip",
     "name": "찝기",
     "type": "normal",
-    "power": 40,
+    "power": 70,
     "energy": 40,
-    "dpe": 1.0
+    "dpe": 1.75
   },
   {
     "id": "volt_tackle",

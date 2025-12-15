@@ -279,10 +279,10 @@
     "nameEn": "Geomancy",
     "name": "지오컨트롤",
     "type": "fairy",
-    "power": 4,
+    "power": 8,
     "turn": 3,
     "energyGain": 13,
-    "dpt": 1.33,
+    "dpt": 2.67,
     "ept": 4.33
   },
   {
@@ -697,10 +697,10 @@
     "nameEn": "Powder Snow",
     "name": "눈싸라기",
     "type": "ice",
-    "power": 5,
+    "power": 6,
     "turn": 2,
     "energyGain": 8,
-    "dpt": 2.5,
+    "dpt": 3.0,
     "ept": 4.0
   },
   {

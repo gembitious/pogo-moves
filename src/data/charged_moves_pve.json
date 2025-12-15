@@ -182,6 +182,19 @@
     "dps": 34.0
   },
   {
+    "id": "beak_blast",
+    "nameEn": "Beak Blast",
+    "name": "부리캐논",
+    "type": "flying",
+    "power": 85,
+    "energy": 50,
+    "dpe": 1.7,
+    "duration": 2.5,
+    "damageWindowStart": 1.5,
+    "damageWindowEnd": 1.9,
+    "dps": 34.0
+  },
+  {
     "id": "behemoth_bash",
     "nameEn": "Behemoth Bash",
     "name": "거수탄",
