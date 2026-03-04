@@ -559,9 +559,9 @@
     "nameEn": "Drain Punch",
     "name": "드레인펀치",
     "type": "fighting",
-    "power": 20,
+    "power": 40,
     "energy": 40,
-    "dpe": 0.5,
+    "dpe": 1.0,
     "buffs": [0, 1],
     "buffTarget": "self",
     "buffApplyChance": 1.0
@@ -583,6 +583,18 @@
     "power": 80,
     "energy": 45,
     "dpe": 1.78
+  },
+  {
+    "id": "drum_beating",
+    "nameEn": "Drum Beating",
+    "name": "드럼어택",
+    "type": "grass",
+    "power": 60,
+    "energy": 35,
+    "dpe": 1.71,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": 1.0
   },
   {
     "id": "dynamax_cannon",
@@ -883,9 +895,9 @@
     "nameEn": "Heat Wave",
     "name": "열풍",
     "type": "fire",
-    "power": 95,
-    "energy": 75,
-    "dpe": 1.27
+    "power": 75,
+    "energy": 45,
+    "dpe": 1.67
   },
   {
     "id": "heavy_slam",
@@ -1167,6 +1179,18 @@
     "dpe": 2.22
   },
   {
+    "id": "mind_blown",
+    "nameEn": "Mind Blown",
+    "name": "깜짝헤드",
+    "type": "fire",
+    "power": 90,
+    "energy": 35,
+    "dpe": 2.57,
+    "buffs": [0, -4],
+    "buffTarget": "self",
+    "buffApplyChance": 1.0
+  },
+  {
     "id": "mirror_coat",
     "nameEn": "Mirror Coat",
     "name": "미러코트",
@@ -1237,9 +1261,9 @@
     "nameEn": "Mud Bomb",
     "name": "진흙폭탄",
     "type": "ground",
-    "power": 60,
-    "energy": 40,
-    "dpe": 1.5
+    "power": 65,
+    "energy": 45,
+    "dpe": 1.44
   },
   {
     "id": "mystical_fire",
@@ -1282,7 +1306,7 @@
     "power": 50,
     "energy": 35,
     "dpe": 1.43,
-    "buffs": [2, 0],
+    "buffs": [1, 0],
     "buffTarget": "self",
     "buffApplyChance": 0.125
   },
@@ -1527,6 +1551,15 @@
     "dpe": 2.0
   },
   {
+    "id": "pyro_ball",
+    "nameEn": "Pyro Ball",
+    "name": "화염볼",
+    "type": "fire",
+    "power": 75,
+    "energy": 40,
+    "dpe": 1.88
+  },
+  {
     "id": "rage_fist",
     "nameEn": "Rage Fist",
     "name": "분노의주먹",
@@ -1591,9 +1624,9 @@
     "nameEn": "Rock Tomb",
     "name": "암석봉인",
     "type": "rock",
-    "power": 80,
+    "power": 75,
     "energy": 50,
-    "dpe": 1.6,
+    "dpe": 1.5,
     "buffs": [-1, 0],
     "buffTarget": "opponent",
     "buffApplyChance": 1.0
@@ -1645,9 +1678,9 @@
     "nameEn": "Sand Tomb",
     "name": "모래지옥",
     "type": "ground",
-    "power": 25,
+    "power": 40,
     "energy": 40,
-    "dpe": 0.62,
+    "dpe": 1.0,
     "buffs": [0, -1],
     "buffTarget": "opponent",
     "buffApplyChance": 1.0
@@ -2089,9 +2122,9 @@
     "nameEn": "Twister",
     "name": "회오리",
     "type": "dragon",
-    "power": 45,
-    "energy": 45,
-    "dpe": 1.0
+    "power": 70,
+    "energy": 40,
+    "dpe": 1.75
   },
   {
     "id": "upper_hand",
@@ -2120,8 +2153,8 @@
     "name": "볼트태클",
     "type": "electric",
     "power": 90,
-    "energy": 50,
-    "dpe": 1.8,
+    "energy": 40,
+    "dpe": 2.25,
     "buffs": [0, -1],
     "buffTarget": "self",
     "buffApplyChance": 1.0

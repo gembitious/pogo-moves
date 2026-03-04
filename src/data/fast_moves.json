@@ -70,10 +70,10 @@
     "nameEn": "Bullet Punch",
     "name": "불릿펀치",
     "type": "steel",
-    "power": 8,
+    "power": 7,
     "turn": 2,
     "energyGain": 7,
-    "dpt": 4.0,
+    "dpt": 3.5,
     "ept": 3.5
   },
   {
@@ -429,6 +429,17 @@
     "ept": 2.67
   },
   {
+    "id": "hidden_power_normal",
+    "nameEn": "Hidden Power",
+    "name": "잠재파워",
+    "type": "normal",
+    "power": 9,
+    "turn": 3,
+    "energyGain": 8,
+    "dpt": 3.0,
+    "ept": 2.67
+  },
+  {
     "id": "hidden_power_poison",
     "nameEn": "Hidden Power (Poison)",
     "name": "잠재파워",
@@ -587,11 +598,11 @@
     "nameEn": "Low Kick",
     "name": "안다리걸기",
     "type": "fighting",
-    "power": 4,
+    "power": 5,
     "turn": 2,
-    "energyGain": 5,
-    "dpt": 2.0,
-    "ept": 2.5
+    "energyGain": 8,
+    "dpt": 2.5,
+    "ept": 4.0
   },
   {
     "id": "magical_leaf",
@@ -631,21 +642,21 @@
     "nameEn": "Mud Shot",
     "name": "머드샷",
     "type": "ground",
-    "power": 4,
+    "power": 3,
     "turn": 2,
-    "energyGain": 8,
-    "dpt": 2.0,
-    "ept": 4.0
+    "energyGain": 9,
+    "dpt": 1.5,
+    "ept": 4.5
   },
   {
     "id": "mud_slap",
     "nameEn": "Mud-Slap",
     "name": "진흙뿌리기",
     "type": "ground",
-    "power": 12,
+    "power": 11,
     "turn": 3,
     "energyGain": 10,
-    "dpt": 4.0,
+    "dpt": 3.67,
     "ept": 3.33
   },
   {
@@ -719,10 +730,10 @@
     "nameEn": "Psycho Cut",
     "name": "사이코커터",
     "type": "psychic",
-    "power": 3,
+    "power": 4,
     "turn": 2,
     "energyGain": 9,
-    "dpt": 1.5,
+    "dpt": 2.0,
     "ept": 4.5
   },
   {
@@ -829,10 +840,10 @@
     "nameEn": "Smack Down",
     "name": "떨어뜨리기",
     "type": "rock",
-    "power": 12,
+    "power": 11,
     "turn": 3,
     "energyGain": 8,
-    "dpt": 4.0,
+    "dpt": 3.67,
     "ept": 2.67
   },
   {
@@ -972,11 +983,11 @@
     "nameEn": "Waterfall",
     "name": "폭포오르기",
     "type": "water",
-    "power": 12,
+    "power": 11,
     "turn": 3,
-    "energyGain": 8,
-    "dpt": 4.0,
-    "ept": 2.67
+    "energyGain": 10,
+    "dpt": 3.67,
+    "ept": 3.33
   },
   {
     "id": "water_gun",
@@ -1007,9 +1018,9 @@
     "type": "flying",
     "power": 5,
     "turn": 2,
-    "energyGain": 7,
+    "energyGain": 8,
     "dpt": 2.5,
-    "ept": 3.5
+    "ept": 4.0
   },
   {
     "id": "yawn",
@@ -1032,5 +1043,27 @@
     "energyGain": 6,
     "dpt": 2.67,
     "ept": 2.0
+  },
+  {
+    "id": "aegislash_charge_air_slash",
+    "nameEn": "Air Slash",
+    "name": "에어슬래시",
+    "type": "flying",
+    "power": 0,
+    "turn": 3,
+    "energyGain": 6,
+    "dpt": 0.0,
+    "ept": 2.0
+  },
+  {
+    "id": "aegislash_charge_psycho_cut",
+    "nameEn": "Psycho Cut",
+    "name": "사이코커터",
+    "type": "psychic",
+    "power": 0,
+    "turn": 2,
+    "energyGain": 6,
+    "dpt": 0.0,
+    "ept": 3.0
   }
 ]

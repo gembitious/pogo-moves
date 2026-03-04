@@ -189,7 +189,14 @@
     "nameEn": "Pidgeot",
     "name": "피죤투",
     "fastMoves": ["air_slash", "steel_wing", "wing_attack", "gust"],
-    "chargedMoves": ["aerial_ace", "air_cutter", "brave_bird", "hurricane", "feather_dance"],
+    "chargedMoves": [
+      "aerial_ace",
+      "air_cutter",
+      "brave_bird",
+      "hurricane",
+      "feather_dance",
+      "heat_wave"
+    ],
     "eliteMoves": ["wing_attack", "air_cutter", "gust"],
     "released": true
   },
@@ -574,9 +581,10 @@
       "psyshock",
       "solar_beam",
       "weather_ball_fire",
-      "scorching_sands"
+      "scorching_sands",
+      "energy_ball"
     ],
-    "eliteMoves": ["ember", "fire_blast", "flamethrower"],
+    "eliteMoves": ["ember", "fire_blast", "flamethrower", "energy_ball"],
     "released": true
   },
   {
@@ -586,7 +594,15 @@
     "nameEn": "Ninetales (Alolan)",
     "name": "나인테일 (알로라)",
     "fastMoves": ["feint_attack", "powder_snow", "charm"],
-    "chargedMoves": ["blizzard", "dazzling_gleam", "ice_beam", "psyshock", "weather_ball_ice"],
+    "chargedMoves": [
+      "blizzard",
+      "dazzling_gleam",
+      "ice_beam",
+      "psyshock",
+      "weather_ball_ice",
+      "chilling_water"
+    ],
+    "eliteMoves": ["chilling_water"],
     "released": true
   },
   {
@@ -2196,7 +2212,7 @@
     "types": ["ice", "flying"],
     "nameEn": "Articuno",
     "name": "프리져",
-    "fastMoves": ["frost_breath", "ice_shard"],
+    "fastMoves": ["frost_breath", "ice_shard", "powder_snow"],
     "chargedMoves": [
       "blizzard",
       "hurricane",
@@ -2225,7 +2241,14 @@
     "nameEn": "Zapdos",
     "name": "썬더",
     "fastMoves": ["charge_beam", "thunder_shock"],
-    "chargedMoves": ["thunder", "thunderbolt", "zap_cannon", "ancient_power", "drill_peck"],
+    "chargedMoves": [
+      "thunder",
+      "thunderbolt",
+      "zap_cannon",
+      "ancient_power",
+      "drill_peck",
+      "heat_wave"
+    ],
     "eliteMoves": ["thunder_shock"],
     "released": true
   },
@@ -2246,7 +2269,7 @@
     "nameEn": "Moltres",
     "name": "파이어",
     "fastMoves": ["fire_spin", "wing_attack"],
-    "chargedMoves": ["fire_blast", "heat_wave", "overheat", "sky_attack", "ancient_power"],
+    "chargedMoves": ["fire_blast", "heat_wave", "overheat", "sky_attack", "ancient_power", "fly"],
     "eliteMoves": ["sky_attack"],
     "released": true
   },
@@ -2684,7 +2707,14 @@
       "steel_wing",
       "zen_headbutt"
     ],
-    "chargedMoves": ["aerial_ace", "ancient_power", "dazzling_gleam", "draining_kiss", "psyshock"],
+    "chargedMoves": [
+      "aerial_ace",
+      "ancient_power",
+      "dazzling_gleam",
+      "draining_kiss",
+      "psyshock",
+      "heat_wave"
+    ],
     "eliteMoves": ["steel_wing", "zen_headbutt"],
     "released": true
   },
@@ -3158,8 +3188,15 @@
     "types": ["bug", "fighting"],
     "nameEn": "Heracross",
     "name": "헤라크로스",
-    "fastMoves": ["counter", "struggle_bug"],
-    "chargedMoves": ["close_combat", "earthquake", "megahorn", "rock_blast", "upper_hand"],
+    "fastMoves": ["counter", "struggle_bug", "fury_cutter"],
+    "chargedMoves": [
+      "close_combat",
+      "earthquake",
+      "megahorn",
+      "rock_blast",
+      "upper_hand",
+      "rock_tomb"
+    ],
     "released": true
   },
   {
@@ -4658,7 +4695,14 @@
     "nameEn": "Camerupt",
     "name": "폭타",
     "fastMoves": ["ember", "rock_smash", "incinerate"],
-    "chargedMoves": ["earthquake", "overheat", "solar_beam", "earth_power"],
+    "chargedMoves": [
+      "earthquake",
+      "overheat",
+      "solar_beam",
+      "earth_power",
+      "scorching_sands",
+      "rock_tomb"
+    ],
     "released": true
   },
   {
@@ -4735,7 +4779,8 @@
       "earth_power",
       "boomburst",
       "scorching_sands",
-      "sand_tomb"
+      "sand_tomb",
+      "twister"
     ],
     "eliteMoves": ["earth_power"],
     "released": true
@@ -5766,7 +5811,7 @@
     "types": ["bug", "grass"],
     "nameEn": "Wormadam (Plant)",
     "name": "도롱마담 (plant)",
-    "fastMoves": ["bug_bite", "confusion"],
+    "fastMoves": ["bug_bite", "confusion", "sucker_punch"],
     "chargedMoves": ["bug_buzz", "energy_ball", "psybeam"],
     "released": true
   },
@@ -5776,7 +5821,7 @@
     "types": ["bug", "ground"],
     "nameEn": "Wormadam (Sandy)",
     "name": "도롱마담 (sandy)",
-    "fastMoves": ["bug_bite", "confusion"],
+    "fastMoves": ["bug_bite", "confusion", "sucker_punch"],
     "chargedMoves": ["bug_buzz", "bulldoze", "psybeam"],
     "released": true
   },
@@ -5786,7 +5831,7 @@
     "types": ["bug", "steel"],
     "nameEn": "Wormadam (Trash)",
     "name": "도롱마담 (trash)",
-    "fastMoves": ["bug_bite", "confusion", "metal_sound"],
+    "fastMoves": ["bug_bite", "confusion", "metal_sound", "sucker_punch"],
     "chargedMoves": ["bug_buzz", "iron_head", "psybeam"],
     "released": true
   },
@@ -6167,7 +6212,8 @@
       "outrage",
       "sand_tomb",
       "earth_power",
-      "breaking_swipe"
+      "breaking_swipe",
+      "twister"
     ],
     "eliteMoves": ["earth_power"],
     "released": true
@@ -6495,7 +6541,7 @@
     "nameEn": "Gliscor",
     "name": "글라이온",
     "fastMoves": ["fury_cutter", "wing_attack", "sand_attack"],
-    "chargedMoves": ["aerial_ace", "earthquake", "night_slash", "sand_tomb"],
+    "chargedMoves": ["aerial_ace", "earthquake", "night_slash", "sand_tomb", "acrobatics"],
     "released": true
   },
   {
@@ -6643,7 +6689,7 @@
     "nameEn": "Rotom (Mow)",
     "name": "로토무 (mow)",
     "fastMoves": ["astonish", "thunder_shock"],
-    "chargedMoves": ["ominous_wind", "thunder", "thunderbolt"],
+    "chargedMoves": ["ominous_wind", "thunder", "thunderbolt", "leaf_storm"],
     "released": true
   },
   {
@@ -7618,7 +7664,7 @@
     "nameEn": "Scolipede",
     "name": "펜드라",
     "fastMoves": ["bug_bite", "poison_jab", "poison_sting"],
-    "chargedMoves": ["megahorn", "sludge_bomb", "gyro_ball", "x_scissor"],
+    "chargedMoves": ["megahorn", "sludge_bomb", "gyro_ball", "x_scissor", "aqua_tail"],
     "released": true
   },
   {
@@ -9932,7 +9978,7 @@
     "nameEn": "Volcanion",
     "name": "볼케니온",
     "fastMoves": ["incinerate", "water_gun", "take_down"],
-    "chargedMoves": ["hydro_pump", "overheat", "earth_power", "sludge_bomb"],
+    "chargedMoves": ["hydro_pump", "overheat", "earth_power", "sludge_bomb", "scald"],
     "released": true
   },
   {
@@ -11166,7 +11212,8 @@
     "nameEn": "Blacephalon",
     "name": "두파팡",
     "fastMoves": ["incinerate", "astonish"],
-    "chargedMoves": ["mystical_fire", "shadow_ball", "overheat"],
+    "chargedMoves": ["mystical_fire", "shadow_ball", "overheat", "mind_blown"],
+    "eliteMoves": ["mind_blown"],
     "released": true
   },
   {
@@ -11234,7 +11281,8 @@
     "nameEn": "Rillaboom",
     "name": "고릴타",
     "fastMoves": ["scratch", "razor_leaf"],
-    "chargedMoves": ["energy_ball", "grass_knot", "earth_power"],
+    "chargedMoves": ["energy_ball", "grass_knot", "earth_power", "drum_beating", "frenzy_plant"],
+    "eliteMoves": ["frenzy_plant"],
     "released": true
   },
   {
@@ -11486,7 +11534,7 @@
     "name": "탄동",
     "fastMoves": ["smack_down", "tackle"],
     "chargedMoves": ["rock_blast", "rock_slide"],
-    "released": false
+    "released": true
   },
   {
     "dex": 838,
@@ -11494,9 +11542,9 @@
     "types": ["rock", "fire"],
     "nameEn": "Carkol",
     "name": "탄차곤",
-    "fastMoves": ["smack_down", "incinerate"],
+    "fastMoves": ["smack_down"],
     "chargedMoves": ["rock_blast", "rock_slide", "flame_charge"],
-    "released": false
+    "released": true
   },
   {
     "dex": 839,
@@ -11504,9 +11552,9 @@
     "types": ["rock", "fire"],
     "nameEn": "Coalossal",
     "name": "석탄산",
-    "fastMoves": ["smack_down", "incinerate"],
+    "fastMoves": ["smack_down", "fire_spin"],
     "chargedMoves": ["rock_blast", "rock_slide", "flame_charge"],
-    "released": false
+    "released": true
   },
   {
     "dex": 840,
@@ -12315,9 +12363,9 @@
     "types": ["fairy", "flying"],
     "nameEn": "Enamorus (Therian)",
     "name": "Enamorus (Therian)",
-    "fastMoves": ["astonish", "zen_headbutt", "fairy_wind"],
-    "chargedMoves": ["dazzling_gleam", "fly", "grass_knot"],
-    "released": false
+    "fastMoves": ["astonish", "extrasensory", "fairy_wind"],
+    "chargedMoves": ["moonblast", "fly", "earth_power", "mystical_fire"],
+    "released": true
   },
   {
     "dex": 906,
@@ -12769,7 +12817,7 @@
     "name": "찌리비",
     "fastMoves": ["thunder_shock", "peck"],
     "chargedMoves": ["acrobatics", "aerial_ace", "thunderbolt"],
-    "released": false
+    "released": true
   },
   {
     "dex": 941,
@@ -12779,7 +12827,7 @@
     "name": "찌리비크",
     "fastMoves": ["thunder_shock", "air_slash"],
     "chargedMoves": ["acrobatics", "aerial_ace", "thunderbolt"],
-    "released": false
+    "released": true
   },
   {
     "dex": 942,
@@ -12869,7 +12917,7 @@
     "name": "절벼게",
     "fastMoves": ["rock_throw", "mud_slap"],
     "chargedMoves": ["rock_slide", "rock_tomb", "bulldoze"],
-    "released": false
+    "released": true
   },
   {
     "dex": 951,
@@ -13079,7 +13127,7 @@
     "name": "초롱순",
     "fastMoves": ["rock_throw", "smack_down"],
     "chargedMoves": ["dazzling_gleam", "power_gem", "sludge_wave"],
-    "released": false
+    "released": true
   },
   {
     "dex": 970,
@@ -13088,8 +13136,8 @@
     "nameEn": "Glimmora",
     "name": "킬라플로르",
     "fastMoves": ["rock_throw", "smack_down"],
-    "chargedMoves": ["dazzling_gleam", "power_gem", "sludge_wave"],
-    "released": false
+    "chargedMoves": ["dazzling_gleam", "power_gem", "sludge_wave", "meteor_beam"],
+    "released": true
   },
   {
     "dex": 971,
@@ -13118,8 +13166,8 @@
     "nameEn": "Flamigo",
     "name": "꼬이밍고",
     "fastMoves": ["wing_attack", "double_kick"],
-    "chargedMoves": ["aerial_ace", "brave_bird", "close_combat"],
-    "released": false
+    "chargedMoves": ["aerial_ace", "brave_bird", "upper_hand"],
+    "released": true
   },
   {
     "dex": 974,
