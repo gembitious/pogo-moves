@@ -1,0 +1,42 @@
+---
+import { getDictionary, localePath, type Locale } from '@/lib/i18n'
+
+interface Props {
+  locale: string
+}
+
+const { locale } = Astro.props
+const dict = getDictionary(locale)
+const path = Astro.url.pathname
+
+const current = path.endsWith('/fast') ? 'fast' : path.endsWith('/type') ? 'type' : 'charged'
+
+const items = [
+  { key: 'fast', href: `/${locale}/fast`, label: dict.nav.fast },
+  { key: 'charged', href: `/${locale}`, label: dict.nav.charged },
+  { key: 'type', href: `/${locale}/type`, label: dict.nav.type },
+]
+---
+
+<header class="nav">
+  <a class="brand" href={`/${locale}`} aria-label={dict.meta.title}>
+    <img src="/images/title_banner.png" alt={dict.meta.title} />
+  </a>
+  <nav class="nav-links scroll-hidden">
+    {
+      items.map((item) => (
+        <a class={`nav-link${current === item.key ? ' active' : ''}`} href={item.href}>
+          {item.label}
+        </a>
+      ))
+    }
+    <div class="lang">
+      <a href={localePath(path, 'ko' as Locale)} aria-label="한국어">
+        <img src="/country/kr.svg" alt="한국어" width="24" height="16" />
+      </a>
+      <a href={localePath(path, 'en' as Locale)} aria-label="English">
+        <img src="/country/en.svg" alt="English" width="24" height="16" />
+      </a>
+    </div>
+  </nav>
+</header>

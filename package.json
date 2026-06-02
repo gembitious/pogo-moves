@@ -1,50 +1,23 @@
 {
   "name": "pogo-moves",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "check-data": "node scripts/check-data.mjs"
   },
   "dependencies": {
-    "@emotion/cache": "^11.13.0",
-    "@emotion/react": "^11.13.0",
-    "@emotion/styled": "^11.13.0",
-    "@mui/icons-material": "^5.16.4",
-    "@mui/material": "^5.16.4",
-    "@mui/material-nextjs": "^5.16.4",
-    "@vercel/analytics": "^1.1.1",
-    "@vercel/speed-insights": "^1.0.3",
-    "autoprefixer": "^10.4.19",
-    "next": "^14.2.5",
-    "postcss": "^8.4.28",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "typescript": "^5.5.3"
+    "@astrojs/preact": "^5.1.4",
+    "astro": "^6.4.2",
+    "preact": "^10.29.2"
   },
   "devDependencies": {
-    "@types/node": "^20.5.1",
-    "@types/react": "^18.2.20",
-    "@types/react-dom": "^18.2.7",
-    "@typescript-eslint/eslint-plugin": "^6.5.0",
-    "@typescript-eslint/parser": "^6.5.0",
-    "eslint": "^8.47.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-next": "^13.4.19",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-prettier": "^5.0.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^3.0.3",
-    "stylelint": "^15.10.3",
-    "stylelint-config-clean-order": "^5.2.0",
-    "stylelint-config-standard": "^34.0.0",
-    "stylelint-order": "^6.0.3",
-    "stylelint-scss": "^5.1.0",
-    "tailwindcss": "^3.3.3"
+    "@astrojs/check": "^0.9.9",
+    "@types/node": "^25.9.1",
+    "typescript": "^6.0.3"
   }
 }

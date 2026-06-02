@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "title": "POGO-MOVES",
+    "description": "Pokémon GO move data for the GO Battle League"
+  },
+  "nav": {
+    "fast": "Fast Move",
+    "charged": "Charged Move",
+    "type": "Type Chart"
+  },
+  "common": {
+    "allType": "All Types",
+    "attacker": "Attacker",
+    "defender": "Defender"
+  },
+  "move": {
+    "damage": "Power",
+    "energy": "Energy",
+    "turn": "Turn",
+    "buffChance": "{chance}% chance to",
+    "self": "self",
+    "opponent": "opponent",
+    "attack": "Attack",
+    "defense": "Defense",
+    "rankUp": "+{n}",
+    "rankDown": "-{n}"
+  },
+  "type": {
+    "normal": "Normal",
+    "fire": "Fire",
+    "water": "Water",
+    "grass": "Grass",
+    "electric": "Electric",
+    "ice": "Ice",
+    "fighting": "Fighting",
+    "poison": "Poison",
+    "ground": "Ground",
+    "flying": "Flying",
+    "psychic": "Psychic",
+    "bug": "Bug",
+    "rock": "Rock",
+    "ghost": "Ghost",
+    "dragon": "Dragon",
+    "dark": "Dark",
+    "steel": "Steel",
+    "fairy": "Fairy"
+  }
+}

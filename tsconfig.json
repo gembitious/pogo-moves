@@ -1,38 +1,13 @@
 {
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
     "baseUrl": ".",
     "paths": {
-      "@": ["src/"],
-      "@app": ["src/app"],
-      "@app/*": ["src/app/*"],
-      "@components": ["src/components"],
-      "@components/*": ["src/components/*"],
-      "@styles": ["src/styles"],
-      "@styles/*": ["src/styles/*"],
-      "@core": ["src/core"],
-      "@core/*": ["src/core/*"],
-      "@data": ["src/data"],
-      "@data/*": ["src/data/*"]
+      "@/*": ["src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"]
 }

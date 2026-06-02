@@ -1,0 +1,62 @@
+---
+import { POKEMON_TYPES, TYPE_COLORS } from '@/lib/types'
+import { TYPE_MATRIX } from '@/lib/typeEffectiveness'
+import { getDictionary } from '@/lib/i18n'
+
+interface Props {
+  locale: string
+}
+
+const { locale } = Astro.props
+const dict = getDictionary(locale)
+const base = import.meta.env.BASE_URL
+const icon = (name: string) => `${base}images/types/${name}.png`
+---
+
+<div class="type-page">
+  <div class="type-axis-top">{dict.common.defender}</div>
+  <div class="type-grid">
+    <div class="type-axis-left">{dict.common.attacker}</div>
+    <table class="matrix">
+      <thead>
+        <tr>
+          <th class="corner"></th>
+          {
+            POKEMON_TYPES.map((d) => (
+              <th>
+                <img class="cell-icon" src={icon(d)} alt={dict.type[d]} title={dict.type[d]} />
+              </th>
+            ))
+          }
+        </tr>
+      </thead>
+      <tbody>
+        {
+          POKEMON_TYPES.map((a) => (
+            <tr>
+              <th scope="row">
+                <span class="row-label" style={`background:${TYPE_COLORS[a]}`}>
+                  <img src={icon(a)} alt="" />
+                  {dict.type[a]}
+                </span>
+              </th>
+              {POKEMON_TYPES.map((d) => {
+                const eff = TYPE_MATRIX[a][d]
+                return (
+                  <td>
+                    <img
+                      class="cell-icon"
+                      src={icon(`type_${eff}`)}
+                      alt={eff}
+                      title={`${dict.type[a]} → ${dict.type[d]}`}
+                    />
+                  </td>
+                )
+              })}
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
