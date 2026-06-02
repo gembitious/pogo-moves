@@ -1,0 +1,6060 @@
+{
+  "fast": [
+    {
+      "id": "acid",
+      "name": "용해액",
+      "nameEn": "Acid",
+      "type": "poison",
+      "pvp": {
+        "power": 6,
+        "turn": 2,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 11,
+        "energyGain": 10,
+        "duration": 1,
+        "damageWindowStart": 0.6,
+        "damageWindowEnd": 0.8
+      }
+    },
+    {
+      "id": "aegislash_charge_air_slash",
+      "name": "에어슬래시",
+      "nameEn": "Air Slash",
+      "type": "flying",
+      "pvp": {
+        "power": 0,
+        "turn": 3,
+        "energyGain": 6
+      },
+      "pve": null
+    },
+    {
+      "id": "aegislash_charge_psycho_cut",
+      "name": "사이코커터",
+      "nameEn": "Psycho Cut",
+      "type": "psychic",
+      "pvp": {
+        "power": 0,
+        "turn": 2,
+        "energyGain": 6
+      },
+      "pve": null
+    },
+    {
+      "id": "air_slash",
+      "name": "에어슬래시",
+      "nameEn": "Air Slash",
+      "type": "flying",
+      "pvp": {
+        "power": 9,
+        "turn": 3,
+        "energyGain": 9
+      },
+      "pve": {
+        "power": 12,
+        "energyGain": 8,
+        "duration": 1,
+        "damageWindowStart": 0.8,
+        "damageWindowEnd": 1
+      }
+    },
+    {
+      "id": "astonish",
+      "name": "놀래키기",
+      "nameEn": "Astonish",
+      "type": "ghost",
+      "pvp": {
+        "power": 12,
+        "turn": 3,
+        "energyGain": 10
+      },
+      "pve": {
+        "power": 7,
+        "energyGain": 13,
+        "duration": 1,
+        "damageWindowStart": 0.6,
+        "damageWindowEnd": 0.95
+      }
+    },
+    {
+      "id": "bite",
+      "name": "물기",
+      "nameEn": "Bite",
+      "type": "dark",
+      "pvp": {
+        "power": 4,
+        "turn": 1,
+        "energyGain": 2
+      },
+      "pve": {
+        "power": 6,
+        "energyGain": 4,
+        "duration": 0.5,
+        "damageWindowStart": 0.3,
+        "damageWindowEnd": 0.5
+      }
+    },
+    {
+      "id": "bubble",
+      "name": "거품",
+      "nameEn": "Bubble",
+      "type": "water",
+      "pvp": {
+        "power": 8,
+        "turn": 3,
+        "energyGain": 11
+      },
+      "pve": {
+        "power": 10,
+        "energyGain": 12,
+        "duration": 1,
+        "damageWindowStart": 0.55,
+        "damageWindowEnd": 0.8
+      }
+    },
+    {
+      "id": "bug_bite",
+      "name": "벌레먹기",
+      "nameEn": "Bug Bite",
+      "type": "bug",
+      "pvp": {
+        "power": 4,
+        "turn": 1,
+        "energyGain": 3
+      },
+      "pve": {
+        "power": 5,
+        "energyGain": 6,
+        "duration": 0.5,
+        "damageWindowStart": 0.25,
+        "damageWindowEnd": 0.45
+      }
+    },
+    {
+      "id": "bullet_punch",
+      "name": "불릿펀치",
+      "nameEn": "Bullet Punch",
+      "type": "steel",
+      "pvp": {
+        "power": 7,
+        "turn": 2,
+        "energyGain": 7
+      },
+      "pve": {
+        "power": 10,
+        "energyGain": 11,
+        "duration": 1,
+        "damageWindowStart": 0.4,
+        "damageWindowEnd": 1
+      }
+    },
+    {
+      "id": "bullet_seed",
+      "name": "씨기관총",
+      "nameEn": "Bullet Seed",
+      "type": "grass",
+      "pvp": {
+        "power": 5,
+        "turn": 3,
+        "energyGain": 13
+      },
+      "pve": {
+        "power": 7,
+        "energyGain": 13,
+        "duration": 1,
+        "damageWindowStart": 0.75,
+        "damageWindowEnd": 0.95
+      }
+    },
+    {
+      "id": "charge_beam",
+      "name": "차지빔",
+      "nameEn": "Charge Beam",
+      "type": "electric",
+      "pvp": {
+        "power": 5,
+        "turn": 3,
+        "energyGain": 11
+      },
+      "pve": {
+        "power": 7,
+        "energyGain": 14,
+        "duration": 1,
+        "damageWindowStart": 0.75,
+        "damageWindowEnd": 0.95
+      }
+    },
+    {
+      "id": "charm",
+      "name": "애교부리기",
+      "nameEn": "Charm",
+      "type": "fairy",
+      "pvp": {
+        "power": 13,
+        "turn": 3,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 20,
+        "energyGain": 11,
+        "duration": 1.5,
+        "damageWindowStart": 0.9,
+        "damageWindowEnd": 1.2
+      }
+    },
+    {
+      "id": "confusion",
+      "name": "염동력",
+      "nameEn": "Confusion",
+      "type": "psychic",
+      "pvp": {
+        "power": 16,
+        "turn": 4,
+        "energyGain": 14
+      },
+      "pve": {
+        "power": 19,
+        "energyGain": 14,
+        "duration": 1.5,
+        "damageWindowStart": 0.5,
+        "damageWindowEnd": 1.5
+      }
+    },
+    {
+      "id": "counter",
+      "name": "카운터",
+      "nameEn": "Counter",
+      "type": "fighting",
+      "pvp": {
+        "power": 8,
+        "turn": 2,
+        "energyGain": 6
+      },
+      "pve": {
+        "power": 13,
+        "energyGain": 9,
+        "duration": 1,
+        "damageWindowStart": 0.8,
+        "damageWindowEnd": 1
+      }
+    },
+    {
+      "id": "cut",
+      "name": "풀베기",
+      "nameEn": "Cut",
+      "type": "normal",
+      "pvp": {
+        "power": 3,
+        "turn": 1,
+        "energyGain": 2
+      },
+      "pve": {
+        "power": 5,
+        "energyGain": 5,
+        "duration": 0.5,
+        "damageWindowStart": 0.3,
+        "damageWindowEnd": 0.5
+      }
+    },
+    {
+      "id": "double_kick",
+      "name": "두번차기",
+      "nameEn": "Double Kick",
+      "type": "fighting",
+      "pvp": {
+        "power": 8,
+        "turn": 3,
+        "energyGain": 12
+      },
+      "pve": {
+        "power": 10,
+        "energyGain": 13,
+        "duration": 1,
+        "damageWindowStart": 0.3,
+        "damageWindowEnd": 0.8
+      }
+    },
+    {
+      "id": "dragon_breath",
+      "name": "용의숨결",
+      "nameEn": "Dragon Breath",
+      "type": "dragon",
+      "pvp": {
+        "power": 3,
+        "turn": 1,
+        "energyGain": 4
+      },
+      "pve": {
+        "power": 6,
+        "energyGain": 4,
+        "duration": 0.5,
+        "damageWindowStart": 0.3,
+        "damageWindowEnd": 0.5
+      }
+    },
+    {
+      "id": "dragon_tail",
+      "name": "드래곤테일",
+      "nameEn": "Dragon Tail",
+      "type": "dragon",
+      "pvp": {
+        "power": 9,
+        "turn": 3,
+        "energyGain": 12
+      },
+      "pve": {
+        "power": 14,
+        "energyGain": 8,
+        "duration": 1,
+        "damageWindowStart": 0.75,
+        "damageWindowEnd": 0.95
+      }
+    },
+    {
+      "id": "ember",
+      "name": "불꽃세례",
+      "nameEn": "Ember",
+      "type": "fire",
+      "pvp": {
+        "power": 4,
+        "turn": 2,
+        "energyGain": 9
+      },
+      "pve": {
+        "power": 10,
+        "energyGain": 10,
+        "duration": 1,
+        "damageWindowStart": 0.6,
+        "damageWindowEnd": 0.8
+      }
+    },
+    {
+      "id": "extrasensory",
+      "name": "신통력",
+      "nameEn": "Extrasensory",
+      "type": "psychic",
+      "pvp": {
+        "power": 8,
+        "turn": 3,
+        "energyGain": 10
+      },
+      "pve": {
+        "power": 11,
+        "energyGain": 11,
+        "duration": 1,
+        "damageWindowStart": 0.75,
+        "damageWindowEnd": 0.95
+      }
+    },
+    {
+      "id": "fairy_wind",
+      "name": "요정의바람",
+      "nameEn": "Fairy Wind",
+      "type": "fairy",
+      "pvp": {
+        "power": 4,
+        "turn": 2,
+        "energyGain": 9
+      },
+      "pve": {
+        "power": 9,
+        "energyGain": 13,
+        "duration": 1,
+        "damageWindowStart": 0.63,
+        "damageWindowEnd": 1
+      }
+    },
+    {
+      "id": "feint_attack",
+      "name": "속여때리기",
+      "nameEn": "Feint Attack",
+      "type": "dark",
+      "pvp": {
+        "power": 6,
+        "turn": 2,
+        "energyGain": 6
+      },
+      "pve": {
+        "power": 11,
+        "energyGain": 10,
+        "duration": 1,
+        "damageWindowStart": 0.85,
+        "damageWindowEnd": 1
+      }
+    },
+    {
+      "id": "fire_fang",
+      "name": "불꽃엄니",
+      "nameEn": "Fire Fang",
+      "type": "fire",
+      "pvp": {
+        "power": 8,
+        "turn": 2,
+        "energyGain": 6
+      },
+      "pve": {
+        "power": 13,
+        "energyGain": 9,
+        "duration": 1,
+        "damageWindowStart": 0.74,
+        "damageWindowEnd": 0.94
+      }
+    },
+    {
+      "id": "fire_spin",
+      "name": "회오리불꽃",
+      "nameEn": "Fire Spin",
+      "type": "fire",
+      "pvp": {
+        "power": 11,
+        "turn": 3,
+        "energyGain": 10
+      },
+      "pve": {
+        "power": 13,
+        "energyGain": 9,
+        "duration": 1,
+        "damageWindowStart": 0.75,
+        "damageWindowEnd": 0.95
+      }
+    },
+    {
+      "id": "force_palm",
+      "name": "발경",
+      "nameEn": "Force Palm",
+      "type": "fighting",
+      "pvp": {
+        "power": 13,
+        "turn": 3,
+        "energyGain": 10
+      },
+      "pve": {
+        "power": 10,
+        "energyGain": 16,
+        "duration": 1,
+        "damageWindowStart": 0.8,
+        "damageWindowEnd": 1
+      }
+    },
+    {
+      "id": "frost_breath",
+      "name": "얼음숨결",
+      "nameEn": "Frost Breath",
+      "type": "ice",
+      "pvp": {
+        "power": 7,
+        "turn": 2,
+        "energyGain": 5
+      },
+      "pve": {
+        "power": 11,
+        "energyGain": 9,
+        "duration": 1,
+        "damageWindowStart": 0.55,
+        "damageWindowEnd": 0.85
+      }
+    },
+    {
+      "id": "fury_cutter",
+      "name": "연속자르기",
+      "nameEn": "Fury Cutter",
+      "type": "bug",
+      "pvp": {
+        "power": 3,
+        "turn": 1,
+        "energyGain": 4
+      },
+      "pve": {
+        "power": 4,
+        "energyGain": 8,
+        "duration": 0.5,
+        "damageWindowStart": 0.2,
+        "damageWindowEnd": 0.5
+      }
+    },
+    {
+      "id": "geomancy",
+      "name": "지오컨트롤",
+      "nameEn": "Geomancy",
+      "type": "fairy",
+      "pvp": {
+        "power": 8,
+        "turn": 3,
+        "energyGain": 13
+      },
+      "pve": {
+        "power": 20,
+        "energyGain": 14,
+        "duration": 1.5,
+        "damageWindowStart": 1,
+        "damageWindowEnd": 1.5
+      }
+    },
+    {
+      "id": "gust",
+      "name": "바람일으키기",
+      "nameEn": "Gust",
+      "type": "flying",
+      "pvp": {
+        "power": 16,
+        "turn": 4,
+        "energyGain": 12
+      },
+      "pve": {
+        "power": 25,
+        "energyGain": 20,
+        "duration": 2,
+        "damageWindowStart": 0.9,
+        "damageWindowEnd": 2
+      }
+    },
+    {
+      "id": "hex",
+      "name": "병상첨병",
+      "nameEn": "Hex",
+      "type": "ghost",
+      "pvp": {
+        "power": 7,
+        "turn": 3,
+        "energyGain": 13
+      },
+      "pve": {
+        "power": 8,
+        "energyGain": 13,
+        "duration": 1,
+        "damageWindowStart": 0.8,
+        "damageWindowEnd": 1
+      }
+    },
+    {
+      "id": "hidden_power_bug",
+      "name": "잠재파워",
+      "nameEn": "Hidden Power (Bug)",
+      "type": "bug",
+      "pvp": {
+        "power": 9,
+        "turn": 3,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 15,
+        "energyGain": 15,
+        "duration": 1.5,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "hidden_power_dark",
+      "name": "잠재파워",
+      "nameEn": "Hidden Power (Dark)",
+      "type": "dark",
+      "pvp": {
+        "power": 9,
+        "turn": 3,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 15,
+        "energyGain": 15,
+        "duration": 1.5,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "hidden_power_dragon",
+      "name": "잠재파워",
+      "nameEn": "Hidden Power (Dragon)",
+      "type": "dragon",
+      "pvp": {
+        "power": 9,
+        "turn": 3,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 15,
+        "energyGain": 15,
+        "duration": 1.5,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "hidden_power_electric",
+      "name": "잠재파워",
+      "nameEn": "Hidden Power (Electric)",
+      "type": "electric",
+      "pvp": {
+        "power": 9,
+        "turn": 3,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 15,
+        "energyGain": 15,
+        "duration": 1.5,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "hidden_power_fighting",
+      "name": "잠재파워",
+      "nameEn": "Hidden Power (Fighting)",
+      "type": "fighting",
+      "pvp": {
+        "power": 9,
+        "turn": 3,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 15,
+        "energyGain": 15,
+        "duration": 1.5,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "hidden_power_fire",
+      "name": "잠재파워",
+      "nameEn": "Hidden Power (Fire)",
+      "type": "fire",
+      "pvp": {
+        "power": 9,
+        "turn": 3,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 15,
+        "energyGain": 15,
+        "duration": 1.5,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "hidden_power_flying",
+      "name": "잠재파워",
+      "nameEn": "Hidden Power (Flying)",
+      "type": "flying",
+      "pvp": {
+        "power": 9,
+        "turn": 3,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 15,
+        "energyGain": 15,
+        "duration": 1.5,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "hidden_power_ghost",
+      "name": "잠재파워",
+      "nameEn": "Hidden Power (Ghost)",
+      "type": "ghost",
+      "pvp": {
+        "power": 9,
+        "turn": 3,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 15,
+        "energyGain": 15,
+        "duration": 1.5,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "hidden_power_grass",
+      "name": "잠재파워",
+      "nameEn": "Hidden Power (Grass)",
+      "type": "grass",
+      "pvp": {
+        "power": 9,
+        "turn": 3,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 15,
+        "energyGain": 15,
+        "duration": 1.5,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "hidden_power_ground",
+      "name": "잠재파워",
+      "nameEn": "Hidden Power (Ground)",
+      "type": "ground",
+      "pvp": {
+        "power": 9,
+        "turn": 3,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 15,
+        "energyGain": 15,
+        "duration": 1.5,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "hidden_power_ice",
+      "name": "잠재파워",
+      "nameEn": "Hidden Power (Ice)",
+      "type": "ice",
+      "pvp": {
+        "power": 9,
+        "turn": 3,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 15,
+        "energyGain": 15,
+        "duration": 1.5,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "hidden_power_normal",
+      "name": "잠재파워",
+      "nameEn": "Hidden Power",
+      "type": "normal",
+      "pvp": {
+        "power": 9,
+        "turn": 3,
+        "energyGain": 8
+      },
+      "pve": null
+    },
+    {
+      "id": "hidden_power_poison",
+      "name": "잠재파워",
+      "nameEn": "Hidden Power (Poison)",
+      "type": "poison",
+      "pvp": {
+        "power": 9,
+        "turn": 3,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 15,
+        "energyGain": 15,
+        "duration": 1.5,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "hidden_power_psychic",
+      "name": "잠재파워",
+      "nameEn": "Hidden Power (Psychic)",
+      "type": "psychic",
+      "pvp": {
+        "power": 9,
+        "turn": 3,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 15,
+        "energyGain": 15,
+        "duration": 1.5,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "hidden_power_rock",
+      "name": "잠재파워",
+      "nameEn": "Hidden Power (Rock)",
+      "type": "rock",
+      "pvp": {
+        "power": 9,
+        "turn": 3,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 15,
+        "energyGain": 15,
+        "duration": 1.5,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "hidden_power_steel",
+      "name": "잠재파워",
+      "nameEn": "Hidden Power (Steel)",
+      "type": "steel",
+      "pvp": {
+        "power": 9,
+        "turn": 3,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 15,
+        "energyGain": 15,
+        "duration": 1.5,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "hidden_power_water",
+      "name": "잠재파워",
+      "nameEn": "Hidden Power (Water)",
+      "type": "water",
+      "pvp": {
+        "power": 9,
+        "turn": 3,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 15,
+        "energyGain": 15,
+        "duration": 1.5,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "ice_fang",
+      "name": "얼음엄니",
+      "nameEn": "Ice Fang",
+      "type": "ice",
+      "pvp": {
+        "power": 8,
+        "turn": 2,
+        "energyGain": 6
+      },
+      "pve": {
+        "power": 12,
+        "energyGain": 20,
+        "duration": 1.5,
+        "damageWindowStart": 0.4,
+        "damageWindowEnd": 1
+      }
+    },
+    {
+      "id": "ice_shard",
+      "name": "얼음뭉치",
+      "nameEn": "Ice Shard",
+      "type": "ice",
+      "pvp": {
+        "power": 9,
+        "turn": 3,
+        "energyGain": 10
+      },
+      "pve": {
+        "power": 10,
+        "energyGain": 10,
+        "duration": 1,
+        "damageWindowStart": 0.4,
+        "damageWindowEnd": 0.7
+      }
+    },
+    {
+      "id": "incinerate",
+      "name": "불태우기",
+      "nameEn": "Incinerate",
+      "type": "fire",
+      "pvp": {
+        "power": 20,
+        "turn": 5,
+        "energyGain": 20
+      },
+      "pve": {
+        "power": 32,
+        "energyGain": 22,
+        "duration": 2.5,
+        "damageWindowStart": 0.7,
+        "damageWindowEnd": 2.5
+      }
+    },
+    {
+      "id": "infestation",
+      "name": "엉겨붙기",
+      "nameEn": "Infestation",
+      "type": "bug",
+      "pvp": {
+        "power": 6,
+        "turn": 3,
+        "energyGain": 12
+      },
+      "pve": {
+        "power": 9,
+        "energyGain": 13,
+        "duration": 1,
+        "damageWindowStart": 0.75,
+        "damageWindowEnd": 0.95
+      }
+    },
+    {
+      "id": "iron_tail",
+      "name": "아이언테일",
+      "nameEn": "Iron Tail",
+      "type": "steel",
+      "pvp": {
+        "power": 10,
+        "turn": 3,
+        "energyGain": 7
+      },
+      "pve": {
+        "power": 14,
+        "energyGain": 6,
+        "duration": 1,
+        "damageWindowStart": 0.75,
+        "damageWindowEnd": 0.95
+      }
+    },
+    {
+      "id": "karate_chop",
+      "name": "태권당수",
+      "nameEn": "Karate Chop",
+      "type": "fighting",
+      "pvp": {
+        "power": 5,
+        "turn": 2,
+        "energyGain": 9
+      },
+      "pve": {
+        "power": 10,
+        "energyGain": 13,
+        "duration": 1,
+        "damageWindowStart": 0.8,
+        "damageWindowEnd": 1
+      }
+    },
+    {
+      "id": "leafage",
+      "name": "나뭇잎",
+      "nameEn": "Leafage",
+      "type": "grass",
+      "pvp": {
+        "power": 6,
+        "turn": 2,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 6,
+        "energyGain": 4,
+        "duration": 0.5,
+        "damageWindowStart": 0.2,
+        "damageWindowEnd": 0.7
+      }
+    },
+    {
+      "id": "lick",
+      "name": "핥기",
+      "nameEn": "Lick",
+      "type": "ghost",
+      "pvp": {
+        "power": 3,
+        "turn": 1,
+        "energyGain": 3
+      },
+      "pve": {
+        "power": 5,
+        "energyGain": 6,
+        "duration": 0.5,
+        "damageWindowStart": 0.2,
+        "damageWindowEnd": 0.5
+      }
+    },
+    {
+      "id": "lock_on",
+      "name": "록온",
+      "nameEn": "Lock-On",
+      "type": "normal",
+      "pvp": {
+        "power": 1,
+        "turn": 1,
+        "energyGain": 5
+      },
+      "pve": {
+        "power": 2,
+        "energyGain": 10,
+        "duration": 0.5,
+        "damageWindowStart": 0.37,
+        "damageWindowEnd": 0.5
+      }
+    },
+    {
+      "id": "low_kick",
+      "name": "안다리걸기",
+      "nameEn": "Low Kick",
+      "type": "fighting",
+      "pvp": {
+        "power": 5,
+        "turn": 2,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 5,
+        "energyGain": 5,
+        "duration": 0.5,
+        "damageWindowStart": 0.2,
+        "damageWindowEnd": 0.5
+      }
+    },
+    {
+      "id": "magical_leaf",
+      "name": "매지컬리프",
+      "nameEn": "Magical Leaf",
+      "type": "grass",
+      "pvp": {
+        "power": 10,
+        "turn": 3,
+        "energyGain": 10
+      },
+      "pve": {
+        "power": 17,
+        "energyGain": 17,
+        "duration": 1.5,
+        "damageWindowStart": 0.85,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "metal_claw",
+      "name": "메탈클로",
+      "nameEn": "Metal Claw",
+      "type": "steel",
+      "pvp": {
+        "power": 5,
+        "turn": 2,
+        "energyGain": 7
+      },
+      "pve": {
+        "power": 6,
+        "energyGain": 5,
+        "duration": 0.5,
+        "damageWindowStart": 0.23,
+        "damageWindowEnd": 0.43
+      }
+    },
+    {
+      "id": "metal_sound",
+      "name": "금속음",
+      "nameEn": "Metal Sound",
+      "type": "steel",
+      "pvp": {
+        "power": 5,
+        "turn": 2,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 4,
+        "energyGain": 6,
+        "duration": 0.5,
+        "damageWindowStart": 0.2,
+        "damageWindowEnd": 0.7
+      }
+    },
+    {
+      "id": "mud_shot",
+      "name": "머드샷",
+      "nameEn": "Mud Shot",
+      "type": "ground",
+      "pvp": {
+        "power": 3,
+        "turn": 2,
+        "energyGain": 9
+      },
+      "pve": {
+        "power": 4,
+        "energyGain": 6,
+        "duration": 0.5,
+        "damageWindowStart": 0.25,
+        "damageWindowEnd": 0.45
+      }
+    },
+    {
+      "id": "mud_slap",
+      "name": "진흙뿌리기",
+      "nameEn": "Mud-Slap",
+      "type": "ground",
+      "pvp": {
+        "power": 11,
+        "turn": 3,
+        "energyGain": 10
+      },
+      "pve": {
+        "power": 19,
+        "energyGain": 13,
+        "duration": 1.5,
+        "damageWindowStart": 1.25,
+        "damageWindowEnd": 1.45
+      }
+    },
+    {
+      "id": "peck",
+      "name": "쪼기",
+      "nameEn": "Peck",
+      "type": "flying",
+      "pvp": {
+        "power": 6,
+        "turn": 2,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 10,
+        "energyGain": 10,
+        "duration": 1,
+        "damageWindowStart": 0.45,
+        "damageWindowEnd": 0.9
+      }
+    },
+    {
+      "id": "poison_jab",
+      "name": "독찌르기",
+      "nameEn": "Poison Jab",
+      "type": "poison",
+      "pvp": {
+        "power": 7,
+        "turn": 2,
+        "energyGain": 7
+      },
+      "pve": {
+        "power": 13,
+        "energyGain": 9,
+        "duration": 1,
+        "damageWindowStart": 0.4,
+        "damageWindowEnd": 1
+      }
+    },
+    {
+      "id": "poison_sting",
+      "name": "독침",
+      "nameEn": "Poison Sting",
+      "type": "poison",
+      "pvp": {
+        "power": 4,
+        "turn": 2,
+        "energyGain": 9
+      },
+      "pve": {
+        "power": 4,
+        "energyGain": 6,
+        "duration": 0.5,
+        "damageWindowStart": 0.275,
+        "damageWindowEnd": 0.475
+      }
+    },
+    {
+      "id": "pound",
+      "name": "막치기",
+      "nameEn": "Pound",
+      "type": "normal",
+      "pvp": {
+        "power": 4,
+        "turn": 2,
+        "energyGain": 4
+      },
+      "pve": {
+        "power": 6,
+        "energyGain": 5,
+        "duration": 0.5,
+        "damageWindowStart": 0.24,
+        "damageWindowEnd": 0.44
+      }
+    },
+    {
+      "id": "powder_snow",
+      "name": "눈싸라기",
+      "nameEn": "Powder Snow",
+      "type": "ice",
+      "pvp": {
+        "power": 6,
+        "turn": 2,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 6,
+        "energyGain": 15,
+        "duration": 1,
+        "damageWindowStart": 0.85,
+        "damageWindowEnd": 1
+      }
+    },
+    {
+      "id": "present",
+      "name": "프레젠트",
+      "nameEn": "Present",
+      "type": "normal",
+      "pvp": {
+        "power": 3,
+        "turn": 3,
+        "energyGain": 12
+      },
+      "pve": {
+        "power": 6,
+        "energyGain": 23,
+        "duration": 1.5,
+        "damageWindowStart": 1.3,
+        "damageWindowEnd": 1.5
+      }
+    },
+    {
+      "id": "psycho_cut",
+      "name": "사이코커터",
+      "nameEn": "Psycho Cut",
+      "type": "psychic",
+      "pvp": {
+        "power": 4,
+        "turn": 2,
+        "energyGain": 9
+      },
+      "pve": {
+        "power": 4,
+        "energyGain": 7,
+        "duration": 0.5,
+        "damageWindowStart": 0.27,
+        "damageWindowEnd": 0.47
+      }
+    },
+    {
+      "id": "psywave",
+      "name": "사이코웨이브",
+      "nameEn": "Psywave",
+      "type": "psychic",
+      "pvp": {
+        "power": 3,
+        "turn": 1,
+        "energyGain": 4
+      },
+      "pve": {
+        "power": 4,
+        "energyGain": 7,
+        "duration": 0.5,
+        "damageWindowStart": 0.3,
+        "damageWindowEnd": 0.6
+      }
+    },
+    {
+      "id": "quick_attack",
+      "name": "전광석화",
+      "nameEn": "Quick Attack",
+      "type": "normal",
+      "pvp": {
+        "power": 5,
+        "turn": 2,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 10,
+        "energyGain": 13,
+        "duration": 1,
+        "damageWindowStart": 0.45,
+        "damageWindowEnd": 0.75
+      }
+    },
+    {
+      "id": "razor_leaf",
+      "name": "잎날가르기",
+      "nameEn": "Razor Leaf",
+      "type": "grass",
+      "pvp": {
+        "power": 9,
+        "turn": 2,
+        "energyGain": 4
+      },
+      "pve": {
+        "power": 13,
+        "energyGain": 7,
+        "duration": 1,
+        "damageWindowStart": 0.6,
+        "damageWindowEnd": 0.85
+      }
+    },
+    {
+      "id": "rock_smash",
+      "name": "바위깨기",
+      "nameEn": "Rock Smash",
+      "type": "fighting",
+      "pvp": {
+        "power": 9,
+        "turn": 3,
+        "energyGain": 7
+      },
+      "pve": {
+        "power": 17,
+        "energyGain": 12,
+        "duration": 1.5,
+        "damageWindowStart": 0.75,
+        "damageWindowEnd": 1
+      }
+    },
+    {
+      "id": "rock_throw",
+      "name": "돌떨구기",
+      "nameEn": "Rock Throw",
+      "type": "rock",
+      "pvp": {
+        "power": 8,
+        "turn": 2,
+        "energyGain": 5
+      },
+      "pve": {
+        "power": 13,
+        "energyGain": 8,
+        "duration": 1,
+        "damageWindowStart": 0.6,
+        "damageWindowEnd": 0.9
+      }
+    },
+    {
+      "id": "rollout",
+      "name": "구르기",
+      "nameEn": "Rollout",
+      "type": "rock",
+      "pvp": {
+        "power": 7,
+        "turn": 3,
+        "energyGain": 13
+      },
+      "pve": {
+        "power": 15,
+        "energyGain": 19,
+        "duration": 1.5,
+        "damageWindowStart": 1.06,
+        "damageWindowEnd": 1.3
+      }
+    },
+    {
+      "id": "sand_attack",
+      "name": "모래뿌리기",
+      "nameEn": "Sand Attack",
+      "type": "ground",
+      "pvp": {
+        "power": 2,
+        "turn": 1,
+        "energyGain": 4
+      },
+      "pve": {
+        "power": 4,
+        "energyGain": 7,
+        "duration": 0.5,
+        "damageWindowStart": 0.3,
+        "damageWindowEnd": 0.6
+      }
+    },
+    {
+      "id": "scratch",
+      "name": "할퀴기",
+      "nameEn": "Scratch",
+      "type": "normal",
+      "pvp": {
+        "power": 4,
+        "turn": 1,
+        "energyGain": 2
+      },
+      "pve": {
+        "power": 6,
+        "energyGain": 4,
+        "duration": 0.5,
+        "damageWindowStart": 0.3,
+        "damageWindowEnd": 0.5
+      }
+    },
+    {
+      "id": "shadow_claw",
+      "name": "섀도클로",
+      "nameEn": "Shadow Claw",
+      "type": "ghost",
+      "pvp": {
+        "power": 6,
+        "turn": 2,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 6,
+        "energyGain": 4,
+        "duration": 0.5,
+        "damageWindowStart": 0.05,
+        "damageWindowEnd": 0.3
+      }
+    },
+    {
+      "id": "smack_down",
+      "name": "떨어뜨리기",
+      "nameEn": "Smack Down",
+      "type": "rock",
+      "pvp": {
+        "power": 11,
+        "turn": 3,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 13,
+        "energyGain": 7,
+        "duration": 1,
+        "damageWindowStart": 0.6,
+        "damageWindowEnd": 0.9
+      }
+    },
+    {
+      "id": "snarl",
+      "name": "바크아웃",
+      "nameEn": "Snarl",
+      "type": "dark",
+      "pvp": {
+        "power": 5,
+        "turn": 3,
+        "energyGain": 13
+      },
+      "pve": {
+        "power": 11,
+        "energyGain": 13,
+        "duration": 1,
+        "damageWindowStart": 0.75,
+        "damageWindowEnd": 0.95
+      }
+    },
+    {
+      "id": "spark",
+      "name": "스파크",
+      "nameEn": "Spark",
+      "type": "electric",
+      "pvp": {
+        "power": 5,
+        "turn": 2,
+        "energyGain": 7
+      },
+      "pve": {
+        "power": 4,
+        "energyGain": 6,
+        "duration": 0.5,
+        "damageWindowStart": 0.1,
+        "damageWindowEnd": 0.5
+      }
+    },
+    {
+      "id": "splash",
+      "name": "튀어오르기",
+      "nameEn": "Splash",
+      "type": "water",
+      "pvp": {
+        "power": 0,
+        "turn": 4,
+        "energyGain": 12
+      },
+      "pve": {
+        "power": 0,
+        "energyGain": 17,
+        "duration": 1.5,
+        "damageWindowStart": 0.8,
+        "damageWindowEnd": 1
+      }
+    },
+    {
+      "id": "steel_wing",
+      "name": "강철날개",
+      "nameEn": "Steel Wing",
+      "type": "steel",
+      "pvp": {
+        "power": 7,
+        "turn": 2,
+        "energyGain": 5
+      },
+      "pve": {
+        "power": 14,
+        "energyGain": 8,
+        "duration": 1,
+        "damageWindowStart": 0.7,
+        "damageWindowEnd": 1
+      }
+    },
+    {
+      "id": "struggle_bug",
+      "name": "벌레의저항",
+      "nameEn": "Struggle Bug",
+      "type": "bug",
+      "pvp": {
+        "power": 9,
+        "turn": 3,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 15,
+        "energyGain": 15,
+        "duration": 1.5,
+        "damageWindowStart": 1.2,
+        "damageWindowEnd": 1.5
+      }
+    },
+    {
+      "id": "sucker_punch",
+      "name": "기습",
+      "nameEn": "Sucker Punch",
+      "type": "dark",
+      "pvp": {
+        "power": 8,
+        "turn": 2,
+        "energyGain": 7
+      },
+      "pve": {
+        "power": 5,
+        "energyGain": 6,
+        "duration": 0.5,
+        "damageWindowStart": 0.1,
+        "damageWindowEnd": 0.5
+      }
+    },
+    {
+      "id": "tackle",
+      "name": "몸통박치기",
+      "nameEn": "Tackle",
+      "type": "normal",
+      "pvp": {
+        "power": 3,
+        "turn": 1,
+        "energyGain": 3
+      },
+      "pve": {
+        "power": 5,
+        "energyGain": 5,
+        "duration": 0.5,
+        "damageWindowStart": 0.3,
+        "damageWindowEnd": 0.5
+      }
+    },
+    {
+      "id": "take_down",
+      "name": "돌진",
+      "nameEn": "Take Down",
+      "type": "normal",
+      "pvp": {
+        "power": 5,
+        "turn": 3,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 7,
+        "energyGain": 8,
+        "duration": 1,
+        "damageWindowStart": 0.75,
+        "damageWindowEnd": 0.9
+      }
+    },
+    {
+      "id": "thunder_fang",
+      "name": "번개엄니",
+      "nameEn": "Thunder Fang",
+      "type": "electric",
+      "pvp": {
+        "power": 8,
+        "turn": 2,
+        "energyGain": 6
+      },
+      "pve": {
+        "power": 10,
+        "energyGain": 13,
+        "duration": 1,
+        "damageWindowStart": 0.2,
+        "damageWindowEnd": 0.7
+      }
+    },
+    {
+      "id": "thunder_shock",
+      "name": "전기쇼크",
+      "nameEn": "Thunder Shock",
+      "type": "electric",
+      "pvp": {
+        "power": 4,
+        "turn": 2,
+        "energyGain": 9
+      },
+      "pve": {
+        "power": 4,
+        "energyGain": 7,
+        "duration": 0.5,
+        "damageWindowStart": 0.2,
+        "damageWindowEnd": 0.5
+      }
+    },
+    {
+      "id": "vine_whip",
+      "name": "덩굴채찍",
+      "nameEn": "Vine Whip",
+      "type": "grass",
+      "pvp": {
+        "power": 5,
+        "turn": 2,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 6,
+        "energyGain": 5,
+        "duration": 0.5,
+        "damageWindowStart": 0.25,
+        "damageWindowEnd": 0.5
+      }
+    },
+    {
+      "id": "volt_switch",
+      "name": "볼트체인지",
+      "nameEn": "Volt Switch",
+      "type": "electric",
+      "pvp": {
+        "power": 14,
+        "turn": 4,
+        "energyGain": 16
+      },
+      "pve": {
+        "power": 13,
+        "energyGain": 20,
+        "duration": 1.5,
+        "damageWindowStart": 0.6,
+        "damageWindowEnd": 0.8
+      }
+    },
+    {
+      "id": "water_gun",
+      "name": "물대포",
+      "nameEn": "Water Gun",
+      "type": "water",
+      "pvp": {
+        "power": 3,
+        "turn": 1,
+        "energyGain": 3
+      },
+      "pve": {
+        "power": 5,
+        "energyGain": 5,
+        "duration": 0.5,
+        "damageWindowStart": 0.3,
+        "damageWindowEnd": 0.5
+      }
+    },
+    {
+      "id": "water_shuriken",
+      "name": "물수리검",
+      "nameEn": "Water Shuriken",
+      "type": "water",
+      "pvp": {
+        "power": 6,
+        "turn": 3,
+        "energyGain": 14
+      },
+      "pve": {
+        "power": 9,
+        "energyGain": 14,
+        "duration": 1,
+        "damageWindowStart": 0.9,
+        "damageWindowEnd": 1
+      }
+    },
+    {
+      "id": "waterfall",
+      "name": "폭포오르기",
+      "nameEn": "Waterfall",
+      "type": "water",
+      "pvp": {
+        "power": 11,
+        "turn": 3,
+        "energyGain": 10
+      },
+      "pve": {
+        "power": 13,
+        "energyGain": 7,
+        "duration": 1,
+        "damageWindowStart": 0.75,
+        "damageWindowEnd": 0.9
+      }
+    },
+    {
+      "id": "wing_attack",
+      "name": "날개치기",
+      "nameEn": "Wing Attack",
+      "type": "flying",
+      "pvp": {
+        "power": 5,
+        "turn": 2,
+        "energyGain": 8
+      },
+      "pve": {
+        "power": 10,
+        "energyGain": 11,
+        "duration": 1,
+        "damageWindowStart": 0.75,
+        "damageWindowEnd": 0.95
+      }
+    },
+    {
+      "id": "yawn",
+      "name": "하품",
+      "nameEn": "Yawn",
+      "type": "normal",
+      "pvp": {
+        "power": 0,
+        "turn": 4,
+        "energyGain": 12
+      },
+      "pve": {
+        "power": 0,
+        "energyGain": 13,
+        "duration": 1.5,
+        "damageWindowStart": 1.2,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "zen_headbutt",
+      "name": "사념의박치기",
+      "nameEn": "Zen Headbutt",
+      "type": "psychic",
+      "pvp": {
+        "power": 8,
+        "turn": 3,
+        "energyGain": 6
+      },
+      "pve": {
+        "power": 11,
+        "energyGain": 9,
+        "duration": 1,
+        "damageWindowStart": 0.75,
+        "damageWindowEnd": 0.95
+      }
+    }
+  ],
+  "charged": [
+    {
+      "id": "acid_spray",
+      "name": "애시드봄",
+      "nameEn": "Acid Spray",
+      "type": "poison",
+      "pvp": {
+        "power": 20,
+        "energy": 45,
+        "buffs": [
+          0,
+          -2
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 20,
+        "energy": 50,
+        "duration": 3,
+        "damageWindowStart": 2.1,
+        "damageWindowEnd": 2.8
+      }
+    },
+    {
+      "id": "acrobatics",
+      "name": "애크러뱃",
+      "nameEn": "Acrobatics",
+      "type": "flying",
+      "pvp": {
+        "power": 110,
+        "energy": 55
+      },
+      "pve": {
+        "power": 100,
+        "energy": 100,
+        "duration": 2,
+        "damageWindowStart": 0.6,
+        "damageWindowEnd": 1.7
+      }
+    },
+    {
+      "id": "aerial_ace",
+      "name": "제비반환",
+      "nameEn": "Aerial Ace",
+      "type": "flying",
+      "pvp": {
+        "power": 60,
+        "energy": 45
+      },
+      "pve": {
+        "power": 55,
+        "energy": 33,
+        "duration": 2.5,
+        "damageWindowStart": 2,
+        "damageWindowEnd": 2.3
+      }
+    },
+    {
+      "id": "aeroblast",
+      "name": "에어로블라스트",
+      "nameEn": "Aeroblast",
+      "type": "flying",
+      "pvp": {
+        "power": 170,
+        "energy": 75,
+        "buffs": [
+          2,
+          0
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 0.125
+      },
+      "pve": {
+        "power": 180,
+        "energy": 100,
+        "duration": 3.5,
+        "damageWindowStart": 3.3,
+        "damageWindowEnd": 3.5
+      }
+    },
+    {
+      "id": "air_cutter",
+      "name": "에어커터",
+      "nameEn": "Air Cutter",
+      "type": "flying",
+      "pvp": {
+        "power": 45,
+        "energy": 35,
+        "buffs": [
+          1,
+          0
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 0.3
+      },
+      "pve": {
+        "power": 55,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 1.6,
+        "damageWindowEnd": 2.3
+      }
+    },
+    {
+      "id": "ancient_power",
+      "name": "원시의힘",
+      "nameEn": "Ancient Power",
+      "type": "rock",
+      "pvp": {
+        "power": 60,
+        "energy": 45,
+        "buffs": [
+          1,
+          1
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 0.1
+      },
+      "pve": {
+        "power": 70,
+        "energy": 33,
+        "duration": 3.5,
+        "damageWindowStart": 2.85,
+        "damageWindowEnd": 3.1
+      }
+    },
+    {
+      "id": "aqua_jet",
+      "name": "아쿠아제트",
+      "nameEn": "Aqua Jet",
+      "type": "water",
+      "pvp": {
+        "power": 70,
+        "energy": 40
+      },
+      "pve": {
+        "power": 45,
+        "energy": 33,
+        "duration": 2.5,
+        "damageWindowStart": 1.6,
+        "damageWindowEnd": 2
+      }
+    },
+    {
+      "id": "aqua_step",
+      "name": "아쿠아스텝",
+      "nameEn": "Aqua Step",
+      "type": "water",
+      "pvp": {
+        "power": 55,
+        "energy": 40,
+        "buffs": [
+          1,
+          0
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 55,
+        "energy": 33,
+        "duration": 3.5,
+        "damageWindowStart": 2.05,
+        "damageWindowEnd": 3.1
+      }
+    },
+    {
+      "id": "aqua_tail",
+      "name": "아쿠아테일",
+      "nameEn": "Aqua Tail",
+      "type": "water",
+      "pvp": {
+        "power": 55,
+        "energy": 35
+      },
+      "pve": {
+        "power": 50,
+        "energy": 33,
+        "duration": 2,
+        "damageWindowStart": 1.3,
+        "damageWindowEnd": 1.75
+      }
+    },
+    {
+      "id": "aura_sphere",
+      "name": "파동탄",
+      "nameEn": "Aura Sphere",
+      "type": "fighting",
+      "pvp": {
+        "power": 80,
+        "energy": 40
+      },
+      "pve": {
+        "power": 100,
+        "energy": 50,
+        "duration": 2,
+        "damageWindowStart": 1.2,
+        "damageWindowEnd": 1.8
+      }
+    },
+    {
+      "id": "aura_wheel_dark",
+      "name": "오라휠",
+      "nameEn": "Aura Wheel",
+      "type": "dark",
+      "pvp": {
+        "power": 100,
+        "energy": 45,
+        "buffs": [
+          1,
+          0
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 100,
+        "energy": 45,
+        "duration": 2.7,
+        "damageWindowStart": 2.1,
+        "damageWindowEnd": 2.5
+      }
+    },
+    {
+      "id": "aura_wheel_electric",
+      "name": "오라휠",
+      "nameEn": "Aura Wheel",
+      "type": "electric",
+      "pvp": {
+        "power": 100,
+        "energy": 45,
+        "buffs": [
+          1,
+          0
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 100,
+        "energy": 45,
+        "duration": 2.7,
+        "damageWindowStart": 2.1,
+        "damageWindowEnd": 2.5
+      }
+    },
+    {
+      "id": "aurora_beam",
+      "name": "오로라빔",
+      "nameEn": "Aurora Beam",
+      "type": "ice",
+      "pvp": {
+        "power": 80,
+        "energy": 60
+      },
+      "pve": {
+        "power": 80,
+        "energy": 50,
+        "duration": 3.5,
+        "damageWindowStart": 3.3,
+        "damageWindowEnd": 3.5
+      }
+    },
+    {
+      "id": "avalanche",
+      "name": "눈사태",
+      "nameEn": "Avalanche",
+      "type": "ice",
+      "pvp": {
+        "power": 90,
+        "energy": 45
+      },
+      "pve": {
+        "power": 85,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 1.5,
+        "damageWindowEnd": 1.9
+      }
+    },
+    {
+      "id": "beak_blast",
+      "name": "부리캐논",
+      "nameEn": "Beak Blast",
+      "type": "flying",
+      "pvp": {
+        "power": 110,
+        "energy": 55,
+        "buffs": [
+          -1,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 85,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 1.5,
+        "damageWindowEnd": 1.9
+      }
+    },
+    {
+      "id": "behemoth_bash",
+      "name": "거수탄",
+      "nameEn": "Behemoth Bash",
+      "type": "steel",
+      "pvp": {
+        "power": 80,
+        "energy": 45
+      },
+      "pve": {
+        "power": 125,
+        "energy": 50,
+        "duration": 1.5,
+        "damageWindowStart": 0.9,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "behemoth_blade",
+      "name": "거수참",
+      "nameEn": "Behemoth Blade",
+      "type": "steel",
+      "pvp": {
+        "power": 100,
+        "energy": 55
+      },
+      "pve": {
+        "power": 200,
+        "energy": 100,
+        "duration": 3.5,
+        "damageWindowStart": 2.5,
+        "damageWindowEnd": 3.5
+      }
+    },
+    {
+      "id": "blast_burn",
+      "name": "블라스트번",
+      "nameEn": "Blast Burn",
+      "type": "fire",
+      "pvp": {
+        "power": 110,
+        "energy": 50
+      },
+      "pve": {
+        "power": 120,
+        "energy": 50,
+        "duration": 3.5,
+        "damageWindowStart": 2.95,
+        "damageWindowEnd": 3.4
+      }
+    },
+    {
+      "id": "blaze_kick",
+      "name": "블레이즈킥",
+      "nameEn": "Blaze Kick",
+      "type": "fire",
+      "pvp": {
+        "power": 60,
+        "energy": 40
+      },
+      "pve": {
+        "power": 40,
+        "energy": 33,
+        "duration": 1,
+        "damageWindowStart": 0.25,
+        "damageWindowEnd": 0.6
+      }
+    },
+    {
+      "id": "bleakwind_storm",
+      "name": "찬바람폭풍",
+      "nameEn": "Bleakwind Storm",
+      "type": "flying",
+      "pvp": {
+        "power": 60,
+        "energy": 45,
+        "buffs": [
+          -1,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 150,
+        "energy": 100,
+        "duration": 2.5,
+        "damageWindowStart": 2,
+        "damageWindowEnd": 2.8
+      }
+    },
+    {
+      "id": "blizzard",
+      "name": "눈보라",
+      "nameEn": "Blizzard",
+      "type": "ice",
+      "pvp": {
+        "power": 140,
+        "energy": 75
+      },
+      "pve": {
+        "power": 130,
+        "energy": 100,
+        "duration": 3,
+        "damageWindowStart": 1.4,
+        "damageWindowEnd": 2.8
+      }
+    },
+    {
+      "id": "body_slam",
+      "name": "누르기",
+      "nameEn": "Body Slam",
+      "type": "normal",
+      "pvp": {
+        "power": 55,
+        "energy": 35
+      },
+      "pve": {
+        "power": 50,
+        "energy": 33,
+        "duration": 2,
+        "damageWindowStart": 1.3,
+        "damageWindowEnd": 1.8
+      }
+    },
+    {
+      "id": "bone_club",
+      "name": "뼈다귀치기",
+      "nameEn": "Bone Club",
+      "type": "ground",
+      "pvp": {
+        "power": 55,
+        "energy": 35
+      },
+      "pve": {
+        "power": 40,
+        "energy": 33,
+        "duration": 1.5,
+        "damageWindowStart": 0.9,
+        "damageWindowEnd": 1.3
+      }
+    },
+    {
+      "id": "boomburst",
+      "name": "폭음파",
+      "nameEn": "Boomburst",
+      "type": "normal",
+      "pvp": {
+        "power": 150,
+        "energy": 70
+      },
+      "pve": {
+        "power": 150,
+        "energy": 100,
+        "duration": 2.5,
+        "damageWindowStart": 1.2,
+        "damageWindowEnd": 2.2
+      }
+    },
+    {
+      "id": "brave_bird",
+      "name": "브레이브버드",
+      "nameEn": "Brave Bird",
+      "type": "flying",
+      "pvp": {
+        "power": 130,
+        "energy": 55,
+        "buffs": [
+          0,
+          -3
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 130,
+        "energy": 100,
+        "duration": 2,
+        "damageWindowStart": 1,
+        "damageWindowEnd": 1.6
+      }
+    },
+    {
+      "id": "breaking_swipe",
+      "name": "와이드브레이커",
+      "nameEn": "Breaking Swipe",
+      "type": "dragon",
+      "pvp": {
+        "power": 50,
+        "energy": 50,
+        "buffs": [
+          -1,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 45,
+        "energy": 33,
+        "duration": 1,
+        "damageWindowStart": 0.47,
+        "damageWindowEnd": 0.9
+      }
+    },
+    {
+      "id": "brick_break",
+      "name": "깨트리기",
+      "nameEn": "Brick Break",
+      "type": "fighting",
+      "pvp": {
+        "power": 50,
+        "energy": 40,
+        "buffs": [
+          0,
+          -1
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 40,
+        "energy": 33,
+        "duration": 1.5,
+        "damageWindowStart": 0.7,
+        "damageWindowEnd": 1.3
+      }
+    },
+    {
+      "id": "brine",
+      "name": "소금물",
+      "nameEn": "Brine",
+      "type": "water",
+      "pvp": {
+        "power": 60,
+        "energy": 50
+      },
+      "pve": {
+        "power": 65,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 1.7,
+        "damageWindowEnd": 2.3
+      }
+    },
+    {
+      "id": "brutal_swing",
+      "name": "세차게휘두르기",
+      "nameEn": "Brutal Swing",
+      "type": "dark",
+      "pvp": {
+        "power": 55,
+        "energy": 35
+      },
+      "pve": {
+        "power": 65,
+        "energy": 33,
+        "duration": 2,
+        "damageWindowStart": 1.3,
+        "damageWindowEnd": 1.7
+      }
+    },
+    {
+      "id": "bubble_beam",
+      "name": "거품광선",
+      "nameEn": "Bubble Beam",
+      "type": "water",
+      "pvp": {
+        "power": 25,
+        "energy": 40,
+        "buffs": [
+          -1,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 45,
+        "energy": 33,
+        "duration": 2,
+        "damageWindowStart": 1.55,
+        "damageWindowEnd": 1.8
+      }
+    },
+    {
+      "id": "bug_buzz",
+      "name": "벌레의야단법석",
+      "nameEn": "Bug Buzz",
+      "type": "bug",
+      "pvp": {
+        "power": 100,
+        "energy": 60,
+        "buffs": [
+          0,
+          -1
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.3
+      },
+      "pve": {
+        "power": 95,
+        "energy": 50,
+        "duration": 3.5,
+        "damageWindowStart": 1.8,
+        "damageWindowEnd": 2.9
+      }
+    },
+    {
+      "id": "bulldoze",
+      "name": "땅고르기",
+      "nameEn": "Bulldoze",
+      "type": "ground",
+      "pvp": {
+        "power": 45,
+        "energy": 45,
+        "buffs": [
+          0,
+          -1
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.5
+      },
+      "pve": {
+        "power": 80,
+        "energy": 50,
+        "duration": 3.5,
+        "damageWindowStart": 2.6,
+        "damageWindowEnd": 3.1
+      }
+    },
+    {
+      "id": "chilling_water",
+      "name": "찬물끼얹기",
+      "nameEn": "Chilling Water",
+      "type": "water",
+      "pvp": {
+        "power": 60,
+        "energy": 45,
+        "buffs": [
+          -1,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 65,
+        "energy": 33,
+        "duration": 3.5,
+        "damageWindowStart": 2.05,
+        "damageWindowEnd": 3.1
+      }
+    },
+    {
+      "id": "clanging_scales",
+      "name": "스케일노이즈",
+      "nameEn": "Clanging Scales",
+      "type": "dragon",
+      "pvp": {
+        "power": 120,
+        "energy": 45,
+        "buffs": [
+          0,
+          -1
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 120,
+        "energy": 100,
+        "duration": 3.3,
+        "damageWindowStart": 1.88,
+        "damageWindowEnd": 3.2
+      }
+    },
+    {
+      "id": "close_combat",
+      "name": "인파이트",
+      "nameEn": "Close Combat",
+      "type": "fighting",
+      "pvp": {
+        "power": 100,
+        "energy": 45,
+        "buffs": [
+          0,
+          -2
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 105,
+        "energy": 100,
+        "duration": 2.5,
+        "damageWindowStart": 1.2,
+        "damageWindowEnd": 2.5
+      }
+    },
+    {
+      "id": "crabhammer",
+      "name": "집게해머",
+      "nameEn": "Crabhammer",
+      "type": "water",
+      "pvp": {
+        "power": 85,
+        "energy": 50,
+        "buffs": [
+          2,
+          0
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 0.125
+      },
+      "pve": {
+        "power": 85,
+        "energy": 50,
+        "duration": 2,
+        "damageWindowStart": 1.6,
+        "damageWindowEnd": 1.85
+      }
+    },
+    {
+      "id": "cross_chop",
+      "name": "크로스촙",
+      "nameEn": "Cross Chop",
+      "type": "fighting",
+      "pvp": {
+        "power": 55,
+        "energy": 35
+      },
+      "pve": {
+        "power": 50,
+        "energy": 50,
+        "duration": 1.5,
+        "damageWindowStart": 0.8,
+        "damageWindowEnd": 1.2
+      }
+    },
+    {
+      "id": "cross_poison",
+      "name": "크로스포이즌",
+      "nameEn": "Cross Poison",
+      "type": "poison",
+      "pvp": {
+        "power": 50,
+        "energy": 35,
+        "buffs": [
+          2,
+          0
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 0.125
+      },
+      "pve": {
+        "power": 40,
+        "energy": 33,
+        "duration": 1.5,
+        "damageWindowStart": 0.9,
+        "damageWindowEnd": 1.3
+      }
+    },
+    {
+      "id": "crunch",
+      "name": "깨물어부수기",
+      "nameEn": "Crunch",
+      "type": "dark",
+      "pvp": {
+        "power": 70,
+        "energy": 45,
+        "buffs": [
+          0,
+          -1
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.2
+      },
+      "pve": {
+        "power": 65,
+        "energy": 33,
+        "duration": 3,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 2.8
+      }
+    },
+    {
+      "id": "crush_grip",
+      "name": "묵사발",
+      "nameEn": "Crush Grip",
+      "type": "normal",
+      "pvp": {
+        "power": 110,
+        "energy": 50
+      },
+      "pve": {
+        "power": 210,
+        "energy": 100,
+        "duration": 1.8,
+        "damageWindowStart": 0.7,
+        "damageWindowEnd": 1.7
+      }
+    },
+    {
+      "id": "dark_pulse",
+      "name": "악의파동",
+      "nameEn": "Dark Pulse",
+      "type": "dark",
+      "pvp": {
+        "power": 80,
+        "energy": 50
+      },
+      "pve": {
+        "power": 80,
+        "energy": 50,
+        "duration": 3,
+        "damageWindowStart": 1.4,
+        "damageWindowEnd": 2.3
+      }
+    },
+    {
+      "id": "darkest_lariat",
+      "name": "DD래리어트",
+      "nameEn": "Darkest Lariat",
+      "type": "dark",
+      "pvp": {
+        "power": 120,
+        "energy": 60
+      },
+      "pve": {
+        "power": 80,
+        "energy": 50,
+        "duration": 2,
+        "damageWindowStart": 1.2,
+        "damageWindowEnd": 2
+      }
+    },
+    {
+      "id": "dazzling_gleam",
+      "name": "매지컬샤인",
+      "nameEn": "Dazzling Gleam",
+      "type": "fairy",
+      "pvp": {
+        "power": 90,
+        "energy": 55
+      },
+      "pve": {
+        "power": 100,
+        "energy": 50,
+        "duration": 3.5,
+        "damageWindowStart": 2.1,
+        "damageWindowEnd": 3.3
+      }
+    },
+    {
+      "id": "dig",
+      "name": "구멍파기",
+      "nameEn": "Dig",
+      "type": "ground",
+      "pvp": {
+        "power": 70,
+        "energy": 50
+      },
+      "pve": {
+        "power": 100,
+        "energy": 50,
+        "duration": 4.5,
+        "damageWindowStart": 2.6,
+        "damageWindowEnd": 4.3
+      }
+    },
+    {
+      "id": "disarming_voice",
+      "name": "차밍보이스",
+      "nameEn": "Disarming Voice",
+      "type": "fairy",
+      "pvp": {
+        "power": 70,
+        "energy": 45
+      },
+      "pve": {
+        "power": 70,
+        "energy": 33,
+        "duration": 4,
+        "damageWindowStart": 3.3,
+        "damageWindowEnd": 3.6
+      }
+    },
+    {
+      "id": "discharge",
+      "name": "방전",
+      "nameEn": "Discharge",
+      "type": "electric",
+      "pvp": {
+        "power": 55,
+        "energy": 40
+      },
+      "pve": {
+        "power": 65,
+        "energy": 33,
+        "duration": 2.5,
+        "damageWindowStart": 1.7,
+        "damageWindowEnd": 2.1
+      }
+    },
+    {
+      "id": "doom_desire",
+      "name": "파멸의소원",
+      "nameEn": "Doom Desire",
+      "type": "steel",
+      "pvp": {
+        "power": 80,
+        "energy": 40
+      },
+      "pve": {
+        "power": 65,
+        "energy": 33,
+        "duration": 1.5,
+        "damageWindowStart": 1.2,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "double_iron_bash",
+      "name": "더블펀처",
+      "nameEn": "Double Iron Bash",
+      "type": "steel",
+      "pvp": {
+        "power": 55,
+        "energy": 35
+      },
+      "pve": {
+        "power": 70,
+        "energy": 33,
+        "duration": 2,
+        "damageWindowStart": 1.3,
+        "damageWindowEnd": 2
+      }
+    },
+    {
+      "id": "draco_meteor",
+      "name": "용성군",
+      "nameEn": "Draco Meteor",
+      "type": "dragon",
+      "pvp": {
+        "power": 150,
+        "energy": 65,
+        "buffs": [
+          -2,
+          0
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 150,
+        "energy": 100,
+        "duration": 3.5,
+        "damageWindowStart": 2.9,
+        "damageWindowEnd": 3.4
+      }
+    },
+    {
+      "id": "dragon_ascent",
+      "name": "화룡점정",
+      "nameEn": "Dragon Ascent",
+      "type": "flying",
+      "pvp": {
+        "power": 150,
+        "energy": 70,
+        "buffs": [
+          0,
+          -1
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 140,
+        "energy": 50,
+        "duration": 3.5,
+        "damageWindowStart": 3.25,
+        "damageWindowEnd": 3.4
+      }
+    },
+    {
+      "id": "dragon_claw",
+      "name": "드래곤클로",
+      "nameEn": "Dragon Claw",
+      "type": "dragon",
+      "pvp": {
+        "power": 80,
+        "energy": 50
+      },
+      "pve": {
+        "power": 45,
+        "energy": 33,
+        "duration": 1.5,
+        "damageWindowStart": 0.9,
+        "damageWindowEnd": 1.1
+      }
+    },
+    {
+      "id": "dragon_energy",
+      "name": "드래곤에너지",
+      "nameEn": "Dragon Energy",
+      "type": "dragon",
+      "pvp": {
+        "power": 90,
+        "energy": 45
+      },
+      "pve": {
+        "power": 155,
+        "energy": 50,
+        "duration": 3.3,
+        "damageWindowStart": 1.88,
+        "damageWindowEnd": 3.2
+      }
+    },
+    {
+      "id": "dragon_pulse",
+      "name": "용의파동",
+      "nameEn": "Dragon Pulse",
+      "type": "dragon",
+      "pvp": {
+        "power": 90,
+        "energy": 55
+      },
+      "pve": {
+        "power": 90,
+        "energy": 50,
+        "duration": 3.5,
+        "damageWindowStart": 2.05,
+        "damageWindowEnd": 3.2
+      }
+    },
+    {
+      "id": "drain_punch",
+      "name": "드레인펀치",
+      "nameEn": "Drain Punch",
+      "type": "fighting",
+      "pvp": {
+        "power": 40,
+        "energy": 40,
+        "buffs": [
+          0,
+          1
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 50,
+        "energy": 33,
+        "duration": 2.5,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 1.6
+      }
+    },
+    {
+      "id": "draining_kiss",
+      "name": "드레인키스",
+      "nameEn": "Draining Kiss",
+      "type": "fairy",
+      "pvp": {
+        "power": 60,
+        "energy": 55
+      },
+      "pve": {
+        "power": 60,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 0.9,
+        "damageWindowEnd": 1.2
+      }
+    },
+    {
+      "id": "drill_peck",
+      "name": "회전부리",
+      "nameEn": "Drill Peck",
+      "type": "flying",
+      "pvp": {
+        "power": 70,
+        "energy": 40
+      },
+      "pve": {
+        "power": 70,
+        "energy": 33,
+        "duration": 2.5,
+        "damageWindowStart": 1.9,
+        "damageWindowEnd": 2.3
+      }
+    },
+    {
+      "id": "drill_run",
+      "name": "드릴라이너",
+      "nameEn": "Drill Run",
+      "type": "ground",
+      "pvp": {
+        "power": 80,
+        "energy": 45
+      },
+      "pve": {
+        "power": 85,
+        "energy": 50,
+        "duration": 3,
+        "damageWindowStart": 1.9,
+        "damageWindowEnd": 2.8
+      }
+    },
+    {
+      "id": "drum_beating",
+      "name": "드럼어택",
+      "nameEn": "Drum Beating",
+      "type": "grass",
+      "pvp": {
+        "power": 60,
+        "energy": 35,
+        "buffs": [
+          -1,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 1
+      },
+      "pve": null
+    },
+    {
+      "id": "dynamax_cannon",
+      "name": "다이맥스포",
+      "nameEn": "Dynamax Cannon",
+      "type": "dragon",
+      "pvp": {
+        "power": 80,
+        "energy": 45
+      },
+      "pve": {
+        "power": 215,
+        "energy": 100,
+        "duration": 1.5,
+        "damageWindowStart": 0.9,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "dynamic_punch",
+      "name": "폭발펀치",
+      "nameEn": "Dynamic Punch",
+      "type": "fighting",
+      "pvp": {
+        "power": 90,
+        "energy": 45
+      },
+      "pve": {
+        "power": 85,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 1,
+        "damageWindowEnd": 2.5
+      }
+    },
+    {
+      "id": "earth_power",
+      "name": "대지의힘",
+      "nameEn": "Earth Power",
+      "type": "ground",
+      "pvp": {
+        "power": 90,
+        "energy": 55,
+        "buffs": [
+          0,
+          -1
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.1
+      },
+      "pve": {
+        "power": 100,
+        "energy": 50,
+        "duration": 3.5,
+        "damageWindowStart": 2.6,
+        "damageWindowEnd": 3.3
+      }
+    },
+    {
+      "id": "earthquake",
+      "name": "지진",
+      "nameEn": "Earthquake",
+      "type": "ground",
+      "pvp": {
+        "power": 110,
+        "energy": 65
+      },
+      "pve": {
+        "power": 140,
+        "energy": 100,
+        "duration": 3.5,
+        "damageWindowStart": 2.6,
+        "damageWindowEnd": 3.4
+      }
+    },
+    {
+      "id": "energy_ball",
+      "name": "에너지볼",
+      "nameEn": "Energy Ball",
+      "type": "grass",
+      "pvp": {
+        "power": 90,
+        "energy": 55,
+        "buffs": [
+          0,
+          -1
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.1
+      },
+      "pve": {
+        "power": 90,
+        "energy": 50,
+        "duration": 4,
+        "damageWindowStart": 3.1,
+        "damageWindowEnd": 3.9
+      }
+    },
+    {
+      "id": "feather_dance",
+      "name": "깃털댄스",
+      "nameEn": "Feather Dance",
+      "type": "flying",
+      "pvp": {
+        "power": 35,
+        "energy": 50,
+        "buffs": [
+          -2,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 35,
+        "energy": 50,
+        "duration": 3,
+        "damageWindowStart": 1.9,
+        "damageWindowEnd": 2.7
+      }
+    },
+    {
+      "id": "fell_stinger",
+      "name": "마지막일침",
+      "nameEn": "Fell Stinger",
+      "type": "bug",
+      "pvp": {
+        "power": 20,
+        "energy": 35,
+        "buffs": [
+          1,
+          0
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 45,
+        "energy": 33,
+        "duration": 2,
+        "damageWindowStart": 1.6,
+        "damageWindowEnd": 1.8
+      }
+    },
+    {
+      "id": "fire_blast",
+      "name": "불대문자",
+      "nameEn": "Fire Blast",
+      "type": "fire",
+      "pvp": {
+        "power": 140,
+        "energy": 80
+      },
+      "pve": {
+        "power": 140,
+        "energy": 100,
+        "duration": 4,
+        "damageWindowStart": 2.9,
+        "damageWindowEnd": 3.7
+      }
+    },
+    {
+      "id": "fire_punch",
+      "name": "불꽃펀치",
+      "nameEn": "Fire Punch",
+      "type": "fire",
+      "pvp": {
+        "power": 60,
+        "energy": 40
+      },
+      "pve": {
+        "power": 50,
+        "energy": 33,
+        "duration": 2,
+        "damageWindowStart": 1.3,
+        "damageWindowEnd": 1.7
+      }
+    },
+    {
+      "id": "flame_burst",
+      "name": "불꽃튀기기",
+      "nameEn": "Flame Burst",
+      "type": "fire",
+      "pvp": {
+        "power": 70,
+        "energy": 55
+      },
+      "pve": {
+        "power": 70,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 0.9,
+        "damageWindowEnd": 2
+      }
+    },
+    {
+      "id": "flame_charge",
+      "name": "니트로차지",
+      "nameEn": "Flame Charge",
+      "type": "fire",
+      "pvp": {
+        "power": 65,
+        "energy": 50,
+        "buffs": [
+          1,
+          0
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 70,
+        "energy": 33,
+        "duration": 4,
+        "damageWindowStart": 3.1,
+        "damageWindowEnd": 3.65
+      }
+    },
+    {
+      "id": "flame_wheel",
+      "name": "화염바퀴",
+      "nameEn": "Flame Wheel",
+      "type": "fire",
+      "pvp": {
+        "power": 80,
+        "energy": 45
+      },
+      "pve": {
+        "power": 55,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 1.9,
+        "damageWindowEnd": 2.2
+      }
+    },
+    {
+      "id": "flamethrower",
+      "name": "화염방사",
+      "nameEn": "Flamethrower",
+      "type": "fire",
+      "pvp": {
+        "power": 90,
+        "energy": 55
+      },
+      "pve": {
+        "power": 65,
+        "energy": 50,
+        "duration": 2,
+        "damageWindowStart": 1.3,
+        "damageWindowEnd": 1.5
+      }
+    },
+    {
+      "id": "flash_cannon",
+      "name": "러스터캐논",
+      "nameEn": "Flash Cannon",
+      "type": "steel",
+      "pvp": {
+        "power": 110,
+        "energy": 70
+      },
+      "pve": {
+        "power": 100,
+        "energy": 100,
+        "duration": 2.5,
+        "damageWindowStart": 1.4,
+        "damageWindowEnd": 2.3
+      }
+    },
+    {
+      "id": "flower_trick",
+      "name": "트릭플라워",
+      "nameEn": "Flower Trick",
+      "type": "grass",
+      "pvp": {
+        "power": 30,
+        "energy": 35,
+        "buffs": [
+          1,
+          0
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 75,
+        "energy": 33,
+        "duration": 2.7,
+        "damageWindowStart": 1.8,
+        "damageWindowEnd": 2.7
+      }
+    },
+    {
+      "id": "fly",
+      "name": "공중날기",
+      "nameEn": "Fly",
+      "type": "flying",
+      "pvp": {
+        "power": 80,
+        "energy": 45
+      },
+      "pve": {
+        "power": 90,
+        "energy": 50,
+        "duration": 2,
+        "damageWindowStart": 1.4,
+        "damageWindowEnd": 1.7
+      }
+    },
+    {
+      "id": "flying_press",
+      "name": "플라잉프레스",
+      "nameEn": "Flying Press",
+      "type": "fighting",
+      "pvp": {
+        "power": 90,
+        "energy": 40
+      },
+      "pve": {
+        "power": 115,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 1.2,
+        "damageWindowEnd": 2.2
+      }
+    },
+    {
+      "id": "focus_blast",
+      "name": "기합구슬",
+      "nameEn": "Focus Blast",
+      "type": "fighting",
+      "pvp": {
+        "power": 150,
+        "energy": 75
+      },
+      "pve": {
+        "power": 140,
+        "energy": 100,
+        "duration": 3.5,
+        "damageWindowStart": 3,
+        "damageWindowEnd": 3.5
+      }
+    },
+    {
+      "id": "foul_play",
+      "name": "속임수",
+      "nameEn": "Foul Play",
+      "type": "dark",
+      "pvp": {
+        "power": 65,
+        "energy": 40
+      },
+      "pve": {
+        "power": 70,
+        "energy": 50,
+        "duration": 2,
+        "damageWindowStart": 1.7,
+        "damageWindowEnd": 1.9
+      }
+    },
+    {
+      "id": "freeze_shock",
+      "name": "프리즈볼트",
+      "nameEn": "Freeze Shock",
+      "type": "ice",
+      "pvp": {
+        "power": 120,
+        "energy": 60,
+        "buffs": [
+          -1,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.3
+      },
+      "pve": {
+        "power": 160,
+        "energy": 100,
+        "duration": 1.5,
+        "damageWindowStart": 0.9,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "frenzy_plant",
+      "name": "하드플랜트",
+      "nameEn": "Frenzy Plant",
+      "type": "grass",
+      "pvp": {
+        "power": 100,
+        "energy": 45
+      },
+      "pve": {
+        "power": 100,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 2.045,
+        "damageWindowEnd": 2.45
+      }
+    },
+    {
+      "id": "fusion_bolt",
+      "name": "크로스썬더",
+      "nameEn": "Fusion Bolt",
+      "type": "electric",
+      "pvp": {
+        "power": 90,
+        "energy": 45
+      },
+      "pve": {
+        "power": 140,
+        "energy": 100,
+        "duration": 2,
+        "damageWindowStart": 1.25,
+        "damageWindowEnd": 1.8
+      }
+    },
+    {
+      "id": "fusion_flare",
+      "name": "크로스플레임",
+      "nameEn": "Fusion Flare",
+      "type": "fire",
+      "pvp": {
+        "power": 90,
+        "energy": 45
+      },
+      "pve": {
+        "power": 140,
+        "energy": 100,
+        "duration": 2,
+        "damageWindowStart": 1.3,
+        "damageWindowEnd": 1.8
+      }
+    },
+    {
+      "id": "future_sight",
+      "name": "미래예지",
+      "nameEn": "Future Sight",
+      "type": "psychic",
+      "pvp": {
+        "power": 110,
+        "energy": 65
+      },
+      "pve": {
+        "power": 115,
+        "energy": 100,
+        "duration": 2.5,
+        "damageWindowStart": 1.2,
+        "damageWindowEnd": 2.5
+      }
+    },
+    {
+      "id": "giga_impact",
+      "name": "기가임팩트",
+      "nameEn": "Giga Impact",
+      "type": "normal",
+      "pvp": {
+        "power": 150,
+        "energy": 80
+      },
+      "pve": {
+        "power": 200,
+        "energy": 100,
+        "duration": 4.5,
+        "damageWindowStart": 0.8,
+        "damageWindowEnd": 2.2
+      }
+    },
+    {
+      "id": "glaciate",
+      "name": "얼어붙은세계",
+      "nameEn": "Glaciate",
+      "type": "ice",
+      "pvp": {
+        "power": 60,
+        "energy": 40,
+        "buffs": [
+          -1,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 160,
+        "energy": 100,
+        "duration": 2.5,
+        "damageWindowStart": 1.5,
+        "damageWindowEnd": 2.5
+      }
+    },
+    {
+      "id": "grass_knot",
+      "name": "풀묶기",
+      "nameEn": "Grass Knot",
+      "type": "grass",
+      "pvp": {
+        "power": 90,
+        "energy": 50
+      },
+      "pve": {
+        "power": 90,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 1.6,
+        "damageWindowEnd": 2.5
+      }
+    },
+    {
+      "id": "gunk_shot",
+      "name": "더스트슈트",
+      "nameEn": "Gunk Shot",
+      "type": "poison",
+      "pvp": {
+        "power": 130,
+        "energy": 75
+      },
+      "pve": {
+        "power": 130,
+        "energy": 100,
+        "duration": 3,
+        "damageWindowStart": 1.6,
+        "damageWindowEnd": 2.6
+      }
+    },
+    {
+      "id": "gyro_ball",
+      "name": "자이로볼",
+      "nameEn": "Gyro Ball",
+      "type": "steel",
+      "pvp": {
+        "power": 80,
+        "energy": 50
+      },
+      "pve": {
+        "power": 85,
+        "energy": 50,
+        "duration": 3.5,
+        "damageWindowStart": 3.2,
+        "damageWindowEnd": 3.5
+      }
+    },
+    {
+      "id": "heart_stamp",
+      "name": "하트스탬프",
+      "nameEn": "Heart Stamp",
+      "type": "psychic",
+      "pvp": {
+        "power": 40,
+        "energy": 40
+      },
+      "pve": {
+        "power": 40,
+        "energy": 33,
+        "duration": 2,
+        "damageWindowStart": 1.2,
+        "damageWindowEnd": 1.7
+      }
+    },
+    {
+      "id": "heat_wave",
+      "name": "열풍",
+      "nameEn": "Heat Wave",
+      "type": "fire",
+      "pvp": {
+        "power": 75,
+        "energy": 45
+      },
+      "pve": {
+        "power": 95,
+        "energy": 100,
+        "duration": 3,
+        "damageWindowStart": 1.7,
+        "damageWindowEnd": 2.8
+      }
+    },
+    {
+      "id": "heavy_slam",
+      "name": "헤비봄버",
+      "nameEn": "Heavy Slam",
+      "type": "steel",
+      "pvp": {
+        "power": 70,
+        "energy": 50
+      },
+      "pve": {
+        "power": 70,
+        "energy": 50,
+        "duration": 2,
+        "damageWindowStart": 1.4,
+        "damageWindowEnd": 1.8
+      }
+    },
+    {
+      "id": "high_horsepower",
+      "name": "10만마력",
+      "nameEn": "High Horsepower",
+      "type": "ground",
+      "pvp": {
+        "power": 100,
+        "energy": 60
+      },
+      "pve": {
+        "power": 105,
+        "energy": 100,
+        "duration": 1.5,
+        "damageWindowStart": 0.9,
+        "damageWindowEnd": 1.1
+      }
+    },
+    {
+      "id": "high_jump_kick",
+      "name": "무릎차기",
+      "nameEn": "High Jump Kick",
+      "type": "fighting",
+      "pvp": {
+        "power": 110,
+        "energy": 55,
+        "buffs": [
+          0,
+          -4
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 0.1
+      },
+      "pve": {
+        "power": 90,
+        "energy": 100,
+        "duration": 1.5,
+        "damageWindowStart": 0.45,
+        "damageWindowEnd": 0.8
+      }
+    },
+    {
+      "id": "horn_attack",
+      "name": "뿔찌르기",
+      "nameEn": "Horn Attack",
+      "type": "normal",
+      "pvp": {
+        "power": 40,
+        "energy": 35
+      },
+      "pve": {
+        "power": 45,
+        "energy": 33,
+        "duration": 2,
+        "damageWindowStart": 0.95,
+        "damageWindowEnd": 1.8
+      }
+    },
+    {
+      "id": "hurricane",
+      "name": "폭풍",
+      "nameEn": "Hurricane",
+      "type": "flying",
+      "pvp": {
+        "power": 110,
+        "energy": 65
+      },
+      "pve": {
+        "power": 105,
+        "energy": 100,
+        "duration": 2.5,
+        "damageWindowStart": 1,
+        "damageWindowEnd": 2.2
+      }
+    },
+    {
+      "id": "hydro_cannon",
+      "name": "하이드로캐논",
+      "nameEn": "Hydro Cannon",
+      "type": "water",
+      "pvp": {
+        "power": 80,
+        "energy": 40
+      },
+      "pve": {
+        "power": 90,
+        "energy": 50,
+        "duration": 2,
+        "damageWindowStart": 0.6,
+        "damageWindowEnd": 1.7
+      }
+    },
+    {
+      "id": "hydro_pump",
+      "name": "하이드로펌프",
+      "nameEn": "Hydro Pump",
+      "type": "water",
+      "pvp": {
+        "power": 130,
+        "energy": 75
+      },
+      "pve": {
+        "power": 135,
+        "energy": 100,
+        "duration": 3.5,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 3.2
+      }
+    },
+    {
+      "id": "hyper_beam",
+      "name": "파괴광선",
+      "nameEn": "Hyper Beam",
+      "type": "normal",
+      "pvp": {
+        "power": 150,
+        "energy": 80
+      },
+      "pve": {
+        "power": 150,
+        "energy": 100,
+        "duration": 4,
+        "damageWindowStart": 3.5,
+        "damageWindowEnd": 3.8
+      }
+    },
+    {
+      "id": "hyper_fang",
+      "name": "필살앞니",
+      "nameEn": "Hyper Fang",
+      "type": "normal",
+      "pvp": {
+        "power": 80,
+        "energy": 50
+      },
+      "pve": {
+        "power": 80,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 1.5,
+        "damageWindowEnd": 2
+      }
+    },
+    {
+      "id": "ice_beam",
+      "name": "냉동빔",
+      "nameEn": "Ice Beam",
+      "type": "ice",
+      "pvp": {
+        "power": 90,
+        "energy": 55
+      },
+      "pve": {
+        "power": 95,
+        "energy": 50,
+        "duration": 3.5,
+        "damageWindowStart": 1.5,
+        "damageWindowEnd": 3
+      }
+    },
+    {
+      "id": "ice_burn",
+      "name": "콜드플레어",
+      "nameEn": "Ice Burn",
+      "type": "ice",
+      "pvp": {
+        "power": 120,
+        "energy": 60,
+        "buffs": [
+          0,
+          -1
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.3
+      },
+      "pve": {
+        "power": 90,
+        "energy": 50,
+        "duration": 2,
+        "damageWindowStart": 1.8,
+        "damageWindowEnd": 2.2
+      }
+    },
+    {
+      "id": "ice_punch",
+      "name": "냉동펀치",
+      "nameEn": "Ice Punch",
+      "type": "ice",
+      "pvp": {
+        "power": 60,
+        "energy": 40
+      },
+      "pve": {
+        "power": 50,
+        "energy": 33,
+        "duration": 2,
+        "damageWindowStart": 1.4,
+        "damageWindowEnd": 1.7
+      }
+    },
+    {
+      "id": "icicle_spear",
+      "name": "고드름침",
+      "nameEn": "Icicle Spear",
+      "type": "ice",
+      "pvp": {
+        "power": 70,
+        "energy": 40
+      },
+      "pve": {
+        "power": 55,
+        "energy": 33,
+        "duration": 2,
+        "damageWindowStart": 1,
+        "damageWindowEnd": 1.6
+      }
+    },
+    {
+      "id": "icy_wind",
+      "name": "얼어붙은바람",
+      "nameEn": "Icy Wind",
+      "type": "ice",
+      "pvp": {
+        "power": 60,
+        "energy": 45,
+        "buffs": [
+          -1,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 65,
+        "energy": 33,
+        "duration": 3.5,
+        "damageWindowStart": 2.2,
+        "damageWindowEnd": 3
+      }
+    },
+    {
+      "id": "iron_head",
+      "name": "아이언헤드",
+      "nameEn": "Iron Head",
+      "type": "steel",
+      "pvp": {
+        "power": 70,
+        "energy": 50
+      },
+      "pve": {
+        "power": 60,
+        "energy": 50,
+        "duration": 2,
+        "damageWindowStart": 1.4,
+        "damageWindowEnd": 1.8
+      }
+    },
+    {
+      "id": "last_resort",
+      "name": "비장의무기",
+      "nameEn": "Last Resort",
+      "type": "normal",
+      "pvp": {
+        "power": 90,
+        "energy": 55
+      },
+      "pve": {
+        "power": 90,
+        "energy": 50,
+        "duration": 3,
+        "damageWindowStart": 2.8,
+        "damageWindowEnd": 2.95
+      }
+    },
+    {
+      "id": "leaf_blade",
+      "name": "리프블레이드",
+      "nameEn": "Leaf Blade",
+      "type": "grass",
+      "pvp": {
+        "power": 70,
+        "energy": 35
+      },
+      "pve": {
+        "power": 70,
+        "energy": 33,
+        "duration": 2.5,
+        "damageWindowStart": 1.35,
+        "damageWindowEnd": 2.3
+      }
+    },
+    {
+      "id": "leaf_storm",
+      "name": "리프스톰",
+      "nameEn": "Leaf Storm",
+      "type": "grass",
+      "pvp": {
+        "power": 130,
+        "energy": 55,
+        "buffs": [
+          -2,
+          0
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 130,
+        "energy": 100,
+        "duration": 2.5,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 1.25
+      }
+    },
+    {
+      "id": "leaf_tornado",
+      "name": "그래스믹서",
+      "nameEn": "Leaf Tornado",
+      "type": "grass",
+      "pvp": {
+        "power": 45,
+        "energy": 40,
+        "buffs": [
+          -2,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.5
+      },
+      "pve": {
+        "power": 45,
+        "energy": 33,
+        "duration": 3,
+        "damageWindowStart": 1.9,
+        "damageWindowEnd": 2.5
+      }
+    },
+    {
+      "id": "liquidation",
+      "name": "아쿠아브레이크",
+      "nameEn": "Liquidation",
+      "type": "water",
+      "pvp": {
+        "power": 70,
+        "energy": 45,
+        "buffs": [
+          0,
+          -1
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.3
+      },
+      "pve": {
+        "power": 70,
+        "energy": 33,
+        "duration": 3,
+        "damageWindowStart": 2,
+        "damageWindowEnd": 2.7
+      }
+    },
+    {
+      "id": "low_sweep",
+      "name": "로킥",
+      "nameEn": "Low Sweep",
+      "type": "fighting",
+      "pvp": {
+        "power": 40,
+        "energy": 40
+      },
+      "pve": {
+        "power": 40,
+        "energy": 33,
+        "duration": 2,
+        "damageWindowStart": 1.4,
+        "damageWindowEnd": 1.75
+      }
+    },
+    {
+      "id": "lunge",
+      "name": "덤벼들기",
+      "nameEn": "Lunge",
+      "type": "bug",
+      "pvp": {
+        "power": 60,
+        "energy": 45,
+        "buffs": [
+          -1,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 55,
+        "energy": 33,
+        "duration": 3,
+        "damageWindowStart": 2.5,
+        "damageWindowEnd": 2.8
+      }
+    },
+    {
+      "id": "luster_purge",
+      "name": "러스터퍼지",
+      "nameEn": "Luster Purge",
+      "type": "psychic",
+      "pvp": {
+        "power": 120,
+        "energy": 60,
+        "buffs": [
+          0,
+          -1
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.5
+      },
+      "pve": {
+        "power": 100,
+        "energy": 100,
+        "duration": 1.5,
+        "damageWindowStart": 0.5,
+        "damageWindowEnd": 1.5
+      }
+    },
+    {
+      "id": "magma_storm",
+      "name": "마그마스톰",
+      "nameEn": "Magma Storm",
+      "type": "fire",
+      "pvp": {
+        "power": 65,
+        "energy": 40
+      },
+      "pve": {
+        "power": 75,
+        "energy": 33,
+        "duration": 2.5,
+        "damageWindowStart": 1.3,
+        "damageWindowEnd": 2.8
+      }
+    },
+    {
+      "id": "magnet_bomb",
+      "name": "마그넷봄",
+      "nameEn": "Magnet Bomb",
+      "type": "steel",
+      "pvp": {
+        "power": 70,
+        "energy": 45
+      },
+      "pve": {
+        "power": 75,
+        "energy": 33,
+        "duration": 3,
+        "damageWindowStart": 2.4,
+        "damageWindowEnd": 2.8
+      }
+    },
+    {
+      "id": "megahorn",
+      "name": "메가혼",
+      "nameEn": "Megahorn",
+      "type": "bug",
+      "pvp": {
+        "power": 110,
+        "energy": 55
+      },
+      "pve": {
+        "power": 105,
+        "energy": 100,
+        "duration": 2,
+        "damageWindowStart": 1.5,
+        "damageWindowEnd": 1.7
+      }
+    },
+    {
+      "id": "meteor_beam",
+      "name": "메테오빔",
+      "nameEn": "Meteor Beam",
+      "type": "rock",
+      "pvp": {
+        "power": 120,
+        "energy": 60,
+        "buffs": [
+          1,
+          0
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 140,
+        "energy": 100,
+        "duration": 2,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 2
+      }
+    },
+    {
+      "id": "meteor_mash",
+      "name": "코멧펀치",
+      "nameEn": "Meteor Mash",
+      "type": "steel",
+      "pvp": {
+        "power": 100,
+        "energy": 45
+      },
+      "pve": {
+        "power": 100,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 2.2,
+        "damageWindowEnd": 2.4
+      }
+    },
+    {
+      "id": "mind_blown",
+      "name": "깜짝헤드",
+      "nameEn": "Mind Blown",
+      "type": "fire",
+      "pvp": {
+        "power": 90,
+        "energy": 35,
+        "buffs": [
+          0,
+          -4
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": null
+    },
+    {
+      "id": "mirror_coat",
+      "name": "미러코트",
+      "nameEn": "Mirror Coat",
+      "type": "psychic",
+      "pvp": {
+        "power": 60,
+        "energy": 55
+      },
+      "pve": {
+        "power": 60,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 2.2,
+        "damageWindowEnd": 2.4
+      }
+    },
+    {
+      "id": "mirror_shot",
+      "name": "미러샷",
+      "nameEn": "Mirror Shot",
+      "type": "steel",
+      "pvp": {
+        "power": 35,
+        "energy": 35,
+        "buffs": [
+          -1,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.3
+      },
+      "pve": {
+        "power": 50,
+        "energy": 33,
+        "duration": 2.5,
+        "damageWindowStart": 1.9,
+        "damageWindowEnd": 2.3
+      }
+    },
+    {
+      "id": "mist_ball",
+      "name": "미스트볼",
+      "nameEn": "Mist Ball",
+      "type": "psychic",
+      "pvp": {
+        "power": 120,
+        "energy": 60,
+        "buffs": [
+          -1,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.5
+      },
+      "pve": {
+        "power": 105,
+        "energy": 100,
+        "duration": 2,
+        "damageWindowStart": 1.2,
+        "damageWindowEnd": 1.7
+      }
+    },
+    {
+      "id": "moonblast",
+      "name": "문포스",
+      "nameEn": "Moonblast",
+      "type": "fairy",
+      "pvp": {
+        "power": 110,
+        "energy": 60,
+        "buffs": [
+          -1,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.1
+      },
+      "pve": {
+        "power": 130,
+        "energy": 100,
+        "duration": 4,
+        "damageWindowStart": 2.3,
+        "damageWindowEnd": 3.8
+      }
+    },
+    {
+      "id": "moongeist_beam",
+      "name": "섀도레이",
+      "nameEn": "Moongeist Beam",
+      "type": "ghost",
+      "pvp": {
+        "power": 135,
+        "energy": 65
+      },
+      "pve": {
+        "power": 230,
+        "energy": 100,
+        "duration": 3,
+        "damageWindowStart": 2.2,
+        "damageWindowEnd": 3
+      }
+    },
+    {
+      "id": "mud_bomb",
+      "name": "진흙폭탄",
+      "nameEn": "Mud Bomb",
+      "type": "ground",
+      "pvp": {
+        "power": 65,
+        "energy": 45
+      },
+      "pve": {
+        "power": 60,
+        "energy": 33,
+        "duration": 2.5,
+        "damageWindowStart": 1.9,
+        "damageWindowEnd": 2.3
+      }
+    },
+    {
+      "id": "muddy_water",
+      "name": "탁류",
+      "nameEn": "Muddy Water",
+      "type": "water",
+      "pvp": {
+        "power": 35,
+        "energy": 35,
+        "buffs": [
+          -1,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.3
+      },
+      "pve": {
+        "power": 45,
+        "energy": 33,
+        "duration": 2,
+        "damageWindowStart": 1,
+        "damageWindowEnd": 1.7
+      }
+    },
+    {
+      "id": "mystical_fire",
+      "name": "매지컬플레임",
+      "nameEn": "Mystical Fire",
+      "type": "fire",
+      "pvp": {
+        "power": 60,
+        "energy": 45,
+        "buffs": [
+          -1,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 60,
+        "energy": 33,
+        "duration": 2,
+        "damageWindowStart": 1.3,
+        "damageWindowEnd": 2
+      }
+    },
+    {
+      "id": "natures_madness",
+      "name": "자연의분노",
+      "nameEn": "Nature's Madness",
+      "type": "fairy",
+      "pvp": {
+        "power": 80,
+        "energy": 50,
+        "buffs": [
+          0,
+          -1
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 90,
+        "energy": 50,
+        "duration": 2,
+        "damageWindowStart": 1.3,
+        "damageWindowEnd": 1.9
+      }
+    },
+    {
+      "id": "night_shade",
+      "name": "나이트헤드",
+      "nameEn": "Night Shade",
+      "type": "ghost",
+      "pvp": {
+        "power": 70,
+        "energy": 45
+      },
+      "pve": {
+        "power": 60,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 2,
+        "damageWindowEnd": 2.4
+      }
+    },
+    {
+      "id": "night_slash",
+      "name": "깜짝베기",
+      "nameEn": "Night Slash",
+      "type": "dark",
+      "pvp": {
+        "power": 50,
+        "energy": 35,
+        "buffs": [
+          1,
+          0
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 0.125
+      },
+      "pve": {
+        "power": 45,
+        "energy": 33,
+        "duration": 2,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 1.8
+      }
+    },
+    {
+      "id": "oblivion_wing",
+      "name": "데스윙",
+      "nameEn": "Oblivion Wing",
+      "type": "flying",
+      "pvp": {
+        "power": 85,
+        "energy": 50,
+        "buffs": [
+          0,
+          1
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 85,
+        "energy": 50,
+        "duration": 2,
+        "damageWindowStart": 1.5,
+        "damageWindowEnd": 1.9
+      }
+    },
+    {
+      "id": "obstruct",
+      "name": "블로킹",
+      "nameEn": "Obstruct",
+      "type": "dark",
+      "pvp": {
+        "power": 15,
+        "energy": 40,
+        "buffs": [
+          0,
+          1
+        ],
+        "buffTarget": "both",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 20,
+        "energy": 33,
+        "duration": 1.5,
+        "damageWindowStart": 0.3,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "octazooka",
+      "name": "대포무노포",
+      "nameEn": "Octazooka",
+      "type": "water",
+      "pvp": {
+        "power": 50,
+        "energy": 50,
+        "buffs": [
+          -2,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.5
+      },
+      "pve": {
+        "power": 55,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 1.5,
+        "damageWindowEnd": 1.8
+      }
+    },
+    {
+      "id": "ominous_wind",
+      "name": "괴상한바람",
+      "nameEn": "Ominous Wind",
+      "type": "ghost",
+      "pvp": {
+        "power": 45,
+        "energy": 45,
+        "buffs": [
+          1,
+          1
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 0.1
+      },
+      "pve": {
+        "power": 55,
+        "energy": 33,
+        "duration": 2.5,
+        "damageWindowStart": 2.05,
+        "damageWindowEnd": 2.3
+      }
+    },
+    {
+      "id": "origin_pulse",
+      "name": "근원의파동",
+      "nameEn": "Origin Pulse",
+      "type": "water",
+      "pvp": {
+        "power": 130,
+        "energy": 60
+      },
+      "pve": {
+        "power": 120,
+        "energy": 100,
+        "duration": 1.5,
+        "damageWindowStart": 1.2,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "outrage",
+      "name": "역린",
+      "nameEn": "Outrage",
+      "type": "dragon",
+      "pvp": {
+        "power": 110,
+        "energy": 60
+      },
+      "pve": {
+        "power": 110,
+        "energy": 50,
+        "duration": 4,
+        "damageWindowStart": 2.6,
+        "damageWindowEnd": 3.8
+      }
+    },
+    {
+      "id": "overheat",
+      "name": "오버히트",
+      "nameEn": "Overheat",
+      "type": "fire",
+      "pvp": {
+        "power": 130,
+        "energy": 55,
+        "buffs": [
+          -2,
+          0
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 160,
+        "energy": 100,
+        "duration": 4,
+        "damageWindowStart": 2.6,
+        "damageWindowEnd": 3.8
+      }
+    },
+    {
+      "id": "parabolic_charge",
+      "name": "파라볼라차지",
+      "nameEn": "Parabolic Charge",
+      "type": "electric",
+      "pvp": {
+        "power": 70,
+        "energy": 50,
+        "buffs": [
+          0,
+          1
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 70,
+        "energy": 50,
+        "duration": 3,
+        "damageWindowStart": 1.4,
+        "damageWindowEnd": 2.6
+      }
+    },
+    {
+      "id": "payback",
+      "name": "보복",
+      "nameEn": "Payback",
+      "type": "dark",
+      "pvp": {
+        "power": 110,
+        "energy": 60
+      },
+      "pve": {
+        "power": 95,
+        "energy": 100,
+        "duration": 2,
+        "damageWindowStart": 0.9,
+        "damageWindowEnd": 1.8
+      }
+    },
+    {
+      "id": "petal_blizzard",
+      "name": "꽃보라",
+      "nameEn": "Petal Blizzard",
+      "type": "grass",
+      "pvp": {
+        "power": 110,
+        "energy": 65
+      },
+      "pve": {
+        "power": 110,
+        "energy": 100,
+        "duration": 2.5,
+        "damageWindowStart": 1.6,
+        "damageWindowEnd": 2.2
+      }
+    },
+    {
+      "id": "play_rough",
+      "name": "치근거리기",
+      "nameEn": "Play Rough",
+      "type": "fairy",
+      "pvp": {
+        "power": 90,
+        "energy": 60
+      },
+      "pve": {
+        "power": 90,
+        "energy": 50,
+        "duration": 3,
+        "damageWindowStart": 1.4,
+        "damageWindowEnd": 2.8
+      }
+    },
+    {
+      "id": "poison_fang",
+      "name": "맹독엄니",
+      "nameEn": "Poison Fang",
+      "type": "poison",
+      "pvp": {
+        "power": 45,
+        "energy": 40,
+        "buffs": [
+          0,
+          -1
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 30,
+        "energy": 33,
+        "duration": 1.5,
+        "damageWindowStart": 0.7,
+        "damageWindowEnd": 1.2
+      }
+    },
+    {
+      "id": "poltergeist",
+      "name": "폴터가이스트",
+      "nameEn": "Poltergeist",
+      "type": "ghost",
+      "pvp": {
+        "power": 150,
+        "energy": 75
+      },
+      "pve": {
+        "power": 140,
+        "energy": 100,
+        "duration": 3.5,
+        "damageWindowStart": 2.7,
+        "damageWindowEnd": 2.9
+      }
+    },
+    {
+      "id": "power_gem",
+      "name": "파워젬",
+      "nameEn": "Power Gem",
+      "type": "rock",
+      "pvp": {
+        "power": 85,
+        "energy": 50
+      },
+      "pve": {
+        "power": 80,
+        "energy": 50,
+        "duration": 3,
+        "damageWindowStart": 2.05,
+        "damageWindowEnd": 2.8
+      }
+    },
+    {
+      "id": "power_up_punch",
+      "name": "그로우펀치",
+      "nameEn": "Power-Up Punch",
+      "type": "fighting",
+      "pvp": {
+        "power": 20,
+        "energy": 35,
+        "buffs": [
+          1,
+          0
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 50,
+        "energy": 33,
+        "duration": 2,
+        "damageWindowStart": 1.7,
+        "damageWindowEnd": 1.9
+      }
+    },
+    {
+      "id": "power_whip",
+      "name": "파워휩",
+      "nameEn": "Power Whip",
+      "type": "grass",
+      "pvp": {
+        "power": 90,
+        "energy": 50
+      },
+      "pve": {
+        "power": 90,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 1.15,
+        "damageWindowEnd": 2.25
+      }
+    },
+    {
+      "id": "precipice_blades",
+      "name": "단애의칼",
+      "nameEn": "Precipice Blades",
+      "type": "ground",
+      "pvp": {
+        "power": 130,
+        "energy": 60
+      },
+      "pve": {
+        "power": 120,
+        "energy": 100,
+        "duration": 1.5,
+        "damageWindowStart": 1.2,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "psybeam",
+      "name": "환상빔",
+      "nameEn": "Psybeam",
+      "type": "psychic",
+      "pvp": {
+        "power": 70,
+        "energy": 60
+      },
+      "pve": {
+        "power": 65,
+        "energy": 50,
+        "duration": 3,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 2.5
+      }
+    },
+    {
+      "id": "psychic",
+      "name": "사이코키네시스",
+      "nameEn": "Psychic",
+      "type": "psychic",
+      "pvp": {
+        "power": 75,
+        "energy": 55,
+        "buffs": [
+          0,
+          -1
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.1
+      },
+      "pve": {
+        "power": 95,
+        "energy": 50,
+        "duration": 3,
+        "damageWindowStart": 1.5,
+        "damageWindowEnd": 2.8
+      }
+    },
+    {
+      "id": "psychic_fangs",
+      "name": "사이코팽",
+      "nameEn": "Psychic Fangs",
+      "type": "psychic",
+      "pvp": {
+        "power": 40,
+        "energy": 35,
+        "buffs": [
+          0,
+          -1
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 25,
+        "energy": 33,
+        "duration": 1,
+        "damageWindowStart": 0.2,
+        "damageWindowEnd": 0.9
+      }
+    },
+    {
+      "id": "psycho_boost",
+      "name": "사이코부스트",
+      "nameEn": "Psycho Boost",
+      "type": "psychic",
+      "pvp": {
+        "power": 70,
+        "energy": 35,
+        "buffs": [
+          -2,
+          0
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 70,
+        "energy": 50,
+        "duration": 4,
+        "damageWindowStart": 3.5,
+        "damageWindowEnd": 4
+      }
+    },
+    {
+      "id": "psyshock",
+      "name": "사이코쇼크",
+      "nameEn": "Psyshock",
+      "type": "psychic",
+      "pvp": {
+        "power": 70,
+        "energy": 40
+      },
+      "pve": {
+        "power": 60,
+        "energy": 33,
+        "duration": 2.5,
+        "damageWindowStart": 1.8,
+        "damageWindowEnd": 2.4
+      }
+    },
+    {
+      "id": "psystrike",
+      "name": "사이코브레이크",
+      "nameEn": "Psystrike",
+      "type": "psychic",
+      "pvp": {
+        "power": 90,
+        "energy": 45
+      },
+      "pve": {
+        "power": 95,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 1.2,
+        "damageWindowEnd": 2.2
+      }
+    },
+    {
+      "id": "pyro_ball",
+      "name": "화염볼",
+      "nameEn": "Pyro Ball",
+      "type": "fire",
+      "pvp": {
+        "power": 75,
+        "energy": 40
+      },
+      "pve": null
+    },
+    {
+      "id": "rage_fist",
+      "name": "분노의주먹",
+      "nameEn": "Rage Fist",
+      "type": "ghost",
+      "pvp": {
+        "power": 50,
+        "energy": 35,
+        "buffs": [
+          1,
+          0
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 100,
+        "energy": 50,
+        "duration": 3,
+        "damageWindowStart": 2.75,
+        "damageWindowEnd": 3
+      }
+    },
+    {
+      "id": "razor_shell",
+      "name": "셸블레이드",
+      "nameEn": "Razor Shell",
+      "type": "water",
+      "pvp": {
+        "power": 35,
+        "energy": 35,
+        "buffs": [
+          0,
+          -1
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.5
+      },
+      "pve": {
+        "power": 55,
+        "energy": 33,
+        "duration": 1.5,
+        "damageWindowStart": 0.85,
+        "damageWindowEnd": 1.2
+      }
+    },
+    {
+      "id": "return",
+      "name": "은혜갚기",
+      "nameEn": "Return",
+      "type": "normal",
+      "pvp": {
+        "power": 130,
+        "energy": 70
+      },
+      "pve": {
+        "power": 25,
+        "energy": 33,
+        "duration": 0.5,
+        "damageWindowStart": 0,
+        "damageWindowEnd": 0.15
+      }
+    },
+    {
+      "id": "roar_of_time",
+      "name": "시간의포효",
+      "nameEn": "Roar of Time",
+      "type": "dragon",
+      "unreleased": true,
+      "pvp": {
+        "power": 150,
+        "energy": 65
+      },
+      "pve": {
+        "power": 160,
+        "energy": 100,
+        "duration": 2,
+        "damageWindowStart": 0.85,
+        "damageWindowEnd": 2.3
+      }
+    },
+    {
+      "id": "rock_blast",
+      "name": "록블라스트",
+      "nameEn": "Rock Blast",
+      "type": "rock",
+      "pvp": {
+        "power": 50,
+        "energy": 40
+      },
+      "pve": {
+        "power": 50,
+        "energy": 33,
+        "duration": 2,
+        "damageWindowStart": 1.5,
+        "damageWindowEnd": 1.9
+      }
+    },
+    {
+      "id": "rock_slide",
+      "name": "스톤샤워",
+      "nameEn": "Rock Slide",
+      "type": "rock",
+      "pvp": {
+        "power": 75,
+        "energy": 45
+      },
+      "pve": {
+        "power": 75,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 1.3,
+        "damageWindowEnd": 2.4
+      }
+    },
+    {
+      "id": "rock_tomb",
+      "name": "암석봉인",
+      "nameEn": "Rock Tomb",
+      "type": "rock",
+      "pvp": {
+        "power": 75,
+        "energy": 50,
+        "buffs": [
+          -1,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 65,
+        "energy": 50,
+        "duration": 3,
+        "damageWindowStart": 2.05,
+        "damageWindowEnd": 2.8
+      }
+    },
+    {
+      "id": "rock_wrecker",
+      "name": "암석포",
+      "nameEn": "Rock Wrecker",
+      "type": "rock",
+      "pvp": {
+        "power": 110,
+        "energy": 50
+      },
+      "pve": {
+        "power": 110,
+        "energy": 50,
+        "duration": 3.5,
+        "damageWindowStart": 1.9,
+        "damageWindowEnd": 2.6
+      }
+    },
+    {
+      "id": "sacred_fire",
+      "name": "성스러운불꽃",
+      "nameEn": "Sacred Fire",
+      "type": "fire",
+      "pvp": {
+        "power": 130,
+        "energy": 65,
+        "buffs": [
+          -1,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.5
+      },
+      "pve": {
+        "power": 120,
+        "energy": 100,
+        "duration": 2.5,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 2.3
+      }
+    },
+    {
+      "id": "sacred_sword",
+      "name": "성스러운칼",
+      "nameEn": "Sacred Sword",
+      "type": "fighting",
+      "pvp": {
+        "power": 60,
+        "energy": 35
+      },
+      "pve": {
+        "power": 50,
+        "energy": 33,
+        "duration": 1,
+        "damageWindowStart": 0.3,
+        "damageWindowEnd": 0.8
+      }
+    },
+    {
+      "id": "sand_tomb",
+      "name": "모래지옥",
+      "nameEn": "Sand Tomb",
+      "type": "ground",
+      "pvp": {
+        "power": 40,
+        "energy": 40,
+        "buffs": [
+          0,
+          -1
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 60,
+        "energy": 33,
+        "duration": 4,
+        "damageWindowStart": 1.7,
+        "damageWindowEnd": 4
+      }
+    },
+    {
+      "id": "sandsear_storm",
+      "name": "열사의폭풍",
+      "nameEn": "Sandsear Storm",
+      "type": "ground",
+      "pvp": {
+        "power": 60,
+        "energy": 45,
+        "buffs": [
+          -1,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 150,
+        "energy": 100,
+        "duration": 2.5,
+        "damageWindowStart": 2,
+        "damageWindowEnd": 2.8
+      }
+    },
+    {
+      "id": "scald",
+      "name": "열탕",
+      "nameEn": "Scald",
+      "type": "water",
+      "pvp": {
+        "power": 85,
+        "energy": 50,
+        "buffs": [
+          -1,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.3
+      },
+      "pve": {
+        "power": 75,
+        "energy": 50,
+        "duration": 3.5,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 3.2
+      }
+    },
+    {
+      "id": "scorching_sands",
+      "name": "열사의대지",
+      "nameEn": "Scorching Sands",
+      "type": "ground",
+      "pvp": {
+        "power": 80,
+        "energy": 50,
+        "buffs": [
+          -1,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.1
+      },
+      "pve": {
+        "power": 90,
+        "energy": 50,
+        "duration": 3,
+        "damageWindowStart": 1.4,
+        "damageWindowEnd": 2.3
+      }
+    },
+    {
+      "id": "secret_sword",
+      "name": "신비의칼",
+      "nameEn": "Secret Sword",
+      "type": "fighting",
+      "pvp": {
+        "power": 70,
+        "energy": 35
+      },
+      "pve": {
+        "power": 120,
+        "energy": 50,
+        "duration": 2,
+        "damageWindowStart": 1.2,
+        "damageWindowEnd": 1.6
+      }
+    },
+    {
+      "id": "seed_bomb",
+      "name": "씨폭탄",
+      "nameEn": "Seed Bomb",
+      "type": "grass",
+      "pvp": {
+        "power": 55,
+        "energy": 40
+      },
+      "pve": {
+        "power": 55,
+        "energy": 33,
+        "duration": 2,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 1.8
+      }
+    },
+    {
+      "id": "seed_flare",
+      "name": "시드플레어",
+      "nameEn": "Seed Flare",
+      "type": "grass",
+      "pvp": {
+        "power": 130,
+        "energy": 75,
+        "buffs": [
+          0,
+          -2
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.4
+      },
+      "pve": {
+        "power": 115,
+        "energy": 100,
+        "duration": 2.5,
+        "damageWindowStart": 2.3,
+        "damageWindowEnd": 2.4
+      }
+    },
+    {
+      "id": "shadow_ball",
+      "name": "섀도볼",
+      "nameEn": "Shadow Ball",
+      "type": "ghost",
+      "pvp": {
+        "power": 100,
+        "energy": 50
+      },
+      "pve": {
+        "power": 100,
+        "energy": 50,
+        "duration": 3,
+        "damageWindowStart": 2.4,
+        "damageWindowEnd": 2.8
+      }
+    },
+    {
+      "id": "shadow_bone",
+      "name": "섀도본",
+      "nameEn": "Shadow Bone",
+      "type": "ghost",
+      "pvp": {
+        "power": 80,
+        "energy": 45,
+        "buffs": [
+          0,
+          -1
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.2
+      },
+      "pve": {
+        "power": 85,
+        "energy": 50,
+        "duration": 3,
+        "damageWindowStart": 2.45,
+        "damageWindowEnd": 2.9
+      }
+    },
+    {
+      "id": "shadow_force",
+      "name": "섀도다이브",
+      "nameEn": "Shadow Force",
+      "type": "ghost",
+      "pvp": {
+        "power": 120,
+        "energy": 90
+      },
+      "pve": {
+        "power": 140,
+        "energy": 100,
+        "duration": 2,
+        "damageWindowStart": 1.8,
+        "damageWindowEnd": 2
+      }
+    },
+    {
+      "id": "shadow_punch",
+      "name": "섀도펀치",
+      "nameEn": "Shadow Punch",
+      "type": "ghost",
+      "pvp": {
+        "power": 55,
+        "energy": 35
+      },
+      "pve": {
+        "power": 35,
+        "energy": 33,
+        "duration": 1.5,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 1.3
+      }
+    },
+    {
+      "id": "shadow_sneak",
+      "name": "야습",
+      "nameEn": "Shadow Sneak",
+      "type": "ghost",
+      "pvp": {
+        "power": 75,
+        "energy": 50
+      },
+      "pve": {
+        "power": 50,
+        "energy": 33,
+        "duration": 3,
+        "damageWindowStart": 2.3,
+        "damageWindowEnd": 2.8
+      }
+    },
+    {
+      "id": "signal_beam",
+      "name": "시그널빔",
+      "nameEn": "Signal Beam",
+      "type": "bug",
+      "pvp": {
+        "power": 75,
+        "energy": 55,
+        "buffs": [
+          -1,
+          -1
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.2
+      },
+      "pve": {
+        "power": 75,
+        "energy": 50,
+        "duration": 3,
+        "damageWindowStart": 1.9,
+        "damageWindowEnd": 2.7
+      }
+    },
+    {
+      "id": "silver_wind",
+      "name": "은빛바람",
+      "nameEn": "Silver Wind",
+      "type": "bug",
+      "pvp": {
+        "power": 60,
+        "energy": 45,
+        "buffs": [
+          1,
+          1
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 0.1
+      },
+      "pve": {
+        "power": 65,
+        "energy": 33,
+        "duration": 3.5,
+        "damageWindowStart": 1.5,
+        "damageWindowEnd": 3.3
+      }
+    },
+    {
+      "id": "skull_bash",
+      "name": "로켓박치기",
+      "nameEn": "Skull Bash",
+      "type": "normal",
+      "pvp": {
+        "power": 130,
+        "energy": 75,
+        "buffs": [
+          0,
+          1
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 130,
+        "energy": 100,
+        "duration": 3,
+        "damageWindowStart": 1.7,
+        "damageWindowEnd": 2.2
+      }
+    },
+    {
+      "id": "sky_attack",
+      "name": "불새",
+      "nameEn": "Sky Attack",
+      "type": "flying",
+      "pvp": {
+        "power": 75,
+        "energy": 50
+      },
+      "pve": {
+        "power": 80,
+        "energy": 50,
+        "duration": 2,
+        "damageWindowStart": 1.5,
+        "damageWindowEnd": 1.7
+      }
+    },
+    {
+      "id": "sludge",
+      "name": "오물공격",
+      "nameEn": "Sludge",
+      "type": "poison",
+      "pvp": {
+        "power": 70,
+        "energy": 40
+      },
+      "pve": {
+        "power": 50,
+        "energy": 33,
+        "duration": 2,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 1.45
+      }
+    },
+    {
+      "id": "sludge_bomb",
+      "name": "오물폭탄",
+      "nameEn": "Sludge Bomb",
+      "type": "poison",
+      "pvp": {
+        "power": 80,
+        "energy": 50
+      },
+      "pve": {
+        "power": 85,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 1.3,
+        "damageWindowEnd": 2.3
+      }
+    },
+    {
+      "id": "sludge_wave",
+      "name": "오물웨이브",
+      "nameEn": "Sludge Wave",
+      "type": "poison",
+      "pvp": {
+        "power": 110,
+        "energy": 65
+      },
+      "pve": {
+        "power": 105,
+        "energy": 100,
+        "duration": 3,
+        "damageWindowStart": 1.8,
+        "damageWindowEnd": 2.8
+      }
+    },
+    {
+      "id": "solar_beam",
+      "name": "솔라빔",
+      "nameEn": "Solar Beam",
+      "type": "grass",
+      "pvp": {
+        "power": 150,
+        "energy": 80
+      },
+      "pve": {
+        "power": 180,
+        "energy": 100,
+        "duration": 5,
+        "damageWindowStart": 2.8,
+        "damageWindowEnd": 4.8
+      }
+    },
+    {
+      "id": "spacial_rend",
+      "name": "공간절단",
+      "nameEn": "Spacial Rend",
+      "type": "dragon",
+      "unreleased": true,
+      "pvp": {
+        "power": 95,
+        "energy": 55
+      },
+      "pve": {
+        "power": 160,
+        "energy": 100,
+        "duration": 2.5,
+        "damageWindowStart": 1.37,
+        "damageWindowEnd": 2.95
+      }
+    },
+    {
+      "id": "sparkling_aria",
+      "name": "물거품아리아",
+      "nameEn": "Sparkling Aria",
+      "type": "water",
+      "pvp": {
+        "power": 80,
+        "energy": 45
+      },
+      "pve": {
+        "power": 85,
+        "energy": 33,
+        "duration": 3,
+        "damageWindowStart": 1.7,
+        "damageWindowEnd": 2.9
+      }
+    },
+    {
+      "id": "spirit_shackle",
+      "name": "그림자꿰매기",
+      "nameEn": "Spirit Shackle",
+      "type": "ghost",
+      "pvp": {
+        "power": 50,
+        "energy": 40,
+        "buffs": [
+          0,
+          -1
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.33
+      },
+      "pve": {
+        "power": 70,
+        "energy": 33,
+        "duration": 2.5,
+        "damageWindowStart": 2,
+        "damageWindowEnd": 3.4
+      }
+    },
+    {
+      "id": "springtide_storm",
+      "name": "봄의폭풍",
+      "nameEn": "Springtide Storm (Speculative)",
+      "type": "fairy",
+      "pvp": {
+        "power": 60,
+        "energy": 45,
+        "buffs": [
+          -1,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 120,
+        "energy": 100,
+        "duration": 2,
+        "damageWindowStart": 1.6,
+        "damageWindowEnd": 2
+      }
+    },
+    {
+      "id": "stomp",
+      "name": "짓밟기",
+      "nameEn": "Stomp",
+      "type": "normal",
+      "pvp": {
+        "power": 55,
+        "energy": 40
+      },
+      "pve": {
+        "power": 50,
+        "energy": 50,
+        "duration": 1.5,
+        "damageWindowStart": 0.9,
+        "damageWindowEnd": 1.3
+      }
+    },
+    {
+      "id": "stone_edge",
+      "name": "스톤에지",
+      "nameEn": "Stone Edge",
+      "type": "rock",
+      "pvp": {
+        "power": 100,
+        "energy": 55
+      },
+      "pve": {
+        "power": 105,
+        "energy": 100,
+        "duration": 2.5,
+        "damageWindowStart": 0.9,
+        "damageWindowEnd": 2.3
+      }
+    },
+    {
+      "id": "submission",
+      "name": "지옥의바퀴",
+      "nameEn": "Submission",
+      "type": "fighting",
+      "pvp": {
+        "power": 60,
+        "energy": 50
+      },
+      "pve": {
+        "power": 55,
+        "energy": 50,
+        "duration": 2,
+        "damageWindowStart": 1.6,
+        "damageWindowEnd": 1.8
+      }
+    },
+    {
+      "id": "sunsteel_strike",
+      "name": "메테오드라이브",
+      "nameEn": "Sunsteel Strike",
+      "type": "steel",
+      "pvp": {
+        "power": 135,
+        "energy": 65
+      },
+      "pve": {
+        "power": 230,
+        "energy": 100,
+        "duration": 3,
+        "damageWindowStart": 2.2,
+        "damageWindowEnd": 3
+      }
+    },
+    {
+      "id": "super_power",
+      "name": "엄청난힘",
+      "nameEn": "Superpower",
+      "type": "fighting",
+      "pvp": {
+        "power": 85,
+        "energy": 40,
+        "buffs": [
+          -1,
+          -1
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 85,
+        "energy": 50,
+        "duration": 3,
+        "damageWindowStart": 2.1,
+        "damageWindowEnd": 2.8
+      }
+    },
+    {
+      "id": "surf",
+      "name": "파도타기",
+      "nameEn": "Surf",
+      "type": "water",
+      "pvp": {
+        "power": 75,
+        "energy": 45
+      },
+      "pve": {
+        "power": 60,
+        "energy": 50,
+        "duration": 1.5,
+        "damageWindowStart": 1.2,
+        "damageWindowEnd": 1.4
+      }
+    },
+    {
+      "id": "swift",
+      "name": "스피드스타",
+      "nameEn": "Swift",
+      "type": "normal",
+      "pvp": {
+        "power": 55,
+        "energy": 35
+      },
+      "pve": {
+        "power": 65,
+        "energy": 50,
+        "duration": 3,
+        "damageWindowStart": 2.2,
+        "damageWindowEnd": 2.8
+      }
+    },
+    {
+      "id": "synchronoise",
+      "name": "싱크로노이즈",
+      "nameEn": "Synchronoise",
+      "type": "psychic",
+      "pvp": {
+        "power": 80,
+        "energy": 50
+      },
+      "pve": {
+        "power": 80,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 0.75,
+        "damageWindowEnd": 1.5
+      }
+    },
+    {
+      "id": "techno_blast_burn",
+      "name": "테크노버스터",
+      "nameEn": "Techno Blast (Burn)",
+      "type": "fire",
+      "pvp": {
+        "power": 120,
+        "energy": 55
+      },
+      "pve": {
+        "power": 120,
+        "energy": 100,
+        "duration": 2,
+        "damageWindowStart": 1.6,
+        "damageWindowEnd": 2
+      }
+    },
+    {
+      "id": "techno_blast_chill",
+      "name": "테크노버스터",
+      "nameEn": "Techno Blast (Chill)",
+      "type": "ice",
+      "pvp": {
+        "power": 120,
+        "energy": 55
+      },
+      "pve": {
+        "power": 120,
+        "energy": 100,
+        "duration": 2,
+        "damageWindowStart": 1.6,
+        "damageWindowEnd": 2
+      }
+    },
+    {
+      "id": "techno_blast_douse",
+      "name": "테크노버스터",
+      "nameEn": "Techno Blast (Douse)",
+      "type": "water",
+      "pvp": {
+        "power": 120,
+        "energy": 55
+      },
+      "pve": {
+        "power": 120,
+        "energy": 100,
+        "duration": 2,
+        "damageWindowStart": 1.6,
+        "damageWindowEnd": 2
+      }
+    },
+    {
+      "id": "techno_blast_normal",
+      "name": "테크노버스터",
+      "nameEn": "Techno Blast (Normal)",
+      "type": "normal",
+      "pvp": {
+        "power": 120,
+        "energy": 55
+      },
+      "pve": {
+        "power": 120,
+        "energy": 100,
+        "duration": 2,
+        "damageWindowStart": 1.6,
+        "damageWindowEnd": 2
+      }
+    },
+    {
+      "id": "techno_blast_shock",
+      "name": "테크노버스터",
+      "nameEn": "Techno Blast (Shock)",
+      "type": "electric",
+      "pvp": {
+        "power": 120,
+        "energy": 55
+      },
+      "pve": {
+        "power": 120,
+        "energy": 100,
+        "duration": 2,
+        "damageWindowStart": 1.6,
+        "damageWindowEnd": 2
+      }
+    },
+    {
+      "id": "thunder",
+      "name": "번개",
+      "nameEn": "Thunder",
+      "type": "electric",
+      "pvp": {
+        "power": 100,
+        "energy": 60
+      },
+      "pve": {
+        "power": 100,
+        "energy": 100,
+        "duration": 2.5,
+        "damageWindowStart": 1.3,
+        "damageWindowEnd": 2.3
+      }
+    },
+    {
+      "id": "thunder_cage",
+      "name": "썬더프리즌",
+      "nameEn": "Thunder Cage",
+      "type": "electric",
+      "pvp": {
+        "power": 60,
+        "energy": 40,
+        "buffs": [
+          0,
+          -1
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 220,
+        "energy": 100,
+        "duration": 3.3,
+        "damageWindowStart": 1.88,
+        "damageWindowEnd": 3.2
+      }
+    },
+    {
+      "id": "thunder_punch",
+      "name": "번개펀치",
+      "nameEn": "Thunder Punch",
+      "type": "electric",
+      "pvp": {
+        "power": 60,
+        "energy": 40
+      },
+      "pve": {
+        "power": 50,
+        "energy": 33,
+        "duration": 2,
+        "damageWindowStart": 1.9,
+        "damageWindowEnd": 1.75
+      }
+    },
+    {
+      "id": "thunderbolt",
+      "name": "１０만볼트",
+      "nameEn": "Thunderbolt",
+      "type": "electric",
+      "pvp": {
+        "power": 90,
+        "energy": 55
+      },
+      "pve": {
+        "power": 80,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 1.8,
+        "damageWindowEnd": 2.3
+      }
+    },
+    {
+      "id": "torch_song",
+      "name": "플레어송",
+      "nameEn": "Torch Song",
+      "type": "fire",
+      "pvp": {
+        "power": 70,
+        "energy": 45,
+        "buffs": [
+          1,
+          0
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 100,
+        "energy": 50,
+        "duration": 3.5,
+        "damageWindowStart": 2.5,
+        "damageWindowEnd": 3.5
+      }
+    },
+    {
+      "id": "trailblaze",
+      "name": "개척하기",
+      "nameEn": "Trailblaze",
+      "type": "grass",
+      "pvp": {
+        "power": 65,
+        "energy": 45,
+        "buffs": [
+          1,
+          0
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 65,
+        "energy": 50,
+        "duration": 2,
+        "damageWindowStart": 1.2,
+        "damageWindowEnd": 1.9
+      }
+    },
+    {
+      "id": "tri_attack",
+      "name": "트라이어택",
+      "nameEn": "Tri Attack",
+      "type": "normal",
+      "pvp": {
+        "power": 65,
+        "energy": 50,
+        "buffs": [
+          -1,
+          -1
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.5
+      },
+      "pve": {
+        "power": 75,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 1.3,
+        "damageWindowEnd": 2.4
+      }
+    },
+    {
+      "id": "triple_axel",
+      "name": "트리플악셀",
+      "nameEn": "Triple Axel",
+      "type": "ice",
+      "pvp": {
+        "power": 60,
+        "energy": 45,
+        "buffs": [
+          1,
+          0
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 60,
+        "energy": 33,
+        "duration": 2,
+        "damageWindowStart": 1.5,
+        "damageWindowEnd": 1.7
+      }
+    },
+    {
+      "id": "twister",
+      "name": "회오리",
+      "nameEn": "Twister",
+      "type": "dragon",
+      "pvp": {
+        "power": 70,
+        "energy": 40
+      },
+      "pve": {
+        "power": 50,
+        "energy": 33,
+        "duration": 3,
+        "damageWindowStart": 1.15,
+        "damageWindowEnd": 2.8
+      }
+    },
+    {
+      "id": "upper_hand",
+      "name": "기선제압",
+      "nameEn": "Upper Hand",
+      "type": "fighting",
+      "pvp": {
+        "power": 70,
+        "energy": 40,
+        "buffs": [
+          0,
+          -1
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.3
+      },
+      "pve": {
+        "power": 50,
+        "energy": 33,
+        "duration": 2,
+        "damageWindowStart": 2.3,
+        "damageWindowEnd": 3.1
+      }
+    },
+    {
+      "id": "v_create",
+      "name": "V제너레이트",
+      "nameEn": "V-create",
+      "type": "fire",
+      "pvp": {
+        "power": 95,
+        "energy": 40,
+        "buffs": [
+          0,
+          -3
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 105,
+        "energy": 33,
+        "duration": 3,
+        "damageWindowStart": 1.9,
+        "damageWindowEnd": 2.7
+      }
+    },
+    {
+      "id": "vice_grip",
+      "name": "찝기",
+      "nameEn": "Vise Grip",
+      "type": "normal",
+      "pvp": {
+        "power": 70,
+        "energy": 40
+      },
+      "pve": {
+        "power": 35,
+        "energy": 33,
+        "duration": 2,
+        "damageWindowStart": 1.2,
+        "damageWindowEnd": 1.6
+      }
+    },
+    {
+      "id": "volt_tackle",
+      "name": "볼트태클",
+      "nameEn": "Volt Tackle",
+      "type": "electric",
+      "pvp": {
+        "power": 90,
+        "energy": 40,
+        "buffs": [
+          0,
+          -1
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 90,
+        "energy": 33,
+        "duration": 3.5,
+        "damageWindowStart": 2.1,
+        "damageWindowEnd": 2.6
+      }
+    },
+    {
+      "id": "water_pulse",
+      "name": "물의파동",
+      "nameEn": "Water Pulse",
+      "type": "water",
+      "pvp": {
+        "power": 80,
+        "energy": 50
+      },
+      "pve": {
+        "power": 65,
+        "energy": 50,
+        "duration": 3,
+        "damageWindowStart": 2,
+        "damageWindowEnd": 2.7
+      }
+    },
+    {
+      "id": "weather_ball_fire",
+      "name": "웨더볼",
+      "nameEn": "Weather Ball (Fire)",
+      "type": "fire",
+      "pvp": {
+        "power": 60,
+        "energy": 35
+      },
+      "pve": {
+        "power": 55,
+        "energy": 33,
+        "duration": 1.5,
+        "damageWindowStart": 1.25,
+        "damageWindowEnd": 1.5
+      }
+    },
+    {
+      "id": "weather_ball_ice",
+      "name": "웨더볼",
+      "nameEn": "Weather Ball (Ice)",
+      "type": "ice",
+      "pvp": {
+        "power": 60,
+        "energy": 35
+      },
+      "pve": {
+        "power": 55,
+        "energy": 33,
+        "duration": 1.5,
+        "damageWindowStart": 1.25,
+        "damageWindowEnd": 1.5
+      }
+    },
+    {
+      "id": "weather_ball_normal",
+      "name": "웨더볼",
+      "nameEn": "Weather Ball (Normal)",
+      "type": "normal",
+      "pvp": {
+        "power": 60,
+        "energy": 35
+      },
+      "pve": {
+        "power": 55,
+        "energy": 33,
+        "duration": 1.5,
+        "damageWindowStart": 1.25,
+        "damageWindowEnd": 1.5
+      }
+    },
+    {
+      "id": "weather_ball_rock",
+      "name": "웨더볼",
+      "nameEn": "Weather Ball (Rock)",
+      "type": "rock",
+      "pvp": {
+        "power": 60,
+        "energy": 35
+      },
+      "pve": {
+        "power": 55,
+        "energy": 33,
+        "duration": 1.5,
+        "damageWindowStart": 1.25,
+        "damageWindowEnd": 1.5
+      }
+    },
+    {
+      "id": "weather_ball_water",
+      "name": "웨더볼",
+      "nameEn": "Weather Ball (Water)",
+      "type": "water",
+      "pvp": {
+        "power": 60,
+        "energy": 35
+      },
+      "pve": {
+        "power": 55,
+        "energy": 33,
+        "duration": 1.5,
+        "damageWindowStart": 1.25,
+        "damageWindowEnd": 1.5
+      }
+    },
+    {
+      "id": "wild_charge",
+      "name": "와일드볼트",
+      "nameEn": "Wild Charge",
+      "type": "electric",
+      "pvp": {
+        "power": 100,
+        "energy": 45,
+        "buffs": [
+          0,
+          -2
+        ],
+        "buffTarget": "self",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 90,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 1.6,
+        "damageWindowEnd": 2
+      }
+    },
+    {
+      "id": "wildbolt_storm",
+      "name": "번개폭풍",
+      "nameEn": "Wildbolt Storm",
+      "type": "electric",
+      "pvp": {
+        "power": 60,
+        "energy": 45,
+        "buffs": [
+          -1,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 150,
+        "energy": 100,
+        "duration": 2.5,
+        "damageWindowStart": 2,
+        "damageWindowEnd": 2.8
+      }
+    },
+    {
+      "id": "wrap",
+      "name": "김밥말이",
+      "nameEn": "Wrap",
+      "type": "normal",
+      "pvp": {
+        "power": 60,
+        "energy": 45,
+        "buffs": [
+          0,
+          -1
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 1
+      },
+      "pve": {
+        "power": 60,
+        "energy": 33,
+        "duration": 3,
+        "damageWindowStart": 2.15,
+        "damageWindowEnd": 2.8
+      }
+    },
+    {
+      "id": "x_scissor",
+      "name": "시저크로스",
+      "nameEn": "X-Scissor",
+      "type": "bug",
+      "pvp": {
+        "power": 65,
+        "energy": 40
+      },
+      "pve": {
+        "power": 45,
+        "energy": 33,
+        "duration": 1.5,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 1.3
+      }
+    },
+    {
+      "id": "zap_cannon",
+      "name": "전자포",
+      "nameEn": "Zap Cannon",
+      "type": "electric",
+      "pvp": {
+        "power": 150,
+        "energy": 80,
+        "buffs": [
+          -1,
+          0
+        ],
+        "buffTarget": "opponent",
+        "buffApplyChance": 0.33
+      },
+      "pve": {
+        "power": 140,
+        "energy": 100,
+        "duration": 3.5,
+        "damageWindowStart": 2.8,
+        "damageWindowEnd": 3.3
+      }
+    }
+  ]
+}

@@ -1,6 +1,0 @@
-public/
-**/node_modules/*
-**/out/*
-**/.next/*
-*.config.js
-next-env.d.ts

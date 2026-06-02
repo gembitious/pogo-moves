@@ -1,0 +1,31 @@
+---
+import '@/styles/global.css'
+import Nav from '@/components/Nav.astro'
+import { getDictionary } from '@/lib/i18n'
+
+interface Props {
+  locale: string
+  title?: string
+}
+
+const { locale, title } = Astro.props
+const dict = getDictionary(locale)
+const pageTitle = title ? `${title} · ${dict.meta.title}` : dict.meta.title
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={dict.meta.description} />
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <Nav locale={locale} />
+    <main class="main">
+      <slot />
+    </main>
+  </body>
+</html>

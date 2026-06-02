@@ -5,15 +5,12 @@
 /.pnp
 .pnp.js
 
-# testing
-/coverage
+# build output
+/dist
+/.astro
 
-# next.js
-/.next/
-/out/
-
-# production
-/build
+# generated types
+.astro/types.d.ts
 
 # misc
 .DS_Store
@@ -29,13 +26,6 @@ yarn-error.log*
 
 # vercel
 .vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-
-# data utils
-/utils
 
 # JetBrains IDE
 .idea

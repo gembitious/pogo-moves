@@ -1,0 +1,376 @@
+@import 'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css';
+@import 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap';
+
+:root {
+  --bg: #011a25;
+  --surface: #08303f;
+  --white: #ffffff;
+  --gray-1: #e6e6e6;
+  --gray-7: #4f4f4f;
+  --primary: #fb8500;
+  --secondary: #219ebc;
+  --tertiary: #8ecae6;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', 'Noto Sans SC', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #8ecae640;
+}
+
+.scroll-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.static-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---- navigation -------------------------------------------------------- */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  border-bottom: 1px solid #ffffff14;
+}
+
+.brand img {
+  display: block;
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.nav-link {
+  flex: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  background: var(--secondary);
+  color: var(--white);
+  transition: filter 0.15s ease;
+}
+
+.nav-link:hover {
+  filter: brightness(1.1);
+}
+
+.nav-link.active {
+  background: var(--primary);
+}
+
+.lang {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 4px;
+}
+
+.lang img {
+  display: block;
+  border-radius: 2px;
+  opacity: 0.7;
+  transition: opacity 0.15s ease;
+}
+
+.lang a:hover img {
+  opacity: 1;
+}
+
+/* ---- page shell -------------------------------------------------------- */
+.main {
+  flex: 1;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* ---- move explorer ----------------------------------------------------- */
+.explorer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.type-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 28px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 14px;
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    opacity 0.15s ease,
+    transform 0.1s ease;
+}
+
+.type-btn:hover {
+  transform: translateY(-1px);
+}
+
+.type-btn img {
+  display: block;
+}
+
+.type-btn.all {
+  background: var(--gray-7);
+}
+
+.type-btn.mode {
+  background: var(--surface);
+  border: 1px solid var(--tertiary);
+}
+
+/* ---- chart ------------------------------------------------------------- */
+.chart {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+}
+
+.chart-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.grid {
+  stroke: #ffffff1f;
+  stroke-width: 1;
+}
+
+.tick {
+  fill: #ffffffaa;
+  font-size: 22px;
+}
+
+.axis-title {
+  fill: var(--tertiary);
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.legend {
+  position: absolute;
+  top: 8px;
+  left: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: #00000040;
+  font-size: 12px;
+  color: var(--gray-1);
+  pointer-events: none;
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-swatch {
+  width: 16px;
+  height: 2px;
+  border-radius: 1px;
+}
+
+/* ---- move chips -------------------------------------------------------- */
+.chip {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  max-width: 92px;
+  padding: 1px 6px;
+  border: none;
+  border-radius: 4px;
+  color: var(--white);
+  font-size: clamp(9px, 1.3vw, 12px);
+  line-height: 1.4;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.chip .static-text {
+  display: block;
+  max-width: 80px;
+}
+
+.chip:hover,
+.chip.active {
+  transform: translate(-50%, -50%) scale(1.12);
+  box-shadow: 0 0 0 2px #ffffffcc;
+  z-index: 20;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  background: #0a2c3aef;
+  border: 1px solid var(--secondary);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: left;
+  pointer-events: none;
+  z-index: 30;
+}
+
+.tooltip strong {
+  color: var(--tertiary);
+  font-weight: 600;
+}
+
+/* ---- type chart -------------------------------------------------------- */
+.type-page {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: auto;
+}
+
+.type-axis-top {
+  text-align: center;
+  color: var(--tertiary);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.type-grid {
+  display: flex;
+  gap: 8px;
+}
+
+.type-axis-left {
+  writing-mode: vertical-rl;
+  text-align: center;
+  color: var(--tertiary);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 60px 4px 0;
+}
+
+table.matrix {
+  border-collapse: collapse;
+}
+
+table.matrix th,
+table.matrix td {
+  padding: 1px;
+  text-align: center;
+}
+
+table.matrix .corner {
+  width: 132px;
+}
+
+.cell-icon {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.row-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  width: 124px;
+  height: 28px;
+  padding: 0 8px;
+  border-radius: 14px;
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.row-label img {
+  width: 22px;
+  height: 22px;
+}
+
+@media (min-width: 768px) {
+  .brand img {
+    height: 56px;
+  }
+  .cell-icon {
+    width: 34px;
+    height: 34px;
+  }
+}
