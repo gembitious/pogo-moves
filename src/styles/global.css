@@ -256,6 +256,7 @@ a {
   line-height: 1.4;
   cursor: pointer;
   transition:
+    top 0.12s ease,
     transform 0.15s ease,
     box-shadow 0.15s ease;
 }

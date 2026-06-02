@@ -3,5 +3,9 @@
   "framework": "astro",
   "buildCommand": "astro build",
   "outputDirectory": "dist",
-  "redirects": [{ "source": "/", "destination": "/ko", "permanent": false }]
+  "redirects": [
+    { "source": "/", "destination": "/ko", "permanent": false },
+    { "source": "/:lang(ko|en)/moves/fast", "destination": "/:lang/fast", "permanent": true },
+    { "source": "/:lang(ko|en)/moves/charged", "destination": "/:lang", "permanent": true }
+  ]
 }

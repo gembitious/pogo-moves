@@ -1,5 +1,5 @@
 /** @jsxImportSource preact */
-import { useMemo, useState } from 'preact/hooks'
+import { useMemo, useRef, useState } from 'preact/hooks'
 import {
   POKEMON_TYPES,
   TYPE_COLORS,
@@ -24,6 +24,7 @@ const VH = 900
 const PAD = { left: 64, right: 18, top: 18, bottom: 56 }
 const plotW = VW - PAD.left - PAD.right
 const plotH = VH - PAD.top - PAD.bottom
+const FAN_GAP = 24 // viewBox units; fan stacked chips apart on hover so each is readable
 
 interface Point {
   id: string
@@ -137,6 +138,37 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
     [allPoints, selected],
   )
 
+  // Group points sharing identical coordinates so a hovered stack can fan open
+  // (legacy spread-on-hover) — otherwise chips piled on one point are unreadable.
+  const clusterById = useMemo(() => {
+    const counts = new Map<string, number>()
+    for (const p of points) {
+      const key = `${p.x}|${p.y}`
+      counts.set(key, (counts.get(key) ?? 0) + 1)
+    }
+    const seen = new Map<string, number>()
+    const m = new Map<string, { key: string; idx: number; size: number }>()
+    for (const p of points) {
+      const key = `${p.x}|${p.y}`
+      const idx = seen.get(key) ?? 0
+      seen.set(key, idx + 1)
+      m.set(p.id, { key, idx, size: counts.get(key)! })
+    }
+    return m
+  }, [points])
+
+  const activeKey = hover ? clusterById.get(hover)?.key : undefined
+
+  // Debounce collapse so moving between fanned chips doesn't flicker the stack shut.
+  const leaveTimer = useRef<ReturnType<typeof setTimeout>>()
+  const enter = (id: string) => {
+    clearTimeout(leaveTimer.current)
+    setHover(id)
+  }
+  const leave = (id: string) => {
+    leaveTimer.current = setTimeout(() => setHover((h) => (h === id ? null : h)), 90)
+  }
+
   const curvePaths = useMemo(
     () =>
       cfg.curves.map((c) => {
@@ -215,6 +247,18 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
           {curvePaths.map((c) => (
             <path key={c.label} d={c.d} stroke={c.color} stroke-width={2} fill="none" />
           ))}
+          {/* exact-position markers — stay put while labels fan apart on hover */}
+          {points.map((p) => (
+            <circle
+              key={`dot-${p.id}`}
+              cx={sx(p.x)}
+              cy={sy(p.y)}
+              r={4}
+              fill={TYPE_COLORS[p.type]}
+              stroke="#00000066"
+              stroke-width={1}
+            />
+          ))}
           {/* axis titles */}
           <text x={PAD.left + plotW / 2} y={VH - 8} class="axis-title" text-anchor="middle">
             {cfg.xLabel}
@@ -237,27 +281,38 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
           ))}
         </div>
 
-        {points.map((p) => (
-          <button
-            key={p.id}
-            class={`chip${hover === p.id ? ' active' : ''}`}
-            style={{ left: pct(sx(p.x), VW), top: pct(sy(p.y), VH), background: TYPE_COLORS[p.type] }}
-            onMouseEnter={() => setHover(p.id)}
-            onMouseLeave={() => setHover((h) => (h === p.id ? null : h))}
-            onFocus={() => setHover(p.id)}
-            onBlur={() => setHover((h) => (h === p.id ? null : h))}
-          >
-            <span class="static-text">{p.label}</span>
-            {hover === p.id && (
-              <span class="tooltip">
-                <strong>{p.label}</strong>
-                {p.lines.map((line, i) => (
-                  <span key={i}>{line}</span>
-                ))}
-              </span>
-            )}
-          </button>
-        ))}
+        {points.map((p) => {
+          const ci = clusterById.get(p.id)!
+          const fanned = activeKey === ci.key && ci.size > 1
+          const offset = fanned ? (ci.idx - (ci.size - 1) / 2) * FAN_GAP : 0
+          const isHover = hover === p.id
+          return (
+            <button
+              key={p.id}
+              class={`chip${isHover ? ' active' : ''}${fanned ? ' fanned' : ''}`}
+              style={{
+                left: pct(sx(p.x), VW),
+                top: pct(sy(p.y) + offset, VH),
+                background: TYPE_COLORS[p.type],
+                zIndex: isHover ? 30 : fanned ? 20 : undefined,
+              }}
+              onMouseEnter={() => enter(p.id)}
+              onMouseLeave={() => leave(p.id)}
+              onFocus={() => enter(p.id)}
+              onBlur={() => leave(p.id)}
+            >
+              <span class="static-text">{p.label}</span>
+              {isHover && (
+                <span class="tooltip">
+                  <strong>{p.label}</strong>
+                  {p.lines.map((line, i) => (
+                    <span key={i}>{line}</span>
+                  ))}
+                </span>
+              )}
+            </button>
+          )
+        })}
       </div>
     </div>
   )
