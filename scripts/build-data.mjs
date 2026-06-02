@@ -31,7 +31,12 @@ async function loadGameMaster() {
   return res.json()
 }
 
-// uniqueId/movementId keys, lowercased: e.g. "acid_fast", "acid_spray"
+// uniqueId/movementId keys, lowercased: e.g. "acid_fast", "acid_spray".
+// Some moves (aura_wheel, dynamax_cannon, …) store a NUMERIC movementId/uniqueId
+// in the source, so fall back to the name embedded in the templateId.
+const nameFromTemplateId = (id) => id.replace(/^(COMBAT_)?V\d{4}_MOVE_/, '').toLowerCase()
+const keyFor = (raw, id) => (typeof raw === 'string' ? raw.toLowerCase() : nameFromTemplateId(id))
+
 function indexMoves(gm) {
   const pve = new Map()
   const pvp = new Map()
@@ -39,10 +44,10 @@ function indexMoves(gm) {
     const t = entry.data || entry
     const id = t.templateId || ''
     if (t.moveSettings && /^V\d{4}_MOVE_/.test(id)) {
-      pve.set(String(t.moveSettings.movementId).toLowerCase(), t.moveSettings)
+      pve.set(keyFor(t.moveSettings.movementId, id), t.moveSettings)
     }
     if (t.combatMove && /^COMBAT_V\d{4}_MOVE_/.test(id)) {
-      pvp.set(String(t.combatMove.uniqueId).toLowerCase(), t.combatMove)
+      pvp.set(keyFor(t.combatMove.uniqueId, id), t.combatMove)
     }
   }
   return { pve, pvp }
@@ -52,14 +57,34 @@ function indexMoves(gm) {
 const ALIAS = {
   future_sight: 'futuresight',
   pyro_ball: 'pyroball',
-  techno_blast_douse: 'techno_blast_water',
 }
+
+// Techno Blast drive variants: our id suffix -> { source suffix, Korean drive label }.
+// "douse" is the Water-type drive in the source (legacy constants.py: 아쿠아).
+const DRIVE = {
+  burn: { gm: 'burn', ko: '블레이즈' },
+  chill: { gm: 'chill', ko: '프리즈' },
+  douse: { gm: 'water', ko: '아쿠아' },
+  shock: { gm: 'shock', ko: '라이트닝' },
+}
+
 function gmKeyFor(move, category) {
   if (category === 'fast') {
     if (move.id.startsWith('hidden_power_')) return 'hidden_power_fast' // GO has one; pvpoke splits per type
     return `${move.id}_fast`
   }
+  if (move.id.startsWith('techno_blast_')) {
+    const drive = move.id.slice('techno_blast_'.length)
+    return `techno_blast_${DRIVE[drive]?.gm ?? drive}`
+  }
   return ALIAS[move.id] ?? move.id
+}
+
+// Drive-specific Korean name for a Techno Blast variant (e.g. 테크노버스터(아쿠아)); null otherwise.
+function driveName(move) {
+  if (!move.id.startsWith('techno_blast_')) return null
+  const d = DRIVE[move.id.slice('techno_blast_'.length)]
+  return d ? `테크노버스터(${d.ko})` : null
 }
 
 function buffsFrom(combat) {
@@ -131,7 +156,7 @@ async function main() {
       }
       const fresh = {
         id: move.id,
-        name: move.name, // preserved (GAME_MASTER has no Korean)
+        name: driveName(move) ?? move.name, // GAME_MASTER has no Korean; drive variants get a KO label
         nameEn: move.nameEn,
         type: move.type,
         ...(move.unreleased ? { unreleased: true } : {}),

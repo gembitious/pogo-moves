@@ -1947,8 +1947,8 @@
       },
       "pve": {
         "power": 100,
-        "energy": 45,
-        "duration": 2.7,
+        "energy": 50,
+        "duration": 2.5,
         "damageWindowStart": 2.1,
         "damageWindowEnd": 2.5
       }
@@ -1970,8 +1970,8 @@
       },
       "pve": {
         "power": 100,
-        "energy": 45,
-        "duration": 2.7,
+        "energy": 50,
+        "duration": 2.5,
         "damageWindowStart": 2.1,
         "damageWindowEnd": 2.5
       }
@@ -5329,8 +5329,9 @@
     {
       "id": "springtide_storm",
       "name": "봄의폭풍",
-      "nameEn": "Springtide Storm (Speculative)",
+      "nameEn": "Springtide Storm",
       "type": "fairy",
+      "unreleased": true,
       "pvp": {
         "power": 60,
         "energy": 45,
@@ -5493,7 +5494,7 @@
     },
     {
       "id": "techno_blast_burn",
-      "name": "테크노버스터",
+      "name": "테크노버스터(블레이즈)",
       "nameEn": "Techno Blast (Burn)",
       "type": "fire",
       "pvp": {
@@ -5510,7 +5511,7 @@
     },
     {
       "id": "techno_blast_chill",
-      "name": "테크노버스터",
+      "name": "테크노버스터(프리즈)",
       "nameEn": "Techno Blast (Chill)",
       "type": "ice",
       "pvp": {
@@ -5527,7 +5528,7 @@
     },
     {
       "id": "techno_blast_douse",
-      "name": "테크노버스터",
+      "name": "테크노버스터(아쿠아)",
       "nameEn": "Techno Blast (Douse)",
       "type": "water",
       "pvp": {
@@ -5561,7 +5562,7 @@
     },
     {
       "id": "techno_blast_shock",
-      "name": "테크노버스터",
+      "name": "테크노버스터(라이트닝)",
       "nameEn": "Techno Blast (Shock)",
       "type": "electric",
       "pvp": {
