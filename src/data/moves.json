@@ -736,7 +736,13 @@
         "turn": 3,
         "energyGain": 8
       },
-      "pve": null
+      "pve": {
+        "power": 15,
+        "energyGain": 15,
+        "duration": 1.5,
+        "damageWindowStart": 1.1,
+        "damageWindowEnd": 1.4
+      }
     },
     {
       "id": "hidden_power_poison",
@@ -2026,11 +2032,11 @@
         "buffApplyChance": 1
       },
       "pve": {
-        "power": 85,
+        "power": 125,
         "energy": 50,
         "duration": 2.5,
         "damageWindowStart": 1.5,
-        "damageWindowEnd": 1.9
+        "damageWindowEnd": 2.5
       }
     },
     {
@@ -2405,7 +2411,7 @@
       "pve": {
         "power": 120,
         "energy": 100,
-        "duration": 3.3,
+        "duration": 3.5,
         "damageWindowStart": 1.88,
         "damageWindowEnd": 3.2
       }
@@ -2531,7 +2537,7 @@
       "pve": {
         "power": 210,
         "energy": 100,
-        "duration": 1.8,
+        "duration": 2,
         "damageWindowStart": 0.7,
         "damageWindowEnd": 1.7
       }
@@ -2747,7 +2753,7 @@
       "pve": {
         "power": 155,
         "energy": 50,
-        "duration": 3.3,
+        "duration": 3.5,
         "damageWindowStart": 1.88,
         "damageWindowEnd": 3.2
       }
@@ -2858,7 +2864,13 @@
         "buffTarget": "opponent",
         "buffApplyChance": 1
       },
-      "pve": null
+      "pve": {
+        "power": 115,
+        "energy": 33,
+        "duration": 4.5,
+        "damageWindowStart": 3,
+        "damageWindowEnd": 4
+      }
     },
     {
       "id": "dynamax_cannon",
@@ -3146,7 +3158,7 @@
       "pve": {
         "power": 75,
         "energy": 33,
-        "duration": 2.7,
+        "duration": 3,
         "damageWindowStart": 1.8,
         "damageWindowEnd": 2.7
       }
@@ -3980,7 +3992,13 @@
         "buffTarget": "self",
         "buffApplyChance": 1
       },
-      "pve": null
+      "pve": {
+        "power": 130,
+        "energy": 33,
+        "duration": 4,
+        "damageWindowStart": 3,
+        "damageWindowEnd": 4
+      }
     },
     {
       "id": "mirror_coat",
@@ -4244,9 +4262,9 @@
         "energy": 40,
         "buffs": [
           0,
-          1
+          -1
         ],
-        "buffTarget": "both",
+        "buffTarget": "opponent",
         "buffApplyChance": 1
       },
       "pve": {
@@ -4677,7 +4695,13 @@
         "power": 75,
         "energy": 40
       },
-      "pve": null
+      "pve": {
+        "power": 150,
+        "energy": 100,
+        "duration": 2,
+        "damageWindowStart": 0.9,
+        "damageWindowEnd": 1.6
+      }
     },
     {
       "id": "rage_fist",
@@ -5505,7 +5529,7 @@
         "power": 120,
         "energy": 100,
         "duration": 2,
-        "damageWindowStart": 1.6,
+        "damageWindowStart": 1.4,
         "damageWindowEnd": 2
       }
     },
@@ -5522,7 +5546,7 @@
         "power": 120,
         "energy": 100,
         "duration": 2,
-        "damageWindowStart": 1.6,
+        "damageWindowStart": 1.4,
         "damageWindowEnd": 2
       }
     },
@@ -5539,7 +5563,7 @@
         "power": 120,
         "energy": 100,
         "duration": 2,
-        "damageWindowStart": 1.6,
+        "damageWindowStart": 1.5,
         "damageWindowEnd": 2
       }
     },
@@ -5612,7 +5636,7 @@
       "pve": {
         "power": 220,
         "energy": 100,
-        "duration": 3.3,
+        "duration": 3.5,
         "damageWindowStart": 1.88,
         "damageWindowEnd": 3.2
       }

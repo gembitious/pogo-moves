@@ -87,8 +87,18 @@ npm run check-data             # 스키마 검증
 한계:
 
 - 소스에 한국어 이름이 없어 **신규 무브는 자동 추가하지 않고 리포트만** 합니다(수동 추가 + 번역).
-- 자기와 상대를 **동시에** 버프하는 무브(예: `obstruct`)는 단일 타깃 스키마로 표현할 수 없어 리포트로 표시 → 수동 확인.
+- 자기·상대를 **동시에** 버프하는 무브(예: `obstruct`)는 단일 타깃 스키마로 표현 불가 → 파이프라인이 기존 버프 값을 **보존**(덮어쓰지 않음). 표시는 한쪽만(현재 상대 방어 −1).
 - `--source <path>`로 다운로드 없이 로컬 GAME_MASTER 파일을 쓸 수 있습니다.
+
+### 자동화
+
+`.github/workflows/update-data.yml`이 매주(및 수동 실행 시) `build-data`를 돌려,
+`moves.json`이 바뀌면 `data/auto-refresh` 브랜치로 **PR을 엽니다**. 그 PR을 머지하면
+기존 Vercel 연동이 **프로덕션 배포를 자동 트리거**합니다.
+
+> 저장소 Settings → Actions → General → Workflow permissions에서 **"Read and write
+> permissions"** 와 **"Allow GitHub Actions to create and approve pull requests"** 를
+> 켜야 PR 생성이 됩니다.
 
 ## 포켓몬 스프라이트 (향후 기능용)
 

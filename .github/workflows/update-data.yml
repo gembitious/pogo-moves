@@ -1,0 +1,51 @@
+name: Update move data
+
+# Refresh src/data/moves.json from the latest GAME_MASTER on a schedule and open
+# a PR when stats drift. Merging that PR triggers the normal Vercel deploy.
+#
+# Requires (repo Settings -> Actions -> General -> Workflow permissions):
+#   - "Read and write permissions"
+#   - "Allow GitHub Actions to create and approve pull requests"
+on:
+  schedule:
+    - cron: '0 6 * * 1' # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build-data -- --write
+      - run: npm run check-data
+      - name: Open or update a PR when moves.json changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- src/data/moves.json; then
+            echo "No data changes."
+            exit 0
+          fi
+          BRANCH=data/auto-refresh
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C "$BRANCH"
+          git add src/data/moves.json
+          git commit -m "데이터 자동 업데이트 (GAME_MASTER)"
+          git push -f -u origin "$BRANCH"
+          if gh pr view "$BRANCH" --json state --jq .state 2>/dev/null | grep -q OPEN; then
+            echo "Existing PR updated."
+          else
+            gh pr create --base main --head "$BRANCH" \
+              --title "데이터 자동 업데이트 (GAME_MASTER)" \
+              --body "예약 실행으로 \`moves.json\`이 갱신되었습니다. 머지 전 변경 내용(신규 무브·obstruct류 동시버프·미매핑)을 확인하세요."
+          fi

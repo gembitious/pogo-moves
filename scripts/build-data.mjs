@@ -97,6 +97,16 @@ function buffsFrom(combat) {
   return { buffs: [atk, def], buffTarget: self ? 'self' : 'opponent', buffApplyChance: b.buffActivationChance }
 }
 
+// True when a move buffs BOTH sides (e.g. obstruct: self +Def and opponent -Def),
+// which the single-target {buffs, buffTarget} schema can't represent.
+function hasDualBuff(combat) {
+  const b = combat.buffs
+  if (!b) return false
+  const self = (b.attackerAttackStatStageChange ?? 0) !== 0 || (b.attackerDefenseStatStageChange ?? 0) !== 0
+  const opp = (b.targetAttackStatStageChange ?? 0) !== 0 || (b.targetDefenseStatStageChange ?? 0) !== 0
+  return self && opp
+}
+
 function buildPvp(combat, category) {
   if (!combat) return null
   if (category === 'fast') {
@@ -162,6 +172,13 @@ async function main() {
         ...(move.unreleased ? { unreleased: true } : {}),
         pvp: buildPvp(c, category) ?? move.pvp,
         pve: buildPve(p, category) ?? move.pve,
+      }
+      // Keep curated buff fields for dual-side moves the schema can't express.
+      if (c && fresh.pvp && hasDualBuff(c) && move.pvp) {
+        for (const k of ['buffs', 'buffTarget', 'buffApplyChance']) {
+          if (k in move.pvp) fresh.pvp[k] = move.pvp[k]
+          else delete fresh.pvp[k]
+        }
       }
       diffBlock('pvp', move.pvp, fresh.pvp, changes, move.id)
       diffBlock('pve', move.pve, fresh.pve, changes, move.id)
