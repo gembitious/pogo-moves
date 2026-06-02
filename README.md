@@ -44,7 +44,9 @@ src/
     Nav.astro
   layouts/Base.astro
   pages/[lang]/       # /ko, /en · index(=charged), fast, type
-scripts/check-data.mjs
+scripts/check-data.mjs            # 데이터 무결성 검사 (CI)
+scripts/build-data.mjs            # 시즌 데이터 파이프라인 (GAME_MASTER → moves.json)
+scripts/build-pokemon-images.mjs # 포켓몬 스프라이트 정리 (향후 기능용 유틸)
 ```
 
 ## 데이터 모델
@@ -67,7 +69,47 @@ scripts/check-data.mjs
 공격 관계 정의(약점/저항/무효)에서 계산됩니다. 포켓몬 GO에는 무효가 없어
 본가의 ×0이 2중 저항(×0.39)이 됩니다.
 
-## 시즌 데이터 업데이트
+## 데이터 파이프라인 (시즌 업데이트)
 
-`src/data/moves.json`의 원시 스탯을 수정하고 `npm run check-data`로 검증합니다.
-파생값은 자동 계산되므로 손댈 필요가 없습니다.
+기술 스탯은 손으로 고치지 않고 원천 GAME_MASTER(PokeMiners)에서 갱신합니다.
+한국어 이름과 로스터는 보존되고, 스탯만 새로고침됩니다.
+
+```bash
+npm run build-data             # 비교만 — 변경/신규/미매핑 리포트 출력
+npm run build-data -- --write  # moves.json 갱신
+npm run check-data             # 스키마 검증
+```
+
+- 스탯(power·energy·turn·duration·damageWindow·buffs)을 GAME_MASTER에서 재생성
+- `name`(한국어)·`nameEn`·로스터는 기존 `moves.json`에서 보존
+- 변경된 스탯 / 소스에 새로 생긴 무브 / 매핑 안 된 무브를 리포트
+
+한계:
+
+- 소스에 한국어 이름이 없어 **신규 무브는 자동 추가하지 않고 리포트만** 합니다(수동 추가 + 번역).
+- 자기·상대를 **동시에** 버프하는 무브(예: `obstruct`)는 단일 타깃 스키마로 표현 불가 → 파이프라인이 기존 버프 값을 **보존**(덮어쓰지 않음). 표시는 한쪽만(현재 상대 방어 −1).
+- `--source <path>`로 다운로드 없이 로컬 GAME_MASTER 파일을 쓸 수 있습니다.
+
+### 자동화
+
+`.github/workflows/update-data.yml`이 매주(및 수동 실행 시) `build-data`를 돌려,
+`moves.json`이 바뀌면 `data/auto-refresh` 브랜치로 **PR을 엽니다**. 그 PR을 머지하면
+기존 Vercel 연동이 **프로덕션 배포를 자동 트리거**합니다.
+
+> 저장소 Settings → Actions → General → Workflow permissions에서 **"Read and write
+> permissions"** 와 **"Allow GitHub Actions to create and approve pull requests"** 를
+> 켜야 PR 생성이 됩니다.
+
+## 포켓몬 스프라이트 (향후 기능용)
+
+`public/images/pokemon`의 스프라이트와 `src/data/pokemon.json`은 현재 화면엔 쓰이지
+않지만, 향후 "기술 ↔ 포켓몬" 기능을 위해 보존합니다. 스프라이트는 PokeMiners의
+[pogo_assets](https://github.com/PokeMiners/pogo_assets)에서 복사·리네임합니다
+(로컬 클론 필요, CI 비포함).
+
+```bash
+npm run build-images -- <pogo_assets의 Addressable Assets 폴더 경로>
+```
+
+- `pm{dex}.icon.png` → `{dex}.png`, 폼은 `{dex}_{form}.png`
+- mega·연도 이벤트 코스튬 suffix는 제외, 폼 보유 dex만 폼 스프라이트 생성

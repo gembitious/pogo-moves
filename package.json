@@ -8,7 +8,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "check-data": "node scripts/check-data.mjs"
+    "check-data": "node scripts/check-data.mjs",
+    "build-data": "node scripts/build-data.mjs",
+    "build-images": "node scripts/build-pokemon-images.mjs"
   },
   "dependencies": {
     "@astrojs/preact": "^5.1.4",
