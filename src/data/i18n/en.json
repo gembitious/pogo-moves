@@ -6,7 +6,8 @@
   "nav": {
     "fast": "Fast Move",
     "charged": "Charged Move",
-    "type": "Type Chart"
+    "type": "Type Chart",
+    "pokemon": "Pokémon"
   },
   "common": {
     "allType": "All Types",
@@ -48,6 +49,12 @@
   "search": {
     "placeholder": "Search Pokémon…",
     "clear": "Clear"
+  },
+  "pokemon": {
+    "atk": "ATK",
+    "def": "DEF",
+    "hp": "HP",
+    "empty": "Search a Pokémon to see its moves"
   },
   "panel": {
     "usedBy": "Pokémon with this move",

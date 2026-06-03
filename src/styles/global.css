@@ -698,3 +698,159 @@ table.matrix thead th:first-child {
 .chip.dim.active {
   opacity: 1;
 }
+
+/* ---- pokemon page ------------------------------------------------------ */
+.dex {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 0;
+}
+.dex-search {
+  align-self: stretch;
+}
+.dex-search .poke-input {
+  width: 100%;
+  max-width: 360px;
+}
+
+.dex-empty {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 48px 0;
+  color: var(--gray-1);
+  font-size: 14px;
+  opacity: 0.75;
+}
+
+.dex-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.dex-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.dex-head .poke-img,
+.dex-head .poke-ph {
+  border-radius: 16px;
+  background: #ffffff12;
+}
+.dex-id {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+.dex-name {
+  font-size: 22px;
+  font-weight: 700;
+}
+.dex-num {
+  color: var(--tertiary);
+  font-size: 15px;
+  font-weight: 500;
+}
+.dex-types {
+  display: flex;
+  gap: 6px;
+}
+.dex-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: 12px;
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+}
+.dex-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-width: 300px;
+}
+.dex-stat {
+  display: grid;
+  grid-template-columns: 34px 1fr 32px;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+.dex-stat-k {
+  color: var(--gray-1);
+}
+.dex-stat-v {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.dex-bar {
+  height: 7px;
+  border-radius: 4px;
+  background: #ffffff14;
+  overflow: hidden;
+}
+.dex-bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--secondary), var(--tertiary));
+}
+
+.dex-moves {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 20px;
+}
+.dex-moves h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: var(--tertiary);
+}
+.mv-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border-left: 3px solid;
+  background: var(--surface);
+}
+.mv-type {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+}
+.mv-name {
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mv-stats {
+  margin-left: auto;
+  padding-left: 8px;
+  color: var(--gray-1);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .dex-moves {
+    grid-template-columns: 1fr;
+  }
+}

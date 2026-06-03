@@ -18,6 +18,7 @@ import {
 import { getChartConfig } from '@/lib/chartConfig'
 import { fmt, type Dictionary, type Locale } from '@/lib/i18n'
 import { loadPokemonIndex, type PokemonEntry, type PokemonIndex } from '@/lib/pokemonIndex'
+import { PokeSprite } from './PokeSprite'
 
 const base = import.meta.env.BASE_URL
 const PAD = { left: 56, right: 18, top: 14, bottom: 44 } // px around the plot area
@@ -105,29 +106,6 @@ function buildPoints(category: MoveCategory, mode: MoveMode, moves: Props['moves
         lines: [`${dict.move.damage}: ${p.power}`, `${dict.move.energy}: ${p.energy}    DPE: ${dpe}`, `DPS: ${dps}`],
       }
     })
-}
-
-function PokeSprite({ mon, size = 56 }: { mon: PokemonEntry; size?: number }) {
-  const [err, setErr] = useState(false)
-  if (!mon.sprite || err) {
-    return (
-      <span class="poke-ph" style={{ width: size, height: size, fontSize: Math.max(9, size * 0.22), background: TYPE_COLORS[mon.types[0]] }}>
-        {mon.dex}
-      </span>
-    )
-  }
-  return (
-    <img
-      class="poke-img"
-      style={{ width: size, height: size }}
-      src={`${base}${mon.sprite}`}
-      alt=""
-      width={size}
-      height={size}
-      loading="lazy"
-      onError={() => setErr(true)}
-    />
-  )
 }
 
 export default function MoveExplorer({ category, locale, dict, moves }: Props) {
