@@ -84,9 +84,10 @@ npm run check-data             # 스키마 검증
 - `name`(한국어)·`nameEn`·로스터는 기존 `moves.json`에서 보존
 - 변경된 스탯 / 소스에 새로 생긴 무브 / 매핑 안 된 무브를 리포트
 
+- 신규 무브는 `scripts/data/move-names-ko.csv`([veekun](https://github.com/veekun/pokedex))에서 한글명을 찾으면 **자동 추가**, 못 찾으면(GO 전용 코스메틱 변형 등) 스킵·리포트. 참조 데이터는 `scripts/data/README.md`.
+
 한계:
 
-- 소스에 한국어 이름이 없어 **신규 무브는 자동 추가하지 않고 리포트만** 합니다(수동 추가 + 번역).
 - 자기·상대를 **동시에** 버프하는 무브(예: `obstruct`)는 단일 타깃 스키마로 표현 불가 → 파이프라인이 기존 버프 값을 **보존**(덮어쓰지 않음). 표시는 한쪽만(현재 상대 방어 −1).
 - `--source <path>`로 다운로드 없이 로컬 GAME_MASTER 파일을 쓸 수 있습니다.
 
