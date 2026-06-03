@@ -16,6 +16,7 @@ const SOURCE_URL = 'https://raw.githubusercontent.com/PokeMiners/game_masters/ma
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const movesPath = resolve(__dirname, '../src/data/moves.json')
 const namesPath = resolve(__dirname, 'data/move-names-ko.csv')
+const pvpokePath = resolve(__dirname, 'data/pvpoke-moves.json')
 
 const args = process.argv.slice(2)
 const write = args.includes('--write')
@@ -40,6 +41,13 @@ const titleCase = (id) => id.split('_').map((w) => w.charAt(0).toUpperCase() + w
 // look up Korean, falling back to the base name without a " (Variant)" suffix
 const resolveKo = (ko, en) => ko.get(en) ?? ko.get(en.replace(/\s*\(.*\)$/, '')) ?? null
 const gmType = (m) => String(m?.type ?? m?.pokemonType ?? '').replace('POKEMON_TYPE_', '').toLowerCase()
+
+// pvpoke move archetypes (role classification: Nuke, Spam/Bait, Debuff, …) keyed by lowercased moveId.
+function loadArchetypes() {
+  const map = new Map()
+  for (const m of JSON.parse(readFileSync(pvpokePath, 'utf8'))) if (m.archetype) map.set(m.moveId.toLowerCase(), m.archetype)
+  return map
+}
 
 async function loadGameMaster() {
   if (sourceArg && !sourceArg.startsWith('--')) {
@@ -168,6 +176,7 @@ async function main() {
   const gm = await loadGameMaster()
   const { pve, pvp } = indexMoves(gm)
   const current = JSON.parse(readFileSync(movesPath, 'utf8'))
+  const archetypes = loadArchetypes()
 
   const changes = []
   const unmapped = { fast: [], charged: [] }
@@ -188,6 +197,7 @@ async function main() {
         name: driveName(move) ?? move.name, // GAME_MASTER has no Korean; drive variants get a KO label
         nameEn: move.nameEn,
         type: move.type,
+        ...(archetypes.get(move.id) ? { archetype: archetypes.get(move.id) } : {}),
         ...(move.unreleased ? { unreleased: true } : {}),
         pvp: buildPvp(c, category) ?? move.pvp,
         pve: buildPve(p, category) ?? move.pve,
@@ -232,7 +242,8 @@ async function main() {
       skippedNew.push(`${id} (no KO name)`)
       continue
     }
-    const entry = { id, name, nameEn, type: gmType(c ?? p), pvp: buildPvp(c, category), pve: buildPve(p, category) }
+    const arch = archetypes.get(id)
+    const entry = { id, name, nameEn, type: gmType(c ?? p), ...(arch ? { archetype: arch } : {}), pvp: buildPvp(c, category), pve: buildPve(p, category) }
     const ok =
       category === 'charged'
         ? entry.pvp?.energy > 0 || entry.pve?.energy > 0

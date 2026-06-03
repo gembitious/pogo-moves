@@ -83,6 +83,7 @@ npm run check-data             # 스키마 검증
 - 스탯(power·energy·turn·duration·damageWindow·buffs)을 GAME_MASTER에서 재생성
 - `name`(한국어)·`nameEn`·로스터는 기존 `moves.json`에서 보존
 - 변경된 스탯 / 소스에 새로 생긴 무브 / 매핑 안 된 무브를 리포트
+- 무브 역할(`archetype`)은 pvpoke(`scripts/data/pvpoke-moves.json`)에서 부여 → 앱의 역할 필터·툴팁
 
 - 신규 무브는 `scripts/data/move-names-ko.csv`([veekun](https://github.com/veekun/pokedex))에서 한글명을 찾으면 **자동 추가**, 못 찾으면(GO 전용 코스메틱 변형 등) 스킵·리포트. 참조 데이터는 `scripts/data/README.md`.
 
