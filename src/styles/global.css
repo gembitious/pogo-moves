@@ -25,9 +25,11 @@ body {
 }
 
 body {
-  min-height: 100vh;
+  height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   background: var(--bg);
   color: var(--white);
   font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', 'Noto Sans SC', system-ui, sans-serif;
@@ -35,13 +37,13 @@ body {
 }
 
 *::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   background-color: transparent;
 }
 
 *::-webkit-scrollbar-thumb {
-  border-radius: 2px;
+  border-radius: 3px;
   background-color: #8ecae640;
 }
 
@@ -67,17 +69,18 @@ a {
 
 /* ---- navigation -------------------------------------------------------- */
 .nav {
+  flex: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 10px 16px;
+  padding: 8px 16px;
   border-bottom: 1px solid #ffffff14;
 }
 
 .brand img {
   display: block;
-  height: 40px;
+  height: 34px;
   width: auto;
   object-fit: contain;
 }
@@ -85,8 +88,9 @@ a {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 8px;
-  overflow-x: auto;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px 8px;
 }
 
 .nav-link {
@@ -101,7 +105,7 @@ a {
 }
 
 .nav-link:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.12);
 }
 
 .nav-link.active {
@@ -110,39 +114,49 @@ a {
 
 .lang {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   padding-left: 4px;
 }
 
 .lang img {
   display: block;
   border-radius: 2px;
-  opacity: 0.7;
+  opacity: 0.65;
   transition: opacity 0.15s ease;
 }
 
-.lang a:hover img {
+.lang a:hover img,
+.lang a:focus img {
   opacity: 1;
 }
 
 /* ---- page shell -------------------------------------------------------- */
 .main {
   flex: 1;
+  min-height: 0;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 16px;
+  padding: 12px 16px 14px;
   display: flex;
   flex-direction: column;
-  min-height: 0;
+  overflow: auto;
 }
 
 /* ---- move explorer ----------------------------------------------------- */
 .explorer {
+  flex: 1;
+  min-height: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
+}
+
+.toolbar {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .filter-bar {
@@ -162,6 +176,7 @@ a {
   color: var(--white);
   font-size: 12px;
   font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
   cursor: pointer;
   transition:
     opacity 0.15s ease,
@@ -174,6 +189,8 @@ a {
 
 .type-btn img {
   display: block;
+  width: 18px;
+  height: 18px;
 }
 
 .type-btn.all {
@@ -185,19 +202,38 @@ a {
   border: 1px solid var(--tertiary);
 }
 
+/* ---- iso-curve legend (its own row, never over the chips) -------------- */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  font-size: 12px;
+  color: var(--gray-1);
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-swatch {
+  width: 18px;
+  height: 3px;
+  border-radius: 2px;
+}
+
 /* ---- chart ------------------------------------------------------------- */
 .chart {
   position: relative;
+  flex: 1;
+  min-height: 0;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  margin: 0 auto;
 }
 
 .chart-svg {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
 }
 
 .grid {
@@ -207,70 +243,44 @@ a {
 
 .tick {
   fill: #ffffffaa;
-  font-size: 22px;
+  font-size: 11px;
 }
 
 .axis-title {
   fill: var(--tertiary);
-  font-size: 26px;
-  font-weight: 600;
-}
-
-.legend {
-  position: absolute;
-  top: 8px;
-  left: 60px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 8px 10px;
-  border-radius: 6px;
-  background: #00000040;
   font-size: 12px;
-  color: var(--gray-1);
-  pointer-events: none;
-}
-
-.legend-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.legend-swatch {
-  width: 16px;
-  height: 2px;
-  border-radius: 1px;
+  font-weight: 600;
 }
 
 /* ---- move chips -------------------------------------------------------- */
 .chip {
   position: absolute;
   transform: translate(-50%, -50%);
-  max-width: 92px;
+  max-width: 96px;
   padding: 1px 6px;
   border: none;
   border-radius: 4px;
   color: var(--white);
-  font-size: clamp(9px, 1.3vw, 12px);
-  line-height: 1.4;
+  font-size: 11px;
+  line-height: 1.35;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
   cursor: pointer;
   transition:
     top 0.12s ease,
-    transform 0.15s ease,
-    box-shadow 0.15s ease;
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
 }
 
 .chip .static-text {
   display: block;
-  max-width: 80px;
+  max-width: 84px;
 }
 
 .chip:hover,
 .chip.active {
-  transform: translate(-50%, -50%) scale(1.12);
+  transform: translate(-50%, -50%) scale(1.14);
   box-shadow: 0 0 0 2px #ffffffcc;
-  z-index: 20;
+  z-index: 30;
 }
 
 .tooltip {
@@ -282,8 +292,8 @@ a {
   flex-direction: column;
   gap: 2px;
   padding: 6px 8px;
-  border-radius: 4px;
-  background: #0a2c3aef;
+  border-radius: 5px;
+  background: #0a2c3af2;
   border: 1px solid var(--secondary);
   color: var(--white);
   font-size: 12px;
@@ -291,7 +301,7 @@ a {
   white-space: nowrap;
   text-align: left;
   pointer-events: none;
-  z-index: 30;
+  z-index: 40;
 }
 
 .tooltip strong {
@@ -301,22 +311,23 @@ a {
 
 /* ---- type chart -------------------------------------------------------- */
 .type-page {
+  flex: none;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  overflow: auto;
+  gap: 6px;
+  align-items: flex-start;
 }
 
 .type-axis-top {
-  text-align: center;
   color: var(--tertiary);
   font-weight: 600;
   font-size: 13px;
+  padding-left: 150px;
 }
 
 .type-grid {
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 
 .type-axis-left {
@@ -325,40 +336,57 @@ a {
   color: var(--tertiary);
   font-weight: 600;
   font-size: 13px;
-  padding: 60px 4px 0;
+  padding-top: 54px;
 }
 
 table.matrix {
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 1px;
 }
 
 table.matrix th,
 table.matrix td {
-  padding: 1px;
   text-align: center;
 }
 
-table.matrix .corner {
-  width: 132px;
+table.matrix thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--bg);
+}
+
+table.matrix tbody th {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--bg);
+}
+
+table.matrix thead th:first-child {
+  z-index: 3;
+  width: 124px;
 }
 
 .cell-icon {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   display: block;
+  margin: 0 auto;
 }
 
 .row-label {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  width: 124px;
-  height: 28px;
+  width: 120px;
+  height: 30px;
   padding: 0 8px;
-  border-radius: 14px;
+  border-radius: 15px;
   color: var(--white);
   font-size: 12px;
   font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
 }
 
 .row-label img {
@@ -366,12 +394,46 @@ table.matrix .corner {
   height: 22px;
 }
 
-@media (min-width: 768px) {
+/* ---- responsive -------------------------------------------------------- */
+@media (max-width: 640px) {
+  .nav {
+    padding: 6px 10px;
+    gap: 8px;
+  }
   .brand img {
-    height: 56px;
+    height: 26px;
+  }
+  .nav-link {
+    padding: 5px 9px;
+    font-size: 12px;
+  }
+  .lang img {
+    width: 22px;
+    height: 15px;
+  }
+  /* icon-only type buttons to keep the filter bar short */
+  .type-btn {
+    padding: 0 7px;
+  }
+  .type-btn-label {
+    display: none;
+  }
+  .type-btn img {
+    width: 20px;
+    height: 20px;
   }
   .cell-icon {
-    width: 34px;
-    height: 34px;
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .brand img {
+    height: 44px;
+  }
+  .nav-link {
+    font-size: 15px;
+    padding: 7px 14px;
   }
 }
