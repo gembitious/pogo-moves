@@ -10,7 +10,6 @@
   },
   "common": {
     "allType": "All Types",
-    "allRoles": "All Roles",
     "attacker": "Attacker",
     "defender": "Defender"
   },
@@ -18,7 +17,6 @@
     "damage": "Power",
     "energy": "Energy",
     "turn": "Turn",
-    "role": "Role",
     "buffChance": "{chance}% chance to",
     "self": "self",
     "opponent": "opponent",
@@ -47,23 +45,11 @@
     "steel": "Steel",
     "fairy": "Fairy"
   },
-  "archetype": {
-    "General": "General",
-    "Spam/Bait": "Spam/Bait",
-    "Nuke": "Nuke",
-    "Low Quality": "Low Quality",
-    "Debuff": "Debuff",
-    "Debuff Spam": "Debuff Spam",
-    "Debuff Nuke": "Debuff Nuke",
-    "Boost": "Boost",
-    "Boost Spam": "Boost Spam",
-    "Boost Nuke": "Boost Nuke",
-    "Self-Debuff": "Self-Debuff",
-    "Self-Debuff Spam": "Self-Debuff Spam",
-    "Self-Debuff Nuke": "Self-Debuff Nuke",
-    "High Energy": "High Energy",
-    "Fast Charge": "Fast Charge",
-    "Heavy Damage": "Heavy Damage",
-    "Multipurpose": "Multipurpose"
+  "panel": {
+    "usedBy": "Pokémon with this move",
+    "count": "{n}",
+    "none": "No Pokémon data",
+    "loading": "Loading…",
+    "close": "Close"
   }
 }

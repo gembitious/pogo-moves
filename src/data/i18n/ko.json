@@ -10,7 +10,6 @@
   },
   "common": {
     "allType": "타입 전체",
-    "allRoles": "역할 전체",
     "attacker": "공격하는 타입",
     "defender": "방어하는 타입"
   },
@@ -18,7 +17,6 @@
     "damage": "위력",
     "energy": "에너지",
     "turn": "턴",
-    "role": "역할",
     "buffChance": "{chance}% 확률로",
     "self": "자신",
     "opponent": "상대",
@@ -47,23 +45,11 @@
     "steel": "강철",
     "fairy": "페어리"
   },
-  "archetype": {
-    "General": "일반",
-    "Spam/Bait": "스팸/베이트",
-    "Nuke": "누크",
-    "Low Quality": "저품질",
-    "Debuff": "디버프",
-    "Debuff Spam": "디버프 스팸",
-    "Debuff Nuke": "디버프 누크",
-    "Boost": "부스트",
-    "Boost Spam": "부스트 스팸",
-    "Boost Nuke": "부스트 누크",
-    "Self-Debuff": "자기디버프",
-    "Self-Debuff Spam": "자기디버프 스팸",
-    "Self-Debuff Nuke": "자기디버프 누크",
-    "High Energy": "고에너지",
-    "Fast Charge": "빠른 충전",
-    "Heavy Damage": "고데미지",
-    "Multipurpose": "다목적"
+  "panel": {
+    "usedBy": "이 기술을 쓰는 포켓몬",
+    "count": "{n}종",
+    "none": "사용 포켓몬 데이터 없음",
+    "loading": "불러오는 중…",
+    "close": "닫기"
   }
 }

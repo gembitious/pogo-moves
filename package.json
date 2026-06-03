@@ -11,6 +11,7 @@
     "check-data": "node scripts/check-data.mjs",
     "build-data": "node scripts/build-data.mjs",
     "build-images": "node scripts/build-pokemon-images.mjs",
+    "fetch-images": "node scripts/fetch-pokemon-images.mjs",
     "build-pokemon-index": "node scripts/build-pokemon-index.mjs"
   },
   "dependencies": {

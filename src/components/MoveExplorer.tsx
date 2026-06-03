@@ -17,6 +17,7 @@ import {
 } from '@/lib/formulas'
 import { getChartConfig } from '@/lib/chartConfig'
 import { fmt, type Dictionary, type Locale } from '@/lib/i18n'
+import { loadPokemonIndex, type PokemonEntry, type PokemonIndex } from '@/lib/pokemonIndex'
 
 const base = import.meta.env.BASE_URL
 const PAD = { left: 56, right: 18, top: 14, bottom: 44 } // px around the plot area
@@ -26,7 +27,6 @@ interface Point {
   id: string
   label: string
   type: PokemonType
-  archetype?: string
   x: number
   y: number
   lines: string[]
@@ -51,9 +51,6 @@ function buffLines(pvp: ChargedMove['pvp'], dict: Dictionary): string[] {
   return [`${chance} ${target} ${parts.join(', ')}`]
 }
 
-const roleLine = (m: { archetype?: string }, dict: Dictionary): string[] =>
-  m.archetype ? [`${dict.move.role}: ${(dict.archetype as Record<string, string>)[m.archetype] ?? m.archetype}`] : []
-
 function buildPoints(category: MoveCategory, mode: MoveMode, moves: Props['moves'], dict: Dictionary, locale: Locale): Point[] {
   const label = (m: { name: string; nameEn: string }) => (locale === 'ko' ? m.name : m.nameEn)
   if (category === 'fast') {
@@ -67,11 +64,9 @@ function buildPoints(category: MoveCategory, mode: MoveMode, moves: Props['moves
           id: m.id,
           label: label(m),
           type: m.type,
-          archetype: m.archetype,
           x: dpt,
           y: ept,
           lines: [
-            ...roleLine(m, dict),
             `${dict.move.damage}: ${p.power}`,
             `${dict.move.turn}: ${p.turn}    DPT: ${dpt}`,
             `${dict.move.energy}: ${p.energyGain}    EPT: ${ept}`,
@@ -89,10 +84,9 @@ function buildPoints(category: MoveCategory, mode: MoveMode, moves: Props['moves
           id: m.id,
           label: label(m),
           type: m.type,
-          archetype: m.archetype,
           x: p.energy,
           y: dpe,
-          lines: [...roleLine(m, dict), `${dict.move.damage}: ${p.power}`, `${dict.move.energy}: ${p.energy}    DPE: ${dpe}`, ...buffLines(p, dict)],
+          lines: [`${dict.move.damage}: ${p.power}`, `${dict.move.energy}: ${p.energy}    DPE: ${dpe}`, ...buffLines(p, dict)],
         }
       })
   }
@@ -106,19 +100,41 @@ function buildPoints(category: MoveCategory, mode: MoveMode, moves: Props['moves
         id: m.id,
         label: label(m),
         type: m.type,
-        archetype: m.archetype,
         x: dps,
         y: dpe,
-        lines: [...roleLine(m, dict), `${dict.move.damage}: ${p.power}`, `${dict.move.energy}: ${p.energy}    DPE: ${dpe}`, `DPS: ${dps}`],
+        lines: [`${dict.move.damage}: ${p.power}`, `${dict.move.energy}: ${p.energy}    DPE: ${dpe}`, `DPS: ${dps}`],
       }
     })
+}
+
+function PokeSprite({ mon }: { mon: PokemonEntry }) {
+  const [err, setErr] = useState(false)
+  if (!mon.sprite || err) {
+    return (
+      <span class="poke-ph" style={{ background: TYPE_COLORS[mon.types[0]] }}>
+        {mon.dex}
+      </span>
+    )
+  }
+  return (
+    <img
+      class="poke-img"
+      src={`${base}${mon.sprite}`}
+      alt=""
+      width={56}
+      height={56}
+      loading="lazy"
+      onError={() => setErr(true)}
+    />
+  )
 }
 
 export default function MoveExplorer({ category, locale, dict, moves }: Props) {
   const [mode, setMode] = useState<MoveMode>('pvp')
   const [selected, setSelected] = useState<Set<PokemonType>>(new Set())
-  const [role, setRole] = useState<string>('all')
   const [hover, setHover] = useState<string | null>(null)
+  const [picked, setPicked] = useState<string | null>(null)
+  const [pdata, setPdata] = useState<PokemonIndex | null>(null)
   const wrapRef = useRef<HTMLDivElement>(null)
   const [size, setSize] = useState({ w: 0, h: 0 })
 
@@ -142,16 +158,9 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
   const sy = (y: number) => PAD.top + (1 - (y - cfg.yMin) / (cfg.yMax - cfg.yMin)) * plotH
 
   const allPoints = useMemo(() => buildPoints(category, mode, moves, dict, locale), [category, mode, moves, dict, locale])
-  const roleOptions = useMemo(
-    () => [...new Set(allPoints.map((p) => p.archetype).filter(Boolean))].sort() as string[],
-    [allPoints],
-  )
   const points = useMemo(
-    () =>
-      allPoints.filter(
-        (p) => (selected.size === 0 || selected.has(p.type)) && (role === 'all' || p.archetype === role),
-      ),
-    [allPoints, selected, role],
+    () => allPoints.filter((p) => selected.size === 0 || selected.has(p.type)),
+    [allPoints, selected],
   )
 
   // Group points sharing identical coordinates so a hovered stack can fan open.
@@ -178,6 +187,29 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
   const leave = (id: string) => {
     leaveTimer.current = setTimeout(() => setHover((cur) => (cur === id ? null : cur)), 90)
   }
+
+  // Lazy-load the pokemon index the first time a move is opened; Escape closes it.
+  useEffect(() => {
+    if (picked && !pdata) loadPokemonIndex(base).then(setPdata).catch(() => {})
+  }, [picked, pdata])
+  useEffect(() => {
+    if (!picked) return
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setPicked(null)
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [picked])
+
+  const pickedPoint = useMemo(
+    () => (picked ? allPoints.find((p) => p.id === picked) ?? null : null),
+    [picked, allPoints],
+  )
+  const pickedMons = useMemo(() => {
+    if (!picked || !pdata) return null
+    return (pdata.reverse[picked] ?? [])
+      .map((id) => pdata.byId.get(id))
+      .filter((m): m is PokemonEntry => Boolean(m))
+      .sort((a, b) => a.dex - b.dex)
+  }, [picked, pdata])
 
   const curves = useMemo(() => {
     if (plotW <= 0) return []
@@ -212,27 +244,10 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
     <div class="explorer">
       <div class="toolbar">
         <div class="filter-bar scroll-hidden">
-          {roleOptions.length > 0 && (
-            <select
-              class="role-filter"
-              value={role}
-              onChange={(e) => setRole((e.currentTarget as HTMLSelectElement).value)}
-            >
-              <option value="all">{dict.common.allRoles}</option>
-              {roleOptions.map((a) => (
-                <option key={a} value={a}>
-                  {(dict.archetype as Record<string, string>)[a] ?? a}
-                </option>
-              ))}
-            </select>
-          )}
           {category === 'charged' && (
             <button
               class="type-btn mode"
-              onClick={() => {
-                setMode((m) => (m === 'pve' ? 'pvp' : 'pve'))
-                setRole('all')
-              }}
+              onClick={() => setMode((m) => (m === 'pve' ? 'pvp' : 'pve'))}
             >
               {mode === 'pve' ? 'PvP' : 'PvE'}
             </button>
@@ -322,6 +337,7 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
                   onMouseLeave={() => leave(p.id)}
                   onFocus={() => enter(p.id)}
                   onBlur={() => leave(p.id)}
+                  onClick={() => setPicked(p.id)}
                 >
                   <span class="static-text">{p.label}</span>
                   {isHover && (
@@ -338,6 +354,43 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
           </>
         )}
       </div>
+
+      {pickedPoint && (
+        <div class="panel-backdrop" onClick={() => setPicked(null)}>
+          <div class="move-panel" role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
+            <button class="panel-close" onClick={() => setPicked(null)} aria-label={dict.panel.close}>
+              ×
+            </button>
+            <div class="panel-head">
+              <span class="panel-dot" style={{ background: TYPE_COLORS[pickedPoint.type] }} />
+              <strong>{pickedPoint.label}</strong>
+            </div>
+            <div class="panel-stats">
+              {pickedPoint.lines.map((line, i) => (
+                <span key={i}>{line}</span>
+              ))}
+            </div>
+            <div class="panel-sub">
+              <span>{dict.panel.usedBy}</span>
+              {pickedMons && <span class="panel-count">{fmt(dict.panel.count, { n: pickedMons.length })}</span>}
+            </div>
+            {!pdata ? (
+              <div class="panel-msg">{dict.panel.loading}</div>
+            ) : pickedMons && pickedMons.length === 0 ? (
+              <div class="panel-msg">{dict.panel.none}</div>
+            ) : (
+              <div class="poke-grid scroll-hidden">
+                {pickedMons!.map((m) => (
+                  <div key={m.id} class="poke-card" title={locale === 'ko' ? m.name : m.nameEn}>
+                    <PokeSprite mon={m} />
+                    <span class="poke-name static-text">{locale === 'ko' ? m.name : m.nameEn}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   )
 }
