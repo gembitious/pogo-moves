@@ -15,12 +15,31 @@ import { dirname, resolve } from 'node:path'
 const SOURCE_URL = 'https://raw.githubusercontent.com/PokeMiners/game_masters/master/latest/latest.json'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const movesPath = resolve(__dirname, '../src/data/moves.json')
+const namesPath = resolve(__dirname, 'data/move-names-ko.csv')
 
 const args = process.argv.slice(2)
 const write = args.includes('--write')
 const sourceArg = args[args.indexOf('--source') + 1]
 
 const round3 = (n) => Math.round(n * 1000) / 1000
+
+// English -> Korean move names (see scripts/data/move-names-ko.csv). Lets the
+// pipeline give new moves a curated Korean name instead of only reporting them.
+function loadKoNames() {
+  const map = new Map()
+  const text = readFileSync(namesPath, 'utf8').replace(/^﻿/, '')
+  for (const line of text.split('\n')) {
+    const j = line.indexOf(',')
+    if (j < 0) continue
+    const en = line.slice(0, j).trim()
+    if (en) map.set(en, line.slice(j + 1).trim())
+  }
+  return map
+}
+const titleCase = (id) => id.split('_').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+// look up Korean, falling back to the base name without a " (Variant)" suffix
+const resolveKo = (ko, en) => ko.get(en) ?? ko.get(en.replace(/\s*\(.*\)$/, '')) ?? null
+const gmType = (m) => String(m?.type ?? m?.pokemonType ?? '').replace('POKEMON_TYPE_', '').toLowerCase()
 
 async function loadGameMaster() {
   if (sourceArg && !sourceArg.startsWith('--')) {
@@ -186,14 +205,47 @@ async function main() {
     }
   }
 
-  // moves present in the source but not in our roster (candidates to add by hand)
+  // moves in the source but not in our roster — add the real ones (resolvable
+  // Korean name + chartable stats), report the rest.
   const known = new Set()
   for (const category of ['fast', 'charged'])
     for (const move of current[category]) known.add(gmKeyFor(move, category))
-  const newInSource = []
+
+  const koNames = loadKoNames()
+  const SKIP_NEW = new Set(['struggle', 'rest', 'transform']) // utility moves we don't chart
+  const added = []
+  const skippedNew = []
   for (const key of new Set([...pvp.keys(), ...pve.keys()])) {
-    if (!known.has(key)) newInSource.push(key)
+    if (known.has(key)) continue
+    const c = pvp.get(key)
+    const p = pve.get(key)
+    const isFast = (c && c.durationTurns !== undefined) || (p && (p.energyDelta ?? 0) > 0)
+    const category = isFast ? 'fast' : 'charged'
+    const id = isFast ? key.replace(/_fast$/, '') : key
+    if (SKIP_NEW.has(id)) {
+      skippedNew.push(`${id} (skip-list)`)
+      continue
+    }
+    const nameEn = titleCase(id)
+    const name = resolveKo(koNames, nameEn)
+    if (!name) {
+      skippedNew.push(`${id} (no KO name)`)
+      continue
+    }
+    const entry = { id, name, nameEn, type: gmType(c ?? p), pvp: buildPvp(c, category), pve: buildPve(p, category) }
+    const ok =
+      category === 'charged'
+        ? entry.pvp?.energy > 0 || entry.pve?.energy > 0
+        : entry.pvp?.turn > 0 || entry.pve?.duration > 0
+    if (!ok) {
+      skippedNew.push(`${id} (no chartable stats)`)
+      continue
+    }
+    result[category].push(entry)
+    added.push(`${id} → ${name}`)
   }
+  result.fast.sort((a, b) => a.id.localeCompare(b.id))
+  result.charged.sort((a, b) => a.id.localeCompare(b.id))
 
   // ---- report -----------------------------------------------------------
   console.log(`source moves: ${pvp.size} pvp + ${pve.size} pve`)
@@ -203,8 +255,10 @@ async function main() {
   if (changes.length > 60) console.log(`  ... and ${changes.length - 60} more`)
   console.log(`\nunmapped (kept as-is): ${unmapped.fast.length} fast, ${unmapped.charged.length} charged`)
   if (unmapped.charged.length) console.log('  charged: ' + unmapped.charged.join(', '))
-  console.log(`\nin source but not in roster: ${newInSource.length}`)
-  if (newInSource.length) console.log('  ' + newInSource.sort().slice(0, 40).join(', '))
+  console.log(`\nnew moves added (with KO name): ${added.length}`)
+  for (const a of added) console.log('  ' + a)
+  console.log(`new moves skipped: ${skippedNew.length}`)
+  for (const s of skippedNew) console.log('  ' + s)
 
   if (write) {
     writeFileSync(movesPath, JSON.stringify(result, null, 2) + '\n')

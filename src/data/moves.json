@@ -3050,6 +3050,20 @@
       }
     },
     {
+      "id": "fissure",
+      "name": "땅가르기",
+      "nameEn": "Fissure",
+      "type": "ground",
+      "pvp": null,
+      "pve": {
+        "power": 9001,
+        "energy": 25,
+        "duration": 3,
+        "damageWindowStart": 1.2,
+        "damageWindowEnd": 2.5
+      }
+    },
+    {
       "id": "flame_burst",
       "name": "불꽃튀기기",
       "nameEn": "Flame Burst",
@@ -3272,6 +3286,23 @@
       }
     },
     {
+      "id": "frustration",
+      "name": "화풀이",
+      "nameEn": "Frustration",
+      "type": "normal",
+      "pvp": {
+        "power": 10,
+        "energy": 70
+      },
+      "pve": {
+        "power": 10,
+        "energy": 33,
+        "duration": 2,
+        "damageWindowStart": 1,
+        "damageWindowEnd": 1.8
+      }
+    },
+    {
       "id": "fusion_bolt",
       "name": "크로스썬더",
       "nameEn": "Fusion Bolt",
@@ -3323,6 +3354,23 @@
       }
     },
     {
+      "id": "giga_drain",
+      "name": "기가드레인",
+      "nameEn": "Giga Drain",
+      "type": "grass",
+      "pvp": {
+        "power": 50,
+        "energy": 80
+      },
+      "pve": {
+        "power": 50,
+        "energy": 100,
+        "duration": 4,
+        "damageWindowStart": 1.3,
+        "damageWindowEnd": 2.3
+      }
+    },
+    {
       "id": "giga_impact",
       "name": "기가임팩트",
       "nameEn": "Giga Impact",
@@ -3337,6 +3385,23 @@
         "duration": 4.5,
         "damageWindowStart": 0.8,
         "damageWindowEnd": 2.2
+      }
+    },
+    {
+      "id": "gigaton_hammer",
+      "name": "거대해머",
+      "nameEn": "Gigaton Hammer",
+      "type": "steel",
+      "pvp": {
+        "power": 130,
+        "energy": 60
+      },
+      "pve": {
+        "power": 300,
+        "energy": 100,
+        "duration": 3,
+        "damageWindowStart": 2,
+        "damageWindowEnd": 3.1
       }
     },
     {
@@ -3519,6 +3584,20 @@
         "duration": 2,
         "damageWindowStart": 0.95,
         "damageWindowEnd": 1.8
+      }
+    },
+    {
+      "id": "horn_drill",
+      "name": "뿔드릴",
+      "nameEn": "Horn Drill",
+      "type": "normal",
+      "pvp": null,
+      "pve": {
+        "power": 9000,
+        "energy": 25,
+        "duration": 2,
+        "damageWindowStart": 0.6,
+        "damageWindowEnd": 1.6
       }
     },
     {
@@ -3918,6 +3997,23 @@
         "duration": 3,
         "damageWindowStart": 2.4,
         "damageWindowEnd": 2.8
+      }
+    },
+    {
+      "id": "mega_drain",
+      "name": "메가드레인",
+      "nameEn": "Mega Drain",
+      "type": "grass",
+      "pvp": {
+        "power": 25,
+        "energy": 55
+      },
+      "pve": {
+        "power": 25,
+        "energy": 50,
+        "duration": 2.5,
+        "damageWindowStart": 0.85,
+        "damageWindowEnd": 1.9
       }
     },
     {
