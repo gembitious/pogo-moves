@@ -107,11 +107,11 @@ function buildPoints(category: MoveCategory, mode: MoveMode, moves: Props['moves
     })
 }
 
-function PokeSprite({ mon }: { mon: PokemonEntry }) {
+function PokeSprite({ mon, size = 56 }: { mon: PokemonEntry; size?: number }) {
   const [err, setErr] = useState(false)
   if (!mon.sprite || err) {
     return (
-      <span class="poke-ph" style={{ background: TYPE_COLORS[mon.types[0]] }}>
+      <span class="poke-ph" style={{ width: size, height: size, fontSize: Math.max(9, size * 0.22), background: TYPE_COLORS[mon.types[0]] }}>
         {mon.dex}
       </span>
     )
@@ -119,10 +119,11 @@ function PokeSprite({ mon }: { mon: PokemonEntry }) {
   return (
     <img
       class="poke-img"
+      style={{ width: size, height: size }}
       src={`${base}${mon.sprite}`}
       alt=""
-      width={56}
-      height={56}
+      width={size}
+      height={size}
       loading="lazy"
       onError={() => setErr(true)}
     />
@@ -135,6 +136,10 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
   const [hover, setHover] = useState<string | null>(null)
   const [picked, setPicked] = useState<string | null>(null)
   const [pdata, setPdata] = useState<PokemonIndex | null>(null)
+  const [pokeSel, setPokeSel] = useState<PokemonEntry | null>(null)
+  const [query, setQuery] = useState('')
+  const [searchOpen, setSearchOpen] = useState(false)
+  const searchBlur = useRef<ReturnType<typeof setTimeout>>()
   const wrapRef = useRef<HTMLDivElement>(null)
   const [size, setSize] = useState({ w: 0, h: 0 })
 
@@ -211,6 +216,44 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
       .sort((a, b) => a.dex - b.dex)
   }, [picked, pdata])
 
+  // --- Phase 2: pick a Pokémon → highlight the moves it learns ------------
+  const ensureData = () => {
+    if (!pdata) loadPokemonIndex(base).then(setPdata).catch(() => {})
+  }
+  // restore a saved selection so it carries across the fast/charged pages
+  useEffect(() => {
+    const saved = localStorage.getItem('pogo-poke')
+    if (!saved) return
+    loadPokemonIndex(base)
+      .then((d) => {
+        setPdata(d)
+        const m = d.byId.get(saved)
+        if (m) setPokeSel(m)
+      })
+      .catch(() => {})
+  }, [])
+  const selectPoke = (m: PokemonEntry) => {
+    setPokeSel(m)
+    setQuery('')
+    setSearchOpen(false)
+    localStorage.setItem('pogo-poke', m.id)
+  }
+  const clearPoke = () => {
+    setPokeSel(null)
+    localStorage.removeItem('pogo-poke')
+  }
+  const highlight = useMemo(
+    () => (pokeSel ? new Set(category === 'fast' ? pokeSel.fast : pokeSel.charged) : null),
+    [pokeSel, category],
+  )
+  const results = useMemo(() => {
+    const q = query.trim().toLowerCase()
+    if (!pdata || !q) return []
+    return pdata.list
+      .filter((m) => m.name.toLowerCase().includes(q) || m.nameEn.toLowerCase().includes(q))
+      .slice(0, 8)
+  }, [pdata, query])
+
   const curves = useMemo(() => {
     if (plotW <= 0) return []
     return cfg.curves.map((c) => {
@@ -243,6 +286,47 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
   return (
     <div class="explorer">
       <div class="toolbar">
+        <div class="poke-search">
+          {pokeSel ? (
+            <div class="poke-sel">
+              <PokeSprite mon={pokeSel} size={24} />
+              <span class="poke-sel-name static-text">{locale === 'ko' ? pokeSel.name : pokeSel.nameEn}</span>
+              <button class="poke-sel-x" onClick={clearPoke} aria-label={dict.search.clear}>
+                ×
+              </button>
+            </div>
+          ) : (
+            <input
+              class="poke-input"
+              type="text"
+              value={query}
+              placeholder={dict.search.placeholder}
+              onFocus={() => {
+                ensureData()
+                clearTimeout(searchBlur.current)
+                setSearchOpen(true)
+              }}
+              onBlur={() => {
+                searchBlur.current = setTimeout(() => setSearchOpen(false), 120)
+              }}
+              onInput={(e) => {
+                ensureData()
+                setQuery((e.currentTarget as HTMLInputElement).value)
+              }}
+              onKeyDown={(e) => e.key === 'Escape' && setQuery('')}
+            />
+          )}
+          {searchOpen && query.trim() && results.length > 0 && (
+            <div class="poke-results scroll-hidden">
+              {results.map((m) => (
+                <button key={m.id} class="poke-result" onMouseDown={() => selectPoke(m)}>
+                  <PokeSprite mon={m} size={26} />
+                  <span class="static-text">{locale === 'ko' ? m.name : m.nameEn}</span>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
         <div class="filter-bar scroll-hidden">
           {category === 'charged' && (
             <button
@@ -305,7 +389,7 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
                 <path key={c.label} d={c.d} stroke={c.color} stroke-width={1.5} fill="none" />
               ))}
               {points.map((p) => (
-                <circle key={`dot-${p.id}`} cx={sx(p.x)} cy={sy(p.y)} r={3.5} fill={TYPE_COLORS[p.type]} stroke="#00000066" stroke-width={1} />
+                <circle key={`dot-${p.id}`} cx={sx(p.x)} cy={sy(p.y)} r={3.5} fill={TYPE_COLORS[p.type]} stroke="#00000066" stroke-width={1} opacity={highlight && !highlight.has(p.id) ? 0.15 : 1} />
               ))}
               <text x={PAD.left + plotW / 2} y={h - 6} class="axis-title" text-anchor="middle">
                 {cfg.xLabel}
@@ -326,7 +410,7 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
               return (
                 <button
                   key={p.id}
-                  class={`chip${isHover ? ' active' : ''}${fanned ? ' fanned' : ''}`}
+                  class={`chip${isHover ? ' active' : ''}${fanned ? ' fanned' : ''}${highlight ? (highlight.has(p.id) ? ' hl' : ' dim') : ''}`}
                   style={{
                     left: `${cx}px`,
                     top: `${cy}px`,
