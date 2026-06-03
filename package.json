@@ -5,12 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node scripts/build-pokemon-index.mjs && astro build",
     "preview": "astro preview",
     "check": "astro check",
     "check-data": "node scripts/check-data.mjs",
     "build-data": "node scripts/build-data.mjs",
-    "build-images": "node scripts/build-pokemon-images.mjs"
+    "build-images": "node scripts/build-pokemon-images.mjs",
+    "build-pokemon-index": "node scripts/build-pokemon-index.mjs"
   },
   "dependencies": {
     "@astrojs/preact": "^5.1.4",
