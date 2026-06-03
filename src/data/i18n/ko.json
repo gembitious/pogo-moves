@@ -65,5 +65,12 @@
     "Fast Charge": "빠른 충전",
     "Heavy Damage": "고데미지",
     "Multipurpose": "다목적"
+  },
+  "panel": {
+    "usedBy": "이 기술을 쓰는 포켓몬",
+    "count": "{n}종",
+    "none": "사용 포켓몬 데이터 없음",
+    "loading": "불러오는 중…",
+    "close": "닫기"
   }
 }

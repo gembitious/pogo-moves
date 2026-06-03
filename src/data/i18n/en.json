@@ -65,5 +65,12 @@
     "Fast Charge": "Fast Charge",
     "Heavy Damage": "Heavy Damage",
     "Multipurpose": "Multipurpose"
+  },
+  "panel": {
+    "usedBy": "Pokémon with this move",
+    "count": "{n}",
+    "none": "No Pokémon data",
+    "loading": "Loading…",
+    "close": "Close"
   }
 }
