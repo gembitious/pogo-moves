@@ -24,6 +24,19 @@
 
 > `../src/data/pokemon.json`도 pvpoke gamemaster(로스터·스탯·기술·진화·그림자)이며, 보존된 스프라이트 + `species-i18n.csv`(한글명)와 함께 향후 "기술↔포켓몬" 기능의 토대입니다. (무브 id가 대문자라 연동 시 소문자화 필요.)
 
+## 포켓몬 인덱스 (데이터 레이어)
+
+`scripts/build-pokemon-index.mjs`가 `src/data/pokemon.json`(pvpoke) + `moves.json` +
+`species-i18n.csv`(+ `species-ko-extra.json` override)를 합쳐 클라이언트용 슬림 인덱스를
+생성합니다 (`npm run build`에 포함, lazy-fetch용):
+
+- `public/data/pokemon-index.json` — 발매·비그림자 1106종(한/영명·타입·스탯·기술셋·스프라이트)
+- `public/data/move-pokemon.json` — 역인덱스 `무브 → 사용 포켓몬`
+
+`species-ko-extra.json`: veekun에 없는 최신종 한글명 override(현재 GO 발매 갭은
+dex 1011·1012·1013·1019; PokéAPI는 이 환경에서 403). 스프라이트 누락분은 UI에서
+타입색 플레이스홀더 폴백(원하면 PokeMiners pogo_assets로 보충).
+
 ## 주의
 
 veekun·pvpoke는 메인시리즈/PvP 기준이라 GO 전용 변형(타입별 Hidden Power, 드라이브별 Techno Blast, `_plus`/`_blastoise` 코스메틱, Max 무브)은 빠질 수 있습니다 — 파이프라인이 스킵·리포트합니다.
