@@ -5,6 +5,7 @@
       "name": "용해액",
       "nameEn": "Acid",
       "type": "poison",
+      "archetype": "Multipurpose",
       "pvp": {
         "power": 6,
         "turn": 2,
@@ -47,6 +48,7 @@
       "name": "에어슬래시",
       "nameEn": "Air Slash",
       "type": "flying",
+      "archetype": "General",
       "pvp": {
         "power": 9,
         "turn": 3,
@@ -65,6 +67,7 @@
       "name": "놀래키기",
       "nameEn": "Astonish",
       "type": "ghost",
+      "archetype": "Multipurpose",
       "pvp": {
         "power": 12,
         "turn": 3,
@@ -83,6 +86,7 @@
       "name": "물기",
       "nameEn": "Bite",
       "type": "dark",
+      "archetype": "Heavy Damage",
       "pvp": {
         "power": 4,
         "turn": 1,
@@ -101,6 +105,7 @@
       "name": "거품",
       "nameEn": "Bubble",
       "type": "water",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 8,
         "turn": 3,
@@ -119,6 +124,7 @@
       "name": "벌레먹기",
       "nameEn": "Bug Bite",
       "type": "bug",
+      "archetype": "Multipurpose",
       "pvp": {
         "power": 4,
         "turn": 1,
@@ -137,6 +143,7 @@
       "name": "불릿펀치",
       "nameEn": "Bullet Punch",
       "type": "steel",
+      "archetype": "General",
       "pvp": {
         "power": 7,
         "turn": 2,
@@ -155,6 +162,7 @@
       "name": "씨기관총",
       "nameEn": "Bullet Seed",
       "type": "grass",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 5,
         "turn": 3,
@@ -173,6 +181,7 @@
       "name": "차지빔",
       "nameEn": "Charge Beam",
       "type": "electric",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 5,
         "turn": 3,
@@ -191,6 +200,7 @@
       "name": "애교부리기",
       "nameEn": "Charm",
       "type": "fairy",
+      "archetype": "Heavy Damage",
       "pvp": {
         "power": 13,
         "turn": 3,
@@ -209,6 +219,7 @@
       "name": "염동력",
       "nameEn": "Confusion",
       "type": "psychic",
+      "archetype": "Multipurpose",
       "pvp": {
         "power": 16,
         "turn": 4,
@@ -227,6 +238,7 @@
       "name": "카운터",
       "nameEn": "Counter",
       "type": "fighting",
+      "archetype": "Multipurpose",
       "pvp": {
         "power": 8,
         "turn": 2,
@@ -245,6 +257,7 @@
       "name": "풀베기",
       "nameEn": "Cut",
       "type": "normal",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 3,
         "turn": 1,
@@ -263,6 +276,7 @@
       "name": "두번차기",
       "nameEn": "Double Kick",
       "type": "fighting",
+      "archetype": "Multipurpose",
       "pvp": {
         "power": 8,
         "turn": 3,
@@ -281,6 +295,7 @@
       "name": "용의숨결",
       "nameEn": "Dragon Breath",
       "type": "dragon",
+      "archetype": "Multipurpose",
       "pvp": {
         "power": 3,
         "turn": 1,
@@ -299,6 +314,7 @@
       "name": "드래곤테일",
       "nameEn": "Dragon Tail",
       "type": "dragon",
+      "archetype": "Multipurpose",
       "pvp": {
         "power": 9,
         "turn": 3,
@@ -317,6 +333,7 @@
       "name": "불꽃세례",
       "nameEn": "Ember",
       "type": "fire",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 4,
         "turn": 2,
@@ -335,6 +352,7 @@
       "name": "신통력",
       "nameEn": "Extrasensory",
       "type": "psychic",
+      "archetype": "General",
       "pvp": {
         "power": 8,
         "turn": 3,
@@ -353,6 +371,7 @@
       "name": "요정의바람",
       "nameEn": "Fairy Wind",
       "type": "fairy",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 4,
         "turn": 2,
@@ -371,6 +390,7 @@
       "name": "속여때리기",
       "nameEn": "Feint Attack",
       "type": "dark",
+      "archetype": "General",
       "pvp": {
         "power": 6,
         "turn": 2,
@@ -389,6 +409,7 @@
       "name": "불꽃엄니",
       "nameEn": "Fire Fang",
       "type": "fire",
+      "archetype": "Multipurpose",
       "pvp": {
         "power": 8,
         "turn": 2,
@@ -407,6 +428,7 @@
       "name": "회오리불꽃",
       "nameEn": "Fire Spin",
       "type": "fire",
+      "archetype": "General",
       "pvp": {
         "power": 11,
         "turn": 3,
@@ -425,6 +447,7 @@
       "name": "발경",
       "nameEn": "Force Palm",
       "type": "fighting",
+      "archetype": "Multipurpose",
       "pvp": {
         "power": 13,
         "turn": 3,
@@ -443,6 +466,7 @@
       "name": "얼음숨결",
       "nameEn": "Frost Breath",
       "type": "ice",
+      "archetype": "Heavy Damage",
       "pvp": {
         "power": 7,
         "turn": 2,
@@ -461,6 +485,7 @@
       "name": "연속자르기",
       "nameEn": "Fury Cutter",
       "type": "bug",
+      "archetype": "Multipurpose",
       "pvp": {
         "power": 3,
         "turn": 1,
@@ -479,6 +504,7 @@
       "name": "지오컨트롤",
       "nameEn": "Geomancy",
       "type": "fairy",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 8,
         "turn": 3,
@@ -497,6 +523,7 @@
       "name": "바람일으키기",
       "nameEn": "Gust",
       "type": "flying",
+      "archetype": "Multipurpose",
       "pvp": {
         "power": 16,
         "turn": 4,
@@ -515,6 +542,7 @@
       "name": "병상첨병",
       "nameEn": "Hex",
       "type": "ghost",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 7,
         "turn": 3,
@@ -533,6 +561,7 @@
       "name": "잠재파워",
       "nameEn": "Hidden Power (Bug)",
       "type": "bug",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 9,
         "turn": 3,
@@ -551,6 +580,7 @@
       "name": "잠재파워",
       "nameEn": "Hidden Power (Dark)",
       "type": "dark",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 9,
         "turn": 3,
@@ -569,6 +599,7 @@
       "name": "잠재파워",
       "nameEn": "Hidden Power (Dragon)",
       "type": "dragon",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 9,
         "turn": 3,
@@ -587,6 +618,7 @@
       "name": "잠재파워",
       "nameEn": "Hidden Power (Electric)",
       "type": "electric",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 9,
         "turn": 3,
@@ -605,6 +637,7 @@
       "name": "잠재파워",
       "nameEn": "Hidden Power (Fighting)",
       "type": "fighting",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 9,
         "turn": 3,
@@ -623,6 +656,7 @@
       "name": "잠재파워",
       "nameEn": "Hidden Power (Fire)",
       "type": "fire",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 9,
         "turn": 3,
@@ -641,6 +675,7 @@
       "name": "잠재파워",
       "nameEn": "Hidden Power (Flying)",
       "type": "flying",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 9,
         "turn": 3,
@@ -659,6 +694,7 @@
       "name": "잠재파워",
       "nameEn": "Hidden Power (Ghost)",
       "type": "ghost",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 9,
         "turn": 3,
@@ -677,6 +713,7 @@
       "name": "잠재파워",
       "nameEn": "Hidden Power (Grass)",
       "type": "grass",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 9,
         "turn": 3,
@@ -695,6 +732,7 @@
       "name": "잠재파워",
       "nameEn": "Hidden Power (Ground)",
       "type": "ground",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 9,
         "turn": 3,
@@ -713,6 +751,7 @@
       "name": "잠재파워",
       "nameEn": "Hidden Power (Ice)",
       "type": "ice",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 9,
         "turn": 3,
@@ -731,6 +770,7 @@
       "name": "잠재파워",
       "nameEn": "Hidden Power",
       "type": "normal",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 9,
         "turn": 3,
@@ -749,6 +789,7 @@
       "name": "잠재파워",
       "nameEn": "Hidden Power (Poison)",
       "type": "poison",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 9,
         "turn": 3,
@@ -767,6 +808,7 @@
       "name": "잠재파워",
       "nameEn": "Hidden Power (Psychic)",
       "type": "psychic",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 9,
         "turn": 3,
@@ -785,6 +827,7 @@
       "name": "잠재파워",
       "nameEn": "Hidden Power (Rock)",
       "type": "rock",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 9,
         "turn": 3,
@@ -803,6 +846,7 @@
       "name": "잠재파워",
       "nameEn": "Hidden Power (Steel)",
       "type": "steel",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 9,
         "turn": 3,
@@ -821,6 +865,7 @@
       "name": "잠재파워",
       "nameEn": "Hidden Power (Water)",
       "type": "water",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 9,
         "turn": 3,
@@ -839,6 +884,7 @@
       "name": "얼음엄니",
       "nameEn": "Ice Fang",
       "type": "ice",
+      "archetype": "Multipurpose",
       "pvp": {
         "power": 8,
         "turn": 2,
@@ -857,6 +903,7 @@
       "name": "얼음뭉치",
       "nameEn": "Ice Shard",
       "type": "ice",
+      "archetype": "General",
       "pvp": {
         "power": 9,
         "turn": 3,
@@ -875,6 +922,7 @@
       "name": "불태우기",
       "nameEn": "Incinerate",
       "type": "fire",
+      "archetype": "Multipurpose",
       "pvp": {
         "power": 20,
         "turn": 5,
@@ -893,6 +941,7 @@
       "name": "엉겨붙기",
       "nameEn": "Infestation",
       "type": "bug",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 6,
         "turn": 3,
@@ -911,6 +960,7 @@
       "name": "아이언테일",
       "nameEn": "Iron Tail",
       "type": "steel",
+      "archetype": "General",
       "pvp": {
         "power": 10,
         "turn": 3,
@@ -929,6 +979,7 @@
       "name": "태권당수",
       "nameEn": "Karate Chop",
       "type": "fighting",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 5,
         "turn": 2,
@@ -947,6 +998,7 @@
       "name": "나뭇잎",
       "nameEn": "Leafage",
       "type": "grass",
+      "archetype": "Multipurpose",
       "pvp": {
         "power": 6,
         "turn": 2,
@@ -965,6 +1017,7 @@
       "name": "핥기",
       "nameEn": "Lick",
       "type": "ghost",
+      "archetype": "General",
       "pvp": {
         "power": 3,
         "turn": 1,
@@ -983,6 +1036,7 @@
       "name": "록온",
       "nameEn": "Lock-On",
       "type": "normal",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 1,
         "turn": 1,
@@ -1001,6 +1055,7 @@
       "name": "안다리걸기",
       "nameEn": "Low Kick",
       "type": "fighting",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 5,
         "turn": 2,
@@ -1019,6 +1074,7 @@
       "name": "매지컬리프",
       "nameEn": "Magical Leaf",
       "type": "grass",
+      "archetype": "General",
       "pvp": {
         "power": 10,
         "turn": 3,
@@ -1037,6 +1093,7 @@
       "name": "메탈클로",
       "nameEn": "Metal Claw",
       "type": "steel",
+      "archetype": "General",
       "pvp": {
         "power": 5,
         "turn": 2,
@@ -1055,6 +1112,7 @@
       "name": "금속음",
       "nameEn": "Metal Sound",
       "type": "steel",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 5,
         "turn": 2,
@@ -1073,6 +1131,7 @@
       "name": "머드샷",
       "nameEn": "Mud Shot",
       "type": "ground",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 3,
         "turn": 2,
@@ -1091,6 +1150,7 @@
       "name": "진흙뿌리기",
       "nameEn": "Mud-Slap",
       "type": "ground",
+      "archetype": "Heavy Damage",
       "pvp": {
         "power": 11,
         "turn": 3,
@@ -1109,6 +1169,7 @@
       "name": "쪼기",
       "nameEn": "Peck",
       "type": "flying",
+      "archetype": "Multipurpose",
       "pvp": {
         "power": 6,
         "turn": 2,
@@ -1127,6 +1188,7 @@
       "name": "독찌르기",
       "nameEn": "Poison Jab",
       "type": "poison",
+      "archetype": "General",
       "pvp": {
         "power": 7,
         "turn": 2,
@@ -1145,6 +1207,7 @@
       "name": "독침",
       "nameEn": "Poison Sting",
       "type": "poison",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 4,
         "turn": 2,
@@ -1163,6 +1226,7 @@
       "name": "막치기",
       "nameEn": "Pound",
       "type": "normal",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 4,
         "turn": 2,
@@ -1181,6 +1245,7 @@
       "name": "눈싸라기",
       "nameEn": "Powder Snow",
       "type": "ice",
+      "archetype": "Multipurpose",
       "pvp": {
         "power": 6,
         "turn": 2,
@@ -1199,6 +1264,7 @@
       "name": "프레젠트",
       "nameEn": "Present",
       "type": "normal",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 3,
         "turn": 3,
@@ -1217,6 +1283,7 @@
       "name": "사이코커터",
       "nameEn": "Psycho Cut",
       "type": "psychic",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 4,
         "turn": 2,
@@ -1235,6 +1302,7 @@
       "name": "사이코웨이브",
       "nameEn": "Psywave",
       "type": "psychic",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 3,
         "turn": 1,
@@ -1253,6 +1321,7 @@
       "name": "전광석화",
       "nameEn": "Quick Attack",
       "type": "normal",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 5,
         "turn": 2,
@@ -1271,6 +1340,7 @@
       "name": "잎날가르기",
       "nameEn": "Razor Leaf",
       "type": "grass",
+      "archetype": "Heavy Damage",
       "pvp": {
         "power": 9,
         "turn": 2,
@@ -1289,6 +1359,7 @@
       "name": "바위깨기",
       "nameEn": "Rock Smash",
       "type": "fighting",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 9,
         "turn": 3,
@@ -1307,6 +1378,7 @@
       "name": "돌떨구기",
       "nameEn": "Rock Throw",
       "type": "rock",
+      "archetype": "Heavy Damage",
       "pvp": {
         "power": 8,
         "turn": 2,
@@ -1325,6 +1397,7 @@
       "name": "구르기",
       "nameEn": "Rollout",
       "type": "rock",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 7,
         "turn": 3,
@@ -1343,6 +1416,7 @@
       "name": "모래뿌리기",
       "nameEn": "Sand Attack",
       "type": "ground",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 2,
         "turn": 1,
@@ -1361,6 +1435,7 @@
       "name": "할퀴기",
       "nameEn": "Scratch",
       "type": "normal",
+      "archetype": "Heavy Damage",
       "pvp": {
         "power": 4,
         "turn": 1,
@@ -1379,6 +1454,7 @@
       "name": "섀도클로",
       "nameEn": "Shadow Claw",
       "type": "ghost",
+      "archetype": "Multipurpose",
       "pvp": {
         "power": 6,
         "turn": 2,
@@ -1397,6 +1473,7 @@
       "name": "떨어뜨리기",
       "nameEn": "Smack Down",
       "type": "rock",
+      "archetype": "Heavy Damage",
       "pvp": {
         "power": 11,
         "turn": 3,
@@ -1415,6 +1492,7 @@
       "name": "바크아웃",
       "nameEn": "Snarl",
       "type": "dark",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 5,
         "turn": 3,
@@ -1433,6 +1511,7 @@
       "name": "스파크",
       "nameEn": "Spark",
       "type": "electric",
+      "archetype": "General",
       "pvp": {
         "power": 5,
         "turn": 2,
@@ -1451,6 +1530,7 @@
       "name": "튀어오르기",
       "nameEn": "Splash",
       "type": "water",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 0,
         "turn": 4,
@@ -1469,6 +1549,7 @@
       "name": "강철날개",
       "nameEn": "Steel Wing",
       "type": "steel",
+      "archetype": "Heavy Damage",
       "pvp": {
         "power": 7,
         "turn": 2,
@@ -1487,6 +1568,7 @@
       "name": "벌레의저항",
       "nameEn": "Struggle Bug",
       "type": "bug",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 9,
         "turn": 3,
@@ -1505,6 +1587,7 @@
       "name": "기습",
       "nameEn": "Sucker Punch",
       "type": "dark",
+      "archetype": "Multipurpose",
       "pvp": {
         "power": 8,
         "turn": 2,
@@ -1523,6 +1606,7 @@
       "name": "몸통박치기",
       "nameEn": "Tackle",
       "type": "normal",
+      "archetype": "General",
       "pvp": {
         "power": 3,
         "turn": 1,
@@ -1541,6 +1625,7 @@
       "name": "돌진",
       "nameEn": "Take Down",
       "type": "normal",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 5,
         "turn": 3,
@@ -1559,6 +1644,7 @@
       "name": "번개엄니",
       "nameEn": "Thunder Fang",
       "type": "electric",
+      "archetype": "Multipurpose",
       "pvp": {
         "power": 8,
         "turn": 2,
@@ -1577,6 +1663,7 @@
       "name": "전기쇼크",
       "nameEn": "Thunder Shock",
       "type": "electric",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 4,
         "turn": 2,
@@ -1595,6 +1682,7 @@
       "name": "덩굴채찍",
       "nameEn": "Vine Whip",
       "type": "grass",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 5,
         "turn": 2,
@@ -1613,6 +1701,7 @@
       "name": "볼트체인지",
       "nameEn": "Volt Switch",
       "type": "electric",
+      "archetype": "Multipurpose",
       "pvp": {
         "power": 14,
         "turn": 4,
@@ -1631,6 +1720,7 @@
       "name": "물대포",
       "nameEn": "Water Gun",
       "type": "water",
+      "archetype": "General",
       "pvp": {
         "power": 3,
         "turn": 1,
@@ -1649,6 +1739,7 @@
       "name": "물수리검",
       "nameEn": "Water Shuriken",
       "type": "water",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 6,
         "turn": 3,
@@ -1667,6 +1758,7 @@
       "name": "폭포오르기",
       "nameEn": "Waterfall",
       "type": "water",
+      "archetype": "Heavy Damage",
       "pvp": {
         "power": 11,
         "turn": 3,
@@ -1685,6 +1777,7 @@
       "name": "날개치기",
       "nameEn": "Wing Attack",
       "type": "flying",
+      "archetype": "Fast Charge",
       "pvp": {
         "power": 5,
         "turn": 2,
@@ -1703,6 +1796,7 @@
       "name": "하품",
       "nameEn": "Yawn",
       "type": "normal",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 0,
         "turn": 4,
@@ -1721,6 +1815,7 @@
       "name": "사념의박치기",
       "nameEn": "Zen Headbutt",
       "type": "psychic",
+      "archetype": "Low Quality",
       "pvp": {
         "power": 8,
         "turn": 3,
@@ -1741,6 +1836,7 @@
       "name": "애시드봄",
       "nameEn": "Acid Spray",
       "type": "poison",
+      "archetype": "Debuff",
       "pvp": {
         "power": 20,
         "energy": 45,
@@ -1764,6 +1860,7 @@
       "name": "애크러뱃",
       "nameEn": "Acrobatics",
       "type": "flying",
+      "archetype": "General",
       "pvp": {
         "power": 110,
         "energy": 55
@@ -1781,6 +1878,7 @@
       "name": "제비반환",
       "nameEn": "Aerial Ace",
       "type": "flying",
+      "archetype": "General",
       "pvp": {
         "power": 60,
         "energy": 45
@@ -1798,6 +1896,7 @@
       "name": "에어로블라스트",
       "nameEn": "Aeroblast",
       "type": "flying",
+      "archetype": "Boost Nuke",
       "pvp": {
         "power": 170,
         "energy": 75,
@@ -1821,6 +1920,7 @@
       "name": "에어커터",
       "nameEn": "Air Cutter",
       "type": "flying",
+      "archetype": "Boost Spam",
       "pvp": {
         "power": 45,
         "energy": 35,
@@ -1844,6 +1944,7 @@
       "name": "원시의힘",
       "nameEn": "Ancient Power",
       "type": "rock",
+      "archetype": "Boost",
       "pvp": {
         "power": 60,
         "energy": 45,
@@ -1867,6 +1968,7 @@
       "name": "아쿠아제트",
       "nameEn": "Aqua Jet",
       "type": "water",
+      "archetype": "General",
       "pvp": {
         "power": 70,
         "energy": 40
@@ -1884,6 +1986,7 @@
       "name": "아쿠아스텝",
       "nameEn": "Aqua Step",
       "type": "water",
+      "archetype": "Boost",
       "pvp": {
         "power": 55,
         "energy": 40,
@@ -1907,6 +2010,7 @@
       "name": "아쿠아테일",
       "nameEn": "Aqua Tail",
       "type": "water",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 55,
         "energy": 35
@@ -1924,6 +2028,7 @@
       "name": "파동탄",
       "nameEn": "Aura Sphere",
       "type": "fighting",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 80,
         "energy": 40
@@ -1941,6 +2046,7 @@
       "name": "오라휠",
       "nameEn": "Aura Wheel",
       "type": "dark",
+      "archetype": "Boost",
       "pvp": {
         "power": 100,
         "energy": 45,
@@ -1964,6 +2070,7 @@
       "name": "오라휠",
       "nameEn": "Aura Wheel",
       "type": "electric",
+      "archetype": "Boost",
       "pvp": {
         "power": 100,
         "energy": 45,
@@ -1987,6 +2094,7 @@
       "name": "오로라빔",
       "nameEn": "Aurora Beam",
       "type": "ice",
+      "archetype": "High Energy",
       "pvp": {
         "power": 80,
         "energy": 60
@@ -2004,6 +2112,7 @@
       "name": "눈사태",
       "nameEn": "Avalanche",
       "type": "ice",
+      "archetype": "General",
       "pvp": {
         "power": 90,
         "energy": 45
@@ -2021,6 +2130,7 @@
       "name": "부리캐논",
       "nameEn": "Beak Blast",
       "type": "flying",
+      "archetype": "Debuff Nuke",
       "pvp": {
         "power": 110,
         "energy": 55,
@@ -2044,6 +2154,7 @@
       "name": "거수탄",
       "nameEn": "Behemoth Bash",
       "type": "steel",
+      "archetype": "General",
       "pvp": {
         "power": 80,
         "energy": 45
@@ -2061,6 +2172,7 @@
       "name": "거수참",
       "nameEn": "Behemoth Blade",
       "type": "steel",
+      "archetype": "High Energy",
       "pvp": {
         "power": 100,
         "energy": 55
@@ -2078,6 +2190,7 @@
       "name": "블라스트번",
       "nameEn": "Blast Burn",
       "type": "fire",
+      "archetype": "General",
       "pvp": {
         "power": 110,
         "energy": 50
@@ -2095,6 +2208,7 @@
       "name": "블레이즈킥",
       "nameEn": "Blaze Kick",
       "type": "fire",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 60,
         "energy": 40
@@ -2112,6 +2226,7 @@
       "name": "찬바람폭풍",
       "nameEn": "Bleakwind Storm",
       "type": "flying",
+      "archetype": "Debuff",
       "pvp": {
         "power": 60,
         "energy": 45,
@@ -2135,6 +2250,7 @@
       "name": "눈보라",
       "nameEn": "Blizzard",
       "type": "ice",
+      "archetype": "Nuke",
       "pvp": {
         "power": 140,
         "energy": 75
@@ -2152,6 +2268,7 @@
       "name": "누르기",
       "nameEn": "Body Slam",
       "type": "normal",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 55,
         "energy": 35
@@ -2169,6 +2286,7 @@
       "name": "뼈다귀치기",
       "nameEn": "Bone Club",
       "type": "ground",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 55,
         "energy": 35
@@ -2186,6 +2304,7 @@
       "name": "폭음파",
       "nameEn": "Boomburst",
       "type": "normal",
+      "archetype": "Nuke",
       "pvp": {
         "power": 150,
         "energy": 70
@@ -2203,6 +2322,7 @@
       "name": "브레이브버드",
       "nameEn": "Brave Bird",
       "type": "flying",
+      "archetype": "Self-Debuff Nuke",
       "pvp": {
         "power": 130,
         "energy": 55,
@@ -2226,6 +2346,7 @@
       "name": "와이드브레이커",
       "nameEn": "Breaking Swipe",
       "type": "dragon",
+      "archetype": "Debuff",
       "pvp": {
         "power": 50,
         "energy": 50,
@@ -2249,6 +2370,7 @@
       "name": "깨트리기",
       "nameEn": "Brick Break",
       "type": "fighting",
+      "archetype": "Debuff Spam",
       "pvp": {
         "power": 50,
         "energy": 40,
@@ -2272,6 +2394,7 @@
       "name": "소금물",
       "nameEn": "Brine",
       "type": "water",
+      "archetype": "General",
       "pvp": {
         "power": 60,
         "energy": 50
@@ -2289,6 +2412,7 @@
       "name": "세차게휘두르기",
       "nameEn": "Brutal Swing",
       "type": "dark",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 55,
         "energy": 35
@@ -2306,6 +2430,7 @@
       "name": "거품광선",
       "nameEn": "Bubble Beam",
       "type": "water",
+      "archetype": "Debuff Spam",
       "pvp": {
         "power": 25,
         "energy": 40,
@@ -2329,6 +2454,7 @@
       "name": "벌레의야단법석",
       "nameEn": "Bug Buzz",
       "type": "bug",
+      "archetype": "Debuff",
       "pvp": {
         "power": 100,
         "energy": 60,
@@ -2352,6 +2478,7 @@
       "name": "땅고르기",
       "nameEn": "Bulldoze",
       "type": "ground",
+      "archetype": "Debuff Spam",
       "pvp": {
         "power": 45,
         "energy": 45,
@@ -2375,6 +2502,7 @@
       "name": "찬물끼얹기",
       "nameEn": "Chilling Water",
       "type": "water",
+      "archetype": "Debuff",
       "pvp": {
         "power": 60,
         "energy": 45,
@@ -2398,6 +2526,7 @@
       "name": "스케일노이즈",
       "nameEn": "Clanging Scales",
       "type": "dragon",
+      "archetype": "General",
       "pvp": {
         "power": 120,
         "energy": 45,
@@ -2421,6 +2550,7 @@
       "name": "인파이트",
       "nameEn": "Close Combat",
       "type": "fighting",
+      "archetype": "Self-Debuff",
       "pvp": {
         "power": 100,
         "energy": 45,
@@ -2444,6 +2574,7 @@
       "name": "집게해머",
       "nameEn": "Crabhammer",
       "type": "water",
+      "archetype": "Boost",
       "pvp": {
         "power": 85,
         "energy": 50,
@@ -2467,6 +2598,7 @@
       "name": "크로스촙",
       "nameEn": "Cross Chop",
       "type": "fighting",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 55,
         "energy": 35
@@ -2484,6 +2616,7 @@
       "name": "크로스포이즌",
       "nameEn": "Cross Poison",
       "type": "poison",
+      "archetype": "Boost Spam",
       "pvp": {
         "power": 50,
         "energy": 35,
@@ -2507,6 +2640,7 @@
       "name": "깨물어부수기",
       "nameEn": "Crunch",
       "type": "dark",
+      "archetype": "Debuff",
       "pvp": {
         "power": 70,
         "energy": 45,
@@ -2530,6 +2664,7 @@
       "name": "묵사발",
       "nameEn": "Crush Grip",
       "type": "normal",
+      "archetype": "General",
       "pvp": {
         "power": 110,
         "energy": 50
@@ -2547,6 +2682,7 @@
       "name": "악의파동",
       "nameEn": "Dark Pulse",
       "type": "dark",
+      "archetype": "General",
       "pvp": {
         "power": 80,
         "energy": 50
@@ -2564,6 +2700,7 @@
       "name": "DD래리어트",
       "nameEn": "Darkest Lariat",
       "type": "dark",
+      "archetype": "Nuke",
       "pvp": {
         "power": 120,
         "energy": 60
@@ -2581,6 +2718,7 @@
       "name": "매지컬샤인",
       "nameEn": "Dazzling Gleam",
       "type": "fairy",
+      "archetype": "Nuke",
       "pvp": {
         "power": 90,
         "energy": 55
@@ -2598,6 +2736,7 @@
       "name": "구멍파기",
       "nameEn": "Dig",
       "type": "ground",
+      "archetype": "High Energy",
       "pvp": {
         "power": 70,
         "energy": 50
@@ -2615,6 +2754,7 @@
       "name": "차밍보이스",
       "nameEn": "Disarming Voice",
       "type": "fairy",
+      "archetype": "General",
       "pvp": {
         "power": 70,
         "energy": 45
@@ -2632,6 +2772,7 @@
       "name": "방전",
       "nameEn": "Discharge",
       "type": "electric",
+      "archetype": "General",
       "pvp": {
         "power": 55,
         "energy": 40
@@ -2649,6 +2790,7 @@
       "name": "파멸의소원",
       "nameEn": "Doom Desire",
       "type": "steel",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 80,
         "energy": 40
@@ -2666,6 +2808,7 @@
       "name": "더블펀처",
       "nameEn": "Double Iron Bash",
       "type": "steel",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 55,
         "energy": 35
@@ -2683,6 +2826,7 @@
       "name": "용성군",
       "nameEn": "Draco Meteor",
       "type": "dragon",
+      "archetype": "Self-Debuff Nuke",
       "pvp": {
         "power": 150,
         "energy": 65,
@@ -2706,6 +2850,7 @@
       "name": "화룡점정",
       "nameEn": "Dragon Ascent",
       "type": "flying",
+      "archetype": "Self-Debuff Nuke",
       "pvp": {
         "power": 150,
         "energy": 70,
@@ -2729,6 +2874,7 @@
       "name": "드래곤클로",
       "nameEn": "Dragon Claw",
       "type": "dragon",
+      "archetype": "General",
       "pvp": {
         "power": 80,
         "energy": 50
@@ -2746,6 +2892,7 @@
       "name": "드래곤에너지",
       "nameEn": "Dragon Energy",
       "type": "dragon",
+      "archetype": "General",
       "pvp": {
         "power": 90,
         "energy": 45
@@ -2763,6 +2910,7 @@
       "name": "용의파동",
       "nameEn": "Dragon Pulse",
       "type": "dragon",
+      "archetype": "High Energy",
       "pvp": {
         "power": 90,
         "energy": 55
@@ -2780,6 +2928,7 @@
       "name": "드레인펀치",
       "nameEn": "Drain Punch",
       "type": "fighting",
+      "archetype": "Boost Spam",
       "pvp": {
         "power": 40,
         "energy": 40,
@@ -2803,6 +2952,7 @@
       "name": "드레인키스",
       "nameEn": "Draining Kiss",
       "type": "fairy",
+      "archetype": "High Energy",
       "pvp": {
         "power": 60,
         "energy": 55
@@ -2820,6 +2970,7 @@
       "name": "회전부리",
       "nameEn": "Drill Peck",
       "type": "flying",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 70,
         "energy": 40
@@ -2837,6 +2988,7 @@
       "name": "드릴라이너",
       "nameEn": "Drill Run",
       "type": "ground",
+      "archetype": "General",
       "pvp": {
         "power": 80,
         "energy": 45
@@ -2854,6 +3006,7 @@
       "name": "드럼어택",
       "nameEn": "Drum Beating",
       "type": "grass",
+      "archetype": "Debuff Spam",
       "pvp": {
         "power": 60,
         "energy": 35,
@@ -2877,6 +3030,7 @@
       "name": "다이맥스포",
       "nameEn": "Dynamax Cannon",
       "type": "dragon",
+      "archetype": "General",
       "pvp": {
         "power": 80,
         "energy": 45
@@ -2894,6 +3048,7 @@
       "name": "폭발펀치",
       "nameEn": "Dynamic Punch",
       "type": "fighting",
+      "archetype": "General",
       "pvp": {
         "power": 90,
         "energy": 45
@@ -2911,6 +3066,7 @@
       "name": "대지의힘",
       "nameEn": "Earth Power",
       "type": "ground",
+      "archetype": "High Energy",
       "pvp": {
         "power": 90,
         "energy": 55,
@@ -2934,6 +3090,7 @@
       "name": "지진",
       "nameEn": "Earthquake",
       "type": "ground",
+      "archetype": "Nuke",
       "pvp": {
         "power": 110,
         "energy": 65
@@ -2951,6 +3108,7 @@
       "name": "에너지볼",
       "nameEn": "Energy Ball",
       "type": "grass",
+      "archetype": "High Energy",
       "pvp": {
         "power": 90,
         "energy": 55,
@@ -2974,6 +3132,7 @@
       "name": "깃털댄스",
       "nameEn": "Feather Dance",
       "type": "flying",
+      "archetype": "Debuff",
       "pvp": {
         "power": 35,
         "energy": 50,
@@ -2997,6 +3156,7 @@
       "name": "마지막일침",
       "nameEn": "Fell Stinger",
       "type": "bug",
+      "archetype": "Boost Spam",
       "pvp": {
         "power": 20,
         "energy": 35,
@@ -3020,6 +3180,7 @@
       "name": "불대문자",
       "nameEn": "Fire Blast",
       "type": "fire",
+      "archetype": "Nuke",
       "pvp": {
         "power": 140,
         "energy": 80
@@ -3037,6 +3198,7 @@
       "name": "불꽃펀치",
       "nameEn": "Fire Punch",
       "type": "fire",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 60,
         "energy": 40
@@ -3068,6 +3230,7 @@
       "name": "불꽃튀기기",
       "nameEn": "Flame Burst",
       "type": "fire",
+      "archetype": "High Energy",
       "pvp": {
         "power": 70,
         "energy": 55
@@ -3085,6 +3248,7 @@
       "name": "니트로차지",
       "nameEn": "Flame Charge",
       "type": "fire",
+      "archetype": "Boost",
       "pvp": {
         "power": 65,
         "energy": 50,
@@ -3108,6 +3272,7 @@
       "name": "화염바퀴",
       "nameEn": "Flame Wheel",
       "type": "fire",
+      "archetype": "General",
       "pvp": {
         "power": 80,
         "energy": 45
@@ -3125,6 +3290,7 @@
       "name": "화염방사",
       "nameEn": "Flamethrower",
       "type": "fire",
+      "archetype": "High Energy",
       "pvp": {
         "power": 90,
         "energy": 55
@@ -3142,6 +3308,7 @@
       "name": "러스터캐논",
       "nameEn": "Flash Cannon",
       "type": "steel",
+      "archetype": "Nuke",
       "pvp": {
         "power": 110,
         "energy": 70
@@ -3159,6 +3326,7 @@
       "name": "트릭플라워",
       "nameEn": "Flower Trick",
       "type": "grass",
+      "archetype": "Boost",
       "pvp": {
         "power": 30,
         "energy": 35,
@@ -3182,6 +3350,7 @@
       "name": "공중날기",
       "nameEn": "Fly",
       "type": "flying",
+      "archetype": "General",
       "pvp": {
         "power": 80,
         "energy": 45
@@ -3199,6 +3368,7 @@
       "name": "플라잉프레스",
       "nameEn": "Flying Press",
       "type": "fighting",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 90,
         "energy": 40
@@ -3216,6 +3386,7 @@
       "name": "기합구슬",
       "nameEn": "Focus Blast",
       "type": "fighting",
+      "archetype": "Nuke",
       "pvp": {
         "power": 150,
         "energy": 75
@@ -3233,6 +3404,7 @@
       "name": "속임수",
       "nameEn": "Foul Play",
       "type": "dark",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 65,
         "energy": 40
@@ -3250,6 +3422,7 @@
       "name": "프리즈볼트",
       "nameEn": "Freeze Shock",
       "type": "ice",
+      "archetype": "Nuke",
       "pvp": {
         "power": 120,
         "energy": 60,
@@ -3273,6 +3446,7 @@
       "name": "하드플랜트",
       "nameEn": "Frenzy Plant",
       "type": "grass",
+      "archetype": "General",
       "pvp": {
         "power": 100,
         "energy": 45
@@ -3290,6 +3464,7 @@
       "name": "화풀이",
       "nameEn": "Frustration",
       "type": "normal",
+      "archetype": "High Energy",
       "pvp": {
         "power": 10,
         "energy": 70
@@ -3307,6 +3482,7 @@
       "name": "크로스썬더",
       "nameEn": "Fusion Bolt",
       "type": "electric",
+      "archetype": "General",
       "pvp": {
         "power": 90,
         "energy": 45
@@ -3324,6 +3500,7 @@
       "name": "크로스플레임",
       "nameEn": "Fusion Flare",
       "type": "fire",
+      "archetype": "General",
       "pvp": {
         "power": 90,
         "energy": 45
@@ -3341,6 +3518,7 @@
       "name": "미래예지",
       "nameEn": "Future Sight",
       "type": "psychic",
+      "archetype": "Nuke",
       "pvp": {
         "power": 110,
         "energy": 65
@@ -3358,6 +3536,7 @@
       "name": "기가드레인",
       "nameEn": "Giga Drain",
       "type": "grass",
+      "archetype": "High Energy",
       "pvp": {
         "power": 50,
         "energy": 80
@@ -3375,6 +3554,7 @@
       "name": "기가임팩트",
       "nameEn": "Giga Impact",
       "type": "normal",
+      "archetype": "Nuke",
       "pvp": {
         "power": 150,
         "energy": 80
@@ -3409,6 +3589,7 @@
       "name": "얼어붙은세계",
       "nameEn": "Glaciate",
       "type": "ice",
+      "archetype": "Debuff",
       "pvp": {
         "power": 60,
         "energy": 40,
@@ -3432,6 +3613,7 @@
       "name": "풀묶기",
       "nameEn": "Grass Knot",
       "type": "grass",
+      "archetype": "General",
       "pvp": {
         "power": 90,
         "energy": 50
@@ -3449,6 +3631,7 @@
       "name": "더스트슈트",
       "nameEn": "Gunk Shot",
       "type": "poison",
+      "archetype": "Nuke",
       "pvp": {
         "power": 130,
         "energy": 75
@@ -3466,6 +3649,7 @@
       "name": "자이로볼",
       "nameEn": "Gyro Ball",
       "type": "steel",
+      "archetype": "General",
       "pvp": {
         "power": 80,
         "energy": 50
@@ -3483,6 +3667,7 @@
       "name": "하트스탬프",
       "nameEn": "Heart Stamp",
       "type": "psychic",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 40,
         "energy": 40
@@ -3500,6 +3685,7 @@
       "name": "열풍",
       "nameEn": "Heat Wave",
       "type": "fire",
+      "archetype": "General",
       "pvp": {
         "power": 75,
         "energy": 45
@@ -3517,6 +3703,7 @@
       "name": "헤비봄버",
       "nameEn": "Heavy Slam",
       "type": "steel",
+      "archetype": "General",
       "pvp": {
         "power": 70,
         "energy": 50
@@ -3534,6 +3721,7 @@
       "name": "10만마력",
       "nameEn": "High Horsepower",
       "type": "ground",
+      "archetype": "Nuke",
       "pvp": {
         "power": 100,
         "energy": 60
@@ -3551,6 +3739,7 @@
       "name": "무릎차기",
       "nameEn": "High Jump Kick",
       "type": "fighting",
+      "archetype": "Self-Debuff Nuke",
       "pvp": {
         "power": 110,
         "energy": 55,
@@ -3574,6 +3763,7 @@
       "name": "뿔찌르기",
       "nameEn": "Horn Attack",
       "type": "normal",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 40,
         "energy": 35
@@ -3605,6 +3795,7 @@
       "name": "폭풍",
       "nameEn": "Hurricane",
       "type": "flying",
+      "archetype": "Nuke",
       "pvp": {
         "power": 110,
         "energy": 65
@@ -3622,6 +3813,7 @@
       "name": "하이드로캐논",
       "nameEn": "Hydro Cannon",
       "type": "water",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 80,
         "energy": 40
@@ -3639,6 +3831,7 @@
       "name": "하이드로펌프",
       "nameEn": "Hydro Pump",
       "type": "water",
+      "archetype": "Nuke",
       "pvp": {
         "power": 130,
         "energy": 75
@@ -3656,6 +3849,7 @@
       "name": "파괴광선",
       "nameEn": "Hyper Beam",
       "type": "normal",
+      "archetype": "Nuke",
       "pvp": {
         "power": 150,
         "energy": 80
@@ -3673,6 +3867,7 @@
       "name": "필살앞니",
       "nameEn": "Hyper Fang",
       "type": "normal",
+      "archetype": "General",
       "pvp": {
         "power": 80,
         "energy": 50
@@ -3690,6 +3885,7 @@
       "name": "냉동빔",
       "nameEn": "Ice Beam",
       "type": "ice",
+      "archetype": "High Energy",
       "pvp": {
         "power": 90,
         "energy": 55
@@ -3707,6 +3903,7 @@
       "name": "콜드플레어",
       "nameEn": "Ice Burn",
       "type": "ice",
+      "archetype": "Nuke",
       "pvp": {
         "power": 120,
         "energy": 60,
@@ -3730,6 +3927,7 @@
       "name": "냉동펀치",
       "nameEn": "Ice Punch",
       "type": "ice",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 60,
         "energy": 40
@@ -3747,6 +3945,7 @@
       "name": "고드름침",
       "nameEn": "Icicle Spear",
       "type": "ice",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 70,
         "energy": 40
@@ -3764,6 +3963,7 @@
       "name": "얼어붙은바람",
       "nameEn": "Icy Wind",
       "type": "ice",
+      "archetype": "Debuff",
       "pvp": {
         "power": 60,
         "energy": 45,
@@ -3787,6 +3987,7 @@
       "name": "아이언헤드",
       "nameEn": "Iron Head",
       "type": "steel",
+      "archetype": "General",
       "pvp": {
         "power": 70,
         "energy": 50
@@ -3804,6 +4005,7 @@
       "name": "비장의무기",
       "nameEn": "Last Resort",
       "type": "normal",
+      "archetype": "High Energy",
       "pvp": {
         "power": 90,
         "energy": 55
@@ -3821,6 +4023,7 @@
       "name": "리프블레이드",
       "nameEn": "Leaf Blade",
       "type": "grass",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 70,
         "energy": 35
@@ -3838,6 +4041,7 @@
       "name": "리프스톰",
       "nameEn": "Leaf Storm",
       "type": "grass",
+      "archetype": "Self-Debuff Nuke",
       "pvp": {
         "power": 130,
         "energy": 55,
@@ -3861,6 +4065,7 @@
       "name": "그래스믹서",
       "nameEn": "Leaf Tornado",
       "type": "grass",
+      "archetype": "Debuff Spam",
       "pvp": {
         "power": 45,
         "energy": 40,
@@ -3884,6 +4089,7 @@
       "name": "아쿠아브레이크",
       "nameEn": "Liquidation",
       "type": "water",
+      "archetype": "Debuff",
       "pvp": {
         "power": 70,
         "energy": 45,
@@ -3907,6 +4113,7 @@
       "name": "로킥",
       "nameEn": "Low Sweep",
       "type": "fighting",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 40,
         "energy": 40
@@ -3924,6 +4131,7 @@
       "name": "덤벼들기",
       "nameEn": "Lunge",
       "type": "bug",
+      "archetype": "Debuff",
       "pvp": {
         "power": 60,
         "energy": 45,
@@ -3947,6 +4155,7 @@
       "name": "러스터퍼지",
       "nameEn": "Luster Purge",
       "type": "psychic",
+      "archetype": "Debuff Nuke",
       "pvp": {
         "power": 120,
         "energy": 60,
@@ -3970,6 +4179,7 @@
       "name": "마그마스톰",
       "nameEn": "Magma Storm",
       "type": "fire",
+      "archetype": "General",
       "pvp": {
         "power": 65,
         "energy": 40
@@ -3987,6 +4197,7 @@
       "name": "마그넷봄",
       "nameEn": "Magnet Bomb",
       "type": "steel",
+      "archetype": "General",
       "pvp": {
         "power": 70,
         "energy": 45
@@ -4004,6 +4215,7 @@
       "name": "메가드레인",
       "nameEn": "Mega Drain",
       "type": "grass",
+      "archetype": "High Energy",
       "pvp": {
         "power": 25,
         "energy": 55
@@ -4021,6 +4233,7 @@
       "name": "메가혼",
       "nameEn": "Megahorn",
       "type": "bug",
+      "archetype": "Nuke",
       "pvp": {
         "power": 110,
         "energy": 55
@@ -4038,6 +4251,7 @@
       "name": "메테오빔",
       "nameEn": "Meteor Beam",
       "type": "rock",
+      "archetype": "Boost Nuke",
       "pvp": {
         "power": 120,
         "energy": 60,
@@ -4061,6 +4275,7 @@
       "name": "코멧펀치",
       "nameEn": "Meteor Mash",
       "type": "steel",
+      "archetype": "General",
       "pvp": {
         "power": 100,
         "energy": 45
@@ -4078,6 +4293,7 @@
       "name": "깜짝헤드",
       "nameEn": "Mind Blown",
       "type": "fire",
+      "archetype": "Debuff",
       "pvp": {
         "power": 90,
         "energy": 35,
@@ -4101,6 +4317,7 @@
       "name": "미러코트",
       "nameEn": "Mirror Coat",
       "type": "psychic",
+      "archetype": "High Energy",
       "pvp": {
         "power": 60,
         "energy": 55
@@ -4118,6 +4335,7 @@
       "name": "미러샷",
       "nameEn": "Mirror Shot",
       "type": "steel",
+      "archetype": "Debuff Spam",
       "pvp": {
         "power": 35,
         "energy": 35,
@@ -4141,6 +4359,7 @@
       "name": "미스트볼",
       "nameEn": "Mist Ball",
       "type": "psychic",
+      "archetype": "Debuff Nuke",
       "pvp": {
         "power": 120,
         "energy": 60,
@@ -4164,6 +4383,7 @@
       "name": "문포스",
       "nameEn": "Moonblast",
       "type": "fairy",
+      "archetype": "Debuff Nuke",
       "pvp": {
         "power": 110,
         "energy": 60,
@@ -4187,6 +4407,7 @@
       "name": "섀도레이",
       "nameEn": "Moongeist Beam",
       "type": "ghost",
+      "archetype": "Nuke",
       "pvp": {
         "power": 135,
         "energy": 65
@@ -4204,6 +4425,7 @@
       "name": "진흙폭탄",
       "nameEn": "Mud Bomb",
       "type": "ground",
+      "archetype": "General",
       "pvp": {
         "power": 65,
         "energy": 45
@@ -4221,6 +4443,7 @@
       "name": "탁류",
       "nameEn": "Muddy Water",
       "type": "water",
+      "archetype": "Debuff Spam",
       "pvp": {
         "power": 35,
         "energy": 35,
@@ -4244,6 +4467,7 @@
       "name": "매지컬플레임",
       "nameEn": "Mystical Fire",
       "type": "fire",
+      "archetype": "Debuff",
       "pvp": {
         "power": 60,
         "energy": 45,
@@ -4267,6 +4491,7 @@
       "name": "자연의분노",
       "nameEn": "Nature's Madness",
       "type": "fairy",
+      "archetype": "Debuff",
       "pvp": {
         "power": 80,
         "energy": 50,
@@ -4290,6 +4515,7 @@
       "name": "나이트헤드",
       "nameEn": "Night Shade",
       "type": "ghost",
+      "archetype": "General",
       "pvp": {
         "power": 70,
         "energy": 45
@@ -4307,6 +4533,7 @@
       "name": "깜짝베기",
       "nameEn": "Night Slash",
       "type": "dark",
+      "archetype": "Boost Spam",
       "pvp": {
         "power": 50,
         "energy": 35,
@@ -4330,6 +4557,7 @@
       "name": "데스윙",
       "nameEn": "Oblivion Wing",
       "type": "flying",
+      "archetype": "Boost",
       "pvp": {
         "power": 85,
         "energy": 50,
@@ -4353,6 +4581,7 @@
       "name": "블로킹",
       "nameEn": "Obstruct",
       "type": "dark",
+      "archetype": "Boost Spam",
       "pvp": {
         "power": 15,
         "energy": 40,
@@ -4376,6 +4605,7 @@
       "name": "대포무노포",
       "nameEn": "Octazooka",
       "type": "water",
+      "archetype": "Debuff",
       "pvp": {
         "power": 50,
         "energy": 50,
@@ -4399,6 +4629,7 @@
       "name": "괴상한바람",
       "nameEn": "Ominous Wind",
       "type": "ghost",
+      "archetype": "Boost",
       "pvp": {
         "power": 45,
         "energy": 45,
@@ -4422,6 +4653,7 @@
       "name": "근원의파동",
       "nameEn": "Origin Pulse",
       "type": "water",
+      "archetype": "Nuke",
       "pvp": {
         "power": 130,
         "energy": 60
@@ -4439,6 +4671,7 @@
       "name": "역린",
       "nameEn": "Outrage",
       "type": "dragon",
+      "archetype": "Nuke",
       "pvp": {
         "power": 110,
         "energy": 60
@@ -4456,6 +4689,7 @@
       "name": "오버히트",
       "nameEn": "Overheat",
       "type": "fire",
+      "archetype": "Self-Debuff Nuke",
       "pvp": {
         "power": 130,
         "energy": 55,
@@ -4479,6 +4713,7 @@
       "name": "파라볼라차지",
       "nameEn": "Parabolic Charge",
       "type": "electric",
+      "archetype": "Boost",
       "pvp": {
         "power": 70,
         "energy": 50,
@@ -4502,6 +4737,7 @@
       "name": "보복",
       "nameEn": "Payback",
       "type": "dark",
+      "archetype": "Nuke",
       "pvp": {
         "power": 110,
         "energy": 60
@@ -4519,6 +4755,7 @@
       "name": "꽃보라",
       "nameEn": "Petal Blizzard",
       "type": "grass",
+      "archetype": "Nuke",
       "pvp": {
         "power": 110,
         "energy": 65
@@ -4536,6 +4773,7 @@
       "name": "치근거리기",
       "nameEn": "Play Rough",
       "type": "fairy",
+      "archetype": "High Energy",
       "pvp": {
         "power": 90,
         "energy": 60
@@ -4553,6 +4791,7 @@
       "name": "맹독엄니",
       "nameEn": "Poison Fang",
       "type": "poison",
+      "archetype": "Debuff Spam",
       "pvp": {
         "power": 45,
         "energy": 40,
@@ -4576,6 +4815,7 @@
       "name": "폴터가이스트",
       "nameEn": "Poltergeist",
       "type": "ghost",
+      "archetype": "Nuke",
       "pvp": {
         "power": 150,
         "energy": 75
@@ -4593,6 +4833,7 @@
       "name": "파워젬",
       "nameEn": "Power Gem",
       "type": "rock",
+      "archetype": "General",
       "pvp": {
         "power": 85,
         "energy": 50
@@ -4610,6 +4851,7 @@
       "name": "그로우펀치",
       "nameEn": "Power-Up Punch",
       "type": "fighting",
+      "archetype": "Boost Spam",
       "pvp": {
         "power": 20,
         "energy": 35,
@@ -4633,6 +4875,7 @@
       "name": "파워휩",
       "nameEn": "Power Whip",
       "type": "grass",
+      "archetype": "General",
       "pvp": {
         "power": 90,
         "energy": 50
@@ -4650,6 +4893,7 @@
       "name": "단애의칼",
       "nameEn": "Precipice Blades",
       "type": "ground",
+      "archetype": "Nuke",
       "pvp": {
         "power": 130,
         "energy": 60
@@ -4667,6 +4911,7 @@
       "name": "환상빔",
       "nameEn": "Psybeam",
       "type": "psychic",
+      "archetype": "High Energy",
       "pvp": {
         "power": 70,
         "energy": 60
@@ -4684,6 +4929,7 @@
       "name": "사이코키네시스",
       "nameEn": "Psychic",
       "type": "psychic",
+      "archetype": "High Energy",
       "pvp": {
         "power": 75,
         "energy": 55,
@@ -4707,6 +4953,7 @@
       "name": "사이코팽",
       "nameEn": "Psychic Fangs",
       "type": "psychic",
+      "archetype": "Debuff Spam",
       "pvp": {
         "power": 40,
         "energy": 35,
@@ -4730,6 +4977,7 @@
       "name": "사이코부스트",
       "nameEn": "Psycho Boost",
       "type": "psychic",
+      "archetype": "Self-Debuff Spam",
       "pvp": {
         "power": 70,
         "energy": 35,
@@ -4753,6 +5001,7 @@
       "name": "사이코쇼크",
       "nameEn": "Psyshock",
       "type": "psychic",
+      "archetype": "General",
       "pvp": {
         "power": 70,
         "energy": 40
@@ -4770,6 +5019,7 @@
       "name": "사이코브레이크",
       "nameEn": "Psystrike",
       "type": "psychic",
+      "archetype": "General",
       "pvp": {
         "power": 90,
         "energy": 45
@@ -4787,6 +5037,7 @@
       "name": "화염볼",
       "nameEn": "Pyro Ball",
       "type": "fire",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 75,
         "energy": 40
@@ -4804,6 +5055,7 @@
       "name": "분노의주먹",
       "nameEn": "Rage Fist",
       "type": "ghost",
+      "archetype": "Boost",
       "pvp": {
         "power": 50,
         "energy": 35,
@@ -4827,6 +5079,7 @@
       "name": "셸블레이드",
       "nameEn": "Razor Shell",
       "type": "water",
+      "archetype": "Debuff Spam",
       "pvp": {
         "power": 35,
         "energy": 35,
@@ -4850,6 +5103,7 @@
       "name": "은혜갚기",
       "nameEn": "Return",
       "type": "normal",
+      "archetype": "Nuke",
       "pvp": {
         "power": 130,
         "energy": 70
@@ -4867,6 +5121,7 @@
       "name": "시간의포효",
       "nameEn": "Roar of Time",
       "type": "dragon",
+      "archetype": "Nuke",
       "unreleased": true,
       "pvp": {
         "power": 150,
@@ -4885,6 +5140,7 @@
       "name": "록블라스트",
       "nameEn": "Rock Blast",
       "type": "rock",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 50,
         "energy": 40
@@ -4902,6 +5158,7 @@
       "name": "스톤샤워",
       "nameEn": "Rock Slide",
       "type": "rock",
+      "archetype": "General",
       "pvp": {
         "power": 75,
         "energy": 45
@@ -4919,6 +5176,7 @@
       "name": "암석봉인",
       "nameEn": "Rock Tomb",
       "type": "rock",
+      "archetype": "Debuff",
       "pvp": {
         "power": 75,
         "energy": 50,
@@ -4942,6 +5200,7 @@
       "name": "암석포",
       "nameEn": "Rock Wrecker",
       "type": "rock",
+      "archetype": "General",
       "pvp": {
         "power": 110,
         "energy": 50
@@ -4959,6 +5218,7 @@
       "name": "성스러운불꽃",
       "nameEn": "Sacred Fire",
       "type": "fire",
+      "archetype": "Debuff",
       "pvp": {
         "power": 130,
         "energy": 65,
@@ -4982,6 +5242,7 @@
       "name": "성스러운칼",
       "nameEn": "Sacred Sword",
       "type": "fighting",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 60,
         "energy": 35
@@ -4999,6 +5260,7 @@
       "name": "모래지옥",
       "nameEn": "Sand Tomb",
       "type": "ground",
+      "archetype": "Debuff Spam",
       "pvp": {
         "power": 40,
         "energy": 40,
@@ -5022,6 +5284,7 @@
       "name": "열사의폭풍",
       "nameEn": "Sandsear Storm",
       "type": "ground",
+      "archetype": "Debuff",
       "pvp": {
         "power": 60,
         "energy": 45,
@@ -5045,6 +5308,7 @@
       "name": "열탕",
       "nameEn": "Scald",
       "type": "water",
+      "archetype": "Debuff",
       "pvp": {
         "power": 85,
         "energy": 50,
@@ -5068,6 +5332,7 @@
       "name": "열사의대지",
       "nameEn": "Scorching Sands",
       "type": "ground",
+      "archetype": "Debuff",
       "pvp": {
         "power": 80,
         "energy": 50,
@@ -5091,6 +5356,7 @@
       "name": "신비의칼",
       "nameEn": "Secret Sword",
       "type": "fighting",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 70,
         "energy": 35
@@ -5108,6 +5374,7 @@
       "name": "씨폭탄",
       "nameEn": "Seed Bomb",
       "type": "grass",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 55,
         "energy": 40
@@ -5125,6 +5392,7 @@
       "name": "시드플레어",
       "nameEn": "Seed Flare",
       "type": "grass",
+      "archetype": "Debuff Nuke",
       "pvp": {
         "power": 130,
         "energy": 75,
@@ -5148,6 +5416,7 @@
       "name": "섀도볼",
       "nameEn": "Shadow Ball",
       "type": "ghost",
+      "archetype": "General",
       "pvp": {
         "power": 100,
         "energy": 50
@@ -5165,6 +5434,7 @@
       "name": "섀도본",
       "nameEn": "Shadow Bone",
       "type": "ghost",
+      "archetype": "Debuff",
       "pvp": {
         "power": 80,
         "energy": 45,
@@ -5188,6 +5458,7 @@
       "name": "섀도다이브",
       "nameEn": "Shadow Force",
       "type": "ghost",
+      "archetype": "Nuke",
       "pvp": {
         "power": 120,
         "energy": 90
@@ -5205,6 +5476,7 @@
       "name": "섀도펀치",
       "nameEn": "Shadow Punch",
       "type": "ghost",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 55,
         "energy": 35
@@ -5222,6 +5494,7 @@
       "name": "야습",
       "nameEn": "Shadow Sneak",
       "type": "ghost",
+      "archetype": "General",
       "pvp": {
         "power": 75,
         "energy": 50
@@ -5239,6 +5512,7 @@
       "name": "시그널빔",
       "nameEn": "Signal Beam",
       "type": "bug",
+      "archetype": "High Energy",
       "pvp": {
         "power": 75,
         "energy": 55,
@@ -5262,6 +5536,7 @@
       "name": "은빛바람",
       "nameEn": "Silver Wind",
       "type": "bug",
+      "archetype": "Boost",
       "pvp": {
         "power": 60,
         "energy": 45,
@@ -5285,6 +5560,7 @@
       "name": "로켓박치기",
       "nameEn": "Skull Bash",
       "type": "normal",
+      "archetype": "Boost Nuke",
       "pvp": {
         "power": 130,
         "energy": 75,
@@ -5308,6 +5584,7 @@
       "name": "불새",
       "nameEn": "Sky Attack",
       "type": "flying",
+      "archetype": "General",
       "pvp": {
         "power": 75,
         "energy": 50
@@ -5325,6 +5602,7 @@
       "name": "오물공격",
       "nameEn": "Sludge",
       "type": "poison",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 70,
         "energy": 40
@@ -5342,6 +5620,7 @@
       "name": "오물폭탄",
       "nameEn": "Sludge Bomb",
       "type": "poison",
+      "archetype": "General",
       "pvp": {
         "power": 80,
         "energy": 50
@@ -5359,6 +5638,7 @@
       "name": "오물웨이브",
       "nameEn": "Sludge Wave",
       "type": "poison",
+      "archetype": "Nuke",
       "pvp": {
         "power": 110,
         "energy": 65
@@ -5376,6 +5656,7 @@
       "name": "솔라빔",
       "nameEn": "Solar Beam",
       "type": "grass",
+      "archetype": "Nuke",
       "pvp": {
         "power": 150,
         "energy": 80
@@ -5393,6 +5674,7 @@
       "name": "공간절단",
       "nameEn": "Spacial Rend",
       "type": "dragon",
+      "archetype": "High Energy",
       "unreleased": true,
       "pvp": {
         "power": 95,
@@ -5411,6 +5693,7 @@
       "name": "물거품아리아",
       "nameEn": "Sparkling Aria",
       "type": "water",
+      "archetype": "General",
       "pvp": {
         "power": 80,
         "energy": 45
@@ -5428,6 +5711,7 @@
       "name": "그림자꿰매기",
       "nameEn": "Spirit Shackle",
       "type": "ghost",
+      "archetype": "Debuff Spam",
       "pvp": {
         "power": 50,
         "energy": 40,
@@ -5475,6 +5759,7 @@
       "name": "짓밟기",
       "nameEn": "Stomp",
       "type": "normal",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 55,
         "energy": 40
@@ -5492,6 +5777,7 @@
       "name": "스톤에지",
       "nameEn": "Stone Edge",
       "type": "rock",
+      "archetype": "Nuke",
       "pvp": {
         "power": 100,
         "energy": 55
@@ -5509,6 +5795,7 @@
       "name": "지옥의바퀴",
       "nameEn": "Submission",
       "type": "fighting",
+      "archetype": "General",
       "pvp": {
         "power": 60,
         "energy": 50
@@ -5526,6 +5813,7 @@
       "name": "메테오드라이브",
       "nameEn": "Sunsteel Strike",
       "type": "steel",
+      "archetype": "Nuke",
       "pvp": {
         "power": 135,
         "energy": 65
@@ -5543,6 +5831,7 @@
       "name": "엄청난힘",
       "nameEn": "Superpower",
       "type": "fighting",
+      "archetype": "Self-Debuff Spam",
       "pvp": {
         "power": 85,
         "energy": 40,
@@ -5566,6 +5855,7 @@
       "name": "파도타기",
       "nameEn": "Surf",
       "type": "water",
+      "archetype": "General",
       "pvp": {
         "power": 75,
         "energy": 45
@@ -5583,6 +5873,7 @@
       "name": "스피드스타",
       "nameEn": "Swift",
       "type": "normal",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 55,
         "energy": 35
@@ -5600,6 +5891,7 @@
       "name": "싱크로노이즈",
       "nameEn": "Synchronoise",
       "type": "psychic",
+      "archetype": "General",
       "pvp": {
         "power": 80,
         "energy": 50
@@ -5617,6 +5909,7 @@
       "name": "테크노버스터(블레이즈)",
       "nameEn": "Techno Blast (Burn)",
       "type": "fire",
+      "archetype": "Nuke",
       "pvp": {
         "power": 120,
         "energy": 55
@@ -5634,6 +5927,7 @@
       "name": "테크노버스터(프리즈)",
       "nameEn": "Techno Blast (Chill)",
       "type": "ice",
+      "archetype": "Nuke",
       "pvp": {
         "power": 120,
         "energy": 55
@@ -5651,6 +5945,7 @@
       "name": "테크노버스터(아쿠아)",
       "nameEn": "Techno Blast (Douse)",
       "type": "water",
+      "archetype": "Nuke",
       "pvp": {
         "power": 120,
         "energy": 55
@@ -5668,6 +5963,7 @@
       "name": "테크노버스터",
       "nameEn": "Techno Blast (Normal)",
       "type": "normal",
+      "archetype": "Nuke",
       "pvp": {
         "power": 120,
         "energy": 55
@@ -5685,6 +5981,7 @@
       "name": "테크노버스터(라이트닝)",
       "nameEn": "Techno Blast (Shock)",
       "type": "electric",
+      "archetype": "Nuke",
       "pvp": {
         "power": 120,
         "energy": 55
@@ -5702,6 +5999,7 @@
       "name": "번개",
       "nameEn": "Thunder",
       "type": "electric",
+      "archetype": "High Energy",
       "pvp": {
         "power": 100,
         "energy": 60
@@ -5719,6 +6017,7 @@
       "name": "썬더프리즌",
       "nameEn": "Thunder Cage",
       "type": "electric",
+      "archetype": "Debuff",
       "pvp": {
         "power": 60,
         "energy": 40,
@@ -5742,6 +6041,7 @@
       "name": "번개펀치",
       "nameEn": "Thunder Punch",
       "type": "electric",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 60,
         "energy": 40
@@ -5759,6 +6059,7 @@
       "name": "１０만볼트",
       "nameEn": "Thunderbolt",
       "type": "electric",
+      "archetype": "High Energy",
       "pvp": {
         "power": 90,
         "energy": 55
@@ -5776,6 +6077,7 @@
       "name": "플레어송",
       "nameEn": "Torch Song",
       "type": "fire",
+      "archetype": "Boost",
       "pvp": {
         "power": 70,
         "energy": 45,
@@ -5799,6 +6101,7 @@
       "name": "개척하기",
       "nameEn": "Trailblaze",
       "type": "grass",
+      "archetype": "Boost",
       "pvp": {
         "power": 65,
         "energy": 45,
@@ -5822,6 +6125,7 @@
       "name": "트라이어택",
       "nameEn": "Tri Attack",
       "type": "normal",
+      "archetype": "Debuff",
       "pvp": {
         "power": 65,
         "energy": 50,
@@ -5845,6 +6149,7 @@
       "name": "트리플악셀",
       "nameEn": "Triple Axel",
       "type": "ice",
+      "archetype": "Boost",
       "pvp": {
         "power": 60,
         "energy": 45,
@@ -5868,6 +6173,7 @@
       "name": "회오리",
       "nameEn": "Twister",
       "type": "dragon",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 70,
         "energy": 40
@@ -5885,6 +6191,7 @@
       "name": "기선제압",
       "nameEn": "Upper Hand",
       "type": "fighting",
+      "archetype": "Debuff Spam",
       "pvp": {
         "power": 70,
         "energy": 40,
@@ -5908,6 +6215,7 @@
       "name": "V제너레이트",
       "nameEn": "V-create",
       "type": "fire",
+      "archetype": "Self-Debuff Spam",
       "pvp": {
         "power": 95,
         "energy": 40,
@@ -5931,6 +6239,7 @@
       "name": "찝기",
       "nameEn": "Vise Grip",
       "type": "normal",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 70,
         "energy": 40
@@ -5948,6 +6257,7 @@
       "name": "볼트태클",
       "nameEn": "Volt Tackle",
       "type": "electric",
+      "archetype": "Self-Debuff",
       "pvp": {
         "power": 90,
         "energy": 40,
@@ -5971,6 +6281,7 @@
       "name": "물의파동",
       "nameEn": "Water Pulse",
       "type": "water",
+      "archetype": "General",
       "pvp": {
         "power": 80,
         "energy": 50
@@ -5988,6 +6299,7 @@
       "name": "웨더볼",
       "nameEn": "Weather Ball (Fire)",
       "type": "fire",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 60,
         "energy": 35
@@ -6005,6 +6317,7 @@
       "name": "웨더볼",
       "nameEn": "Weather Ball (Ice)",
       "type": "ice",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 60,
         "energy": 35
@@ -6022,6 +6335,7 @@
       "name": "웨더볼",
       "nameEn": "Weather Ball (Normal)",
       "type": "normal",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 60,
         "energy": 35
@@ -6039,6 +6353,7 @@
       "name": "웨더볼",
       "nameEn": "Weather Ball (Rock)",
       "type": "rock",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 60,
         "energy": 35
@@ -6056,6 +6371,7 @@
       "name": "웨더볼",
       "nameEn": "Weather Ball (Water)",
       "type": "water",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 60,
         "energy": 35
@@ -6073,6 +6389,7 @@
       "name": "와일드볼트",
       "nameEn": "Wild Charge",
       "type": "electric",
+      "archetype": "Self-Debuff",
       "pvp": {
         "power": 100,
         "energy": 45,
@@ -6096,6 +6413,7 @@
       "name": "번개폭풍",
       "nameEn": "Wildbolt Storm",
       "type": "electric",
+      "archetype": "Debuff",
       "pvp": {
         "power": 60,
         "energy": 45,
@@ -6119,6 +6437,7 @@
       "name": "김밥말이",
       "nameEn": "Wrap",
       "type": "normal",
+      "archetype": "Debuff",
       "pvp": {
         "power": 60,
         "energy": 45,
@@ -6142,6 +6461,7 @@
       "name": "시저크로스",
       "nameEn": "X-Scissor",
       "type": "bug",
+      "archetype": "Spam/Bait",
       "pvp": {
         "power": 65,
         "energy": 40
@@ -6159,6 +6479,7 @@
       "name": "전자포",
       "nameEn": "Zap Cannon",
       "type": "electric",
+      "archetype": "Debuff Nuke",
       "pvp": {
         "power": 150,
         "energy": 80,
