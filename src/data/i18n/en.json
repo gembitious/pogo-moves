@@ -45,6 +45,10 @@
     "steel": "Steel",
     "fairy": "Fairy"
   },
+  "search": {
+    "placeholder": "Search Pokémon…",
+    "clear": "Clear"
+  },
   "panel": {
     "usedBy": "Pokémon with this move",
     "count": "{n}",

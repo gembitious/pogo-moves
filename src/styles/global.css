@@ -598,3 +598,103 @@ table.matrix thead th:first-child {
     border-radius: 16px 16px 0 0;
   }
 }
+
+/* ---- pokemon search → highlight a species' moves ----------------------- */
+.poke-search {
+  position: relative;
+  align-self: flex-start;
+}
+
+.poke-input {
+  width: 220px;
+  max-width: 62vw;
+  height: 30px;
+  padding: 0 12px;
+  border: 1px solid var(--tertiary);
+  border-radius: 15px;
+  background: var(--surface);
+  color: var(--white);
+  font-size: 13px;
+}
+.poke-input::placeholder {
+  color: #ffffff80;
+}
+
+.poke-sel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 6px 0 8px;
+  border: 1px solid var(--tertiary);
+  border-radius: 15px;
+  background: var(--surface);
+  max-width: 62vw;
+}
+.poke-sel-name {
+  max-width: 150px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.poke-sel-x {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50%;
+  background: #ffffff1a;
+  color: var(--white);
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+}
+.poke-sel-x:hover {
+  background: #ffffff33;
+}
+
+.poke-results {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 50;
+  width: 240px;
+  max-width: 72vw;
+  max-height: 280px;
+  overflow-y: auto;
+  padding: 4px;
+  border-radius: 10px;
+  background: #0a2c3af7;
+  border: 1px solid var(--secondary);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+.poke-result {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 4px 6px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--white);
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+}
+.poke-result:hover {
+  background: #ffffff14;
+}
+
+.chip.hl {
+  box-shadow:
+    0 0 0 2px #ffffff,
+    0 0 8px 2px #ffffffaa;
+  z-index: 25;
+}
+.chip.dim {
+  opacity: 0.2;
+}
+.chip.dim:hover,
+.chip.dim.active {
+  opacity: 1;
+}
