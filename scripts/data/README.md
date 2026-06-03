@@ -37,6 +37,22 @@
 dex 1011·1012·1013·1019; PokéAPI는 이 환경에서 403). 스프라이트 누락분은 UI에서
 타입색 플레이스홀더 폴백(원하면 PokeMiners pogo_assets로 보충).
 
+## 스프라이트 보강
+
+누락 스프라이트(주로 신규 세대)는 PokeMiners pogo_assets에서 받아옵니다:
+
+- **네트워크 자동 (권장, 클론 불필요)**: `npm run fetch-images` — GitHub tree API로
+  스프라이트 폴더를 자동 탐색해 raw에서 누락분만 내려받습니다. rate limit이 걸리면
+  `GH_TOKEN=<token> npm run fetch-images`(60→5000/hr). `--dry`(탐색만)·`--all`(전체 재다운로드).
+- **오프라인**: PokeMiners 클론 후 `node scripts/build-pokemon-images.mjs <스프라이트폴더>`.
+
+둘 다 `pm####.icon.png`→`{dex}.png`, `pm####.f{FORM}.icon.png`→`{dex}_{form}.png`로 저장
+(공유 규칙 `scripts/lib/pokeminers-sprites.mjs`, 메가·연도 코스튬 제외). 받은 뒤 반드시
+`npm run build-pokemon-index`로 인덱스를 재생성하세요.
+
+> PokéAPI(이름·스프라이트)와 jsDelivr는 이 클라우드 환경에서 차단(403/allowlist)이라
+> PokeMiners raw만 사용합니다.
+
 ## 주의
 
 veekun·pvpoke는 메인시리즈/PvP 기준이라 GO 전용 변형(타입별 Hidden Power, 드라이브별 Techno Blast, `_plus`/`_blastoise` 코스메틱, Max 무브)은 빠질 수 있습니다 — 파이프라인이 스킵·리포트합니다.
