@@ -16,13 +16,9 @@
 
 ## pvpoke
 
-[pvpoke](https://github.com/pvpoke/pvpoke) gamemaster.
-
-| 파일 | 형식 / 용도 |
-| --- | --- |
-| `pvpoke-moves.json` | PvP 무브 + **`archetype`**(역할 분류). 파이프라인이 `archetype`를 `moves.json`에 부여 → 앱의 역할 필터/툴팁 |
-
-> `../src/data/pokemon.json`도 pvpoke gamemaster(로스터·스탯·기술·진화·그림자)이며, 보존된 스프라이트 + `species-i18n.csv`(한글명)와 함께 향후 "기술↔포켓몬" 기능의 토대입니다. (무브 id가 대문자라 연동 시 소문자화 필요.)
+[pvpoke](https://github.com/pvpoke/pvpoke) gamemaster — `../src/data/pokemon.json`
+(로스터·스탯·기술·진화·그림자). 보존된 스프라이트 + `species-i18n.csv`(한글명)와 함께
+"기술↔포켓몬" 기능의 토대입니다. (무브 id가 대문자라 연동 시 소문자화 필요.)
 
 ## 포켓몬 인덱스 (데이터 레이어)
 

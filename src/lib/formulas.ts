@@ -40,7 +40,6 @@ export interface RawMove<Pvp, Pve> {
   name: string
   nameEn: string
   type: PokemonType
-  archetype?: string
   unreleased?: boolean
   pvp: Pvp | null
   pve: Pve | null

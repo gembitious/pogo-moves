@@ -27,7 +27,6 @@ interface Point {
   id: string
   label: string
   type: PokemonType
-  archetype?: string
   x: number
   y: number
   lines: string[]
@@ -52,9 +51,6 @@ function buffLines(pvp: ChargedMove['pvp'], dict: Dictionary): string[] {
   return [`${chance} ${target} ${parts.join(', ')}`]
 }
 
-const roleLine = (m: { archetype?: string }, dict: Dictionary): string[] =>
-  m.archetype ? [`${dict.move.role}: ${(dict.archetype as Record<string, string>)[m.archetype] ?? m.archetype}`] : []
-
 function buildPoints(category: MoveCategory, mode: MoveMode, moves: Props['moves'], dict: Dictionary, locale: Locale): Point[] {
   const label = (m: { name: string; nameEn: string }) => (locale === 'ko' ? m.name : m.nameEn)
   if (category === 'fast') {
@@ -68,11 +64,9 @@ function buildPoints(category: MoveCategory, mode: MoveMode, moves: Props['moves
           id: m.id,
           label: label(m),
           type: m.type,
-          archetype: m.archetype,
           x: dpt,
           y: ept,
           lines: [
-            ...roleLine(m, dict),
             `${dict.move.damage}: ${p.power}`,
             `${dict.move.turn}: ${p.turn}    DPT: ${dpt}`,
             `${dict.move.energy}: ${p.energyGain}    EPT: ${ept}`,
@@ -90,10 +84,9 @@ function buildPoints(category: MoveCategory, mode: MoveMode, moves: Props['moves
           id: m.id,
           label: label(m),
           type: m.type,
-          archetype: m.archetype,
           x: p.energy,
           y: dpe,
-          lines: [...roleLine(m, dict), `${dict.move.damage}: ${p.power}`, `${dict.move.energy}: ${p.energy}    DPE: ${dpe}`, ...buffLines(p, dict)],
+          lines: [`${dict.move.damage}: ${p.power}`, `${dict.move.energy}: ${p.energy}    DPE: ${dpe}`, ...buffLines(p, dict)],
         }
       })
   }
@@ -107,10 +100,9 @@ function buildPoints(category: MoveCategory, mode: MoveMode, moves: Props['moves
         id: m.id,
         label: label(m),
         type: m.type,
-        archetype: m.archetype,
         x: dps,
         y: dpe,
-        lines: [...roleLine(m, dict), `${dict.move.damage}: ${p.power}`, `${dict.move.energy}: ${p.energy}    DPE: ${dpe}`, `DPS: ${dps}`],
+        lines: [`${dict.move.damage}: ${p.power}`, `${dict.move.energy}: ${p.energy}    DPE: ${dpe}`, `DPS: ${dps}`],
       }
     })
 }
@@ -140,7 +132,6 @@ function PokeSprite({ mon }: { mon: PokemonEntry }) {
 export default function MoveExplorer({ category, locale, dict, moves }: Props) {
   const [mode, setMode] = useState<MoveMode>('pvp')
   const [selected, setSelected] = useState<Set<PokemonType>>(new Set())
-  const [role, setRole] = useState<string>('all')
   const [hover, setHover] = useState<string | null>(null)
   const [picked, setPicked] = useState<string | null>(null)
   const [pdata, setPdata] = useState<PokemonIndex | null>(null)
@@ -167,16 +158,9 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
   const sy = (y: number) => PAD.top + (1 - (y - cfg.yMin) / (cfg.yMax - cfg.yMin)) * plotH
 
   const allPoints = useMemo(() => buildPoints(category, mode, moves, dict, locale), [category, mode, moves, dict, locale])
-  const roleOptions = useMemo(
-    () => [...new Set(allPoints.map((p) => p.archetype).filter(Boolean))].sort() as string[],
-    [allPoints],
-  )
   const points = useMemo(
-    () =>
-      allPoints.filter(
-        (p) => (selected.size === 0 || selected.has(p.type)) && (role === 'all' || p.archetype === role),
-      ),
-    [allPoints, selected, role],
+    () => allPoints.filter((p) => selected.size === 0 || selected.has(p.type)),
+    [allPoints, selected],
   )
 
   // Group points sharing identical coordinates so a hovered stack can fan open.
@@ -260,27 +244,10 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
     <div class="explorer">
       <div class="toolbar">
         <div class="filter-bar scroll-hidden">
-          {roleOptions.length > 0 && (
-            <select
-              class="role-filter"
-              value={role}
-              onChange={(e) => setRole((e.currentTarget as HTMLSelectElement).value)}
-            >
-              <option value="all">{dict.common.allRoles}</option>
-              {roleOptions.map((a) => (
-                <option key={a} value={a}>
-                  {(dict.archetype as Record<string, string>)[a] ?? a}
-                </option>
-              ))}
-            </select>
-          )}
           {category === 'charged' && (
             <button
               class="type-btn mode"
-              onClick={() => {
-                setMode((m) => (m === 'pve' ? 'pvp' : 'pve'))
-                setRole('all')
-              }}
+              onClick={() => setMode((m) => (m === 'pve' ? 'pvp' : 'pve'))}
             >
               {mode === 'pve' ? 'PvP' : 'PvE'}
             </button>
