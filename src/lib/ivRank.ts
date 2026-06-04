@@ -88,18 +88,3 @@ export const findSpread = (list: IvSpread[], ivA: number, ivD: number, ivS: numb
 // goes first. Compare a spread's Attack to the reference (usually rank 1).
 export const cmpVs = (a: IvSpread, ref: IvSpread): 'win' | 'tie' | 'lose' =>
   a.atk > ref.atk ? 'win' : a.atk === ref.atk ? 'tie' : 'lose'
-
-// In-game search string: each top spread maps to a (CP, HP) pair; join the distinct
-// pairs with "," (OR) so pasting it filters storage down to candidates for those IVs.
-export function searchString(top: IvSpread[]): string {
-  const seen = new Set<string>()
-  const parts: string[] = []
-  for (const s of top) {
-    const k = `${s.cp}&${s.hp}`
-    if (!seen.has(k)) {
-      seen.add(k)
-      parts.push(k)
-    }
-  }
-  return parts.join(',')
-}
