@@ -84,7 +84,10 @@
     "recommended": "추천 기술",
     "empty": "포켓몬을 검색해 기술셋을 확인하세요",
     "comparePlaceholder": "비교할 포켓몬…",
-    "moveCount": "무브 카운트"
+    "moveCount": "무브 카운트",
+    "breakpoint": "브레이크포인트",
+    "rank1": "1위 빌드 기준",
+    "nextBp": "다음 BP"
   },
   "panel": {
     "usedBy": "이 기술을 쓰는 포켓몬",

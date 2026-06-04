@@ -84,7 +84,10 @@
     "recommended": "Recommended",
     "empty": "Search a Pokémon to see its moves",
     "comparePlaceholder": "Compare with…",
-    "moveCount": "Move count"
+    "moveCount": "Move count",
+    "breakpoint": "Breakpoints",
+    "rank1": "rank 1 build",
+    "nextBp": "Next BP"
   },
   "panel": {
     "usedBy": "Pokémon with this move",
