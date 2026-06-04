@@ -30,6 +30,7 @@ jobs:
       - run: npm run build-pokemon-data -- --write # pokemon.json roster from pvpoke
       - run: npm run check-data
       - run: npm run build-pokemon-index # regenerate public/data indexes
+      - run: npm run build-rankings # refresh pvpoke league rankings (GL/UL/ML)
       - name: Open or update a PR when data changed
         env:
           GH_TOKEN: ${{ github.token }}
