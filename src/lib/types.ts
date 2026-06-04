@@ -44,5 +44,19 @@ export const TYPE_COLORS: Record<PokemonType, string> = {
   fairy: '#db9ac5',
 }
 
+// Black or white label text per type, chosen by background luminance, so text on
+// light types (electric, ice, …) stays legible (the all-white default failed contrast).
+const luminance = (hex: string) => {
+  const n = parseInt(hex.slice(1), 16)
+  const ch = [(n >> 16) & 255, (n >> 8) & 255, n & 255].map((c) => {
+    const s = c / 255
+    return s <= 0.03928 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4
+  })
+  return 0.2126 * ch[0] + 0.7152 * ch[1] + 0.0722 * ch[2]
+}
+export const TYPE_TEXT = Object.fromEntries(
+  POKEMON_TYPES.map((t) => [t, luminance(TYPE_COLORS[t]) > 0.45 ? '#10171c' : '#ffffff']),
+) as Record<PokemonType, string>
+
 export type MoveCategory = 'fast' | 'charged'
 export type MoveMode = 'pvp' | 'pve'

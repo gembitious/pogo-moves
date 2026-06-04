@@ -1,5 +1,5 @@
 ---
-import { POKEMON_TYPES, TYPE_COLORS } from '@/lib/types'
+import { POKEMON_TYPES, TYPE_COLORS, TYPE_TEXT } from '@/lib/types'
 import { TYPE_MATRIX } from '@/lib/typeEffectiveness'
 import { getDictionary } from '@/lib/i18n'
 
@@ -42,7 +42,7 @@ const LEGEND = [
           POKEMON_TYPES.map((a) => (
             <tr>
               <th scope="row" data-a={a}>
-                <span class="row-label" style={`background:${TYPE_COLORS[a]}`}>
+                <span class="row-label" style={`background:${TYPE_COLORS[a]};color:${TYPE_TEXT[a]}`}>
                   <img src={icon(a)} alt="" />
                   <span class="rl-text">{dict.type[a]}</span>
                 </span>
@@ -50,8 +50,8 @@ const LEGEND = [
               {POKEMON_TYPES.map((d) => {
                 const eff = TYPE_MATRIX[a][d]
                 return (
-                  <td data-a={a} data-d={d} data-eff={eff}>
-                    <img class="cell-icon" src={icon(`type_${eff}`)} alt={eff} title={`${dict.type[a]} → ${dict.type[d]}`} />
+                  <td data-a={a} data-d={d} data-eff={eff} aria-label={`${dict.type[a]} → ${dict.type[d]}: ${dict.eff[eff]}`}>
+                    <img class="cell-icon" src={icon(`type_${eff}`)} alt="" title={`${dict.type[a]} → ${dict.type[d]}`} />
                   </td>
                 )
               })}
@@ -74,36 +74,56 @@ const LEGEND = [
 </div>
 
 <script>
-  // Click a cell to cross-highlight its attack row + defend column, with a readout.
+  // Cross-highlight the attack row + defend column for the focused/clicked cell, with a
+  // readout. Keyboard: arrow keys rove the grid (roving tabindex), Escape clears.
   const table = document.querySelector<HTMLTableElement>('.matrix')
   const readout = document.querySelector<HTMLElement>('.type-readout')
   if (table && readout) {
     const MULT: Record<string, string> = { super_effective: '1.6', netural: '1', resisted: '0.625', doubly_resisted: '0.39' }
     const HINT = readout.textContent ?? ''
-    let sel = ''
+    const cells = Array.from(table.querySelectorAll<HTMLTableCellElement>('td[data-a]'))
+    const COLS = Math.round(Math.sqrt(cells.length)) || 1
+    cells.forEach((c, i) => (c.tabIndex = i === 0 ? 0 : -1))
     const reset = () => table.querySelectorAll('.sel-a,.sel-d,.sel-cell').forEach((el) => el.classList.remove('sel-a', 'sel-d', 'sel-cell'))
     const clearSel = () => {
       table.classList.remove('has-sel')
       reset()
       readout.textContent = HINT
       readout.classList.remove('active')
-      sel = ''
     }
-    table.addEventListener('click', (e) => {
-      const td = (e.target as Element).closest('td[data-a]')
-      if (!td) return
-      const a = td.getAttribute('data-a')
-      const d = td.getAttribute('data-d')
-      if (sel === `${a}:${d}`) return clearSel()
+    const select = (td: HTMLTableCellElement) => {
       reset()
       table.classList.add('has-sel')
+      const a = td.getAttribute('data-a')
+      const d = td.getAttribute('data-d')
       table.querySelectorAll(`[data-a="${a}"]`).forEach((el) => el.classList.add('sel-a'))
       table.querySelectorAll(`[data-d="${d}"]`).forEach((el) => el.classList.add('sel-d'))
       td.classList.add('sel-cell')
       const title = td.querySelector('img')?.getAttribute('title') ?? ''
       readout.textContent = `${title}  ×${MULT[td.getAttribute('data-eff') ?? ''] ?? ''}`
       readout.classList.add('active')
-      sel = `${a}:${d}`
+    }
+    table.addEventListener('focusin', (e) => {
+      const td = (e.target as Element).closest<HTMLTableCellElement>('td[data-a]')
+      if (td) select(td)
+    })
+    table.addEventListener('click', (e) => {
+      const td = (e.target as Element).closest<HTMLTableCellElement>('td[data-a]')
+      if (td) td.focus()
+    })
+    table.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') return clearSel()
+      const cur = (e.target as Element).closest<HTMLTableCellElement>('td[data-a]')
+      const i = cur ? cells.indexOf(cur) : -1
+      if (i < 0) return
+      const delta = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : e.key === 'ArrowDown' ? COLS : e.key === 'ArrowUp' ? -COLS : 0
+      if (!delta) return
+      const next = i + delta
+      if (next < 0 || next >= cells.length) return
+      e.preventDefault()
+      cells[i].tabIndex = -1
+      cells[next].tabIndex = 0
+      cells[next].focus()
     })
     document.addEventListener('click', (e) => {
       if (!(e.target as Element).closest('.matrix')) clearSel()

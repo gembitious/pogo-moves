@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'preact/hooks'
 import {
   POKEMON_TYPES,
   TYPE_COLORS,
+  TYPE_TEXT,
   type MoveCategory,
   type MoveMode,
   type PokemonType,
@@ -295,6 +296,14 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
   const sortBy = (key: typeof sort.key) =>
     setSort((s) => (s.key === key ? { key, dir: (s.dir * -1) as 1 | -1 } : { key, dir: key === 'name' || key === 'type' ? 1 : -1 }))
   const ind = (k: typeof sort.key) => (sort.key === k ? (sort.dir < 0 ? ' ▼' : ' ▲') : '')
+  const sortTh = (key: typeof sort.key, label: string, num = false) => (
+    <th class={`sortable${num ? ' num' : ''}`} aria-sort={sort.key === key ? (sort.dir < 0 ? 'descending' : 'ascending') : 'none'}>
+      <button class="th-sort" onClick={() => sortBy(key)}>
+        {label}
+        {ind(key)}
+      </button>
+    </th>
+  )
   const rows = useMemo(() => {
     const val = (p: Point) => (sort.key === 'power' ? p.power : sort.key === 'x' ? p.x : p.y)
     return [...points].sort((a, b) => {
@@ -385,7 +394,7 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
                 class="type-btn"
                 title={dict.type[t]}
                 aria-pressed={selected.has(t)}
-                style={{ background: TYPE_COLORS[t], opacity: active ? 1 : 0.3 }}
+                style={{ background: TYPE_COLORS[t], color: TYPE_TEXT[t], opacity: active ? 1 : 0.3 }}
                 onClick={() => toggleType(t)}
               >
                 <img src={`${base}images/types/${t}.png`} width={18} height={18} alt={dict.type[t]} />
@@ -412,26 +421,11 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
             <table>
               <thead>
                 <tr>
-                  <th class="sortable" onClick={() => sortBy('name')}>
-                    {dict.common.name}
-                    {ind('name')}
-                  </th>
-                  <th class="sortable" onClick={() => sortBy('type')}>
-                    {dict.common.type}
-                    {ind('type')}
-                  </th>
-                  <th class="sortable num" onClick={() => sortBy('power')}>
-                    {dict.move.damage}
-                    {ind('power')}
-                  </th>
-                  <th class="sortable num" onClick={() => sortBy('x')}>
-                    {cfg.xLabel}
-                    {ind('x')}
-                  </th>
-                  <th class="sortable num" onClick={() => sortBy('y')}>
-                    {cfg.yLabel}
-                    {ind('y')}
-                  </th>
+                  {sortTh('name', dict.common.name)}
+                  {sortTh('type', dict.common.type)}
+                  {sortTh('power', dict.move.damage, true)}
+                  {sortTh('x', cfg.xLabel, true)}
+                  {sortTh('y', cfg.yLabel, true)}
                 </tr>
               </thead>
               <tbody>
@@ -503,6 +497,7 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
                     left: `${cx}px`,
                     top: `${cy}px`,
                     background: labeled ? TYPE_COLORS[p.type] : 'transparent',
+                    color: labeled ? TYPE_TEXT[p.type] : undefined,
                     zIndex: isHover ? 30 : isHl ? 20 : undefined,
                   }}
                   aria-label={p.label}
