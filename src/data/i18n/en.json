@@ -83,7 +83,8 @@
     "losesTo": "Loses to",
     "recommended": "Recommended",
     "empty": "Search a Pokémon to see its moves",
-    "comparePlaceholder": "Compare with…"
+    "comparePlaceholder": "Compare with…",
+    "moveCount": "Move count"
   },
   "panel": {
     "usedBy": "Pokémon with this move",

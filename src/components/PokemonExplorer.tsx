@@ -9,7 +9,7 @@ import { PokemonSearch } from './PokemonSearch'
 import { PokemonCompare } from './PokemonCompare'
 import { IvChecker } from './IvChecker'
 import { readCompareId, readSelectedId, writeCompareId, writeSelectedId } from '@/lib/urlState'
-import { chargedDpe, fastPvpDpt, fastPvpEpt, type ChargedMove, type FastMove } from '@/lib/formulas'
+import { chargedDpe, fastPvpDpt, fastPvpEpt, moveCount, moveCountTurns, type ChargedMove, type FastMove } from '@/lib/formulas'
 import { loadRankings, LEAGUES, type League, type Rankings } from '@/lib/rankings'
 
 const base = import.meta.env.BASE_URL
@@ -123,6 +123,9 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
     () => (pokeSel ? pokeSel.charged.map((id) => chargedById.get(id)).filter((m): m is ChargedMove => Boolean(m)) : []),
     [pokeSel, chargedById],
   )
+  // PvP-only subsets for the move-count matrix.
+  const mcFast = useMemo(() => fastList.filter((m) => m.pvp), [fastList])
+  const mcCharged = useMemo(() => chargedList.filter((m) => m.pvp), [chargedList])
 
   // Deep-link a move to its chart (fast page / charged index), opening its panel.
   const moveHref = (id: string, kind: 'fast' | 'charged') => `${base}${locale}${kind === 'fast' ? '/fast' : ''}?m=${id}`
@@ -325,6 +328,45 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
               ))}
             </section>
           </div>
+
+          {mcFast.length > 0 && mcCharged.length > 0 && (
+            <div class="dex-mc">
+              <h3>{dict.pokemon.moveCount}</h3>
+              <div class="dex-mc-wrap scroll-hidden">
+                <table class="mc">
+                  <thead>
+                    <tr>
+                      <th class="mc-corner" />
+                      {mcFast.map((f) => (
+                        <th key={f.id} title={name(f)}>
+                          <span class="mc-ic" style={{ background: TYPE_COLORS[f.type] }}>
+                            <img src={`${base}images/types/${f.type}.png`} width={15} height={15} alt={dict.type[f.type]} />
+                          </span>
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {mcCharged.map((c) => (
+                      <tr key={c.id}>
+                        <th class="mc-cname">
+                          <span class="mc-ic sm" style={{ background: TYPE_COLORS[c.type] }}>
+                            <img src={`${base}images/types/${c.type}.png`} width={13} height={13} alt={dict.type[c.type]} />
+                          </span>
+                          <span class="static-text">{name(c)}</span>
+                        </th>
+                        {mcFast.map((f) => (
+                          <td key={f.id} class="num" title={`${moveCountTurns(f.pvp!, c.pvp!) * 0.5}s`}>
+                            {moveCount(f.pvp!, c.pvp!)}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
 
           {rank && (rank.matchups.length > 0 || rank.counters.length > 0) && (
             <div class="dex-mu">

@@ -1415,6 +1415,58 @@ table.matrix thead th:first-child {
   }
 }
 
+/* ---- move count matrix (fast moves to fire each charged) --------------- */
+.dex-mc {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.dex-mc h3 {
+  margin: 0;
+  font-size: 14px;
+  color: var(--tertiary);
+}
+.dex-mc-wrap {
+  overflow-x: auto;
+}
+table.mc {
+  border-collapse: collapse;
+  font-size: 13px;
+}
+table.mc th,
+table.mc td {
+  padding: 4px 8px;
+  text-align: center;
+}
+table.mc tbody tr:nth-child(even) {
+  background: #ffffff08;
+}
+.mc-ic {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+}
+.mc-ic.sm {
+  width: 22px;
+  height: 22px;
+}
+.mc-cname {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 150px;
+  text-align: left !important;
+  font-weight: 500;
+}
+table.mc td.num {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  color: var(--white);
+}
+
 /* ---- IV rank checker (self-computed) ----------------------------------- */
 .dex-iv {
   display: flex;

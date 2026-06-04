@@ -60,3 +60,9 @@ export const fastPveDpe = (m: FastPveStats) => round2(m.power / m.energyGain)
 
 export const chargedDpe = (m: { power: number; energy: number }) => round2(m.power / m.energy)
 export const chargedPveDps = (m: ChargedPveStats) => round2(m.power / m.duration)
+
+// PvP move count: fast moves needed to fire a charged move, and the turns that takes
+// (a turn is a 0.5s window — ×0.5 for seconds).
+export const moveCount = (fast: { energyGain: number }, charged: { energy: number }) =>
+  Math.ceil(charged.energy / fast.energyGain)
+export const moveCountTurns = (fast: FastPvpStats, charged: { energy: number }) => moveCount(fast, charged) * fast.turn
