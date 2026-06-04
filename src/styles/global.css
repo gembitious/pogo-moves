@@ -256,19 +256,30 @@ a {
 .chip {
   position: absolute;
   transform: translate(-50%, -50%);
-  max-width: 96px;
-  padding: 1px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  padding: 0;
   border: none;
-  border-radius: 4px;
+  border-radius: 50%;
+  background: transparent;
   color: var(--white);
   font-size: 11px;
   line-height: 1.35;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
   cursor: pointer;
-  transition:
-    top 0.12s ease,
-    transform 0.12s ease,
-    box-shadow 0.12s ease;
+}
+
+/* labeled = hovered or a selected pokemon's move: expand the dot into a pill */
+.chip.labeled {
+  width: auto;
+  height: auto;
+  max-width: 96px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  z-index: 20;
 }
 
 .chip .static-text {
@@ -276,9 +287,7 @@ a {
   max-width: 84px;
 }
 
-.chip:hover,
 .chip.active {
-  transform: translate(-50%, -50%) scale(1.14);
   box-shadow: 0 0 0 2px #ffffffcc;
   z-index: 30;
 }
@@ -992,4 +1001,62 @@ table.matrix thead th:first-child {
   border-color: var(--secondary);
   background: #ffffff0f;
   color: var(--white);
+}
+
+/* ---- move list view ---------------------------------------------------- */
+.move-list {
+  height: 100%;
+  overflow: auto;
+}
+.move-list table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.move-list thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 6px 10px;
+  background: var(--bg);
+  color: var(--tertiary);
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+}
+.move-list th.num,
+.move-list td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.move-list tbody tr {
+  border-top: 1px solid #ffffff14;
+  cursor: pointer;
+}
+.move-list tbody tr:hover {
+  background: #ffffff0d;
+}
+.move-list td {
+  padding: 5px 10px;
+  white-space: nowrap;
+}
+.move-list .mv-cell-name {
+  max-width: 160px;
+  overflow: hidden;
+  font-weight: 500;
+  text-overflow: ellipsis;
+}
+.move-list .mv-type-ic {
+  display: block;
+}
+.move-list tbody tr.hl {
+  background: #ffffff1a;
+}
+.move-list tbody tr.hl td:first-child {
+  box-shadow: inset 3px 0 0 var(--primary);
+}
+.move-list tbody tr.dim {
+  opacity: 0.4;
 }
