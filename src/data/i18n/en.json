@@ -14,7 +14,11 @@
     "attacker": "Attacker",
     "defender": "Defender",
     "error": "Failed to load",
-    "retry": "Retry"
+    "retry": "Retry",
+    "list": "List",
+    "chart": "Chart",
+    "name": "Name",
+    "type": "Type"
   },
   "move": {
     "damage": "Power",
@@ -47,6 +51,12 @@
     "dark": "Dark",
     "steel": "Steel",
     "fairy": "Fairy"
+  },
+  "eff": {
+    "super_effective": "Super",
+    "netural": "Neutral",
+    "resisted": "Resisted",
+    "doubly_resisted": "Double resist"
   },
   "search": {
     "placeholder": "Search Pokémon…",

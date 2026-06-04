@@ -24,7 +24,6 @@ import { readMoveId, readSelectedId, writeMoveId, writeSelectedId } from '@/lib/
 
 const base = import.meta.env.BASE_URL
 const PAD = { left: 56, right: 18, top: 14, bottom: 44 } // px around the plot area
-const FAN_GAP = 17 // px to fan stacked chips apart on hover
 // Locked to Shadow / Purified forms, which the reverse index (base species only) omits.
 const SHADOW_LOCKED = new Set(['frustration', 'return'])
 
@@ -32,6 +31,7 @@ interface Point {
   id: string
   label: string
   type: PokemonType
+  power: number
   x: number
   y: number
   lines: string[]
@@ -69,6 +69,7 @@ function buildPoints(category: MoveCategory, mode: MoveMode, moves: Props['moves
           id: m.id,
           label: label(m),
           type: m.type,
+          power: p.power,
           x: dpt,
           y: ept,
           lines: [
@@ -89,6 +90,7 @@ function buildPoints(category: MoveCategory, mode: MoveMode, moves: Props['moves
           id: m.id,
           label: label(m),
           type: m.type,
+          power: p.power,
           x: p.energy,
           y: dpe,
           lines: [`${dict.move.damage}: ${p.power}`, `${dict.move.energy}: ${p.energy}    DPE: ${dpe}`, ...buffLines(p, dict)],
@@ -105,6 +107,7 @@ function buildPoints(category: MoveCategory, mode: MoveMode, moves: Props['moves
         id: m.id,
         label: label(m),
         type: m.type,
+        power: p.power,
         x: dps,
         y: dpe,
         lines: [`${dict.move.damage}: ${p.power}`, `${dict.move.energy}: ${p.energy}    DPE: ${dpe}`, `DPS: ${dps}`],
@@ -120,6 +123,8 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
   const [pdata, setPdata] = useState<PokemonIndex | null>(null)
   const [pokeSel, setPokeSel] = useState<PokemonEntry | null>(null)
   const [loadErr, setLoadErr] = useState(false)
+  const [view, setView] = useState<'chart' | 'list'>('chart')
+  const [sort, setSort] = useState<{ key: 'name' | 'type' | 'power' | 'x' | 'y'; dir: 1 | -1 }>({ key: 'power', dir: -1 })
   const wrapRef = useRef<HTMLDivElement>(null)
   const panelRef = useRef<HTMLDivElement>(null)
   const restoreFocus = useRef<HTMLElement | null>(null)
@@ -165,7 +170,6 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
     return m
   }, [points])
 
-  const activeKey = hover ? clusterById.get(hover)?.key : undefined
   const leaveTimer = useRef<ReturnType<typeof setTimeout>>()
   const enter = (id: string) => {
     clearTimeout(leaveTimer.current)
@@ -173,6 +177,21 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
   }
   const leave = (id: string) => {
     leaveTimer.current = setTimeout(() => setHover((cur) => (cur === id ? null : cur)), 90)
+  }
+  // Spread co-located dots in a small ring so each stays individually hoverable.
+  const posOf = (p: Point): [number, number] => {
+    const ci = clusterById.get(p.id)
+    let jx = 0
+    let jy = 0
+    if (ci && ci.size > 1) {
+      const a = (ci.idx / ci.size) * Math.PI * 2
+      jx = Math.cos(a) * 7
+      jy = Math.sin(a) * 7
+    }
+    return [
+      Math.min(Math.max(sx(p.x) + jx, PAD.left), w - PAD.right),
+      Math.min(Math.max(sy(p.y) + jy, PAD.top), h - PAD.bottom),
+    ]
   }
 
   // Load the index on demand (search focus, an open move panel, or a restored selection).
@@ -254,6 +273,21 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
     [pokeSel, category],
   )
   const moveOpts = useMemo(() => allPoints.map((p) => ({ id: p.id, label: p.label, type: p.type })), [allPoints])
+  const sortBy = (key: typeof sort.key) =>
+    setSort((s) => (s.key === key ? { key, dir: (s.dir * -1) as 1 | -1 } : { key, dir: key === 'name' || key === 'type' ? 1 : -1 }))
+  const ind = (k: typeof sort.key) => (sort.key === k ? (sort.dir < 0 ? ' ▼' : ' ▲') : '')
+  const rows = useMemo(() => {
+    const val = (p: Point) => (sort.key === 'power' ? p.power : sort.key === 'x' ? p.x : p.y)
+    return [...points].sort((a, b) => {
+      const c =
+        sort.key === 'name'
+          ? a.label.localeCompare(b.label)
+          : sort.key === 'type'
+            ? a.type.localeCompare(b.type)
+            : val(a) - val(b)
+      return c * sort.dir
+    })
+  }, [points, sort])
 
   const curves = useMemo(() => {
     if (plotW <= 0) return []
@@ -310,6 +344,9 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
           />
         )}
         <div class="filter-bar scroll-hidden">
+          <button class="type-btn mode" onClick={() => setView((v) => (v === 'chart' ? 'list' : 'chart'))}>
+            {view === 'chart' ? dict.common.list : dict.common.chart}
+          </button>
           {category === 'charged' && (
             <button
               class="type-btn mode"
@@ -338,18 +375,66 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
             )
           })}
         </div>
-        <div class="legend">
-          {cfg.curves.map((c) => (
-            <span key={c.label} class="legend-item">
-              <span class="legend-swatch" style={{ background: c.color }} />
-              {c.label}
-            </span>
-          ))}
-        </div>
+        {view === 'chart' && (
+          <div class="legend">
+            {cfg.curves.map((c) => (
+              <span key={c.label} class="legend-item">
+                <span class="legend-swatch" style={{ background: c.color }} />
+                {c.label}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
 
       <div class="chart" ref={wrapRef}>
-        {ready && (
+        {view === 'list' ? (
+          <div class="move-list scroll-hidden">
+            <table>
+              <thead>
+                <tr>
+                  <th class="sortable" onClick={() => sortBy('name')}>
+                    {dict.common.name}
+                    {ind('name')}
+                  </th>
+                  <th class="sortable" onClick={() => sortBy('type')}>
+                    {dict.common.type}
+                    {ind('type')}
+                  </th>
+                  <th class="sortable num" onClick={() => sortBy('power')}>
+                    {dict.move.damage}
+                    {ind('power')}
+                  </th>
+                  <th class="sortable num" onClick={() => sortBy('x')}>
+                    {cfg.xLabel}
+                    {ind('x')}
+                  </th>
+                  <th class="sortable num" onClick={() => sortBy('y')}>
+                    {cfg.yLabel}
+                    {ind('y')}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {rows.map((p) => (
+                  <tr
+                    key={p.id}
+                    class={highlight ? (highlight.has(p.id) ? 'hl' : 'dim') : ''}
+                    onClick={() => openPanel(p.id)}
+                  >
+                    <td class="mv-cell-name">{p.label}</td>
+                    <td>
+                      <img class="mv-type-ic" src={`${base}images/types/${p.type}.png`} width={18} height={18} alt={dict.type[p.type]} />
+                    </td>
+                    <td class="num">{p.power}</td>
+                    <td class="num">{p.x}</td>
+                    <td class="num">{p.y}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : ready ? (
           <>
             <svg class="chart-svg" width={w} height={h} role="img" aria-label={`${cfg.xLabel} / ${cfg.yLabel}`}>
               {cfg.xTicks.map((t) => (
@@ -371,9 +456,12 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
               {curves.map((c) => (
                 <path key={c.label} d={c.d} stroke={c.color} stroke-width={1.5} fill="none" />
               ))}
-              {points.map((p) => (
-                <circle key={`dot-${p.id}`} cx={sx(p.x)} cy={sy(p.y)} r={3.5} fill={TYPE_COLORS[p.type]} stroke="#00000066" stroke-width={1} opacity={highlight && !highlight.has(p.id) ? 0.15 : 1} />
-              ))}
+              {points.map((p) => {
+                const [cx, cy] = posOf(p)
+                return (
+                  <circle key={`dot-${p.id}`} cx={cx} cy={cy} r={4} fill={TYPE_COLORS[p.type]} stroke="#00000066" stroke-width={1} opacity={highlight && !highlight.has(p.id) ? 0.18 : 1} />
+                )
+              })}
               <text x={PAD.left + plotW / 2} y={h - 6} class="axis-title" text-anchor="middle">
                 {cfg.xLabel}
               </text>
@@ -383,30 +471,29 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
             </svg>
 
             {points.map((p) => {
-              const ci = clusterById.get(p.id)!
-              const fanned = activeKey === ci.key && ci.size > 1
-              const offset = fanned ? (ci.idx - (ci.size - 1) / 2) * FAN_GAP : 0
+              const [cx, cy] = posOf(p)
               const isHover = hover === p.id
-              // clamp so off-scale moves (e.g. very high DPS) sit at the edge, never overflow
-              const cx = Math.min(Math.max(sx(p.x), PAD.left), w - PAD.right)
-              const cy = Math.min(Math.max(sy(p.y) + offset, PAD.top), h - PAD.bottom)
+              const isHl = !!highlight && highlight.has(p.id)
+              const labeled = isHover || isHl
+              const dim = !!highlight && !highlight.has(p.id)
               return (
                 <button
                   key={p.id}
-                  class={`chip${isHover ? ' active' : ''}${fanned ? ' fanned' : ''}${highlight ? (highlight.has(p.id) ? ' hl' : ' dim') : ''}`}
+                  class={`chip${labeled ? ' labeled' : ''}${isHover ? ' active' : ''}${isHl ? ' hl' : ''}${dim ? ' dim' : ''}`}
                   style={{
                     left: `${cx}px`,
                     top: `${cy}px`,
-                    background: TYPE_COLORS[p.type],
-                    zIndex: isHover ? 30 : fanned ? 20 : undefined,
+                    background: labeled ? TYPE_COLORS[p.type] : 'transparent',
+                    zIndex: isHover ? 30 : isHl ? 20 : undefined,
                   }}
+                  aria-label={p.label}
                   onMouseEnter={() => enter(p.id)}
                   onMouseLeave={() => leave(p.id)}
                   onFocus={() => enter(p.id)}
                   onBlur={() => leave(p.id)}
                   onClick={() => openPanel(p.id)}
                 >
-                  <span class="static-text">{p.label}</span>
+                  {labeled && <span class="static-text">{p.label}</span>}
                   {isHover && (
                     <span class="tooltip">
                       <strong>{p.label}</strong>
@@ -419,7 +506,7 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
               )
             })}
           </>
-        )}
+        ) : null}
       </div>
 
       {pickedPoint && (

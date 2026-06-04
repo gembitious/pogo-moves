@@ -11,9 +11,16 @@ const { locale } = Astro.props
 const dict = getDictionary(locale)
 const base = import.meta.env.BASE_URL
 const icon = (name: string) => `${base}images/types/${name}.png`
+const LEGEND = [
+  ['super_effective', '1.6'],
+  ['netural', '1'],
+  ['resisted', '0.625'],
+  ['doubly_resisted', '0.39'],
+] as const
 ---
 
 <div class="type-page">
+  <div class="type-readout" hidden></div>
   <div class="type-axis-top">{dict.common.defender}</div>
   <div class="type-grid">
     <div class="type-axis-left">{dict.common.attacker}</div>
@@ -23,7 +30,7 @@ const icon = (name: string) => `${base}images/types/${name}.png`
           <th class="corner"></th>
           {
             POKEMON_TYPES.map((d) => (
-              <th>
+              <th data-d={d}>
                 <img class="cell-icon" src={icon(d)} alt={dict.type[d]} title={dict.type[d]} />
               </th>
             ))
@@ -34,22 +41,17 @@ const icon = (name: string) => `${base}images/types/${name}.png`
         {
           POKEMON_TYPES.map((a) => (
             <tr>
-              <th scope="row">
+              <th scope="row" data-a={a}>
                 <span class="row-label" style={`background:${TYPE_COLORS[a]}`}>
                   <img src={icon(a)} alt="" />
-                  {dict.type[a]}
+                  <span class="rl-text">{dict.type[a]}</span>
                 </span>
               </th>
               {POKEMON_TYPES.map((d) => {
                 const eff = TYPE_MATRIX[a][d]
                 return (
-                  <td>
-                    <img
-                      class="cell-icon"
-                      src={icon(`type_${eff}`)}
-                      alt={eff}
-                      title={`${dict.type[a]} → ${dict.type[d]}`}
-                    />
+                  <td data-a={a} data-d={d} data-eff={eff}>
+                    <img class="cell-icon" src={icon(`type_${eff}`)} alt={eff} title={`${dict.type[a]} → ${dict.type[d]}`} />
                   </td>
                 )
               })}
@@ -59,4 +61,50 @@ const icon = (name: string) => `${base}images/types/${name}.png`
       </tbody>
     </table>
   </div>
+  <div class="type-legend">
+    {
+      LEGEND.map(([e, m]) => (
+        <span class="type-legend-item">
+          <img src={icon(`type_${e}`)} alt="" width="20" height="20" />
+          {dict.eff[e]} <span class="type-legend-mult">×{m}</span>
+        </span>
+      ))
+    }
+  </div>
 </div>
+
+<script>
+  // Click a cell to cross-highlight its attack row + defend column, with a readout.
+  const table = document.querySelector<HTMLTableElement>('.matrix')
+  const readout = document.querySelector<HTMLElement>('.type-readout')
+  if (table && readout) {
+    const MULT: Record<string, string> = { super_effective: '1.6', netural: '1', resisted: '0.625', doubly_resisted: '0.39' }
+    let sel = ''
+    const reset = () => table.querySelectorAll('.sel-a,.sel-d,.sel-cell').forEach((el) => el.classList.remove('sel-a', 'sel-d', 'sel-cell'))
+    const clearSel = () => {
+      table.classList.remove('has-sel')
+      reset()
+      readout.hidden = true
+      sel = ''
+    }
+    table.addEventListener('click', (e) => {
+      const td = (e.target as Element).closest('td[data-a]')
+      if (!td) return
+      const a = td.getAttribute('data-a')
+      const d = td.getAttribute('data-d')
+      if (sel === `${a}:${d}`) return clearSel()
+      reset()
+      table.classList.add('has-sel')
+      table.querySelectorAll(`[data-a="${a}"]`).forEach((el) => el.classList.add('sel-a'))
+      table.querySelectorAll(`[data-d="${d}"]`).forEach((el) => el.classList.add('sel-d'))
+      td.classList.add('sel-cell')
+      const title = td.querySelector('img')?.getAttribute('title') ?? ''
+      readout.textContent = `${title}  ×${MULT[td.getAttribute('data-eff') ?? ''] ?? ''}`
+      readout.hidden = false
+      sel = `${a}:${d}`
+    })
+    document.addEventListener('click', (e) => {
+      if (!(e.target as Element).closest('.matrix')) clearSel()
+    })
+  }
+</script>
