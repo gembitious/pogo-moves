@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pogo-moves.vercel.app/sitemap.xml
