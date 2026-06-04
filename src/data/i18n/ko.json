@@ -92,5 +92,22 @@
     "loading": "불러오는 중…",
     "close": "닫기",
     "details": "자세히"
+  },
+  "iv": {
+    "title": "IV 랭크",
+    "yourIv": "내 IV",
+    "rank": "순위",
+    "a": "공",
+    "d": "방",
+    "s": "체",
+    "lv": "Lv",
+    "cp": "CP",
+    "pct": "%",
+    "cmpWin": "CMP 우위",
+    "cmpTie": "CMP 동일",
+    "cmpLose": "CMP 열위",
+    "search": "검색 문자열",
+    "copy": "복사",
+    "copied": "복사됨"
   }
 }

@@ -7,6 +7,7 @@ import { loadPokemonIndex, type PokemonEntry, type PokemonIndex } from '@/lib/po
 import { PokeSprite } from './PokeSprite'
 import { PokemonSearch } from './PokemonSearch'
 import { PokemonCompare } from './PokemonCompare'
+import { IvChecker } from './IvChecker'
 import { readCompareId, readSelectedId, writeCompareId, writeSelectedId } from '@/lib/urlState'
 import { chargedDpe, fastPvpDpt, fastPvpEpt, type ChargedMove, type FastMove } from '@/lib/formulas'
 import { loadRankings, LEAGUES, type League, type Rankings } from '@/lib/rankings'
@@ -25,6 +26,7 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
   const [pokeSel, setPokeSel] = useState<PokemonEntry | null>(null)
   const [pokeB, setPokeB] = useState<PokemonEntry | null>(null)
   const [addingB, setAddingB] = useState(false)
+  const [showIv, setShowIv] = useState(false)
   const [err, setErr] = useState(false)
   const [league, setLeague] = useState<League>('gl')
   const [ranks, setRanks] = useState<Rankings | null>(null)
@@ -252,6 +254,13 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
               )}
             </div>
           )}
+
+          <div class="dex-iv">
+            <button class="dex-iv-toggle" aria-expanded={showIv} onClick={() => setShowIv((v) => !v)}>
+              {dict.iv.title} <span class="dex-iv-caret">{showIv ? '▲' : '▼'}</span>
+            </button>
+            {showIv && <IvChecker base={{ atk: pokeSel.atk, def: pokeSel.def, hp: pokeSel.hp }} league={league} dict={dict} />}
+          </div>
 
           {family.length > 0 && (
             <div class="dex-evo">

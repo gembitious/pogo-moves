@@ -92,5 +92,22 @@
     "loading": "Loading…",
     "close": "Close",
     "details": "Details"
+  },
+  "iv": {
+    "title": "IV Rank",
+    "yourIv": "Your IV",
+    "rank": "Rank",
+    "a": "A",
+    "d": "D",
+    "s": "S",
+    "lv": "Lv",
+    "cp": "CP",
+    "pct": "%",
+    "cmpWin": "CMP win",
+    "cmpTie": "CMP tie",
+    "cmpLose": "CMP lose",
+    "search": "Search string",
+    "copy": "Copy",
+    "copied": "Copied"
   }
 }
