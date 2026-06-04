@@ -96,3 +96,21 @@ export function leagueBuild(bA: number, bD: number, bS: number, league: League) 
 // goes first. Compare a spread's Attack to the reference (usually rank 1).
 export const cmpVs = (a: IvSpread, ref: IvSpread): 'win' | 'tie' | 'lose' =>
   a.atk > ref.atk ? 'win' : a.atk === ref.atk ? 'tie' : 'lose'
+
+// In-game search string for the given top spreads. For each spread we enumerate the
+// (CP, HP) it would show at EVERY level up to the cap, so the string matches your mon
+// whatever level it's currently at (not just maxed). Format: `cp<X>&hp<Y>` joined by
+// `,` (OR) — paste into Pokémon GO's search box.
+export function searchString(bA: number, bD: number, bS: number, top: IvSpread[], league: League, maxLevel = 50): string {
+  const cap = CP_CAPS[league]
+  const maxIdx = Math.min(CPM.length - 1, Math.round((maxLevel - 1) * 2))
+  const pairs = new Set<string>()
+  for (const s of top) {
+    for (let i = 0; i <= maxIdx; i++) {
+      const cp = cpOf(bA, bD, bS, s.ivA, s.ivD, s.ivS, CPM[i])
+      if (cp > cap) break // CP rises with level; once over the cap, stop
+      pairs.add(`cp${cp}&hp${Math.floor((bS + s.ivS) * CPM[i])}`)
+    }
+  }
+  return [...pairs].join(',')
+}

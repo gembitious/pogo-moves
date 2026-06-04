@@ -2,7 +2,7 @@
 import { useMemo, useState } from 'preact/hooks'
 import type { Dictionary } from '@/lib/i18n'
 import type { League } from '@/lib/rankings'
-import { cmpVs, findSpread, rankSpreads, type IvSpread } from '@/lib/ivRank'
+import { cmpVs, findSpread, rankSpreads, searchString, type IvSpread } from '@/lib/ivRank'
 
 interface Props {
   base: { atk: number; def: number; hp: number }
@@ -11,17 +11,31 @@ interface Props {
 }
 
 const clampIv = (v: string) => Math.max(0, Math.min(15, Math.floor(Number(v) || 0)))
+const SEARCH_TOPS = [1, 3, 5]
 
 // Self-computed PvP IV ranker (no sim, no external data): rank-1 / top spreads,
 // your-IV rank + CMP, and an in-game search string. Recomputes per league.
 export function IvChecker({ base, league, dict }: Props) {
   const [iv, setIv] = useState({ a: 15, d: 15, s: 15 })
+  const [searchTop, setSearchTop] = useState(1)
+  const [copied, setCopied] = useState(false)
 
   const spreads = useMemo(() => rankSpreads(base.atk, base.def, base.hp, league), [base, league])
   const top = spreads.slice(0, 10)
   const yours = findSpread(spreads, iv.a, iv.d, iv.s)
   const inTop = !!yours && yours.rank <= 10
   const cmp = yours ? cmpVs(yours, spreads[0]) : null
+  const ss = useMemo(
+    () => searchString(base.atk, base.def, base.hp, spreads.slice(0, searchTop), league),
+    [base, league, spreads, searchTop],
+  )
+  const copy = () => {
+    if (!navigator.clipboard) return
+    navigator.clipboard.writeText(ss).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1500)
+    }, () => {})
+  }
 
   const row = (s: IvSpread, me: boolean) => (
     <tr key={`${s.ivA}-${s.ivD}-${s.ivS}`} class={me ? 'me' : ''}>
@@ -87,6 +101,24 @@ export function IvChecker({ base, league, dict }: Props) {
           )}
         </tbody>
       </table>
+
+      <div class="iv-search">
+        <div class="iv-search-head">
+          <span class="iv-search-label">{dict.iv.search}</span>
+          <span class="iv-search-tops">
+            {SEARCH_TOPS.map((n) => (
+              <button key={n} class={`iv-top-btn${searchTop === n ? ' on' : ''}`} aria-pressed={searchTop === n} onClick={() => setSearchTop(n)}>
+                {dict.iv.top} {n}
+              </button>
+            ))}
+          </span>
+          <button class="iv-copy" onClick={copy}>
+            {copied ? dict.iv.copied : dict.iv.copy}
+          </button>
+        </div>
+        <code class="iv-search-str scroll-hidden">{ss}</code>
+        <span class="iv-search-hint">{dict.iv.searchHint}</span>
+      </div>
     </div>
   )
 }
