@@ -73,6 +73,9 @@
     "evolution": "Evolution",
     "weak": "Weak to",
     "resist": "Resists",
+    "beats": "Beats",
+    "losesTo": "Loses to",
+    "recommended": "Recommended",
     "empty": "Search a Pokémon to see its moves"
   },
   "panel": {
