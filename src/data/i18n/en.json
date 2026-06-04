@@ -106,10 +106,7 @@
     "pct": "%",
     "cmpWin": "CMP win",
     "cmpTie": "CMP tie",
-    "cmpLose": "CMP lose",
-    "search": "Search string",
-    "copy": "Copy",
-    "copied": "Copied"
+    "cmpLose": "CMP lose"
   },
   "team": {
     "empty": "Add Pokémon to see your team's weaknesses and coverage",

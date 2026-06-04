@@ -1541,39 +1541,6 @@ table.matrix thead th:first-child {
   padding: 0;
 }
 
-.iv-search {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-.iv-search-label {
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--tertiary);
-}
-.iv-search-str {
-  flex: 1;
-  min-width: 0;
-  padding: 5px 8px;
-  border-radius: 6px;
-  background: var(--surface);
-  color: var(--gray-1);
-  font-size: 12px;
-  font-variant-numeric: tabular-nums;
-}
-.iv-copy {
-  flex: none;
-  padding: 5px 12px;
-  border: none;
-  border-radius: 6px;
-  background: var(--secondary);
-  color: #06222e;
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
 /* ---- pokemon compare (two mons side by side) --------------------------- */
 .dex-cmp-btn {
   margin-left: 8px;

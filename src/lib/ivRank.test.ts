@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { CPM } from './cpm'
-import { cpOf, rankSpreads, findSpread, cmpVs, searchString, type IvSpread } from './ivRank'
+import { cpOf, rankSpreads, findSpread, cmpVs, type IvSpread } from './ivRank'
 
 const AZU = [112, 152, 225] as const // Azumarill base atk/def/sta (pvpoke)
 
@@ -48,12 +48,5 @@ describe('cmpVs', () => {
     expect(cmpVs(mk(100), mk(90))).toBe('win')
     expect(cmpVs(mk(90), mk(90))).toBe('tie')
     expect(cmpVs(mk(80), mk(90))).toBe('lose')
-  })
-})
-
-describe('searchString', () => {
-  it('joins distinct cp&hp pairs', () => {
-    const gl = rankSpreads(...AZU, 'gl')
-    expect(searchString(gl.slice(0, 3))).toMatch(/^\d+&\d+(,\d+&\d+)*$/)
   })
 })

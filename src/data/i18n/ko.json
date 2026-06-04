@@ -106,10 +106,7 @@
     "pct": "%",
     "cmpWin": "CMP 우위",
     "cmpTie": "CMP 동일",
-    "cmpLose": "CMP 열위",
-    "search": "검색 문자열",
-    "copy": "복사",
-    "copied": "복사됨"
+    "cmpLose": "CMP 열위"
   },
   "team": {
     "empty": "포켓몬을 추가해 팀의 약점과 커버리지를 확인하세요",
