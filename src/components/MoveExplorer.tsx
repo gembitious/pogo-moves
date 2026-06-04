@@ -23,6 +23,7 @@ const base = import.meta.env.BASE_URL
 const PAD = { left: 56, right: 18, top: 14, bottom: 44 } // px around the plot area
 // Locked to Shadow / Purified forms, which the reverse index (base species only) omits.
 const SHADOW_LOCKED = new Set(['frustration', 'return'])
+const CELL = 26 // px grid for collapsing overlapping points into a "+N" marker
 
 interface Props {
   category: MoveCategory
@@ -30,6 +31,8 @@ interface Props {
   dict: Dictionary
   moves: FastMove[] | ChargedMove[]
 }
+
+type Cluster = { key: string; cx: number; cy: number; pts: Point[] }
 
 export default function MoveExplorer({ category, locale, dict, moves }: Props) {
   const [mode, setMode] = useState<MoveMode>('pvp')
@@ -40,6 +43,7 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
   const [pokeSel, setPokeSel] = useState<PokemonEntry | null>(null)
   const [loadErr, setLoadErr] = useState(false)
   const [view, setView] = useState<'chart' | 'list'>('chart')
+  const [expanded, setExpanded] = useState<string | null>(null)
   const wrapRef = useRef<HTMLDivElement>(null)
   const [size, setSize] = useState({ w: 0, h: 0 })
 
@@ -68,20 +72,32 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
     [allPoints, selected],
   )
 
-  // Group points sharing identical coordinates so a hovered stack can fan open.
-  const clusterById = useMemo(() => {
-    const counts = new Map<string, number>()
-    for (const p of points) counts.set(`${p.x}|${p.y}`, (counts.get(`${p.x}|${p.y}`) ?? 0) + 1)
-    const seen = new Map<string, number>()
-    const m = new Map<string, { key: string; idx: number; size: number }>()
+  // Bin points into screen-space cells: dense regions collapse into one "+N" marker
+  // (click to expand) instead of overlapping dots.
+  const clusters = useMemo<Cluster[]>(() => {
+    if (plotW <= 0 || plotH <= 0) return []
+    const cells = new Map<string, Point[]>()
+    const pos = new Map<string, [number, number]>()
     for (const p of points) {
-      const key = `${p.x}|${p.y}`
-      const idx = seen.get(key) ?? 0
-      seen.set(key, idx + 1)
-      m.set(p.id, { key, idx, size: counts.get(key)! })
+      const cx = Math.min(Math.max(sx(p.x), PAD.left), w - PAD.right)
+      const cy = Math.min(Math.max(sy(p.y), PAD.top), h - PAD.bottom)
+      pos.set(p.id, [cx, cy])
+      const key = `${Math.floor(cx / CELL)}|${Math.floor(cy / CELL)}`
+      const arr = cells.get(key)
+      if (arr) arr.push(p)
+      else cells.set(key, [p])
     }
-    return m
-  }, [points])
+    return [...cells.entries()].map(([key, pts]) => {
+      let X = 0
+      let Y = 0
+      for (const p of pts) {
+        const [a, b] = pos.get(p.id)!
+        X += a
+        Y += b
+      }
+      return { key, cx: X / pts.length, cy: Y / pts.length, pts }
+    })
+  }, [points, w, h, cfg])
 
   const leaveTimer = useRef<ReturnType<typeof setTimeout>>()
   const enter = (id: string) => {
@@ -91,39 +107,23 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
   const leave = (id: string) => {
     leaveTimer.current = setTimeout(() => setHover((cur) => (cur === id ? null : cur)), 90)
   }
-  // Spread co-located dots in a small ring so each stays individually hoverable.
-  const posOf = (p: Point): [number, number] => {
-    const ci = clusterById.get(p.id)
-    let jx = 0
-    let jy = 0
-    if (ci && ci.size > 1) {
-      const a = (ci.idx / ci.size) * Math.PI * 2
-      jx = Math.cos(a) * 7
-      jy = Math.sin(a) * 7
-    }
-    return [
-      Math.min(Math.max(sx(p.x) + jx, PAD.left), w - PAD.right),
-      Math.min(Math.max(sy(p.y) + jy, PAD.top), h - PAD.bottom),
-    ]
-  }
-  // Show as many non-overlapping labels as fit (the rest stay dots; hover/selection
-  // still labels any point). Higher-value moves win contested space.
+  // Label as many singleton points as fit without overlapping (higher-value moves
+  // win contested space). Hover/selection still labels any point on demand.
   const labeledIds = useMemo(() => {
     const ids = new Set<string>()
-    if (plotW <= 0 || plotH <= 0) return ids
     const placed: { l: number; r: number; t: number; b: number }[] = []
     const charW = locale === 'ko' ? 12 : 7
-    for (const p of [...points].sort((a, b) => b.y - a.y || b.x - a.x)) {
-      const [cx, cy] = posOf(p)
+    for (const c of clusters.filter((c) => c.pts.length === 1).sort((a, b) => b.pts[0].y - a.pts[0].y)) {
+      const p = c.pts[0]
       const hw = (Math.min(p.label.length, 8) * charW + 12) / 2
-      const box = { l: cx - hw, r: cx + hw, t: cy - 9, b: cy + 9 }
+      const box = { l: c.cx - hw, r: c.cx + hw, t: c.cy - 9, b: c.cy + 9 }
       if (!placed.some((q) => box.l < q.r && box.r > q.l && box.t < q.b && box.b > q.t)) {
         placed.push(box)
         ids.add(p.id)
       }
     }
     return ids
-  }, [points, w, h, cfg, locale])
+  }, [clusters, locale])
 
   // Load the index on demand (search focus, an open move panel, or a restored selection).
   const load = async () => {
@@ -167,6 +167,17 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
   useEffect(() => {
     if (picked && !pdata) load().catch(() => {})
   }, [picked])
+
+  // Close an open cluster popover on any outside click.
+  useEffect(() => {
+    if (!expanded) return
+    const onDown = (e: MouseEvent) => {
+      const t = e.target as Element
+      if (!t.closest('.cluster') && !t.closest('.cluster-pop')) setExpanded(null)
+    }
+    document.addEventListener('mousedown', onDown)
+    return () => document.removeEventListener('mousedown', onDown)
+  }, [expanded])
 
   const pickedPoint = useMemo(
     () => (picked ? allPoints.find((p) => p.id === picked) ?? null : null),
@@ -317,12 +328,20 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
               {curves.map((c) => (
                 <path key={c.label} d={c.d} stroke={c.color} stroke-width={1.5} fill="none" />
               ))}
-              {points.map((p) => {
-                const [cx, cy] = posOf(p)
-                return (
-                  <circle key={`dot-${p.id}`} cx={cx} cy={cy} r={4} fill={TYPE_COLORS[p.type]} stroke="#00000066" stroke-width={1} opacity={highlight && !highlight.has(p.id) ? 0.18 : 1} />
-                )
-              })}
+              {clusters.map((c) =>
+                c.pts.length === 1 ? (
+                  <circle
+                    key={c.key}
+                    cx={c.cx}
+                    cy={c.cy}
+                    r={4}
+                    fill={TYPE_COLORS[c.pts[0].type]}
+                    stroke="#00000066"
+                    stroke-width={1}
+                    opacity={highlight && !highlight.has(c.pts[0].id) ? 0.18 : 1}
+                  />
+                ) : null,
+              )}
               <text x={PAD.left + plotW / 2} y={h - 6} class="axis-title" text-anchor="middle">
                 {cfg.xLabel}
               </text>
@@ -331,42 +350,82 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
               </text>
             </svg>
 
-            {points.map((p) => {
-              const [cx, cy] = posOf(p)
-              const isHover = hover === p.id
-              const isHl = !!highlight && highlight.has(p.id)
-              const labeled = isHover || isHl || labeledIds.has(p.id)
-              const dim = !!highlight && !highlight.has(p.id)
+            {clusters.map((c) => {
+              if (c.pts.length === 1) {
+                const p = c.pts[0]
+                const isHover = hover === p.id
+                const isHl = !!highlight && highlight.has(p.id)
+                const labeled = isHover || isHl || labeledIds.has(p.id)
+                const dim = !!highlight && !highlight.has(p.id)
+                return (
+                  <button
+                    key={p.id}
+                    class={`chip${labeled ? ' labeled' : ''}${isHover ? ' active' : ''}${isHl ? ' hl' : ''}${dim ? ' dim' : ''}`}
+                    style={{
+                      left: `${c.cx}px`,
+                      top: `${c.cy}px`,
+                      background: labeled ? TYPE_COLORS[p.type] : 'transparent',
+                      color: labeled ? TYPE_TEXT[p.type] : undefined,
+                      zIndex: isHover ? 30 : isHl ? 20 : undefined,
+                    }}
+                    aria-label={p.label}
+                    onMouseEnter={() => enter(p.id)}
+                    onMouseLeave={() => leave(p.id)}
+                    onFocus={() => enter(p.id)}
+                    onBlur={() => leave(p.id)}
+                    onClick={() => openPanel(p.id)}
+                  >
+                    {labeled && <span class="static-text">{p.label}</span>}
+                    {isHover && (
+                      <span class="tooltip">
+                        <strong>{p.label}</strong>
+                        {p.lines.map((line, i) => (
+                          <span key={i}>{line}</span>
+                        ))}
+                      </span>
+                    )}
+                  </button>
+                )
+              }
+              const hasHl = !!highlight && c.pts.some((p) => highlight.has(p.id))
+              const dim = !!highlight && !hasHl
               return (
                 <button
-                  key={p.id}
-                  class={`chip${labeled ? ' labeled' : ''}${isHover ? ' active' : ''}${isHl ? ' hl' : ''}${dim ? ' dim' : ''}`}
-                  style={{
-                    left: `${cx}px`,
-                    top: `${cy}px`,
-                    background: labeled ? TYPE_COLORS[p.type] : 'transparent',
-                    color: labeled ? TYPE_TEXT[p.type] : undefined,
-                    zIndex: isHover ? 30 : isHl ? 20 : undefined,
-                  }}
-                  aria-label={p.label}
-                  onMouseEnter={() => enter(p.id)}
-                  onMouseLeave={() => leave(p.id)}
-                  onFocus={() => enter(p.id)}
-                  onBlur={() => leave(p.id)}
-                  onClick={() => openPanel(p.id)}
+                  key={c.key}
+                  class={`chip cluster${hasHl ? ' hl' : ''}${dim ? ' dim' : ''}`}
+                  style={{ left: `${c.cx}px`, top: `${c.cy}px`, zIndex: expanded === c.key ? 40 : hasHl ? 20 : undefined }}
+                  aria-label={`${c.pts.length} ${dict.search.move}`}
+                  aria-expanded={expanded === c.key}
+                  onClick={() => setExpanded((e) => (e === c.key ? null : c.key))}
                 >
-                  {labeled && <span class="static-text">{p.label}</span>}
-                  {isHover && (
-                    <span class="tooltip">
-                      <strong>{p.label}</strong>
-                      {p.lines.map((line, i) => (
-                        <span key={i}>{line}</span>
-                      ))}
-                    </span>
-                  )}
+                  {c.pts.length}
                 </button>
               )
             })}
+            {expanded &&
+              (() => {
+                const c = clusters.find((x) => x.key === expanded)
+                if (!c || c.pts.length < 2) return null
+                return (
+                  <div class="cluster-pop scroll-hidden" style={{ left: `${c.cx}px`, top: `${c.cy}px` }}>
+                    {[...c.pts]
+                      .sort((a, b) => b.y - a.y || b.x - a.x)
+                      .map((p) => (
+                        <button
+                          key={p.id}
+                          class="cluster-pop-item"
+                          onClick={() => {
+                            setExpanded(null)
+                            openPanel(p.id)
+                          }}
+                        >
+                          <span class="cluster-pop-dot" style={{ background: TYPE_COLORS[p.type] }} />
+                          <span class="static-text">{p.label}</span>
+                        </button>
+                      ))}
+                  </div>
+                )
+              })()}
           </>
         ) : null}
       </div>
