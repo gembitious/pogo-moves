@@ -8,6 +8,7 @@ import { PokeSprite } from './PokeSprite'
 import { PokemonSearch } from './PokemonSearch'
 import { readSelectedId, writeSelectedId } from '@/lib/urlState'
 import { chargedDpe, fastPvpDpt, fastPvpEpt, type ChargedMove, type FastMove } from '@/lib/formulas'
+import { loadRankings, LEAGUES, type League, type Rankings } from '@/lib/rankings'
 
 const base = import.meta.env.BASE_URL
 
@@ -22,6 +23,8 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
   const [pdata, setPdata] = useState<PokemonIndex | null>(null)
   const [pokeSel, setPokeSel] = useState<PokemonEntry | null>(null)
   const [err, setErr] = useState(false)
+  const [league, setLeague] = useState<League>('gl')
+  const [ranks, setRanks] = useState<Rankings | null>(null)
 
   const fastById = useMemo(() => new Map(fast.map((m) => [m.id, m])), [fast])
   const chargedById = useMemo(() => new Map(charged.map((m) => [m.id, m])), [charged])
@@ -51,6 +54,20 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
       })
       .catch(() => {})
   }, [])
+
+  // League rankings (lazy per league) + restore the chosen league.
+  useEffect(() => {
+    const s = localStorage.getItem('pogo-league')
+    if (s === 'gl' || s === 'ul' || s === 'ml') setLeague(s)
+  }, [])
+  useEffect(() => {
+    setRanks(null)
+    loadRankings(base, league).then(setRanks).catch(() => {})
+  }, [league])
+  const pickLeague = (l: League) => {
+    setLeague(l)
+    localStorage.setItem('pogo-league', l)
+  }
 
   const selectPoke = (m: PokemonEntry) => {
     setPokeSel(m)
@@ -105,6 +122,10 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
     return fam.length > 1 ? fam.sort((a, b) => a.dex - b.dex || a.id.localeCompare(b.id)) : []
   }, [pokeSel, pdata])
 
+  const rank = pokeSel && ranks ? ranks[pokeSel.id] ?? null : null
+  const recommended = useMemo(() => new Set(rank?.moveset ?? []), [rank])
+  const oppOf = (id: string) => pdata?.byId.get(id) ?? pdata?.byId.get(id.replace('_shadow', '')) ?? null
+
   const muChip = (t: PokemonType, mult: number) => (
     <span key={t} class="mu-chip" style={{ background: TYPE_COLORS[t], color: TYPE_TEXT[t] }} title={`${dict.type[t]} ×${+mult.toFixed(2)}`}>
       <img src={`${base}images/types/${t}.png`} width={15} height={15} alt={dict.type[t]} />×{+mult.toFixed(2)}
@@ -114,6 +135,13 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
   return (
     <div class="dex">
       <PokemonSearch list={pdata?.list} locale={locale} dict={dict} onSelect={selectPoke} className="dex-search" />
+      <div class="league-bar">
+        {LEAGUES.map((l) => (
+          <button key={l} class={`league-btn${league === l ? ' active' : ''}`} aria-pressed={league === l} onClick={() => pickLeague(l)}>
+            {l.toUpperCase()}
+          </button>
+        ))}
+      </div>
 
       {pokeSel ? (
         <div class="dex-card">
@@ -122,6 +150,11 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
             <div class="dex-id">
               <div class="dex-name">
                 {name(pokeSel)} <span class="dex-num">#{pokeSel.dex}</span>
+                {rank && (
+                  <span class="dex-score" title={`pvpoke ${league.toUpperCase()}`}>
+                    {league.toUpperCase()} {rank.score}
+                  </span>
+                )}
                 <button class="dex-clear" onClick={clearPoke} aria-label={dict.search.clear}>
                   ×
                 </button>
@@ -193,6 +226,7 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
                     <img src={`${base}images/types/${m.type}.png`} width={15} height={15} alt={dict.type[m.type]} />
                   </span>
                   <span class="mv-name">{name(m)}</span>
+                  {recommended.has(m.id) && <span class="mv-rec" title={dict.pokemon.recommended}>★</span>}
                   {m.pvp ? (
                     <span class="mv-stats">
                       {dict.move.damage} {m.pvp.power} · DPT {fastPvpDpt(m.pvp)} · EPT {fastPvpEpt(m.pvp)}
@@ -213,6 +247,7 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
                     <img src={`${base}images/types/${m.type}.png`} width={15} height={15} alt={dict.type[m.type]} />
                   </span>
                   <span class="mv-name">{name(m)}</span>
+                  {recommended.has(m.id) && <span class="mv-rec" title={dict.pokemon.recommended}>★</span>}
                   {m.pvp ? (
                     <span class="mv-stats">
                       {dict.move.damage} {m.pvp.power} · {dict.move.energy} {m.pvp.energy} · DPE {chargedDpe(m.pvp)}
@@ -226,6 +261,41 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
               ))}
             </section>
           </div>
+
+          {rank && (rank.matchups.length > 0 || rank.counters.length > 0) && (
+            <div class="dex-mu">
+              {rank.matchups.length > 0 && (
+                <section>
+                  <h3>{dict.pokemon.beats}</h3>
+                  <div class="dex-mu-row scroll-hidden">
+                    {rank.matchups.map((id) => {
+                      const o = oppOf(id)
+                      return o ? (
+                        <button key={id} class="dex-mu-mon" onClick={() => selectPoke(o)} title={name(o)}>
+                          <PokeSprite mon={o} size={40} />
+                        </button>
+                      ) : null
+                    })}
+                  </div>
+                </section>
+              )}
+              {rank.counters.length > 0 && (
+                <section>
+                  <h3>{dict.pokemon.losesTo}</h3>
+                  <div class="dex-mu-row scroll-hidden">
+                    {rank.counters.map((id) => {
+                      const o = oppOf(id)
+                      return o ? (
+                        <button key={id} class="dex-mu-mon" onClick={() => selectPoke(o)} title={name(o)}>
+                          <PokeSprite mon={o} size={40} />
+                        </button>
+                      ) : null
+                    })}
+                  </div>
+                </section>
+              )}
+            </div>
+          )}
         </div>
       ) : err ? (
         <div class="dex-empty">

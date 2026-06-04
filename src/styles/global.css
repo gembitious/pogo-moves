@@ -1149,3 +1149,116 @@ table.matrix thead th:first-child {
     animation: none;
   }
 }
+
+/* ---- pokemon page: league + rankings ----------------------------------- */
+.league-bar {
+  display: flex;
+  gap: 6px;
+}
+.league-btn {
+  height: 28px;
+  padding: 0 12px;
+  border: 1px solid var(--tertiary);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--gray-1);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.league-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+.dex-score {
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  vertical-align: middle;
+}
+.mv-rec {
+  color: var(--primary);
+  font-size: 12px;
+}
+.dex-mu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 18px;
+}
+.dex-mu h3 {
+  margin: 0 0 6px;
+  font-size: 14px;
+  color: var(--tertiary);
+}
+.dex-mu-row {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+.dex-mu-mon {
+  flex: none;
+  padding: 2px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+}
+.dex-mu-mon:hover {
+  background: #ffffff0f;
+}
+@media (max-width: 640px) {
+  .dex-mu {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- move list: compare ------------------------------------------------ */
+.mv-cmp-th {
+  width: 28px;
+}
+.mv-cmp-td {
+  width: 28px;
+  text-align: center;
+}
+.mv-cmp-td input {
+  cursor: pointer;
+}
+.mv-compare {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  margin-top: 8px;
+  border-collapse: collapse;
+  background: #0a2c3af2;
+  border-top: 2px solid var(--secondary);
+  font-size: 13px;
+}
+.mv-compare th,
+.mv-compare td {
+  padding: 5px 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+.mv-compare thead th {
+  color: var(--tertiary);
+  font-weight: 600;
+}
+.mv-compare tbody th {
+  color: var(--gray-1);
+  font-weight: 500;
+}
+.mv-compare td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.mv-compare td.win {
+  color: var(--primary);
+  font-weight: 700;
+}

@@ -19,7 +19,8 @@
     "chart": "Chart",
     "name": "Name",
     "type": "Type",
-    "tapCell": "Tap a cell to see the matchup"
+    "tapCell": "Tap a cell to see the matchup",
+    "compare": "Compare"
   },
   "move": {
     "damage": "Power",
@@ -73,6 +74,9 @@
     "evolution": "Evolution",
     "weak": "Weak to",
     "resist": "Resists",
+    "beats": "Beats",
+    "losesTo": "Loses to",
+    "recommended": "Recommended",
     "empty": "Search a Pokémon to see its moves"
   },
   "panel": {
