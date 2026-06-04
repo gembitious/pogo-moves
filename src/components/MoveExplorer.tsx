@@ -253,6 +253,7 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
     () => (pokeSel ? new Set(category === 'fast' ? pokeSel.fast : pokeSel.charged) : null),
     [pokeSel, category],
   )
+  const moveOpts = useMemo(() => allPoints.map((p) => ({ id: p.id, label: p.label, type: p.type })), [allPoints])
 
   const curves = useMemo(() => {
     if (plotW <= 0) return []
@@ -297,7 +298,16 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
             </div>
           </div>
         ) : (
-          <PokemonSearch list={pdata?.list} locale={locale} dict={dict} onSelect={selectPoke} onActivate={load} />
+          <PokemonSearch
+            list={pdata?.list}
+            moves={moveOpts}
+            onSelectMove={openPanel}
+            placeholder={dict.search.placeholderAll}
+            locale={locale}
+            dict={dict}
+            onSelect={selectPoke}
+            onActivate={load}
+          />
         )}
         <div class="filter-bar scroll-hidden">
           {category === 'charged' && (

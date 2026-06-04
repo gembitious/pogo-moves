@@ -7,5 +7,15 @@
     { "source": "/", "destination": "/ko", "permanent": false },
     { "source": "/:lang(ko|en)/moves/fast", "destination": "/:lang/fast", "permanent": true },
     { "source": "/:lang(ko|en)/moves/charged", "destination": "/:lang", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/data/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=604800" }]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }]
+    }
   ]
 }

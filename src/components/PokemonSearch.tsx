@@ -1,35 +1,58 @@
 /** @jsxImportSource preact */
 import { useMemo, useRef, useState } from 'preact/hooks'
+import { TYPE_COLORS, type PokemonType } from '@/lib/types'
 import type { Dictionary, Locale } from '@/lib/i18n'
 import type { PokemonEntry } from '@/lib/pokemonIndex'
 import { PokeSprite } from './PokeSprite'
+
+export interface MoveOption {
+  id: string
+  label: string
+  type: PokemonType
+}
 
 interface Props {
   list: PokemonEntry[] | undefined
   locale: Locale
   dict: Dictionary
   onSelect: (m: PokemonEntry) => void
+  moves?: MoveOption[] // when given, the box also finds moves (chart pages)
+  onSelectMove?: (id: string) => void
   onActivate?: () => void // fired on focus/input so the parent can lazy-load the index
+  placeholder?: string
   className?: string
 }
 
-// Combobox: type to filter, ↑/↓ to move, Enter to pick, Esc to clear. Shared by
-// the chart (highlight) and the Pokémon page (detail).
-export function PokemonSearch({ list, locale, dict, onSelect, onActivate, className }: Props) {
+type Row = { kind: 'pokemon'; p: PokemonEntry } | { kind: 'move'; mv: MoveOption }
+
+// Combobox: type to filter, ↑/↓ to move, Enter to pick, Esc to clear. Finds
+// Pokémon (always) and, on the chart pages, moves too.
+export function PokemonSearch({ list, locale, dict, onSelect, moves, onSelectMove, onActivate, placeholder, className }: Props) {
   const [query, setQuery] = useState('')
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState(0)
   const blurT = useRef<ReturnType<typeof setTimeout>>()
-  const name = (m: PokemonEntry) => (locale === 'ko' ? m.name : m.nameEn)
+  const nameOf = (m: PokemonEntry) => (locale === 'ko' ? m.name : m.nameEn)
+  const ph = placeholder ?? dict.search.placeholder
 
-  const results = useMemo(() => {
+  const results = useMemo<Row[]>(() => {
     const q = query.trim().toLowerCase()
-    if (!list || !q) return []
-    return list.filter((m) => m.name.toLowerCase().includes(q) || m.nameEn.toLowerCase().includes(q)).slice(0, 8)
-  }, [list, query])
+    if (!q) return []
+    const pk: Row[] = (list ?? [])
+      .filter((p) => p.name.toLowerCase().includes(q) || p.nameEn.toLowerCase().includes(q))
+      .slice(0, 6)
+      .map((p) => ({ kind: 'pokemon', p }))
+    const mv: Row[] = (moves ?? [])
+      .filter((m) => m.label.toLowerCase().includes(q))
+      .slice(0, 6)
+      .map((m) => ({ kind: 'move', mv: m }))
+    return [...pk, ...mv]
+  }, [list, moves, query])
 
-  const pick = (m: PokemonEntry) => {
-    onSelect(m)
+  const rowId = (r: Row) => `ps-${r.kind === 'pokemon' ? r.p.id : 'mv-' + r.mv.id}`
+  const pick = (r: Row) => {
+    if (r.kind === 'move') onSelectMove?.(r.mv.id)
+    else onSelect(r.p)
     setQuery('')
     setOpen(false)
     setActive(0)
@@ -44,13 +67,13 @@ export function PokemonSearch({ list, locale, dict, onSelect, onActivate, classN
         class="poke-input"
         type="text"
         role="combobox"
-        aria-label={dict.search.placeholder}
+        aria-label={ph}
         aria-expanded={showList}
         aria-controls={LIST_ID}
         aria-autocomplete="list"
-        aria-activedescendant={showList && results[active] ? `ps-${results[active].id}` : undefined}
+        aria-activedescendant={showList && results[active] ? rowId(results[active]) : undefined}
         value={query}
-        placeholder={dict.search.placeholder}
+        placeholder={ph}
         onFocus={() => {
           onActivate?.()
           clearTimeout(blurT.current)
@@ -83,18 +106,28 @@ export function PokemonSearch({ list, locale, dict, onSelect, onActivate, classN
       {showList && (
         <div class="poke-results scroll-hidden" id={LIST_ID} role="listbox">
           {results.length > 0 ? (
-            results.map((m, i) => (
+            results.map((r, i) => (
               <button
-                key={m.id}
-                id={`ps-${m.id}`}
+                key={rowId(r)}
+                id={rowId(r)}
                 role="option"
                 aria-selected={i === active}
                 class={`poke-result${i === active ? ' active' : ''}`}
-                onMouseDown={() => pick(m)}
+                onMouseDown={() => pick(r)}
                 onMouseEnter={() => setActive(i)}
               >
-                <PokeSprite mon={m} size={26} />
-                <span class="static-text">{name(m)}</span>
+                {r.kind === 'pokemon' ? (
+                  <>
+                    <PokeSprite mon={r.p} size={26} />
+                    <span class="static-text">{nameOf(r.p)}</span>
+                  </>
+                ) : (
+                  <>
+                    <span class="ps-move-icon" style={{ background: TYPE_COLORS[r.mv.type] }} />
+                    <span class="static-text">{r.mv.label}</span>
+                    <span class="ps-kind">{dict.search.move}</span>
+                  </>
+                )}
               </button>
             ))
           ) : (

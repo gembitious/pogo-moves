@@ -50,8 +50,10 @@
   },
   "search": {
     "placeholder": "Search Pokémon…",
+    "placeholderAll": "Search Pokémon or moves…",
     "clear": "Clear",
-    "none": "No results"
+    "none": "No results",
+    "move": "Move"
   },
   "pokemon": {
     "atk": "ATK",
