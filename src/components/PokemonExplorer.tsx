@@ -6,7 +6,8 @@ import type { Dictionary, Locale } from '@/lib/i18n'
 import { loadPokemonIndex, type PokemonEntry, type PokemonIndex } from '@/lib/pokemonIndex'
 import { PokeSprite } from './PokeSprite'
 import { PokemonSearch } from './PokemonSearch'
-import { readSelectedId, writeSelectedId } from '@/lib/urlState'
+import { PokemonCompare } from './PokemonCompare'
+import { readCompareId, readSelectedId, writeCompareId, writeSelectedId } from '@/lib/urlState'
 import { chargedDpe, fastPvpDpt, fastPvpEpt, type ChargedMove, type FastMove } from '@/lib/formulas'
 import { loadRankings, LEAGUES, type League, type Rankings } from '@/lib/rankings'
 
@@ -22,6 +23,8 @@ interface Props {
 export default function PokemonExplorer({ locale, dict, fast, charged }: Props) {
   const [pdata, setPdata] = useState<PokemonIndex | null>(null)
   const [pokeSel, setPokeSel] = useState<PokemonEntry | null>(null)
+  const [pokeB, setPokeB] = useState<PokemonEntry | null>(null)
+  const [addingB, setAddingB] = useState(false)
   const [err, setErr] = useState(false)
   const [league, setLeague] = useState<League>('gl')
   const [ranks, setRanks] = useState<Rankings | null>(null)
@@ -51,6 +54,14 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
           const m = d.byId.get(sel)
           if (m) setPokeSel(m)
         }
+        const cmp = readCompareId()
+        if (cmp) {
+          const m = d.byId.get(cmp)
+          if (m) {
+            setPokeB(m)
+            setAddingB(true)
+          }
+        }
       })
       .catch(() => {})
   }, [])
@@ -73,9 +84,25 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
     setPokeSel(m)
     writeSelectedId(m.id)
   }
+  // Exit compare back to a single selection.
+  const exitCompare = () => {
+    setPokeB(null)
+    setAddingB(false)
+    writeCompareId(null)
+  }
   const clearPoke = () => {
     setPokeSel(null)
     writeSelectedId(null)
+    exitCompare()
+  }
+  const selectB = (m: PokemonEntry) => {
+    setPokeB(m)
+    writeCompareId(m.id)
+  }
+  // Drill from the compare card into a single mon's full detail.
+  const focusMon = (m: PokemonEntry) => {
+    exitCompare()
+    selectPoke(m)
   }
 
   // Normalize stat bars against the actual roster max instead of a magic 300.
@@ -143,8 +170,33 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
         ))}
       </div>
 
+      {addingB && !pokeB && (
+        <PokemonSearch
+          list={pdata?.list}
+          locale={locale}
+          dict={dict}
+          onSelect={selectB}
+          className="dex-search"
+          placeholder={dict.pokemon.comparePlaceholder}
+        />
+      )}
+
       {pokeSel ? (
-        <div class="dex-card">
+        pokeB ? (
+          <PokemonCompare
+            a={pokeSel}
+            b={pokeB}
+            league={league}
+            ranks={ranks}
+            fastById={fastById}
+            chargedById={chargedById}
+            locale={locale}
+            dict={dict}
+            onClose={exitCompare}
+            onFocusMon={focusMon}
+          />
+        ) : (
+          <div class="dex-card">
           <div class="dex-head">
             <PokeSprite mon={pokeSel} size={96} />
             <div class="dex-id">
@@ -155,6 +207,9 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
                     {league.toUpperCase()} {rank.score}
                   </span>
                 )}
+                <button class="dex-cmp-btn" aria-pressed={addingB} onClick={() => setAddingB((v) => !v)}>
+                  {dict.common.compare}
+                </button>
                 <button class="dex-clear" onClick={clearPoke} aria-label={dict.search.clear}>
                   ×
                 </button>
@@ -296,7 +351,8 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
               )}
             </div>
           )}
-        </div>
+          </div>
+        )
       ) : err ? (
         <div class="dex-empty">
           {dict.common.error}{' '}
