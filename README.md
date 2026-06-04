@@ -32,21 +32,26 @@ src/
   data/
     moves.json        # 기술 데이터 (원시 스탯만 — 파생값은 계산)
     i18n/{ko,en}.json # UI 문자열 + 타입명 (단일 출처)
-    pokemon.json      # 포켓몬 목록 (현재 미사용 — 향후 기술↔포켓몬 기능용 보존)
+    pokemon.json      # 포켓몬 로스터·스탯·기술셋 (기술↔포켓몬 기능 소스, pvpoke)
   lib/
     formulas.ts          # 원시 스탯 -> dpt/ept/dpe/dps 파생
     typeEffectiveness.ts # canonical 상성 관계 -> 18×18 매트릭스
     chartConfig.ts       # 차트 축/등고선 정의
+    pokemonIndex.ts      # 슬림 포켓몬 인덱스/역인덱스 lazy 로더 (public/data)
     moves.ts, i18n.ts, types.ts
   components/
-    MoveExplorer.tsx  # 필터 + 토글 + SVG 산점도 (Preact island)
-    TypeChart.astro   # 상성표 (서버 렌더, JS 0)
+    MoveExplorer.tsx     # 필터 + 토글 + SVG 산점도 + 무브↔포켓몬 (Preact island)
+    PokemonExplorer.tsx  # 포켓몬 검색 → 기술셋·스탯 (Preact island)
+    PokeSprite.tsx       # 스프라이트 + 타입색 폴백 (공용)
+    TypeChart.astro      # 상성표 (서버 렌더, JS 0)
     Nav.astro
   layouts/Base.astro
-  pages/[lang]/       # /ko, /en · index(=charged), fast, type
-scripts/check-data.mjs            # 데이터 무결성 검사 (CI)
-scripts/build-data.mjs            # 시즌 데이터 파이프라인 (GAME_MASTER → moves.json)
-scripts/build-pokemon-images.mjs # 포켓몬 스프라이트 정리 (향후 기능용 유틸)
+  pages/[lang]/       # /ko, /en · index(=charged), fast, type, pokemon
+scripts/check-data.mjs              # 데이터 무결성 검사 (CI)
+scripts/build-data.mjs              # 시즌 데이터 파이프라인 (GAME_MASTER → moves.json)
+scripts/build-pokemon-index.mjs    # 슬림 인덱스/역인덱스 생성 (→ public/data, build에 포함)
+scripts/fetch-pokemon-images.mjs   # PokeMiners에서 스프라이트 자동 다운로드 (클론 불필요)
+scripts/build-pokemon-images.mjs   # 로컬 클론에서 스프라이트 복사 (오프라인)
 ```
 
 ## 데이터 모델
@@ -83,7 +88,6 @@ npm run check-data             # 스키마 검증
 - 스탯(power·energy·turn·duration·damageWindow·buffs)을 GAME_MASTER에서 재생성
 - `name`(한국어)·`nameEn`·로스터는 기존 `moves.json`에서 보존
 - 변경된 스탯 / 소스에 새로 생긴 무브 / 매핑 안 된 무브를 리포트
-- 무브 역할(`archetype`)은 pvpoke(`scripts/data/pvpoke-moves.json`)에서 부여 → 앱의 역할 필터·툴팁
 
 - 신규 무브는 `scripts/data/move-names-ko.csv`([veekun](https://github.com/veekun/pokedex))에서 한글명을 찾으면 **자동 추가**, 못 찾으면(GO 전용 코스메틱 변형 등) 스킵·리포트. 참조 데이터는 `scripts/data/README.md`.
 
@@ -102,16 +106,31 @@ npm run check-data             # 스키마 검증
 > permissions"** 와 **"Allow GitHub Actions to create and approve pull requests"** 를
 > 켜야 PR 생성이 됩니다.
 
-## 포켓몬 스프라이트 (향후 기능용)
+## 기술 ↔ 포켓몬
 
-`public/images/pokemon`의 스프라이트와 `src/data/pokemon.json`은 현재 화면엔 쓰이지
-않지만, 향후 "기술 ↔ 포켓몬" 기능을 위해 보존합니다. 스프라이트는 PokeMiners의
-[pogo_assets](https://github.com/PokeMiners/pogo_assets)에서 복사·리네임합니다
-(로컬 클론 필요, CI 비포함).
+`src/data/pokemon.json`(pvpoke)을 슬림 인덱스로 가공해 세 기능을 제공합니다
+(`npm run build-pokemon-index` → `public/data/pokemon-index.json` + 역인덱스
+`move-pokemon.json`, lazy-fetch · `npm run build`에 포함):
+
+- **무브 → 포켓몬**: 차트의 기술 칩 클릭 → 그 기술을 쓰는 포켓몬 그리드
+- **포켓몬 → 기술**: 포켓몬 검색·선택 → 그 포켓몬의 기술 칩을 차트에서 하이라이트(페이지 간 유지)
+- **포켓몬 페이지**(`/[lang]/pokemon`): 검색 → 스프라이트·타입·종족값 + 기술셋
+
+한글명은 `scripts/data/species-i18n.csv`(veekun) + `species-ko-extra.json`(override)에서 옵니다.
+
+### 스프라이트 갱신
+
+스프라이트는 PokeMiners [pogo_assets](https://github.com/PokeMiners/pogo_assets)에서 받습니다.
+누락분(주로 신규 세대)은 아래로 보강하며, **로컬에서 실행**하세요(클라우드 세션에선
+PokeMiners API/CDN이 막혀 있습니다):
 
 ```bash
-npm run build-images -- <pogo_assets의 Addressable Assets 폴더 경로>
+npm run fetch-images           # 폴더 자동 탐색 → raw에서 누락분만 다운로드 (클론 불필요)
+npm run fetch-images -- --dry  # 다운로드 없이 탐색/대상 미리보기
+GH_TOKEN=<token> npm run fetch-images   # rate limit 시 (60 → 5000/hr)
+npm run build-pokemon-index    # 받은 뒤 인덱스 재생성 (보유/누락 수 리포트)
 ```
 
-- `pm{dex}.icon.png` → `{dex}.png`, 폼은 `{dex}_{form}.png`
-- mega·연도 이벤트 코스튬 suffix는 제외, 폼 보유 dex만 폼 스프라이트 생성
+오프라인(클론 보유 시): `npm run build-images -- <pogo_assets 스프라이트 폴더>`.
+규칙: `pm{dex}.icon.png` → `{dex}.png`, 폼은 `{dex}_{form}.png`, mega·연도 코스튬 제외
+(공유 로직 `scripts/lib/pokeminers-sprites.mjs`). 없는 스프라이트는 UI에서 타입색+도감번호 폴백.

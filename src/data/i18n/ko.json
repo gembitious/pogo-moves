@@ -6,7 +6,8 @@
   "nav": {
     "fast": "노말 기술",
     "charged": "스페셜 기술",
-    "type": "타입 상성표"
+    "type": "타입 상성표",
+    "pokemon": "포켓몬"
   },
   "common": {
     "allType": "타입 전체",
@@ -47,7 +48,14 @@
   },
   "search": {
     "placeholder": "포켓몬 검색…",
-    "clear": "선택 해제"
+    "clear": "선택 해제",
+    "none": "결과 없음"
+  },
+  "pokemon": {
+    "atk": "공격",
+    "def": "방어",
+    "hp": "체력",
+    "empty": "포켓몬을 검색해 기술셋을 확인하세요"
   },
   "panel": {
     "usedBy": "이 기술을 쓰는 포켓몬",
