@@ -89,6 +89,7 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
   const [loadErr, setLoadErr] = useState(false)
   const [view, setView] = useState<'chart' | 'list'>('chart')
   const [expanded, setExpanded] = useState<string | null>(null)
+  const [popHover, setPopHover] = useState<string | null>(null)
   const wrapRef = useRef<HTMLDivElement>(null)
   const [size, setSize] = useState({ w: 0, h: 0 })
 
@@ -233,6 +234,9 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
     document.addEventListener('mousedown', onDown)
     return () => document.removeEventListener('mousedown', onDown)
   }, [expanded])
+
+  // Reset the hovered row whenever the open cluster changes.
+  useEffect(() => setPopHover(null), [expanded])
 
   const pickedPoint = useMemo(
     () => (picked ? allPoints.find((p) => p.id === picked) ?? null : null),
@@ -465,19 +469,22 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
               (() => {
                 const c = clusters.find((x) => x.key === expanded)
                 if (!c || c.pts.length < 2) return null
+                const sorted = [...c.pts].sort((a, b) => b.y - a.y || b.x - a.x)
+                const active = sorted.find((p) => p.id === popHover) ?? sorted[0]
                 return (
                   <div
-                    class="cluster-pop scroll-hidden"
+                    class="cluster-pop"
                     style={{ left: `${c.cx}px`, top: `${c.cy}px` }}
                     onPointerEnter={(e) => e.pointerType === 'mouse' && clearTimeout(popTimer.current)}
                     onPointerLeave={(e) => e.pointerType === 'mouse' && closeClusterSoon()}
                   >
-                    {[...c.pts]
-                      .sort((a, b) => b.y - a.y || b.x - a.x)
-                      .map((p) => (
+                    <div class="cluster-pop-list scroll-hidden">
+                      {sorted.map((p) => (
                         <button
                           key={p.id}
-                          class="cluster-pop-item"
+                          class={`cluster-pop-item${p.id === active.id ? ' active' : ''}`}
+                          onMouseEnter={() => setPopHover(p.id)}
+                          onFocus={() => setPopHover(p.id)}
                           onClick={() => {
                             setExpanded(null)
                             openPanel(p.id)
@@ -487,6 +494,14 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
                           <span class="static-text">{p.label}</span>
                         </button>
                       ))}
+                    </div>
+                    {/* spec of the hovered row (defaults to the top one) */}
+                    <div class="cluster-pop-foot">
+                      <strong>{active.label}</strong>
+                      {active.lines.map((line, i) => (
+                        <span key={i}>{line}</span>
+                      ))}
+                    </div>
                   </div>
                 )
               })()}
