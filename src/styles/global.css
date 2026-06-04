@@ -1064,11 +1064,20 @@ table.matrix thead th:first-child {
 /* ---- type chart: cross-highlight + legend ------------------------------ */
 .type-readout {
   align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
   padding: 4px 10px;
   border-radius: 8px;
   background: var(--surface);
-  border: 1px solid var(--secondary);
+  border: 1px solid #ffffff1f;
+  color: var(--gray-1);
   font-size: 13px;
+  font-weight: 500;
+}
+.type-readout.active {
+  border-color: var(--secondary);
+  color: var(--white);
   font-weight: 600;
 }
 .matrix td {
