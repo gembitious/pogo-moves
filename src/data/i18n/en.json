@@ -52,6 +52,12 @@
     "steel": "Steel",
     "fairy": "Fairy"
   },
+  "eff": {
+    "super_effective": "Super",
+    "netural": "Neutral",
+    "resisted": "Resisted",
+    "doubly_resisted": "Double resist"
+  },
   "search": {
     "placeholder": "Search Pokémon…",
     "placeholderAll": "Search Pokémon or moves…",

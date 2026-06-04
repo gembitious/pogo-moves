@@ -1060,3 +1060,62 @@ table.matrix thead th:first-child {
 .move-list tbody tr.dim {
   opacity: 0.4;
 }
+
+/* ---- type chart: cross-highlight + legend ------------------------------ */
+.type-readout {
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--secondary);
+  font-size: 13px;
+  font-weight: 600;
+}
+.matrix td {
+  cursor: pointer;
+}
+.matrix.has-sel td:not(.sel-a):not(.sel-d),
+.matrix.has-sel thead th:not(.sel-d):not(.corner),
+.matrix.has-sel tbody th:not(.sel-a) {
+  opacity: 0.22;
+}
+.matrix td.sel-a,
+.matrix td.sel-d {
+  background: #8ecae618;
+}
+.matrix .sel-cell {
+  box-shadow: inset 0 0 0 2px var(--primary);
+  border-radius: 4px;
+}
+.type-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  font-size: 12px;
+  color: var(--gray-1);
+}
+.type-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.type-legend-mult {
+  color: var(--tertiary);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 640px) {
+  .type-axis-top {
+    padding-left: 60px;
+  }
+  .row-label {
+    width: auto;
+    padding: 0 6px;
+  }
+  .rl-text {
+    display: none;
+  }
+  table.matrix thead th:first-child {
+    width: auto;
+  }
+}
