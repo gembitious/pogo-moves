@@ -34,6 +34,51 @@ interface Props {
 
 type Cluster = { key: string; cx: number; cy: number; pts: Point[] }
 
+// Hybrid cluster glyph: a small cluster (≤3) shows its individual type-colored dots
+// so each move stays visible; a denser cluster collapses to a type-composition pie
+// (wedge per type, sized by share) with a count badge. Either way the contents are
+// readable at a glance — no opaque "+N".
+function ClusterGlyph({ pts }: { pts: Point[] }) {
+  const n = pts.length
+  if (n <= 3) {
+    const spots = n === 2 ? [[8, 12], [16, 12]] : [[12, 7], [7, 16], [17, 16]]
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        {pts.map((p, i) => (
+          <circle key={p.id} cx={spots[i][0]} cy={spots[i][1]} r={5.5} fill={TYPE_COLORS[p.type]} stroke="#00000077" stroke-width={1} />
+        ))}
+      </svg>
+    )
+  }
+  const counts = new Map<PokemonType, number>()
+  for (const p of pts) counts.set(p.type, (counts.get(p.type) ?? 0) + 1)
+  const segs = [...counts.entries()].sort((a, b) => b[1] - a[1])
+  const cx = 11
+  const cy = 11
+  const r = 10
+  let a0 = -Math.PI / 2
+  const wedges = segs.map(([type, cnt]) => {
+    const a1 = a0 + (cnt / n) * Math.PI * 2
+    const d = `M${cx} ${cy} L${(cx + r * Math.cos(a0)).toFixed(2)} ${(cy + r * Math.sin(a0)).toFixed(2)} A${r} ${r} 0 ${a1 - a0 > Math.PI ? 1 : 0} 1 ${(cx + r * Math.cos(a1)).toFixed(2)} ${(cy + r * Math.sin(a1)).toFixed(2)} Z`
+    a0 = a1
+    return { type, d }
+  })
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      {segs.length === 1 ? (
+        <circle cx={cx} cy={cy} r={r} fill={TYPE_COLORS[segs[0][0]]} />
+      ) : (
+        wedges.map((wg) => <path key={wg.type} d={wg.d} fill={TYPE_COLORS[wg.type]} />)
+      )}
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke="#00000055" stroke-width={1} />
+      <circle cx={19} cy={5} r={6.5} fill="#02222e" stroke="#8ecae6" stroke-width={1} />
+      <text x={19} y={5} fill="#ffffff" font-size={8} font-weight={700} text-anchor="middle" dominant-baseline="central">
+        {n}
+      </text>
+    </svg>
+  )
+}
+
 export default function MoveExplorer({ category, locale, dict, moves }: Props) {
   const [mode, setMode] = useState<MoveMode>('pvp')
   const [selected, setSelected] = useState<Set<PokemonType>>(new Set())
@@ -106,6 +151,16 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
   }
   const leave = (id: string) => {
     leaveTimer.current = setTimeout(() => setHover((cur) => (cur === id ? null : cur)), 90)
+  }
+  // Cluster popover: opens on hover (mouse) or tap (touch); a short close delay lets
+  // the pointer travel from the glyph into the popover without it snapping shut.
+  const popTimer = useRef<ReturnType<typeof setTimeout>>()
+  const openCluster = (key: string) => {
+    clearTimeout(popTimer.current)
+    setExpanded(key)
+  }
+  const closeClusterSoon = () => {
+    popTimer.current = setTimeout(() => setExpanded(null), 140)
   }
   // Label as many singleton points as fit without overlapping (higher-value moves
   // win contested space). Hover/selection still labels any point on demand.
@@ -396,9 +451,13 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
                   style={{ left: `${c.cx}px`, top: `${c.cy}px`, zIndex: expanded === c.key ? 40 : hasHl ? 20 : undefined }}
                   aria-label={`${c.pts.length} ${dict.search.move}`}
                   aria-expanded={expanded === c.key}
+                  onPointerEnter={(e) => e.pointerType === 'mouse' && openCluster(c.key)}
+                  onPointerLeave={(e) => e.pointerType === 'mouse' && closeClusterSoon()}
+                  onFocus={() => openCluster(c.key)}
+                  onBlur={closeClusterSoon}
                   onClick={() => setExpanded((e) => (e === c.key ? null : c.key))}
                 >
-                  {c.pts.length}
+                  <ClusterGlyph pts={c.pts} />
                 </button>
               )
             })}
@@ -407,7 +466,12 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
                 const c = clusters.find((x) => x.key === expanded)
                 if (!c || c.pts.length < 2) return null
                 return (
-                  <div class="cluster-pop scroll-hidden" style={{ left: `${c.cx}px`, top: `${c.cy}px` }}>
+                  <div
+                    class="cluster-pop scroll-hidden"
+                    style={{ left: `${c.cx}px`, top: `${c.cy}px` }}
+                    onPointerEnter={(e) => e.pointerType === 'mouse' && clearTimeout(popTimer.current)}
+                    onPointerLeave={(e) => e.pointerType === 'mouse' && closeClusterSoon()}
+                  >
                     {[...c.pts]
                       .sort((a, b) => b.y - a.y || b.x - a.x)
                       .map((p) => (
