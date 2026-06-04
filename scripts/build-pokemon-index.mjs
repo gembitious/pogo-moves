@@ -68,6 +68,7 @@ const list = species.map((p) => ({
   charged: normMoves(p.chargedMoves),
   sprite: spriteOf(p),
   family: p.family?.id ?? null,
+  ...((p.tags ?? []).includes('shadoweligible') ? { shadow: true } : {}),
 }))
 
 const reverse = {}

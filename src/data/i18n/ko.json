@@ -87,7 +87,8 @@
     "moveCount": "무브 카운트",
     "breakpoint": "브레이크포인트",
     "rank1": "1위 빌드 기준",
-    "nextBp": "다음 BP"
+    "nextBp": "다음 BP",
+    "shadow": "그림자"
   },
   "panel": {
     "usedBy": "이 기술을 쓰는 포켓몬",

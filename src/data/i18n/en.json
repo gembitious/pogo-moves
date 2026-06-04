@@ -87,7 +87,8 @@
     "moveCount": "Move count",
     "breakpoint": "Breakpoints",
     "rank1": "rank 1 build",
-    "nextBp": "Next BP"
+    "nextBp": "Next BP",
+    "shadow": "Shadow"
   },
   "panel": {
     "usedBy": "Pokémon with this move",

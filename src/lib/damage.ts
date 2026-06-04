@@ -7,6 +7,8 @@ import type { PokemonType } from './types'
 // Niantic's exact float multipliers (pvpoke DamageMultiplier).
 export const BONUS = 1.2999999523162841796875
 export const STAB = 1.2000000476837158203125
+export const SHADOW_ATK = 1.2
+export const SHADOW_DEF = 0.83333331
 const EFF: Record<string, number> = {
   super_effective: 1.60000002384185791015625,
   netural: 1,

@@ -15,6 +15,7 @@ export interface PokemonEntry {
   charged: string[]
   sprite: string | null
   family: string | null
+  shadow?: boolean // shadow-eligible (×1.2 atk / ×0.833 def in battle)
 }
 
 export interface PokemonIndex {

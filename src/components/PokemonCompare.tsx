@@ -1,12 +1,12 @@
 /** @jsxImportSource preact */
-import { useMemo } from 'preact/hooks'
+import { useEffect, useMemo, useState } from 'preact/hooks'
 import { TYPE_COLORS, TYPE_TEXT } from '@/lib/types'
 import type { Dictionary, Locale } from '@/lib/i18n'
 import type { PokemonEntry } from '@/lib/pokemonIndex'
 import type { League, Rankings } from '@/lib/rankings'
 import type { ChargedMove, FastMove } from '@/lib/formulas'
 import { leagueBuild } from '@/lib/ivRank'
-import { breakpointAtk, pvpDamage, typeMultiplier } from '@/lib/damage'
+import { breakpointAtk, pvpDamage, typeMultiplier, SHADOW_ATK, SHADOW_DEF } from '@/lib/damage'
 import { PokeSprite } from './PokeSprite'
 
 const base = import.meta.env.BASE_URL
@@ -39,6 +39,11 @@ export function PokemonCompare({ a, b, league, ranks, fastById, chargedById, loc
   // Rank-1-build stats for the fast-move breakpoint readout (recomputes per league).
   const buildA = useMemo(() => leagueBuild(a.atk, a.def, a.hp, league), [a, league])
   const buildB = useMemo(() => leagueBuild(b.atk, b.def, b.hp, league), [b, league])
+  // Shadow toggle (×1.2 atk / ×0.833 def) per shadow-eligible mon — feeds breakpoints.
+  const [shA, setShA] = useState(false)
+  const [shB, setShB] = useState(false)
+  useEffect(() => setShA(false), [a.id])
+  useEffect(() => setShB(false), [b.id])
   // Each mon's PvP fast move (recommended first, else its first).
   const fastMoveOf = (m: PokemonEntry) => {
     const list = fastOf(m).filter((mv) => mv.pvp)
@@ -46,13 +51,15 @@ export function PokemonCompare({ a, b, league, ranks, fastById, chargedById, loc
     return list.find((mv) => mv.id === rec) ?? list[0] ?? null
   }
 
-  const bpRow = (atk: PokemonEntry, def: PokemonEntry, atkBuild: { atk: number }, defBuild: { def: number }) => {
+  const bpRow = (atk: PokemonEntry, def: PokemonEntry, atkBuild: { atk: number }, defBuild: { def: number }, atkShadow: boolean, defShadow: boolean) => {
     const fm = fastMoveOf(atk)
     if (!fm?.pvp) return null
     const stab = atk.types.includes(fm.type)
     const eff = typeMultiplier(fm.type, def.types)
-    const dmg = pvpDamage({ power: fm.pvp.power, atk: atkBuild.atk, def: defBuild.def, stab, effectiveness: eff })
-    const nextAtk = breakpointAtk(fm.pvp.power, defBuild.def, stab, eff, dmg + 1)
+    const atkStat = atkBuild.atk * (atkShadow ? SHADOW_ATK : 1)
+    const defStat = defBuild.def * (defShadow ? SHADOW_DEF : 1)
+    const dmg = pvpDamage({ power: fm.pvp.power, atk: atkStat, def: defStat, stab, effectiveness: eff })
+    const nextAtk = breakpointAtk(fm.pvp.power, defStat, stab, eff, dmg + 1)
     const ec = eff > 1.01 ? ' se' : eff < 0.99 ? ' res' : ''
     return (
       <div class="cmp-bp-row" key={atk.id}>
@@ -60,11 +67,13 @@ export function PokemonCompare({ a, b, league, ranks, fastById, chargedById, loc
           <img src={`${base}images/types/${fm.type}.png`} width={13} height={13} alt={dict.type[fm.type]} />
         </span>
         <span class="cmp-bp-lbl static-text">
+          {atkShadow && <span class="cmp-bp-sh">S</span>}
           {name(atk)} <span class="cmp-bp-arrow">→</span> {name(def)}
+          {defShadow && <span class="cmp-bp-sh">S</span>}
         </span>
         <span class={`cmp-bp-dmg${ec}`}>{dmg}</span>
         <span class="cmp-bp-next">
-          {dict.pokemon.nextBp} {dict.pokemon.atk} {Math.ceil(nextAtk)} <small>({Math.round(atkBuild.atk)})</small>
+          {dict.pokemon.nextBp} {dict.pokemon.atk} {Math.ceil(nextAtk)} <small>({Math.round(atkStat)})</small>
         </span>
       </div>
     )
@@ -159,8 +168,23 @@ export function PokemonCompare({ a, b, league, ranks, fastById, chargedById, loc
         <h4>
           {dict.pokemon.breakpoint} <span class="cmp-bp-note">{league.toUpperCase()} · {dict.pokemon.rank1}</span>
         </h4>
-        {bpRow(a, b, buildA, buildB)}
-        {bpRow(b, a, buildB, buildA)}
+        {(a.shadow || b.shadow) && (
+          <div class="cmp-bp-shadow">
+            <span class="cmp-bp-shadow-lbl">{dict.pokemon.shadow}</span>
+            {a.shadow && (
+              <button class={`cmp-sh-btn${shA ? ' on' : ''}`} aria-pressed={shA} onClick={() => setShA((v) => !v)}>
+                {name(a)}
+              </button>
+            )}
+            {b.shadow && (
+              <button class={`cmp-sh-btn${shB ? ' on' : ''}`} aria-pressed={shB} onClick={() => setShB((v) => !v)}>
+                {name(b)}
+              </button>
+            )}
+          </div>
+        )}
+        {bpRow(a, b, buildA, buildB, shA, shB)}
+        {bpRow(b, a, buildB, buildA, shB, shA)}
       </div>
 
       <div class="cmp-grid cmp-moves">
