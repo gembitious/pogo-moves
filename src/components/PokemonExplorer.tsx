@@ -226,6 +226,7 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
                     {dict.type[t]}
                   </span>
                 ))}
+                {pokeSel.shadow && <span class="dex-shadow" title="×1.2 ATK / ×0.83 DEF">{dict.pokemon.shadow}</span>}
               </div>
               <div class="dex-stats">
                 {([['atk', pokeSel.atk], ['def', pokeSel.def], ['hp', pokeSel.hp]] as const).map(([k, v]) => (
