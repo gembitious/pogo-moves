@@ -8,19 +8,15 @@ import {
   type MoveMode,
   type PokemonType,
 } from '@/lib/types'
-import {
-  chargedDpe,
-  chargedPveDps,
-  fastPvpDpt,
-  fastPvpEpt,
-  type ChargedMove,
-  type FastMove,
-} from '@/lib/formulas'
+import { type ChargedMove, type FastMove } from '@/lib/formulas'
+import { buildPoints, type Point } from '@/lib/moveChart'
 import { getChartConfig } from '@/lib/chartConfig'
-import { fmt, type Dictionary, type Locale } from '@/lib/i18n'
+import { type Dictionary, type Locale } from '@/lib/i18n'
 import { loadPokemonIndex, type PokemonEntry, type PokemonIndex } from '@/lib/pokemonIndex'
 import { PokeSprite } from './PokeSprite'
 import { PokemonSearch } from './PokemonSearch'
+import { MoveList } from './MoveList'
+import { MovePanel } from './MovePanel'
 import { readMoveId, readSelectedId, writeMoveId, writeSelectedId } from '@/lib/urlState'
 
 const base = import.meta.env.BASE_URL
@@ -28,92 +24,11 @@ const PAD = { left: 56, right: 18, top: 14, bottom: 44 } // px around the plot a
 // Locked to Shadow / Purified forms, which the reverse index (base species only) omits.
 const SHADOW_LOCKED = new Set(['frustration', 'return'])
 
-interface Point {
-  id: string
-  label: string
-  type: PokemonType
-  power: number
-  x: number
-  y: number
-  lines: string[]
-}
-
 interface Props {
   category: MoveCategory
   locale: Locale
   dict: Dictionary
   moves: FastMove[] | ChargedMove[]
-}
-
-function buffLines(pvp: ChargedMove['pvp'], dict: Dictionary): string[] {
-  if (!pvp?.buffs) return []
-  const chance = fmt(dict.move.buffChance, { chance: Math.round((pvp.buffApplyChance ?? 0) * 100) })
-  const target = pvp.buffTarget === 'self' ? dict.move.self : dict.move.opponent
-  const [atk, def] = pvp.buffs
-  const parts: string[] = []
-  const rank = (n: number) => (n > 0 ? fmt(dict.move.rankUp, { n }) : fmt(dict.move.rankDown, { n: Math.abs(n) }))
-  if (atk !== 0) parts.push(`${dict.move.attack} ${rank(atk)}`)
-  if (def !== 0) parts.push(`${dict.move.defense} ${rank(def)}`)
-  return [`${chance} ${target} ${parts.join(', ')}`]
-}
-
-function buildPoints(category: MoveCategory, mode: MoveMode, moves: Props['moves'], dict: Dictionary, locale: Locale): Point[] {
-  const label = (m: { name: string; nameEn: string }) => (locale === 'ko' ? m.name : m.nameEn)
-  if (category === 'fast') {
-    return (moves as FastMove[])
-      .filter((m) => m.pvp)
-      .map((m) => {
-        const p = m.pvp!
-        const dpt = fastPvpDpt(p)
-        const ept = fastPvpEpt(p)
-        return {
-          id: m.id,
-          label: label(m),
-          type: m.type,
-          power: p.power,
-          x: dpt,
-          y: ept,
-          lines: [
-            `${dict.move.damage}: ${p.power}`,
-            `${dict.move.turn}: ${p.turn}    DPT: ${dpt}`,
-            `${dict.move.energy}: ${p.energyGain}    EPT: ${ept}`,
-          ],
-        }
-      })
-  }
-  if (mode === 'pvp') {
-    return (moves as ChargedMove[])
-      .filter((m) => m.pvp)
-      .map((m) => {
-        const p = m.pvp!
-        const dpe = chargedDpe(p)
-        return {
-          id: m.id,
-          label: label(m),
-          type: m.type,
-          power: p.power,
-          x: p.energy,
-          y: dpe,
-          lines: [`${dict.move.damage}: ${p.power}`, `${dict.move.energy}: ${p.energy}    DPE: ${dpe}`, ...buffLines(p, dict)],
-        }
-      })
-  }
-  return (moves as ChargedMove[])
-    .filter((m) => m.pve)
-    .map((m) => {
-      const p = m.pve!
-      const dpe = chargedDpe(p)
-      const dps = chargedPveDps(p)
-      return {
-        id: m.id,
-        label: label(m),
-        type: m.type,
-        power: p.power,
-        x: dps,
-        y: dpe,
-        lines: [`${dict.move.damage}: ${p.power}`, `${dict.move.energy}: ${p.energy}    DPE: ${dpe}`, `DPS: ${dps}`],
-      }
-    })
 }
 
 export default function MoveExplorer({ category, locale, dict, moves }: Props) {
@@ -125,10 +40,7 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
   const [pokeSel, setPokeSel] = useState<PokemonEntry | null>(null)
   const [loadErr, setLoadErr] = useState(false)
   const [view, setView] = useState<'chart' | 'list'>('chart')
-  const [sort, setSort] = useState<{ key: 'name' | 'type' | 'power' | 'x' | 'y'; dir: 1 | -1 }>({ key: 'power', dir: -1 })
   const wrapRef = useRef<HTMLDivElement>(null)
-  const panelRef = useRef<HTMLDivElement>(null)
-  const restoreFocus = useRef<HTMLElement | null>(null)
   const [size, setSize] = useState({ w: 0, h: 0 })
 
   // Fill whatever space the chart container is given (no fixed aspect ratio).
@@ -255,18 +167,6 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
   useEffect(() => {
     if (picked && !pdata) load().catch(() => {})
   }, [picked])
-  useEffect(() => {
-    if (!picked) return
-    restoreFocus.current = document.activeElement as HTMLElement
-    const t = setTimeout(() => panelRef.current?.querySelector<HTMLElement>('.panel-close')?.focus(), 0)
-    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && closePanel()
-    window.addEventListener('keydown', onKey)
-    return () => {
-      clearTimeout(t)
-      window.removeEventListener('keydown', onKey)
-      restoreFocus.current?.focus?.()
-    }
-  }, [picked])
 
   const pickedPoint = useMemo(
     () => (picked ? allPoints.find((p) => p.id === picked) ?? null : null),
@@ -293,29 +193,6 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
     [pokeSel, category],
   )
   const moveOpts = useMemo(() => allPoints.map((p) => ({ id: p.id, label: p.label, type: p.type })), [allPoints])
-  const sortBy = (key: typeof sort.key) =>
-    setSort((s) => (s.key === key ? { key, dir: (s.dir * -1) as 1 | -1 } : { key, dir: key === 'name' || key === 'type' ? 1 : -1 }))
-  const ind = (k: typeof sort.key) => (sort.key === k ? (sort.dir < 0 ? ' ▼' : ' ▲') : '')
-  const sortTh = (key: typeof sort.key, label: string, num = false) => (
-    <th class={`sortable${num ? ' num' : ''}`} aria-sort={sort.key === key ? (sort.dir < 0 ? 'descending' : 'ascending') : 'none'}>
-      <button class="th-sort" onClick={() => sortBy(key)}>
-        {label}
-        {ind(key)}
-      </button>
-    </th>
-  )
-  const rows = useMemo(() => {
-    const val = (p: Point) => (sort.key === 'power' ? p.power : sort.key === 'x' ? p.x : p.y)
-    return [...points].sort((a, b) => {
-      const c =
-        sort.key === 'name'
-          ? a.label.localeCompare(b.label)
-          : sort.key === 'type'
-            ? a.type.localeCompare(b.type)
-            : val(a) - val(b)
-      return c * sort.dir
-    })
-  }, [points, sort])
 
   const curves = useMemo(() => {
     if (plotW <= 0) return []
@@ -417,36 +294,7 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
 
       <div class="chart" ref={wrapRef}>
         {view === 'list' ? (
-          <div class="move-list scroll-hidden">
-            <table>
-              <thead>
-                <tr>
-                  {sortTh('name', dict.common.name)}
-                  {sortTh('type', dict.common.type)}
-                  {sortTh('power', dict.move.damage, true)}
-                  {sortTh('x', cfg.xLabel, true)}
-                  {sortTh('y', cfg.yLabel, true)}
-                </tr>
-              </thead>
-              <tbody>
-                {rows.map((p) => (
-                  <tr
-                    key={p.id}
-                    class={highlight ? (highlight.has(p.id) ? 'hl' : 'dim') : ''}
-                    onClick={() => openPanel(p.id)}
-                  >
-                    <td class="mv-cell-name">{p.label}</td>
-                    <td>
-                      <img class="mv-type-ic" src={`${base}images/types/${p.type}.png`} width={18} height={18} alt={dict.type[p.type]} />
-                    </td>
-                    <td class="num">{p.power}</td>
-                    <td class="num">{p.x}</td>
-                    <td class="num">{p.y}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <MoveList points={points} highlight={highlight} xLabel={cfg.xLabel} yLabel={cfg.yLabel} dict={dict} onPick={openPanel} />
         ) : ready ? (
           <>
             <svg class="chart-svg" width={w} height={h} role="img" aria-label={`${cfg.xLabel} / ${cfg.yLabel}`}>
@@ -524,72 +372,17 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
       </div>
 
       {pickedPoint && (
-        <div class="panel-backdrop" onClick={closePanel}>
-          <div
-            class="move-panel"
-            role="dialog"
-            aria-modal="true"
-            ref={panelRef}
-            onClick={(e) => e.stopPropagation()}
-            onKeyDown={(e) => {
-              if (e.key !== 'Tab') return
-              const els = panelRef.current?.querySelectorAll<HTMLElement>('a[href], button')
-              if (!els || !els.length) return
-              const first = els[0]
-              const last = els[els.length - 1]
-              if (e.shiftKey && document.activeElement === first) {
-                e.preventDefault()
-                last.focus()
-              } else if (!e.shiftKey && document.activeElement === last) {
-                e.preventDefault()
-                first.focus()
-              }
-            }}
-          >
-            <button class="panel-close" onClick={closePanel} aria-label={dict.panel.close}>
-              ×
-            </button>
-            <div class="panel-head">
-              <span class="panel-dot" style={{ background: TYPE_COLORS[pickedPoint.type] }} />
-              <strong>{pickedPoint.label}</strong>
-            </div>
-            <div class="panel-stats">
-              {pickedPoint.lines.map((line, i) => (
-                <span key={i}>{line}</span>
-              ))}
-            </div>
-            <div class="panel-sub">
-              <span>{dict.panel.usedBy}</span>
-              {pickedMons && <span class="panel-count">{fmt(dict.panel.count, { n: pickedMons.length })}</span>}
-            </div>
-            {loadErr && !pdata ? (
-              <div class="panel-msg">
-                {dict.common.error}{' '}
-                <button class="retry-btn" onClick={() => load().catch(() => {})}>
-                  {dict.common.retry}
-                </button>
-              </div>
-            ) : !pdata ? (
-              <div class="panel-msg">{dict.panel.loading}</div>
-            ) : pickedMons && pickedMons.length === 0 ? (
-              <div class="panel-msg">{SHADOW_LOCKED.has(picked!) ? dict.panel.shadowOnly : dict.panel.none}</div>
-            ) : (
-              <div class="poke-grid scroll-hidden">
-                {pickedMons!.map((m) => (
-                  <a
-                    key={m.id}
-                    class="poke-card"
-                    href={`${base}${locale}/pokemon?p=${m.id}`}
-                    title={locale === 'ko' ? m.name : m.nameEn}
-                  >
-                    <PokeSprite mon={m} />
-                    <span class="poke-name static-text">{locale === 'ko' ? m.name : m.nameEn}</span>
-                  </a>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
+        <MovePanel
+          point={pickedPoint}
+          mons={pickedMons}
+          loading={!pdata}
+          loadErr={loadErr}
+          shadowLocked={SHADOW_LOCKED.has(picked!)}
+          locale={locale}
+          dict={dict}
+          onRetry={() => load().catch(() => {})}
+          onClose={closePanel}
+        />
       )}
     </div>
   )
