@@ -18,7 +18,8 @@
     "list": "List",
     "chart": "Chart",
     "name": "Name",
-    "type": "Type"
+    "type": "Type",
+    "tapCell": "Tap a cell to see the matchup"
   },
   "move": {
     "damage": "Power",

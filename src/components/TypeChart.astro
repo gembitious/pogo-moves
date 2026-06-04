@@ -20,7 +20,7 @@ const LEGEND = [
 ---
 
 <div class="type-page">
-  <div class="type-readout" hidden></div>
+  <div class="type-readout">{dict.common.tapCell}</div>
   <div class="type-axis-top">{dict.common.defender}</div>
   <div class="type-grid">
     <div class="type-axis-left">{dict.common.attacker}</div>
@@ -79,12 +79,14 @@ const LEGEND = [
   const readout = document.querySelector<HTMLElement>('.type-readout')
   if (table && readout) {
     const MULT: Record<string, string> = { super_effective: '1.6', netural: '1', resisted: '0.625', doubly_resisted: '0.39' }
+    const HINT = readout.textContent ?? ''
     let sel = ''
     const reset = () => table.querySelectorAll('.sel-a,.sel-d,.sel-cell').forEach((el) => el.classList.remove('sel-a', 'sel-d', 'sel-cell'))
     const clearSel = () => {
       table.classList.remove('has-sel')
       reset()
-      readout.hidden = true
+      readout.textContent = HINT
+      readout.classList.remove('active')
       sel = ''
     }
     table.addEventListener('click', (e) => {
@@ -100,7 +102,7 @@ const LEGEND = [
       td.classList.add('sel-cell')
       const title = td.querySelector('img')?.getAttribute('title') ?? ''
       readout.textContent = `${title}  ×${MULT[td.getAttribute('data-eff') ?? ''] ?? ''}`
-      readout.hidden = false
+      readout.classList.add('active')
       sel = `${a}:${d}`
     })
     document.addEventListener('click', (e) => {

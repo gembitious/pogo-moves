@@ -193,6 +193,24 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
       Math.min(Math.max(sy(p.y) + jy, PAD.top), h - PAD.bottom),
     ]
   }
+  // Show as many non-overlapping labels as fit (the rest stay dots; hover/selection
+  // still labels any point). Higher-value moves win contested space.
+  const labeledIds = useMemo(() => {
+    const ids = new Set<string>()
+    if (plotW <= 0 || plotH <= 0) return ids
+    const placed: { l: number; r: number; t: number; b: number }[] = []
+    const charW = locale === 'ko' ? 12 : 7
+    for (const p of [...points].sort((a, b) => b.y - a.y || b.x - a.x)) {
+      const [cx, cy] = posOf(p)
+      const hw = (Math.min(p.label.length, 8) * charW + 12) / 2
+      const box = { l: cx - hw, r: cx + hw, t: cy - 9, b: cy + 9 }
+      if (!placed.some((q) => box.l < q.r && box.r > q.l && box.t < q.b && box.b > q.t)) {
+        placed.push(box)
+        ids.add(p.id)
+      }
+    }
+    return ids
+  }, [points, w, h, cfg, locale])
 
   // Load the index on demand (search focus, an open move panel, or a restored selection).
   const load = async () => {
@@ -208,6 +226,7 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
     }
   }
   const openPanel = (id: string) => {
+    setHover(null) // avoid a lingering hover label/tooltip after a tap on touch
     setPicked(id)
     writeMoveId(id)
   }
@@ -474,7 +493,7 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
               const [cx, cy] = posOf(p)
               const isHover = hover === p.id
               const isHl = !!highlight && highlight.has(p.id)
-              const labeled = isHover || isHl
+              const labeled = isHover || isHl || labeledIds.has(p.id)
               const dim = !!highlight && !highlight.has(p.id)
               return (
                 <button
