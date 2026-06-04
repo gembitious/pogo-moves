@@ -1,27 +1,57 @@
 # POGO-MOVES
 
-고 배틀리그(GO Battle League)를 위한 포켓몬 GO 기술 데이터 시각화. 한국어 / English.
+고 배틀리그(GO Battle League)를 위한 포켓몬 GO 도구 모음. 한국어 / English.
 
-기술의 성능을 한눈에 비교합니다.
+배틀 시뮬레이터가 아니라, **공개 공식으로 직접 계산**하는 가벼운(전송 JS 페이지당 ~15–18KB gzip)
+한국어 친화 도구입니다 — 기술 데이터 시각화에 더해 IV 랭크·데미지·브레이크포인트·팀 약점까지.
 
-- **노말 기술 (Fast)** — DPT × EPT 산점도 + 가치 등고선(`DPT·EPT^1.5`)
-- **스페셜 기술 (Charged)** — PvP는 Energy × DPE(`DPE/Energy = 1/35`), PvE는 DPS × DPE(`DPS·DPE`) 산점도
-- **타입 상성표** — 18×18 공격/방어 상성 매트릭스
+## 기능
+
+- **노말 기술 (Fast)** — DPT × EPT 산점도 + 가치 등고선(`DPT·EPT^1.5`). 겹치는 점은 타입색
+  클러스터 글리프로 묶고, 호버/탭하면 스킬 스펙이 펼쳐집니다.
+- **스페셜 기술 (Charged)** — PvP는 Energy × DPE(`DPE/Energy = 1/35`), PvE는 DPS × DPE 산점도
+- **타입 상성표** — 18×18 공격/방어 상성 매트릭스 (서버 렌더 + 키보드 탐색)
+- **포켓몬 페이지** (`/[lang]/pokemon`) — 검색 → 스프라이트·타입·종족값, 리그(GL/UL/ML) 점수·
+  추천 기술(★)·매치업(유리/불리)·진화·방어 상성. 그리고:
+  - **2종 비교** — 종족값(미러 바)·타입·리그 점수·기술셋 나란히 (`?c=`로 공유)
+  - **IV 랭크 체커** — CP캡 내 4096조합을 벌크(스탯프로덕트)로 정렬, 내 IV 순위·CMP·인게임 검색 문자열
+  - **무브 카운트** — 평타 → 차지 발동 타수 매트릭스
+  - **브레이크포인트** — 비교 뷰에서 평타 매치업 데미지 + 다음 BP (정확한 PvP 데미지 공식)
+  - **그림자 보정** — 적격 포켓몬 ×1.2 공격 / ×0.833 방어를 브레이크포인트에 반영
+- **기술 도감** (`/[lang]/move`) — 기술 상세 스펙 + 그 기술을 쓰는 포켓몬 + 리그별 추천 채택
+- **팀 커버리지** (`/[lang]/team`) — 2~6마리의 **공통 약점 그리드** + 자속 공격 커버리지 (`?t=`로 공유)
+
+## 자체 계산 (시뮬레이션 아님)
+
+pvpoke 같은 배틀 엔진을 흉내내지 않고, 표준 공개 공식으로 **우리가 직접** 계산합니다 — 외부
+의존·라이선스 없이, 한국어 UX와 시각화에 집중:
+
+| 영역 | 소스 |
+| --- | --- |
+| IV 랭킹 · 스탯프로덕트 · CMP | `lib/ivRank.ts` + `lib/cpm.ts` (CPM·CP 공식) |
+| 데미지 · 브레이크포인트 | `lib/damage.ts` (pvpoke `DamageCalculator`의 정확한 상수) |
+| 타입 커버리지 · 약점 | `lib/teamCoverage.ts` (상성 매트릭스) |
+| 파생 무브 스탯(dpt/ept/dpe/dps) | `lib/formulas.ts` |
+
+리그 랭킹·추천 무브셋·매치업(유리/불리)은 pvpoke가 공개한 데이터를 가공해 **표시**합니다
+(`lib/rankings.ts`, `scripts/build-rankings.mjs`). 즉 랭킹 데이터는 pvpoke 산출물, 계산 도구는 자체 구현입니다.
 
 ## 기술 스택
 
 - [Astro](https://astro.build) (정적 생성, islands 아키텍처)
-- 인터랙티브 차트는 [Preact](https://preactjs.com) island 하나 (전송 JS ≈ 13KB gzip)
-- 순수 CSS (프레임워크 없음)
+- 인터랙티브 뷰는 [Preact](https://preactjs.com) islands · 순수 CSS (프레임워크 없음)
+- 전송 JS ≈ 페이지당 15–18KB gzip(preact 런타임 포함), 가장 큰 island(포켓몬) ~6.3KB gz
+- PWA(오프라인 service worker) · 한국어/English · `vitest` 단위 테스트
 
 ## 개발
 
 ```bash
 npm install
 npm run dev        # 개발 서버
-npm run build      # 정적 빌드 -> dist/
+npm run build      # 인덱스 생성 + 정적 빌드 -> dist/
 npm run preview    # 빌드 결과 미리보기
 npm run check      # 타입 체크 (astro check)
+npm test           # 단위 테스트 (vitest)
 npm run check-data # 데이터 무결성 검사
 ```
 
@@ -31,27 +61,36 @@ npm run check-data # 데이터 무결성 검사
 src/
   data/
     moves.json        # 기술 데이터 (원시 스탯만 — 파생값은 계산)
+    pokemon.json      # 포켓몬 로스터·스탯·기술셋·그림자 적격 (pvpoke)
     i18n/{ko,en}.json # UI 문자열 + 타입명 (단일 출처)
-    pokemon.json      # 포켓몬 로스터·스탯·기술셋 (기술↔포켓몬 기능 소스, pvpoke)
   lib/
-    formulas.ts          # 원시 스탯 -> dpt/ept/dpe/dps 파생
+    formulas.ts          # 원시 스탯 -> dpt/ept/dpe/dps + 무브 카운트
+    damage.ts            # 정확한 PvP 데미지·브레이크포인트 공식
+    ivRank.ts, cpm.ts    # IV 랭킹·CMP·검색 문자열 / CP Multiplier 표
+    teamCoverage.ts      # 팀 약점·공격 커버리지 (상성 기반)
     typeEffectiveness.ts # canonical 상성 관계 -> 18×18 매트릭스
-    chartConfig.ts       # 차트 축/등고선 정의
+    chartConfig.ts, moveChart.ts  # 차트 축/등고선 / 무브→점 매핑
+    rankings.ts          # pvpoke 리그 랭킹 lazy 로더
     pokemonIndex.ts      # 슬림 포켓몬 인덱스/역인덱스 lazy 로더 (public/data)
-    moves.ts, i18n.ts, types.ts
+    urlState.ts, moves.ts, i18n.ts, types.ts
   components/
-    MoveExplorer.tsx     # 필터 + 토글 + SVG 산점도 + 무브↔포켓몬 (Preact island)
-    PokemonExplorer.tsx  # 포켓몬 검색 → 기술셋·스탯 (Preact island)
-    PokeSprite.tsx       # 스프라이트 + 타입색 폴백 (공용)
+    MoveExplorer.tsx     # 필터 + SVG 산점도 + 클러스터 글리프 + 무브↔포켓몬 (island)
+    PokemonExplorer.tsx  # 포켓몬 페이지 (island) — 비교·IV·무브카운트·그림자 통합
+    PokemonCompare.tsx   # 2종 비교 + 브레이크포인트
+    IvChecker.tsx, TeamCoverage.tsx, MovePage.tsx
+    MoveList.tsx, MovePanel.tsx, PokemonSearch.tsx, PokeSprite.tsx
     TypeChart.astro      # 상성표 (서버 렌더, JS 0)
     Nav.astro
-  layouts/Base.astro
-  pages/[lang]/       # /ko, /en · index(=charged), fast, type, pokemon
-scripts/check-data.mjs              # 데이터 무결성 검사 (CI)
-scripts/build-data.mjs              # 시즌 데이터 파이프라인 (GAME_MASTER → moves.json)
-scripts/build-pokemon-index.mjs    # 슬림 인덱스/역인덱스 생성 (→ public/data, build에 포함)
-scripts/fetch-pokemon-images.mjs   # PokeMiners에서 스프라이트 자동 다운로드 (클론 불필요)
-scripts/build-pokemon-images.mjs   # 로컬 클론에서 스프라이트 복사 (오프라인)
+  layouts/Base.astro     # 메타/OG · PWA · service worker 등록
+  pages/[lang]/          # /ko, /en · index(=charged), fast, move, pokemon, team, type
+  pages/sitemap.xml.ts
+scripts/
+  check-data.mjs / build-data.mjs        # 무브 데이터 무결성 / 시즌 파이프라인
+  build-pokemon-data.mjs                 # pvpoke 로스터 갱신 (drift 리포트)
+  build-pokemon-index.mjs                # 슬림 인덱스/역인덱스 (build에 포함)
+  build-rankings.mjs                     # pvpoke 리그 랭킹 슬림화 (-> public/data)
+  build-cpm.mjs                          # PokeMiners 게임마스터 -> CPM 표 (lib/cpm.ts)
+  fetch-pokemon-images.mjs / build-pokemon-images.mjs  # 스프라이트
 ```
 
 ## 데이터 모델
@@ -83,12 +122,13 @@ scripts/build-pokemon-images.mjs   # 로컬 클론에서 스프라이트 복사 
 npm run build-data             # 비교만 — 변경/신규/미매핑 리포트 출력
 npm run build-data -- --write  # moves.json 갱신
 npm run check-data             # 스키마 검증
+npm run build-rankings         # pvpoke 리그 랭킹(GL/UL/ML) -> public/data/rankings-*.json
+npm run build-cpm              # PokeMiners 게임마스터 CPM 표 -> src/lib/cpm.ts
 ```
 
 - 스탯(power·energy·turn·duration·damageWindow·buffs)을 GAME_MASTER에서 재생성
 - `name`(한국어)·`nameEn`·로스터는 기존 `moves.json`에서 보존
 - 변경된 스탯 / 소스에 새로 생긴 무브 / 매핑 안 된 무브를 리포트
-
 - 신규 무브는 `scripts/data/move-names-ko.csv`([veekun](https://github.com/veekun/pokedex))에서 한글명을 찾으면 **자동 추가**, 못 찾으면(GO 전용 코스메틱 변형 등) 스킵·리포트. 참조 데이터는 `scripts/data/README.md`.
 
 한계:
@@ -109,13 +149,13 @@ npm run check-data             # 스키마 검증
 
 ## 기술 ↔ 포켓몬
 
-`src/data/pokemon.json`(pvpoke)을 슬림 인덱스로 가공해 세 기능을 제공합니다
+`src/data/pokemon.json`(pvpoke)을 슬림 인덱스로 가공합니다
 (`npm run build-pokemon-index` → `public/data/pokemon-index.json` + 역인덱스
-`move-pokemon.json`, lazy-fetch · `npm run build`에 포함):
+`move-pokemon.json`, lazy-fetch · `npm run build`에 포함). 이를 통해:
 
-- **무브 → 포켓몬**: 차트의 기술 칩 클릭 → 그 기술을 쓰는 포켓몬 그리드
+- **무브 → 포켓몬**: 차트의 기술 칩/클러스터 → 그 기술을 쓰는 포켓몬 그리드(+ 기술 도감)
 - **포켓몬 → 기술**: 포켓몬 검색·선택 → 그 포켓몬의 기술 칩을 차트에서 하이라이트(페이지 간 유지)
-- **포켓몬 페이지**(`/[lang]/pokemon`): 검색 → 스프라이트·타입·종족값 + 기술셋
+- **포켓몬 페이지·비교·팀 커버리지**: 종족값·타입·기술셋·그림자 적격을 소스로
 
 한글명은 `scripts/data/species-i18n.csv`(veekun) + `species-ko-extra.json`(override)에서 옵니다.
 로스터(`pokemon.json`)는 `npm run build-pokemon-data`로 pvpoke에서 갱신합니다(주간 자동화 포함).

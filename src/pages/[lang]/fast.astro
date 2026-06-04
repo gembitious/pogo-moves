@@ -12,6 +12,6 @@ const lang = Astro.params.lang as Locale
 const dict = getDictionary(lang)
 ---
 
-<Base locale={lang} title={dict.nav.fast}>
+<Base locale={lang} title={dict.nav.fast} description={dict.meta.desc.fast}>
   <MoveExplorer client:load category="fast" locale={lang} dict={dict} moves={fastMoves} />
 </Base>

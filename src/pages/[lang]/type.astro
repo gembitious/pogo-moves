@@ -11,6 +11,6 @@ const lang = Astro.params.lang as Locale
 const dict = getDictionary(lang)
 ---
 
-<Base locale={lang} title={dict.nav.type}>
+<Base locale={lang} title={dict.nav.type} description={dict.meta.desc.type}>
   <TypeChart locale={lang} />
 </Base>
