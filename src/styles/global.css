@@ -1749,3 +1749,177 @@ table.matrix thead th:first-child {
   color: var(--primary);
   font-weight: 700;
 }
+
+/* ---- team type coverage ------------------------------------------------ */
+.team {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 0;
+}
+.team-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.team-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 6px 3px 4px;
+  border-radius: 16px;
+  background: var(--surface);
+  font-size: 13px;
+  max-width: 160px;
+}
+.team-chip .static-text {
+  min-width: 0;
+}
+.team-chip-x {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  border: none;
+  border-radius: 50%;
+  background: #ffffff1a;
+  color: var(--white);
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.team-shared {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: #b3261e22;
+  border: 1px solid #e2574c55;
+}
+.team-shared-label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #ff9b9b;
+}
+.team-shared-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.team-shared-chip strong {
+  font-weight: 800;
+}
+
+.team-sec {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.team-sec h3 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--tertiary);
+}
+.team-stab {
+  padding: 1px 7px;
+  border-radius: 9px;
+  background: #ffffff14;
+  color: var(--gray-1);
+  font-size: 11px;
+  font-weight: 600;
+}
+.team-cov-count {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--gray-1);
+  font-variant-numeric: tabular-nums;
+}
+
+.team-grid-wrap {
+  overflow-x: auto;
+}
+table.cov {
+  border-collapse: separate;
+  border-spacing: 2px;
+}
+table.cov th,
+table.cov td {
+  text-align: center;
+}
+.cov-type {
+  width: 30px;
+  border-radius: 6px;
+}
+.cov-type img {
+  display: block;
+  margin: 2px auto;
+}
+.cov-mon {
+  padding: 2px;
+}
+.cov-cell {
+  min-width: 34px;
+  height: 28px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: #ffffffe6;
+}
+.cov-cell.ec-2w {
+  background: #8e1b12;
+}
+.cov-cell.ec-w {
+  background: #c8473b;
+}
+.cov-cell.ec-n {
+  background: #ffffff0d;
+  color: #ffffff55;
+}
+.cov-cell.ec-r {
+  background: #2f7d8a;
+}
+.cov-cell.ec-2r {
+  background: #1d5560;
+}
+.cov-sum {
+  min-width: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--gray-1);
+}
+.cov-sum.hot {
+  color: #ff8a7a;
+}
+table.cov tr.shared .cov-type {
+  outline: 2px solid #e2574c;
+}
+
+.team-offense {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.team-off-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #ffffff0d;
+  opacity: 0.4;
+}
+.team-off-chip.on {
+  opacity: 1;
+}
