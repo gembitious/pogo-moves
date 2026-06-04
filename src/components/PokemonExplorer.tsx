@@ -1,6 +1,6 @@
 /** @jsxImportSource preact */
 import { useEffect, useMemo, useState } from 'preact/hooks'
-import { POKEMON_TYPES, TYPE_COLORS, type PokemonType } from '@/lib/types'
+import { POKEMON_TYPES, TYPE_COLORS, TYPE_TEXT, type PokemonType } from '@/lib/types'
 import { EFFECT_MULTIPLIER, getEffectiveness } from '@/lib/typeEffectiveness'
 import type { Dictionary, Locale } from '@/lib/i18n'
 import { loadPokemonIndex, type PokemonEntry, type PokemonIndex } from '@/lib/pokemonIndex'
@@ -106,7 +106,7 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
   }, [pokeSel, pdata])
 
   const muChip = (t: PokemonType, mult: number) => (
-    <span key={t} class="mu-chip" style={{ background: TYPE_COLORS[t] }} title={`${dict.type[t]} ×${+mult.toFixed(2)}`}>
+    <span key={t} class="mu-chip" style={{ background: TYPE_COLORS[t], color: TYPE_TEXT[t] }} title={`${dict.type[t]} ×${+mult.toFixed(2)}`}>
       <img src={`${base}images/types/${t}.png`} width={15} height={15} alt={dict.type[t]} />×{+mult.toFixed(2)}
     </span>
   )
@@ -128,7 +128,7 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
               </div>
               <div class="dex-types">
                 {pokeSel.types.map((t) => (
-                  <span key={t} class="dex-type" style={{ background: TYPE_COLORS[t] }}>
+                  <span key={t} class="dex-type" style={{ background: TYPE_COLORS[t], color: TYPE_TEXT[t] }}>
                     <img src={`${base}images/types/${t}.png`} width={16} height={16} alt={dict.type[t]} />
                     {dict.type[t]}
                   </span>

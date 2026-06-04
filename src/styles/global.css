@@ -1128,3 +1128,24 @@ table.matrix thead th:first-child {
     width: auto;
   }
 }
+
+/* ---- a11y: sortable headers, keyboard focus, reduced motion ------------- */
+.move-list .th-sort {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.matrix td:focus-visible {
+  outline: 2px solid var(--tertiary);
+  outline-offset: -2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .panel-backdrop {
+    animation: none;
+  }
+}
