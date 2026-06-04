@@ -1,7 +1,8 @@
-name: Update move data
+name: Update data
 
-# Refresh src/data/moves.json from the latest GAME_MASTER on a schedule and open
-# a PR when stats drift. Merging that PR triggers the normal Vercel deploy.
+# Refresh src/data/moves.json (GAME_MASTER stats) + src/data/pokemon.json (pvpoke
+# roster) on a schedule, regenerate the indexes, and open a PR when data drifts.
+# Merging that PR triggers the normal Vercel deploy.
 #
 # Requires (repo Settings -> Actions -> General -> Workflow permissions):
 #   - "Read and write permissions"
@@ -25,13 +26,16 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm run build-data -- --write
+      - run: npm run build-data -- --write # moves.json stats from GAME_MASTER
+      - run: npm run build-pokemon-data -- --write # pokemon.json roster from pvpoke
       - run: npm run check-data
-      - name: Open or update a PR when moves.json changed
+      - run: npm run build-pokemon-index # regenerate public/data indexes
+      - name: Open or update a PR when data changed
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if git diff --quiet -- src/data/moves.json; then
+          PATHS="src/data/moves.json src/data/pokemon.json public/data"
+          if git diff --quiet -- $PATHS; then
             echo "No data changes."
             exit 0
           fi
@@ -39,13 +43,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch -C "$BRANCH"
-          git add src/data/moves.json
-          git commit -m "데이터 자동 업데이트 (GAME_MASTER)"
+          git add $PATHS
+          git commit -m "데이터 자동 업데이트 (GAME_MASTER + pvpoke 로스터)"
           git push -f -u origin "$BRANCH"
           if gh pr view "$BRANCH" --json state --jq .state 2>/dev/null | grep -q OPEN; then
             echo "Existing PR updated."
           else
             gh pr create --base main --head "$BRANCH" \
-              --title "데이터 자동 업데이트 (GAME_MASTER)" \
-              --body "예약 실행으로 \`moves.json\`이 갱신되었습니다. 머지 전 변경 내용(신규 무브·obstruct류 동시버프·미매핑)을 확인하세요."
+              --title "데이터 자동 업데이트 (GAME_MASTER + pvpoke 로스터)" \
+              --body "예약 실행으로 \`moves.json\`(스탯)·\`pokemon.json\`(로스터)·\`public/data\`(인덱스)가 갱신되었습니다. 머지 전 변경 내용(신규 무브·포켓몬·모브셋·미매핑)을 확인하세요."
           fi

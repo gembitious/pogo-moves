@@ -50,13 +50,18 @@
   },
   "search": {
     "placeholder": "Search Pokémon…",
+    "placeholderAll": "Search Pokémon or moves…",
     "clear": "Clear",
-    "none": "No results"
+    "none": "No results",
+    "move": "Move"
   },
   "pokemon": {
     "atk": "ATK",
     "def": "DEF",
     "hp": "HP",
+    "evolution": "Evolution",
+    "weak": "Weak to",
+    "resist": "Resists",
     "empty": "Search a Pokémon to see its moves"
   },
   "panel": {
