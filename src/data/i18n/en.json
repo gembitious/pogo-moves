@@ -7,7 +7,8 @@
     "fast": "Fast Move",
     "charged": "Charged Move",
     "type": "Type Chart",
-    "pokemon": "Pokémon"
+    "pokemon": "Pokémon",
+    "move": "Move Dex"
   },
   "common": {
     "allType": "All Types",
@@ -32,7 +33,9 @@
     "attack": "Attack",
     "defense": "Defense",
     "rankUp": "+{n}",
-    "rankDown": "-{n}"
+    "rankDown": "-{n}",
+    "recBy": "Recommended for",
+    "empty": "Search a move to see details"
   },
   "type": {
     "normal": "Normal",
@@ -65,7 +68,8 @@
     "placeholderAll": "Search Pokémon or moves…",
     "clear": "Clear",
     "none": "No results",
-    "move": "Move"
+    "move": "Move",
+    "placeholderMove": "Search moves…"
   },
   "pokemon": {
     "atk": "ATK",
@@ -86,6 +90,7 @@
     "none": "No Pokémon data",
     "shadowOnly": "Shadow/Purified-only move",
     "loading": "Loading…",
-    "close": "Close"
+    "close": "Close",
+    "details": "Details"
   }
 }

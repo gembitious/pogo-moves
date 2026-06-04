@@ -15,11 +15,14 @@ const current = path.endsWith('/pokemon')
     ? 'fast'
     : path.endsWith('/type')
       ? 'type'
-      : 'charged'
+      : path.endsWith('/move')
+        ? 'move'
+        : 'charged'
 
 const items = [
   { key: 'fast', href: `/${locale}/fast`, label: dict.nav.fast },
   { key: 'charged', href: `/${locale}`, label: dict.nav.charged },
+  { key: 'move', href: `/${locale}/move`, label: dict.nav.move },
   { key: 'pokemon', href: `/${locale}/pokemon`, label: dict.nav.pokemon },
   { key: 'type', href: `/${locale}/type`, label: dict.nav.type },
 ]

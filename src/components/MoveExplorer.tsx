@@ -503,6 +503,7 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
           shadowLocked={SHADOW_LOCKED.has(picked!)}
           locale={locale}
           dict={dict}
+          detailHref={`${base}${locale}/move?m=${picked}`}
           onRetry={() => load().catch(() => {})}
           onClose={closePanel}
         />

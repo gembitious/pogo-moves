@@ -15,13 +15,14 @@ interface Props {
   shadowLocked: boolean
   locale: Locale
   dict: Dictionary
+  detailHref?: string
   onRetry: () => void
   onClose: () => void
 }
 
 // Move → "who uses it" panel. Owns its focus management (focus on open, restore on
 // close, Escape, Tab trap) for the lifetime it's mounted.
-export function MovePanel({ point, mons, loading, loadErr, shadowLocked, locale, dict, onRetry, onClose }: Props) {
+export function MovePanel({ point, mons, loading, loadErr, shadowLocked, locale, dict, detailHref, onRetry, onClose }: Props) {
   const panelRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
     const prev = document.activeElement as HTMLElement | null
@@ -72,6 +73,11 @@ export function MovePanel({ point, mons, loading, loadErr, shadowLocked, locale,
             <span key={i}>{line}</span>
           ))}
         </div>
+        {detailHref && (
+          <a class="panel-details" href={detailHref}>
+            {dict.panel.details} →
+          </a>
+        )}
         <div class="panel-sub">
           <span>{dict.panel.usedBy}</span>
           {mons && <span class="panel-count">{fmt(dict.panel.count, { n: mons.length })}</span>}
