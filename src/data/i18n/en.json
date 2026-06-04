@@ -77,7 +77,8 @@
     "beats": "Beats",
     "losesTo": "Loses to",
     "recommended": "Recommended",
-    "empty": "Search a Pokémon to see its moves"
+    "empty": "Search a Pokémon to see its moves",
+    "comparePlaceholder": "Compare with…"
   },
   "panel": {
     "usedBy": "Pokémon with this move",

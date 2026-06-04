@@ -1278,6 +1278,138 @@ table.matrix thead th:first-child {
   }
 }
 
+/* ---- pokemon compare (two mons side by side) --------------------------- */
+.dex-cmp-btn {
+  margin-left: 8px;
+  padding: 2px 10px;
+  border: 1px solid var(--secondary);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--tertiary);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.dex-cmp-btn[aria-pressed='true'] {
+  background: var(--secondary);
+  color: #06222e;
+}
+
+.cmp-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cmp-tag {
+  color: var(--tertiary);
+  font-size: 13px;
+  font-weight: 700;
+}
+.cmp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.cmp-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  min-width: 0;
+}
+.cmp-focus {
+  padding: 2px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+}
+.cmp-focus:hover {
+  background: #ffffff12;
+}
+.cmp-name {
+  font-weight: 700;
+  font-size: 15px;
+  max-width: 100%;
+}
+.cmp-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+}
+.dex-score.win {
+  box-shadow: 0 0 0 2px var(--white);
+}
+
+.cmp-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 10px 0;
+}
+.cmp-stat {
+  display: grid;
+  grid-template-columns: 2.4em 1fr 3.4em 1fr 2.4em;
+  align-items: center;
+  gap: 6px;
+}
+.cmp-v {
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--gray-1);
+}
+.cmp-v.l {
+  text-align: right;
+}
+.cmp-v.r {
+  text-align: left;
+}
+.cmp-v.win {
+  color: var(--primary);
+  font-weight: 700;
+}
+.cmp-k {
+  text-align: center;
+  font-size: 11px;
+  color: #9fb2bb;
+}
+.cmp-bar {
+  display: flex;
+  height: 8px;
+  border-radius: 4px;
+  background: #ffffff14;
+  overflow: hidden;
+}
+.cmp-bar.l {
+  justify-content: flex-end;
+}
+.cmp-fill {
+  height: 100%;
+  background: var(--tertiary);
+  border-radius: 4px;
+}
+
+.cmp-moves {
+  margin-top: 4px;
+}
+.cmp-moves-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.cmp-moves-col h4 {
+  margin: 6px 0 2px;
+  font-size: 12px;
+  color: var(--tertiary);
+}
+.cmp-moves-col .mv-name {
+  flex: 1;
+}
+
 /* ---- move list: compare ------------------------------------------------ */
 .mv-cmp-th {
   width: 28px;

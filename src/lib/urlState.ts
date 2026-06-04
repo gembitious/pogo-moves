@@ -31,3 +31,15 @@ export function writeMoveId(id: string | null) {
   if (typeof window === 'undefined') return
   write('m', id)
 }
+
+// Second Pokémon for the compare view (?c=<speciesId>). URL-only — kept shareable
+// but not sticky in localStorage, so a plain selection never resurrects a compare.
+export function readCompareId(): string | null {
+  if (typeof window === 'undefined') return null
+  return new URL(location.href).searchParams.get('c')
+}
+
+export function writeCompareId(id: string | null) {
+  if (typeof window === 'undefined') return
+  write('c', id)
+}
