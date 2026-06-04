@@ -98,8 +98,9 @@ npm run check-data             # 스키마 검증
 
 ### 자동화
 
-`.github/workflows/update-data.yml`이 매주(및 수동 실행 시) `build-data`를 돌려,
-`moves.json`이 바뀌면 `data/auto-refresh` 브랜치로 **PR을 엽니다**. 그 PR을 머지하면
+`.github/workflows/update-data.yml`이 매주(및 수동 실행 시) `build-data`(무브 스탯)와
+`build-pokemon-data`(pvpoke 로스터)를 돌리고 인덱스를 재생성해, `moves.json`·`pokemon.json`·
+`public/data`가 바뀌면 `data/auto-refresh` 브랜치로 **PR을 엽니다**. 그 PR을 머지하면
 기존 Vercel 연동이 **프로덕션 배포를 자동 트리거**합니다.
 
 > 저장소 Settings → Actions → General → Workflow permissions에서 **"Read and write
@@ -117,6 +118,7 @@ npm run check-data             # 스키마 검증
 - **포켓몬 페이지**(`/[lang]/pokemon`): 검색 → 스프라이트·타입·종족값 + 기술셋
 
 한글명은 `scripts/data/species-i18n.csv`(veekun) + `species-ko-extra.json`(override)에서 옵니다.
+로스터(`pokemon.json`)는 `npm run build-pokemon-data`로 pvpoke에서 갱신합니다(주간 자동화 포함).
 
 ### 스프라이트 갱신
 
