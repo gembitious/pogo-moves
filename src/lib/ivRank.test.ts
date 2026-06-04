@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { CPM } from './cpm'
-import { cpOf, rankSpreads, findSpread, cmpVs, type IvSpread } from './ivRank'
+import { cpOf, rankSpreads, findSpread, cmpVs, searchString, type IvSpread } from './ivRank'
 
 const AZU = [112, 152, 225] as const // Azumarill base atk/def/sta (pvpoke)
 
@@ -48,5 +48,16 @@ describe('cmpVs', () => {
     expect(cmpVs(mk(100), mk(90))).toBe('win')
     expect(cmpVs(mk(90), mk(90))).toBe('tie')
     expect(cmpVs(mk(80), mk(90))).toBe('lose')
+  })
+})
+
+describe('searchString', () => {
+  it('emits cp<X>&hp<Y> pairs across levels, all within the cap', () => {
+    const gl = rankSpreads(...AZU, 'gl')
+    const ss = searchString(...AZU, gl.slice(0, 1), 'gl')
+    expect(ss).toMatch(/^cp\d+&hp\d+(,cp\d+&hp\d+)*$/)
+    const cps = ss.split(',').map((p) => Number(p.match(/cp(\d+)/)![1]))
+    expect(Math.max(...cps)).toBeLessThanOrEqual(1500)
+    expect(cps.length).toBeGreaterThan(20) // many levels → many pairs
   })
 })

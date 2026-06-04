@@ -111,7 +111,12 @@
     "pct": "%",
     "cmpWin": "CMP win",
     "cmpTie": "CMP tie",
-    "cmpLose": "CMP lose"
+    "cmpLose": "CMP lose",
+    "search": "Search string",
+    "top": "Top",
+    "copy": "Copy",
+    "copied": "Copied",
+    "searchHint": "Matches your mon at any level · paste into the in-game search (verify in-game)"
   },
   "team": {
     "empty": "Add Pokémon to see your team's weaknesses and coverage",
