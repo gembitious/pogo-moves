@@ -57,6 +57,9 @@
     "atk": "ATK",
     "def": "DEF",
     "hp": "HP",
+    "evolution": "Evolution",
+    "weak": "Weak to",
+    "resist": "Resists",
     "empty": "Search a Pokémon to see its moves"
   },
   "panel": {

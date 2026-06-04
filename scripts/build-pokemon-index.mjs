@@ -67,6 +67,7 @@ const list = species.map((p) => ({
   fast: normMoves(p.fastMoves),
   charged: normMoves(p.chargedMoves),
   sprite: spriteOf(p),
+  family: p.family?.id ?? null,
 }))
 
 const reverse = {}

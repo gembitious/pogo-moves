@@ -1,6 +1,7 @@
 /** @jsxImportSource preact */
 import { useEffect, useMemo, useState } from 'preact/hooks'
-import { TYPE_COLORS } from '@/lib/types'
+import { POKEMON_TYPES, TYPE_COLORS, type PokemonType } from '@/lib/types'
+import { EFFECT_MULTIPLIER, getEffectiveness } from '@/lib/typeEffectiveness'
 import type { Dictionary, Locale } from '@/lib/i18n'
 import { loadPokemonIndex, type PokemonEntry, type PokemonIndex } from '@/lib/pokemonIndex'
 import { PokeSprite } from './PokeSprite'
@@ -80,6 +81,36 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
   // Deep-link a move to its chart (fast page / charged index), opening its panel.
   const moveHref = (id: string, kind: 'fast' | 'charged') => `${base}${locale}${kind === 'fast' ? '/fast' : ''}?m=${id}`
 
+  // Defensive matchups: multiply each attacking type's effectiveness over the
+  // selected mon's type(s) (GO has no immunities, so ×0 is a double resist).
+  const matchups = useMemo(() => {
+    const weak: { t: PokemonType; mult: number }[] = []
+    const resist: { t: PokemonType; mult: number }[] = []
+    if (pokeSel) {
+      for (const t of POKEMON_TYPES) {
+        let mult = 1
+        for (const d of pokeSel.types) mult *= EFFECT_MULTIPLIER[getEffectiveness(t, d)]
+        if (mult > 1.01) weak.push({ t, mult })
+        else if (mult < 0.99) resist.push({ t, mult })
+      }
+      weak.sort((a, b) => b.mult - a.mult)
+      resist.sort((a, b) => a.mult - b.mult)
+    }
+    return { weak, resist }
+  }, [pokeSel])
+
+  const family = useMemo(() => {
+    if (!pokeSel?.family || !pdata) return []
+    const fam = pdata.list.filter((p) => p.family === pokeSel.family)
+    return fam.length > 1 ? fam.sort((a, b) => a.dex - b.dex || a.id.localeCompare(b.id)) : []
+  }, [pokeSel, pdata])
+
+  const muChip = (t: PokemonType, mult: number) => (
+    <span key={t} class="mu-chip" style={{ background: TYPE_COLORS[t] }} title={`${dict.type[t]} ×${+mult.toFixed(2)}`}>
+      <img src={`${base}images/types/${t}.png`} width={15} height={15} alt={dict.type[t]} />×{+mult.toFixed(2)}
+    </span>
+  )
+
   return (
     <div class="dex">
       <PokemonSearch list={pdata?.list} locale={locale} dict={dict} onSelect={selectPoke} className="dex-search" />
@@ -116,6 +147,42 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
               </div>
             </div>
           </div>
+
+          {(matchups.weak.length > 0 || matchups.resist.length > 0) && (
+            <div class="dex-matchups">
+              {matchups.weak.length > 0 && (
+                <div class="mu-row">
+                  <span class="mu-label weak">{dict.pokemon.weak}</span>
+                  {matchups.weak.map(({ t, mult }) => muChip(t, mult))}
+                </div>
+              )}
+              {matchups.resist.length > 0 && (
+                <div class="mu-row">
+                  <span class="mu-label resist">{dict.pokemon.resist}</span>
+                  {matchups.resist.map(({ t, mult }) => muChip(t, mult))}
+                </div>
+              )}
+            </div>
+          )}
+
+          {family.length > 0 && (
+            <div class="dex-evo">
+              <h3>{dict.pokemon.evolution}</h3>
+              <div class="dex-evo-row scroll-hidden">
+                {family.map((m) => (
+                  <button
+                    key={m.id}
+                    class={`dex-evo-member${m.id === pokeSel.id ? ' current' : ''}`}
+                    onClick={() => selectPoke(m)}
+                    title={name(m)}
+                  >
+                    <PokeSprite mon={m} size={48} />
+                    <span class="static-text">{name(m)}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div class="dex-moves">
             <section>

@@ -14,6 +14,7 @@ export interface PokemonEntry {
   fast: string[]
   charged: string[]
   sprite: string | null
+  family: string | null
 }
 
 export interface PokemonIndex {
