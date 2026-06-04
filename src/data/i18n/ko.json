@@ -7,7 +7,8 @@
     "fast": "노말 기술",
     "charged": "스페셜 기술",
     "type": "타입 상성표",
-    "pokemon": "포켓몬"
+    "pokemon": "포켓몬",
+    "move": "기술 도감"
   },
   "common": {
     "allType": "타입 전체",
@@ -32,7 +33,9 @@
     "attack": "공격",
     "defense": "방어",
     "rankUp": "{n}랭크 상승",
-    "rankDown": "{n}랭크 하락"
+    "rankDown": "{n}랭크 하락",
+    "recBy": "추천 채택 포켓몬",
+    "empty": "기술을 검색해 상세 정보를 확인하세요"
   },
   "type": {
     "normal": "노말",
@@ -65,7 +68,8 @@
     "placeholderAll": "포켓몬·기술 검색…",
     "clear": "선택 해제",
     "none": "결과 없음",
-    "move": "기술"
+    "move": "기술",
+    "placeholderMove": "기술 검색…"
   },
   "pokemon": {
     "atk": "공격",
@@ -86,6 +90,7 @@
     "none": "사용 포켓몬 데이터 없음",
     "shadowOnly": "그림자·정화 전용 기술",
     "loading": "불러오는 중…",
-    "close": "닫기"
+    "close": "닫기",
+    "details": "자세히"
   }
 }
