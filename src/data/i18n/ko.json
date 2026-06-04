@@ -48,7 +48,8 @@
   },
   "search": {
     "placeholder": "포켓몬 검색…",
-    "clear": "선택 해제"
+    "clear": "선택 해제",
+    "none": "결과 없음"
   },
   "pokemon": {
     "atk": "공격",

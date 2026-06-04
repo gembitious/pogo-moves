@@ -87,16 +87,23 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
             blurT.current = setTimeout(() => setOpen(false), 120)
           }}
           onInput={(e) => setQuery((e.currentTarget as HTMLInputElement).value)}
-          onKeyDown={(e) => e.key === 'Escape' && setQuery('')}
+          onKeyDown={(e) => {
+            if (e.key === 'Escape') setQuery('')
+            else if (e.key === 'Enter' && results.length) selectPoke(results[0])
+          }}
         />
-        {open && query.trim() && results.length > 0 && (
+        {open && query.trim() && (results.length > 0 || pdata) && (
           <div class="poke-results scroll-hidden">
-            {results.map((m) => (
-              <button key={m.id} class="poke-result" onMouseDown={() => selectPoke(m)}>
-                <PokeSprite mon={m} size={26} />
-                <span class="static-text">{name(m)}</span>
-              </button>
-            ))}
+            {results.length > 0 ? (
+              results.map((m) => (
+                <button key={m.id} class="poke-result" onMouseDown={() => selectPoke(m)}>
+                  <PokeSprite mon={m} size={26} />
+                  <span class="static-text">{name(m)}</span>
+                </button>
+              ))
+            ) : (
+              <div class="poke-noresult">{dict.search.none}</div>
+            )}
           </div>
         )}
       </div>

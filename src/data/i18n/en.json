@@ -48,7 +48,8 @@
   },
   "search": {
     "placeholder": "Search Pokémon…",
-    "clear": "Clear"
+    "clear": "Clear",
+    "none": "No results"
   },
   "pokemon": {
     "atk": "ATK",

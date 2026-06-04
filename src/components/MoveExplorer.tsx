@@ -291,17 +291,24 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
                 ensureData()
                 setQuery((e.currentTarget as HTMLInputElement).value)
               }}
-              onKeyDown={(e) => e.key === 'Escape' && setQuery('')}
+              onKeyDown={(e) => {
+                if (e.key === 'Escape') setQuery('')
+                else if (e.key === 'Enter' && results.length) selectPoke(results[0])
+              }}
             />
           )}
-          {searchOpen && query.trim() && results.length > 0 && (
+          {searchOpen && query.trim() && (results.length > 0 || pdata) && (
             <div class="poke-results scroll-hidden">
-              {results.map((m) => (
-                <button key={m.id} class="poke-result" onMouseDown={() => selectPoke(m)}>
-                  <PokeSprite mon={m} size={26} />
-                  <span class="static-text">{locale === 'ko' ? m.name : m.nameEn}</span>
-                </button>
-              ))}
+              {results.length > 0 ? (
+                results.map((m) => (
+                  <button key={m.id} class="poke-result" onMouseDown={() => selectPoke(m)}>
+                    <PokeSprite mon={m} size={26} />
+                    <span class="static-text">{locale === 'ko' ? m.name : m.nameEn}</span>
+                  </button>
+                ))
+              ) : (
+                <div class="poke-noresult">{dict.search.none}</div>
+              )}
             </div>
           )}
         </div>
@@ -443,10 +450,16 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
             ) : (
               <div class="poke-grid scroll-hidden">
                 {pickedMons!.map((m) => (
-                  <div key={m.id} class="poke-card" title={locale === 'ko' ? m.name : m.nameEn}>
+                  <a
+                    key={m.id}
+                    class="poke-card"
+                    href={`${base}${locale}/pokemon`}
+                    onClick={() => localStorage.setItem('pogo-poke', m.id)}
+                    title={locale === 'ko' ? m.name : m.nameEn}
+                  >
                     <PokeSprite mon={m} />
                     <span class="poke-name static-text">{locale === 'ko' ? m.name : m.nameEn}</span>
-                  </div>
+                  </a>
                 ))}
               </div>
             )}
