@@ -43,3 +43,15 @@ export function writeCompareId(id: string | null) {
   if (typeof window === 'undefined') return
   write('c', id)
 }
+
+// Team for the coverage page (?t=id1,id2,…). URL-only, shareable.
+export function readTeamIds(): string[] {
+  if (typeof window === 'undefined') return []
+  const t = new URL(location.href).searchParams.get('t')
+  return t ? t.split(',').filter(Boolean) : []
+}
+
+export function writeTeamIds(ids: string[]) {
+  if (typeof window === 'undefined') return
+  write('t', ids.length ? ids.join(',') : null)
+}

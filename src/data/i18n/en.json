@@ -8,7 +8,8 @@
     "charged": "Charged Move",
     "type": "Type Chart",
     "pokemon": "Pokémon",
-    "move": "Move Dex"
+    "move": "Move Dex",
+    "team": "Team Coverage"
   },
   "common": {
     "allType": "All Types",
@@ -109,5 +110,14 @@
     "search": "Search string",
     "copy": "Copy",
     "copied": "Copied"
+  },
+  "team": {
+    "empty": "Add Pokémon to see your team's weaknesses and coverage",
+    "defense": "Team weaknesses",
+    "offense": "Offensive coverage",
+    "stab": "STAB",
+    "weak": "Weak",
+    "shared": "Shared",
+    "covered": "{n}/18 covered"
   }
 }

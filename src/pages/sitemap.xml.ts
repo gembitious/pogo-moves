@@ -2,8 +2,8 @@ import type { APIRoute } from 'astro'
 
 export const prerender = true
 
-// All 2 locales × 5 pages (index = charged, fast, move, type, pokemon).
-const PATHS = ['', '/fast', '/move', '/type', '/pokemon']
+// All 2 locales × 6 pages (index = charged, fast, move, pokemon, team, type).
+const PATHS = ['', '/fast', '/move', '/pokemon', '/team', '/type']
 
 export const GET: APIRoute = ({ site }) => {
   const base = site ?? new URL('https://pogo-moves.vercel.app')
