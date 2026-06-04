@@ -7,6 +7,8 @@ import {
   fastPveEps,
   fastPvpDpt,
   fastPvpEpt,
+  moveCount,
+  moveCountTurns,
   round2,
 } from '@/lib/formulas'
 
@@ -15,6 +17,20 @@ describe('round2', () => {
     expect(round2(1.666)).toBe(1.67)
     expect(round2(2 / 3)).toBe(0.67)
     expect(round2(4)).toBe(4)
+  })
+})
+
+describe('moveCount', () => {
+  it('ceils energy / energyGain', () => {
+    // Bubble (8 e/turn) → Ice Beam (50): ⌈50/8⌉ = 7
+    expect(moveCount({ energyGain: 8 }, { energy: 50 })).toBe(7)
+    // exact divisor
+    expect(moveCount({ energyGain: 10 }, { energy: 60 })).toBe(6)
+    // 1 fast move already over the cost
+    expect(moveCount({ energyGain: 13 }, { energy: 10 })).toBe(1)
+  })
+  it('turns = count × fast turn', () => {
+    expect(moveCountTurns({ power: 0, energyGain: 8, turn: 3 }, { energy: 50 })).toBe(21)
   })
 })
 

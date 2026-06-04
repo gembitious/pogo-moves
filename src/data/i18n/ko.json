@@ -83,7 +83,8 @@
     "losesTo": "불리",
     "recommended": "추천 기술",
     "empty": "포켓몬을 검색해 기술셋을 확인하세요",
-    "comparePlaceholder": "비교할 포켓몬…"
+    "comparePlaceholder": "비교할 포켓몬…",
+    "moveCount": "무브 카운트"
   },
   "panel": {
     "usedBy": "이 기술을 쓰는 포켓몬",
