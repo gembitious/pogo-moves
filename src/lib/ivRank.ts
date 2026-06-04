@@ -84,6 +84,14 @@ export function rankSpreads(bA: number, bD: number, bS: number, league: League, 
 export const findSpread = (list: IvSpread[], ivA: number, ivD: number, ivS: number): IvSpread | undefined =>
   list.find((s) => s.ivA === ivA && s.ivD === ivD && s.ivS === ivS)
 
+// The rank-1 (max-bulk) build's effective stats for a league — a sensible default
+// "as-built" mon for matchup / breakpoint math.
+export function leagueBuild(bA: number, bD: number, bS: number, league: League) {
+  const s = rankSpreads(bA, bD, bS, league)[0]
+  const cpm = CPM[Math.round((s.level - 1) * 2)]
+  return { atk: (bA + s.ivA) * cpm, def: (bD + s.ivD) * cpm, hp: s.hp, level: s.level, cp: s.cp }
+}
+
 // CMP (charge-move priority): on a same-turn charged move, the higher Attack stat
 // goes first. Compare a spread's Attack to the reference (usually rank 1).
 export const cmpVs = (a: IvSpread, ref: IvSpread): 'win' | 'tie' | 'lose' =>

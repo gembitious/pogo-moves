@@ -1,9 +1,12 @@
 /** @jsxImportSource preact */
+import { useMemo } from 'preact/hooks'
 import { TYPE_COLORS, TYPE_TEXT } from '@/lib/types'
 import type { Dictionary, Locale } from '@/lib/i18n'
 import type { PokemonEntry } from '@/lib/pokemonIndex'
 import type { League, Rankings } from '@/lib/rankings'
 import type { ChargedMove, FastMove } from '@/lib/formulas'
+import { leagueBuild } from '@/lib/ivRank'
+import { breakpointAtk, pvpDamage, typeMultiplier } from '@/lib/damage'
 import { PokeSprite } from './PokeSprite'
 
 const base = import.meta.env.BASE_URL
@@ -32,6 +35,40 @@ export function PokemonCompare({ a, b, league, ranks, fastById, chargedById, loc
   const scoreOf = (m: PokemonEntry) => ranks?.[m.id]?.score ?? null
   const fastOf = (m: PokemonEntry) => m.fast.map((id) => fastById.get(id)).filter((x): x is FastMove => Boolean(x))
   const chargedOf = (m: PokemonEntry) => m.charged.map((id) => chargedById.get(id)).filter((x): x is ChargedMove => Boolean(x))
+
+  // Rank-1-build stats for the fast-move breakpoint readout (recomputes per league).
+  const buildA = useMemo(() => leagueBuild(a.atk, a.def, a.hp, league), [a, league])
+  const buildB = useMemo(() => leagueBuild(b.atk, b.def, b.hp, league), [b, league])
+  // Each mon's PvP fast move (recommended first, else its first).
+  const fastMoveOf = (m: PokemonEntry) => {
+    const list = fastOf(m).filter((mv) => mv.pvp)
+    const rec = ranks?.[m.id]?.moveset?.[0]
+    return list.find((mv) => mv.id === rec) ?? list[0] ?? null
+  }
+
+  const bpRow = (atk: PokemonEntry, def: PokemonEntry, atkBuild: { atk: number }, defBuild: { def: number }) => {
+    const fm = fastMoveOf(atk)
+    if (!fm?.pvp) return null
+    const stab = atk.types.includes(fm.type)
+    const eff = typeMultiplier(fm.type, def.types)
+    const dmg = pvpDamage({ power: fm.pvp.power, atk: atkBuild.atk, def: defBuild.def, stab, effectiveness: eff })
+    const nextAtk = breakpointAtk(fm.pvp.power, defBuild.def, stab, eff, dmg + 1)
+    const ec = eff > 1.01 ? ' se' : eff < 0.99 ? ' res' : ''
+    return (
+      <div class="cmp-bp-row" key={atk.id}>
+        <span class="mv-type sm" style={{ background: TYPE_COLORS[fm.type] }}>
+          <img src={`${base}images/types/${fm.type}.png`} width={13} height={13} alt={dict.type[fm.type]} />
+        </span>
+        <span class="cmp-bp-lbl static-text">
+          {name(atk)} <span class="cmp-bp-arrow">→</span> {name(def)}
+        </span>
+        <span class={`cmp-bp-dmg${ec}`}>{dmg}</span>
+        <span class="cmp-bp-next">
+          {dict.pokemon.nextBp} {dict.pokemon.atk} {Math.ceil(nextAtk)} <small>({Math.round(atkBuild.atk)})</small>
+        </span>
+      </div>
+    )
+  }
 
   const head = (m: PokemonEntry, other: PokemonEntry) => {
     const sc = scoreOf(m)
@@ -117,6 +154,15 @@ export function PokemonCompare({ a, b, league, ranks, fastById, chargedById, loc
         {head(b, a)}
       </div>
       <div class="cmp-stats">{(['atk', 'def', 'hp'] as const).map((k) => stat(k))}</div>
+
+      <div class="cmp-bp">
+        <h4>
+          {dict.pokemon.breakpoint} <span class="cmp-bp-note">{league.toUpperCase()} · {dict.pokemon.rank1}</span>
+        </h4>
+        {bpRow(a, b, buildA, buildB)}
+        {bpRow(b, a, buildB, buildA)}
+      </div>
+
       <div class="cmp-grid cmp-moves">
         {movesCol(a)}
         {movesCol(b)}
