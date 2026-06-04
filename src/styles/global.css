@@ -1218,3 +1218,47 @@ table.matrix thead th:first-child {
     grid-template-columns: 1fr;
   }
 }
+
+/* ---- move list: compare ------------------------------------------------ */
+.mv-cmp-th {
+  width: 28px;
+}
+.mv-cmp-td {
+  width: 28px;
+  text-align: center;
+}
+.mv-cmp-td input {
+  cursor: pointer;
+}
+.mv-compare {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  margin-top: 8px;
+  border-collapse: collapse;
+  background: #0a2c3af2;
+  border-top: 2px solid var(--secondary);
+  font-size: 13px;
+}
+.mv-compare th,
+.mv-compare td {
+  padding: 5px 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+.mv-compare thead th {
+  color: var(--tertiary);
+  font-weight: 600;
+}
+.mv-compare tbody th {
+  color: var(--gray-1);
+  font-weight: 500;
+}
+.mv-compare td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.mv-compare td.win {
+  color: var(--primary);
+  font-weight: 700;
+}

@@ -19,7 +19,8 @@
     "chart": "차트",
     "name": "이름",
     "type": "타입",
-    "tapCell": "셀을 클릭하면 상성이 표시됩니다"
+    "tapCell": "셀을 클릭하면 상성이 표시됩니다",
+    "compare": "비교"
   },
   "move": {
     "damage": "위력",
