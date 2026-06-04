@@ -8,6 +8,7 @@
     "build": "node scripts/build-pokemon-index.mjs && astro build",
     "preview": "astro preview",
     "check": "astro check",
+    "test": "vitest run",
     "check-data": "node scripts/check-data.mjs",
     "build-data": "node scripts/build-data.mjs",
     "build-images": "node scripts/build-pokemon-images.mjs",
@@ -22,6 +23,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@types/node": "^25.9.1",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.8"
   }
 }
