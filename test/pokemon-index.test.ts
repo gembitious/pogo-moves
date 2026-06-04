@@ -41,6 +41,9 @@ describe('pokemon-index.json', () => {
       if (p.sprite !== null) expect(p.sprite, p.id).toMatch(/^images\/pokemon\/.+\.png$/)
     }
   })
+  it('drops the pvpoke "none" placeholder from single types', () => {
+    for (const p of list) expect(p.types, p.id).not.toContain('none')
+  })
 })
 
 describe('move-pokemon.json (reverse index)', () => {

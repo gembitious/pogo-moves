@@ -60,7 +60,7 @@ const list = species.map((p) => ({
   dex: p.dex,
   name: koOf(p),
   nameEn: p.speciesName,
-  types: p.types,
+  types: p.types.filter((t) => t !== 'none'),
   atk: p.baseStats.atk,
   def: p.baseStats.def,
   hp: p.baseStats.hp,
