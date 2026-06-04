@@ -12,7 +12,9 @@
   "common": {
     "allType": "타입 전체",
     "attacker": "공격하는 타입",
-    "defender": "방어하는 타입"
+    "defender": "방어하는 타입",
+    "error": "불러오기 실패",
+    "retry": "다시 시도"
   },
   "move": {
     "damage": "위력",
@@ -61,6 +63,7 @@
     "usedBy": "이 기술을 쓰는 포켓몬",
     "count": "{n}종",
     "none": "사용 포켓몬 데이터 없음",
+    "shadowOnly": "그림자·정화 전용 기술",
     "loading": "불러오는 중…",
     "close": "닫기"
   }

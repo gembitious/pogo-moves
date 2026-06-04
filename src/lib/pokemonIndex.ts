@@ -30,12 +30,20 @@ let cache: Promise<PokemonIndex> | null = null
 export function loadPokemonIndex(base: string): Promise<PokemonIndex> {
   if (!cache) {
     cache = (async () => {
-      const [list, reverse] = await Promise.all([
-        fetch(`${base}data/pokemon-index.json`).then((r) => r.json() as Promise<PokemonEntry[]>),
-        fetch(`${base}data/move-pokemon.json`).then((r) => r.json() as Promise<Record<string, string[]>>),
-      ])
+      const json = async (p: string) => {
+        const r = await fetch(`${base}${p}`)
+        if (!r.ok) throw new Error(`fetch ${p}: ${r.status}`)
+        return r.json()
+      }
+      const [list, reverse] = (await Promise.all([
+        json('data/pokemon-index.json'),
+        json('data/move-pokemon.json'),
+      ])) as [PokemonEntry[], Record<string, string[]>]
       return { list, byId: new Map(list.map((p) => [p.id, p])), reverse }
-    })()
+    })().catch((e) => {
+      cache = null // let a later call retry after a transient failure
+      throw e
+    })
   }
   return cache
 }
