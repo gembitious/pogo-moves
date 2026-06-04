@@ -19,10 +19,14 @@ import { getChartConfig } from '@/lib/chartConfig'
 import { fmt, type Dictionary, type Locale } from '@/lib/i18n'
 import { loadPokemonIndex, type PokemonEntry, type PokemonIndex } from '@/lib/pokemonIndex'
 import { PokeSprite } from './PokeSprite'
+import { PokemonSearch } from './PokemonSearch'
+import { readMoveId, readSelectedId, writeMoveId, writeSelectedId } from '@/lib/urlState'
 
 const base = import.meta.env.BASE_URL
 const PAD = { left: 56, right: 18, top: 14, bottom: 44 } // px around the plot area
 const FAN_GAP = 17 // px to fan stacked chips apart on hover
+// Locked to Shadow / Purified forms, which the reverse index (base species only) omits.
+const SHADOW_LOCKED = new Set(['frustration', 'return'])
 
 interface Point {
   id: string
@@ -115,10 +119,10 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
   const [picked, setPicked] = useState<string | null>(null)
   const [pdata, setPdata] = useState<PokemonIndex | null>(null)
   const [pokeSel, setPokeSel] = useState<PokemonEntry | null>(null)
-  const [query, setQuery] = useState('')
-  const [searchOpen, setSearchOpen] = useState(false)
-  const searchBlur = useRef<ReturnType<typeof setTimeout>>()
+  const [loadErr, setLoadErr] = useState(false)
   const wrapRef = useRef<HTMLDivElement>(null)
+  const panelRef = useRef<HTMLDivElement>(null)
+  const restoreFocus = useRef<HTMLElement | null>(null)
   const [size, setSize] = useState({ w: 0, h: 0 })
 
   // Fill whatever space the chart container is given (no fixed aspect ratio).
@@ -171,15 +175,58 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
     leaveTimer.current = setTimeout(() => setHover((cur) => (cur === id ? null : cur)), 90)
   }
 
-  // Lazy-load the pokemon index the first time a move is opened; Escape closes it.
+  // Load the index on demand (search focus, an open move panel, or a restored selection).
+  const load = async () => {
+    if (pdata) return pdata
+    setLoadErr(false)
+    try {
+      const d = await loadPokemonIndex(base)
+      setPdata(d)
+      return d
+    } catch (e) {
+      setLoadErr(true)
+      throw e
+    }
+  }
+  const openPanel = (id: string) => {
+    setPicked(id)
+    writeMoveId(id)
+  }
+  const closePanel = () => {
+    setPicked(null)
+    writeMoveId(null)
+  }
+
+  // Restore selection (?p= / localStorage) and an open move panel (?m=) on mount.
   useEffect(() => {
-    if (picked && !pdata) loadPokemonIndex(base).then(setPdata).catch(() => {})
-  }, [picked, pdata])
+    const sel = readSelectedId()
+    const mv = readMoveId()
+    if (mv) setPicked(mv)
+    if (sel || mv)
+      load()
+        .then((d) => {
+          if (sel) {
+            const m = d.byId.get(sel)
+            if (m) setPokeSel(m)
+          }
+        })
+        .catch(() => {})
+  }, [])
+
+  useEffect(() => {
+    if (picked && !pdata) load().catch(() => {})
+  }, [picked])
   useEffect(() => {
     if (!picked) return
-    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setPicked(null)
+    restoreFocus.current = document.activeElement as HTMLElement
+    const t = setTimeout(() => panelRef.current?.querySelector<HTMLElement>('.panel-close')?.focus(), 0)
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && closePanel()
     window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
+    return () => {
+      clearTimeout(t)
+      window.removeEventListener('keydown', onKey)
+      restoreFocus.current?.focus?.()
+    }
   }, [picked])
 
   const pickedPoint = useMemo(
@@ -194,43 +241,18 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
       .sort((a, b) => a.dex - b.dex)
   }, [picked, pdata])
 
-  // --- Phase 2: pick a Pokémon → highlight the moves it learns ------------
-  const ensureData = () => {
-    if (!pdata) loadPokemonIndex(base).then(setPdata).catch(() => {})
-  }
-  // restore a saved selection so it carries across the fast/charged pages
-  useEffect(() => {
-    const saved = localStorage.getItem('pogo-poke')
-    if (!saved) return
-    loadPokemonIndex(base)
-      .then((d) => {
-        setPdata(d)
-        const m = d.byId.get(saved)
-        if (m) setPokeSel(m)
-      })
-      .catch(() => {})
-  }, [])
   const selectPoke = (m: PokemonEntry) => {
     setPokeSel(m)
-    setQuery('')
-    setSearchOpen(false)
-    localStorage.setItem('pogo-poke', m.id)
+    writeSelectedId(m.id)
   }
   const clearPoke = () => {
     setPokeSel(null)
-    localStorage.removeItem('pogo-poke')
+    writeSelectedId(null)
   }
   const highlight = useMemo(
     () => (pokeSel ? new Set(category === 'fast' ? pokeSel.fast : pokeSel.charged) : null),
     [pokeSel, category],
   )
-  const results = useMemo(() => {
-    const q = query.trim().toLowerCase()
-    if (!pdata || !q) return []
-    return pdata.list
-      .filter((m) => m.name.toLowerCase().includes(q) || m.nameEn.toLowerCase().includes(q))
-      .slice(0, 8)
-  }, [pdata, query])
 
   const curves = useMemo(() => {
     if (plotW <= 0) return []
@@ -264,8 +286,8 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
   return (
     <div class="explorer">
       <div class="toolbar">
-        <div class="poke-search">
-          {pokeSel ? (
+        {pokeSel ? (
+          <div class="poke-search">
             <div class="poke-sel">
               <PokeSprite mon={pokeSel} size={24} />
               <span class="poke-sel-name static-text">{locale === 'ko' ? pokeSel.name : pokeSel.nameEn}</span>
@@ -273,45 +295,10 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
                 ×
               </button>
             </div>
-          ) : (
-            <input
-              class="poke-input"
-              type="text"
-              value={query}
-              placeholder={dict.search.placeholder}
-              onFocus={() => {
-                ensureData()
-                clearTimeout(searchBlur.current)
-                setSearchOpen(true)
-              }}
-              onBlur={() => {
-                searchBlur.current = setTimeout(() => setSearchOpen(false), 120)
-              }}
-              onInput={(e) => {
-                ensureData()
-                setQuery((e.currentTarget as HTMLInputElement).value)
-              }}
-              onKeyDown={(e) => {
-                if (e.key === 'Escape') setQuery('')
-                else if (e.key === 'Enter' && results.length) selectPoke(results[0])
-              }}
-            />
-          )}
-          {searchOpen && query.trim() && (results.length > 0 || pdata) && (
-            <div class="poke-results scroll-hidden">
-              {results.length > 0 ? (
-                results.map((m) => (
-                  <button key={m.id} class="poke-result" onMouseDown={() => selectPoke(m)}>
-                    <PokeSprite mon={m} size={26} />
-                    <span class="static-text">{locale === 'ko' ? m.name : m.nameEn}</span>
-                  </button>
-                ))
-              ) : (
-                <div class="poke-noresult">{dict.search.none}</div>
-              )}
-            </div>
-          )}
-        </div>
+          </div>
+        ) : (
+          <PokemonSearch list={pdata?.list} locale={locale} dict={dict} onSelect={selectPoke} onActivate={load} />
+        )}
         <div class="filter-bar scroll-hidden">
           {category === 'charged' && (
             <button
@@ -331,6 +318,7 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
                 key={t}
                 class="type-btn"
                 title={dict.type[t]}
+                aria-pressed={selected.has(t)}
                 style={{ background: TYPE_COLORS[t], opacity: active ? 1 : 0.3 }}
                 onClick={() => toggleType(t)}
               >
@@ -406,7 +394,7 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
                   onMouseLeave={() => leave(p.id)}
                   onFocus={() => enter(p.id)}
                   onBlur={() => leave(p.id)}
-                  onClick={() => setPicked(p.id)}
+                  onClick={() => openPanel(p.id)}
                 >
                   <span class="static-text">{p.label}</span>
                   {isHover && (
@@ -425,9 +413,29 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
       </div>
 
       {pickedPoint && (
-        <div class="panel-backdrop" onClick={() => setPicked(null)}>
-          <div class="move-panel" role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
-            <button class="panel-close" onClick={() => setPicked(null)} aria-label={dict.panel.close}>
+        <div class="panel-backdrop" onClick={closePanel}>
+          <div
+            class="move-panel"
+            role="dialog"
+            aria-modal="true"
+            ref={panelRef}
+            onClick={(e) => e.stopPropagation()}
+            onKeyDown={(e) => {
+              if (e.key !== 'Tab') return
+              const els = panelRef.current?.querySelectorAll<HTMLElement>('a[href], button')
+              if (!els || !els.length) return
+              const first = els[0]
+              const last = els[els.length - 1]
+              if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault()
+                last.focus()
+              } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault()
+                first.focus()
+              }
+            }}
+          >
+            <button class="panel-close" onClick={closePanel} aria-label={dict.panel.close}>
               ×
             </button>
             <div class="panel-head">
@@ -443,18 +451,24 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
               <span>{dict.panel.usedBy}</span>
               {pickedMons && <span class="panel-count">{fmt(dict.panel.count, { n: pickedMons.length })}</span>}
             </div>
-            {!pdata ? (
+            {loadErr && !pdata ? (
+              <div class="panel-msg">
+                {dict.common.error}{' '}
+                <button class="retry-btn" onClick={() => load().catch(() => {})}>
+                  {dict.common.retry}
+                </button>
+              </div>
+            ) : !pdata ? (
               <div class="panel-msg">{dict.panel.loading}</div>
             ) : pickedMons && pickedMons.length === 0 ? (
-              <div class="panel-msg">{dict.panel.none}</div>
+              <div class="panel-msg">{SHADOW_LOCKED.has(picked!) ? dict.panel.shadowOnly : dict.panel.none}</div>
             ) : (
               <div class="poke-grid scroll-hidden">
                 {pickedMons!.map((m) => (
                   <a
                     key={m.id}
                     class="poke-card"
-                    href={`${base}${locale}/pokemon`}
-                    onClick={() => localStorage.setItem('pogo-poke', m.id)}
+                    href={`${base}${locale}/pokemon?p=${m.id}`}
                     title={locale === 'ko' ? m.name : m.nameEn}
                   >
                     <PokeSprite mon={m} />

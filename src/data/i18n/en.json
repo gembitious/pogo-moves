@@ -12,7 +12,9 @@
   "common": {
     "allType": "All Types",
     "attacker": "Attacker",
-    "defender": "Defender"
+    "defender": "Defender",
+    "error": "Failed to load",
+    "retry": "Retry"
   },
   "move": {
     "damage": "Power",
@@ -61,6 +63,7 @@
     "usedBy": "Pokémon with this move",
     "count": "{n}",
     "none": "No Pokémon data",
+    "shadowOnly": "Shadow/Purified-only move",
     "loading": "Loading…",
     "close": "Close"
   }

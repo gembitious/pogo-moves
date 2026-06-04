@@ -692,7 +692,8 @@ table.matrix thead th:first-child {
   text-align: left;
   cursor: pointer;
 }
-.poke-result:hover {
+.poke-result:hover,
+.poke-result.active {
   background: #ffffff14;
 }
 
@@ -733,6 +734,35 @@ table.matrix thead th:first-child {
   color: var(--gray-1);
   font-size: 14px;
   opacity: 0.75;
+}
+.retry-btn {
+  margin-left: 6px;
+  padding: 2px 10px;
+  border: 1px solid var(--secondary);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--white);
+  font-size: 12px;
+  cursor: pointer;
+}
+.retry-btn:hover {
+  filter: brightness(1.15);
+}
+.dex-clear {
+  margin-left: 8px;
+  width: 22px;
+  height: 22px;
+  border: none;
+  border-radius: 50%;
+  background: #ffffff14;
+  color: var(--white);
+  font-size: 15px;
+  line-height: 1;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.dex-clear:hover {
+  background: #ffffff2b;
 }
 
 .dex-card {
@@ -834,6 +864,11 @@ table.matrix thead th:first-child {
   border-radius: 8px;
   border-left: 3px solid;
   background: var(--surface);
+  color: inherit;
+  transition: background 0.1s ease;
+}
+.mv-row:hover {
+  background: #0c3a4b;
 }
 .mv-type {
   flex: none;
