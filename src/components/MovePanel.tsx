@@ -90,7 +90,10 @@ export function MovePanel({ point, mons, loading, loadErr, shadowLocked, locale,
         )}
         {!showMons ? (
           <button class="panel-show-mons" onClick={() => setShowMons(true)} aria-expanded={false}>
-            <span>{dict.panel.showUsedBy}</span>
+            <span>
+              {dict.panel.showUsedBy}
+              {mons && <span class="panel-show-count">{fmt(dict.panel.count, { n: mons.length })}</span>}
+            </span>
             <span class="panel-show-chevron" aria-hidden="true">
               ›
             </span>
