@@ -25,11 +25,12 @@ interface Props {
 // close, Escape, Tab trap) for the lifetime it's mounted.
 export function MovePanel({ point, mons, loading, loadErr, shadowLocked, locale, dict, detailHref, onRetry, onClose, onShowMons }: Props) {
   const panelRef = useRef<HTMLDivElement>(null)
-  // Two-step depth (esp. mobile): show the move's stats first; reveal the Pokémon
-  // list — and lazy-load the index — only on request. Desktop opens expanded.
-  const wide = () => typeof window === 'undefined' || !window.matchMedia('(max-width: 640px)').matches
-  const [showMons, setShowMons] = useState(wide)
-  useEffect(() => setShowMons(wide()), [point.label])
+  // Two-step depth for touch devices: show the move's stats first, then reveal the
+  // Pokémon list (and lazy-load the index) on request. Hover-capable devices (desktop)
+  // already preview stats via the chart tooltip, so the panel opens straight to the list.
+  const hoverable = () => typeof window === 'undefined' || window.matchMedia('(hover: hover)').matches
+  const [showMons, setShowMons] = useState(hoverable)
+  useEffect(() => setShowMons(hoverable()), [point.label])
   useEffect(() => {
     if (showMons) onShowMons?.()
   }, [showMons, point.label])
