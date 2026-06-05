@@ -1,5 +1,5 @@
 /** @jsxImportSource preact */
-import { useMemo, useState } from 'preact/hooks'
+import { useEffect, useMemo, useRef, useState } from 'preact/hooks'
 import type { Dictionary } from '@/lib/i18n'
 import type { League } from '@/lib/rankings'
 import { cmpVs, findSpread, rankSpreads, searchString, type IvSpread } from '@/lib/ivRank'
@@ -29,11 +29,14 @@ export function IvChecker({ base, league, dict }: Props) {
     () => searchString(base.atk, base.def, base.hp, spreads.slice(0, searchTop), league),
     [base, league, spreads, searchTop],
   )
+  const copiedTimer = useRef<ReturnType<typeof setTimeout>>()
+  useEffect(() => () => clearTimeout(copiedTimer.current), [])
   const copy = () => {
     if (!navigator.clipboard) return
     navigator.clipboard.writeText(ss).then(() => {
       setCopied(true)
-      setTimeout(() => setCopied(false), 1500)
+      clearTimeout(copiedTimer.current)
+      copiedTimer.current = setTimeout(() => setCopied(false), 1500)
     }, () => {})
   }
 
@@ -54,6 +57,7 @@ export function IvChecker({ base, league, dict }: Props) {
       <span>{label}</span>
       <input
         type="number"
+        inputMode="numeric"
         min={0}
         max={15}
         value={iv[key]}

@@ -1,7 +1,7 @@
 /** @jsxImportSource preact */
 import { useEffect, useMemo, useState } from 'preact/hooks'
 import { POKEMON_TYPES, TYPE_COLORS, TYPE_TEXT, type PokemonType } from '@/lib/types'
-import { fmt, type Dictionary, type Locale } from '@/lib/i18n'
+import { fmt, localName, type Dictionary, type Locale } from '@/lib/i18n'
 import { loadPokemonIndex, type PokemonEntry, type PokemonIndex } from '@/lib/pokemonIndex'
 import { teamDefense, teamOffense } from '@/lib/teamCoverage'
 import { readTeamIds, writeTeamIds } from '@/lib/urlState'
@@ -25,7 +25,7 @@ export default function TeamCoverage({ locale, dict }: Props) {
   const [err, setErr] = useState(false)
   const [ids, setIds] = useState<string[]>([])
 
-  const name = (m: PokemonEntry) => (locale === 'ko' ? m.name : m.nameEn)
+  const name = (m: PokemonEntry) => localName(locale, m)
 
   const load = async () => {
     setErr(false)
@@ -69,9 +69,9 @@ export default function TeamCoverage({ locale, dict }: Props) {
     })
   }
 
-  const typesList = team.map((m) => m.types)
-  const defense = useMemo(() => teamDefense(typesList), [ids, pdata])
-  const offense = useMemo(() => teamOffense(typesList), [ids, pdata])
+  const typesList = useMemo(() => team.map((m) => m.types), [team])
+  const defense = useMemo(() => teamDefense(typesList), [typesList])
+  const offense = useMemo(() => teamOffense(typesList), [typesList])
   const covered = POKEMON_TYPES.filter((t) => offense[t])
   const shared = defense.filter((r) => r.weak >= 2)
 
@@ -146,7 +146,7 @@ export default function TeamCoverage({ locale, dict }: Props) {
                         {typeIcon(r.type, 18)}
                       </th>
                       {r.mults.map((m, i) => (
-                        <td key={i} class={`cov-cell ${effClass(m)}`}>
+                        <td key={i} class={`cov-cell ${effClass(m)}`} title={`${name(team[i])} · ${dict.type[r.type]} ×${+m.toFixed(2)}`}>
                           {fmtMult(m)}
                         </td>
                       ))}

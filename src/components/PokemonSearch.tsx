@@ -1,7 +1,7 @@
 /** @jsxImportSource preact */
 import { useMemo, useRef, useState } from 'preact/hooks'
 import { TYPE_COLORS, type PokemonType } from '@/lib/types'
-import type { Dictionary, Locale } from '@/lib/i18n'
+import { localName, type Dictionary, type Locale } from '@/lib/i18n'
 import type { PokemonEntry } from '@/lib/pokemonIndex'
 import { PokeSprite } from './PokeSprite'
 
@@ -32,7 +32,7 @@ export function PokemonSearch({ list, locale, dict, onSelect, moves, onSelectMov
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState(0)
   const blurT = useRef<ReturnType<typeof setTimeout>>()
-  const nameOf = (m: PokemonEntry) => (locale === 'ko' ? m.name : m.nameEn)
+  const nameOf = (m: PokemonEntry) => localName(locale, m)
   const ph = placeholder ?? dict.search.placeholder
 
   const results = useMemo<Row[]>(() => {
@@ -58,7 +58,7 @@ export function PokemonSearch({ list, locale, dict, onSelect, moves, onSelectMov
     setActive(0)
   }
 
-  const showList = open && query.trim().length > 0 && (results.length > 0 || !!list)
+  const showList = open && query.trim().length > 0 && (results.length > 0 || !!list || !!moves)
   const LIST_ID = 'poke-search-list'
 
   return (

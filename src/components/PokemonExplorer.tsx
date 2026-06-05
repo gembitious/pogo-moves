@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useState } from 'preact/hooks'
 import { POKEMON_TYPES, TYPE_COLORS, TYPE_TEXT, type PokemonType } from '@/lib/types'
 import { EFFECT_MULTIPLIER, getEffectiveness } from '@/lib/typeEffectiveness'
-import type { Dictionary, Locale } from '@/lib/i18n'
+import { localName, type Dictionary, type Locale } from '@/lib/i18n'
 import { loadPokemonIndex, type PokemonEntry, type PokemonIndex } from '@/lib/pokemonIndex'
 import { PokeSprite } from './PokeSprite'
 import { PokemonSearch } from './PokemonSearch'
@@ -33,7 +33,7 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
 
   const fastById = useMemo(() => new Map(fast.map((m) => [m.id, m])), [fast])
   const chargedById = useMemo(() => new Map(charged.map((m) => [m.id, m])), [charged])
-  const name = (m: { name: string; nameEn: string }) => (locale === 'ko' ? m.name : m.nameEn)
+  const name = (m: { name: string; nameEn: string }) => localName(locale, m)
 
   const load = async () => {
     setErr(false)
@@ -339,7 +339,7 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
                     <tr>
                       <th class="mc-corner" />
                       {mcFast.map((f) => (
-                        <th key={f.id} title={name(f)}>
+                        <th key={f.id} scope="col" title={name(f)} aria-label={name(f)}>
                           <span class="mc-ic" style={{ background: TYPE_COLORS[f.type] }}>
                             <img src={`${base}images/types/${f.type}.png`} width={15} height={15} alt={dict.type[f.type]} />
                           </span>
