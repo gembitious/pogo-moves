@@ -40,6 +40,10 @@ describe('rankSpreads', () => {
     const ml = rankSpreads(...AZU, 'ml')
     expect(findSpread(ml, 15, 15, 15)!.rank).toBe(1)
   })
+
+  it('memoizes by base stats + league (same reference on repeat)', () => {
+    expect(rankSpreads(...AZU, 'gl')).toBe(rankSpreads(...AZU, 'gl'))
+  })
 })
 
 describe('cmpVs', () => {
