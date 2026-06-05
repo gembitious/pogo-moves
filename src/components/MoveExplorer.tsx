@@ -92,6 +92,12 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
   const [popHover, setPopHover] = useState<string | null>(null)
   const wrapRef = useRef<HTMLDivElement>(null)
   const [size, setSize] = useState({ w: 0, h: 0 })
+  // Chart zoom (k) + pan (tx,ty), in screen px. Re-clusters at scale so dense
+  // regions spread apart and become tappable — esp. on mobile.
+  const [zoom, setZoom] = useState({ k: 1, tx: 0, ty: 0 })
+  const pointers = useRef(new Map<number, { x: number; y: number }>())
+  const gesture = useRef<{ x: number; y: number; dist: number } | null>(null)
+  const panned = useRef(false)
 
   // Fill whatever space the chart container is given (no fixed aspect ratio).
   useEffect(() => {
@@ -111,6 +117,28 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
   const plotH = Math.max(0, h - PAD.top - PAD.bottom)
   const sx = (x: number) => PAD.left + ((x - cfg.xMin) / (cfg.xMax - cfg.xMin)) * plotW
   const sy = (y: number) => PAD.top + (1 - (y - cfg.yMin) / (cfg.yMax - cfg.yMin)) * plotH
+  // Zoom/pan applied on top of the base projection (scale about the plot origin).
+  const zx = (x: number) => PAD.left + (sx(x) - PAD.left) * zoom.k + zoom.tx
+  const zy = (y: number) => PAD.top + (sy(y) - PAD.top) * zoom.k + zoom.ty
+  const MAX_K = 6
+  const clampView = (k: number, tx: number, ty: number) => {
+    const kk = Math.max(1, Math.min(MAX_K, k))
+    return { k: kk, tx: Math.min(0, Math.max(plotW * (1 - kk), tx)), ty: Math.min(0, Math.max(plotH * (1 - kk), ty)) }
+  }
+  // Multiply the scale by `factor`, keeping the point under (fx,fy) fixed.
+  const zoomByFactor = (factor: number, fx: number, fy: number) =>
+    setZoom((z) => {
+      const kk = Math.max(1, Math.min(MAX_K, z.k * factor))
+      const r = kk / z.k
+      return clampView(kk, (fx - PAD.left) * (1 - r) + z.tx * r, (fy - PAD.top) * (1 - r) + z.ty * r)
+    })
+  const resetZoom = () => setZoom({ k: 1, tx: 0, ty: 0 })
+
+  // Reset on domain change; re-clamp the pan when the chart is resized.
+  useEffect(resetZoom, [category, mode])
+  useEffect(() => {
+    setZoom((z) => ({ k: z.k, tx: Math.min(0, Math.max(plotW * (1 - z.k), z.tx)), ty: Math.min(0, Math.max(plotH * (1 - z.k), z.ty)) }))
+  }, [w, h])
 
   const allPoints = useMemo(() => buildPoints(category, mode, moves, dict, locale), [category, mode, moves, dict, locale])
   const points = useMemo(
@@ -125,8 +153,10 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
     const cells = new Map<string, Point[]>()
     const pos = new Map<string, [number, number]>()
     for (const p of points) {
-      const cx = Math.min(Math.max(sx(p.x), PAD.left), w - PAD.right)
-      const cy = Math.min(Math.max(sy(p.y), PAD.top), h - PAD.bottom)
+      const cx = zx(p.x)
+      const cy = zy(p.y)
+      // Cull points panned/zoomed outside the plot (instead of piling them on the edge).
+      if (cx < PAD.left || cx > w - PAD.right || cy < PAD.top || cy > h - PAD.bottom) continue
       pos.set(p.id, [cx, cy])
       const key = `${Math.floor(cx / CELL)}|${Math.floor(cy / CELL)}`
       const arr = cells.get(key)
@@ -143,7 +173,7 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
       }
       return { key, cx: X / pts.length, cy: Y / pts.length, pts }
     })
-  }, [points, w, h, cfg])
+  }, [points, w, h, cfg, zoom])
 
   const leaveTimer = useRef<ReturnType<typeof setTimeout>>()
   const enter = (id: string) => {
@@ -277,12 +307,12 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
           pen = false
           continue
         }
-        d += `${pen ? 'L' : 'M'}${sx(x).toFixed(1)} ${sy(y).toFixed(1)} `
+        d += `${pen ? 'L' : 'M'}${zx(x).toFixed(1)} ${zy(y).toFixed(1)} `
         pen = true
       }
       return { d, color: c.color, label: c.label }
     })
-  }, [cfg, w, h])
+  }, [cfg, w, h, zoom])
 
   const toggleType = (t: PokemonType) =>
     setSelected((prev) => {
@@ -290,6 +320,70 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
       next.has(t) ? next.delete(t) : next.add(t)
       return next
     })
+
+  // --- pointer gestures: drag to pan, two-finger pinch to zoom ---
+  const ptAt = (e: { clientX: number; clientY: number }) => {
+    const r = wrapRef.current?.getBoundingClientRect()
+    return r ? { x: e.clientX - r.left, y: e.clientY - r.top } : { x: 0, y: 0 }
+  }
+  const onPointerDown = (e: PointerEvent) => {
+    if (view !== 'chart') return
+    const p = ptAt(e)
+    pointers.current.set(e.pointerId, p)
+    panned.current = false
+    const pts = [...pointers.current.values()]
+    gesture.current =
+      pts.length >= 2
+        ? { x: (pts[0].x + pts[1].x) / 2, y: (pts[0].y + pts[1].y) / 2, dist: Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y) }
+        : { x: p.x, y: p.y, dist: 0 }
+  }
+  const onPointerMove = (e: PointerEvent) => {
+    if (!pointers.current.has(e.pointerId) || !gesture.current) return
+    pointers.current.set(e.pointerId, ptAt(e))
+    const g = gesture.current
+    const pts = [...pointers.current.values()]
+    if (pts.length >= 2) {
+      const dist = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y)
+      const mx = (pts[0].x + pts[1].x) / 2
+      const my = (pts[0].y + pts[1].y) / 2
+      if (g.dist > 0) {
+        const ratio = dist / g.dist
+        setZoom((z) => {
+          const kk = Math.max(1, Math.min(MAX_K, z.k * ratio))
+          const r = kk / z.k
+          return clampView(kk, (mx - PAD.left) * (1 - r) + z.tx * r + (mx - g.x), (my - PAD.top) * (1 - r) + z.ty * r + (my - g.y))
+        })
+      }
+      gesture.current = { x: mx, y: my, dist }
+      panned.current = true
+    } else {
+      const p = pts[0]
+      const dx = p.x - g.x
+      const dy = p.y - g.y
+      if (Math.abs(dx) + Math.abs(dy) > 3) panned.current = true
+      setZoom((z) => clampView(z.k, z.tx + dx, z.ty + dy))
+      gesture.current = { x: p.x, y: p.y, dist: 0 }
+    }
+  }
+  const onPointerUp = (e: PointerEvent) => {
+    pointers.current.delete(e.pointerId)
+    const pts = [...pointers.current.values()]
+    gesture.current = pts.length === 1 ? { x: pts[0].x, y: pts[0].y, dist: 0 } : null
+    if (pts.length === 0) setTimeout(() => (panned.current = false), 0)
+  }
+  // Wheel zoom (non-passive so we can prevent page scroll).
+  useEffect(() => {
+    const el = wrapRef.current
+    if (!el) return
+    const onWheel = (e: WheelEvent) => {
+      if (view !== 'chart') return
+      e.preventDefault()
+      const p = ptAt(e)
+      zoomByFactor(e.deltaY < 0 ? 1.18 : 1 / 1.18, p.x, p.y)
+    }
+    el.addEventListener('wheel', onWheel, { passive: false })
+    return () => el.removeEventListener('wheel', onWheel)
+  }, [view, plotW, plotH, zoom])
 
   const ready = plotW > 0 && plotH > 0
 
@@ -362,45 +456,84 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
         )}
       </div>
 
-      <div class="chart" ref={wrapRef}>
+      <div
+        class="chart"
+        ref={wrapRef}
+        style={view === 'chart' ? { touchAction: 'none' } : undefined}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerUp}
+        onPointerLeave={onPointerUp}
+      >
+        {view === 'chart' && ready && (
+          <div class="zoom-ctrl">
+            <button aria-label="Zoom in" onClick={() => zoomByFactor(1.5, PAD.left + plotW / 2, PAD.top + plotH / 2)}>
+              +
+            </button>
+            <button aria-label="Zoom out" onClick={() => zoomByFactor(1 / 1.5, PAD.left + plotW / 2, PAD.top + plotH / 2)}>
+              −
+            </button>
+            {zoom.k > 1.01 && (
+              <button class="zoom-reset" aria-label="Reset zoom" onClick={resetZoom}>
+                ⟲
+              </button>
+            )}
+          </div>
+        )}
         {view === 'list' ? (
           <MoveList points={points} highlight={highlight} xLabel={cfg.xLabel} yLabel={cfg.yLabel} dict={dict} onPick={openPanel} />
         ) : ready ? (
           <>
             <svg class="chart-svg" width={w} height={h} role="img" aria-label={`${cfg.xLabel} / ${cfg.yLabel}`}>
-              {cfg.xTicks.map((t) => (
-                <g key={`x${t}`}>
-                  <line x1={sx(t)} y1={PAD.top} x2={sx(t)} y2={PAD.top + plotH} class="grid" />
-                  <text x={sx(t)} y={PAD.top + plotH + 16} class="tick" text-anchor="middle">
+              <defs>
+                <clipPath id="mc-clip">
+                  <rect x={PAD.left} y={PAD.top} width={plotW} height={plotH} />
+                </clipPath>
+              </defs>
+              <g clip-path="url(#mc-clip)">
+                {cfg.xTicks.map((t) => {
+                  const x = zx(t)
+                  return x >= PAD.left && x <= w - PAD.right ? <line key={`gx${t}`} x1={x} y1={PAD.top} x2={x} y2={PAD.top + plotH} class="grid" /> : null
+                })}
+                {cfg.yTicks.map((t) => {
+                  const y = zy(t)
+                  return y >= PAD.top && y <= PAD.top + plotH ? <line key={`gy${t}`} x1={PAD.left} y1={y} x2={PAD.left + plotW} y2={y} class="grid" /> : null
+                })}
+                {curves.map((c) => (
+                  <path key={c.label} d={c.d} stroke={c.color} stroke-width={1.5} fill="none" />
+                ))}
+                {clusters.map((c) =>
+                  c.pts.length === 1 ? (
+                    <circle
+                      key={c.key}
+                      cx={c.cx}
+                      cy={c.cy}
+                      r={4}
+                      fill={TYPE_COLORS[c.pts[0].type]}
+                      stroke="#00000066"
+                      stroke-width={1}
+                      opacity={highlight && !highlight.has(c.pts[0].id) ? 0.18 : 1}
+                    />
+                  ) : null,
+                )}
+              </g>
+              {cfg.xTicks.map((t) => {
+                const x = zx(t)
+                return x >= PAD.left && x <= w - PAD.right ? (
+                  <text key={`tx${t}`} x={x} y={PAD.top + plotH + 16} class="tick" text-anchor="middle">
                     {t}
                   </text>
-                </g>
-              ))}
-              {cfg.yTicks.map((t) => (
-                <g key={`y${t}`}>
-                  <line x1={PAD.left} y1={sy(t)} x2={PAD.left + plotW} y2={sy(t)} class="grid" />
-                  <text x={PAD.left - 8} y={sy(t) + 4} class="tick" text-anchor="end">
+                ) : null
+              })}
+              {cfg.yTicks.map((t) => {
+                const y = zy(t)
+                return y >= PAD.top && y <= PAD.top + plotH ? (
+                  <text key={`ty${t}`} x={PAD.left - 8} y={y + 4} class="tick" text-anchor="end">
                     {t}
                   </text>
-                </g>
-              ))}
-              {curves.map((c) => (
-                <path key={c.label} d={c.d} stroke={c.color} stroke-width={1.5} fill="none" />
-              ))}
-              {clusters.map((c) =>
-                c.pts.length === 1 ? (
-                  <circle
-                    key={c.key}
-                    cx={c.cx}
-                    cy={c.cy}
-                    r={4}
-                    fill={TYPE_COLORS[c.pts[0].type]}
-                    stroke="#00000066"
-                    stroke-width={1}
-                    opacity={highlight && !highlight.has(c.pts[0].id) ? 0.18 : 1}
-                  />
-                ) : null,
-              )}
+                ) : null
+              })}
               <text x={PAD.left + plotW / 2} y={h - 6} class="axis-title" text-anchor="middle">
                 {cfg.xLabel}
               </text>
@@ -432,7 +565,10 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
                     onMouseLeave={() => leave(p.id)}
                     onFocus={() => enter(p.id)}
                     onBlur={() => leave(p.id)}
-                    onClick={() => openPanel(p.id)}
+                    onClick={() => {
+                      if (panned.current) return
+                      openPanel(p.id)
+                    }}
                   >
                     {labeled && <span class="static-text">{p.label}</span>}
                     {isHover && (
@@ -459,7 +595,10 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
                   onPointerLeave={(e) => e.pointerType === 'mouse' && closeClusterSoon()}
                   onFocus={() => openCluster(c.key)}
                   onBlur={closeClusterSoon}
-                  onClick={() => setExpanded((e) => (e === c.key ? null : c.key))}
+                  onClick={() => {
+                    if (panned.current) return
+                    setExpanded((e) => (e === c.key ? null : c.key))
+                  }}
                 >
                   <ClusterGlyph pts={c.pts} />
                 </button>
