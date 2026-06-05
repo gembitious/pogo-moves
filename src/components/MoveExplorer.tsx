@@ -278,24 +278,20 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
   }
 
   // Restore selection (?p= / localStorage) and an open move panel (?m=) on mount.
+  // A restored panel doesn't eagerly load the roster — the panel reveals (and loads)
+  // the Pokémon list on demand; only a restored Pokémon selection needs the index now.
   useEffect(() => {
     const sel = readSelectedId()
     const mv = readMoveId()
     if (mv) setPicked(mv)
-    if (sel || mv)
+    if (sel)
       load()
         .then((d) => {
-          if (sel) {
-            const m = d.byId.get(sel)
-            if (m) setPokeSel(m)
-          }
+          const m = d.byId.get(sel)
+          if (m) setPokeSel(m)
         })
         .catch(() => {})
   }, [])
-
-  useEffect(() => {
-    if (picked && !pdata) load().catch(() => {})
-  }, [picked])
 
   // Close an open cluster popover on any outside click.
   useEffect(() => {
@@ -703,6 +699,7 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
           dict={dict}
           detailHref={`${base}${locale}/move?m=${picked}`}
           onRetry={() => load().catch(() => {})}
+          onShowMons={() => load().catch(() => {})}
           onClose={closePanel}
         />
       )}
