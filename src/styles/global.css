@@ -505,7 +505,7 @@ table.matrix thead th:first-child {
   inset: 0;
   z-index: 100;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 16px;
   background: rgba(1, 12, 18, 0.62);
@@ -520,6 +520,9 @@ table.matrix thead th:first-child {
   gap: 8px;
   width: 100%;
   max-width: 460px;
+  /* Top-anchored (not centred) so revealing the Pokémon list grows the panel
+     downward instead of jumping the stats upward. */
+  margin-top: 6vh;
   max-height: min(82vh, 620px);
   padding: 16px;
   border-radius: 14px;
@@ -600,6 +603,12 @@ table.matrix thead th:first-child {
 }
 .panel-show-mons:hover {
   background: #0a3a4d;
+}
+.panel-show-count {
+  margin-left: 7px;
+  color: var(--gray-1);
+  opacity: 0.7;
+  font-weight: 500;
 }
 .panel-show-chevron {
   font-size: 18px;
@@ -735,6 +744,11 @@ table.matrix thead th:first-child {
   gap: 8px 4px;
   overflow-y: auto;
   padding: 2px;
+}
+/* In the move panel the grid is the flex child that absorbs the height and scrolls,
+   so a move used by many Pokémon can't overflow past the panel. */
+.move-panel .poke-grid {
+  min-height: 0;
 }
 
 .poke-card {
