@@ -1,7 +1,7 @@
 /** @jsxImportSource preact */
 import { useEffect, useMemo, useState } from 'preact/hooks'
 import { TYPE_COLORS, TYPE_TEXT } from '@/lib/types'
-import type { Dictionary, Locale } from '@/lib/i18n'
+import { localName, type Dictionary, type Locale } from '@/lib/i18n'
 import type { PokemonEntry } from '@/lib/pokemonIndex'
 import type { League, Rankings } from '@/lib/rankings'
 import type { ChargedMove, FastMove } from '@/lib/formulas'
@@ -30,7 +30,7 @@ export function PokemonCompare({ a, b, league, ranks, fastById, chargedById, loc
   // Scale the bars to the pair's own peak stat so the head-to-head fills the width
   // (the single-mon view uses the whole-roster max, which would shrink these).
   const pairMax = Math.max(a.atk, a.def, a.hp, b.atk, b.def, b.hp) || 1
-  const name = (m: { name: string; nameEn: string }) => (locale === 'ko' ? m.name : m.nameEn)
+  const name = (m: { name: string; nameEn: string }) => localName(locale, m)
   const moveHref = (id: string, kind: 'fast' | 'charged') => `${base}${locale}${kind === 'fast' ? '/fast' : ''}?m=${id}`
   const scoreOf = (m: PokemonEntry) => ranks?.[m.id]?.score ?? null
   const fastOf = (m: PokemonEntry) => m.fast.map((id) => fastById.get(id)).filter((x): x is FastMove => Boolean(x))
@@ -53,7 +53,7 @@ export function PokemonCompare({ a, b, league, ranks, fastById, chargedById, loc
 
   const bpRow = (atk: PokemonEntry, def: PokemonEntry, atkBuild: { atk: number }, defBuild: { def: number }, atkShadow: boolean, defShadow: boolean) => {
     const fm = fastMoveOf(atk)
-    if (!fm?.pvp) return null
+    if (!fm?.pvp?.power) return null // status fast moves (Splash/Yawn/0-power) have no breakpoint
     const stab = atk.types.includes(fm.type)
     const eff = typeMultiplier(fm.type, def.types)
     const atkStat = atkBuild.atk * (atkShadow ? SHADOW_ATK : 1)
@@ -164,28 +164,34 @@ export function PokemonCompare({ a, b, league, ranks, fastById, chargedById, loc
       </div>
       <div class="cmp-stats">{(['atk', 'def', 'hp'] as const).map((k) => stat(k))}</div>
 
-      <div class="cmp-bp">
-        <h4>
-          {dict.pokemon.breakpoint} <span class="cmp-bp-note">{league.toUpperCase()} · {dict.pokemon.rank1}</span>
-        </h4>
-        {(a.shadow || b.shadow) && (
-          <div class="cmp-bp-shadow">
-            <span class="cmp-bp-shadow-lbl">{dict.pokemon.shadow}</span>
-            {a.shadow && (
-              <button class={`cmp-sh-btn${shA ? ' on' : ''}`} aria-pressed={shA} onClick={() => setShA((v) => !v)}>
-                {name(a)}
-              </button>
+      {(() => {
+        const rows = [bpRow(a, b, buildA, buildB, shA, shB), bpRow(b, a, buildB, buildA, shB, shA)]
+        if (!rows[0] && !rows[1]) return null // both mons have only status fast moves
+        return (
+          <div class="cmp-bp">
+            <h4>
+              {dict.pokemon.breakpoint} <span class="cmp-bp-note">{league.toUpperCase()} · {dict.pokemon.rank1}</span>
+            </h4>
+            {(a.shadow || b.shadow) && (
+              <div class="cmp-bp-shadow">
+                <span class="cmp-bp-shadow-lbl">{dict.pokemon.shadow}</span>
+                {a.shadow && (
+                  <button class={`cmp-sh-btn${shA ? ' on' : ''}`} aria-pressed={shA} onClick={() => setShA((v) => !v)}>
+                    {name(a)}
+                  </button>
+                )}
+                {b.shadow && (
+                  <button class={`cmp-sh-btn${shB ? ' on' : ''}`} aria-pressed={shB} onClick={() => setShB((v) => !v)}>
+                    {name(b)}
+                  </button>
+                )}
+              </div>
             )}
-            {b.shadow && (
-              <button class={`cmp-sh-btn${shB ? ' on' : ''}`} aria-pressed={shB} onClick={() => setShB((v) => !v)}>
-                {name(b)}
-              </button>
-            )}
+            {rows[0]}
+            {rows[1]}
           </div>
-        )}
-        {bpRow(a, b, buildA, buildB, shA, shB)}
-        {bpRow(b, a, buildB, buildA, shB, shA)}
-      </div>
+        )
+      })()}
 
       <div class="cmp-grid cmp-moves">
         {movesCol(a)}

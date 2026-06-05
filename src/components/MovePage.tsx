@@ -1,7 +1,7 @@
 /** @jsxImportSource preact */
 import { useEffect, useMemo, useState } from 'preact/hooks'
 import { TYPE_COLORS, TYPE_TEXT, type MoveCategory } from '@/lib/types'
-import { fmt, type Dictionary, type Locale } from '@/lib/i18n'
+import { fmt, localName, type Dictionary, type Locale } from '@/lib/i18n'
 import type { ChargedMove, FastMove } from '@/lib/formulas'
 import { buildPoints } from '@/lib/moveChart'
 import { loadPokemonIndex, type PokemonEntry, type PokemonIndex } from '@/lib/pokemonIndex'
@@ -29,7 +29,7 @@ export default function MovePage({ locale, dict, fast, charged }: Props) {
   const [league, setLeague] = useState<League>('gl')
   const [ranks, setRanks] = useState<Rankings | null>(null)
 
-  const name = (m: { name: string; nameEn: string }) => (locale === 'ko' ? m.name : m.nameEn)
+  const name = (m: { name: string; nameEn: string }) => localName(locale, m)
 
   // id -> {move, category} for selection + ?m= restore (fast/charged ids are distinct).
   const byId = useMemo(() => {

@@ -1,6 +1,6 @@
 // Pure move → chart-point mapping, shared by the scatter and the list view.
 import { chargedDpe, chargedPveDps, fastPvpDpt, fastPvpEpt, type ChargedMove, type FastMove } from './formulas'
-import { fmt, type Dictionary, type Locale } from './i18n'
+import { fmt, localName, type Dictionary, type Locale } from './i18n'
 import type { MoveCategory, MoveMode, PokemonType } from './types'
 
 export interface Point {
@@ -32,7 +32,7 @@ export function buildPoints(
   dict: Dictionary,
   locale: Locale,
 ): Point[] {
-  const label = (m: { name: string; nameEn: string }) => (locale === 'ko' ? m.name : m.nameEn)
+  const label = (m: { name: string; nameEn: string }) => localName(locale, m)
   if (category === 'fast') {
     return (moves as FastMove[])
       .filter((m) => m.pvp)

@@ -18,6 +18,10 @@ export const getDictionary = (locale: string | undefined): Dictionary =>
 export const fmt = (template: string, vars: Record<string, string | number>) =>
   template.replace(/\{(\w+)\}/g, (_, k) => String(vars[k] ?? ''))
 
+// Localized display name for any {name, nameEn} record (moves, Pokémon). Single
+// source of truth so the ko/en pick doesn't drift across components.
+export const localName = (locale: Locale, m: { name: string; nameEn: string }) => (locale === 'ko' ? m.name : m.nameEn)
+
 // Swap (or add) the locale segment of a path: ('/ko/fast', 'en') -> '/en/fast'.
 export const localePath = (path: string, locale: Locale) => {
   const rest = path.replace(/^\/(ko|en)(?=\/|$)/, '')

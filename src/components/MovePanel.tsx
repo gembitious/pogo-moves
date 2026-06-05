@@ -1,7 +1,7 @@
 /** @jsxImportSource preact */
 import { useEffect, useRef } from 'preact/hooks'
 import { TYPE_COLORS, type PokemonType } from '@/lib/types'
-import { fmt, type Dictionary, type Locale } from '@/lib/i18n'
+import { fmt, localName, type Dictionary, type Locale } from '@/lib/i18n'
 import type { PokemonEntry } from '@/lib/pokemonIndex'
 import { PokeSprite } from './PokeSprite'
 
@@ -36,7 +36,7 @@ export function MovePanel({ point, mons, loading, loadErr, shadowLocked, locale,
     }
   }, [])
 
-  const name = (m: PokemonEntry) => (locale === 'ko' ? m.name : m.nameEn)
+  const name = (m: PokemonEntry) => localName(locale, m)
 
   return (
     <div class="panel-backdrop" onClick={onClose}>
@@ -82,7 +82,7 @@ export function MovePanel({ point, mons, loading, loadErr, shadowLocked, locale,
           <span>{dict.panel.usedBy}</span>
           {mons && <span class="panel-count">{fmt(dict.panel.count, { n: mons.length })}</span>}
         </div>
-        {loadErr && loading ? (
+        {loadErr ? (
           <div class="panel-msg">
             {dict.common.error}{' '}
             <button class="retry-btn" onClick={onRetry}>
