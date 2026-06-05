@@ -45,7 +45,15 @@ function maxLevelIndex(bA: number, bD: number, bS: number, ivA: number, ivD: num
   return ans
 }
 
+// Memoize rankings by base stats + league (identical base stats → identical ranking),
+// so toggling leagues or opening compare doesn't recompute 4096 spreads each time.
+const rankCache = new Map<string, IvSpread[]>()
+const RANK_CACHE_MAX = 30
+
 export function rankSpreads(bA: number, bD: number, bS: number, league: League, maxLevel = DEFAULT_MAX_LEVEL): IvSpread[] {
+  const cacheKey = `${bA},${bD},${bS},${league},${maxLevel}`
+  const cached = rankCache.get(cacheKey)
+  if (cached) return cached
   const cap = CP_CAPS[league]
   const maxIdx = Math.min(CPM.length - 1, Math.round((maxLevel - 1) * 2))
   const list: IvSpread[] = []
@@ -78,6 +86,8 @@ export function rankSpreads(bA: number, bD: number, bS: number, league: League, 
     list[i].rank = i + 1
     list[i].percent = (list[i].statProduct / best) * 100
   }
+  if (rankCache.size >= RANK_CACHE_MAX) rankCache.delete(rankCache.keys().next().value as string)
+  rankCache.set(cacheKey, list)
   return list
 }
 
