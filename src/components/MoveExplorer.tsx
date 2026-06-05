@@ -175,6 +175,49 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
     })
   }, [points, w, h, cfg, zoom])
 
+  // Bloom: when a multi-point cluster has enough free space around it (opened up by
+  // zooming in), scatter its points in a sunflower pattern into that space so each
+  // becomes an individual, tappable dot. This is the only way to pull apart exactly
+  // coincident moves (same DPT/EPT) — zoom alone can never separate them.
+  const bloom = useMemo(() => {
+    const out = new Map<string, { pos: { x: number; y: number }[]; r: number; cx: number; cy: number }>()
+    const golden = Math.PI * (3 - Math.sqrt(5))
+    for (const c of clusters) {
+      const n = c.pts.length
+      if (n < 2) continue
+      let nearest = Infinity
+      for (const o of clusters) {
+        if (o !== c) nearest = Math.min(nearest, Math.hypot(o.cx - c.cx, o.cy - c.cy))
+      }
+      const need = 0.62 * 15 * Math.sqrt(n) // radius to seat n dots ~15px apart
+      const avail = Math.min(nearest / 2 - 6, c.cx - PAD.left, w - PAD.right - c.cx, c.cy - PAD.top, h - PAD.bottom - c.cy, 96)
+      if (avail < 16 || avail < need) continue // not enough room — stay a glyph
+      const pos = c.pts.map((_, i) => {
+        const rr = need * Math.sqrt(i / (n - 1))
+        const a = i * golden
+        return { x: c.cx + rr * Math.cos(a), y: c.cy + rr * Math.sin(a) }
+      })
+      out.set(c.key, { pos, r: need, cx: c.cx, cy: c.cy })
+    }
+    return out
+  }, [clusters, w, h])
+
+  // Flatten clusters into individually-placed dots (singletons + bloomed members) and
+  // the glyphs that stay collapsed (no room to bloom).
+  const { dots, glyphs } = useMemo(() => {
+    const dots: { pt: Point; x: number; y: number }[] = []
+    const glyphs: Cluster[] = []
+    for (const c of clusters) {
+      if (c.pts.length === 1) dots.push({ pt: c.pts[0], x: c.cx, y: c.cy })
+      else {
+        const b = bloom.get(c.key)
+        if (b) c.pts.forEach((pt, i) => dots.push({ pt, x: b.pos[i].x, y: b.pos[i].y }))
+        else glyphs.push(c)
+      }
+    }
+    return { dots, glyphs }
+  }, [clusters, bloom])
+
   const leaveTimer = useRef<ReturnType<typeof setTimeout>>()
   const enter = (id: string) => {
     clearTimeout(leaveTimer.current)
@@ -503,20 +546,21 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
                 {curves.map((c) => (
                   <path key={c.label} d={c.d} stroke={c.color} stroke-width={1.5} fill="none" />
                 ))}
-                {clusters.map((c) =>
-                  c.pts.length === 1 ? (
-                    <circle
-                      key={c.key}
-                      cx={c.cx}
-                      cy={c.cy}
-                      r={4}
-                      fill={TYPE_COLORS[c.pts[0].type]}
-                      stroke="#00000066"
-                      stroke-width={1}
-                      opacity={highlight && !highlight.has(c.pts[0].id) ? 0.18 : 1}
-                    />
-                  ) : null,
-                )}
+                {[...bloom.values()].map((b) => (
+                  <circle key={`hub${b.cx},${b.cy}`} cx={b.cx} cy={b.cy} r={b.r + 7} fill="none" stroke="#8ecae62e" stroke-width={1} stroke-dasharray="2 3" />
+                ))}
+                {dots.map((d) => (
+                  <circle
+                    key={d.pt.id}
+                    cx={d.x}
+                    cy={d.y}
+                    r={4}
+                    fill={TYPE_COLORS[d.pt.type]}
+                    stroke="#00000066"
+                    stroke-width={1}
+                    opacity={highlight && !highlight.has(d.pt.id) ? 0.18 : 1}
+                  />
+                ))}
               </g>
               {cfg.xTicks.map((t) => {
                 const x = zx(t)
@@ -542,46 +586,46 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
               </text>
             </svg>
 
-            {clusters.map((c) => {
-              if (c.pts.length === 1) {
-                const p = c.pts[0]
-                const isHover = hover === p.id
-                const isHl = !!highlight && highlight.has(p.id)
-                const labeled = isHover || isHl || labeledIds.has(p.id)
-                const dim = !!highlight && !highlight.has(p.id)
-                return (
-                  <button
-                    key={p.id}
-                    class={`chip${labeled ? ' labeled' : ''}${isHover ? ' active' : ''}${isHl ? ' hl' : ''}${dim ? ' dim' : ''}`}
-                    style={{
-                      left: `${c.cx}px`,
-                      top: `${c.cy}px`,
-                      background: labeled ? TYPE_COLORS[p.type] : 'transparent',
-                      color: labeled ? TYPE_TEXT[p.type] : undefined,
-                      zIndex: isHover ? 30 : isHl ? 20 : undefined,
-                    }}
-                    aria-label={p.label}
-                    onMouseEnter={() => enter(p.id)}
-                    onMouseLeave={() => leave(p.id)}
-                    onFocus={() => enter(p.id)}
-                    onBlur={() => leave(p.id)}
-                    onClick={() => {
-                      if (panned.current) return
-                      openPanel(p.id)
-                    }}
-                  >
-                    {labeled && <span class="static-text">{p.label}</span>}
-                    {isHover && (
-                      <span class="tooltip">
-                        <strong>{p.label}</strong>
-                        {p.lines.map((line, i) => (
-                          <span key={i}>{line}</span>
-                        ))}
-                      </span>
-                    )}
-                  </button>
-                )
-              }
+            {dots.map((d) => {
+              const p = d.pt
+              const isHover = hover === p.id
+              const isHl = !!highlight && highlight.has(p.id)
+              const labeled = isHover || isHl || labeledIds.has(p.id)
+              const dim = !!highlight && !highlight.has(p.id)
+              return (
+                <button
+                  key={p.id}
+                  class={`chip${labeled ? ' labeled' : ''}${isHover ? ' active' : ''}${isHl ? ' hl' : ''}${dim ? ' dim' : ''}`}
+                  style={{
+                    left: `${d.x}px`,
+                    top: `${d.y}px`,
+                    background: labeled ? TYPE_COLORS[p.type] : 'transparent',
+                    color: labeled ? TYPE_TEXT[p.type] : undefined,
+                    zIndex: isHover ? 30 : isHl ? 20 : undefined,
+                  }}
+                  aria-label={p.label}
+                  onMouseEnter={() => enter(p.id)}
+                  onMouseLeave={() => leave(p.id)}
+                  onFocus={() => enter(p.id)}
+                  onBlur={() => leave(p.id)}
+                  onClick={() => {
+                    if (panned.current) return
+                    openPanel(p.id)
+                  }}
+                >
+                  {labeled && <span class="static-text">{p.label}</span>}
+                  {isHover && (
+                    <span class="tooltip">
+                      <strong>{p.label}</strong>
+                      {p.lines.map((line, i) => (
+                        <span key={i}>{line}</span>
+                      ))}
+                    </span>
+                  )}
+                </button>
+              )
+            })}
+            {glyphs.map((c) => {
               const hasHl = !!highlight && c.pts.some((p) => highlight.has(p.id))
               const dim = !!highlight && !hasHl
               return (
@@ -607,7 +651,7 @@ export default function MoveExplorer({ category, locale, dict, moves }: Props) {
             {expanded &&
               (() => {
                 const c = clusters.find((x) => x.key === expanded)
-                if (!c || c.pts.length < 2) return null
+                if (!c || c.pts.length < 2 || bloom.has(c.key)) return null // bloomed → its dots are tappable directly
                 const sorted = [...c.pts].sort((a, b) => b.y - a.y || b.x - a.x)
                 const active = sorted.find((p) => p.id === popHover) ?? sorted[0]
                 return (
