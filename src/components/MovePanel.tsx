@@ -1,5 +1,5 @@
 /** @jsxImportSource preact */
-import { useEffect, useRef } from 'preact/hooks'
+import { useEffect, useRef, useState } from 'preact/hooks'
 import { TYPE_COLORS, type PokemonType } from '@/lib/types'
 import { fmt, localName, type Dictionary, type Locale } from '@/lib/i18n'
 import type { PokemonEntry } from '@/lib/pokemonIndex'
@@ -18,12 +18,21 @@ interface Props {
   detailHref?: string
   onRetry: () => void
   onClose: () => void
+  onShowMons?: () => void // fired when the user reveals the Pokémon list (lazy-loads the index)
 }
 
 // Move → "who uses it" panel. Owns its focus management (focus on open, restore on
 // close, Escape, Tab trap) for the lifetime it's mounted.
-export function MovePanel({ point, mons, loading, loadErr, shadowLocked, locale, dict, detailHref, onRetry, onClose }: Props) {
+export function MovePanel({ point, mons, loading, loadErr, shadowLocked, locale, dict, detailHref, onRetry, onClose, onShowMons }: Props) {
   const panelRef = useRef<HTMLDivElement>(null)
+  // Two-step depth (esp. mobile): show the move's stats first; reveal the Pokémon
+  // list — and lazy-load the index — only on request. Desktop opens expanded.
+  const wide = () => typeof window === 'undefined' || !window.matchMedia('(max-width: 640px)').matches
+  const [showMons, setShowMons] = useState(wide)
+  useEffect(() => setShowMons(wide()), [point.label])
+  useEffect(() => {
+    if (showMons) onShowMons?.()
+  }, [showMons, point.label])
   useEffect(() => {
     const prev = document.activeElement as HTMLElement | null
     const t = setTimeout(() => panelRef.current?.querySelector<HTMLElement>('.panel-close')?.focus(), 0)
@@ -78,30 +87,41 @@ export function MovePanel({ point, mons, loading, loadErr, shadowLocked, locale,
             {dict.panel.details} →
           </a>
         )}
-        <div class="panel-sub">
-          <span>{dict.panel.usedBy}</span>
-          {mons && <span class="panel-count">{fmt(dict.panel.count, { n: mons.length })}</span>}
-        </div>
-        {loadErr ? (
-          <div class="panel-msg">
-            {dict.common.error}{' '}
-            <button class="retry-btn" onClick={onRetry}>
-              {dict.common.retry}
-            </button>
-          </div>
-        ) : loading ? (
-          <div class="panel-msg">{dict.panel.loading}</div>
-        ) : mons && mons.length === 0 ? (
-          <div class="panel-msg">{shadowLocked ? dict.panel.shadowOnly : dict.panel.none}</div>
+        {!showMons ? (
+          <button class="panel-show-mons" onClick={() => setShowMons(true)} aria-expanded={false}>
+            <span>{dict.panel.showUsedBy}</span>
+            <span class="panel-show-chevron" aria-hidden="true">
+              ›
+            </span>
+          </button>
         ) : (
-          <div class="poke-grid scroll-hidden">
-            {mons!.map((m) => (
-              <a key={m.id} class="poke-card" href={`${base}${locale}/pokemon?p=${m.id}`} title={name(m)}>
-                <PokeSprite mon={m} />
-                <span class="poke-name static-text">{name(m)}</span>
-              </a>
-            ))}
-          </div>
+          <>
+            <div class="panel-sub">
+              <span>{dict.panel.usedBy}</span>
+              {mons && <span class="panel-count">{fmt(dict.panel.count, { n: mons.length })}</span>}
+            </div>
+            {loadErr ? (
+              <div class="panel-msg">
+                {dict.common.error}{' '}
+                <button class="retry-btn" onClick={onRetry}>
+                  {dict.common.retry}
+                </button>
+              </div>
+            ) : loading ? (
+              <div class="panel-msg">{dict.panel.loading}</div>
+            ) : mons && mons.length === 0 ? (
+              <div class="panel-msg">{shadowLocked ? dict.panel.shadowOnly : dict.panel.none}</div>
+            ) : (
+              <div class="poke-grid scroll-hidden">
+                {mons!.map((m) => (
+                  <a key={m.id} class="poke-card" href={`${base}${locale}/pokemon?p=${m.id}`} title={name(m)}>
+                    <PokeSprite mon={m} />
+                    <span class="poke-name static-text">{name(m)}</span>
+                  </a>
+                ))}
+              </div>
+            )}
+          </>
         )}
       </div>
     </div>

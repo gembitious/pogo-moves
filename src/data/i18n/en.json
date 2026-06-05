@@ -100,6 +100,7 @@
   },
   "panel": {
     "usedBy": "Pokémon with this move",
+    "showUsedBy": "Show Pokémon with this move",
     "count": "{n}",
     "none": "No Pokémon data",
     "shadowOnly": "Shadow/Purified-only move",
