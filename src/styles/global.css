@@ -254,6 +254,40 @@ a {
   inset: 0;
 }
 
+/* ---- chart zoom controls ---------------------------------------------- */
+.zoom-ctrl {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 25;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.zoom-ctrl button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--secondary);
+  border-radius: 8px;
+  background: #0a2c3acc;
+  color: var(--white);
+  font-size: 17px;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+.zoom-ctrl button:hover {
+  background: var(--secondary);
+  color: #06222e;
+}
+.zoom-ctrl .zoom-reset {
+  font-size: 14px;
+}
+
 .grid {
   stroke: #ffffff1f;
   stroke-width: 1;
