@@ -1,7 +1,15 @@
 {
   "meta": {
     "title": "POGO-MOVES",
-    "description": "Pokémon GO move data for the GO Battle League"
+    "description": "Pokémon GO move data for the GO Battle League",
+    "desc": {
+      "charged": "Compare Pokémon GO charged moves by energy & DPE (PvP/PvE), with value curves and the Pokémon that use them.",
+      "fast": "Compare Pokémon GO fast moves on a DPT × EPT scatter — and see which Pokémon use each.",
+      "move": "Pokémon GO move details — power, energy, buffs, the Pokémon that use it, and recommended sets per league.",
+      "pokemon": "Pokémon GO stats, movesets, league scores and matchups — plus IV rank, 2-way compare, and breakpoints.",
+      "team": "Instantly analyze a Pokémon GO team's shared weaknesses and STAB offensive coverage.",
+      "type": "Pokémon GO 18×18 type chart — interactive attack/defense effectiveness."
+    }
   },
   "nav": {
     "fast": "Fast Move",
