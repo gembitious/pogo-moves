@@ -1443,16 +1443,31 @@ table.matrix thead th:first-child {
   border-color: var(--primary);
   color: #fff;
 }
+/* pvpoke's rating — muted so it reads as reference context, not our headline metric */
 .dex-score {
   margin-left: 8px;
   padding: 2px 8px;
   border-radius: 10px;
-  background: var(--primary);
-  color: #fff;
+  background: #ffffff14;
+  border: 1px solid #ffffff24;
+  color: var(--gray-1);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   font-variant-numeric: tabular-nums;
   vertical-align: middle;
+}
+/* small attribution tag (pvpoke) on reference data */
+.dex-src-tag {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  opacity: 0.55;
+  vertical-align: middle;
+}
+.dex-mu-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .mv-rec {
   color: var(--primary);
