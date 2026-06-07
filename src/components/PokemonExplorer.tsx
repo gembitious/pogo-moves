@@ -27,6 +27,7 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
   const [pokeB, setPokeB] = useState<PokemonEntry | null>(null)
   const [addingB, setAddingB] = useState(false)
   const [showIv, setShowIv] = useState(false)
+  const [showMu, setShowMu] = useState(false)
   const [err, setErr] = useState(false)
   const [league, setLeague] = useState<League>('gl')
   const [ranks, setRanks] = useState<Rankings | null>(null)
@@ -209,7 +210,7 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
                 {name(pokeSel)} <span class="dex-num">#{pokeSel.dex}</span>
                 {rank && (
                   <span class="dex-score" title={`pvpoke ${league.toUpperCase()}`}>
-                    {league.toUpperCase()} {rank.score}
+                    {league.toUpperCase()} {rank.score} <span class="dex-src-tag">pvpoke</span>
                   </span>
                 )}
                 <button class="dex-cmp-btn" aria-pressed={addingB} onClick={() => setAddingB((v) => !v)}>
@@ -294,7 +295,7 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
                     <img src={`${base}images/types/${m.type}.png`} width={15} height={15} alt={dict.type[m.type]} />
                   </span>
                   <span class="mv-name">{name(m)}</span>
-                  {recommended.has(m.id) && <span class="mv-rec" title={dict.pokemon.recommended}>★</span>}
+                  {recommended.has(m.id) && <span class="mv-rec" title={`${dict.pokemon.recommended} · pvpoke`}>★</span>}
                   {m.pvp ? (
                     <span class="mv-stats">
                       {dict.move.damage} {m.pvp.power} · DPT {fastPvpDpt(m.pvp)} · EPT {fastPvpEpt(m.pvp)}
@@ -315,7 +316,7 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
                     <img src={`${base}images/types/${m.type}.png`} width={15} height={15} alt={dict.type[m.type]} />
                   </span>
                   <span class="mv-name">{name(m)}</span>
-                  {recommended.has(m.id) && <span class="mv-rec" title={dict.pokemon.recommended}>★</span>}
+                  {recommended.has(m.id) && <span class="mv-rec" title={`${dict.pokemon.recommended} · pvpoke`}>★</span>}
                   {m.pvp ? (
                     <span class="mv-stats">
                       {dict.move.damage} {m.pvp.power} · {dict.move.energy} {m.pvp.energy} · DPE {chargedDpe(m.pvp)}
@@ -370,10 +371,16 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
           )}
 
           {rank && (rank.matchups.length > 0 || rank.counters.length > 0) && (
-            <div class="dex-mu">
-              {rank.matchups.length > 0 && (
-                <section>
-                  <h3>{dict.pokemon.beats}</h3>
+            <div class="dex-mu-wrap">
+              <button class="dex-iv-toggle" aria-expanded={showMu} onClick={() => setShowMu((v) => !v)}>
+                {dict.pokemon.matchups} <span class="dex-src-tag">pvpoke</span>
+                <span class="dex-iv-caret">{showMu ? '▲' : '▼'}</span>
+              </button>
+              {showMu && (
+                <div class="dex-mu">
+                  {rank.matchups.length > 0 && (
+                    <section>
+                      <h3>{dict.pokemon.beats}</h3>
                   <div class="dex-mu-row scroll-hidden">
                     {rank.matchups.map((id) => {
                       const o = oppOf(id)
@@ -400,6 +407,8 @@ export default function PokemonExplorer({ locale, dict, fast, charged }: Props) 
                     })}
                   </div>
                 </section>
+              )}
+                </div>
               )}
             </div>
           )}
