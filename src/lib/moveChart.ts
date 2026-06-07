@@ -48,9 +48,8 @@ export function buildPoints(
           x: dpt,
           y: ept,
           lines: [
-            `${dict.move.damage}: ${p.power}`,
-            `${dict.move.turn}: ${p.turn}    DPT: ${dpt}`,
-            `${dict.move.energy}: ${p.energyGain}    EPT: ${ept}`,
+            `${dict.move.damage} ${p.power} · ${dict.move.energy} ${p.energyGain} · ${dict.move.turn} ${p.turn}`,
+            `DPT ${dpt} · EPT ${ept}`,
           ],
         }
       })
@@ -68,7 +67,7 @@ export function buildPoints(
           power: p.power,
           x: p.energy,
           y: dpe,
-          lines: [`${dict.move.damage}: ${p.power}`, `${dict.move.energy}: ${p.energy}    DPE: ${dpe}`, ...buffLines(p, dict)],
+          lines: [`${dict.move.damage} ${p.power} · ${dict.move.energy} ${p.energy}`, `DPE ${dpe}`, ...buffLines(p, dict)],
         }
       })
   }
@@ -85,7 +84,7 @@ export function buildPoints(
         power: p.power,
         x: dps,
         y: dpe,
-        lines: [`${dict.move.damage}: ${p.power}`, `${dict.move.energy}: ${p.energy}    DPE: ${dpe}`, `DPS: ${dps}`],
+        lines: [`${dict.move.damage} ${p.power} · ${dict.move.energy} ${p.energy}`, `DPS ${dps} · DPE ${dpe}`],
       }
     })
 }
