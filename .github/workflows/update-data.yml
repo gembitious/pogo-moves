@@ -1,8 +1,13 @@
 name: Update data
 
 # Refresh src/data/moves.json (GAME_MASTER stats) + src/data/pokemon.json (pvpoke
-# roster) on a schedule, regenerate the indexes, and open a PR when data drifts.
-# Merging that PR triggers the normal Vercel deploy.
+# roster) + the generated indexes on a schedule, verify the result, then open a PR and
+# auto-merge it so the refresh actually reaches production.
+#
+# Why verification runs HERE instead of relying on ci.yml: a PR opened with GITHUB_TOKEN
+# does not trigger workflows (GitHub's recursion guard), so ci.yml sits at
+# "action_required" forever. Running the same checks in this job is what makes the
+# auto-merge safe.
 #
 # Requires (repo Settings -> Actions -> General -> Workflow permissions):
 #   - "Read and write permissions"
@@ -11,6 +16,11 @@ on:
   schedule:
     - cron: '0 6 * * 1' # Mondays 06:00 UTC
   workflow_dispatch:
+    inputs:
+      merge:
+        description: 'Auto-merge when verification passes'
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -26,16 +36,31 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+
+      # ---- refresh from upstream sources ----
       - run: npm run build-data -- --write # moves.json stats from GAME_MASTER
       - run: npm run build-pokemon-data -- --write # pokemon.json roster from pvpoke
+      - run: npm run build-cpm # cpm.ts (level caps / CP multipliers)
+      - run: npm run build-pokemon-index # public/data indexes
+      - run: npm run build-rankings # pvpoke league rankings (GL/UL/ML)
+
+      # ---- verify the refreshed data before it is allowed to merge ----
       - run: npm run check-data
-      - run: npm run build-pokemon-index # regenerate public/data indexes
-      - run: npm run build-rankings # refresh pvpoke league rankings (GL/UL/ML)
-      - name: Open or update a PR when data changed
+      - run: npm run check
+      - run: npm test
+      - run: npm run build
+
+      - name: Summarize what changed
+        run: node scripts/data-change-summary.mjs > /tmp/summary.md
+
+      - name: Open, update and merge the data PR
         env:
           GH_TOKEN: ${{ github.token }}
+          # schedule carries no inputs -> default to merging
+          AUTO_MERGE: ${{ github.event_name != 'workflow_dispatch' || inputs.merge }}
         run: |
-          PATHS="src/data/moves.json src/data/pokemon.json public/data"
+          set -euo pipefail
+          PATHS="src/data/moves.json src/data/pokemon.json src/lib/cpm.ts public/data"
           if git diff --quiet -- $PATHS; then
             echo "No data changes."
             exit 0
@@ -47,10 +72,31 @@ jobs:
           git add $PATHS
           git commit -m "데이터 자동 업데이트 (GAME_MASTER + pvpoke 로스터)"
           git push -f -u origin "$BRANCH"
+
+          BODY=/tmp/body.md
+          {
+            echo "예약 실행으로 데이터가 갱신되었습니다. 이번 갱신의 실제 변경 내용:"
+            echo
+            cat /tmp/summary.md
+          } > "$BODY"
+
           if gh pr view "$BRANCH" --json state --jq .state 2>/dev/null | grep -q OPEN; then
+            gh pr edit "$BRANCH" --body-file "$BODY"
             echo "Existing PR updated."
           else
             gh pr create --base main --head "$BRANCH" \
               --title "데이터 자동 업데이트 (GAME_MASTER + pvpoke 로스터)" \
-              --body "예약 실행으로 \`moves.json\`(스탯)·\`pokemon.json\`(로스터)·\`public/data\`(인덱스)가 갱신되었습니다. 머지 전 변경 내용(신규 무브·포켓몬·모브셋·미매핑)을 확인하세요."
+              --body-file "$BODY"
+          fi
+
+          if [ "$AUTO_MERGE" != "true" ]; then
+            echo "Auto-merge disabled for this run — leaving the PR open."
+            exit 0
+          fi
+          # Verification above already passed, so merge. If a branch rule blocks it, leave
+          # the PR open for a human instead of failing the run.
+          if gh pr merge "$BRANCH" --squash --delete-branch; then
+            echo "Merged — Vercel picks it up from main."
+          else
+            echo "::warning::Auto-merge failed (branch protection?). PR left open for manual merge."
           fi

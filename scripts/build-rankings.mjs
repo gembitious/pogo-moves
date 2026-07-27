@@ -23,6 +23,9 @@ for (const [lg, cap] of Object.entries(LEAGUES)) {
       counters: (e.counters ?? []).map((x) => x.opponent), // worst (these beat it)
     }
   }
+  // Kept on one line on purpose: pvpoke rescores nearly every species each refresh
+  // (scores + matchups all shift), so a per-record layout would add ~1k lines of
+  // unreviewable diff every week. The workflow's PR summary reports the deltas instead.
   const json = JSON.stringify(out)
   writeFileSync(resolve(outDir, `rankings-${lg}.json`), json + '\n')
   console.log(`rankings-${lg}: ${Object.keys(out).length} entries, ${(json.length / 1024).toFixed(0)}KB`)

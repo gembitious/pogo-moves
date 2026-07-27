@@ -138,14 +138,37 @@ npm run build-cpm              # PokeMiners 게임마스터 CPM 표 -> src/lib/c
 
 ### 자동화
 
-`.github/workflows/update-data.yml`이 매주(및 수동 실행 시) `build-data`(무브 스탯)와
-`build-pokemon-data`(pvpoke 로스터)를 돌리고 인덱스를 재생성해, `moves.json`·`pokemon.json`·
-`public/data`가 바뀌면 `data/auto-refresh` 브랜치로 **PR을 엽니다**. 그 PR을 머지하면
-기존 Vercel 연동이 **프로덕션 배포를 자동 트리거**합니다.
+`.github/workflows/update-data.yml`이 매주 월요일(및 수동 실행 시) 원천 데이터를 새로
+받아 → **검증** → **PR 생성/갱신** → **자동 머지**까지 수행합니다. 머지되면 기존 Vercel
+연동이 프로덕션 배포를 트리거합니다.
+
+1. 갱신: `build-data`(무브 스탯) · `build-pokemon-data`(pvpoke 로스터) · `build-cpm`(CPM 표) ·
+   `build-pokemon-index`(인덱스) · `build-rankings`(리그 랭킹)
+2. 검증: `check-data` · `check`(타입) · `test` · `build` — **모두 통과해야 머지**
+3. PR: `data/auto-refresh` 브랜치로 열고, 본문에 `scripts/data-change-summary.mjs`가 만든
+   **실제 변경 요약**(신규/제거 종, 그림자 적격 수, 기술셋 변경, 랭킹 증감)을 기재
+4. 머지: 검증 통과 시 squash 자동 머지. 브랜치 보호 등으로 막히면 경고만 남기고 PR을 열어 둠
+
+수동 실행에서 `Auto-merge` 입력을 끄면 머지 없이 PR만 생성합니다.
+
+> **검증을 워크플로 안에서 하는 이유**: `GITHUB_TOKEN`으로 만든 PR은 GitHub의 재귀 방지
+> 정책 때문에 `ci.yml`을 **트리거하지 못하고** `action_required` 상태로 남습니다. 그래서
+> 같은 검사를 이 잡에서 직접 돌리고, 그게 자동 머지의 안전 근거입니다.
 
 > 저장소 Settings → Actions → General → Workflow permissions에서 **"Read and write
 > permissions"** 와 **"Allow GitHub Actions to create and approve pull requests"** 를
-> 켜야 PR 생성이 됩니다.
+> 켜야 PR 생성·머지가 됩니다.
+
+#### 생성 데이터의 diff 가독성
+
+`public/data/pokemon-index.json`·`move-pokemon.json`은 **레코드당 한 줄**로 씁니다
+(`scripts/lib/json-lines.mjs`). 유효한 JSON이면서(gzip 기준 +0.2% 미만) 한 종만 바뀌면
+그 줄만 diff에 잡혀, 주간 갱신 PR을 실제로 리뷰할 수 있습니다. 예전처럼 통짜 한 줄이면
+328KB 파일이 매번 전체 교체로 표시됐습니다.
+
+`rankings-*.json`은 의도적으로 한 줄 유지 — pvpoke가 매주 거의 전 종의 점수·매치업을
+재계산하므로(GL 기준 1,129종 중 점수 1,121개 변경) 레코드별로 쪼개도 리뷰가 불가능하고
+주당 1천여 줄의 노이즈만 늘어납니다. 대신 PR 요약이 증감을 알려줍니다.
 
 ## 기술 ↔ 포켓몬
 

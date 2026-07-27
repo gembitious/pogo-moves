@@ -9,6 +9,7 @@
 import { readFileSync, writeFileSync, mkdirSync, readdirSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
+import { jsonLines } from './lib/json-lines.mjs'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const root = resolve(__dirname, '..')
@@ -76,8 +77,8 @@ for (const p of list) for (const mid of [...p.fast, ...p.charged]) (reverse[mid]
 
 const outDir = resolve(root, 'public/data')
 mkdirSync(outDir, { recursive: true })
-const indexJson = JSON.stringify(list)
-const reverseJson = JSON.stringify(reverse)
+const indexJson = jsonLines(list)
+const reverseJson = jsonLines(reverse)
 writeFileSync(resolve(outDir, 'pokemon-index.json'), indexJson + '\n')
 writeFileSync(resolve(outDir, 'move-pokemon.json'), reverseJson + '\n')
 
