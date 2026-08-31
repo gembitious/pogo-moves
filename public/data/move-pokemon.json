@@ -302,9 +302,12 @@
 "moongeist_beam":["necrozma_dawn_wings"],
 "sunsteel_strike":["necrozma_dusk_mane"],
 "mind_blown":["blacephalon"],
+"plasma_fists":["zeraora"],
 "double_iron_bash":["melmetal"],
 "drum_beating":["rillaboom"],
 "pyro_ball":["cinderace"],
+"snipe_shot":["inteleon"],
+"dive":["cramorant"],
 "obstruct":["obstagoon"],
 "aura_wheel_electric":["morpeko_full_belly"],
 "behemoth_blade":["zacian_crowned_sword"],
@@ -315,5 +318,6 @@
 "flower_trick":["meowscarada"],
 "torch_song":["skeledirge"],
 "aqua_step":["quaquaval"],
-"gigaton_hammer":["tinkaton"]
+"gigaton_hammer":["tinkaton"],
+"glaive_rush":["baxcalibur"]
 }
