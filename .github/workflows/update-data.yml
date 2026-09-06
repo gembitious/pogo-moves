@@ -7,7 +7,8 @@ name: Update data
 # Why verification runs HERE instead of relying on ci.yml: a PR opened with GITHUB_TOKEN
 # does not trigger workflows (GitHub's recursion guard), so ci.yml sits at
 # "action_required" forever. Running the same checks in this job is what makes the
-# auto-merge safe.
+# auto-merge safe. guard-data is the extra volume check that shape/type/build checks
+# can't provide (a half-empty upstream pull would otherwise pass them all).
 #
 # Requires (repo Settings -> Actions -> General -> Workflow permissions):
 #   - "Read and write permissions"
@@ -21,6 +22,10 @@ on:
         description: 'Auto-merge when verification passes'
         type: boolean
         default: true
+      max_drop:
+        description: 'guard-data: allowed fractional drop in roster/rankings (default 0.05)'
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -38,19 +43,37 @@ jobs:
       - run: npm ci
 
       # ---- refresh from upstream sources ----
-      - run: npm run build-data -- --write # moves.json stats from GAME_MASTER
+      - name: Refresh move stats (GAME_MASTER)
+        shell: bash
+        run: |
+          set -eo pipefail
+          npm run build-data -- --write | tee /tmp/build-data.log
       - run: npm run build-pokemon-data -- --write # pokemon.json roster from pvpoke
       - run: npm run build-cpm # cpm.ts (level caps / CP multipliers)
-      - run: npm run build-pokemon-index # public/data indexes
+      - name: Fetch missing sprites (best effort)
+        # New species otherwise render as a type-colour fallback until someone runs this
+        # locally. PokeMiners is reached via the GitHub API/raw, so a hiccup there must not
+        # block the data refresh — hence continue-on-error.
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: npm run fetch-images
+      - run: npm run build-pokemon-index # public/data indexes (after sprites, so they're indexed)
       - run: npm run build-rankings # pvpoke league rankings (GL/UL/ML)
 
       # ---- verify the refreshed data before it is allowed to merge ----
+      - name: Guard against upstream data loss
+        env:
+          DATA_GUARD_MAX_DROP: ${{ inputs.max_drop }}
+        run: npm run guard-data
       - run: npm run check-data
       - run: npm run check
       - run: npm test
       - run: npm run build
 
       - name: Summarize what changed
+        env:
+          BUILD_DATA_LOG: /tmp/build-data.log
         run: node scripts/data-change-summary.mjs > /tmp/summary.md
 
       - name: Open, update and merge the data PR
@@ -60,8 +83,9 @@ jobs:
           AUTO_MERGE: ${{ github.event_name != 'workflow_dispatch' || inputs.merge }}
         run: |
           set -euo pipefail
-          PATHS="src/data/moves.json src/data/pokemon.json src/lib/cpm.ts public/data"
-          if git diff --quiet -- $PATHS; then
+          PATHS="src/data/moves.json src/data/pokemon.json src/lib/cpm.ts public/data public/images/pokemon"
+          # --porcelain (not `diff --quiet`) so brand-new sprite files count as a change too.
+          if [ -z "$(git status --porcelain -- $PATHS)" ]; then
             echo "No data changes."
             exit 0
           fi

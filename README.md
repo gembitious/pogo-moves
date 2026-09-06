@@ -143,13 +143,23 @@ npm run build-cpm              # PokeMiners 게임마스터 CPM 표 -> src/lib/c
 연동이 프로덕션 배포를 트리거합니다.
 
 1. 갱신: `build-data`(무브 스탯) · `build-pokemon-data`(pvpoke 로스터) · `build-cpm`(CPM 표) ·
-   `build-pokemon-index`(인덱스) · `build-rankings`(리그 랭킹)
-2. 검증: `check-data` · `check`(타입) · `test` · `build` — **모두 통과해야 머지**
+   `fetch-images`(누락 스프라이트, best-effort) · `build-pokemon-index`(인덱스) · `build-rankings`(리그 랭킹)
+2. 검증: `guard-data`(규모) · `check-data`(스키마) · `check`(타입) · `test` · `build` — **모두 통과해야 머지**
 3. PR: `data/auto-refresh` 브랜치로 열고, 본문에 `scripts/data-change-summary.mjs`가 만든
-   **실제 변경 요약**(신규/제거 종, 그림자 적격 수, 기술셋 변경, 랭킹 증감)을 기재
+   **실제 변경 요약**(신규/제거 종, 그림자 적격 수, 기술셋 변경, 한글명 없는 종, 미매핑 무브, 랭킹 증감)을 기재
 4. 머지: 검증 통과 시 squash 자동 머지. 브랜치 보호 등으로 막히면 경고만 남기고 PR을 열어 둠
 
 수동 실행에서 `Auto-merge` 입력을 끄면 머지 없이 PR만 생성합니다.
+
+**`guard-data`가 필요한 이유**: 사람이 머지하던 시절엔 눈이 최후 관문이었지만 자동 머지엔 없습니다.
+`check-data`(스키마)·`check`·`test`·`build`는 데이터의 *양*을 보지 않아, 실측상 로스터 10%가
+사라진 파일도 네 검사를 모두 통과합니다. `scripts/guard-data.mjs`는 갱신 전(HEAD) 대비 로스터·
+인덱스·리그 랭킹 엔트리가 **5% 넘게 줄거나 비면 실패**시켜 배포를 막습니다(무브는 파이프라인이
+로스터를 보존하므로 감소 자체를 실패로 봄). 의도된 대량 제거라면 수동 실행 입력 `max_drop`
+(또는 `DATA_GUARD_MAX_DROP=0.2`)으로 한도를 올려 통과시킵니다.
+
+`fetch-images`는 워크플로에서만 의미가 있습니다(로컬 클라우드 세션은 GitHub API가 막힘). 실패해도
+갱신은 계속되고(`continue-on-error`), 받은 스프라이트는 `public/images/pokemon`으로 같은 PR에 포함됩니다.
 
 > **검증을 워크플로 안에서 하는 이유**: `GITHUB_TOKEN`으로 만든 PR은 GitHub의 재귀 방지
 > 정책 때문에 `ci.yml`을 **트리거하지 못하고** `action_required` 상태로 남습니다. 그래서

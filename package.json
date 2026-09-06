@@ -16,7 +16,8 @@
     "fetch-images": "node scripts/fetch-pokemon-images.mjs",
     "build-pokemon-index": "node scripts/build-pokemon-index.mjs",
     "build-rankings": "node scripts/build-rankings.mjs",
-    "build-cpm": "node scripts/build-cpm.mjs"
+    "build-cpm": "node scripts/build-cpm.mjs",
+    "guard-data": "node scripts/guard-data.mjs"
   },
   "dependencies": {
     "@astrojs/preact": "^5.1.4",
