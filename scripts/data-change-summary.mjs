@@ -51,8 +51,14 @@ if (a && b) {
   if (removed.length) say(`- ⚠️ 제거 ${removed.length}: ${list(removed)}`)
   if (shadowA !== shadowB) say(`- 그림자 적격: **${shadowA} → ${shadowB}**`)
   if (moveset.length) say(`- 기술셋 변경 ${moveset.length}: ${list(moveset.map((p) => p.id))}`)
-  const noSprite = b.filter((p) => !p.sprite).length
-  if (noSprite) say(`- 스프라이트 없음(타입색 폴백): ${noSprite}종`)
+  const noSpriteA = a.filter((p) => !p.sprite).length
+  const noSpriteB = b.filter((p) => !p.sprite).length
+  if (noSpriteB || noSpriteA !== noSpriteB)
+    say(`- 스프라이트 없음(타입색 폴백): ${noSpriteA !== noSpriteB ? `${noSpriteA} → ` : ''}${noSpriteB}종`)
+  // No Hangul in `name` means build-pokemon-index fell back to the English name —
+  // surface it here so the gap doesn't stay buried in the job log.
+  const noKo = b.filter((p) => !/[가-힣]/.test(p.name))
+  if (noKo.length) say(`- ⚠️ 한글명 없음 ${noKo.length}: ${list(noKo.map((p) => `#${p.dex} ${p.nameEn}`))} → \`scripts/data/species-ko-extra.json\`에 추가`)
   say()
 }
 
@@ -100,8 +106,32 @@ if (rows.length) {
   say()
 }
 
+// ---- move pipeline report (optional) --------------------------------------
+// build-data prints which upstream moves were skipped (no Korean name / skip-list)
+// and which stay unmapped. The workflow tees that output to a file and passes its
+// path here so the gaps are visible in the PR instead of only in the job log.
+const LOG = process.env.BUILD_DATA_LOG
+if (LOG) {
+  try {
+    const lines = readFileSync(LOG, 'utf8').split('\n')
+    const from = lines.findIndex((l) => /^(unmapped|new moves)/.test(l))
+    const report = from >= 0 ? lines.slice(from).filter((l) => l.trim() && !/^(npm |wrote |\(compare)/.test(l)) : []
+    if (report.length) {
+      say('<details><summary>무브 파이프라인 리포트 — 미매핑 · 한글명 없어 스킵된 신규 무브</summary>')
+      say()
+      say('```')
+      report.forEach(say)
+      say('```')
+      say('</details>')
+      say()
+    }
+  } catch {
+    /* no log → nothing to add */
+  }
+}
+
 say('---')
-say('워크플로 안에서 `check-data` · `astro check` · `test` · `build`를 모두 통과했습니다.')
+say('워크플로 안에서 `guard-data`(규모 급감 차단) · `check-data`(스키마) · `astro check` · `test` · `build`를 모두 통과했습니다.')
 say('(봇이 만든 PR은 GitHub 정책상 `ci.yml`을 트리거하지 못해, 검증을 워크플로가 직접 수행합니다.)')
 
 console.log(out.join('\n'))
