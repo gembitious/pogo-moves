@@ -190,7 +190,8 @@ npm run build-cpm              # PokeMiners 게임마스터 CPM 표 -> src/lib/c
 - **포켓몬 → 기술**: 포켓몬 검색·선택 → 그 포켓몬의 기술 칩을 차트에서 하이라이트(페이지 간 유지)
 - **포켓몬 페이지·비교·팀 커버리지**: 종족값·타입·기술셋·그림자 적격을 소스로
 
-한글명은 `scripts/data/species-i18n.csv`(veekun) + `species-ko-extra.json`(override)에서 옵니다.
+한글명은 `scripts/data/species-i18n.csv`(PokeAPI 사본, 1025종) + `species-ko-extra.json`(그보다 새로운 종의
+override)에서 옵니다. 갱신 방법은 `scripts/data/README.md` 참고.
 로스터(`pokemon.json`)는 `npm run build-pokemon-data`로 pvpoke에서 갱신합니다(주간 자동화 포함).
 
 ### 스프라이트 갱신
