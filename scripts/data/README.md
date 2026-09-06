@@ -26,12 +26,15 @@
 `species-i18n.csv`(+ `species-ko-extra.json` override)를 합쳐 클라이언트용 슬림 인덱스를
 생성합니다 (`npm run build`에 포함, lazy-fetch용):
 
-- `public/data/pokemon-index.json` — 발매·비그림자 1106종(한/영명·타입·스탯·기술셋·스프라이트)
+- `public/data/pokemon-index.json` — 발매·비그림자 전 종(한/영명·타입·스탯·기술셋·스프라이트)
 - `public/data/move-pokemon.json` — 역인덱스 `무브 → 사용 포켓몬`
 
-`species-ko-extra.json`: veekun에 없는 최신종 한글명 override(현재 GO 발매 갭은
-dex 1011·1012·1013·1019; PokéAPI는 이 환경에서 403). 스프라이트 누락분은 UI에서
-타입색 플레이스홀더 폴백(원하면 PokeMiners pogo_assets로 보충).
+`species-ko-extra.json`: veekun CSV(1010종까지)에 없는 최신종 한글명 override —
+`{ "<dex>": "<한글명>" }`. 현재 dex 1011·1012·1013·1019(과미르·차데스·그우린차·과미드라).
+주간 갱신 PR 요약에 "⚠️ 한글명 없음"이 뜨면 여기에 추가하면 됩니다. 출처는 PokeAPI
+`pokemon_species_names.csv`(`local_language_id`=3; raw.githubusercontent.com은 이 환경에서도
+접근 가능, pokeapi.co API는 403). 스프라이트 누락분은 UI에서 타입색 플레이스홀더 폴백
+(원하면 PokeMiners pogo_assets로 보충).
 
 ## 스프라이트 보강
 
