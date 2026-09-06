@@ -5,12 +5,14 @@
 ## veekun/pokedex
 
 [veekun/pokedex](https://github.com/veekun/pokedex) `pokedex/data/csv/` (PokéAPI도 동일 데이터 사용).
+veekun 원본은 1010종(8세대)에서 멈춰 있어, `species-i18n.csv`는 계속 갱신되는
+[PokeAPI 사본](https://github.com/PokeAPI/pokeapi/tree/master/data/v2/csv)(1025종)을 씁니다.
 
 | 파일 | 원본 | 형식 / 용도 |
 | --- | --- | --- |
 | `move-names-ko.csv` | `move_names`(영/한 추출, 가공본) | `영문명,한글명` — 파이프라인이 신규 무브 한글명에 사용 |
 | `moves-i18n.csv` | `move_names.csv` | `move_id, local_language_id, name` (다국어 무브명) — 향후 UI 다국어용 |
-| `species-i18n.csv` | `pokemon_species_names.csv` | `species_id, local_language_id, name, genus` (다국어 포켓몬명·분류) — 향후 포켓몬 기능용 |
+| `species-i18n.csv` | `pokemon_species_names.csv` (PokeAPI raw, 무가공) | `species_id, local_language_id, name, genus` (다국어 포켓몬명·분류) — 포켓몬 인덱스의 한글명 |
 
 `local_language_id`: **3=한국어, 9=영어**, 1=일(가나)·4=중(번체)·5=프·6=독·7=스·8=이·11=일(한자)·12=중(간체).
 
@@ -29,12 +31,18 @@
 - `public/data/pokemon-index.json` — 발매·비그림자 전 종(한/영명·타입·스탯·기술셋·스프라이트)
 - `public/data/move-pokemon.json` — 역인덱스 `무브 → 사용 포켓몬`
 
-`species-ko-extra.json`: veekun CSV(1010종까지)에 없는 최신종 한글명 override —
-`{ "<dex>": "<한글명>" }`. 현재 dex 1011·1012·1013·1019(과미르·차데스·그우린차·과미드라).
-주간 갱신 PR 요약에 "⚠️ 한글명 없음"이 뜨면 여기에 추가하면 됩니다. 출처는 PokeAPI
-`pokemon_species_names.csv`(`local_language_id`=3; raw.githubusercontent.com은 이 환경에서도
-접근 가능, pokeapi.co API는 403). 스프라이트 누락분은 UI에서 타입색 플레이스홀더 폴백
-(원하면 PokeMiners pogo_assets로 보충).
+주간 갱신 PR 요약에 "⚠️ 한글명 없음"이 뜨면(GO에 CSV보다 새로운 종이 풀린 경우) 먼저 CSV를
+PokeAPI 원본으로 다시 받습니다 — 무가공 사본이라 그대로 덮어쓰면 됩니다:
+
+```bash
+curl -sSL https://raw.githubusercontent.com/PokeAPI/pokeapi/master/data/v2/csv/pokemon_species_names.csv \
+  -o scripts/data/species-i18n.csv && npm run build-pokemon-index
+```
+
+(raw.githubusercontent.com은 이 클라우드 환경에서도 접근 가능, pokeapi.co API는 403.)
+PokeAPI에도 아직 없는 종만 `species-ko-extra.json`에 `{ "<dex>": "<한글명>" }`로 override —
+현재는 비어 있습니다. 스프라이트 누락분은 UI에서 타입색 플레이스홀더 폴백(원하면 PokeMiners
+pogo_assets로 보충).
 
 ## 스프라이트 보강
 
