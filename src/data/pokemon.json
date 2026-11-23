@@ -24438,7 +24438,8 @@
         },
         "types": ["electric", "steel"],
         "fastMoves": ["CHARGE_BEAM", "SPARK", "VOLT_SWITCH", "METAL_SOUND"],
-        "chargedMoves": ["FLASH_CANNON", "WILD_CHARGE", "ZAP_CANNON", "MIRROR_SHOT"],
+        "chargedMoves": ["FLASH_CANNON", "WILD_CHARGE", "ZAP_CANNON", "MIRROR_SHOT", "MAGNET_BOMB"],
+        "eliteMoves": ["MAGNET_BOMB"],
         "defaultIVs": {
             "cp500": [6, 4, 10, 15],
             "cp1500": [17, 6, 15, 14],
@@ -24467,7 +24468,8 @@
         },
         "types": ["electric", "steel"],
         "fastMoves": ["CHARGE_BEAM", "SPARK", "VOLT_SWITCH", "METAL_SOUND"],
-        "chargedMoves": ["FLASH_CANNON", "WILD_CHARGE", "ZAP_CANNON", "MIRROR_SHOT"],
+        "chargedMoves": ["FLASH_CANNON", "WILD_CHARGE", "ZAP_CANNON", "MIRROR_SHOT", "MAGNET_BOMB"],
+        "eliteMoves": ["MAGNET_BOMB"],
         "defaultIVs": {
             "cp500": [6, 4, 10, 15],
             "cp1500": [17, 6, 15, 14],
@@ -35368,7 +35370,7 @@
         "tags": ["hisuian"],
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_GOOMY",
             "parent": "goomy",
@@ -35424,7 +35426,7 @@
         "searchPriority": 6,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_GOOMY",
             "parent": "sliggoo"
@@ -41651,6 +41653,14 @@
             "cp1500": [28.5, 5, 14, 15],
             "cp2500": [50, 15, 15, 15]
         },
+        "formChange": {
+            "type": "toggle",
+            "trigger": "charged_move",
+            "moveId": "ANY",
+            "defaultFormId": "morpeko_full_belly",
+            "alternativeFormId": "morpeko_full_belly",
+            "resetOnSwitch": true
+        },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": false
@@ -44712,12 +44722,14 @@
         },
         "types": ["dark", "steel"],
         "fastMoves": ["SNARL", "METAL_CLAW", "METAL_SOUND", "LOW_KICK"],
-        "chargedMoves": ["DARK_PULSE", "IRON_HEAD", "X_SCISSOR", "FOCUS_BLAST", "FOUL_PLAY"],
+        "chargedMoves": ["DARK_PULSE", "IRON_HEAD", "X_SCISSOR", "FOCUS_BLAST", "FOUL_PLAY", "KOWTOW_CLEAVE"],
+        "eliteMoves": ["KOWTOW_CLEAVE"],
         "defaultIVs": {
             "cp500": [5.5, 4, 10, 4],
             "cp1500": [15.5, 4, 10, 11],
             "cp2500": [25, 7, 15, 15]
         },
+        "nicknames": ["gambit"],
         "searchPriority": 3,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
